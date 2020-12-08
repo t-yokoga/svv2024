@@ -1,0 +1,418 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>第4回 時相論理 - システム検証論 (2020)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2020)" class="md-header-nav__button md-logo" aria-label="システム検証論 (2020)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            システム検証論 (2020)
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              第4回 時相論理
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2020)" class="md-nav__button md-logo" aria-label="システム検証論 (2020)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2020)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec01/" class="md-nav__link">
+      第1回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec02/" class="md-nav__link">
+      第2回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec03/" class="md-nav__link">
+      第3回
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    時相論理とは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    計算木論理 CTL*
+  </a>
+  
+    <nav class="md-nav" aria-label="計算木論理 CTL*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-41" class="md-nav__link">
+    Example 4.1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl_1" class="md-nav__link">
+    CTL* の文法と意味論
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="4">第4回 時相論理</h1>
+<p>この回では，教科書の第4章 "Temporal Logic" について説明します．</p>
+<div class="admonition 概要">
+<p class="admonition-title">概要</p>
+<ul>
+<li>時相論理とは</li>
+<li>計算木論理 CTL*</li>
+<li>CTL* の文法と意味論</li>
+<li>その他の時相論理</li>
+<li>状態集合との対応付け</li>
+<li>時相論理と公平性</li>
+</ul>
+</div>
+<h2 id="_1">時相論理とは</h2>
+<p>Temporal logic is a formalism to specify the dynamic behavior of systems, modeled as
+Kripke structures. In the temporal logics that we will consider, a formula might specify that
+a property holds in the next time, after one computation step; it can specify that eventually
+some designated state is reached, or that an error state is never entered. Properties like
+next time, eventually, and never are specified using special temporal operators. Temporal
+logic also contains path quantifiers to relate temporal properties to the paths of the Kripke
+structure. The operators and quantifiers can be nested and combined with Boolean connectives.
+We focus on the powerful logic CTL* [121, 123, 199) and its important fragments
+computation tree logic (CTL) [46, 121, 198), universal CTL* (ACTL*) [249, 354) and
+linear temporal logic (LTL) [411,412), whose specific properties can be exploited in model
+checking algorithms.</p>
+<h2 id="ctl">計算木論理 CTL*</h2>
+<p>The intuitive semantics of computation tree logic is based on the notion of computation
+trees. Given an initial state so in a Kripke structure M, the tree is formed by unwinding the
+structure into a tree with root so, as illustrated in figure 4.1. The computation tree shows all
+of the possible executions starting from the initial state. We require the transition relation
+of M to be left-total; that is, each state has a successor. Thus, all branches of the tree are
+infinite.</p>
+<p>The temporal logic CTL* defines properties of computation trees, and thus, of the underlying
+Kripke structures. CTL* formulas are composed of path quantifiers and temporal
+operators. CTL* has two path quantifiers:</p>
+<ul>
+<li>
+<p>
+<script type="math/tex">\textbf{A}\varphi</script> "all computation paths"</p>
+<p>This means that all paths from a given state have property <script type="math/tex">\varphi</script>.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\textbf{E}\varphi</script> "there exists a computation path"</p>
+<p>This means that at least one path from a given state has property <script type="math/tex">\varphi</script>.</p>
+</li>
+</ul>
+<p>Path quantifiers are used in a particular state to specify that all of the paths or some of the
+paths starting at that state have property q&gt;.A s we show below, combinations of multiple A
+and E quantifiers can describe the branching structure in the computation tree. The temporal
+operators describe properties that hold along a given infinite path through the tree. There
+are five basic operators. Their intuitive meaning is presented below, assuming p and q are
+formulas describing state properties (see also figure 4.2):</p>
+<ul>
+<li>
+<script type="math/tex">\textbf{X}p</script> "next time p"
+Intuitively, this requires that proposition p holds on the second state of the path.</li>
+<li>
+<script type="math/tex">\textbf{F}p</script> "eventually p" or "in the future p"
+This is used to assert that property p holds at some state on the path.</li>
+<li>
+<script type="math/tex">\textbf{G}p</script> "always p" or "globally p"
+This specifies that proposition p holds at every state on the path.</li>
+<li>
+<script type="math/tex">p\textbf{U}q</script> "p until q"
+The U operator is a bit more complicated since it is used to combine two properties.
+It holds if there is a state on the path where the second property q holds, and at every
+preceding state on the path (if it exists), the first property p holds.</li>
+<li>
+<script type="math/tex">p\textbf{R}q</script> "p release q"
+This is the logical dual of the U operator. It requires that the second property q holds
+along the path up to and including the first state where the first property p holds.
+However, the first property pis not required to eventually hold.</li>
+</ul>
+<h4 id="example-41">Example 4.1</h4>
+<p>Let us illustrate the CTL* semantics informally on the example of figure 4.1.
+Let <script type="math/tex">\pi_1</script> and <script type="math/tex">\pi_2</script> denote the leftmost and rightmost paths, respectively. On <script type="math/tex">\pi_1</script>, property <script type="math/tex">b</script> holds
+in every state, and thus <script type="math/tex">\textbf{G}b</script> holds true. Formally, we write <script type="math/tex">\pi_1 \models \textbf{G}b</script>. By contrast, it is
+easy to see that <script type="math/tex">\pi_2 \nVDash \textbf{G}b</script>. Thus, one but not all paths from the initial state satisfy <script type="math/tex">\textbf{G}b</script>, and
+hence, <script type="math/tex">s_0 \models \textbf{EG}b</script>, but <script type="math/tex">s_0 \nVDash \textbf{AG}b</script>. Similarly, it is easy to see that <script type="math/tex">s_0 \models \textbf{EXX}(a \wedge b)</script>, but <script type="math/tex">s_0 \nVDash \textbf{EXAX}(a \wedge b)</script>.</p>
+<p>From this informal introduction to CTL* we see an important difference between path
+quantifiers and temporal operators: while path quantifiers describe properties of a state (for
+example, "does a certain path start in this state?"), temporal operators describe properties
+of paths (for example, "can a certain state be reached along this path?"). In the following
+section this distinction will give rise to the notion of path formulas and state formulas.</p>
+<h2 id="ctl_1">CTL* の文法と意味論</h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>
