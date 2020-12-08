@@ -1,0 +1,23 @@
+site_name: システム検証論 (2020)
+
+nav:
+    - Home: "index.md"
+    - 第1回: "lec01.md"
+    - 第2回: "lec02.md"
+    - 第3回: "lec03.md"
+
+theme: material
+
+extra_css:
+    - "http://fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "http://fonts.googleapis.com/css?family=Open+Sans:600,800"
+    - "css/custom.css"
+
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: true
+    - admonition
+
+extra_javascript:
+    - "js/extra.js"
+    - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"
