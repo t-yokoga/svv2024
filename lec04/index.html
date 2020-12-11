@@ -328,6 +328,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ctl_4" class="md-nav__link">
+    CTL* の意味論の重要な性質
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     否定標準形
   </a>
@@ -467,6 +474,13 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     充足可能性と恒真性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctl_4" class="md-nav__link">
+    CTL* の意味論の重要な性質
   </a>
   
 </li>
@@ -750,6 +764,7 @@ CTL* には2つのタイプの論理式があり，特定の状態に対して�
 一方で，モデル検査問題は論理式 <script type="math/tex">f</script> と与えられたクリプキ構造 <script type="math/tex">M</script> に対して定義される．
 その目的は，<script type="math/tex">M</script> が <script type="math/tex">f</script> のモデルである，すなわち，<script type="math/tex">M \models f</script> かどうかを判定することである．</p>
 <p>モデル検査の概念は任意のクリプキ構造に対して十分に定義されているが，後にモデル検査アルゴリズムについて議論する際には，有限のクリプキ構造（すなわち状態集合 <script type="math/tex">S</script> が有限）にのみ着目していることには注意が必要である．</p>
+<h3 id="ctl_4">CTL* の意味論の重要な性質</h3>
 <p>CTL* の意味論は，次の興味深くかつ重要な性質をもつ．</p>
 <ul>
 <li>
@@ -765,16 +780,19 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 \end{eqnarray*}</script>
 </p>
 <ul>
-<li>Definition 4.2 の 16 番目の節は，式が複数の初期状態をもつ構造に対して評価される場合，やや予期しない影響を及ぼす．
-  初期状態 <script type="math/tex">S_0 = \{s_0, s_1\}</script> である以下の例を考える．
+<li>
+<p>Definition 4.2 の 16 番目の節は，式が複数の初期状態をもつ構造に対して評価される場合，やや予期しない影響を及ぼす．</p>
+<p>初期状態 <script type="math/tex">S_0 = \{s_0, s_1\}</script> をもつ以下のクリプキ構造を考える．
   <center>
   <img src="../img/lec04-fig4.png" width="200">
-  </center>
-  <script type="math/tex">M, s_0, \models \textbf{EX} p</script> であり，<script type="math/tex">M, s_1, \nvDash \textbf{EX} p</script> である．
-  したがって，ただ一つの初期状態しか <script type="math/tex">\textbf{EX} p</script> を満たさないので，定義より <script type="math/tex">M, \nvDash \textbf{EX} p</script> である．
-  一方で，<script type="math/tex">\neg \textbf{EX} p</script> は <script type="math/tex">s_1</script> では満たされるが <script type="math/tex">s_0</script> では満たされず，したがって <script type="math/tex">M, \nvDash \neg \textbf{EX} p</script> となる．
-  結果として，<script type="math/tex">\textbf{EX} p</script> と <script type="math/tex">\neg \textbf{EX} p</script> のいずれもが <script type="math/tex">M</script> では満たされないことになる．
-  単一の初期状態をもつ構造においては，このような状況に陥ることはない．</li>
+  </center></p>
+<p>
+<script type="math/tex">M, s_0 \models \textbf{EX} p</script> であり，<script type="math/tex">M, s_1 \nvDash \textbf{EX} p</script> である．
+  したがって，ただ一つの初期状態しか <script type="math/tex">\textbf{EX} p</script> を満たさないので，定義より <script type="math/tex">M \nvDash \textbf{EX} p</script> である．
+  一方で，<script type="math/tex">\neg \textbf{EX} p</script> は <script type="math/tex">s_1</script> では満たされるが <script type="math/tex">s_0</script> では満たされず，したがって <script type="math/tex">M \nvDash \neg \textbf{EX} p</script> となる．</p>
+<p>結果として，<script type="math/tex">\textbf{EX} p</script> と <script type="math/tex">\neg \textbf{EX} p</script> のいずれもが <script type="math/tex">M</script> では満たされないことになる．
+  初期状態が一つのみであれば，このような状況に陥ることはない．</p>
+</li>
 </ul>
 <h3 id="_4">否定標準形</h3>
 <p><strong>否定標準形</strong> (negation normal form, NNF) は論理式の構文形式の一つで，否定演算子（<script type="math/tex">\neg</script>）の適用が原子命題についてのみ認められる．
@@ -788,8 +806,8 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 \neg \textbf{G} \phi & \equiv & \textbf{F} \neg \phi\\
 \neg \textbf{F} \phi & \equiv & \textbf{G} \neg \phi\\
 \neg \textbf{X} \phi & \equiv & \textbf{X} \neg \phi\\
-\neg (\phi \textbf{U} \psi) & \equiv & (\phi \textbf{R} \neg \psi)\\
-\neg (\phi \textbf{R} \psi) & \equiv & (\phi \textbf{U} \neg \psi)\\
+\neg (\phi \textbf{U} \psi) & \equiv & (\neg \phi \textbf{R} \neg \psi)\\
+\neg (\phi \textbf{R} \psi) & \equiv & (\neg \phi \textbf{U} \neg \psi)\\
 \neg (\phi \wedge \psi) & \equiv & (\neg \phi \vee \neg \psi)\\
 \neg (\phi \vee \psi) & \equiv & (\neg \phi \wedge \neg \psi)
 \end{eqnarray*}</script>
