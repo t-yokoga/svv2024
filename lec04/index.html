@@ -562,8 +562,8 @@
 したがって，木の全ての枝は無限に続くことになる，</p>
 <h3 id="_2">パス限定子と時相演算子</h3>
 <p>時相論理 CTL* は計算木の，ひいてはその根底にあるクリプキ構造の特性を定義する．
-CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong>から構成される．
-CTL* は二つのパス限定子をもつ．</p>
+CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong>から構成される．</p>
+<p>CTL* は <script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> の二つのパス限定子をもつ．</p>
 <ul>
 <li>
 <p>
@@ -577,15 +577,15 @@ CTL* は二つのパス限定子をもつ．</p>
 </li>
 </ul>
 <p>パス限定子は特定の状態において，その状態から始まるすべての，あるいはいくつかのパスが特性 <script type="math/tex">\varphi</script> を満たすことを表すために用いられる．
-後で示すように，<script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> 複数組み合わせることで，計算木の分岐構造を記述することができる．</p>
-<p>時相演算子は，与えられた木の無限のパスに沿って満たされる特性を記述する．
-5 種の基本演算子について，直感的な意味を以下に示す．
+後で示すように，<script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> を複数組み合わせることで，計算木の分岐構造を記述することができる．</p>
+<p>CTL* は <script type="math/tex">\textbf{X}</script>，<script type="math/tex">\textbf{F}</script>，<script type="math/tex">\textbf{G}</script>，<script type="math/tex">\textbf{U}</script>，<script type="math/tex">\textbf{R}</script> の 5 つの時相演算子をもつ．
+直感的な意味は以下の通りである．
 ここで，<script type="math/tex">p</script> と <script type="math/tex">q</script> は状態の特性を記述する式であるとする．</p>
 <ul>
 <li>
 <p>
-<script type="math/tex">\textbf{X}p</script> 「次状態で <script type="math/tex">p</script> である」</p>
-<p>直感的に，この式は命題 <script type="math/tex">p</script> がパスの二番目の状態で満たされることを要求する．</p>
+<script type="math/tex">\textbf{X}p</script> 「次の状態で <script type="math/tex">p</script> である」</p>
+<p>直感的に，この式は命題 <script type="math/tex">p</script> がパスの二番目の状態（つまり次の状態）で満たされることを要求する．</p>
 </li>
 <li>
 <p>
@@ -612,7 +612,8 @@ CTL* は二つのパス限定子をもつ．</p>
 しかしながら，1つ目の特性 <script type="math/tex">p</script> は必ずしも満たされなくてもよい．</p>
 </li>
 </ul>
-<p>以下の図は，無限のパスについて，これらの時相演算子がどのような場合に満たされるかを示している．
+<p>時相演算子は，与えられた木の無限のパスに沿って満たされる特性を記述する．
+以下の図は，無限のパスについて，これらの時相演算子がどのような場合に満たされるかを示している．
 ●が <script type="math/tex">p</script> が満たされる状態，□が <script type="math/tex">q</script> が満たされる状態である．</p>
 <p><center>
 <img src="../img/lec04-fig2.png" width="350">
@@ -627,11 +628,11 @@ CTL* は二つのパス限定子をもつ．</p>
 <script type="math/tex">\pi_1</script> では特性 <script type="math/tex">b</script> が全ての状態で満たされるので，<script type="math/tex">\textbf{G}b</script> は真となる．
 このことを形式的に <script type="math/tex">\pi_1 \models \textbf{G}b</script> と書くことにする．
 一方で，明らかに <script type="math/tex">\pi_2 \nvDash \textbf{G}b</script> である．
-したがって，初期状態 <script type="math/tex">s_0</script> から一つの（しかし全てではない）パスが <script type="math/tex">\textbf{G}b</script> を満たすため，<script type="math/tex">s_0 \models \textbf{EG}b</script> であり，<script type="math/tex">s_0 \nvDash \textbf{AG}b</script> である．
+したがって，初期状態 <script type="math/tex">s_0</script> から一つのパスが <script type="math/tex">\textbf{G}b</script> を満たすため，<script type="math/tex">s_0 \models \textbf{EG}b</script> であり，全てのパスが満たすわけではないため <script type="math/tex">s_0 \nvDash \textbf{AG}b</script> である．
 同様に，<script type="math/tex">s_0 \models \textbf{EXX}(a \wedge b)</script> であり，<script type="math/tex">s_0 \nvDash \textbf{EXAX}(a \wedge b)</script> である．</p>
-<p>これまでの CTL* への非形式的な導入により，パス限定子と時相演算子の重要な違いがわかる．
+<p>ここまでの CTL* への非形式的な導入により，パス限定子と時相演算子の重要な違いがわかる．
 つまり，パス限定子は状態の性質（例えば，「ある特定のパスがこの状態から始まるか？」）を記述するものであり，時相演算子はパスの性質（例えば，「このパスである特定の状態へと到達できるか？」）を記述するものである．
-次の節では，この区別からパス論理式と状態論理式の概念が生まれる．</p>
+次の節で説明するように，この区別からパス論理式と状態論理式の概念が生まれている．</p>
 <h2 id="ctl_1">CTL* の文法と意味論</h2>
 <p>これから，CTL * の文法と意味論について形式的に定義する．</p>
 <h3 id="ctl_2">CTL* の文法</h3>
