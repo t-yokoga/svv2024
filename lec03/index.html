@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
@@ -818,7 +818,9 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <script type="math/tex">\textbf{while}</script>
 <script type="math/tex">b</script>
 <script type="math/tex">\textbf{do}</script>
-<script type="math/tex">l_1: P_1^{\mathcal{L}}, l')</script> は以下の 3 つの式の論理和となる:
+<script type="math/tex">l_1: P_1</script>
+<script type="math/tex">\textbf{end while}</script>
+<script type="math/tex">, l')</script> は以下の 3 つの式の論理和となる:
     <script type="math/tex; mode=display">\begin{align*}
                    & (pc = l \wedge pc' = l_1 \wedge b \wedge same(V))\\
         \vee \quad & (pc = l \wedge pc' = l' \wedge \neg b \wedge same(V))\\
@@ -849,7 +851,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <script type="math/tex">V_i</script> は，プロセス <script type="math/tex">P_i</script> によって変更可能な変数の集合である．
 これらの集合は互いに素で無くてもよい．
 これまでと同様に，<script type="math/tex">V</script> はすべてのプログラム変数からなる集合である．
-プロセス <script type="math/tex">p_i</script> のプログラムカウンタは <script type="math/tex">pc_i</script> であり，<script type="math/tex">pc</script> はすべてのプログラムカウンタからなる集合である．</p>
+プロセス <script type="math/tex">p_i</script> のプログラムカウンタは <script type="math/tex">pc_i</script> であり，<script type="math/tex">PC</script> はすべてのプログラムカウンタからなる集合である．</p>
 <p>並行プログラム <script type="math/tex">P</script> は，以下のような形となる．
 <script type="math/tex; mode=display"> \textbf{cobegin } P_1 || P_2 || \ldots || P_n \textbf{ coend}</script>
 ここで，<script type="math/tex">P_1, \ldots , P_n</script> はプロセスである．</p>
@@ -867,7 +869,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>
 <script type="math/tex">P^{\mathcal{L}} =</script>
 <script type="math/tex">\textbf{cobegin}</script>
-<script type="math/tex">l_1 : P_1^{\mathcal{L}} l_1' \Vert l_2 : P_2^{\mathcal{L}} l_2' \Vert \ldots \Vert l_n : P_n^{\mathcal{L}}</script>
+<script type="math/tex">l_1 : P_1^{\mathcal{L}} l_1' \Vert l_2 : P_2^{\mathcal{L}} l_2' \Vert \ldots \Vert l_n : P_n^{\mathcal{L}} l_n'</script>
 <script type="math/tex">\textbf{coend}</script> とする．</p>
 </li>
 </ul>
@@ -879,7 +881,9 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>
 <script type="math/tex">\mathcal{C}(l, </script>
 <script type="math/tex">\textbf{cobegin}</script>
-<script type="math/tex">l_1 : P_1^{\mathcal{L}} l_1' \Vert \ldots \Vert l_n : P_n^{\mathcal{L}}, l')</script> の結果は，以下の 3 つの式の論理和となる．</p>
+<script type="math/tex">l_1 : P_1 l_1' \Vert \ldots \Vert l_n : P_n l_n'</script>
+<script type="math/tex">\textbf{coend}</script>
+<script type="math/tex">, l')</script> の結果は，以下の 3 つの式の論理和となる．</p>
 <p>
 <script type="math/tex; mode=display">\begin{align*}
            & (pc = l \wedge pc_1' = l_1 \wedge \ldots \wedge pc_n' = l_n \wedge pc' = \textbf{susp}) \\
@@ -979,7 +983,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <script type="math/tex; mode=display">\begin{align*}
            & (pc_i = l_i \wedge pc_i' = NC_i \wedge true \wedge same(turn))\\
 \vee \quad & (pc_i = NC_i \wedge pc_i' = CR_i \wedge turn = i \wedge same(turn))\\
-\vee \quad & (pc_i = CR_i \wedge pc_i' = l_i \wedge turn' = (i+2) mod 2)\\
+\vee \quad & (pc_i = CR_i \wedge pc_i' = l_i \wedge turn' = (i+2) \text{ mod } 2)\\
 \vee \quad & (pc_i = NC_i \wedge pc_i' = NC_i \wedge turn \neq i \wedge same(turn))\\
 \vee \quad & (pc_i = l_i \wedge pc_i = i_i' \wedge false \wedge same(turn))
 \end{align*}</script>
@@ -1045,7 +1049,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 形式的には，公平なクリプキ構造 <script type="math/tex">M</script> は 6 組 <script type="math/tex">M = (S, S_0, R, AP, L, F)</script> である．ここで，</p>
 <ol>
 <li>
-<script type="math/tex">S</script>, <script type="math/tex">S_0</script>, <script type="math/tex">R</script>, <script type="math/tex">AP</script>, そして <script type="math/tex">L</script> これまでの定義と同様である．</li>
+<script type="math/tex">S</script>, <script type="math/tex">S_0</script>, <script type="math/tex">R</script>, <script type="math/tex">AP</script>, そして <script type="math/tex">L</script> は，これまでの定義と同様である．</li>
 <li>
 <script type="math/tex">F \subseteq 2^S</script> は公平性制約の集合である．</li>
 </ol>
@@ -1156,8 +1160,8 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
       
     </div>
     
-      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
