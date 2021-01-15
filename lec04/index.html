@@ -373,6 +373,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec05/" class="md-nav__link">
+      第5回
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -531,7 +543,7 @@
                 
                 
                 <h1 id="4-ctl">第4回 時相論理 CTL*</h1>
-<p>この回では，教科書の第4章 "Temporal Logic" について説明します．</p>
+<p>この回では，教科書の第4章 "Temporal Logic" の前半部分について説明します．</p>
 <div class="admonition 概要">
 <p class="admonition-title">概要</p>
 <ul>
@@ -567,49 +579,49 @@ CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong
 <ul>
 <li>
 <p>
-<script type="math/tex">\textbf{A}\varphi</script> 「すべての計算パスにおいて」</p>
-<p>この演算子は，与えられた状態からの全てのパスが特性 <script type="math/tex">\varphi</script> を満たすことを意味する．</p>
+<script type="math/tex">\textbf{A}\varphi</script> 「すべての計算パスにおいて <script type="math/tex">\varphi</script> である」</p>
+<p>この式は，与えられた状態からの全てのパスが特性 <script type="math/tex">\varphi</script> を満たすことを意味する．</p>
 </li>
 <li>
 <p>
-<script type="math/tex">\textbf{E}\varphi</script> 「ある計算パスが存在して」</p>
-<p>この演算子は，与えられた状態からの少なくとも一つのパスが特性 <script type="math/tex">\varphi</script> を満たすことを意味する．</p>
+<script type="math/tex">\textbf{E}\varphi</script> 「<script type="math/tex">\varphi</script> を満たす計算パスが存在する」</p>
+<p>この式は，与えられた状態からの少なくとも一つのパスが特性 <script type="math/tex">\varphi</script> を満たすことを意味する．</p>
 </li>
 </ul>
 <p>パス限定子は特定の状態において，その状態から始まるすべての，あるいはいくつかのパスが特性 <script type="math/tex">\varphi</script> を満たすことを表すために用いられる．
-後で示すように，<script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> を複数組み合わせることで，計算木の分岐構造を記述することができる．</p>
+<script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> を複数組み合わせることで，計算木の分岐構造を記述することができる．</p>
 <p>CTL* は <script type="math/tex">\textbf{X}</script>，<script type="math/tex">\textbf{F}</script>，<script type="math/tex">\textbf{G}</script>，<script type="math/tex">\textbf{U}</script>，<script type="math/tex">\textbf{R}</script> の 5 つの時相演算子をもつ．
 直感的な意味は以下の通りである．
 ここで，<script type="math/tex">p</script> と <script type="math/tex">q</script> は状態の特性を記述する式であるとする．</p>
 <ul>
 <li>
 <p>
-<script type="math/tex">\textbf{X}p</script> 「次の状態で <script type="math/tex">p</script> である」</p>
-<p>直感的に，この式は命題 <script type="math/tex">p</script> がパスの二番目の状態（つまり次の状態）で満たされることを要求する．</p>
+<script type="math/tex">\textbf{X}p</script> 「次の（ne<script type="math/tex">\textbf{X}</script>t）状態で <script type="math/tex">p</script> である」</p>
+<p>この式は，命題 <script type="math/tex">p</script> がパスの二番目の状態（つまり次の状態）で満たされることを要求する．</p>
 </li>
 <li>
 <p>
-<script type="math/tex">\textbf{F}p</script> 「いつか <script type="math/tex">p</script> である」あるいは「将来的に <script type="math/tex">p</script> である」</p>
-<p>この式は，特性 <script type="math/tex">p</script> がパスのどこかの状態で満たされると主張するために用いられる．</p>
+<script type="math/tex">\textbf{F}p</script> 「いつか <script type="math/tex">p</script> である」あるいは「将来的に（in the <script type="math/tex">\textbf{F}</script>uture）<script type="math/tex">p</script> である」</p>
+<p>この式は，特性 <script type="math/tex">p</script> がパスのどこかの状態で満たされることを表すために用いられる．</p>
 </li>
 <li>
 <p>
-<script type="math/tex">\textbf{G}p</script> 「つねに <script type="math/tex">p</script> である」あるいは「全域的に <script type="math/tex">p</script> である」</p>
-<p>この式は，命題 <script type="math/tex">p</script> がパスの全ての状態で満たされることを表すために用いられる．</p>
+<script type="math/tex">\textbf{G}p</script> 「つねに <script type="math/tex">p</script> である」あるいは「全域的に（<script type="math/tex">\textbf{G}</script>lobally）<script type="math/tex">p</script> である」</p>
+<p>この式は，特性 <script type="math/tex">p</script> がパスの全ての状態で満たされることを表すために用いられる．</p>
 </li>
 <li>
 <p>
-<script type="math/tex">p\textbf{U}q</script> 「<script type="math/tex">q</script> となるまで <script type="math/tex">p</script> である」</p>
+<script type="math/tex">p\textbf{U}q</script> 「<script type="math/tex">q</script> となるまで（<script type="math/tex">\textbf{U}</script>ntil）<script type="math/tex">p</script> である」</p>
 <p>
 <script type="math/tex">\textbf{U}</script> 演算子は，二つの特性を組み合わせるため少しだけ複雑である．
-この式が満たされるのは，パス上に2つ目の特性 <script type="math/tex">q</script> を満たす状態が存在した上で，かつそこまでの全ての状態において1つ目の特性 <script type="math/tex">p</script> が満たされているときである．</p>
+この式が満たされるのは，パス上に特性 <script type="math/tex">q</script> を満たす状態が存在した上で，かつそこまでの全ての状態において特性 <script type="math/tex">p</script> が満たされているときである．</p>
 </li>
 <li>
 <p>
-<script type="math/tex">p\textbf{R}q</script> 「<script type="math/tex">p</script> が <script type="math/tex">q</script> を開放する」</p>
+<script type="math/tex">p\textbf{R}q</script> 「<script type="math/tex">p</script> が <script type="math/tex">q</script> を開放（<script type="math/tex">\textbf{R}</script>elease）する」</p>
 <p>これは <script type="math/tex">\textbf{U}</script> 演算子の論理双対 (logical dual) である．
-この式は，1つ目の特性 <script type="math/tex">p</script> が満たされる最初の状態を含むそこまでのパス上において，2つ目の特性 <script type="math/tex">q</script> が満たされていることを要求する．
-しかしながら，1つ目の特性 <script type="math/tex">p</script> は必ずしも満たされなくてもよい．</p>
+この式は，特性 <script type="math/tex">p</script> が初めて満たされる状態を含むそこまでのパス上において，特性 <script type="math/tex">q</script> が満たされていることを要求する．
+特性 <script type="math/tex">p</script> は必ずしも満たされなくてもよく，<script type="math/tex">p</script> が満たされることなく <script type="math/tex">q</script> のみが初期状態からずっと満たされるパスにおいても <script type="math/tex">p\textbf{R}q</script> は真と評価される．</p>
 </li>
 </ul>
 <p>時相演算子は，与えられた木の無限のパスに沿って満たされる特性を記述する．
@@ -619,8 +631,8 @@ CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong
 <img src="../img/lec04-fig2.png" width="350">
 </center></p>
 <h4 id="example-41">Example 4.1</h4>
-<p>前述の例を用いて，CTL* の意味論を非形式的に説明する．
-<script type="math/tex">\pi_1</script> と <script type="math/tex">\pi_2</script> をそれぞれ最も左と右のパスとする．</p>
+<p>前述の例をもう一度使って，CTL* の意味論を非形式的に説明する．
+<script type="math/tex">\pi_1</script> と <script type="math/tex">\pi_2</script> をそれぞれ計算木の最も左と右の枝を経由するパスとする．</p>
 <p><center>
 <img src="../img/lec04-fig3.png" width="250">
 </center></p>
@@ -628,25 +640,25 @@ CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong
 <script type="math/tex">\pi_1</script> では特性 <script type="math/tex">b</script> が全ての状態で満たされるので，<script type="math/tex">\textbf{G}b</script> は真となる．
 このことを形式的に <script type="math/tex">\pi_1 \models \textbf{G}b</script> と書くことにする．
 一方で，明らかに <script type="math/tex">\pi_2 \nvDash \textbf{G}b</script> である．
-したがって，初期状態 <script type="math/tex">s_0</script> から一つのパスが <script type="math/tex">\textbf{G}b</script> を満たすため，<script type="math/tex">s_0 \models \textbf{EG}b</script> であり，全てのパスが満たすわけではないため <script type="math/tex">s_0 \nvDash \textbf{AG}b</script> である．
-同様に，<script type="math/tex">s_0 \models \textbf{EXX}(a \wedge b)</script> であり，<script type="math/tex">s_0 \nvDash \textbf{EXAX}(a \wedge b)</script> である．</p>
+したがって，初期状態 <script type="math/tex">s_0</script> から一つのパスが <script type="math/tex">\textbf{G}b</script> を満たすため，<script type="math/tex">s_0 \models \textbf{EG}b</script> であり，全てのパスが満たすわけではないため <script type="math/tex">s_0 \nvDash \textbf{AG}b</script> である．</p>
+<p>同様に，初期状態から次の次の状態（<script type="math/tex">\textbf{XX}</script>）で <script type="math/tex">a \wedge b</script> を満たすパスが存在（<script type="math/tex">\textbf{E}</script>）するため <script type="math/tex">s_0 \models \textbf{EXX}(a \wedge b)</script> であり，全てのパスの次状態（<script type="math/tex">\textbf{AX}</script>）で<script type="math/tex">a \wedge b</script> を満たす状態に，次で到達するパスが存在（<script type="math/tex">\textbf{EX}</script>）しないので， <script type="math/tex">s_0 \nvDash \textbf{EXAX}(a \wedge b)</script> である．</p>
 <p>ここまでの CTL* への非形式的な導入により，パス限定子と時相演算子の重要な違いがわかる．
 つまり，パス限定子は状態の性質（例えば，「ある特定のパスがこの状態から始まるか？」）を記述するものであり，時相演算子はパスの性質（例えば，「このパスである特定の状態へと到達できるか？」）を記述するものである．
 次の節で説明するように，この区別からパス論理式と状態論理式の概念が生まれている．</p>
 <h2 id="ctl_1">CTL* の文法と意味論</h2>
 <p>これから，CTL * の文法と意味論について形式的に定義する．</p>
 <h3 id="ctl_2">CTL* の文法</h3>
-<p>命題 CTL* の文法は，命題論理を上述の時相演算子とパス限定子を用いて自然に拡張したものである．
-CTL* には2つのタイプの論理式があり，特定の状態に対して真と評価される<strong>状態論理式</strong>と，特定のパスに対して真と評価される<strong>パス論理式</strong>である．</p>
+<p>CTL* の文法は，命題論理を上述の時相演算子とパス限定子を用いて自然に拡張したものである．
+CTL* には 2 つのタイプの論理式があり，状態に対して真と評価される<strong>状態論理式</strong>と，パスに対して真と評価される<strong>パス論理式</strong>である．</p>
 <p>
 <script type="math/tex">AP</script> を原子命題の集合とする．
 状態論理式の文法は以下のルールで与えらえる．</p>
 <ul>
 <li><strong>A1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> は状態論理式である．</li>
 <li><strong>A2</strong>: <script type="math/tex">f</script> および <script type="math/tex">g</script> が状態論理式ならば，<script type="math/tex">\neg f</script>, <script type="math/tex">f \vee g</script>, <script type="math/tex">f \wedge g</script> は状態論理式である．</li>
-<li><strong>A3</strong>: <script type="math/tex">f</script> がパス論理式ならば，<script type="math/tex">\textbf{E} f</script> および \textbf{A} f$ は状態論理式である．</li>
+<li><strong>A3</strong>: <script type="math/tex">f</script> がパス論理式ならば，<script type="math/tex">\textbf{E} f</script> および <script type="math/tex">\textbf{A} f</script> は状態論理式である．</li>
 </ul>
-<p>パス論理式の文法を定めるためには 2 つの追加ルールが必要である．</p>
+<p>パス論理式の文法は，以下の 2 つの追加ルールで定められる．</p>
 <ul>
 <li><strong>A4</strong>: <script type="math/tex">f</script> が状態論理式ならば，<script type="math/tex">f</script> はパス論理式でもある．</li>
 <li><strong>A5</strong>: <script type="math/tex">f</script> および <script type="math/tex">g</script> がパス論理式ならば，<script type="math/tex">\neg f</script>, <script type="math/tex">f \vee g</script>, <script type="math/tex">f \wedge g</script>, <script type="math/tex">\textbf{X} f</script>, <script type="math/tex">\textbf{F} f</script>, <script type="math/tex">\textbf{G} f</script>, <script type="math/tex">f \textbf{U} g</script>, そして <script type="math/tex">f \textbf{R} g</script> はパス論理式である．</li>
@@ -674,7 +686,7 @@ CTL* には2つのタイプの論理式があり，特定の状態に対して�
 </div>
 <p>モデル化を表す関係 <script type="math/tex">\models</script> は式の構造に基づいて帰納的に定義される．
 <script type="math/tex">f</script> が状態論理式ならば，<script type="math/tex">M, s \models f</script> はクリプキ構造 <script type="math/tex">M</script> において状態 <script type="math/tex">s</script> で <script type="math/tex">f</script> が満たされることを意味する．
-同様に，<script type="math/tex">f</script> がパス論理式ならば，<script type="math/tex">M, \pi \models f</script> クリプキ構造 <script type="math/tex">M</script> においてパス <script type="math/tex">\pi</script> に沿って <script type="math/tex">f</script> が満たされることを意味する．</p>
+同様に，<script type="math/tex">f</script> がパス論理式ならば，<script type="math/tex">M, \pi \models f</script> はクリプキ構造 <script type="math/tex">M</script> においてパス <script type="math/tex">\pi</script> に沿って <script type="math/tex">f</script> が満たされることを意味する．</p>
 <p>記号 <script type="math/tex">\equiv</script> を論理的等価を表すために用いる．
 すなわち，<script type="math/tex">f</script> および <script type="math/tex">g</script> が状態論理式ならば，<script type="math/tex">f \equiv g</script> が満たされるのは，すべての <script type="math/tex">M</script> と <script type="math/tex">s</script> に対して，<script type="math/tex">M, s \models f</script> であるときかつそのときのみ <script type="math/tex">M, s \models g</script> となる場合である．
 同様に，<script type="math/tex">f</script> および <script type="math/tex">g</script> がパス論理式ならば，<script type="math/tex">f \equiv g</script> が満たされるのは，すべての <script type="math/tex">M</script> と <script type="math/tex">\pi</script> に対して，<script type="math/tex">M, \pi \models f</script> であるときかつそのときのみ <script type="math/tex">M, \pi \models g</script> となる場合である．
@@ -876,6 +888,20 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
             </div>
           </a>
         
+        
+          <a href="../lec05/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                第5回
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

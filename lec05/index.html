@@ -1,0 +1,666 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+    
+    
+      
+        <title>第5回 - システム検証論 (2020)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-ctl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2020)" class="md-header-nav__button md-logo" aria-label="システム検証論 (2020)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            システム検証論 (2020)
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              第5回
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2020)" class="md-nav__button md-logo" aria-label="システム検証論 (2020)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2020)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec01/" class="md-nav__link">
+      第1回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec02/" class="md-nav__link">
+      第2回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec03/" class="md-nav__link">
+      第3回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lec04/" class="md-nav__link">
+      第4回
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第5回
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      第5回
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    CTL* の部分論理
+  </a>
+  
+    <nav class="md-nav" aria-label="CTL* の部分論理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctl_1" class="md-nav__link">
+    分岐時間論理 CTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actl-actl" class="md-nav__link">
+    全称計算木論理 ACTL* および ACTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ltl" class="md-nav__link">
+    線形時相論理 LTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctl_2" class="md-nav__link">
+    CTL* の部分論理の関係性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    集合原子命題と集合意味論による時相論理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    CTL* の部分論理
+  </a>
+  
+    <nav class="md-nav" aria-label="CTL* の部分論理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctl_1" class="md-nav__link">
+    分岐時間論理 CTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actl-actl" class="md-nav__link">
+    全称計算木論理 ACTL* および ACTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ltl" class="md-nav__link">
+    線形時相論理 LTL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctl_2" class="md-nav__link">
+    CTL* の部分論理の関係性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    集合原子命題と集合意味論による時相論理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="5-ctl">第5回 CTL* ベースのその他の時相論理</h1>
+<p>この回では，教科書の第4章 "Temporal Logic" の後半部分について説明します．</p>
+<div class="admonition 概要">
+<p class="admonition-title">概要</p>
+<ul>
+<li>分岐時間論理 CTL</li>
+<li>全称計算木論理 ACTL* および ACTL</li>
+<li>線形時間論理 LTL</li>
+<li>CTL* の部分論理の関係性</li>
+<li>集合原子命題と集合意味論に関する時相論理</li>
+<li>公平性</li>
+<li>反例</li>
+<li>安全性と活性</li>
+</ul>
+</div>
+<h2 id="ctl">CTL* の部分論理</h2>
+<p>これから，CTL* の重要な部分論理のいくつかについて説明する．
+この部分論理のうち，CTL，ACTL*，そして ACTL は<strong>分岐時間</strong>論理であり，LTL は<strong>線形時間</strong>論理である．
+これらの論理は，文法的にも意味的にも，以下のように CTL* の部分集合となっている．</p>
+<p><center>
+<img src="../img/lec05-fig1.png" width="400">
+</center></p>
+<p>分岐時間論理と線形時間論理の違いは，計算木の分岐をどのように扱うかというところにある．
+分岐時間の時相論理では，計算木の様々な状態を起点としたパスを，繰り返しパス限定子によって量化できる．
+一方で，線形時間の時相論理では，初期状態を起点としたパスの全てを，一つの全称パス限定子で量化するのみである．</p>
+<p>この 4 つの部分論理はいずれも CTL* の文法に制約を設けることで定義されるものなので，意味論も前回述べた CTL* の意味論に従って定義される．
+ただ，CTL のように制限された文法に基づいて，直接（等価な）意味論を定義した方がわかりやすい場合もある．
+以下，4 つの論理の文法について説明する．</p>
+<h3 id="ctl_1">分岐時間論理 CTL</h3>
+<p>計算木論理 (computation tree logic) CTL は CTL* の部分論理で，常にパス限定子と時相演算子が組となって現れる．
+したがって，文法は以下のようになる．</p>
+<ul>
+<li><strong>B1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> は CTL 式である．</li>
+<li><strong>B2</strong>: <script type="math/tex">f</script> が CTL 式ならば，<script type="math/tex">\neg f</script>, <script type="math/tex">\textbf{AX} f</script>，<script type="math/tex">\textbf{EX} f</script>，<script type="math/tex">\textbf{AF} f</script>，<script type="math/tex">\textbf{EF} f</script>，<script type="math/tex">\textbf{AG} f</script>，<script type="math/tex">\textbf{EG} f</script> も CTL 式である．</li>
+<li><strong>B3</strong>: <script type="math/tex">f</script> と <script type="math/tex">g</script> が CTL 式ならば，<script type="math/tex">f \wedge g</script>，<script type="math/tex">f \vee g</script>，<script type="math/tex">\textbf{A}(f\textbf{U}g)</script>，<script type="math/tex">\textbf{E}(f\textbf{U}g)</script>，<script type="math/tex">\textbf{A}(f\textbf{R}g)</script>，<script type="math/tex">\textbf{E}(f\textbf{R}g)</script> も CTL 式である．</li>
+</ul>
+<p>これから <strong>CTL 式の部分式</strong>というときは，この CTL の文法に従った部分式を指すことにする．
+例えば，CTL 式 <script type="math/tex">\textbf{AXEX}p</script> の部分式は，<script type="math/tex">\textbf{AXEX}p</script>，<script type="math/tex">\textbf{EX}p</script>，そして <script type="math/tex">p</script> である．
+CTL 式の部分式はすべて状態論理式となる．
+仮に <script type="math/tex">\textbf{AXEX}p</script> を CTL* 式として見る場合，パス論理式である <script type="math/tex">\textbf{XEX}p</script>，<script type="math/tex">\textbf{X}p</script> も部分論理式となる．</p>
+<p>CTL は，<script type="math/tex">\textbf{AX}</script>，<script type="math/tex">\textbf{EX}</script>，<script type="math/tex">\textbf{AF}</script>，<script type="math/tex">\textbf{EF}</script>，<script type="math/tex">\textbf{AG}</script>，<script type="math/tex">\textbf{EG}</script>，<script type="math/tex">\textbf{AU}</script>，<script type="math/tex">\textbf{EU}</script>，<script type="math/tex">\textbf{AR}</script>，<script type="math/tex">\textbf{ER}</script> という 10 個の複合した時相演算子をもつ論理と考えることもできる．</p>
+<p>実際は，この 10 種の演算子は <script type="math/tex">\textbf{EX}</script>，<script type="math/tex">\textbf{EG}</script>，<script type="math/tex">\textbf{EU}</script> の 3 つの演算子を用いて表現できる．</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray*}
+\textbf{AX} f & \equiv & \neg \textbf{EX}(\neg f) \\
+\textbf{EF} f & \equiv & \textbf{E}(true \textbf{U} f) \\
+\textbf{AG} f & \equiv & \neg \textbf{EF}(\neg f) \\
+\textbf{AF} f & \equiv & \neg \textbf{EG}(\neg f) \\
+\textbf{A}(f \textbf{U} g) & \equiv & \neg \textbf{E}(\neg g \textbf{U} (\neg f \wedge \neg g)) \wedge \neg \textbf{EG}(\neg g) \\
+\textbf{A}(f \textbf{R} g) & \equiv & \neg \textbf{E}(\neg f \textbf{U} \neg g)\\
+\textbf{E}(f \textbf{R} g) & \equiv & \neg \textbf{A}(\neg f \textbf{U} \neg g)
+\end{eqnarray*}</script>
+</p>
+<p>したがって，CTL は <script type="math/tex">\textbf{EX}</script>，<script type="math/tex">\textbf{EG}</script>，<script type="math/tex">\textbf{EU}</script> という 3 つの演算子に基づく論理として，以下の意味論によって定義できる．</p>
+<ol>
+<li>
+<script type="math/tex">M, s \models p</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">p \in AP</script> に対して <script type="math/tex">p \in L(s)</script>
+</li>
+<li>
+<script type="math/tex">M, s \models \neg f_1</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M, s \nvDash f_1</script>
+</li>
+<li>
+<script type="math/tex">M, s \models f_1 \vee f_2</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M, s \models f_1</script> または <script type="math/tex">M, s \models f_2</script>
+</li>
+<li>
+<script type="math/tex">M, s \models f_1 \wedge f_2</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M, s \models f_1</script> かつ <script type="math/tex">M, s \models f_2</script>
+</li>
+<li>
+<script type="math/tex">M, s \models \textbf{EX} f</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">R(s, t)</script> かつ <script type="math/tex">M, t \models f</script> となる状態 <script type="math/tex">t</script> が存在する．</li>
+<li>
+<script type="math/tex">M, s \models \textbf{EG} f</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s</script> から始まる無限のパス <script type="math/tex">\pi</script> が存在し，全ての <script type="math/tex">i \ge 0</script> に対して <script type="math/tex">M, s_i \models f</script> となる．</li>
+<li>
+<script type="math/tex">M, s \models \textbf{E} (f_1 \textbf{U} f_2)</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s</script> から始まる無限のパス <script type="math/tex">\pi</script> が存在し，ある <script type="math/tex">k \ge 0</script> が存在して <script type="math/tex">M, s_k \models f_2</script> かつ全ての <script type="math/tex">0 \le j < k</script> に対して <script type="math/tex">M, s_j \models f_1</script> である．</li>
+</ol>
+<p>最後に，<script type="math/tex">M</script> に対する関係 <script type="math/tex">\models</script> を CTL* の場合と同様に定義する．</p>
+<ol type="1" start="8">
+<li>\(M \models f\) \(\Leftrightarrow\) 全ての初期状態 \(s \in S_0\) に対して \(M, s \models f\) である．</li>
+</ol>
+
+<p>それ以外の 7 つの CTL 演算子は <script type="math/tex">\textbf{EX}</script>，<script type="math/tex">\textbf{EG}</script>，<script type="math/tex">\textbf{EU}</script> による演算の省略形として解釈できる．
+この CTL の意味論が，CTL* の制約文法から得られる意味論と等価であることは理解できるだろう．</p>
+<h3 id="actl-actl">全称計算木論理 ACTL* および ACTL</h3>
+<p>ACTL* は CTL* の部分論理で，全称パス限定子である <script type="math/tex">\textbg{A}</script> のみが利用できる．
+これまでに述べたように，否定を用いれば <script type="math/tex">\textbg{E}</script> を <script type="math/tex">\textbg{A}</script> で表現できてしまうので，ACTL* の式は NNF 形式であるという制約を加える必要がある．</p>
+<p>したがって，ACTL* の状態論理式ならびにパス論理式の文法は以下の通りとなる．</p>
+<ul>
+<li><strong>C1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> および <script type="math/tex">\neg p</script> は ACTL* 状態論理式である．</li>
+<li><strong>C2</strong>: <script type="math/tex">f</script> および <script type="math/tex">g</script> が状態論理式ならば，<script type="math/tex">f \vee g</script>, <script type="math/tex">f \wedge g</script> は ACTL* 状態論理式である．</li>
+<li><strong>C3</strong>: <script type="math/tex">f</script> が ACTL* パス論理式ならば，<script type="math/tex">\textbf{A} f</script> は ACTL* 状態論理式である．</li>
+</ul>
+<p>パス論理式の文法は，以下の 2 つの追加ルールで定められる．</p>
+<ul>
+<li><strong>C4</strong>: <script type="math/tex">f</script> が ACTL* 状態論理式ならば，<script type="math/tex">f</script> は ACTL* パス論理式でもある．</li>
+<li><strong>C5</strong>: <script type="math/tex">f</script> および <script type="math/tex">g</script> が ACTL* パス論理式ならば，<script type="math/tex">f \vee g</script>, <script type="math/tex">f \wedge g</script>, <script type="math/tex">\textbf{X} f</script>, <script type="math/tex">\textbf{F} f</script>, <script type="math/tex">\textbf{G} f</script>, <script type="math/tex">f \textbf{U} g</script>, そして <script type="math/tex">f \textbf{R} g</script> は ACTL* パス論理式である．</li>
+</ul>
+<p>CTL* と同様に，ACTL* はこのルールに従う状態論理式の集合となる．</p>
+<p>
+<script type="math/tex">\textbf{A}</script> の代わりに <script type="math/tex">\textbf{E}</script> を用いることで ECTL* 論理が定義される．
+ACTL* 式の否定は ECTL* 式と等価となり，ECTL* 式の否定は ACTL* 式となる．
+なお，ACTL* と ECTL* のいずれも，時相演算子 <script type="math/tex">\textbf{X}</script>，<script type="math/tex">\textbf{U}</script>，<script type="math/tex">\textbf{R}</script> を用いれば他の演算子を表現することができる．</p>
+<div class="admonition note">
+<p class="admonition-title">ACTL* の保存性質</p>
+<p>ACTL* には非常に有用な保存性質 (preservation property) がある．</p>
+<p>具体的には，模倣関係 (simulation relation) にあるクリプキ構造について，ある一方で ACTL* の仕様が満たされるか否かを，それを模倣するクリプキ構造上で仕様を検証することで判定できる．
+これにより，あるクリプキ構造からより単純なクリプキ構造に仕様を転送できる．</p>
+<p>これに関しては 11 章で詳しく述べる．</p>
+</div>
+<p>ACTL 論理は，CTL と ACTL* の文法制約を自然に組み合わせたものである．
+ACTL の文法は以下の通りとなる．</p>
+<ul>
+<li><strong>D1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> および <script type="math/tex">\neg p</script> は ACTL 式である．</li>
+<li><strong>D2</strong>: <script type="math/tex">f</script> が CTL 式ならば，<script type="math/tex">\textbf{AX} f</script>，<script type="math/tex">\textbf{AF} f</script>，<script type="math/tex">\textbf{AG} f</script> も ACTL 式である．</li>
+<li><strong>D3</strong>: <script type="math/tex">f</script> と <script type="math/tex">g</script> が ACTL 式ならば，<script type="math/tex">f \wedge g</script>，<script type="math/tex">f \vee g</script>，<script type="math/tex">\textbf{A}(f\textbf{U}g)</script>，<script type="math/tex">\textbf{A}(f\textbf{R}g)</script> も ACTL 式である．</li>
+</ul>
+<p>ACTL 式は <script type="math/tex">\textbf{AX}</script>，<script type="math/tex">\textbf{AU}</script>，そして <script type="math/tex">\textbf{AR}</script> を用いた式へと変換可能である．</p>
+<h3 id="ltl">線形時相論理 LTL</h3>
+<p>LTL 論理は線形の時相論理である．
+LTL は，クリプキ構造の計算木そのものではなく，計算木における単一の計算（すなわちパス）の集合に対して評価される．
+LTL 式は <script type="math/tex">\textbf{A}f</script> という形となり，ここで <script type="math/tex">f</script> は CTL* のパス限定子を含まないパス論理式である．
+パス論理式が内部にパス限定子をもたないので，部分式として状態論理式となるのは原子命題のみである．</p>
+<p>CTL* に対して，パス論理式におけるパス限定子の利用を禁止することで，LTL を得ることができる．
+LTL 式は <script type="math/tex">f</script> を LTL パス論理式として <script type="math/tex">\textbf{A}f</script> という形式となる．
+LTL パス論理式配下のように定義される．</p>
+<ul>
+<li><strong>E1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> は LTL パス論理式である．</li>
+<li><strong>E2</strong>: <script type="math/tex">f</script> が LTL パス論理式ならば，<script type="math/tex">\neg f</script>, <script type="math/tex">\textbf{X} f</script>, <script type="math/tex">\textbf{F} f</script>, <script type="math/tex">\textbf{G} f</script> も LTL パス論理式である．</li>
+<li><strong>E3</strong>: <script type="math/tex">f</script> および <script type="math/tex">g</script> が LTL パス論理式ならば，<script type="math/tex">f \vee g</script>, <script type="math/tex">f \wedge g</script>, <script type="math/tex">f \textbf{U} g</script>, そして <script type="math/tex">f \textbf{R} g</script> も LTL パス論理式である．</li>
+</ul>
+<p>
+<script type="math/tex">f \textbf{R} g \equiv \neg (\neg f \textbf{U} \neg g)</script>，<script type="math/tex">\textbf{F} f \equiv true \textbf{U} f</script>，そして <script type="math/tex">\textbf{G} f \equiv \neg \textbf{F} \neg f</script> なので，LTL は <script type="math/tex">\textbf{X}</script> と <script type="math/tex">\textbf{U}</script> 演算子のみで定義できる．</p>
+<p>LTL 式の一つだけの全称限定子は省略されることがある．
+この場合，LTL パス論理式 <script type="math/tex">f</script> に対する <script type="math/tex">M \models f</script> は <script type="math/tex">M \models \textbf{A}f</script> を意味する．</p>
+<h3 id="ctl_2">CTL* の部分論理の関係性</h3>
+<p>これまでに説明した 5 つの論理は異なる表現力をもつ．
+上述の包含関係の図は，文法と表現力の双方に関するものである．</p>
+<p>例を挙げると，LTL 式 <script type="math/tex">\textbf{AFG}p</script> と等価な CTL 式は存在しない．
+この式は，全てのパスにおいて，それ以降で <script type="math/tex">p</script> が永久に成り立つような状態が存在することを表している．
+同様に，CTL 式 <script type="math/tex">\textbf{AG}(\textbf{EF}p)</script> と等価な LTL 式は存在しない．
+この式は，計算木の全てのパス上の状態において，いつか <script type="math/tex">p</script> が成り立つパスが存在することを表している．
+これらの論理和である <script type="math/tex">\textbf{A}(\textbf{FG}p) \vee \textbf{AG}(\textbf{EF}p)</script> は CTL* の論理式であるが，CTL と LTL のどちらでも表現できない．</p>
+<p>ACTL は CTL の部分論理なので，ACTL と LTL は比較できない．
+論理式 <script type="math/tex">\textbf{AF AG}a</script> と <script type="math/tex">\textbf{AF AX}a</script> は ACTL 式であるが，これらの式は LTL では表現できない．
+また，ACTL* は LTL より表現力がある論理である．
+例として，ACTL* の式である <script type="math/tex">\textbf{AG}p \vee \textbf{AG}q</script> は LTL では表現できない．
+最後に，CTL 式 <script type="math/tex">\textbf{AG}(\textbf{EF}p)</script> や <script type="math/tex">\textbf{AG} \neg(\textbf{AF}p)</script> は ACTL では表現できない．
+予想外なことに，LTL 式の中には CTL では表現できるが ACTL では表現できないものもある．</p>
+<div class="admonition note">
+<p class="admonition-title">CTL と LTL では表現できるが ACTL では表現できない特性</p>
+<p>Bojańczyk によって「全てのパスが <script type="math/tex">(ab)^*a(ab)^*c^\omega</script> に属する」という言語は，CTL や LTL では表現できるが ACTL では表現できないことが証明されている．
+なお，この特性は全てのパスについて満たすべき性質に言及しているにも関わらず，これを表す CTL 式では存在の限定子が用いられるという不思議な結果が得られている．</p>
+<p>M. Bojańczyk, "The common fragment of ACTL and LTL," In FOSSACS 2008, LNCS 4692, pp. 172-185, 2008.</p>
+</div>
+<h3 id="_1">集合原子命題と集合意味論による時相論理</h3>
+<p>論理学では，論理式をその式を満たす割り当ての集合と関連付けることが一般的である．
+クリプキ構造上で解釈される時相論理の文脈では，その式が真となるクリプキ構造の状態の集合との関連付けに相当する．</p>
+<p>したがって，CTL* 状態論理式 <script type="math/tex">f</script> の意味論を，<script type="math/tex">f</script> を満たす状態を用いて表現できる．
+クリプキ構造 <script type="math/tex">M</script> が与えられたとき，<script type="math/tex">f</script> と <script type="math/tex">f</script> が真となる状態の集合を以下のように関連付ける．</p>
+<p>
+<script type="math/tex; mode=display"> [\![ f ]\!]_M = \{ s \in S \mid M, s \models f \} </script>
+</p>
+<p>文脈から <script type="math/tex">M</script> が明らかな場合は，省略して書くこともある．</p>
+<p>CTL* の文法と意味論を，ラベルではなく直接クリプキ構造の状態を参照するよう拡張する．
+最終的に，状態の集合は，原子 CTL* 式としてのみ現れることを認めることにする．</p>
+<p>
+<script type="math/tex">\mathcal{Q} = \{ s_1, \ldots , s_n\} \subseteq S</script> を状態の集合とする．
+このとき，<script type="math/tex">\mathcal{Q}</script> は述語としても解釈できる．
+つまり，<script type="math/tex">\mathcal{Q}</script> に含まれる状態においてのみ満たされるような特性を表しているといえる．
+これを，以下のように文法にも反映する．</p>
+<ul>
+<li style="list-style: none">
+もし \(\{ s_1, \ldots , s_n\} \subseteq S\) ならば，\(\{ s_1, \ldots , s_n\}\) は CTL* 状態論理式であり，<b>集合原子命題</b> (set atomic proposition) と呼ぶ．
+</li>
+</ul>
+
+<p>Definition 4.2 の意味論も単純に以下のように拡張する．</p>
+<ul>
+<li style="list-style: none">
+1a. \(M, s \models \{ s_1, \ldots , s_n\}\) \(\Leftrightarrow\) \(s \in \{ s_1, \ldots , s_n\}\)
+</li>
+</ul>
+
+<p>例えば，式 <script type="math/tex">\textbf{EX}\{s, t\}</script> は，1 ステップで状態 <script type="math/tex">s</script> または <script type="math/tex">t</script> に到達可能な状態において真となる．</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../lec04/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                第4回
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>
