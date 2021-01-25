@@ -293,15 +293,36 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     集合原子命題と集合意味論による時相論理
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    反例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    安全性と活性
+  </a>
   
 </li>
       
@@ -371,15 +392,36 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     集合原子命題と集合意味論による時相論理
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    反例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    安全性と活性
+  </a>
   
 </li>
       
@@ -562,7 +604,7 @@ LTL パス論理式配下のように定義される．</p>
 なお，この特性は全てのパスについて満たすべき性質に言及しているにも関わらず，これを表す CTL 式では存在の限定子が用いられるという不思議な結果が得られている．</p>
 <p>M. Bojańczyk, "The common fragment of ACTL and LTL," In FOSSACS 2008, LNCS 4692, pp. 172-185, 2008.</p>
 </div>
-<h3 id="_1">集合原子命題と集合意味論による時相論理</h3>
+<h2 id="_1">集合原子命題と集合意味論による時相論理</h2>
 <p>論理学では，論理式をその式を満たす割り当ての集合と関連付けることが一般的である．
 クリプキ構造上で解釈される時相論理の文脈では，その式が真となるクリプキ構造の状態の集合との関連付けに相当する．</p>
 <p>したがって，CTL* 状態論理式 <script type="math/tex">f</script> の意味論を，<script type="math/tex">f</script> を満たす状態を用いて表現できる．
@@ -592,6 +634,19 @@ LTL パス論理式配下のように定義される．</p>
 </ul>
 
 <p>例えば，式 <script type="math/tex">\textbf{EX}\{s, t\}</script> は，1 ステップで状態 <script type="math/tex">s</script> または <script type="math/tex">t</script> に到達可能な状態において真となる．</p>
+<h2 id="_2">公平性</h2>
+<h2 id="_3">反例</h2>
+<h2 id="_4">安全性と活性</h2>
+<p>安全性と活性の概念については幅広い議論がなされてきた．
+直感的には，安全性は悪いことが決して起こらないことを保証するのに対して，活性は良いことがいつか起こることを保証するものである．
+最も典型的な安全性は <script type="math/tex">\textbf{AG}p</script> である．
+典型的な活性の例としては，<script type="math/tex">\textbf{AF}p</script> や <script type="math/tex">\textbf{A}(p \textbf{U} q)</script> である．
+これらの例はさらに複雑にすることができる．</p>
+<p>反例を用いれば，安全性と活性を自然に区別することができる．
+安全性とは，有限かつループのない反例，すなわち有限パスによって反証できる特性である．
+対して，有限状態構造を扱うことから，活性は一般的にラッソ（投げ縄）型の反例を要求する．</p>
+<p>安全性と活性の概念は文献 [41] で初めて導入され， [333] や [16] で洗練されてきた．
+文献 [136] のPiterman による時相論理の節では，これらの概念に関する形式的な定義が与えられている．</p>
                 
               
               
