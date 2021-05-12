@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
@@ -571,7 +571,7 @@
 <p>左の図はクリプキ構造の状態遷移グラフで，右の図はそこから得られる（無限の）木構造，すなわち計算木である．</p>
 <p>計算木は，初期状態から実行可能な系列の全てを表している．
 <script type="math/tex">M</script> の遷移関係については左全関係 (left-total) であるとしているため，全ての状態が次の状態をもっている．
-したがって，木の全ての枝は無限に続くことになる，</p>
+したがって，木の全ての枝は無限に続くことになる．</p>
 <h3 id="_2">パス限定子と時相演算子</h3>
 <p>時相論理 CTL* は計算木の，ひいてはその根底にあるクリプキ構造の特性を定義する．
 CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong>から構成される．</p>
@@ -722,11 +722,11 @@ CTL* には 2 つのタイプの論理式があり，状態に対して真と評
 <li>
 <script type="math/tex">M, s \models \textbf{E} g_1</script>
 <script type="math/tex">\Leftrightarrow</script>
-<script type="math/tex">s</script> から始まる無限パスが存在して，<script type="math/tex">\pi</script> が <script type="math/tex">M, \pi \models g_1</script> を満たす．</li>
+<script type="math/tex">s</script> から始まる無限パス <script type="math/tex">\pi</script>  が存在して，<script type="math/tex">M, \pi \models g_1</script> を満たす．</li>
 <li>
 <script type="math/tex">M, s \models \textbf{A} g_1</script>
 <script type="math/tex">\Leftrightarrow</script>
-<script type="math/tex">s</script> から始まるすべての無限パス <script type="math/tex">\pi</script> が <script type="math/tex">M, \pi \models g_1</script> を満たす．</li>
+<script type="math/tex">s</script> から始まるすべての無限パス <script type="math/tex">\pi</script> が， <script type="math/tex">M, \pi \models g_1</script> を満たす．</li>
 <li>
 <script type="math/tex">M, \pi \models f_1</script>
 <script type="math/tex">\Leftrightarrow</script> パス <script type="math/tex">\pi</script> の最初の状態 <script type="math/tex">s</script> が，<script type="math/tex">M, s \models f_1</script> を満たす．</li>
@@ -851,7 +851,7 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 <script type="math/tex">f_1 \textbf{W} f_2</script> は CTL* の表現力に影響を与えないこと，すなわち，他の CTL* 演算子により表現可能であることを示せ．</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">問題 4.5 (複数の初期状態をもつ構造上の意味論)</p>
+<p class="admonition-title">問題 4.6 (複数の初期状態をもつ構造上の意味論)</p>
 <p>
 <script type="math/tex">f</script> を充足可能であるが恒真ではない CTL* 式とする．
 <script type="math/tex">M \nvDash f</script> でありかつ <script type="math/tex">M \nvDash \neg f</script> である構造が存在することを証明せよ．</p>
@@ -922,8 +922,8 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
       
     </div>
     
-      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

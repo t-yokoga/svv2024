@@ -10,7 +10,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
       
@@ -18,7 +18,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.21aed14c.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
@@ -326,6 +326,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    演習問題
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -421,6 +428,13 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     安全性と活性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    演習問題
   </a>
   
 </li>
@@ -574,7 +588,7 @@ LTL 式は <script type="math/tex">\textbf{A}f</script> という形となり，
 パス論理式が内部にパス限定子をもたないので，部分式として状態論理式となるのは原子命題のみである．</p>
 <p>CTL* に対して，パス論理式におけるパス限定子の利用を禁止することで，LTL を得ることができる．
 LTL 式は <script type="math/tex">f</script> を LTL パス論理式として <script type="math/tex">\textbf{A}f</script> という形式となる．
-LTL パス論理式配下のように定義される．</p>
+LTL パス論理式は以下のように定義される．</p>
 <ul>
 <li><strong>E1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> は LTL パス論理式である．</li>
 <li><strong>E2</strong>: <script type="math/tex">f</script> が LTL パス論理式ならば，<script type="math/tex">\neg f</script>, <script type="math/tex">\textbf{X} f</script>, <script type="math/tex">\textbf{F} f</script>, <script type="math/tex">\textbf{G} f</script> も LTL パス論理式である．</li>
@@ -635,7 +649,86 @@ LTL パス論理式配下のように定義される．</p>
 
 <p>例えば，式 <script type="math/tex">\textbf{EX}\{s, t\}</script> は，1 ステップで状態 <script type="math/tex">s</script> または <script type="math/tex">t</script> に到達可能な状態において真となる．</p>
 <h2 id="_2">公平性</h2>
+<p><a href="../lec03#_14">第3回</a>で，システムのモデル化における公平性の重要性について述べた．
+公平性制約を伴うシステムは，<strong>公平クリプキ構造</strong> (fair Kripke structure) <script type="math/tex">M = (S, S_0, R, L, AP, F)</script>としてモデル化することができる．ここで，<script type="math/tex">S</script>，<script type="math/tex">S_0</script>，<script type="math/tex">R</script>，<script type="math/tex">L</script>，そして<script type="math/tex">AP</script>はこれまでの定義と同様である．
+<strong>公平性制約</strong> (fairness constraint) の集合 <script type="math/tex">F</script> は，状態の部分集合 <script type="math/tex">P_i \subseteq S</script> を用いて <script type="math/tex">F = \{P_1, \ldots, P_k\} \subseteq 2^S</script> と定義される．
+この <script type="math/tex">F</script> と同様の概念はオートマトンにも存在し，一般化 Büchi 受理条件 (generalized Büchi acceptance condition) と呼ばれている．</p>
+<p>
+<script type="math/tex">\pi = s_0,s_1,\ldots</script> を <script type="math/tex">M</script> におけるパスとする．パス <script type="math/tex">\pi</script> に対して集合 <script type="math/tex">\text{inf}(\pi)</script> を以下のように定義する．</p>
+<p>
+<script type="math/tex; mode=display"> \text{inf}(\pi) = \{ s \mid s=s_i \text{ for infinitely many } i \} </script>
+</p>
+<p>パス <script type="math/tex">\pi</script> において「無限に多くの <script type="math/tex">i</script> に対して (for infinitely many <script type="math/tex">i</script>) <script type="math/tex">s=s_i</script>」となる状態 <script type="math/tex">s</script> とは，<script type="math/tex">\pi</script> 上に無限に現れる状態ということになる．よって <script type="math/tex">\text{inf}(\pi)</script> は，<script type="math/tex">\pi</script> に無限に現れるような全ての状態からなる集合となる．
+全ての <script type="math/tex">P \in F</script> に対して <script type="math/tex">\text{inf}(\pi) \cap P \neq \emptyset</script> であるとき，かつそのときのみ <script type="math/tex">\pi</script> は<strong>公平</strong> (fair) であるという．</p>
+<p><a href="#_1">集合原子命題を用いた CTL*</a> においては，パスの公平性を以下の式を用いて直接表現することができる．</p>
+<p>
+<script type="math/tex; mode=display"> \text{fpath} :\equiv \bigwedge_{P \in F}\bigvee_{s \in P} \textbf{GF}\{s\} </script>
+</p>
+<p>この式は，それぞれの <script type="math/tex">P</script> が少なくとも 1 つはパスに無限にしばしば現れる状態を含まなければならない，ということを表している．
+したがって，<script type="math/tex">\textbf{E}\varphi</script> あるいは <script type="math/tex">\textbf{A}\varphi</script> という形式の仕様は，論理式 <script type="math/tex">\text{fpath}</script> を用いてそれぞれ
+<script type="math/tex">\textbf{E}(\text{fpath} \wedge\varphi)</script> あるいは <script type="math/tex">\textbf{A}(\text{fpath} \rightarrow\varphi)</script>
+と書くことで，公平性を適用できる．
+1つ目の式 <script type="math/tex">\textbf{E}(\text{fpath} \wedge\varphi)</script> は，公平でかつ <script type="math/tex">\varphi</script> を満たすパスが存在することを表現している．
+2つ目の式 <script type="math/tex">\textbf{A}(\text{fpath} \rightarrow\varphi)</script> は，全てのパスについて，公平であれば必ず <script type="math/tex">\varphi</script> を満たすことを表現している．</p>
+<p>ここで，<script type="math/tex">\textbf{GF}</script> という形の式は CTL では表現できないため，上述の公平性制約は CTL では表現できない．
+そのため，CTL で公平性を扱うためには，その意味論を少し修正する必要がある．
+新しい意味論を<strong>公平意味論</strong> (fair semantics) と呼ぶことにする．
+一般性のため，CTL* の意味論をもとに公平意味論を定義する．
+<script type="math/tex">M, s \models_{F} f</script> と書くことで，公平クリプキ構造の状態 <script type="math/tex">s</script> において状態論理式 <script type="math/tex">f</script> が真となることを表す．
+同様に，<script type="math/tex">M, \pi \models_{F} g</script> と書くことで，公平クリプキ構造のパス <script type="math/tex">\pi</script> においてパス論理式 <script type="math/tex">f</script> が真となることを表す．
+定義 4.2 の節 5 と 6 のみが以下のように変更される．</p>
+<ol type="1" start="5">
+<li>\(M, s \models_{F} \textbf{E} g_1\) \(\Leftrightarrow\) \(s\) から始まる公平なパス\(\pi\) が存在して， \(M, \pi \models_{F} g_1\) を満たす．</li>
+<li>\(M, s \models_{F} \textbf{A} g_1\) \(\Leftrightarrow\) \(s\) から始まるすべての公平なパス \(\pi\) が，\(M, \pi \models_{F} g_1\) を満たす．</li>
+</ol>
+
+<p>式を公平性に基づいて解釈することを明示するため，<script type="math/tex">\textbf{E}</script> および <script type="math/tex">\textbf{A}</script> の代わりに <script type="math/tex">\textbf{E}_{\text{f}}</script> および <script type="math/tex">\textbf{A}_{\text{f}}</script> を用いる場合がある．</p>
+<p>節 6 により，仮に状態 <script type="math/tex">s</script> から始まる公平なパスが存在しなければ，あらゆる式 <script type="math/tex">\varphi</script> に対して（意味は無いが） <script type="math/tex">M, s \models \textbf{A}_{\text{f }} \varphi</script> となる．
+また，公平性を考慮しない意味論では <script type="math/tex">p \in AP</script> に対して 3 つの式 <script type="math/tex">p</script>，<script type="math/tex">\textbf{E}p</script> および <script type="math/tex">\textbf{A}p</script> が全て等価であることとは対照的に，<script type="math/tex">p</script> は <script type="math/tex">\textbf{E}_{\text{f }}p</script> と <script type="math/tex">\textbf{A}_{\text{f }}p</script> のいずれとも等価とはならない．
+特に，<script type="math/tex">p \in L(s)</script> であるが <script type="math/tex">s</script> から始まる公平なパスが存在しなければ <script type="math/tex">M, s \models p \wedge \neg \textbf{E}_{\text{f }}p</script> となるし，<script type="math/tex">p \notin L(s)</script> であり <script type="math/tex">s</script> から始まる公平なパスが存在しなければ <script type="math/tex">M, s \models \neg p \wedge \textbf{A}_{\text{f }}p</script> となる．
+これは，<script type="math/tex">p \wedge \textbf{E}p</script> および <script type="math/tex">\neg p \wedge \textbf{A} p</script> が本質的に偽となる従来の意味論とは対照的である．</p>
+<p>第3回の講義では，システムのモデル化における公平性の有用性を示す例を紹介した．
+以降では，モデル検査アルゴリズムにどのように公平性を取り入れるかについて示す．</p>
+<p>公平性制約をもたない構造を公平性制約をもつ構造として表すことが便利な場合もある．
+その際には，計算として考慮されるパスの集合が保持される．
+これは，<script type="math/tex">F = \{S\}</script> とすることで達成できる．</p>
 <h2 id="_3">反例</h2>
+<p>反例の生成はモデル検査の中心的な機能であり，モデル検査が定理証明や抽象的解釈といった他の検証アプローチと異なる部分である．
+最も単純な形として，反例は仕様に違反することを示す系列である．
+したがって，反例はシステムを開発した技術者に対する貴重なフィードバックとなる．</p>
+<p>理想的には，仕様 <script type="math/tex">f</script> がシステムのモデル <script type="math/tex">M</script> において違反する（すなわち  <script type="math/tex">M \nvDash f</script> となる）とき，反例 <script type="math/tex">C</script> はユーザが問題を体系的に分析・診断できるように <script type="math/tex">M</script> の動作を分かりやすく説明したものとなる．
+反例が単純であることは，人間が分析する上で非常に重要なことである．
+仮に単純さが重要でないのならば，（全く役には立たないが）<script type="math/tex">M</script> 自身が反例となる．</p>
+<p>もう一つ必須となる要件は，<script type="math/tex">C</script> は有限の表現とし，検査・分析できるようにすることである．
+現実的に有用となる反例の特徴を捉えるため，ここでは議論を<strong>有限クリプキ構造</strong>，すなわち状態集合が有限となるクリプキ構造に限定する．</p>
+<p>反例は人間の読者にとって重要であるだけでなく，アルゴリズムにも応用できる．
+第 13 章において，モデル検査器によって得られた反例をアルゴリズム的に解析し，さらなる検証プロセスの指針とする counterexample-guided abstraction refinement (CEGAR) を紹介する．
+ここでは，反例の構造について詳しく説明する．</p>
+<p>単純な仕様 <script type="math/tex">\textbf{AX}p</script> に対する反例は，初期状態から1ステップで <script type="math/tex">p</script> の違反を導くパスとなる．
+したがって，<script type="math/tex">\textbf{AX}p</script> の反例は，仕様の否定である <script type="math/tex">\textbf{EX}\neg p</script> の証拠となる．</p>
+<p>最も単純でかつ自明でない例として，<script type="math/tex">p</script> がシステムのモデル <script type="math/tex">M</script> の不変式であることを表す仕様 <script type="math/tex">\textbf{AG}p</script> の反例を考えてみよう．
+<script type="math/tex">\textbf{AG}p</script> の反例 <script type="math/tex">C</script> は，初期状態から始まり，<script type="math/tex">p</script> に違反する状態（これを <script type="math/tex">s</script> とすると <script type="math/tex">s \models \neg p</script>）で終わる有限パス（プログラムのトレース）である．
+上述の通り，この反例は仕様の否定 <script type="math/tex">\textbf{EF} \neg p</script> の証拠である．</p>
+<p>もう少し複雑な仕様 <script type="math/tex">\textbf{AF}p</script> を考えよう．
+<script type="math/tex">\textbf{AF}p</script> の反例は，その全ての状態が <script type="math/tex">\neg p</script> を満たすような無限パスである．
+しかしながら，有限クリプキ構造では，有限パス <script type="math/tex">\pi_0</script> および <script type="math/tex">\pi_1</script> とその無限の繰り返しによる
+<script type="math/tex">\pi = \pi_0(\pi_1)^\omega = \pi_0,\pi_1,\pi_1,\ldots</script>
+という形の反例 <script type="math/tex">\pi</script> が常に存在するということが示されている．
+このような形のパスは<strong>ラッソ</strong>（投げ縄）と呼ばれる．
+以下の図は LTL 式 <script type="math/tex">\textbf{AG}p</script> および <script type="math/tex">\textbf{AF}p</script> に対する反例の形状を示している．</p>
+<p><center>
+<img src="../img/lec05-fig2.png" width="600">
+</center></p>
+<p>反復補題 (pumping lemma) と同様の簡単な議論をもとに，ラッソ型の反例が存在することを証明する．
+パス <script type="math/tex">\pi = s_0,s_1,\ldots</script> を <script type="math/tex">\textbf{AF}p</script> の反例とする．
+すなわち，全ての <script type="math/tex">s_i</script> に対して <script type="math/tex">M, s_i \models \neg p</script> となる．
+<script type="math/tex">M</script> は有限個数の状態しかもたないので，<script type="math/tex">s_n = s_m</script> となるような 2 つの添字 <script type="math/tex">1 \le n < m</script> が必ず存在する．
+このとき，<script type="math/tex">\pi_0 = s_0, \ldots , s_{n-1}</script> と <script type="math/tex">\pi_1 = s_n, \ldots , s_{m-1}</script> を選ぶことでラッソ型の反例を構築することが可能である．
+元々の反例は，このラッソ型の反例に含まれていない状態を含んでいてもよい．</p>
+<p>上記の議論を拡張して，全ての LTL 式がラッソ型の反例をもつことを証明することもできる．
+しかし，一般的には，公平性制約も議論に含まれるべきである．
+この問題に対する完全な議論は，オートマトンの文脈で第 7 章 7.5 節において示されており，そこでは Büchi オートマトンの空虚性 (emptiness) を検査するアルゴリズムについて議論がなされている．</p>
+<p>文献 [137] や [440] で示されているように，ACTL や CTL に対してはさらに詳細な反例が与えられる．</p>
 <h2 id="_4">安全性と活性</h2>
 <p>安全性と活性の概念については幅広い議論がなされてきた．
 直感的には，安全性は悪いことが決して起こらないことを保証するのに対して，活性は良いことがいつか起こることを保証するものである．
@@ -645,8 +738,43 @@ LTL パス論理式配下のように定義される．</p>
 <p>反例を用いれば，安全性と活性を自然に区別することができる．
 安全性とは，有限かつループのない反例，すなわち有限パスによって反証できる特性である．
 対して，有限状態構造を扱うことから，活性は一般的にラッソ（投げ縄）型の反例を要求する．</p>
-<p>安全性と活性の概念は文献 [41] で初めて導入され， [333] や [16] で洗練されてきた．
+<p>安全性と活性の概念は文献 [411] で初めて導入され，[333] や [16] で洗練されてきた．
 文献 [136] のPiterman による時相論理の節では，これらの概念に関する形式的な定義が与えられている．</p>
+<h2 id="_5">演習問題</h2>
+<div class="admonition note">
+<p class="admonition-title">問題 4.1 (Alan Hu による CTL 式の等価性)</p>
+<p>CTL 式の組について，与えられたクリプキ構造において，まったく同じ状態集合において真となるとき，それらは等価 (equivalent) という．
+以下の CTL 式の組が等価であるかどうか確認せよ．
+もしそうであれば，証明を示せ．
+もし等価でなければ，一方の式が真となり，もう一方が偽となるようなクリプキ構造と状態の例を示せ．</p>
+<p><ol>
+<li><script type="math/tex">\textbf{EF}p \wedge \textbf{EG}q</script> と <script type="math/tex">\textbf{EF}(p \wedge \textbf{EG}q)</script></li>
+<li><script type="math/tex">\textbf{AF}p \wedge \textbf{AG}q</script> と <script type="math/tex">\textbf{AF}(p \wedge \textbf{AG}q)</script></li>
+<li><script type="math/tex">\textbf{AF}p \wedge \textbf{AG}q</script> と <script type="math/tex">\textbf{AG}(\textbf{AF}p \wedge q)</script></li>
+<li><script type="math/tex">\textbf{AFAG}p \wedge \textbf{AFAG}q</script> と <script type="math/tex">\textbf{AF}(\textbf{AG}p \wedge \textbf{AG}q)</script></li>
+<li><script type="math/tex">\textbf{E}(p \textbf{U} q) \wedge \textbf{E}(q \textbf{U} r)</script> と <script type="math/tex">\textbf{E}(p \textbf{U} r)</script></li>
+<li><script type="math/tex">\textbf{A}(p \textbf{U} q) \wedge \textbf{A}(q \textbf{U} r)</script> と <script type="math/tex">\textbf{A}(p \textbf{U} r)</script></li>
+</ol></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">問題 4.2 (LTL 演算子の拡張)</p>
+<p>以下の LTL 式に関する特性を証明せよ．</p>
+<p><center>
+<script type="math/tex">f_1 \textbf{U} f_2 \Leftrightarrow f_2 \vee (f_1 \wedge \textbf{X}(f_1 \textbf{U} f_2)) </script>
+</p>
+<p>
+<script type="math/tex">f_1 \textbf{R} f_2 \Leftrightarrow f_2 \vee (f_1 \wedge \textbf{X}(f_1 \textbf{R} f_2)) </script>
+</center></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">問題 4.4 (CTL 演算子の表現力)</p>
+<p>CTL 演算子のすべてが，<script type="math/tex">\textbf{AX}</script>，<script type="math/tex">\textbf{AU}</script>，そして <script type="math/tex">\textbf{AR}</script> の 3 つの CTL 演算子に，否定を含むブール演算子を組み合わせることで表現できることを示せ．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">問題 4.5 (CTL の意味論)</p>
+<p>直接定義された CTL の意味論が，CTL* の部分論理としての CTL の意味論と等価であることを証明せよ．
+つまり，すべての CTL 式 <script type="math/tex">f</script> とすべての <script type="math/tex">M</script> および <script type="math/tex">s</script> に対して，<script type="math/tex">M</script> および <script type="math/tex">s</script> における <script type="math/tex">f</script> の値が 2 つの意味論のもとで同一であることを示せ．</p>
+</div>
                 
               
               
@@ -699,8 +827,8 @@ LTL パス論理式配下のように定義される．</p>
       
     </div>
     
-      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
-      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
