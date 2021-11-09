@@ -14,7 +14,7 @@
     
     
       
-        <title>CTL モデル検査 - システム検証論 (2021)</title>
+        <title>第6回 - システム検証論 (2021)</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ctl" class="md-skip">
+        <a href="#6-ctl" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CTL モデル検査
+              第6回
             
           </span>
         </div>
@@ -257,6 +257,115 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第6回
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第6回
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    CTL のモデル検査問題
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl_1" class="md-nav__link">
+    明示的な状態探索に基づく CTL モデル検査アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="明示的な状態探索に基づく CTL モデル検査アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    補題 5.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    定理 5.2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl_2" class="md-nav__link">
+    公平性制約をもつ CTL に対するモデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="公平性制約をもつ CTL に対するモデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    補題 5.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    定理 5.4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -283,16 +392,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ctl_1" class="md-nav__link">
+  <a href="#ctl" class="md-nav__link">
     CTL のモデル検査問題
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ctl_2" class="md-nav__link">
-    明示的な状態探索に基づく CTL モデル検査
+  <a href="#ctl_1" class="md-nav__link">
+    明示的な状態探索に基づく CTL モデル検査アルゴリズム
   </a>
+  
+    <nav class="md-nav" aria-label="明示的な状態探索に基づく CTL モデル検査アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    補題 5.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    定理 5.2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl_2" class="md-nav__link">
+    公平性制約をもつ CTL に対するモデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="公平性制約をもつ CTL に対するモデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    補題 5.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    定理 5.4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -309,15 +465,16 @@
               
                 
                 
-                <h1 id="ctl">CTL モデル検査</h1>
+                <h1 id="6-ctl">第6回 CTL モデル検査</h1>
 <p>この回では，教科書の第5章 "CTL Model Checking" の前半部分について説明します．</p>
 <div class="admonition 概要">
 <p class="admonition-title">概要</p>
 <ul>
 <li>CTL モデル検査</li>
+<li>明示的な状態探索に基づくCTLモデル検査アルゴリズム</li>
 </ul>
 </div>
-<h2 id="ctl_1">CTL のモデル検査問題</h2>
+<h2 id="ctl">CTL のモデル検査問題</h2>
 <p>CTLのモデル検査問題 (model-checking problem for CTL) は，以下のように定義されている．</p>
 <ul>
 <li>有限状態システムを表すクリプキ構造 <script type="math/tex">M = (AP, S, R, S_0, L)</script> と，</li>
@@ -325,34 +482,31 @@
 <li>
 <script type="math/tex">M</script> が <script type="math/tex">f</script> のモデルであるかどうか，すなわち，<script type="math/tex">M \models f</script> であるかどうかを決定する．</li>
 </ul>
-<p>言い換えるとモデル検査問題は，以下の「<script type="math/tex">M</script> のすべての状態で <script type="math/tex">f</script> を満たす集合 <script type="math/tex">[\![ f ]\!]_M</script>」 を探すことと定義できる．
-集合表記については，第5回の講義で導入されたものである．</p>
+<p>言い換えるとモデル検査問題は，<script type="math/tex">M</script> の全ての状態から以下の <script type="math/tex">f</script> を満たす状態の集合 <script type="math/tex">[\![ f ]\!]_M</script> を探すことと定義できる．</p>
 <p>
-<script type="math/tex; mode=display">\begin{align*}
+<script type="math/tex; mode=display">
 [\![ f ]\!]_M = \{ s \in S | M, s \models f \}
-\end{align*}</script>
+</script>
 </p>
-<p>
-<script type="math/tex">M</script> が文脈から明らかな場合に，<script type="math/tex">M</script> は記法から省略されることを思い返してほしい．</p>
+<p>この集合表記は，<a href="../lec05#_1">第5回</a>の講義で導入されたものである．
+そのときにも説明したように，<script type="math/tex">M</script> が文脈から明らかな場合に，<script type="math/tex">M</script> は表記から省略される．</p>
 <p>集合 <script type="math/tex">[\![ f ]\!]</script> が計算できたなら，この問題は <script type="math/tex">S_0 \subseteq [\![ f ]\!]</script> であるかどうかを判定することで解くことができる．
-このように，<script type="math/tex">S_0</script> はモデル検査を完了するときのみ必要となる．
-<script type="math/tex">AP</script> はこの章を通して固定されているので，クリプキ構造の定義から <script type="math/tex">S_0</script> と <script type="math/tex">AP</script> の両方を省略することにする．</p>
-<p>今回の講義では，クリプキ構造を <script type="math/tex">L</script> でラベル付けされた有向グラフ <script type="math/tex">(S, R)</script> として明示的に表現した CTL のモデル検査アルゴリズムを紹介する．
+このように，初期状態 <script type="math/tex">S_0</script> はモデル検査の最後の段階でのみ必要となる．
+そして原子命題の集合 <script type="math/tex">AP</script> はこの章を通して固定されているため，クリプキ構造の定義から <script type="math/tex">S_0</script> と <script type="math/tex">AP</script> の両方を省略することにする．</p>
+<p>今回の講義では，クリプキ構造の <script type="math/tex">L</script> でラベル付けされた有向グラフ <script type="math/tex">(S, R)</script> としての<strong>明示的</strong> (explicit) 表現を用いた CTL のモデル検査アルゴリズムを紹介する．
 そして，公平性の意味論を考慮した CTL を扱えるように，この明示的アルゴリズムを拡張する．</p>
 <p>次回（第7回）の講義では CTL 演算子に対して，通常ならびに公平性を考慮した意味論に従った不動点の特徴付けを定義し，それをどのようにモデル検査に用いるか示す．
-第 6 章では，LTL と CTL* のモデル検査について説明する．</p>
-<h2 id="ctl_2">明示的な状態探索に基づく CTL モデル検査</h2>
-<p>CTL による仕様 <script type="math/tex">f</script> が決まったとする．
-このアルゴリズムでは <script type="math/tex">S</script> のどの状態が <script type="math/tex">f</script> を満たすかを決定するために，各状態 <script type="math/tex">s</script> に対して <script type="math/tex">s</script> で真となる <script type="math/tex">f</script> の部分式の集合 <script type="math/tex">label(s)</script> をラベル付けするように動く．
-このアルゴリズムは一連のステージを実行する．
-最初のステージでは，<script type="math/tex">label(s)</script> は <script type="math/tex">L(s)</script> となる．
-<script type="math/tex">i</script> 番目のステージでは，<script type="math/tex">i-1</script> 個の CTL 演算子の入れ子をもつ部分式が処理されることとなり，
-処理された部分式は，その式が真となる状態のラベルに追加される．
-アルゴリズムが終了すると「<script type="math/tex">f \in label(s)</script> であるとき，かつそのときのみ <script type="math/tex">M, s \models f</script> となる」という状況が得られる．</p>
-<p>第4回で述べたように，任意のCTL式は <script type="math/tex">\lnot</script>, <script type="math/tex">\lor</script>, <script type="math/tex">\mathbf{EX}</script>, <script type="math/tex">\mathbf{EU}</script> および <script type="math/tex">\mathbf{EG}</script> で表すことができる．
-したがって，このアルゴリズムの途中のステージでは，部分式 <script type="math/tex">g</script> として</p>
+そして第8回は LTL と CTL* のモデル検査について説明する．</p>
+<h2 id="ctl_1">明示的な状態探索に基づく CTL モデル検査アルゴリズム</h2>
+<p>CTL による仕様 <script type="math/tex">f</script> が与えられたとしよう．
+このアルゴリズムは <script type="math/tex">S</script> のどの状態が <script type="math/tex">f</script> を満たすか判定するために，状態 <script type="math/tex">s</script> それぞれに対して，<script type="math/tex">s</script> で真となる <script type="math/tex">f</script> の部分式の集合 <script type="math/tex">label(s)</script> をラベル付けするように動く．
+最初の段階では，<script type="math/tex">label(s)</script> は <script type="math/tex">L(s)</script> そのものとなる．
+その後，このアルゴリズムは一連の「ステージ」を実行する．
+<script type="math/tex">i</script> 番目のステージでは，<script type="math/tex">i-1</script> 個の CTL 演算子の入れ子をもつ部分式が処理されることとなり，処理された部分式はそれが真となる状態へとそれぞれラベル付けされる．
+アルゴリズムが終了すると，「<script type="math/tex">f \in label(s)</script> であるとき，かつそのときのみ <script type="math/tex">M, s \models f</script> となる」という状況が得られる．</p>
+<p>第4回の講義でも述べたように，任意のCTL式は <script type="math/tex">\lnot</script>, <script type="math/tex">\lor</script>, <script type="math/tex">\mathbf{EX}</script>, <script type="math/tex">\mathbf{EU}</script> および <script type="math/tex">\mathbf{EG}</script> で表すことができる．
+したがって，このアルゴリズムの途中のステージでは，部分式 <script type="math/tex">g</script> として原子命題か，あるいは</p>
 <ul>
-<li>原子命題</li>
 <li>
 <script type="math/tex">\lnot f_1</script>
 </li>
@@ -369,16 +523,207 @@
 <script type="math/tex">\mathbf{EG}f_1</script>
 </li>
 </ul>
-<p>の 6 つの形式を処理できれば十分である．</p>
-<p>原子命題はすでにラベル付けされているので，それ以外の 5 つについて説明する．
-<script type="math/tex">\lnot f_1</script>，<script type="math/tex">f_1 \lor f_2</script>，<script type="math/tex">\mathbf{EX} f_1</script> の 3 つは単純にラベル付けできる．
-<script type="math/tex">\lnot f_1</script> に対しては，<script type="math/tex">f_1</script> でラベル付けされていない状態にラベル付けを行う．
-<script type="math/tex">f_1 \lor f_2</script> に対しては，<script type="math/tex">f_1</script> または <script type="math/tex">f_2</script> でラベル付けされた状態にラベル付けを行う．
-<script type="math/tex">\mathbf{EX} f_1</script> に対しては，後続の状態が <script type="math/tex">f_1</script> によってラベル付けされるようなすべての状態にラベルを付ける．</p>
+<p>の 5 つの形の式を処理できれば十分である．</p>
+<p>原子命題はクリプキ構造が与えられた時点で既にラベル付けされているので，それ以外の 5 つについて説明する．
+<script type="math/tex">\lnot f_1</script>，<script type="math/tex">f_1 \lor f_2</script>，<script type="math/tex">\mathbf{EX} f_1</script> の 3 つのラベル付けは単純である．
+まず <script type="math/tex">\lnot f_1</script> に対しては，<script type="math/tex">f_1</script> でラベル付けされていない状態すべてにラベルを付ける．
+<script type="math/tex">f_1 \lor f_2</script> に対しては，<script type="math/tex">f_1</script> または <script type="math/tex">f_2</script> のいずれかでラベル付けされた状態にラベルを付ける．
+そして <script type="math/tex">\mathbf{EX} f_1</script> に対しては，グラフ上での後続状態が <script type="math/tex">f_1</script> によってラベル付けされているすべての状態にラベルを付ければよい．</p>
+<p>次に <script type="math/tex">g = \mathbf{E}(f_1 \mathbf{U} f_2)</script> の場合は以下の手順となる．
+まず <script type="math/tex">f_2</script> でラベル付けされたすべての状態を探す．
+そして，遷移関係 <script type="math/tex">R</script> を逆に用いてグラフを後戻りし，<script type="math/tex">f_1</script> でラベル付けされた状態のみを辿って到達できる状態すべてに <script type="math/tex">g</script> でラベル付けを行う．</p>
+<p>以下のアルゴリズムとして，手続き <script type="math/tex">CheckEU</script> を示す．</p>
+<p><center>
+<img src="../img/lec06-fig1.png" width="450">
+</center></p>
+<p>これは，<script type="math/tex">f_1</script> と <script type="math/tex">f_2</script> が正しく処理されている（すなわち，すべての状態 <script type="math/tex">s</script> について <script type="math/tex">s \models f_1</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">f_1 \in label(s)</script> かつ <script type="math/tex">s \models f_2</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">f_2 \in label(s)</script> となる）と仮定したとき，<script type="math/tex">\mathbf{E}(f_1 \mathbf{U} f_2)</script> を満たすすべての状態 <script type="math/tex">s</script> に対して，<script type="math/tex">\mathbf{E}(f_1 \mathbf{U} f_2)</script> を <script type="math/tex">label(s)</script> に追加する手続きである．
+この手続きの時間計算量は <script type="math/tex">O(|S|+|R|)</script> となり，状態数と遷移数の和に対して線形である．</p>
 <p>
-<script type="math/tex">g = \mathbf{E}(f_1 \mathbf{U} f_2)</script> という形の式を扱うために，まず，<script type="math/tex">f_2</script> でラベル付けされたすべての状態を見つける．
-そして，遷移関係 <script type="math/tex">R</script> を逆に用いて後戻りを行い，各状態が <script type="math/tex">f_1</script> でラベル付けされたパスで到達できるすべての状態を見つける．
-このようなすべての状態を <script type="math/tex">g</script> でラベル付けする必要がある．</p>
+<script type="math/tex">g = \mathbf{EG} f_1</script> の場合の処理はもう少し複雑になる．
+これは，グラフの「自明でない強連結成分」への分解に基づいている．
+グラフの <strong>強連結成分</strong> (strongly connected component, SCC) <script type="math/tex">C</script>とは，<script type="math/tex">C</script> のすべてのノードが <script type="math/tex">C</script> の他のすべてのノードから <script type="math/tex">C</script> に完全に含まれる有向パスに沿って到達可能であるような部分グラフである．
+強連結成分 <script type="math/tex">C</script> は，<script type="math/tex">C \subset C'</script> となる他の強連結成分 <script type="math/tex">C'</script> が存在しないとき，<strong>極大</strong> (maximal) であるという (極大な強連結成分のことを MSCC と表記する)．
+強連結成分 <script type="math/tex">C</script> は，複数のノードをもつかまたは自己ループをもつノードを 1 つ含むとき，かつそのときのみ <strong>自明でない</strong> (nontrivial) という．</p>
+<p>クリプキ構造 <script type="math/tex">M = (S, R, L)</script> に対して，<script type="math/tex">f_1</script> が成り立たない状態すべてを <script type="math/tex">S</script> から削除し，それに応じて <script type="math/tex">R</script> と <script type="math/tex">L</script> を制限することで得られるものを <script type="math/tex">M' = (S', R', L')</script> とする．
+したがって，<script type="math/tex">S' = \{s \in S | M, s \models f_1\}</script>，<script type="math/tex">R' = R|_{S' \times S'}</script>，<script type="math/tex">L'=L|_{S'}</script> となる．
+この場合，<script type="math/tex">R'</script> は左全関係ではないかもしれない．
+遷移先をもたないような状態は削除されるかもしれないが，これはアルゴリズムの正しさにとっては重要ではない．
+このアルゴリズムは以下の事実に基づいている．</p>
+<h4 id="51">補題 5.1</h4>
+<p>以下の 2 つの条件が満たされた場合，かつそのときのみ，<script type="math/tex">M,s \models \mathbf{EG}f_1</script> となる．</p>
+<ol>
+<li>
+<script type="math/tex">s \in S'</script> である．</li>
+<li>
+<script type="math/tex">s</script> から，グラフ <script type="math/tex">(S', R')</script> の自明でない極大な強連結成分 <script type="math/tex">C</script> 中のノード <script type="math/tex">t</script> に至るパスが <script type="math/tex">M'</script> に存在している．</li>
+</ol>
+<p><strong>証明</strong>　<script type="math/tex">M,s \models \mathbf{EG}f_1</script> と仮定する．
+明らかに，<script type="math/tex">s \in S'</script> であるため (1) は満たされる．
+<script type="math/tex">\pi</script>を，状態 <script type="math/tex">s</script> から開始して，すべての状態で <script type="math/tex">f_1</script> が成立する無限パスとする．
+このとき <script type="math/tex">\pi</script> 上のすべての状態は <script type="math/tex">S'</script> に含まれることになる．
+<script type="math/tex">M</script> は有限なので，<script type="math/tex">\pi</script> は有限の初期セグメント <script type="math/tex">\pi_0</script> と無限のサフィックス (suffix) <script type="math/tex">\pi_1</script> を用いて <script type="math/tex">\pi = \pi_0\pi_1</script> と書けないとおかしい．
+ここで <script type="math/tex">\pi_1</script> は，<script type="math/tex">\pi_1</script> 上のそれぞれの状態が無限にしばしば登場するという性質をもつ．
+<script type="math/tex">C</script> を <script type="math/tex">\pi_1</script> の状態からなる集合とする．
+これから，<script type="math/tex">C</script> の任意の状態のペア間に，<script type="math/tex">C</script> 内のパスが存在することを示す．
+まず，<script type="math/tex">s_1</script> と <script type="math/tex">s_2</script> を <script type="math/tex">C</script> の状態とする．
+<script type="math/tex">\pi_1</script> からあるインスタンス <script type="math/tex">s_1</script> を選択する．
+<script type="math/tex">\pi_1</script> の成り立ちから，<script type="math/tex">\pi_1</script> に沿った先に <script type="math/tex">s_2</script> のインスタンスが存在することがわかる．
+この <script type="math/tex">s_1</script> から <script type="math/tex">s_2</script> へのセグメントは完全に <script type="math/tex">C</script> 内にある．
+このように，任意の <script type="math/tex">s_1</script> と <script type="math/tex">s_2</script> について <script type="math/tex">C</script> の <script type="math/tex">s_1</script> から <script type="math/tex">s_2</script> への有限パスが得られることから，<script type="math/tex">C</script> は自明でない強連結成分であるといえる．
+ここで，仮に <script type="math/tex">C</script> が極大でなかったならば，（極大の定義により）<script type="math/tex">C</script> は極大な強連結成分 <script type="math/tex">C'</script> に含まれており，<script type="math/tex">\pi_0</script> が <script type="math/tex">C</script> に到達することから，同様に <script type="math/tex">C'</script> にも到達することとなる．
+したがって，<script type="math/tex">s</script> から始まるパス <script type="math/tex">\pi_0</script> により自明でない極大な強連結成分 <script type="math/tex">C'</script> へ到達可能であることから，(2) が満たされる．
+このように，条件(1)と(2)の両方が満たされる．</p>
+<p>次に、条件(1)と(2)を満たすと仮定する．
+<script type="math/tex">\pi_0</script> を <script type="math/tex">s</script> から <script type="math/tex">t</script> へのパスとする．
+そして，<script type="math/tex">\pi_1</script> を <script type="math/tex">t</script> から <script type="math/tex">t</script> に戻る少なくとも長さ 1 の有限パスとする．
+<script type="math/tex">\pi_1</script> の存在は，<script type="math/tex">t</script> が非自明な強連結成分の状態であることから保証される．
+<script type="math/tex">\pi_0</script> と <script type="math/tex">\pi_1</script> によって得られる無限パス <script type="math/tex">\pi = \pi_0\pi_1^\omega</script> 上のすべての状態は <script type="math/tex">f_1</script> を満たしている．
+<script type="math/tex">\pi</script> は <script type="math/tex">M</script> の <script type="math/tex">s</script> を始点とするパスであるので，<script type="math/tex">M, s \models \mathbf{EG} f_1</script> となる．
+(証明終）</p>
+<p>補題 5.1 は，無限長のパスの探索を MSCC の探索に帰着する方法を示唆している．
+SCC ではなく MSCC を探索することの意義は，すべての MSCC からなる集合は <script type="math/tex">M</script> の状態と遷移の数に対して線形時間で見つけられるという事実に基づいている．
+一方で，すべての SCC からなる集合は <script type="math/tex">S</script> のすべての部分集合を含む可能性があるため，それを見つけるのに要する時間は指数的になる．</p>
+<p>
+<script type="math/tex">g = \mathbf{EG}f_1</script> の場合のアルゴリズムは，補題 5.1 から直接導かれる．
+上述のとおり，制限されたクリプキ構造 <script type="math/tex">M' = (S', R', L')</script> を構築する．
+Tarjan のアルゴリズムを用いて，グラフ <script type="math/tex">(S',R')</script> を MSCC へと分割する．
+このアルゴリズムは，自明なものを含むすべての MSCC の集合を見つけるもので，その時間計算量は <script type="math/tex">O(|S'| + |R'|)</script> である．
+次に，自明でない成分に属する状態を見つける．
+<script type="math/tex">R'</script> を逆に用いて後戻りを行い，各状態が <script type="math/tex">f_1</script> でラベル付けされたパスで到達できるすべての状態を見つける．
+全体の計算は，時間 <script type="math/tex">O(|S| + |R|)</script> で実行できる．
+以下のアルゴリズムは，<script type="math/tex">f_1</script> がすでに正しく処理されていると仮定したとき，<script type="math/tex">\mathbf{EG}f_1</script> を満たすすべての <script type="math/tex">s</script> について，<script type="math/tex">label(s)</script> に <script type="math/tex">\mathbf{EG}f_1</script> を追加する手続き <script type="math/tex">CheckEG</script> を示している．</p>
+<p><center>
+<img src="../img/lec06-fig2.png" width="450">
+</center></p>
+<p>任意の CTL 式 <script type="math/tex">f</script> を扱うには，<script type="math/tex">f</script> を部分式に分解し，この状態へのラベル付けアルゴリズムを <script type="math/tex">f</script> の部分式に連続して適用する．
+最も短くかつ最も深く入れ子になっている部分式から開始して，このアルゴリズムは <script type="math/tex">f</script> すべてが含まれるまで，外向きに動作する．
+このように，<script type="math/tex">f</script> の部分式 <script type="math/tex">g</script> を処理する時点で，<script type="math/tex">g</script> のすべての部分式が処理済みであることを保証している．
+それぞれの過程では時間 <script type="math/tex">O(|S| + |R|)</script> を要し，<script type="math/tex">f</script> は最大で <script type="math/tex">|f|</script> の異なる部分式をもつことから，アルゴリズム全体で要する時間は <script type="math/tex">O(|f| \cdot (|S| + |R|))</script> となる．</p>
+<h4 id="52">定理 5.2</h4>
+<p>時間 <script type="math/tex">O(|f| ・ (|S| + |R|))</script> で実行可能な <script type="math/tex">[[f]]</script> を決定するアルゴリズムが存在する．</p>
+<p>定理 5.2 が，時相演算子 <script type="math/tex">\mathbf {EX}</script>，<script type="math/tex">\mathbf {E}(\mathbf{U})</script> と <script type="math/tex">\mathbf {EG}</script> 上のすべての CTL 式に対して成立することは明らかである．
+第4章で説明したように，他のすべての CTL 式は，この3つの演算子を用いて表現することができる．
+したがって，CTL 式を前処理することで，これらの演算子のみを含む式を得ることができる．
+<script type="math/tex">\mathbf {A(U)}</script> の場合を除き，すべての変形は元の式の大きさに線形である．
+したがってこの定理は，<script type="math/tex">\mathbf{A}(\mathbf{U})</script> を含まない仕様については即座に満たされる．
+<script type="math/tex">\mathbf{A}(\mathbf{U})</script> についてもこの定理が同様に満たされることを示すために，<script type="math/tex">\mathbf{A}(f\mathbf{U}g)</script> が
+<script type="math/tex; mode=display"> \lnot \mathbf E (\lnot g \mathbf U(\lnot f \land \lnot g))\land \lnot \mathbf {EG} \lnot g </script>
+と等価であることを思い出してほしい．
+この式に含まれる部分式は，<script type="math/tex">f</script>，<script type="math/tex">g</script>，<script type="math/tex">\lnot f</script>，<script type="math/tex">\lnot g</script>，<script type="math/tex">\mathbf{E}(\lnot g \mathbf{U}(\lnot f \land \lnot g))</script>，<script type="math/tex">\mathbf{EG}\lnot g</script>，最後の2つの式の論理積，そしてこの式自身の 8 つである．
+部分式の中には複数の <script type="math/tex">g</script> が現れるが，アルゴリズムが <script type="math/tex">g</script> のラベル付けを行うのは一度だけである．
+したがって，全体的な時間の複雑さは維持される．</p>
+<p>CTL モデル検査アルゴリズムを，電子レンジの動作を記述した小さな例を用いて説明する．
+以下の図は，電子レンジのクリプキ構造である．</p>
+<p><center>
+<img src="../img/lec06-fig3.png" width="500">
+</center></p>
+<p>分かりやすいように，各状態には，その状態で真である原子命題と，その状態で偽である命題の否定が両方ともラベル付けされている．
+なお，図のグラフではアーク上のラベルとして遷移を引き起こすアクションを記載しているが，これらはクリプキ構造の要素ではない．</p>
+<p>CTL 式 <script type="math/tex">\textbf{AG}(Start \rightarrow \textbf{AF}Heat)</script> を検証する．
+この式は <script type="math/tex">\lnot \textbf{EF}(Start\wedge\textbf{EG}\lnot Heat)</script> と等価である（ここでは，<script type="math/tex">\textbf{EF}f</script> を <script type="math/tex">\textbf{E}(true \textbf{U}f)</script> の略記として使用している）．
+まずは原子命題を満たす状態の集合を求めることから始めて，より複雑な部分式に進む．
+ここで，<script type="math/tex">[\![g]\!]</script> は部分式 <script type="math/tex">g</script> でラベル付けされた全ての状態からなる集合を表すものとする．
+適切なデータ構造を用いれば，全ての <script type="math/tex">p \in AP</script> について <script type="math/tex">O(|S|+|R|)</script> の時間で <script type="math/tex">[\![p]\!]</script> を計算できる．
+原子命題 <script type="math/tex">Start</script> と <script type="math/tex">Heat</script> について，<script type="math/tex">[\![Start]\!]</script> および <script type="math/tex">[\![Heat]\!]</script> は以下のように求められる．</p>
+<p>
+<script type="math/tex; mode=display"> [\![Start]\!]=\{2,5,6,7\} </script>
+<script type="math/tex; mode=display"> [\![\neg Heat]\!]=\{1,2,3,5,6\} </script>
+</p>
+<p>
+<script type="math/tex">[\![\textbf{EG}\lnot Heat]\!]</script> を求めるために，まず <script type="math/tex">S'=[\![\lnot Heat]\!]</script> における自明でない強連結成分の集合を求める．
+得られた強連結成分は <script type="math/tex">MSCC= \{\{1,2,3,5\}\}</script> となる．
+<script type="math/tex">\textbf{EG}\lnot Heat</script> でラベル付けされるべき状態すべてからなる集合である <script type="math/tex">T</script> を <script type="math/tex">MSCC</script> の要素の和，すなわち，<script type="math/tex">T =\{1,2,3,5\}</script> として処理を続ける．
+<script type="math/tex">S'</script> 内の他の状態は，<script type="math/tex">S'</script> 内のパスに沿って <script type="math/tex">T</script> の状態に到達することはできない．
+したがって，この処理は以下の段階で完了する．</p>
+<p>
+<script type="math/tex; mode=display"> [\![\textbf{EG}\lnot Heat]\!] = \{1,2,3,5\} </script>
+</p>
+<p>次に，以下を計算する．</p>
+<p>
+<script type="math/tex; mode=display"> [\![Start\wedge \textbf{EG}\lnot Heat]\!] = \{2,5\} </script>
+</p>
+<p>
+<script type="math/tex">[\![\textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!]</script> を計算する場合は，以下の <script type="math/tex">T</script> から処理を始める．</p>
+<p>
+<script type="math/tex; mode=display"> T = [\![Start\wedge \textbf{EG}\lnot Heat]\!] </script>
+</p>
+<p>次に，遷移関係を逆を用いることで，この式が満たされるすべての状態にラベルを付ける．
+これにより，以下が得られる．</p>
+<p>
+<script type="math/tex; mode=display"> [\![\textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!] = \{1,2,3,4,5,6,7\} </script>
+</p>
+<p>最後に，次が得られる．
+<script type="math/tex; mode=display"> [\![\lnot \textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!]＝ \emptyset </script>
+</p>
+<p>得られた集合は空集合 <script type="math/tex">\emptyset</script> となり，初期状態 <script type="math/tex">1</script> が含まれないことから，このクリプキ構造で記述されたシステムは与えられた仕様を満たさないと結論づけられる．</p>
+<h2 id="ctl_2">公平性制約をもつ CTL に対するモデル検査</h2>
+<p>ここでは，先ほど示した CTL モデル検査アルゴリズムを，公平性制約を扱えるよう拡張する方法について示す．
+<script type="math/tex">M = (S, R, L, F)</script> を公平なクリプキ構造とする．
+<script type="math/tex">F = \{P_1, \ldots, P_k\}</script> を公平性制約の集合とする．
+クリプキ構造 <script type="math/tex">M</script> のグラフの強連結成分 <script type="math/tex">C</script> は，各 <script type="math/tex">P_i \in F</script> に対して状態 <script type="math/tex">t_i \in (C \cap P_i)</script> が存在するときかつそのときのみ，<script type="math/tex">F</script> に関して<strong>公平</strong>であるという．
+まず，公平なクリプキ構造に関して <script type="math/tex">\textbf{EG}f_1</script> を検査するアルゴリズムを与える．
+このアルゴリズムの正しさを証明するためには，補題 5.1 と類似した補題が必要である．
+前述のものと同様に，<script type="math/tex">f_1</script> が<strong>公平に</strong>成り立たない状態すべてを <script type="math/tex">S</script> から削除することで <script type="math/tex">M</script> から得られる構造を <script type="math/tex">M'</script> とする．
+したがって，<script type="math/tex">M' = (S',R',L',F')</script> は，<script type="math/tex">S' = \{s \in S | M, s\models _Ff_1\}</script>, <script type="math/tex">R' = R|_{S' \times S'}, L' = L | _{S'}</script>, そして <script type="math/tex">F' = \{P_i\cap S' | P_i\in F\}</script> となる．．</p>
+<h4 id="53">補題 5.3</h4>
+<p>以下の 2 つの条件が満たされた場合，かつそのときのみ，<script type="math/tex">M,s\models_F\mathbf{E}_{\rm f} \textbf{G}f_1</script> となる．</p>
+<ol>
+<li>
+<script type="math/tex">s \in S'</script> である．</li>
+<li>
+<script type="math/tex">s</script> から，グラフ <script type="math/tex">(S',R')</script> の自明でなく<strong>公平な</strong>極大な強連結成分 <script type="math/tex">C</script> 中のノード <script type="math/tex">t</script> に至るパスが <script type="math/tex">S'</script> 中に存在している．</li>
+</ol>
+<p>証明は，<a href="#51">補題 5.1</a> の証明と同様であるため省略する．
+ここで，<script type="math/tex">M,s\models_F\textbf{EG}f_1</script> が成り立つようなすべての <script type="math/tex">s</script> について，<script type="math/tex">s</script> のラベルに <script type="math/tex">\mathbf{E}_{\rm f} \mathbf{G}f_1</script> を追加する手続き <script type="math/tex">CheckFairEG(f_1)</script> を記述することができる．
+その論理における公平な意味論に基づいて，状態が <script type="math/tex">f_1</script> で正しくラベル付けされていると仮定する．
+すなわち，<script type="math/tex">M,s \models_F f_1</script> であるとき，かつそのときのみ <script type="math/tex">f_1\in\textit{label}(s)</script> であると仮定する．
+手続き <script type="math/tex">CheckFairEG</script> は図 5.2 で与えられた手続き <script type="math/tex">CheckEG</script> と同一である．
+唯一の違いは，ここでは <script type="math/tex">MSCC</script> が自明でなく<strong>公平な</strong>極大な強連結成分の集合で構成されていることである．
+計算量は <script type="math/tex">O((|S|+|R|\cdot|F|)</script> となる．
+これは，どの成分が公平であるかを判別する必要があるためであり，すべての成分に対して，それぞれの公平性制約に含まれる状態を含んでいるかを調べる，という処理が行われる．</p>
+<p>公平なクリプキ構造に対してその他の CTL 式を検査するために，追加の原子命題 <script type="math/tex">fair</script> を導入する．
+これはある状態に対して，その状態から始まる公平なパスが存在するとき，かつそのときのみ真となる原子命題である．
+したがって，その論理における公平な意味論に従って，<script type="math/tex">fair＝\mathbf{E}_\textsf{f}\mathbf{G}true</script> となる．
+この新しい原子命題で状態をラベル付けするために，手続き <script type="math/tex">CheckFairEG(true)</script> が用いられる．
+<script type="math/tex">M,s \models_F\mathbf{E}_\textsf{f}\mathbf{X}f_1</script> であるかどうかを判定するために，<script type="math/tex">M,s \models\mathbf{EX}(f_1\wedge\textit{fair})</script> を検査する．
+<script type="math/tex">M,s \models_F\mathbf{E}_\textsf{f}f_1 \mathbf{U} f_2</script> であるかどうかを判定するために，手続き <script type="math/tex">CheckEU(f_1，f_2\wedge fair)</script> を用いて，<script type="math/tex">M,s \models\mathbf{E}(f_1 \mathbf{U} (f_2\wedge fair))</script> を検査する．</p>
+<p>複雑さの解析は，公平でないケースと類似している．
+各段階では，それぞれ <script type="math/tex">O((|S|+|R| \cdot |F|)</script> が必要となる．
+最大でも <script type="math/tex">|f|</script> 段階の処理が必要であるため，総合した時間計算量は <script type="math/tex">O(|f| \cdot (|S|+|R|) \cdot |F|)</script> となる．</p>
+<h4 id="54">定理 5.4</h4>
+<p>CTL 式 <script type="math/tex">f</script> が構造 <script type="math/tex">M＝(S，R，L，F)</script> の状態 <script type="math/tex">s</script> において公平な意味論のもとに真であるかどうかを判定する，時間 <script type="math/tex">O(|f| \cdot (|S|+|R|) \cdot |F|)</script> で実行可能なアルゴリズムが存在する．</p>
+<p>公平性制約の扱いを例示するため，以前の検証で用いたものと同様の式である
+<script type="math/tex; mode=display"> \mathbf{A}_\textsf{f}\mathbf{G}(Start\rightarrow\mathbf{A}_\textsf{f}\mathbf{F}Heat) </script>
+を検証する．
+同様に，この論理式は
+<script type="math/tex; mode=display"> \lnot \mathbf{E}_\textsf{f} \mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat) </script>
+と等価である．
+与えられたモデルに対して，この式を検証する．
+ただし今回は，ユーザーが電子レンジを無限にしばしば正しく操作するような経路のみを考慮するものとする．
+これは，<script type="math/tex">Start \wedge Close \wedge \lnot Error</script> が無限にしばしば満たされるべきであることを意味する．
+したがって，公平性制約 <script type="math/tex">F=\{P\}</script> は，<script type="math/tex">P=\{s|s\models{Start\wedge Close\wedge \lnot Error}\}</script> となる．
+集合 <script type="math/tex">[\![Start]\!]</script> と <script type="math/tex">[\![\lnot Heat]\!]</script> は以前と同様である．
+<script type="math/tex">S'=[\![\lnot Heat]\!]</script> 上の強連結成分を計算すると，<script type="math/tex">\{1，2，3，5\}</script>は <script type="math/tex">Start\wedge Close\wedge \lnot Error</script> を満たす状態を含んでいないため，公平ではないことがわかる．
+したがって，
+<script type="math/tex; mode=display"> [\![\mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat]\!]=\emptyset </script>
+となる．</p>
+<p>結果として，
+<script type="math/tex; mode=display"> [\![\mathbf{E}_\textsf{f}\mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat)]\!]=\emptyset </script>
+となり，これは，
+<script type="math/tex; mode=display"> [\![\neg(\mathbf{E}_\textsf{f}\mathbf{F}(Start\wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat))]\!]=\{1, 2, 3, 4 ,5, 6, 7\} </script>
+を意味している．
+以上から，与えられた公平性制約の下では，プログラムのすべての状態がこの式を満たすということがわかる．</p>
+<div class="admonition note">
+<p class="admonition-title">問題 5.1 (MSCC の非交性)</p>
+<p>
+<script type="math/tex">C_1</script> と <script type="math/tex">C_2</script> を 2 つの MSCC とする．
+このとき，これらが共通部分をもたないことを証明せよ．
+その上で，<script type="math/tex">M</script> のすべての MSCC 上の状態の和は，<script type="math/tex">S</script> のサイズに制限されることを結論づけよ．</p>
+</div>
                 
               
               
@@ -394,6 +739,25 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../lec05/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第5回
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
