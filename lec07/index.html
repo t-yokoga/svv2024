@@ -1,0 +1,1110 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>第7回 - システム検証論 (2021)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-ctl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            システム検証論 (2021)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第7回
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2021)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01/" class="md-nav__link">
+        第1回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02/" class="md-nav__link">
+        第2回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03/" class="md-nav__link">
+        第3回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04/" class="md-nav__link">
+        第4回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05/" class="md-nav__link">
+        第5回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06/" class="md-nav__link">
+        第6回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第7回
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第7回
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    不動点理論の背景
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点理論の背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#55-tarski-knaster" class="md-nav__link">
+    定理 5.5 (Tarski-Knaster)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    補題 5.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    補題 5.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58" class="md-nav__link">
+    補題 5.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59" class="md-nav__link">
+    補題 5.9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    不動点に基づく到達可能性解析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    不動点に基づく CTL モデル検査アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点に基づく CTL モデル検査アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#510" class="md-nav__link">
+    補題 5.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    補題 5.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    補題 5.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    補題 5.13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514" class="md-nav__link">
+    補題 5.14
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    不動点による公平性の特徴付け
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点による公平性の特徴付け">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#515" class="md-nav__link">
+    補題 5.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516" class="md-nav__link">
+    補題 5.16
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    有限パス上での不動点による特徴付け
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    不動点理論の背景
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点理論の背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#55-tarski-knaster" class="md-nav__link">
+    定理 5.5 (Tarski-Knaster)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    補題 5.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    補題 5.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#58" class="md-nav__link">
+    補題 5.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#59" class="md-nav__link">
+    補題 5.9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    不動点に基づく到達可能性解析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    不動点に基づく CTL モデル検査アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点に基づく CTL モデル検査アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#510" class="md-nav__link">
+    補題 5.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    補題 5.11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    補題 5.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    補題 5.13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514" class="md-nav__link">
+    補題 5.14
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    不動点による公平性の特徴付け
+  </a>
+  
+    <nav class="md-nav" aria-label="不動点による公平性の特徴付け">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#515" class="md-nav__link">
+    補題 5.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516" class="md-nav__link">
+    補題 5.16
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    有限パス上での不動点による特徴付け
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="7-ctl">第7回 不動点計算による CTL モデル検査</h1>
+<p><a href="../lec06/#ctl_1">前回</a> の講義で紹介した明示的なモデル検査アルゴリズムは，個々の状態と遷移の操作によるものである．
+今回の講義では，集合の操作に基づいたアルゴリズムを紹介する．
+そのために，<strong>不動点</strong> (fixpoint) による時相論理演算子の特徴付けを利用する．
+第9回の講義においては，順序付き二分決定グラフ (OBDD) を用いて状態と遷移の集合を表現する．
+そこで示される記号的 (symbolic) な CTL モデル検査アルゴリズムはこの不動点による特徴付けに基づいたもので，集合に対する標準的な OBDD の操作のみを必要とする．
+明示的なモデル検査アルゴリズムの時間計算量がシステムのサイズに対して線形である一方で，新しいアルゴリズムは二次関数的である．
+それにもかかわらず，OBDD での実装は空間計算量に関する要求を大幅に緩和し，その結果として桁違いに大きなシステムの検証も可能となる．</p>
+<h2 id="_1">不動点理論の背景</h2>
+<p>本節では，不動点理論における基本的な背景を紹介する．
+通常，不動点理論は完全な半順序関係をもつ領域に対して一般的に定義される．
+ここでは，包含関係を順序としてもつ，状態の冪集合を領域として限定している．</p>
+<p>集合 <script type="math/tex">S'\subseteq S</script> は，<script type="math/tex">\tau(S')＝S'</script> であるならば，関数 <script type="math/tex">\tau : \mathcal{P}(S)\rightarrow \mathcal{P}(S)</script> の不動点である．
+まず，CTL 式を満たす状態の集合が，どのようにして適切な関数の最小または最大不動点として特徴付けられるかを示す．
+集合演算のみに基づく反復技法が，これらの不動点を計算するために使用される．
+次節では，公平性制約を不動点の特徴付けに組み込む方法について示す．</p>
+<p>
+<script type="math/tex">M=(S，R，L)</script> を有限クリプキ構造とする．
+集合 <script type="math/tex">S</script> のすべての部分集合からなる冪集合 <script type="math/tex">\mathcal{P}(S)</script>は，集合包含順序の下で束 (lattice) を形成する．
+この節では，<script type="math/tex">\mathcal{P}(S)</script> を用いて束を表す．
+束の各要素 <script type="math/tex">S'</script> は，<script type="math/tex">S</script> 上の<strong>述語</strong>と考えることもでき，この述語はまさに <script type="math/tex">S'</script> の状態に対してのみ<strong>真</strong>となると見なされる．
+束の最小要素は空集合であり，<strong>偽</strong>とも見なされる．
+また，束の最大要素は集合 <script type="math/tex">S</script> そのものであり，<strong>真</strong>とも表記される．
+<script type="math/tex">\mathcal{P}(S)</script> を <script type="math/tex">\mathcal{P}(S)</script> に対応づける関数を <strong>述語変換系</strong> (predicate transformer) と呼ぶ．
+<script type="math/tex">\tau : \mathcal{P}(S) \rightarrow \mathcal{P}(S)</script> をこのような関数とする．
+このとき，以下の用語が定義される．</p>
+<ol>
+<li>
+<script type="math/tex">P\subseteq Q</script> ならば <script type="math/tex">\tau(P)\subseteq \tau(Q)</script> であるとき，<script type="math/tex">\tau</script> は<strong>単調</strong> (monotonic) であるという．</li>
+<li>
+<script type="math/tex">P_{1} \subseteq P_{2} \subseteq \ldots</script> ならば <script type="math/tex">\tau(\cup_{i}P_{i})=\cup_{i}\tau(P_{i})</script> であるとき，<script type="math/tex">\tau</script>は<script type="math/tex">\cup</script>
+<strong>連続</strong> (<script type="math/tex">\cup</script>-continuous) であるという．</li>
+<li>
+<script type="math/tex">P_{1} \supseteq P_{2} \supseteq \ldots</script> ならば <script type="math/tex">\tau(\cap_{i}P_{i})=\cap_{i}\tau(P_{i})</script> であるとき，<script type="math/tex">\tau</script>は<script type="math/tex">\cap</script>
+<strong>連続</strong> (<script type="math/tex">\cap</script>-continuous) であるという．</li>
+</ol>
+<p>述語 <script type="math/tex">Z</script> に対して <script type="math/tex">\tau</script> を <script type="math/tex">i</script> 回適用することを <script type="math/tex">\tau^{i}(Z)</script> と記述する．
+より形式的には，<script type="math/tex">\tau^{i}(Z)</script> は <script type="math/tex">\tau^{0}(Z)=Z</script> と <script type="math/tex">\tau^{i+1}(Z)＝\tau(\tau^{i}(Z))</script> によって再帰的に定義される．</p>
+<h4 id="55-tarski-knaster">定理 5.5 (Tarski-Knaster)</h4>
+<p>
+<script type="math/tex">\tau</script> を <script type="math/tex">\mathcal{P}(S)</script> の述語変換系とする．
+このとき，<script type="math/tex">\tau</script> が単調であるならば，以下のように定義される最大不動点 <script type="math/tex">\nu{Z}.\tau(Z)</script>，及び最小不動点 <script type="math/tex">\mu{Z}.\tau(Z)</script> が存在する．</p>
+<ul>
+<li>
+<script type="math/tex">\nu{Z}.\tau(Z)=\bigcup\{Z \mid Z\subseteq{\tau(Z)}\}</script>
+</li>
+<li>
+<script type="math/tex">\mu{Z}.\tau(Z)=\bigcap\{Z \mid Z\supseteq{\tau(Z)}\}</script>
+</li>
+</ul>
+<p>さらに，<script type="math/tex">\tau</script> が <script type="math/tex">\bigcap</script> 連続であれば，<script type="math/tex">\nu{Z}.\tau(Z)=\bigcap\tau^i(true)</script> となり，<script type="math/tex">\tau</script> が <script type="math/tex">\bigcup</script> 連続であれば，<script type="math/tex">\mu{Z}\tau(Z)=\bigcup\tau^i(false)</script>となる．</p>
+<p><strong>証明</strong>　ここでは最大不動点の場合のみ証明する．
+最小不動点については双対性を用いて証明できる．</p>
+<p>
+<script type="math/tex">Z\subseteq\tau(Z)</script> を満たす集合からなる族を <script type="math/tex">\Gamma=\{Z|Z\subseteq\tau(Z)\}</script> とし，<script type="math/tex">\Gamma</script> に属する集合全体の和を <script type="math/tex">P=\bigcup\Gamma</script> とする．
+定義より，それぞれの <script type="math/tex">Z\in\Gamma</script> に対して <script type="math/tex">Z\subseteq{P}</script> が成り立つ．
+<script type="math/tex">\tau</script> は単調なので，<script type="math/tex">\tau(Z)\subseteq\tau(P)</script> となる．
+<script type="math/tex">\Gamma</script> の定義より <script type="math/tex">Z\in \Gamma</script> は <script type="math/tex">Z\subseteq \tau(Z)</script> を満たすので，<script type="math/tex">Z \subseteq \tau(P)</script> となる．
+(さらに <script type="math/tex">\tau</script> の単調性を用いれば，<script type="math/tex">Z \in \Gamma</script> は <script type="math/tex">\tau(Z)\subseteq{\tau(\tau(Z))}</script> も満たしているため <script type="math/tex">\tau(Z) \in \Gamma</script> もいえる．)
+以上より <script type="math/tex">Z\in\Gamma</script> に対して <script type="math/tex">Z \subseteq \tau(Z) \subseteq \tau(P)</script> の関係が成り立ち，<script type="math/tex">\Gamma</script> に属するすべての集合 <script type="math/tex">Z</script> の和は <script type="math/tex">\tau(P)</script> の部分集合となる．
+したがって，<script type="math/tex">P \subseteq \tau(P)</script> を得る．
+<script type="math/tex">P \subseteq \tau(P)</script> より <script type="math/tex">P</script> も <script type="math/tex">\Gamma</script> の定義を満たすので <script type="math/tex">P \in \Gamma</script> である．
+前述の議論により，<script type="math/tex">\tau(P) \in \Gamma</script> もいえる．
+ここで <script type="math/tex">P</script> の定義より，<script type="math/tex">P</script> は <script type="math/tex">\Gamma</script> 内のすべての集合の和であるから，<script type="math/tex">\tau(P) \subseteq P</script> となる．
+よって，<script type="math/tex">P \subseteq \tau(P)</script> かつ <script type="math/tex">\tau(P) \subseteq P</script> であることが示されたので，<script type="math/tex">\tau(P) = P</script> である．
+すなわち <script type="math/tex">P</script> は <script type="math/tex">\tau</script> の不動点である．
+関係 <script type="math/tex">\subseteq</script> は反射的（<script type="math/tex">x = y</script> ならば <script type="math/tex">x \subseteq y</script>）であるため，すべての <script type="math/tex">\tau</script> の不動点は <script type="math/tex">\Gamma</script> の要素としての条件を満たしている．
+よって，<script type="math/tex">\Gamma</script> 内の集合すべてを含む集合 <script type="math/tex">P</script> は，すべての <script type="math/tex">\tau</script> の不動点を含む集合でもあり，すなわち <script type="math/tex">\tau</script> の最大不動点となる．</p>
+<p>定理の後半について示す．
+<script type="math/tex">S \supseteq \tau(S)</script> となる集合 <script type="math/tex">S</script> に着目する．
+この <script type="math/tex">S</script> は，<script type="math/tex">true</script> とも表記される，他のすべての部分集合を含む最大の部分集合である．
+単調性により，<script type="math/tex">\tau(S) \supseteq \tau(\tau(S))</script> であり，帰納法により <script type="math/tex">\tau^i(S) \supseteq \tau^{i+1}(S)</script> となる．
+連続性により，<script type="math/tex">\tau(\bigcap\tau^i(S)) = \bigcap\tau^{i+1}(S) \supseteq \bigcap\tau^i(S)</script> となる．
+したがって，<script type="math/tex">\bigcap\tau^i(S)</script> も <script type="math/tex">\Gamma</script> の定義を満たすので，<script type="math/tex">\bigcap\tau^i(S)\in\Gamma</script> となる．
+結果として，<script type="math/tex">P \supseteq \bigcap\tau^i(S)</script> である．
+ここで，その逆，つまり <script type="math/tex">P \subseteq \bigcap\tau^i(S)</script> であることを示す必要がある．
+<script type="math/tex">S = true</script> なので，明らかに <script type="math/tex">P \subseteq S</script> である．
+単調性により，<script type="math/tex">\tau(P) \subseteq \tau(S)</script> であり，前半で示したとおり <script type="math/tex">P = \tau(P)</script> であるので，<script type="math/tex">P \subseteq \tau(S)</script> となる．
+帰納法により，各 <script type="math/tex">i</script> に対して <script type="math/tex">P \subseteq \tau^i(S)</script> となり，したがって <script type="math/tex">P \subseteq \bigcap\tau_i(S)</script> となる．
+(証明終)</p>
+<p>Tarski-Knaster の定理は，<script type="math/tex">\tau</script> が連続であれば，<script type="math/tex">\tau</script> の（無限かもしれない）適用の列として不動点が計算できることを示唆している．
+以下の補題では，<script type="math/tex">\tau:P(S)\rightarrow{P(S)}</script> に対して，<script type="math/tex">S</script> が有限であるならば，<script type="math/tex">\tau</script> が単調である時は常に連続でもあることを示す．
+さらに，この場合，不動点の計算には有限回の <script type="math/tex">\tau</script> の適用のみが必要であることを示す．
+このようにして，不動点を計算するアルゴリズムを得ることができる．</p>
+<h4 id="56">補題 5.6</h4>
+<p>
+<script type="math/tex">S</script> が有限で <script type="math/tex">\tau</script> が単調ならば，<script type="math/tex">\tau</script> は <script type="math/tex">\cup</script> 連続かつ <script type="math/tex">\cap</script> 連続である．</p>
+<p><strong>証明</strong>　<script type="math/tex">P_1\subseteq{P_2}\subseteq\ldots</script> を <script type="math/tex">S</script> の部分集合の列とする．
+<script type="math/tex">S</script> は有限なので，すべての <script type="math/tex">j\geq{j_0}</script> に対して，<script type="math/tex">P_j = P_{j_0}</script> となるような <script type="math/tex">j_0</script> が存在する．
+さらに，すべての <script type="math/tex">j<j_0</script> に対して，<script type="math/tex">P_j\subseteq{P_{j_0}}</script> である．
+したがって，<script type="math/tex">\cup_i{P_i}=P_{j_0}</script> となり，結果として <script type="math/tex">\tau(\cup_i{P_i})=\tau(P_{j_0})</script> となる．
+一方で，<script type="math/tex">\tau</script> は単調なので，<script type="math/tex">\tau(P_1)\subseteq\tau(P_2)\subseteq\ldots</script> である．
+したがって，すべての <script type="math/tex">j<j_0</script> に対して，<script type="math/tex">\tau(P_j)\subseteq\tau(P_{j_0})</script> であり，
+すべての <script type="math/tex">j\geq{j_0}</script> に対して，<script type="math/tex">\tau(P_j)=\tau(P_{j_0})</script> である．
+結果として，<script type="math/tex">\cup_i\tau(P_i) = \tau(P_{j_0})</script> となり，<script type="math/tex">\tau</script> は <script type="math/tex">\cup</script> 連続である．
+<script type="math/tex">\tau</script> が <script type="math/tex">\cap</script> 連続であることも同様に証明できる．
+(証明終)</p>
+<h4 id="57">補題 5.7</h4>
+<p>
+<script type="math/tex">\tau</script> が単調ならば，すべての <script type="math/tex">i</script> に対して，<script type="math/tex">\tau^i(false)\subseteq\tau^{i+1}(false)</script> であり，
+<script type="math/tex">\tau^i(true)\supseteq\tau^{i+1}(true)</script> である．</p>
+<h4 id="58">補題 5.8</h4>
+<p>
+<script type="math/tex">\tau</script> が単調で <script type="math/tex">S</script> が有限ならば，すべての <script type="math/tex">j\geq{i_0}</script> に対して <script type="math/tex">\tau^j(false)=\tau^{i_0}(false)</script> となるような整数 <script type="math/tex">i_0</script> が存在する．
+同様に，すべての <script type="math/tex">j\geq{j_0}</script> に対して <script type="math/tex">\tau^j(true)=\tau^{j_0}(true)</script> となるような整数 <script type="math/tex">j_0</script> が存在する．</p>
+<h4 id="59">補題 5.9</h4>
+<p>
+<script type="math/tex">\tau</script> が単調で <script type="math/tex">S</script> が有限ならば，<script type="math/tex">\mu{Z}.\tau(Z)=\tau^{i_0}(false)</script> となるような整数 <script type="math/tex">i_0</script> が存在する．
+同様に，<script type="math/tex">\nu{Z}.\tau(Z)=\tau^{j_0}(true)</script> となるような整数 <script type="math/tex">j_0</script> が存在する．</p>
+<p>前述した補題の帰結として，<script type="math/tex">\tau</script> が単調であるならば，その最小不動点は以下のアルゴリズムで計算できる．</p>
+<p><center>
+<img src="../img/lec07-fig1.png" width="450">
+</center></p>
+<p>この手続きの中の <script type="math/tex">\textbf{while}</script> ループに対する不変式は以下のアサーションで与えられる．</p>
+<p>
+<script type="math/tex; mode=display">(Q'=\tau(Q))\land(Q'\subseteq\mu{Z}.\tau(Z))</script>
+</p>
+<p>ループの <script type="math/tex">i</script> 番目の反復の開始時に，<script type="math/tex">Q=\tau^{i-1}(false)</script> と <script type="math/tex">Q'=\tau^i(false)</script> であることは容易にわかる．
+補題 5.7 は次のことを示唆している．</p>
+<p>
+<script type="math/tex; mode=display">
+\textit{false}\subseteq\tau(\textit{false})\subseteq\tau^2(\textit{false})\subseteq\dots．
+</script>
+</p>
+<p>結果として，while ループが終了するまでの最大反復回数は，集合 <script type="math/tex">S</script> の要素数によって制限される．
+ループが終了すると，<script type="math/tex">Q=\tau(Q)</script> となり，また <script type="math/tex">Q\subseteq\mu{Z}.\tau(Z)</script> となる．
+<script type="math/tex">Q</script> は不動点でもあるため，<script type="math/tex">\mu{Z}.\tau(Z)\subseteq{Q}</script> となり，したがって <script type="math/tex">Q＝\mu{Z}.\tau(Z)</script> となる．
+したがって，この手続きによって返される値は要求された最小不動点である．
+<script type="math/tex">\tau</script> の最大不動点も同様に，以下のアルゴリズムによって計算できる．
+手続きが終了することとそれが返す値が <script type="math/tex">\mu{Z}.\tau(Z)</script> であることは，本質的に同じ議論を用いて示すことができる．</p>
+<p><center>
+<img src="../img/lec07-fig2.png" width="450">
+</center></p>
+<h2 id="_2">不動点に基づく到達可能性解析</h2>
+<p>モデル検査は，最も頻繁に分析される特性の 1 つは到達可能性である．
+<strong>到達可能性解析</strong> (reachability analysis) は，モデル <script type="math/tex">M</script> が与えられたとき，<script type="math/tex">M</script> の初期状態から到達可能なすべての状態の集合を計算する処理である．
+到達可能性解析は，原子式のブール結合 <script type="math/tex">p</script> に対する <script type="math/tex">M\models\textbf{AG}p</script> の判定へと簡単に拡張できる．
+これは，到達可能な状態に <script type="math/tex">p</script> に反するものがないか判定することで実現できる．
+到達可能性解析では，到達可能な状態の集合に加えて，<script type="math/tex">M\models\textbf{AG}p</script> であるか否かを示す，"True" または "False" を結果として返す．</p>
+<p>到達可能性解析と，<script type="math/tex">M</script> と <script type="math/tex">\textbf{AG} p</script> に対する CTL モデル検査との比較は興味深い．
+後者は，<script type="math/tex">M</script> における <script type="math/tex">\textbf{AG}p</script> を満たすすべての状態からなる集合 <script type="math/tex">[\![\textbf{AG}p]\!]</script> を得るための手続きである．
+この集合には到達不可能な状態が含まれている可能性があるし，到達可能な状態であっても，<script type="math/tex">\textbf{AG}p</script> を満たさないものは<strong>含まれない</strong>．
+CTL モデル検査は <script type="math/tex">[\![\textbf{AG}p]\!]</script> を計算することで，<script type="math/tex">S_{0}\subseteq [\![\textbf{AG}p]\!]</script> を判定し，<script type="math/tex">M\models\textbf{AG}p</script> を結論づけている．</p>
+<p>ここでは，<script type="math/tex">M\models\textbf{AG}p</script> の判定を目的とした，不動点に基づく到達可能性解析アルゴリズムを示す．
+このアルゴリズムは，<strong>最小不動点</strong>の計算に基づいている．
+アルゴリズムを実現するため，以下の演算子を定義する．
+モデル <script type="math/tex">M</script> が与えられたとき，状態の集合 <script type="math/tex">Q</script> の <strong>像</strong> (post image，あるいは単に image) は <script type="math/tex">Q</script> から 1 回の遷移で到達可能な状態の集合である．
+この集合を <script type="math/tex">\textit{post-image}(Q)</script> と表記し，以下のように定義される．
+<script type="math/tex; mode=display">
+    \textit{post-image}(Q)=\{s'|\exists{s}\in{Q.R(s,s')}\}
+</script>
+</p>
+<p>
+<script type="math/tex">\textit{post-image}(Q)</script> によって，述語変換系 <script type="math/tex">Tau</script> を以下のように定義することができる．</p>
+<p>
+<script type="math/tex; mode=display">
+    Tau(Q)=S_0\cup{\textit{post-image}(Q)}
+</script>
+</p>
+<p>この <script type="math/tex">Tau</script> を上述の最小不動点を計算する関数 <script type="math/tex">\textit{lfp}</script> で使用することで，到達可能な状態の集合を得ることができる．
+以下の図はこの計算を図示したものである．</p>
+<p><center>
+<img src="../img/lec07-fig3.png" width="300">
+</center></p>
+<p>以下のプログラムは，到達可能性解析の <script type="math/tex">M\models\textbf{AG}p</script> を検査するための拡張について表している．</p>
+<p><center>
+<img src="../img/lec07-fig4.png" width="450">
+</center></p>
+<p>関数 <script type="math/tex">\textit{On-the-fly Reach}</script> が <script type="math/tex">M</script> に到達可能な状態の集合を計算していることは容易に理解できる．
+不動点計算の繰り返しの間は，<script type="math/tex">p</script> でラベル付けされない到達可能状態があるかどうかの判定は，「その場で」 (on-the-fly) 行われていることに注意する必要がある．
+これにより，このような状態があった場合 (つまり，<script type="math/tex">M\models\textbf{AG}p</script> が満たされない場合) には，すぐに手続きを終了させることができる．
+すべての到達可能な状態が <script type="math/tex">p</script> を満たすならば，<script type="math/tex">M \models \textbf{AG}p</script> と結論付けられる．</p>
+<h2 id="ctl">不動点に基づく CTL モデル検査アルゴリズム</h2>
+<p>ここでは，CTL モデル検査のための不動点計算アルゴリズムを実現する上で，どのように不動点理論を利用するかについて述べる．
+この目的のために，CTL の状態論理式を用いて，状態の集合間の対応付けを記述する．
+<script type="math/tex">f</script> を，状態集合の代入箇所 (つまり，文法上では命題変数となる) <script type="math/tex">Z</script> を含む CTL 式とする．
+このとき，<script type="math/tex">f</script> は次の述語変換系 <script type="math/tex">f：\mathrm{P}(S)\rightarrow\mathrm{P}(S)</script> を定義する．
+<script type="math/tex; mode=display">
+    f(Q)=[\![f[Z/Q]]\!]_{M}=\{s\mid M,s\models f[Z/Q] \} ,
+</script>
+ここで <script type="math/tex">f[Z/Q]</script> は，<script type="math/tex">Z</script> を集合 <script type="math/tex">Q</script> に置き換えることで <script type="math/tex">f</script> から得られる式である．
+例えば <script type="math/tex">\textbf{EX}Z</script> は，状態の集合 <script type="math/tex">Q</script> に対して，<script type="math/tex">Q</script> の前状態の集合を返す対応付けとなる．</p>
+<p>そして，基本的なCTL演算子は，適切な述語変換系の最小または最大の不動点として特徴付けることができる．</p>
+<ul>
+<li>
+<script type="math/tex">[\![\textbf{AF} f_{1} ]\!]_{M} = \mu Z. f_{1} \vee \textbf{AX}Z</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{EF} f_{1}]\!]_{M} = \mu Z. f_{1} \vee \textbf{EX}Z</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{AG} f_{1}]\!]_{M} = \nu Z. f_{1} \wedge \textbf{AX}Z</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{EG} f_{1}]\!]_{M} = \nu Z. f_{1} \wedge \textbf{EX}Z</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{A} (f_{1}\textbf{U} f_{2})]\!]_{M} = \mu Z. f_{2} \vee (f_{1} \wedge \textbf{AX}Z)</script>
+</li>
+<li>
+<script type="math/tex">[[\![\textbf{E} (f_{1}\textbf{U} f_{2})]\!]_{M} =\mu Z. f_{2} \vee (f_{1} \wedge \textbf{EX}Z)</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{A} (f_{1}\textbf{R} f_{2})]\!]_{M} = \nu Z. f_{2} \wedge (f_{1} \vee \textbf{AX}Z)</script>
+</li>
+<li>
+<script type="math/tex">[\![\textbf{E} (f_{1}\textbf{R} f_{2})]\!]_{M} = \nu Z. f_{2} \wedge (f_{1} \vee \textbf{EX}Z)</script>
+</li>
+</ul>
+<p>直感的に，最小不動点はいつか起こる事象に対応し，最大不動点は永遠に満たすべき性質に対応する．
+つまり，<script type="math/tex">\textbf{AF} f_{1}</script> は最小不動点で特徴付けられ，<script type="math/tex">\textbf{EG}f_{1}</script> は最大不動点で特徴付けられる．</p>
+<p>ここでは，<script type="math/tex">\textbf{EG}</script> と <script type="math/tex">\textbf{EU}</script> の特徴付けの正しさについてのみ証明する．
+残りの CTL 演算子の特徴付けについても同様の方法で証明することができる．</p>
+<h4 id="510">補題 5.10</h4>
+<p>
+<script type="math/tex">\textbf{E}(f_{1} \textbf{U} f_{2})</script> は，以下の関数の最小不動点である．
+<script type="math/tex; mode=display">
+\tau (Z)= f_{2} \vee (f_{1} \wedge \textbf{EX}Z).
+</script>
+</p>
+<p><strong>証明</strong>　まず，<script type="math/tex">\tau(Z)=f_{2} \vee (f_{1} \wedge \textbf{EX}Z)</script> が単調であることに気付く．
+補題 5.6 より <script type="math/tex">\tau</script> は <script type="math/tex">\cup</script> 連続である．
+また，<script type="math/tex">\textbf{E} (f_{1} \textbf {U} f_{2})</script> が <script type="math/tex">\tau</script> の不動点であることも簡単に示せる．
+あとは，<script type="math/tex">\textbf{E} (f_{1} \textbf{U} f_{2})</script> が <script type="math/tex">\tau</script> の最小不動点であることを証明する必要がある．
+そのためには，<script type="math/tex">\textbf{E} (f_{1} \textbf{U} f_{2})=\cup_{i} \tau^{i} (false)</script> であることを証明すれば良い．
+一方向は，<script type="math/tex">i</script> についての帰納法を用いることで，すべての <script type="math/tex">i</script> について <script type="math/tex">\tau^{i}(false)\subseteq\textbf{E} (f_{1} \textbf{U} f_{2})</script> であることが簡単に証明される．
+その結果，<script type="math/tex">\cup_{i}\tau^{i}(false)\subseteq\textbf{E}(f_{1} \textbf{U} f_{2})</script> であるとわかる．</p>
+<p>もう一方向，すなわち <script type="math/tex">\textbf{E}(f_{1}\textbf{U}f_{2})\subseteq\cup_{i}\tau^{i}(false)</script> は，<script type="math/tex">f_{1} \textbf{U} f_{2}</script> を満たすパスのプレフィックスの長さに関する帰納法で証明される．
+より具体的には，<script type="math/tex">s \models \textbf{E}(f_{1} \textbf{U} f_{2})</script> ならば，<script type="math/tex">s=s_{1}</script> であり，<script type="math/tex">j \geq 1</script> について <script type="math/tex">s_{j} \models f_{2}</script> かつすべての <script type="math/tex">l < j</script> で <script type="math/tex">s_{l} \models f_{1}</script> となるようなパス <script type="math/tex">\pi =s_{1},s_{2},\ldots</script> が存在するが，このようなすべての状態 <script type="math/tex">s</script> に対して <script type="math/tex">s \in \tau^{j}(false)</script> であることを示す．
+基本ケースは自明である．
+<script type="math/tex">j=1</script> ならば，<script type="math/tex">s \models f_{1}</script> となり，したがって <script type="math/tex">s \in \tau(false)=f_{2} \vee (f_{1} \wedge \textbf{EX}(false))</script> となる．</p>
+<p>帰納ステップでは，すべての <script type="math/tex">s</script> とすべての <script type="math/tex">j \leq n</script> について，上記の主張が成立すると仮定する．
+<script type="math/tex">s</script> を， <script type="math/tex">s_{n+1} \models f_{2} </script> かつすべての <script type="math/tex">l < n+1</script> で <script type="math/tex">s_{l} \models f_{1}</script> となるようなパス <script type="math/tex">\pi = s_{1},s_{2},\ldots</script> の始点であるとする．
+このパス上の状態 <script type="math/tex">s_{2}</script> について考えよう．
+これは <script type="math/tex">f_{1} \textbf{U} f_{2}</script> を満たす長さ <script type="math/tex">n</script> のパスの初期状態であり，したがって帰納仮説より，<script type="math/tex">s_{2} \in \tau^{n}(false)</script> である．
+<script type="math/tex">(s_{1}, s_{2}) \in R</script> であり，<script type="math/tex">s \models f_{1}</script> であるので，<script type="math/tex">s \in f_{1} \wedge \textbf{EX}( \tau^{n}(false) )</script>である．
+したがって <script type="math/tex">s \in \tau^{n+1}(false)</script> である．
+(証明終)</p>
+<p>以下の図は，<script type="math/tex">\textbf{E}(p\textbf{U}q)</script> を満たす状態の集合を，単純なクリプキ構造に対して手続き <script type="math/tex">\textit{Lfp}</script> を用いて計算する方法を示している．</p>
+<p><center>
+<img src="../img/lec07-fig5.png" width="450">
+</center></p>
+<p>この時，述語変換系 <script type="math/tex">\tau</script> は次の式によって与えられる．
+<script type="math/tex; mode=display">
+\tau (Z)= q \vee (p \wedge \textbf{EX}Z).
+</script>
+この図は近似の列 <script type="math/tex">\tau^{i}(false)</script> がどのように <script type="math/tex">\textbf{E}(p\textbf{U}q)</script> に収束するのかを示している．
+現時点での <script type="math/tex">\textbf{E}(p\textbf{U}q)</script> に対する近似を構成する状態が網掛けで示されている．
+<script type="math/tex">\tau^{3}(false)=\tau^{4}(false)</script> であることは簡単にわかる．
+したがって，<script type="math/tex">\textbf{E}(p\textbf{U}q)=\tau^{3}(false)</script> であることがわかる．
+<script type="math/tex">s_{0}</script> は <script type="math/tex">\tau^{3}(false)</script> に含まれるので，<script type="math/tex">M,s_{0} \models \textbf{E}(p\textbf{U}q)</script> だとわかる．</p>
+<p>以下の補題 5.11 〜 5.14 は <script type="math/tex">\textbf{EG}f_{1}=\nu Z.f_{1}\wedge \textbf{EX}Z</script> を示している．</p>
+<h4 id="511">補題 5.11</h4>
+<p>
+<script type="math/tex">\tau(Z)=f_{1} \wedge \textbf{EX}Z</script> は単調である．</p>
+<p><strong>証明</strong>　<script type="math/tex">P_{1} \subseteq P_{2}</script> とする．
+<script type="math/tex">\tau(P_{1}) \subseteq \tau(P_{2})</script> を示すために，ある状態 <script type="math/tex">s \in \tau(P_{1})</script> について考える．
+このとき，<script type="math/tex">s \models f_{1} </script> であり，<script type="math/tex">(s,s') \in R</script> かつ <script type="math/tex">s' \in P_{1}</script> を満たす <script type="math/tex">s'</script> が存在する．
+<script type="math/tex">P_{1} \subseteq P_{2}</script> なので，同様に <script type="math/tex">s' \in P_{2}</script> である．
+したがって，<script type="math/tex">s \in \tau(P_{2})</script> である．
+(証明終)</p>
+<h4 id="512">補題 5.12</h4>
+<p>
+<script type="math/tex">\tau(Z)=f_{1} \wedge \textbf{EX}Z</script> とし，<script type="math/tex">\tau^{i_{0}}(true)</script> を列 <script type="math/tex">true \supseteq \tau(true) \supseteq \ldots</script> の下限とする．
+このときすべての <script type="math/tex">s \in S</script> について，<script type="math/tex">s \in \tau^{i_{0}}(true)</script> ならば，<script type="math/tex">s \models f_{1}</script> であり，<script type="math/tex">(s,s') \in R</script> かつ <script type="math/tex">s' \in \tau^{i_{0}}(true)</script> を満たす <script type="math/tex">s'</script> が存在する．</p>
+<p><strong>証明</strong>　<script type="math/tex">s \in \tau^{i_0} (true)</script> とする．
+このとき，<script type="math/tex">\tau^{i_0} (true)</script> は <script type="math/tex">\tau</script> の不動点であるため，<script type="math/tex">\tau^{i_0} (true) = \tau(\tau^{i_0} (true))</script> である．
+したがって，<script type="math/tex">s \in \tau(\tau^{i_0} (true))</script> である．
+<script type="math/tex">\tau</script> の定義より，<script type="math/tex">s \models f_1</script> であり，<script type="math/tex">(s, s') \in R</script> かつ <script type="math/tex">s' \in \tau{i_0} (true)</script> であるような状態 <script type="math/tex">s'</script> が存在する．
+(証明終)</p>
+<h4 id="513">補題 5.13</h4>
+<p>
+<script type="math/tex">\mathbf{EG}f_1</script> は関数 <script type="math/tex">\tau(Z) = f_1 \wedge \mathbf{EX}Z</script> の不動点である．</p>
+<p><strong>証明</strong>　<script type="math/tex">s_0 \models \mathbf{EG}f_1</script> とする．
+このとき，<script type="math/tex">\models</script> の定義により，すべての <script type="math/tex">k</script> に対して，<script type="math/tex">s_k \models f_1</script> であるようなパス <script type="math/tex">s_0, s_1, \cdots </script> が <script type="math/tex">M</script> に存在する．
+これは <script type="math/tex">s_0 \models f_1</script> かつ<script type="math/tex">s_1 \models \mathbf{EG} f_1</script> であることを意味する．
+言い換えると，<script type="math/tex">s_0 \models f_1 </script> かつ <script type="math/tex">s_0 \models  \mathbf{EXEG} f_1</script> である．
+したがって，<script type="math/tex">\mathbf{EG} f_1 \subseteq f_1 \wedge \mathbf{EXEG} f_1</script> である．
+同様に，<script type="math/tex">s_0 \models f_1 \wedge \mathbf{EXEG} f_1</script> ならば<script type="math/tex">s_0 \models \mathbf{EG} f_1</script> である．
+結果，<script type="math/tex">\mathbf{EG} f_1 = f_1 \wedge \mathbf{EXEG} f_1</script> である．
+(証明終)</p>
+<h4 id="514">補題 5.14</h4>
+<p>
+<script type="math/tex">\mathbf{EG}f_1</script> は関数
+<script type="math/tex; mode=display">
+\tau(Z) = f_1 \wedge \mathbf{EX}Z
+</script>
+の最大不動点である．</p>
+<p><strong>証明</strong>　<script type="math/tex">\tau</script> は単調なので，補題 5.6 より <script type="math/tex">\cap</script> 連続でもある．
+したがって，<script type="math/tex">\mathbf{EG} f_1</script> は <script type="math/tex">\tau</script> の最大不動点であることを示すためには，<script type="math/tex">\mathbf{EG} f_1 = \cap_i \tau^i (true)</script> を証明することで十分である．</p>
+<p>初めに，<script type="math/tex">\mathbf{EG} f_1 \subseteq \cap_i \tau^i (true)</script> を示す．
+すべての <script type="math/tex">i</script> に対して <script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^i (true)</script> であることを示すために <script type="math/tex">i</script> に関する帰納法を適用することで，この主張を立証する．
+明らかに，<script type="math/tex">\mathbf{EG} f_1 \subseteq true</script> である．
+<script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^n (true)</script> とする．
+<script type="math/tex">\tau</script> は単調なので，<script type="math/tex">\tau(\mathbf{EG} f_1) \subseteq \tau^{n+1} (true)</script> である．
+補題 5.13 より，<script type="math/tex">\tau(\mathbf{EG} f_1) = \mathbf{EG} f_1</script> である．
+したがって，<script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^{n+1} (true)</script> である．</p>
+<p>そして，<script type="math/tex">\cap_i \tau^i (true)</script> が <script type="math/tex">\mathbf{EG} f_1</script> の部分集合であることを示す．
+ある状態 <script type="math/tex">s \in \cap_i \tau^i (true)</script> を考える．
+この状態は各 <script type="math/tex">\tau^i (true)</script> に含まれる．
+したがって，この状態 <script type="math/tex">s</script> もまた不動点 <script type="math/tex">\tau^{i_0} (true)</script> に含まれる．
+補題 5.12 より，<script type="math/tex">s</script> は状態の無限列の始点であり，その列における各状態は関係 <script type="math/tex">R</script> によって直前の状態と関連付けられる．
+さらに，この列の各状態は <script type="math/tex">f_1</script> を満たす．
+したがって，<script type="math/tex">s \models \mathbf{EG} f_1</script> である．
+(証明終)</p>
+<h2 id="_3">不動点による公平性の特徴付け</h2>
+<p>公平性制約とそれらの意義は 4 章で議論した．
+5.2 節では，CTL の明示的な状態探索に基づくモデル検査アルゴリズムに公平性制約が加えられた．
+本節では，前節で与えられた CTL 時相演算子の不動点による特徴付けを公平性制約も含めるように拡張する．
+公平性制約は CTL 式の集合 <script type="math/tex">F=\{P_1,\cdots, P_n\}</script> によって与えられるとする．</p>
+<p>公平性制約 <script type="math/tex">F</script> が与えられた式 <script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> を考える．
+この式は，現状態から始まるパスで，<script type="math/tex">f</script> が大域的（不変的）に成り立ち，かつ <script type="math/tex">F</script> 内のそれぞれの式が無限にしばしば満たされるようなものが存在するということを意味する．
+このような状態の集合 <script type="math/tex">Z</script> は以下の二つの性質を持つ最大の集合である．</p>
+<ol>
+<li>
+<script type="math/tex">Z</script> 内のすべての状態は <script type="math/tex">f</script> を満たす．</li>
+<li>すべての公平性制約 <script type="math/tex">P_k \in F</script> とすべての状態 <script type="math/tex">s \in Z</script> に対して，<script type="math/tex">s</script> から <script type="math/tex">P_k</script> を満たす <script type="math/tex">Z</script> 内の状態までの長さ 1 以上の状態列が存在し，パス上のすべての状態で <script type="math/tex">f</script> を満たす．</li>
+</ol>
+<p>この特徴付けは，明示的な状態に与えられた補題 5.3 の特徴付けとは幾分異なる．
+以下のように不動点による表現が可能なので，これは不動点による特徴付けにより適しているといえる．</p>
+<p>
+<script type="math/tex; mode=display">
+\mathbf{E_{f}G}f = \nu Z.f \wedge \bigwedge^{n}_{k=1} \mathbf{EXE}(f \mathbf{U} (Z \wedge P_k)) \quad\cdots(5.1)
+</script>
+</p>
+<p>この式は CTL と不動点の両方の演算子を使用していることが分かる．
+前節で与えられた CTL 演算子の不動点による特徴付けを用いて，公平性制約をもつ <script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> の不動点による特徴付けを得ることができる．
+結果として生じる式は，不動点演算子の入れ子を含むことになる．</p>
+<p>式 5.1 は CTL で直接表現できないことを示すことが可能である．
+16 章では，最小と最大の不動点演算子の両方を含む <script type="math/tex">\mu</script> 計算と呼ばれる非常に表現力のある論理について説明する．
+公平な <script type="math/tex">\mathbf{EG}</script> について上述の通り与えられた混成式は，<script type="math/tex">\mu</script> 計算へと簡単に変換できる．</p>
+<p>以下に，式 5.1 の正当性を証明する．
+証明を二つの補題に分割する．
+第一の補題は <script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> が以下の式の不動点であることを示す．
+<script type="math/tex; mode=display">
+Z = f \wedge \bigwedge^{n}_{k=1} \mathbf{EXE} (f \mathbf{U} (Z \wedge P_k)) \quad\cdots(5.2)
+</script>
+したがって，これは最大不動点に含まれる．
+第二の補題はこの式の最大不動点が <script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> に含まれることを示す．
+この 2 つの証明を組み合わせると，<script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> が最大不動点であるという結論が導かれる．</p>
+<h4 id="515">補題 5.15</h4>
+<p>
+<script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> は式 5.2 の不動点である．</p>
+<p><strong>証明</strong>　<script type="math/tex">s \in \mathbf{E_f G} f</script> とする．
+<script type="math/tex">s</script> は公平なパスの始まりであり，そのパス上のすべての状態では <script type="math/tex">f</script> を満たす．
+<script type="math/tex">s_i</script> を，このパスで <script type="math/tex">s_i \in P_i</script> かつ <script type="math/tex">s_i \neq s</script> となるような最初の状態とする．
+状態 <script type="math/tex">s_i</script> もまた，すべての状態が <script type="math/tex">f</script> を満たしている公平なパスの始まりの状態である．
+したがって，<script type="math/tex">s_i \in \mathbf{E_f G} f</script> である．
+すべての <script type="math/tex">i</script> に対して，
+<script type="math/tex; mode=display">
+    s \models f \wedge \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_i))
+</script>
+であり，したがって，
+<script type="math/tex; mode=display">
+    s \models f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))
+</script>
+ということになる．
+よって，<script type="math/tex">\mathbf{E_f G} f \subseteq f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))</script> が結論付けられる．
+そして，式
+<script type="math/tex; mode=display">
+    f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k)) \subseteq \mathbf{E_f G} f
+</script>
+を示すため，もし <script type="math/tex">s \models f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))</script> ならば，<script type="math/tex">s</script> から始まり，<script type="math/tex">s' \models (\mathbf{E_f G} f \wedge P_k)</script> であるような <script type="math/tex">s'</script> への有限のパスが存在するという点に留意する．
+さらに，<script type="math/tex">s</script> から <script type="math/tex">s'</script> へのパス上のすべての状態で <script type="math/tex">f</script> を満たす．
+したがって，要求通り，<script type="math/tex">s \models \mathbf{E_f G} f</script> である．
+これにより，<script type="math/tex">\mathbf{E_f G} f</script> は不動点である．</p>
+<h4 id="516">補題 5.16</h4>
+<p>式 5.2 の最大不動点は <script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> に含まれる．</p>
+<p><strong>証明</strong>　<script type="math/tex">Z</script> を式 5.2 の任意の不動点とする．
+ここでは <script type="math/tex">Z</script> が <script type="math/tex">\mathbf{E_f G} f</script> に含まれることを示す．
+<script type="math/tex">s \in Z</script> と仮定する．
+このとき，<script type="math/tex">s</script> は <script type="math/tex">f</script> を満たす．
+さらに <script type="math/tex">s</script> は，すべての状態で <script type="math/tex">f</script> を満たし，かつ <script type="math/tex">Z \wedge P_1</script> を満たす状態 <script type="math/tex">s_1</script> へ到達するようなパスの起点となる後続状態 <script type="math/tex">s'</script> をもつ．
+<script type="math/tex">s_1 \in Z</script> であるため，同様の議論によって，<script type="math/tex">s_1</script> から <script type="math/tex">P_2</script> の状態 <script type="math/tex">s_2</script> へのパスが存在するという結論を得ることができる．
+この議論を <script type="math/tex">n</script> 回繰り返すことで，<script type="math/tex">s</script> は，すべての状態で <script type="math/tex">f</script> を満たし，かつ <script type="math/tex">P_1, \cdots P_n</script> を通るパスの起点であると結論付けられる．
+さらに，このパスの最後の状態は <script type="math/tex">Z</script> に含まれる．
+したがって，この状態から <script type="math/tex">P_1</script> のある状態へ戻るパスが存在し，こうしたパスの構成を繰り返すことができる．</p>
+<p>帰納法を用いることで，<script type="math/tex">s</script> を起点として，すべての状態で <script type="math/tex">f</script> が満たされ，かつ各公平性制約が無限にしばしば満たされるパスの存在を形式的に示すことができる．
+したがって，<script type="math/tex">s</script> は <script type="math/tex">\mathbf{E_f G} f</script> に含まれる．
+<script type="math/tex">Z</script> は任意の不動点なので，最大不動点は <script type="math/tex">\mathbf{E_f G} f</script> に含まれる．</p>
+<p>5.2 節のように，<script type="math/tex">\textit{fair}</script> で，公平な意味論に従って <script type="math/tex">\mathbf{E_f} \mathbf{G} true</script> を満たすすべての状態の集合を表すものとする．
+このとき，公平な意味論に従った式 <script type="math/tex">\mathbf{E_f} \mathbf{X}f_1</script> と <script type="math/tex">\mathbf{E}(f_1 \mathbf{U} f_2)</script> は，式<script type="math/tex">\mathbf{EX}(f_1 \wedge fair)</script> と <script type="math/tex">\mathbf{E}(f_1 \mathbf{U} (f_2 \wedge fair))</script> によってそれぞれ表現可能である．
+これらの式の不動点による特徴付けは， <script type="math/tex">\mathbf{EX}</script>，<script type="math/tex">\mathbf{EU}</script>，そして <script type="math/tex">fair</script> の不動点による特徴づけを用いて得ることができる．</p>
+<h2 id="_4">有限パス上での不動点による特徴付け</h2>
+<p>これまでは一貫して，左全関係となる遷移関係をもつクリプキ構造を仮定している．
+この仮定を緩める場合，いくつかの概念が著しく変化する．
+それの一つが CTL 式の不動点による特徴付けである．
+初めに有限パス上における時相演算子の意味論を定義する．</p>
+<p>
+<script type="math/tex">M,\pi \models \mathbf{F}g_1</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M,\pi^{i} \models g_1</script> であるような <script type="math/tex">0 \leq i \leq length(\pi)</script> が存在する</p>
+<p>
+<script type="math/tex">M,\pi \models \mathbf{G}g_1</script>
+<script type="math/tex">\Leftrightarrow</script> すべての <script type="math/tex">0 \leq i \leq length(\pi)</script> に対して，<script type="math/tex">M,\pi^{i} \models g_1</script> である</p>
+<p>CTL 式の不動点による特徴付けが，それに応じて変更される．</p>
+<ul>
+<li>
+<script type="math/tex">[\![\mathbf{AF}f_1]\!]_M = \mu Z.f_1 \vee (\mathbf{AX}Z \wedge \mathbf{EX} true)</script>
+</li>
+<li>
+<script type="math/tex">[\![\mathbf{EG}f_1]\!]_M = \nu Z.f_1 \vee (\mathbf{EX}Z \vee \mathbf{AX} false)</script>
+</li>
+</ul>
+<p>その他の CTL 式に対する不動点特徴付けは同様に定義される．
+<script type="math/tex">\mathbf{AF}f_1</script> に対して (<script type="math/tex">\mathbf{EF}f_1</script> についても同様)，仮に <script type="math/tex">f_1</script> がある状態で満たされなかった場合，その状態は後続状態をもつ必要があることに注意してほしい．
+左全関係の遷移関係をもつクリプキ構造ではすべてのパスが無限であるため，このような要求は不要である．
+双対的に，<script type="math/tex">\mathbf{EG}f_1</script> に対しては，後続状態をもたないすべての状態は空虚に (vacuously) この式を満たすことになる．
+これは，ある状態が後続状態をもたないとき，かつそのときのみ満たされる式 <script type="math/tex">\mathbf{AX} false</script> を追加することによって反映される．</p>
+<p>また，<script type="math/tex">\mathbf{AF}</script> と <script type="math/tex">\mathbf{EG}</script> の双対性と同様に，<script type="math/tex">\mathbf{EF}</script> と <script type="math/tex">\mathbf{AG}</script> の双対性も，この意味論と有限パス上の不動点特徴付けにおいて保存されることに留意すべきである．</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../lec06/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第6回
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>
