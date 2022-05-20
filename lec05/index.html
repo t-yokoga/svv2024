@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -18,32 +17,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -269,6 +288,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -283,37 +303,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ctl" class="md-nav__link">
-    CTL* の部分論理
+  <a href="#43-ctl" class="md-nav__link">
+    4.3 CTL* に基づく時相論理
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の部分論理">
+    <nav class="md-nav" aria-label="4.3 CTL* に基づく時相論理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ctl_1" class="md-nav__link">
-    分岐時間論理 CTL
+  <a href="#431-ctl" class="md-nav__link">
+    4.3.1 分岐時間論理 CTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#actl-actl" class="md-nav__link">
-    全称計算木論理 ACTL* および ACTL
+  <a href="#432-actl-actl" class="md-nav__link">
+    4.3.2 全称計算木論理 ACTL* および ACTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ltl" class="md-nav__link">
-    線形時相論理 LTL
+  <a href="#433-ltl" class="md-nav__link">
+    4.3.3 線形時相論理 LTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctl_2" class="md-nav__link">
-    CTL* の部分論理の関係性
+  <a href="#434-ctl" class="md-nav__link">
+    4.3.4 CTL* の部分論理の関係性
   </a>
   
 </li>
@@ -324,35 +344,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4 集合原子命題と集合意味論による時相論理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    4.5 公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    4.6 反例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    4.7 安全性と活性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    集合原子命題と集合意味論による時相論理
+    書誌情報
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    公平性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    反例
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    安全性と活性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     演習問題
   </a>
   
@@ -396,6 +423,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -408,6 +465,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -422,37 +480,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ctl" class="md-nav__link">
-    CTL* の部分論理
+  <a href="#43-ctl" class="md-nav__link">
+    4.3 CTL* に基づく時相論理
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の部分論理">
+    <nav class="md-nav" aria-label="4.3 CTL* に基づく時相論理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ctl_1" class="md-nav__link">
-    分岐時間論理 CTL
+  <a href="#431-ctl" class="md-nav__link">
+    4.3.1 分岐時間論理 CTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#actl-actl" class="md-nav__link">
-    全称計算木論理 ACTL* および ACTL
+  <a href="#432-actl-actl" class="md-nav__link">
+    4.3.2 全称計算木論理 ACTL* および ACTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ltl" class="md-nav__link">
-    線形時相論理 LTL
+  <a href="#433-ltl" class="md-nav__link">
+    4.3.3 線形時相論理 LTL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctl_2" class="md-nav__link">
-    CTL* の部分論理の関係性
+  <a href="#434-ctl" class="md-nav__link">
+    4.3.4 CTL* の部分論理の関係性
   </a>
   
 </li>
@@ -463,35 +521,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4 集合原子命題と集合意味論による時相論理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    4.5 公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    4.6 反例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    4.7 安全性と活性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    集合原子命題と集合意味論による時相論理
+    書誌情報
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    公平性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    反例
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    安全性と活性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     演習問題
   </a>
   
@@ -509,10 +574,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="5-ctl">第5回 CTL* ベースのその他の時相論理</h1>
-<p>この回では，教科書の第4章 "Temporal Logic" の後半部分について説明します．</p>
-<div class="admonition 概要">
+
+
+<h1 id="5-ctl">第5回 CTL* ベースのその他の時相論理</h1>
+<p>この回では，教科書の第4章 "Temporal Logic" の後半 (4.3 〜 4.7) について説明します．</p>
+<div class="admonition summary">
 <p class="admonition-title">概要</p>
 <ul>
 <li>分岐時間論理 CTL</li>
@@ -525,7 +591,7 @@
 <li>安全性と活性</li>
 </ul>
 </div>
-<h2 id="ctl">CTL* の部分論理</h2>
+<h2 id="43-ctl">4.3 CTL* に基づく時相論理</h2>
 <p>これから，CTL* の重要な部分論理のいくつかについて説明する．
 この部分論理のうち，CTL，ACTL*，そして ACTL は<strong>分岐時間</strong>論理であり，LTL は<strong>線形時間</strong>論理である．
 これらの論理は，文法的にも意味的にも，以下のように CTL* の部分集合となっている．</p>
@@ -538,8 +604,8 @@
 <p>この 4 つの部分論理はいずれも CTL* の文法に制約を設けることで定義されるものなので，意味論も前回述べた CTL* の意味論に従って定義される．
 ただ，CTL のように制限された文法に基づいて，直接（等価な）意味論を定義した方がわかりやすい場合もある．
 以下，4 つの論理の文法について説明する．</p>
-<h3 id="ctl_1">分岐時間論理 CTL</h3>
-<p>計算木論理 (computation tree logic) CTL は CTL* の部分論理で，常にパス限定子と時相演算子が組となって現れる．
+<h3 id="431-ctl">4.3.1 分岐時間論理 CTL</h3>
+<p>計算木論理 (computation tree logic) CTL<sup id="fnref:47"><a class="footnote-ref" href="#fn:47">1</a></sup><sup id="fnref:123"><a class="footnote-ref" href="#fn:123">2</a></sup><sup id="fnref:203"><a class="footnote-ref" href="#fn:203">3</a></sup> は CTL* の部分論理で，常にパス限定子と時相演算子が組となって現れる．
 したがって，文法は以下のようになる．</p>
 <ul>
 <li><strong>B1</strong>: <script type="math/tex">p \in AP</script> ならば，<script type="math/tex">p</script> は CTL 式である．</li>
@@ -605,8 +671,8 @@ CTL 式の部分式はすべて状態論理式となる．
 
 <p>それ以外の 7 つの CTL 演算子は <script type="math/tex">\textbf{EX}</script>，<script type="math/tex">\textbf{EG}</script>，<script type="math/tex">\textbf{EU}</script> による演算の省略形として解釈できる．
 この CTL の意味論が，CTL* の制約文法から得られる意味論と等価であることは理解できるだろう．</p>
-<h3 id="actl-actl">全称計算木論理 ACTL* および ACTL</h3>
-<p>ACTL* は CTL* の部分論理で，全称パス限定子である <script type="math/tex">\textbf{A}</script> のみが利用できる．
+<h3 id="432-actl-actl">4.3.2 全称計算木論理 ACTL* および ACTL</h3>
+<p>ACTL*<sup id="fnref:255"><a class="footnote-ref" href="#fn:255">4</a></sup><sup id="fnref:361"><a class="footnote-ref" href="#fn:361">5</a></sup> は CTL* の部分論理で，全称パス限定子である <script type="math/tex">\textbf{A}</script> のみが利用できる．
 これまでに述べたように，否定を用いれば <script type="math/tex">\textbf{E}</script> を <script type="math/tex">\textbf{A}</script> で表現できてしまうので，ACTL* の式は NNF 形式であるという制約を加える必要がある．</p>
 <p>したがって，ACTL* の状態論理式ならびにパス論理式の文法は以下の通りとなる．</p>
 <ul>
@@ -639,8 +705,8 @@ ACTL の文法は以下の通りとなる．</p>
 <li><strong>D3</strong>: <script type="math/tex">f</script> と <script type="math/tex">g</script> が ACTL 式ならば，<script type="math/tex">f \wedge g</script>，<script type="math/tex">f \vee g</script>，<script type="math/tex">\textbf{A}(f\textbf{U}g)</script>，<script type="math/tex">\textbf{A}(f\textbf{R}g)</script> も ACTL 式である．</li>
 </ul>
 <p>ACTL 式は <script type="math/tex">\textbf{AX}</script>，<script type="math/tex">\textbf{AU}</script>，そして <script type="math/tex">\textbf{AR}</script> を用いた式へと変換可能である．</p>
-<h3 id="ltl">線形時相論理 LTL</h3>
-<p>LTL 論理は線形の時相論理である．
+<h3 id="433-ltl">4.3.3 線形時相論理 LTL</h3>
+<p>LTL<sup id="fnref:419"><a class="footnote-ref" href="#fn:419">6</a></sup> は線形の時相論理である．
 LTL は，クリプキ構造の計算木そのものではなく，計算木における単一の計算（すなわちパス）の集合に対して評価される．
 LTL 式は <script type="math/tex">\textbf{A}f</script> という形となり，ここで <script type="math/tex">f</script> は CTL* のパス限定子を含まないパス論理式である．
 パス論理式が内部にパス限定子をもたないので，部分式として状態論理式となるのは原子命題のみである．</p>
@@ -654,10 +720,10 @@ LTL パス論理式は以下のように定義される．</p>
 </ul>
 <p>
 <script type="math/tex">f \textbf{R} g \equiv \neg (\neg f \textbf{U} \neg g)</script>，<script type="math/tex">\textbf{F} f \equiv true \textbf{U} f</script>，そして <script type="math/tex">\textbf{G} f \equiv \neg \textbf{F} \neg f</script> なので，LTL は <script type="math/tex">\textbf{X}</script> と <script type="math/tex">\textbf{U}</script> 演算子のみで定義できる．</p>
-<p>LTL 式の一つだけの全称限定子は省略されることがある．
+<p>文献によっては（例えば，Pneuli の論文<sup id="fnref2:419"><a class="footnote-ref" href="#fn:419">6</a></sup> やモデル検査ハンドブック<sup id="fnref:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による時相論理の章），LTL 式の一つだけの全称限定子は省略されることがある．
 この場合，LTL パス論理式 <script type="math/tex">f</script> に対する <script type="math/tex">M \models f</script> は <script type="math/tex">M \models \textbf{A}f</script> を意味する．</p>
-<h3 id="ctl_2">CTL* の部分論理の関係性</h3>
-<p>これまでに説明した 5 つの論理は異なる表現力をもつ．
+<h3 id="434-ctl">4.3.4 CTL* の部分論理の関係性</h3>
+<p>これまでに説明した 5 つの論理が異なる表現力をもつことは示されている<sup id="fnref:121"><a class="footnote-ref" href="#fn:121">8</a></sup><sup id="fnref:204"><a class="footnote-ref" href="#fn:204">9</a></sup><sup id="fnref:340"><a class="footnote-ref" href="#fn:340">10</a></sup>．
 上述の包含関係の図は，文法と表現力の双方に関するものである．</p>
 <p>例を挙げると，LTL 式 <script type="math/tex">\textbf{AFG}p</script> と等価な CTL 式は存在しない．
 この式は，全てのパスにおいて，それ以降で <script type="math/tex">p</script> が永久に成り立つような状態が存在することを表している．
@@ -665,24 +731,23 @@ LTL パス論理式は以下のように定義される．</p>
 この式は，計算木の全てのパス上の状態において，いつか <script type="math/tex">p</script> が成り立つパスが存在することを表している．
 これらの論理和である <script type="math/tex">\textbf{A}(\textbf{FG}p) \vee \textbf{AG}(\textbf{EF}p)</script> は CTL* の論理式であるが，CTL と LTL のどちらでも表現できない．</p>
 <p>ACTL は CTL の部分論理なので，ACTL と LTL は比較できない．
-論理式 <script type="math/tex">\textbf{AF AG}a</script> と <script type="math/tex">\textbf{AF AX}a</script> は ACTL 式であるが，これらの式は LTL では表現できない．
+論理式 <script type="math/tex">\textbf{AF AG}a</script> と <script type="math/tex">\textbf{AF AX}a</script> は ACTL 式であるが，これらの式は LTL では表現できない<sup id="fnref2:121"><a class="footnote-ref" href="#fn:121">8</a></sup>．
 また，ACTL* は LTL より表現力がある論理である．
-例として，ACTL* の式である <script type="math/tex">\textbf{AG}p \vee \textbf{AG}q</script> は LTL では表現できない．
+例として，ACTL* の式である <script type="math/tex">\textbf{AG}p \vee \textbf{AG}q</script> は LTL では表現できない<sup id="fnref3:121"><a class="footnote-ref" href="#fn:121">8</a></sup>．
 最後に，CTL 式 <script type="math/tex">\textbf{AG}(\textbf{EF}p)</script> や <script type="math/tex">\textbf{AG} \neg(\textbf{AF}p)</script> は ACTL では表現できない．
-予想外なことに，LTL 式の中には CTL では表現できるが ACTL では表現できないものもある．</p>
+予想外なことに，LTL 式の中には CTL では表現できるが ACTL では表現できないものもある<sup id="fnref:70"><a class="footnote-ref" href="#fn:70">11</a></sup>．</p>
 <div class="admonition note">
 <p class="admonition-title">CTL と LTL では表現できるが ACTL では表現できない特性</p>
-<p>Bojańczyk によって「全てのパスが <script type="math/tex">(ab)^*a(ab)^*c^\omega</script> に属する」という言語は，CTL や LTL では表現できるが ACTL では表現できないことが証明されている．
+<p>Bojańczyk によって「全てのパスが <script type="math/tex">(ab)^*a(ab)^*c^\omega</script> に属する」という言語は，CTL や LTL では表現できるが ACTL では表現できないことが証明されている<sup id="fnref2:70"><a class="footnote-ref" href="#fn:70">11</a></sup>．
 なお，この特性は全てのパスについて満たすべき性質に言及しているにも関わらず，これを表す CTL 式では存在の限定子が用いられるという不思議な結果が得られている．</p>
-<p>M. Bojańczyk, "The common fragment of ACTL and LTL," In FOSSACS 2008, LNCS 4692, pp. 172-185, 2008.</p>
 </div>
-<h2 id="_1">集合原子命題と集合意味論による時相論理</h2>
+<h2 id="44">4.4 集合原子命題と集合意味論による時相論理</h2>
 <p>論理学では，論理式をその式を満たす割り当ての集合と関連付けることが一般的である．
 クリプキ構造上で解釈される時相論理の文脈では，その式が真となるクリプキ構造の状態の集合との関連付けに相当する．</p>
 <p>したがって，CTL* 状態論理式 <script type="math/tex">f</script> の意味論を，<script type="math/tex">f</script> を満たす状態を用いて表現できる．
 クリプキ構造 <script type="math/tex">M</script> が与えられたとき，<script type="math/tex">f</script> と <script type="math/tex">f</script> が真となる状態の集合を以下のように関連付ける．</p>
 <p>
-<script type="math/tex; mode=display"> [\![ f ]\!]_M = \{ s \in S \mid M, s \models f \} </script>
+<script type="math/tex; mode=display">[\![ f ]\!]_M = \{ s \in S \mid M, s \models f \} </script>
 </p>
 <p>文脈から <script type="math/tex">M</script> が明らかな場合は，省略して書くこともある．</p>
 <p>CTL* の文法と意味論を，ラベルではなく直接クリプキ構造の状態を参照するよう拡張する．
@@ -698,7 +763,7 @@ LTL パス論理式は以下のように定義される．</p>
 </li>
 </ul>
 
-<p>Definition 4.2 の意味論も単純に以下のように拡張する．</p>
+<p>定義 4.2 の意味論も単純に以下のように拡張する．</p>
 <ul>
 <li style="list-style: none">
 1a. \(M, s \models \{ s_1, \ldots , s_n\}\) \(\Leftrightarrow\) \(s \in \{ s_1, \ldots , s_n\}\)
@@ -706,7 +771,7 @@ LTL パス論理式は以下のように定義される．</p>
 </ul>
 
 <p>例えば，式 <script type="math/tex">\textbf{EX}\{s, t\}</script> は，1 ステップで状態 <script type="math/tex">s</script> または <script type="math/tex">t</script> に到達可能な状態において真となる．</p>
-<h2 id="_2">公平性</h2>
+<h2 id="45">4.5 公平性</h2>
 <p><a href="../lec03#_14">第3回</a>で，システムのモデル化における公平性の重要性について述べた．
 公平性制約を伴うシステムは，<strong>公平クリプキ構造</strong> (fair Kripke structure) <script type="math/tex">M = (S, S_0, R, L, AP, F)</script>としてモデル化することができる．ここで，<script type="math/tex">S</script>，<script type="math/tex">S_0</script>，<script type="math/tex">R</script>，<script type="math/tex">L</script>，そして<script type="math/tex">AP</script>はこれまでの定義と同様である．
 <strong>公平性制約</strong> (fairness constraint) の集合 <script type="math/tex">F</script> は，状態の部分集合 <script type="math/tex">P_i \subseteq S</script> を用いて <script type="math/tex">F = \{P_1, \ldots, P_k\} \subseteq 2^S</script> と定義される．
@@ -728,7 +793,7 @@ LTL パス論理式は以下のように定義される．</p>
 と書くことで，公平性を適用できる．
 1つ目の式 <script type="math/tex">\textbf{E}(\text{fpath} \wedge\varphi)</script> は，公平でかつ <script type="math/tex">\varphi</script> を満たすパスが存在することを表現している．
 2つ目の式 <script type="math/tex">\textbf{A}(\text{fpath} \rightarrow\varphi)</script> は，全てのパスについて，公平であれば必ず <script type="math/tex">\varphi</script> を満たすことを表現している．</p>
-<p>ここで，<script type="math/tex">\textbf{GF}</script> という形の式は CTL では表現できないため，上述の公平性制約は CTL では表現できない．
+<p>ここで，<script type="math/tex">\textbf{GF}</script> という形の式は CTL では表現できないため，上述の公平性制約は CTL では表現できない<sup id="fnref4:121"><a class="footnote-ref" href="#fn:121">8</a></sup><sup id="fnref2:203"><a class="footnote-ref" href="#fn:203">3</a></sup><sup id="fnref2:204"><a class="footnote-ref" href="#fn:204">9</a></sup>．
 そのため，CTL で公平性を扱うためには，その意味論を少し修正する必要がある．
 新しい意味論を<strong>公平意味論</strong> (fair semantics) と呼ぶことにする．
 一般性のため，CTL* の意味論をもとに公平意味論を定義する．
@@ -750,7 +815,7 @@ LTL パス論理式は以下のように定義される．</p>
 <p>公平性制約をもたない構造を公平性制約をもつ構造として表すことが便利な場合もある．
 その際には，計算として考慮されるパスの集合が保持される．
 これは，<script type="math/tex">F = \{S\}</script> とすることで達成できる．</p>
-<h2 id="_3">反例</h2>
+<h2 id="46">4.6 反例</h2>
 <p>反例の生成はモデル検査の中心的な機能であり，モデル検査が定理証明や抽象的解釈といった他の検証アプローチと異なる部分である．
 最も単純な形として，反例は仕様に違反することを示す系列である．
 したがって，反例はシステムを開発した技術者に対する貴重なフィードバックとなる．</p>
@@ -786,9 +851,9 @@ LTL パス論理式は以下のように定義される．</p>
 <p>上記の議論を拡張して，全ての LTL 式がラッソ型の反例をもつことを証明することもできる．
 しかし，一般的には，公平性制約も議論に含まれるべきである．
 この問題に対する完全な議論は，オートマトンの文脈で第 7 章 7.5 節において示されており，そこでは Büchi オートマトンの空虚性 (emptiness) を検査するアルゴリズムについて議論がなされている．</p>
-<p>文献 [137] や [440] で示されているように，ACTL や CTL に対してはさらに詳細な反例が与えられる．</p>
-<h2 id="_4">安全性と活性</h2>
-<p>安全性と活性の概念については幅広い議論がなされてきた．
+<p>ACTL<sup id="fnref:139"><a class="footnote-ref" href="#fn:139">12</a></sup> や CTL<sup id="fnref:447"><a class="footnote-ref" href="#fn:447">13</a></sup> に対しては，さらに詳細な反例が与えられる．</p>
+<h2 id="47">4.7 安全性と活性</h2>
+<p>安全性と活性の概念については幅広い議論がなされてきた<sup id="fnref:370"><a class="footnote-ref" href="#fn:370">14</a></sup><sup id="fnref:369"><a class="footnote-ref" href="#fn:369">15</a></sup><sup id="fnref:326"><a class="footnote-ref" href="#fn:326">16</a></sup>．
 直感的には，安全性は悪いことが決して起こらないことを保証するのに対して，活性は良いことがいつか起こることを保証するものである．
 最も典型的な安全性は <script type="math/tex">\textbf{AG}p</script> である．
 典型的な活性の例としては，<script type="math/tex">\textbf{AF}p</script> や <script type="math/tex">\textbf{A}(p \textbf{U} q)</script> である．
@@ -796,9 +861,33 @@ LTL パス論理式は以下のように定義される．</p>
 <p>反例を用いれば，安全性と活性を自然に区別することができる．
 安全性とは，有限かつループのない反例，すなわち有限パスによって反証できる特性である．
 対して，有限状態構造を扱うことから，活性は一般的にラッソ（投げ縄）型の反例を要求する．</p>
-<p>安全性と活性の概念は文献 [411] で初めて導入され，[333] や [16] で洗練されてきた．
-文献 [136] のPiterman による時相論理の節では，これらの概念に関する形式的な定義が与えられている．</p>
-<h2 id="_5">演習問題</h2>
+<p>安全性と活性の概念は Pnueli<sup id="fnref:418"><a class="footnote-ref" href="#fn:418">17</a></sup> によって初めて導入され，Lamport<sup id="fnref2:340"><a class="footnote-ref" href="#fn:340">10</a></sup> や Alpern と Schneider<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">18</a></sup> により洗練されてきた．
+モデル検査ハンドブック<sup id="fnref2:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による時相論理の章では，これらの概念に関する形式的な定義が与えられている．</p>
+<h2 id="_1">書誌情報</h2>
+<p>コンピュータサイエンスにおける仕様記述言語としての時間論理の利用は，Pnueli<sup id="fnref2:418"><a class="footnote-ref" href="#fn:418">17</a></sup> によって提案された．
+これが評価され，1996年にチューリング賞が授与された．
+Pnueli は線形時相論理 LTL を提唱した．
+計算木論理 (CTL) は Ben-Ari ら<sup id="fnref:46"><a class="footnote-ref" href="#fn:46">19</a></sup> や Clarke と Emerson<sup id="fnref2:123"><a class="footnote-ref" href="#fn:123">2</a></sup> によって導入され，CTL* は Emerson と Halpern<sup id="fnref3:204"><a class="footnote-ref" href="#fn:204">9</a></sup> によって定義されている．
+時相論理に関する優れたサーベイとして，<sup id="fnref:202"><a class="footnote-ref" href="#fn:202">20</a></sup> の Emerson の章を参照されたい．
+Demri, Goranko そして Lange の書籍<sup id="fnref:183"><a class="footnote-ref" href="#fn:183">21</a></sup>，<em>Handbook of Automated Reasoning</em> の Clarke と Schlingloff による章<sup id="fnref:144"><a class="footnote-ref" href="#fn:144">22</a></sup>, Baier と Katoen の書籍<sup id="fnref:35"><a class="footnote-ref" href="#fn:35">23</a></sup>，モデル検査ハンドブック<sup id="fnref3:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による章も，時相論理に関してさらなる知識を得るための優れた資料である．</p>
+<p>時相論理は様相論理<sup id="fnref:286"><a class="footnote-ref" href="#fn:286">24</a></sup> の一分野であり，形式手法のみならず人工知能<sup id="fnref:261"><a class="footnote-ref" href="#fn:261">25</a></sup> にも複数の応用が見られる．</p>
+<p>時相論理の演算子は，複数の方法で拡張し，一般化することができる．
+まず，過去の演算子<sup id="fnref:355"><a class="footnote-ref" href="#fn:355">26</a></sup><sup id="fnref:304"><a class="footnote-ref" href="#fn:304">27</a></sup><sup id="fnref:323"><a class="footnote-ref" href="#fn:323">28</a></sup> の導入は自然なことである．
+やや意外なことに，過去の演算子は必ずしも LTL の表現力を拡張するものではない<sup id="fnref2:355"><a class="footnote-ref" href="#fn:355">26</a></sup>．
+しかし，モジュール化された仕様やより短い反例の提供など，他の点では有用である可能性がある<sup id="fnref3:355"><a class="footnote-ref" href="#fn:355">26</a></sup><sup id="fnref:342"><a class="footnote-ref" href="#fn:342">29</a></sup><sup id="fnref:440"><a class="footnote-ref" href="#fn:440">30</a></sup>．
+時相論理の演算子を正規表現で拡張した論理系がいくつかあり<sup id="fnref:493"><a class="footnote-ref" href="#fn:493">31</a></sup><sup id="fnref:133"><a class="footnote-ref" href="#fn:133">32</a></sup><sup id="fnref2:139"><a class="footnote-ref" href="#fn:139">12</a></sup>，その中でも最も著名なのが<strong>動的論理</strong><sup id="fnref:423"><a class="footnote-ref" href="#fn:423">33</a></sup><sup id="fnref:264"><a class="footnote-ref" href="#fn:264">34</a></sup> である．
+この伝統に基づく時相論理の最も重要な実用的拡張は，PSL<sup id="fnref:197"><a class="footnote-ref" href="#fn:197">35</a></sup> や ForSpec<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">36</a></sup> などの産業仕様記述論理である．</p>
+<p>
+<script type="math/tex">\mu</script> 計算 (<script type="math/tex">\mu</script>-calculus) は時相論理のもう一つの一般化であり，第16章で学ぶ．</p>
+<p>時相論理を強力にするもう一つの可能性は，量化である．
+ここでは，命題の量化 — 限定子の対象がクリプキ構造あるいは計算木のラベル付けまで及ぶ<sup id="fnref:492"><a class="footnote-ref" href="#fn:492">37</a></sup> — と，一階の時相論理<sup id="fnref2:369"><a class="footnote-ref" href="#fn:369">15</a></sup> — 状態が論理構造であり，一階の限定子の対象がこれらの構造のドメイン要素まで及ぶ — を区別する．</p>
+<p>時相論理は，一階または二階論理の一断片としても研究することができる．
+LTL については Gabbay らの論文<sup id="fnref:234"><a class="footnote-ref" href="#fn:234">38</a></sup> で，CTL* については Hafer と Thomas の論文<sup id="fnref:259"><a class="footnote-ref" href="#fn:259">39</a></sup> で，これらの関係が研究されている．</p>
+<p>Manna と Pnueli の書籍<sup id="fnref3:369"><a class="footnote-ref" href="#fn:369">15</a></sup><sup id="fnref2:370"><a class="footnote-ref" href="#fn:370">14</a></sup> では，時として時相論理の構文が文字ではなく図記号に基づいて表記される．
+具体的には，<script type="math/tex">\bigcirc</script> は <script type="math/tex">\mathbf{X}</script>，<script type="math/tex">\Box</script> は <script type="math/tex">\mathbf{G}</script>，<script type="math/tex">\diamond</script>は <script type="math/tex">\mathbf{F}</script> を表す．
+さらに，<script type="math/tex">\forall</script> と <script type="math/tex">\exists</script> はそれぞれ <script type="math/tex">\mathbf{A}</script> と <script type="math/tex">\mathbf{E}</script> を表す．
+この <script type="math/tex">\bigcirc</script> と <script type="math/tex">\Box</script> の用途が，<script type="math/tex">\bigcirc</script>が CTL* の <script type="math/tex">\mathbf{EX}</script>，<script type="math/tex">\Box</script> が <script type="math/tex">\mathbf{AX}</script> と等価である古典的な様相論理とは異なることに注意してほしい．</p>
+<h2 id="_2">演習問題</h2>
 <div class="admonition note">
 <p class="admonition-title">問題 4.1 (Alan Hu による CTL 式の等価性)</p>
 <p>CTL 式の組について，与えられたクリプキ構造において，まったく同じ状態集合において真となるとき，それらは等価 (equivalent) という．
@@ -814,7 +903,7 @@ LTL パス論理式は以下のように定義される．</p>
 <li><script type="math/tex">\textbf{A}(p \textbf{U} q) \wedge \textbf{A}(q \textbf{U} r)</script> と <script type="math/tex">\textbf{A}(p \textbf{U} r)</script></li>
 </ol></p>
 </div>
-<div class="admonition note">
+<div class="admonition question">
 <p class="admonition-title">問題 4.2 (LTL 演算子の拡張)</p>
 <p>以下の LTL 式に関する特性を証明せよ．</p>
 <p><center>
@@ -824,20 +913,137 @@ LTL パス論理式は以下のように定義される．</p>
 <script type="math/tex">f_1 \textbf{R} f_2 \Leftrightarrow f_2 \vee (f_1 \wedge \textbf{X}(f_1 \textbf{R} f_2)) </script>
 </center></p>
 </div>
-<div class="admonition note">
+<div class="admonition question">
 <p class="admonition-title">問題 4.4 (CTL 演算子の表現力)</p>
 <p>CTL 演算子のすべてが，<script type="math/tex">\textbf{AX}</script>，<script type="math/tex">\textbf{AU}</script>，そして <script type="math/tex">\textbf{AR}</script> の 3 つの CTL 演算子に，否定を含むブール演算子を組み合わせることで表現できることを示せ．</p>
 </div>
-<div class="admonition note">
+<div class="admonition question">
 <p class="admonition-title">問題 4.5 (CTL の意味論)</p>
 <p>直接定義された CTL の意味論が，CTL* の部分論理としての CTL の意味論と等価であることを証明せよ．
 つまり，すべての CTL 式 <script type="math/tex">f</script> とすべての <script type="math/tex">M</script> および <script type="math/tex">s</script> に対して，<script type="math/tex">M</script> および <script type="math/tex">s</script> における <script type="math/tex">f</script> の値が 2 つの意味論のもとで同一であることを示せ．</p>
 </div>
-                
-              
-              
-                
-
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:47">
+<p>M. Ben-Ari, Z. Manna, and A. Pnueli. The temporal logic of branching time. Acta Inf., 20:207–226, 1983.&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:123">
+<p>E. M. Clarke and E. A. Emerson. Design and synthesis of synchronization skeletons using branching time temporal logic. In D. Kozen, editor, Logic of Programs:Workshop, volume 131 of Lecture Notes in Computer Science, pages 52–71. Springer, 1981.&#160;<a class="footnote-backref" href="#fnref:123" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:123" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:203">
+<p>E. A. Emerson and E. M. Clarke. Characterizing correctness properties of parallel programs using fixpoints. In Automata, Languages and Programming, 7th Colloquium, volume 85 of Lecture Notes in Computer Science, pages 169–181. Springer, 1980.&#160;<a class="footnote-backref" href="#fnref:203" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:203" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:255">
+<p>O. Grumberg and D. E. Long. Model checking and modular verification. ACM Trans. Progr. Lang. Syst., 16:843–872, 1994.&#160;<a class="footnote-backref" href="#fnref:255" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:361">
+<p>D. E. Long. Model Checking, Abstraction, and Compositional Reasoning. PhD thesis, Carnegie Mellon University, 1993.&#160;<a class="footnote-backref" href="#fnref:361" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:419">
+<p>A. Pnueli. A temporal logic of concurrent programs. Theor. Comput. Sci., 13:45–60, 1981.&#160;<a class="footnote-backref" href="#fnref:419" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:419" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:138">
+<p>E. M. Clarke, T. A. Henzinger, H. Veith, and R. Bloem. Handbook of Model Checking. Springer, 2018.&#160;<a class="footnote-backref" href="#fnref:138" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:138" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:138" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:121">
+<p>E. M. Clarke and I. A. Draghicescu. Expressibility results for linear time and branching time logics. In Linear Time, Branching Time, and Partial Order in Logics and Models for Concurrency, volume 354 of Lecture Notes in Computer Science, pages 428–437. Springer, 1988.&#160;<a class="footnote-backref" href="#fnref:121" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:121" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:121" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:121" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:204">
+<p>E. A. Emerson and J. Y. Halpern. “Sometimes” and “Not Never” revisited:On branching time versus linear time. J. ACM, 33(1):151–178, 1986.&#160;<a class="footnote-backref" href="#fnref:204" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:204" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:204" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:340">
+<p>L. Lamport. “Sometimes” is sometimes “Not Never”. In Principles of Programming Languages, POPL, pages 174–185. ACM Press, 1980.&#160;<a class="footnote-backref" href="#fnref:340" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:340" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:70">
+<p>M. Bojańczyk. The common fragment of ACTL and LTL. In Foundations of Software Science and Computational Structures, FOSSACS, volume 4962 of Lecture Notes in Computer Science, pages 172–185. Springer, 2008.&#160;<a class="footnote-backref" href="#fnref:70" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:70" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:139">
+<p>E. M. Clarke, S. Jha, Y. Lu, and H. Veith. Tree-like counterexamples in model checking. In Logic in Computer Science, LICS, pages 19–29. IEEE Computer Society, 2002.&#160;<a class="footnote-backref" href="#fnref:139" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:139" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:447">
+<p>S. Shoham and O. Grumberg. A game-based framework for CTL counterexamples and 3-valued abstraction-refinement. ACM Trans. Computer Logic (TOCL), 9(1), 2007.&#160;<a class="footnote-backref" href="#fnref:447" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:370">
+<p>Z. Manna and A. Pnueli. Temporal Verifications of Reactive Systems:Safety. Springer, 1995.&#160;<a class="footnote-backref" href="#fnref:370" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:370" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:369">
+<p>Z. Manna and A. Pnueli. The Temporal Logic of Reactive and Concurrent Systems:Specification. Springer, 1992.&#160;<a class="footnote-backref" href="#fnref:369" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:369" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:369" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:326">
+<p>O. Kupferman and M. Y. Vardi. Model checking of safety properties. Formal Methods Syst. Design, 19(3):291–314, 2001.&#160;<a class="footnote-backref" href="#fnref:326" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:418">
+<p>A. Pnueli. The temporal semantics of concurrent programs. In Semantics of Concurrent Computation, volume 70 of Lecture Notes in Computer Science, pages 1–20. Springer, 1979.&#160;<a class="footnote-backref" href="#fnref:418" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:418" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>B. Alpern and F. Schneider. Defining liveness. Inform. Proc. Lett., 21:181–185, 1985.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:46">
+<p>M. Ben-Ari, Z. Manna, and A. Pnueli. The temporal logic of branching time. In Principles of Programming Languages, POPL, pages 164–176. ACM, 1981.&#160;<a class="footnote-backref" href="#fnref:46" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:202">
+<p>E. A. Emerson. Temporal and modal logic. In J. V. Leeuwen, editor, Handbook of Theoretical Computer Science, volume B, pages 997–1072. Elsevier and MIT Press, 1990.&#160;<a class="footnote-backref" href="#fnref:202" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:183">
+<p>S. Demri, V. Goranko, and M. Lange. Temporal Logics in Computer Science:Finite-State Systems. Cambridge University Press, 2016.&#160;<a class="footnote-backref" href="#fnref:183" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:144">
+<p>E. M. Clarke and B. H. Schlingloff. Model checking. In J. Robinson and A. Voronkov, editors, Handbook of Automated Reasoning, pages 1635–1790. Elsevier and MIT Press, 2001.&#160;<a class="footnote-backref" href="#fnref:144" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>C. Baier and J. Katoen. Principles of Model Checking. MIT Press, 2008.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:286">
+<p>G. Hughes and M. Cresswell. A New Introduction to Modal Logic. Routledge, 1996.&#160;<a class="footnote-backref" href="#fnref:286" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:261">
+<p>J. Y. Halpern. Reasoning about Uncertainty. MIT Press, 2005.&#160;<a class="footnote-backref" href="#fnref:261" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:355">
+<p>O. Lichtenstein, A. Pnueli, and L. Zuck. The glory of the past. In Logics of Programs, volume 193 of Lecture Notes in Computer Science, pages 196–218. Springer, 1985.&#160;<a class="footnote-backref" href="#fnref:355" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:355" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:355" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:304">
+<p>M. Kaminski. A branching time logic with past operators. J. Comput. Syst. Sci., 49(2):223–246, 1994.&#160;<a class="footnote-backref" href="#fnref:304" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:323">
+<p>O. Kupferman and A. Pnueli. Once and for all. In Logic in Computer Science, LICS, pages 25–35. IEEE, 1995.&#160;<a class="footnote-backref" href="#fnref:323" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:342">
+<p>F. Laroussinie and P. Schnoebelen. Specification in CTL+past for verification in CTL. Inf. Comput., 156(1-2):236–263, 2000.&#160;<a class="footnote-backref" href="#fnref:342" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:440">
+<p>V. Schuppan and A. Biere. Shortest counterexamples for symbolic model checking of LTL with past. In Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 3440 of Lecture Notes in Computer Science, pages 493–509. Springer, 2005.&#160;<a class="footnote-backref" href="#fnref:440" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:493">
+<p>P. Wolper. Specification and synthesis of communicating processes using an extended temporal logic. In Principles of Programming Languages, POPL, pages 20–33. ACM, 1982.&#160;<a class="footnote-backref" href="#fnref:493" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:133">
+<p>E. M. Clarke, O. Grumberg, and R. P. Kurshan. A synthesis of two approaches for verifying finite state concurrent systems. In Logic at Botik ’89, Symposium on Logical Foundations of Computer Science, volume 363 of Lecture Notes in Computer Science, pages 81–90. Springer, 1989.&#160;<a class="footnote-backref" href="#fnref:133" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:423">
+<p>V. R. Pratt. A practical decision method for propositional dynamic logic:Preliminary report. In Symposium on Theory of Computing, STOC, pages 326–337. ACM, 1978.&#160;<a class="footnote-backref" href="#fnref:423" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:264">
+<p>D. Harel. First-Order Dynamic Logic, volume 68 of Lecture Notes in Computer Science. Springer, 1979.&#160;<a class="footnote-backref" href="#fnref:264" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:197">
+<p>C. Eisner and D. Fisman. A Practical Introduction to PSL. Springer, 2006.&#160;<a class="footnote-backref" href="#fnref:197" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p>R. Armoni, L. Fix, A. Flaisher, R. Gerth, B. Ginsburg, T. Kanza, A. Landver, S. Mador-Haim, E. Singerman, A. Tiemeyer, M. Vardi, and Y. Zbar. The ForSpec temporal logic:A new temporal property-specification logic. In Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 2280 of Lecture Notes in Computer Science, pages 196–211. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:492">
+<p>P. Wolper. Temporal logic can be more expressive. In Foundations of Computer Science, FOCS, pages 340–348. IEEE Computer Society, 1981.&#160;<a class="footnote-backref" href="#fnref:492" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:234">
+<p>D. Gabbay, A. Pnueli, S. Shelah, and J. Stavi. On the temporal analysis of fairness. In Principles of Programming Languages, POPL, pages 163–173. ACM, 1980.&#160;<a class="footnote-backref" href="#fnref:234" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:259">
+<p>T. Hafer and W. Thomas. Computation tree logic CTL\⋆ and path quantifiers in the monadic theory of the binary tree. In International Colloquium on Automata, Languages, and Programming, ICALP, volume 267 of Lecture Notes in Computer Science, pages 269–279. Springer, 1987.&#160;<a class="footnote-backref" href="#fnref:259" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -846,12 +1052,12 @@ LTL パス論理式は以下のように定義される．</p>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lec04/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../lec04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第4回" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -866,7 +1072,8 @@ LTL パス論理式は以下のように定義される．</p>
         </a>
       
       
-        <a href="../lec06/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../lec06/" class="md-footer__link md-footer__link--next" aria-label="Next: 第6回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -884,14 +1091,15 @@ LTL パス論理式は以下のように定義される．</p>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -901,12 +1109,14 @@ LTL パス論理式は以下のように定義される．</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       

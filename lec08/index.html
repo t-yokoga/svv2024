@@ -1,0 +1,1419 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
+    
+    
+      
+        <title>第8回 - システム検証論 (2021)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-ltl-ctl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            システム検証論 (2021)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第8回
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2021)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01/" class="md-nav__link">
+        第1回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02/" class="md-nav__link">
+        第2回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03/" class="md-nav__link">
+        第3回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04/" class="md-nav__link">
+        第4回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05/" class="md-nav__link">
+        第5回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06/" class="md-nav__link">
+        第6回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec07/" class="md-nav__link">
+        第7回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第8回
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第8回
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 タブローの構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-ltl" class="md-nav__link">
+    6.2 タブローを用いた LTL モデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 タブローを用いた LTL モデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61_1" class="md-nav__link">
+    定理 6.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    例 6.2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 タブロー構築の正当性の証明
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 タブロー構築の正当性の証明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#63_1" class="md-nav__link">
+    定理 6.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    例 6.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    補題 6.5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    補題 6.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    補題 6.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68" class="md-nav__link">
+    補題 6.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#69" class="md-nav__link">
+    補題 6.9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#610" class="md-nav__link">
+    補題 6.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    定理 6.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-ctl" class="md-nav__link">
+    6.4 CTL* モデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 CTL* モデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    定理 6.12
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    演習問題
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    6.1 タブローの構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-ltl" class="md-nav__link">
+    6.2 タブローを用いた LTL モデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 タブローを用いた LTL モデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61_1" class="md-nav__link">
+    定理 6.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    例 6.2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    6.3 タブロー構築の正当性の証明
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 タブロー構築の正当性の証明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#63_1" class="md-nav__link">
+    定理 6.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    例 6.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    補題 6.5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    補題 6.6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    補題 6.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68" class="md-nav__link">
+    補題 6.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#69" class="md-nav__link">
+    補題 6.9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#610" class="md-nav__link">
+    補題 6.10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    定理 6.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-ctl" class="md-nav__link">
+    6.4 CTL* モデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 CTL* モデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#612" class="md-nav__link">
+    定理 6.12
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    演習問題
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="8-ltl-ctl">第8回 LTL および CTL* モデル検査</h1>
+<p>この回では，教科書の第6章 "LTL and CTL* Model Checking" について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
+<ul>
+<li>タブローの構築</li>
+<li>タブローを用いた LTL モデル検査アルゴリズム</li>
+<li>タブロー構築の正当性</li>
+<li>CTL* モデル検査アルゴリズム</li>
+</ul>
+</div>
+<p>この章と第7章では LTL のモデル検査アルゴリズムを紹介する．
+4.3.4 節(<a href="../lec05/#434-ctl">第5回の講義</a>) でも説明したように，CTL と LTL はどちらも非常に高い表現力をもつ CTL* の部分論理である．
+したがって，LTL は CTL では表現できない特性を表現することができる．
+さらに，いくつかの特性は，LTL を用いることでより簡単に表現できる．
+このように，LTL を対象としたモデル検査アルゴリズムを開発することには意味がある．</p>
+<p>LTL を対象としたアルゴリズムは，これまでに示した CTL を対象としたアルゴリズムとは大きく異なっている．
+本質的に，CTL モデル検査は検査されるべき式について，それぞれの部分式を満たす状態の集合を計算するものである．
+CTL の部分式はすべて状態に対して解釈される状態論理式なので，こうした計算は実施可能である．
+対照的に，LTL 式はパス上で解釈されるものであり，そのすべての部分式も同じくそのパスに対して検証されるべきものである．
+したがって，LTLのアルゴリズムでは，その式を全体として扱う．
+LTL式 <script type="math/tex">\varphi</script> が与えられると，LTL モデル検査は，<script type="math/tex">\varphi</script> の<strong>否定</strong>に対して，<strong>タブロー</strong> (tableau) あるいは<strong>オートマトン</strong> (automaton) と呼ばれる構造を構築する，
+この構造は，<script type="math/tex">\varphi</script> を満たさない全てのパスからなる集合を表している．
+そして，この構造を用いてモデルにこの式を満たさないパスが含まれているかどうかを判定する．</p>
+<p>この回では，LTL のタブローを定義し，それをLTLモデル検査にどのように使用するかについて述べる．
+そして，タブローに基づくモデル検査アルゴリズムの正しさを証明する．
+次に，CTL* のモデル検査アルゴリズムについても述べる．
+これは，CTL と LTL のモデル検査アルゴリズムを組み合わせたものとなる．
+なお，教科書の第 7 章では，無限の単語に対する有限オートマトンの定義と，いくつかの特性について説明している．
+そして，オートマトンに基づくモデル検査アルゴリズムを示している．
+このアルゴリズムでは，仕様となるオートマトンは直接与えるか，LTL 式からの変換によって得ることができる．</p>
+<p>
+<script type="math/tex">M = (AP, S, R, S_0, L)</script>をクリプキ構造とし，<script type="math/tex">\textbf{A}g</script>をLTL式とする．
+したがって，<script type="math/tex">g</script> は LTL の<strong>パス論理式</strong>であり，その部分式として，原子命題のみが状態論理式となる．
+状態 <script type="math/tex">s \in S</script> が与えられたとき，<script type="math/tex">M, s \models \textbf{A}g</script> かどうかを判定することが目的となる．
+<script type="math/tex">M, s \models \textbf{A}g</script>は，<script type="math/tex">M, s \models \lnot \textbf{E}\lnot g</script> であるとき，かつそのときのみ成り立つことに気付いてほしい．
+したがって，<script type="math/tex">\textbf{E}f</script> の形の式の真偽を判定できれば充分である．
+ここで <script type="math/tex">f</script> は LTL のパス論理式である．
+一般に，この問題はPSPACE不完全である．
+しかし，Lichtenstein と Pnueli による詳細な分析により，その複雑さは式の長さに対して見かけ上は指数的であるが，検証対象システムを表す状態グラフのサイズに対しては線形であることが示されている．
+この解析は，<strong>タブロー構築</strong>を伴うアルゴリズムに基づいている．
+次節では，タブロー構造に基づいた，より単純な LTL モデル検査のアルゴリズムを紹介する．
+そして，このアルゴリズムが CTL モデル検査を利用して実装されていることを示す．</p>
+<h2 id="61">6.1 タブローの構築</h2>
+<p>この節では、タブローの構築とそのモデル検査への利用について説明する．
+そして，この手法の正しさを形式的に証明する．
+この定理や補題の中には，非常にテクニカルなものもいくつかあるので，この節を初めて読む場合は，それらの証明は省略しても構わない．</p>
+<p>まず，このモデル検査アルゴリズムの非形式的な説明から始める．
+前述の通り，LTL のパス論理式 <script type="math/tex">f</script> に対して <script type="math/tex">\textbf{E}f</script> の形をもつ式の真偽を判定できれば十分である．
+LTL 式 <script type="math/tex">\textbf{E}f</script> とクリプキ構造 <script type="math/tex"> M </script> が与えられたとき，このアルゴリズムはパス論理式 <script type="math/tex">f</script> に対する<strong>タブロー</strong> <script type="math/tex">T</script> を構築する．
+タブロー <script type="math/tex">T</script> はクリプキ構造であり，<script type="math/tex">f</script> を満たすすべてのパスを含んでいる．
+<script type="math/tex">T</script> を <script type="math/tex">M</script> と合成することで，<script type="math/tex">T</script> と <script type="math/tex">M</script> の両方に現れるパスの集合を求める．
+<script type="math/tex">M</script> の状態が <script type="math/tex">\textbf{E}f</script> を満たすのは，その状態が <script type="math/tex">f</script> を満たす合成構造のパスの始点であるとき，かつそのときのみである．</p>
+<p>次に，タブロー <script type="math/tex">T</script> の構築について詳しく説明する．
+<script type="math/tex">AP_f</script> を <script type="math/tex">f</script> 内の原子命題の集合とする．
+<script type="math/tex">f</script> に関連付けられたタブローは，公平なクリプキ構造 <script type="math/tex">T = (S_T, S^0_T, R_T, AP_f, L_T, F_T)</script> である．
+公平性制約の集合は <script type="math/tex">F = \{P_1, \ldots, P_n\}</script> であり，それぞれの<script type="math/tex"> P_i</script> は状態の集合で，その中の少なくとも 1 つの状態が無限にしばしば繰り返されるようなものとなる．
+Lichtenstein と Pnueli のアルゴリズムとは異なり，このアルゴリズムでは論理式の完全な閉包は使用しない．
+タブローの各状態は，<script type="math/tex">f</script> から得られる<strong>基本式</strong> (elementary formula) の集合となる．
+後に，この集合があれば，<script type="math/tex">f</script> のすべての部分式の真理値を決定するのに充分であることを示す．
+<script type="math/tex">f</script> の基本部分式の集合を <script type="math/tex">el(f)</script> と表記し，次のように再帰的に定義される．</p>
+<ul>
+<li>
+<script type="math/tex"> p \in AP_f </script> に対して <script type="math/tex"> el(p) = \{p\}</script>
+</li>
+<li>
+<script type="math/tex"> el(\lnot g) = el(g) </script>
+</li>
+<li>
+<script type="math/tex"> el(g \lor h) = el(g) \cup el(h) </script>
+</li>
+<li>
+<script type="math/tex"> el(\mathbf{X}g) = \{\mathbf{X}g\} \cup el(g) </script>
+</li>
+<li>
+<script type="math/tex"> el(g \mathbf{U} h) = \{\mathbf{X}(g \mathbf{U} h) \cup el(g) \cup el(h)\}</script>
+</li>
+</ul>
+<p>集合 <script type="math/tex">el(f)</script> は，原子命題と <script type="math/tex">\mathbf{X}g</script> の形の式のみを含んでいる．ここで，<script type="math/tex">g</script> は <script type="math/tex">f</script> の部分論理式である．
+タブローの状態集合 <script type="math/tex">S_T</script> は <script type="math/tex">el(f)</script> のすべての部分集合を含んでいる．
+つまり，<script type="math/tex">S_T = \mathcal{P}(el(f))</script> である．
+ラベル付け関数 <script type="math/tex">L_T</script> は，各状態がその状態に含まれる原子命題の集合によってラベル付けされるように定義される．
+このアイデアは，<script type="math/tex">s</script> の原子式が，<script type="math/tex">s</script> の中で真となる原子命題の集合を決定するというものである．
+<script type="math/tex">\mathbf{X}g</script> の形の式は，<script type="math/tex">g</script> が <script type="math/tex">s</script> のそれぞれの後続状態において真でなければならないことを示している．</p>
+<p>初期状態の集合 <script type="math/tex"> S^0_T </script> と遷移関係 <script type="math/tex"> R_T </script> の集合を構築するためには，<script type="math/tex">f</script> のそれぞれの部分式 <script type="math/tex">g</script> を，<script type="math/tex"> S_T </script> の状態集合と関連付けるための新たな関数 <script type="math/tex"> sat </script> が必要となる．
+直感的に，<script type="math/tex"> sat(g) </script> は <script type="math/tex"> g </script> を満たす状態の集合となる．</p>
+<ul>
+<li>
+<script type="math/tex">sat(g) = \{s \in S_T \mid g \in s\}</script> ここで <script type="math/tex">g \in el(f)</script>
+</li>
+<li>
+<script type="math/tex">sat(\lnot g) = \{s \in S_T \mid s \notin sat(g)\}</script>
+</li>
+<li>
+<script type="math/tex">sat(g \lor h) = sat(g) \cup sat(h)</script>
+</li>
+<li>
+<script type="math/tex">sat(g \mathbf{U} h) = sat(h) \cup (sat(g)\cap sat(\mathbf{X}(g\mathbf{U}h)))</script>
+</li>
+</ul>
+<p>タブローの初期状態 <script type="math/tex">S^0_T</script> を <script type="math/tex">sat(f)</script> と定義する．これは <script type="math/tex">f</script> を満たす状態である．
+ここでこの遷移関係は，状態に含まれるそれぞれの基本式がそこを起点とするすべてのパスにおいて真となる，という性質をもつことが望ましい．
+明らかに，仮に <script type="math/tex">\textbf{X}g</script> がある状態 <script type="math/tex">s</script> に含まれていれば，<script type="math/tex">s</script> のすべての後続状態が <script type="math/tex">g</script> を満たすべきである．
+さらに，ここでは LTL 式を扱っているため，もし <script type="math/tex">\textbf{X}g</script> が <script type="math/tex">s</script> に含まれてないならば，<script type="math/tex">s</script> は <script type="math/tex">\neg \textbf{X}g</script> を満たすべきである．
+したがって，<script type="math/tex">s</script> のどの後続状態も <script type="math/tex">g</script> を満たすべきではない．
+よって，<script type="math/tex">R_T</script> を次のように定義する．</p>
+<p>
+<script type="math/tex; mode=display">
+R_T(s,s') = \bigwedge^{n}_{\mathbf{X}_g\in el(f)} s\in sat(\mathbf{X}_g)\Leftrightarrow s'\in sat(g)
+</script>
+</p>
+<p><center>
+<img src="../img/lec08-fig1.pdf" width="450">
+<br><br>
+図6.1： <script type="math/tex">g = (\lnot heat) \mathbf{U} close</script> に対するタブロー
+</center></p>
+<p>
+<script type="math/tex">g = (\lnot heat) \mathbf{U} close</script> を第 6 回で示した電子レンジの例に対する仕様とする．
+式 <script type="math/tex">\lnot g</script> のタブローに対する遷移関係 <script type="math/tex">R_T</script> は図6.1のように与えられる．
+図を見やすくするため，<script type="math/tex">s</script> から <script type="math/tex">s'</script> と <script type="math/tex">s'</script> から <script type="math/tex">s</script> の両方に辺がある場合は <script type="math/tex">s</script> と <script type="math/tex">s'</script> の2つの状態を双方向の矢印で繋いでいる．
+<script type="math/tex">el(g)</script> の部分集合は，それぞれが <script type="math/tex">T</script> の状態となる．
+図 6.1 では状態にラベル付けを行う際に，<script type="math/tex">heat</script> を <script type="math/tex">h</script>, <script type="math/tex">close</script> を <script type="math/tex">c</script> と略している．
+また，わかりやすさのため, ラベルには原子命題の否定も含めている（本来は否定がラベル付けされるのではなく，ラベル付け自体がされない）．
+状態 <script type="math/tex">1, 2, 3, 5</script> はそれぞれ式 <script type="math/tex">\mathbf{X}g</script> を含むので，<script type="math/tex">sat(\mathbf{X}g) = \{1,2,3,5\}</script>となる．
+状態 <script type="math/tex">1, 2, 3, 4, 6</script> はそれぞれ <script type="math/tex">close</script> か <script type="math/tex">\neg heat</script> および <script type="math/tex">\mathbf{X}g</script> を含むので，<script type="math/tex">sat(\mathbf{X}g) = \{1,2,3,6\}</script> を得る．
+したがって，初期状態を <script type="math/tex">S^0_T = \{1,2,3,4,6\}</script> と定義できる．</p>
+<p>さらに，<script type="math/tex">sat(g)</script> の補集合として <script type="math/tex">sat(\lnot g) = \{5,7,8\}</script> を得る．
+<script type="math/tex">sat(\mathbf{X}g)</script> の各状態から <script type="math/tex">sat(g)</script> の各状態への遷移が存在し，<script type="math/tex">sat(\mathbf{X}g)</script> の補集合の各状態から <script type="math/tex">sat(g)</script> の補集合の各状態への遷移が存在する．
+これは，<script type="math/tex">R_T</script> の定義が必要十分条件 (if-and-only-if) の論理積であるためである．</p>
+<p>残念なことに，<script type="math/tex">R_T</script> の定義は<strong>偶発性</strong> (eventuality) に関する特性を満たす事を保証するわけではない．
+こうした振る舞いを図 6.1 で見ることができる．
+状態 <script type="math/tex">3</script> は <script type="math/tex">sat(g)</script> に属しているが，状態 <script type="math/tex">3</script> をいつまでもループするパスを考えたとき，このパス上では <script type="math/tex">close</script> は決して満たされない．よって状態 <script type="math/tex">3</script> は式 <script type="math/tex">g</script> を満たさない．
+結果的に, <script type="math/tex">f</script> を満たすパスを識別するためには新たな条件が必要となる．
+状態 <script type="math/tex">s\in sat(f)</script> を始点とするパス <script type="math/tex">\pi</script> は，以下を満たすとき，かつそのときのみ <script type="math/tex">f</script> を満たす：
+<script type="math/tex">f</script> の各部分式 <script type="math/tex">g\mathbf{U}h</script> と <script type="math/tex">\pi</script> 上の各状態 <script type="math/tex">s</script> について, もし <script type="math/tex">s\in sat(g\mathbf{U}h)</script> ならば，<script type="math/tex">s\in sat(h)</script> であるか，あるいはその後に <script type="math/tex">t\in sat(h)</script> となる状態 <script type="math/tex">t</script> が <script type="math/tex">\pi</script> 上に存在する．</p>
+<p>この追加条件は，以下の公平性制約を追加することで，タブローに導入される．</p>
+<p>
+<script type="math/tex; mode=display">
+F_T = \{sat(\lnot(g\mathbf{U}h)\lor h) \mid g\mathbf{U}h \text{ occurs in } f\} \tag{6.1}
+</script>
+</p>
+<p>これにより，タブローの構築は完了となる．</p>
+<p>図6.1の例をもう一度考えてみよう．
+<script type="math/tex">F_T = sat(\lnot((\lnot heat)\mathbf{U}close))\cup sat(close) = \{5,7,8\}\cup\{1,2,4,6\} = S_T \{3\}</script> である．</p>
+<p>
+<script type="math/tex">\lnot g</script> のタブローは，<script type="math/tex">T_\lnot g</script> の初期状態が <script type="math/tex">T_g</script> の初期状態の補集合であることを除いて <script type="math/tex">g</script> と同一である．</p>
+<h2 id="62-ltl">6.2 タブローを用いた LTL モデル検査</h2>
+<p>次に，タブロー <script type="math/tex">T = (S_T,S^0_T,R_T,AP_f,L_T,F_T)</script> と <script type="math/tex">M = (S_M,S^0_M,R_M,AP,L_M)</script> から，以下の積 <script type="math/tex">P = (S,S_0,R,AP_f,L,F)</script> を計算したい．</p>
+<ul>
+<li>
+<script type="math/tex">S = \{(s,s') \mid s\in S_T,s'\in S_M,and L_M(s')|_AP_f = L_T(s)\}</script>
+</li>
+<li>
+<script type="math/tex">S_0 = \{(s,s') \mid s\in S^0_T,s'\in S~0_M,and (s,s')\}</script>
+</li>
+<li>
+<script type="math/tex">R_T(s,t)</script> かつ <script type="math/tex">R_M(s',t')</script> であるとき，かつそのときのみ <script type="math/tex">R((s,s'),(t,t'))</script>
+</li>
+<li>
+<script type="math/tex">L((s,s')) = L_T(s)</script>
+</li>
+<li>
+<script type="math/tex">F = \{P_l \times S_M \mid P_l\in F_T\}</script>
+</li>
+</ul>
+<p>この積の遷移関係は全関係とならない場合がある．
+この場合，<script type="math/tex">S</script> から後継をもたないすべての状態を繰り返し削除していき，遷移関係 <script type="math/tex">R</script> を残りの状態に関するものへと制限する．</p>
+<p>なお，この積 <script type="math/tex">P</script> には，<script type="math/tex">AP_f</script> の命題のラベル付けが同じである <script type="math/tex">T</script> のパス <script type="math/tex">\pi</script> と <script type="math/tex">M</script> のパス <script type="math/tex">\pi'</script> が存在するような合成列 <script type="math/tex">\pi''</script> が正確に含まれている．</p>
+<p>
+<script type="math/tex">s \in sat(g)</script> であるとき，かつそのときのみ <script type="math/tex">(s,s') \in sat(g)</script> とすることで，関数 <script type="math/tex">sat</script> が積 <script type="math/tex">P</script> の状態集合に対して定義されるよう拡張する．
+次に，<script type="math/tex">V \subseteq sat (f)</script> であり，さらに <script type="math/tex">V</script> 内のすべての状態が <script type="math/tex">F_T</script> のすべての公平性制約を満たす無限パスの起点となるような，すべての状態からなる集合 <script type="math/tex">V</script> を <script type="math/tex">P</script> から見つけ出す．
+これらのパスは，<script type="math/tex">h</script> が偽である間，パス上ではほとんどどの部分式 <script type="math/tex">g\textbf{U}h</script> も満たされないという性質をもっている．
+したがって，<script type="math/tex">V</script> のすべての状態は <script type="math/tex">\textbf{E}f</script> を満たす．
+<script type="math/tex">V</script>から，<script type="math/tex">\textbf{A} \lnot f</script> を満たす <script type="math/tex">M</script> の状態の集合を抽出することができる（4.4節の定義参照）．</p>
+<p>
+<script type="math/tex; mode=display">
+[\![\textbf{A}\lnot f ]\!]_M = S_M \setminus \{s' \mid (s,s') \in V となる s \in S_T が存在する \}．
+</script>
+</p>
+<p>ここでの目的は，<script type="math/tex">\textbf{A}g</script> 形式のLTL式を検査することであり，そのために <script type="math/tex">\textbf{E}\lnot g</script> を検査するためのアルゴリズムを適用したことを思い出してほしい．</p>
+<p>ここで，<script type="math/tex">V</script> のすべての状態は，このように公平性制約 <script type="math/tex">F_T</script> において <script type="math/tex">\textbf{EG} true</script>を満たす．
+これは，LTLモデル検査が，実際には公平性制約をもつ CTL モデル検査に帰着できることを意味している．
+CTL モデル検査アルゴリズムが <script type="math/tex">P</script> に適用され，状態の集合 <script type="math/tex">V</script> が計算される．
+公平性制約をもつ CTL を検査するためのアルゴリズムは，5.2 節で説明されている．</p>
+<p>このアルゴリズムの正しさは次の定理によって要約される（この定理は次節で定理6.11として再登場し，ここでも証明される）．</p>
+<h4 id="61_1">定理 6.1</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 6.1</p>
+</div>
+<p>
+<script type="math/tex">(s,s') \in sat(f)</script> で，かつ <script type="math/tex">(s,s')</script> が公平なパスの起点となるような状態 <script type="math/tex">s</script> が <script type="math/tex">T</script> に存在するとき，かつその時のみ <script type="math/tex">M, s' \models \mathbf{E} f</script> である．</p>
+<h4 id="62">例 6.2</h4>
+<div class="admonition example">
+<p class="admonition-title">例 6.2</p>
+<p>上記で示した構築を説明するために，電子レンジを記述した図5.3のクリプキ構造 <script type="math/tex">M</script> 上で式 <script type="math/tex">\mathbf{A}((\lnot heat) \mathbf{U} close)</script> をどのように検査するかを説明する．
+以下の式のタブローを構築する．</p>
+<p>
+<script type="math/tex; mode=display">\begin{align*}
+\lnot g = \lnot ((\lnot heat)\textbf{U} close).
+\end{align*}</script>
+</p>
+<p>この式のタブロー <script type="math/tex">T</script> は，図6.1で示されている．
+これは，<script type="math/tex">(\lnot heat) \textbf{U} close</script> のタブローと同じだが，初期状態の集合が <script type="math/tex">sat(\lnot((\lnot heat) \textbf{U} close)) = \{5,7,8\}</script> という点で異なっている．
+上述の手順の通りに積 <script type="math/tex">P</script> を計算すると，図6.2 のようなクリプキ構造が得られる．
+積の各状態は，<script type="math/tex">s \in T</script> と <script type="math/tex">s'\in M</script> からなる状態の対 <script type="math/tex">(s,s')</script> でマークされている．
+状態 <script type="math/tex">(4,4)，(4,7)，(6,3)，(6,5)，(6,6)，(7,1)，(7,2)</script> は，無限パスの起点とならないため，この積構造の図では省略している．
+積の遷移は，<script type="math/tex">T</script> と <script type="math/tex">Ｍ</script> の遷移の対を表している．
+例として，遷移 <script type="math/tex">(3,3) \in R_T</script> と遷移 <script type="math/tex">(1,2)\in R_M</script> が存在することから，<script type="math/tex">P</script> において状態 <script type="math/tex">(3,1)</script> から状態 <script type="math/tex">(3,2)</script> への遷移が存在する．</p>
+<p><center>
+<img src="../img/lec08-fig2.pdf" width="450">
+<br><br>
+図6.2： 電子レンジのクリプキ構造 <script type="math/tex">M</script> とタブロー <script type="math/tex">T</script> の積 <script type="math/tex">P</script>
+</center></p>
+<p>
+<script type="math/tex">sat(\lnot g)</script> に含まれており，公平性制約 <script type="math/tex">sat(\lnot ((\lnot heat) \textbf{U} close) \vee close)</script> のもとで式 <script type="math/tex">\textbf{EG} true</script> を満たす <script type="math/tex">P</script> の状態の集合 <script type="math/tex">V</script> を見つけ出すために，CTL モデル検査アルゴリズムを用いる．
+<script type="math/tex">sat(\lnot g) = \{(7,1), (7,2)\}</script> であるが，これらの状態はいずれも無限パスの起点とならないため，<script type="math/tex">V = \emptyset</script> である．
+したがって，<script type="math/tex">M</script> のどの状態も <script type="math/tex">\textbf{E}\lnot((\lnot heat) \textbf{U} close)</script> を満たしておらず，よってすべての状態が <script type="math/tex">\textbf{A}((\lnot heat) \textbf{U} close)</script> を満たすと結論づけることができる．</p>
+</div>
+<h2 id="63">6.3 タブロー構築の正当性の証明</h2>
+<p>タブロー構造の重要な性質を述べるために，いくつかの新しい表記法を導入する．
+<script type="math/tex">\pi' = s'_0, s'_1, \ldots</script> をクリプキ構造 <script type="math/tex">M = (S, S_0, R, AP, L)</script> のパスとする．
+そうすると，<script type="math/tex">label(\pi') = L(s'_0), L(s'_1), \ldots</script> となる．
+<script type="math/tex">l = l_0, l_1, \ldots</script> を集合 <script type="math/tex">AP</script> の部分集合の列とし，<script type="math/tex">AP' \subseteq AP</script> とする．
+<script type="math/tex">l</script> の <script type="math/tex">AP'</script> への<strong>制限</strong> (restriction) は，<script type="math/tex">l|_{AP'}</script> と表記され，列 <script type="math/tex">m_0, m_1, \ldots</script> であり，ここで，すべての <script type="math/tex">i\geq 0</script> について <script type="math/tex">m_i = l_i \cap AP'</script> である．
+さらに，<script type="math/tex">f</script> の部分論理式の集合を <script type="math/tex">sub(f)</script> を用いて表す．
+次の定理は，<script type="math/tex">T</script> が <script type="math/tex">f</script> を満たすすべてのパスを含むという直感的な主張を正確にするものである.</p>
+<h4 id="63_1">定理 6.3</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 6.3</p>
+<p>
+<script type="math/tex">T</script> をパス論理式 <script type="math/tex">f</script> のタブローとする．
+このとき，すべてのクリプキ構造 <script type="math/tex">M</script> と <script type="math/tex">M</script> のすべてのパス <script type="math/tex">\pi'</script> に対して，<script type="math/tex">M, \pi' \models f</script> であれば，<script type="math/tex">sat(f)</script> 内の状態を始点とし，<script type="math/tex">label(\pi')|_{AP_{f}} = label(\pi)</script> となる公平なパス <script type="math/tex">\pi</script> が <script type="math/tex">T</script> に存在する．</p>
+</div>
+<h4 id="64">例 6.4</h4>
+<div class="admonition example">
+<p class="admonition-title">例 6.4</p>
+<p>図 5.3 のクリプキ構造 <script type="math/tex">M</script> と図 6.1 のタブロー <script type="math/tex">T</script> をもう一度考えてみよう．</p>
+<p>
+<script type="math/tex">\pi' = 1, (2, 5)^{\omega}</script> を <script type="math/tex">\pi' \models ((\lnot \mathit{heat}) \mathbf{U} \mathit{close})</script> であるような <script type="math/tex">M</script> の無限のパスとする．
+<script type="math/tex">T</script> のパス <script type="math/tex">\pi = 3,(3, 1)^{\omega}</script> は，定理6.3の要件を満たす．
+<script type="math/tex">label(\pi')|_{AP_{f}} = label(\pi)</script> であり，状態 <script type="math/tex">3</script> は <script type="math/tex">sat(g)</script> にある．
+さらに、状態 <script type="math/tex">1</script> は <script type="math/tex">sat(heat)</script> 内にあり，したがって <script type="math/tex">F_{t}</script> 内にあるため，<script type="math/tex">\pi</script> は公平である．</p>
+</div>
+<p>ここで，<script type="math/tex">AP_{f} \subseteq AP</script> であることを暗黙のうちに仮定していることに留意してほしい．
+ある式が構造上で検査されるのは，その式の原子命題が構造の原子命題に含まれている場合のみなので，これは必然的に満たされる．</p>
+<p>この定理を証明するには，以下の2つの補題が必要となる．
+この節の残りの部分では，<script type="math/tex">\pi' = s_{0}',s_{1}'，\ldots</script> は <script type="math/tex">M</script> のパスを表すものとする．
+状態 <script type="math/tex">s_{i}'</script> から始まる <script type="math/tex">\pi'</script> のサフィックスを <script type="math/tex">\pi_{i}'</script> と表記する．
+つまり <script type="math/tex">\pi'_i = s_{i}',s_{i+1}', \ldots</script> となる．
+パス <script type="math/tex">\pi'</script> について，以下のように定義する．
+<script type="math/tex; mode=display">
+s_{i}  \{\psi \mid \psi \in el(f) \text{ and } M, \pi_{i}' \models \psi\} \tag{6.2}
+</script>
+</p>
+<p>したがって，<script type="math/tex">s_{i}</script> には，<script type="math/tex">\pi'</script> のサフィックス <script type="math/tex">\pi_{i}'</script> によって満たされるすべての基本式が含まれる．
+ここで，<script type="math/tex">s_{i}</script> は <script type="math/tex">T</script> の状態であることに留意してほしい．</p>
+<h4 id="65">補題 6.5</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.5</p>
+<p>
+<script type="math/tex">\pi' = s_{0}',s_{1}', \ldots</script> を <script type="math/tex">M_{i}'</script> 中のパスとする．
+すべての <script type="math/tex">i \ge 0</script> について，<script type="math/tex">s_{i}</script> を式 6.2 で定義されたタブローの状態とする．
+このとき，すべての <script type="math/tex">g \in sub(f) \cup el(f)</script> について，<script type="math/tex">s_{i} \in sat(g)</script> であるとき，かつそのときのみ <script type="math/tex">M, \pi_{i}' \models g</script> である．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>証明は，式の構造に関する帰納法によって行う．</p>
+<ol>
+<li>
+<script type="math/tex">g \in{el(f)}</script> とする．
+    <script type="math/tex">s_{i}</script> の定義より，<script type="math/tex">g \in s_{i}</script> のとき，かつそのときのみ <script type="math/tex">M,\ pi_{i}' \models g</script> であることは容易にわかる．
+    <script type="math/tex">sat</script> の定義より，<script type="math/tex">s_{i} \in sat(g)</script> のとき，かつそのときのみ <script type="math/tex">g \in s_{i}</script> である．
+    基本ケースは，任意の LTL パス論理式 <script type="math/tex">g</script> について，全ての原子命題と <script type="math/tex">\textbf{X}g</script> の形の式を含むことに注意してほしい．</li>
+<li>
+<script type="math/tex">g = \lnot{g_{1}}</script> あるいは <script type="math/tex">g = g_{1} \vee g_{2}</script> とする．
+    帰納仮説と <script type="math/tex">sat</script> の定義によって，これらの場合を証明することは容易である．</li>
+<li>
+<script type="math/tex">g=g_{1} \textbf{U} g_{2}</script> とする．
+    <script type="math/tex">\textbf{U}</script> の定義より，
+    <script type="math/tex">M, \pi_{i}' \models g_{2}</script> あるいは (<script type="math/tex">M, \pi_{i}'\models g_{1}</script> かつ <script type="math/tex">M,\pi_{i}' \models \textbf{X}(g_{1} \textbf{U} g_{2})</script>) であるとき，かつそのときのみ，
+    <script type="math/tex">M,\pi_{i}' \models g_{1} \textbf{U} g_{2}</script> となる．
+    帰納仮説と <script type="math/tex">s_{i}</script> の定義より，
+    <script type="math/tex">s_{i} \in sat(g_{2}) \vee (s_{i} \in sat(g_{1}) \wedge s_{i}\in sat(\textbf{X}(g_{1} \textbf{U} g_{2}))</script> であるとき，かつそのときのみ，
+    <script type="math/tex">M,\pi_{i}' \models g_{2}</script> あるいは (<script type="math/tex">M,\pi_{i}'\models g_{1}</script> かつ <script type="math/tex">M, \pi_{i}'\models \textbf{X}(g_{1} \textbf{U} g_{2})</script>) となる．
+    <script type="math/tex">\textbf{X}(g_{1}\cup g_{2})</script> は <script type="math/tex">el(f)</script> 内にあるため，基本ケースではすでに処理されていることに留意すること．
+    <script type="math/tex">sat</script> の定義より，<script type="math/tex">s_{i}\in sat(\textbf{X}(g_{1} \textbf{U} g_{2}))</script> であるとき，かつそのときのみ，
+    <script type="math/tex">s_{i}\in sat(g_{2})\vee(s_{i}\in sat(g_{1})\wedge s_{i}\in sat(\textbf{X}(g_{1} \textbf{U} g_{2}))</script> となる．</li>
+</ol>
+</div>
+<h4 id="66">補題 6.6</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.6</p>
+<p>
+<script type="math/tex">\pi' = s_{0}', s_{1}', \ldots</script> を <script type="math/tex">M_{i}'</script> のパスとする．
+すべての <script type="math/tex">i \ge 0</script> について，<script type="math/tex">s_i</script> を式 6.2 で定義されたタブロー状態とする．
+このとき，<script type="math/tex">\pi = s_{0}, s_{1}, \ldots</script> は <script type="math/tex">T</script> のパスとなる．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>明らかに全ての <script type="math/tex">i</script> について <script type="math/tex">s_{i} \in S_{T}</script> である．
+補題 6.5 と <script type="math/tex">\textbf{X}</script> の定義により，以下の関係は容易にわかる：</p>
+<p>
+<script type="math/tex">s_{i} \in sat(\textbf{X} g)</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M, \pi'_{i} \models \textbf{X} g</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">M, \pi'_{i+1} \models g</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s_{i+1} \in sat(g)</script>
+</p>
+<p>
+<script type="math/tex">R_{T}</script> の定義より，もし <script type="math/tex">s_{i}\in sat(\textbf{X}g) \Leftrightarrow s_{i+1} \in sat(g)</script> ならば，<script type="math/tex">(s_{i},s_{i+1})\in R_{T}</script> となる．
+したがって，<script type="math/tex">\pi ＝ s_{0}, s_{1}, \ldots</script> は <script type="math/tex">T</script> のパスとなる．</p>
+</div>
+<h4 id="67">補題 6.7</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.7</p>
+<p>
+<script type="math/tex">\pi' = s_{0}', s_{1}', \ldots</script> を <script type="math/tex">M_{i}'</script> のパスとする．
+すべての <script type="math/tex">i \ge 0</script> について，<script type="math/tex">s_i</script> を式 6.2 で定義されたタブロー状態とする．
+このとき <script type="math/tex">\pi = s_{0}', s_{1}', \ldots</script> は <script type="math/tex">T</script> の公平なパスとなる．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>
+<script type="math/tex">\pi</script> が公平であることを示すためには，<script type="math/tex">f</script> の各部分式 <script type="math/tex">g \textbf{U} h</script> に対して，<script type="math/tex">\pi</script> 上に <script type="math/tex">s_{i} \in sat(\lnot (g \textbf{U} h) \vee h)</script> となるような状態 <script type="math/tex">s_{i}</script> が無限に存在することを証明する必要がある．
+仮にそうではないとすると，すべての <script type="math/tex">i \ge i_{0}</script> に対して <script type="math/tex">s_{i} \notin sat(\lnot (g \textbf{U} h)\vee h)</script> となるような <script type="math/tex">i_{0}</script> が存在することになる．
+したがって，<script type="math/tex">s_{i} \in sat(g \textbf{U} h)</script> かつ <script type="math/tex">s_{i} \notin sat(h)</script> となる．
+補題 6.5 より，全ての <script type="math/tex">i \ge i_{0}</script> に対して，<script type="math/tex">\pi_{i}' \models g \textbf{U} h</script> かつ <script type="math/tex">\pi_{i}' \nvDash h</script> となる．
+<script type="math/tex">\pi_{i}' \models g \textbf{U} h</script> は，ある <script type="math/tex">j \ge i</script> に対して <script type="math/tex">\pi_{j}' \models h</script> であることを意味するため，矛盾が導かれる．</p>
+</div>
+<p>ここで，定理 6.3 の証明が可能となる．</p>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>
+<script type="math/tex">M</script> のパス <script type="math/tex">\pi_{i}'</script> について，<script type="math/tex">\pi_{i}' \models f</script> と仮定する．
+補題 6.6 により，<script type="math/tex">T</script> のパス <script type="math/tex">\pi' = s_{0}', s_{1}', \ldots</script> を得ることができる．
+補題 6.7 により，このパスは公平となる．
+補題 6.5 は，<script type="math/tex">s_{0} \in sat（f）</script> を保証する．
+式 6.2 で与えられる <script type="math/tex">s_i</script> の定義より，<script type="math/tex">L(s_{i}')|_{AP_{f}} = L_{T}(s_{i})</script> であり，したがって <script type="math/tex">label(\pi')|_{AP_{f}} = label(\pi)</script> となる．
+これにより，定理 6.3 が導かれる．</p>
+</div>
+<p>6.2 節では，LTL モデル検査アルゴリズムのために，タブロー <script type="math/tex">T</script> とクリプキ構造 <script type="math/tex">M</script> の積 <script type="math/tex">P</script> を定義した．
+次の補題は，<script type="math/tex">P</script> が，<script type="math/tex">AP_{f}</script> の命題について同じラベル付けをもつ <script type="math/tex">T</script> のパス <script type="math/tex">\pi</script> と <script type="math/tex">M</script> のパス <script type="math/tex">\pi'</script> が存在する列<script type="math/tex">\pi''</script> を正確に含むことを示している．</p>
+<h4 id="68">補題 6.8</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.8</p>
+<p>
+<script type="math/tex">\pi'' = (s_{0},s_{0}'), (s_{1},s_{1}'), \ldots</script> が，すべての <script type="math/tex">i \ge 0</script> について <script type="math/tex">L_{P}(s_{i},s_{i}') = L_{T}(s_{i})</script> となる <script type="math/tex">P</script> のパスであるのは，
+すべての <script type="math/tex">i \ge 0</script> について <script type="math/tex">L_{T}(s_{i}) = L_{M}(s_{i}')</script> となる
+<script type="math/tex">T</script> のパス <script type="math/tex">\pi = s_{0},s_{1}, \ldots</script> および <script type="math/tex">M</script> のパス <script type="math/tex">\pi' = s_{0}',s_{1}', \ldots</script> が存在するとき，かつそのときのみである．
+さらに <script type="math/tex">\pi''</script> が公平となるのは，<script type="math/tex">\pi</script> が公平であるとき，かつそのときのみである．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>この補題の証明は容易である．
+<script type="math/tex">P</script> の <script type="math/tex">\pi''</script> が与えられると，<script type="math/tex">\pi</script> と <script type="math/tex">\pi'</script> はパス上の各状態を適切な構造に投影することで得ることができる．
+もう一方の向きについて，<script type="math/tex">\pi</script> と <script type="math/tex">\pi'</script> が <script type="math/tex">AP_{f}</script> で限定したラベリングでは一致していることから，すべての <script type="math/tex">i \ge 0</script> に対して <script type="math/tex">(s_{i}, s_{i}')</script> は <script type="math/tex">P</script> の状態であることがわかる．
+さらに，<script type="math/tex">(s_{i},s_{i}')</script> から <script type="math/tex">(s_{i+1},s_{i+1}')</script> への遷移が存在する．</p>
+<p>定義より，
+<script type="math/tex">\pi''</script> が公平となるのは，
+すべての <script type="math/tex">P_{i} \in {F}</script> について，<script type="math/tex">(s_{j}, s_{j}')\ in (P_{i} \times S_{M})</script> となる <script type="math/tex">j</script>が 無限に多く存在するときかつそのときのみであり，
+<script type="math/tex">s_{j} \in P_{i}</script> となる <script type="math/tex">j</script> が無限に多く存在するときかつそのときのみであり，
+<script type="math/tex">\pi</script> が公平であるときかつそのときのみである．</p>
+</div>
+<p>6.2節では，関数 <script type="math/tex">sat</script> を積 <script type="math/tex">P</script> の状態の集合に対して定義されるよう拡張している．
+そして，<script type="math/tex">V \subseteq sat(f)</script> であり，さらに <script type="math/tex">V</script> のすべての状態が <script type="math/tex">P</script> の公平なパスの始点となるような，<script type="math/tex">P</script> のすべての状態からなる集合 <script type="math/tex">V</script> を見つけている．</p>
+<p>以下の2つの補題は，タブロー <script type="math/tex">T</script> のパスの特性を表している．
+補題 6.9 は，<script type="math/tex">\pi</script> 上のある <script type="math/tex">s</script> が <script type="math/tex">s \in sat(g_1 \textbf{U} g_2)</script> となる場合，<script type="math/tex">\pi</script> 上での後続状態が <script type="math/tex">sat(g_{2})</script> 内の状態に到達するまで，全て <script type="math/tex">sat(g_1 \textbf{U} g_2)</script> に含まれることを示している．
+補題 6.10 は，<script type="math/tex">\pi</script> が公平である場合，<script type="math/tex">\pi</script> が <script type="math/tex">f</script> を満たすための必要十分条件は，その初期状態が <script type="math/tex">sat(f)</script> に含まれることであると証明している．
+補題 6.10 は，<script type="math/tex">f</script> を満たすタブロー内のパスを見つけるには，<script type="math/tex">sat(f)</script> から始まる公平なパスを探す必要があることを示している．
+この性質は，積 <script type="math/tex">P</script> へと自然と拡張できる．</p>
+<h4 id="69">補題 6.9</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.9</p>
+<p>すべての <script type="math/tex">k \geq j</script> について，<script type="math/tex">s_{k} \in sat(g_{1}) \Leftrightarrow \pi_{k} \models g_{1}</script> かつ <script type="math/tex">s_{k} \in sat(g_{2}) \Leftrightarrow \pi_{k} \models g_{2}</script> と仮定する．
+<script type="math/tex">\pi_{j} \nvDash g_{1} \textbf{U} g_{1}</script> かつ <script type="math/tex">s_{j} \in sat(g_{1} \textbf{U} g_{2})</script> ならば，すべての <script type="math/tex">k \ geq j</script> について <script type="math/tex">\pi_{k} \nvDash g_{1} \textbf{U} g_{2}</script> かつ <script type="math/tex">s_{k} \in sat(g_{1} \textbf{U} g_{2})</script> である．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>まず，<script type="math/tex">s_{j} \in sat(g_{1} \textbf{U} g_{2})</script> かつ <script type="math/tex">\pi_{j} \nvDash g_{1} \textbf{U} g_{2}</script> ならば <script type="math/tex">s_{j+1} \in sat(g_{1} \textbf{U} g_{2})</script> かつ <script type="math/tex">\pi_{j+1} \nvDash g_{1} \textbf{U} g_{1}</script> であることを証明する．
+<script type="math/tex">sat</script> の定義より，<script type="math/tex">s_{j} \in sat(g_{1} \textbf{U} g_{2})</script> であれば，<script type="math/tex">s_{j} \in sat(g_{2})</script> または <script type="math/tex">(s_{j} \in sat(g_{1}))</script> かつ <script type="math/tex">s_{j} \in sat(\textbf{X}(g_{1} \textbf{U} g_{2}))</script> である．
+仮定と <script type="math/tex">R_{t}</script> の定義より，以下が導かれる．</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+\pi_{j} \models g_{2} \text{ or } (\pi_{j} \models g_{1} \text{ and } s_{j+1} \in sat(g_{1} \textbf{U} g_{2})) \tag{6.3}
+\end{align}</script>
+</p>
+<p>
+<script type="math/tex">\pi_{j} \nvDash g_{1} \textbf{U} g_{2}</script> ならば <script type="math/tex">\pi_{j} \nvDash g_{2}</script> となるため，式 (6.3) は以下のように簡単化できる．</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+\pi_{j} \models g_{1} \text{ and } s_{j+1} \in sat(g_{1} \textbf{U} g_{2}) \tag{6.4}
+\end{align}</script>
+</p>
+<p>式 6.4 より <script type="math/tex">\pi_{j} \models g_{1}</script> であり，仮定より <script type="math/tex">\pi_{j} \nvDash g_{1} \textbf{U} g_{2}</script> であることがわかる．
+仮に <script type="math/tex">\pi_{j+1}</script> が <script type="math/tex">g_{1} \textbf{U} g_{2}</script> を満たす場合，<script type="math/tex">\pi \models g_{1}</script> より <script type="math/tex">\pi_{j} \models g_{1} \textbf{U} g_{2}</script> であると結論付けられる．
+しかし，これはあり得ないため，<script type="math/tex">\pi_{j+1} \nvDash g_{1} \textbf{U} g_{2}</script> である必要がある．</p>
+<p>同様に，すべての <script type="math/tex">k=j+2,j+3,j+4,\ldots,</script> について <script type="math/tex">s_{k} \in sat(g_{1} \textbf{U} g_{2})</script> かつ <script type="math/tex">\pi_{k} \nvDash g_{1} \textbf{U} g_{2}</script> が得られる．</p>
+</div>
+<h4 id="610">補題 6.10</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 6.10</p>
+<p>
+<script type="math/tex">\pi = s_{0},s_{1},\ldots</script> を <script type="math/tex">T</script> の中の公平なパスとする．
+このとき，<script type="math/tex">T,\pi \models f</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s_{0} \in sat(f)</script> である．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>式の構造に関する帰納法より，それぞれの <script type="math/tex">g \in sub(f) \cup el(f)</script> に対して，すべての <script type="math/tex">j</script> について <script type="math/tex">T,\pi_{j} \models p</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s_{j} \in sat(g)</script> であることを証明する．</p>
+<ol>
+<li>
+<script type="math/tex">g = p \in AP_{f}</script> とする．
+    <script type="math/tex">s_{j}</script> と <script type="math/tex">sat</script> の定義より，以下の関係は容易にわかる：
+    <script type="math/tex">\pi_{j} \models p</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">p \in L_{T}(s_{j})</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">p \in s_{j}</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s_{j} \in sat(p)</script> ．</li>
+<li>
+<script type="math/tex">g = \neg g_{1}</script> または <script type="math/tex">g = g_{1} \vee g_{2}</script> とする．
+    帰納法の仮定と <script type="math/tex">\neg</script> と <script type="math/tex">\vee</script> の意味より，これらの場合の証明は簡単である．</li>
+<li>
+<script type="math/tex">g = \textbf{X} g_{1}</script> とする．
+    <script type="math/tex">R_{T}</script> の定義と帰納法の仮定より，以下の関係がわかる：
+    <script type="math/tex">s_{j} \in sat(\textbf{X} g_{1})</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">s_{j+1} \in sat(g)</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">\pi_{j+1} \models g</script>
+<script type="math/tex">\Leftrightarrow</script>
+<script type="math/tex">\pi_{j} \models \textbf{X} g</script> ．</li>
+<li>
+<p>
+<script type="math/tex">g = g_{1} \textbf{U} g_{2}</script> とする．
+    (<script type="math/tex">\Rightarrow</script>)方向について，<script type="math/tex">\pi_{j} \models g_{1} \textbf{U} g_{2}</script> と仮定すると，ある <script type="math/tex">l \geq j</script> について <script type="math/tex">\pi_{l} \models g_{2}</script> であり，すべての <script type="math/tex">j \geq i < l</script> について <script type="math/tex">\pi_{l} \models g_{1}</script> である．
+    帰納法の仮定より，<script type="math/tex">s_{l} \in sat(g_{2})</script> であり，したがって <script type="math/tex">s_{l} \in sat(g_{1} \textbf{U} g_{2})</script> である．
+    <script type="math/tex">R_{T}</script> の定義より，<script type="math/tex">s_{l-1} \in sat(\textbf{X}(g_{1} \textbf{U} g_{2}))</script> である．
+    しかし <script type="math/tex">\pi_{l-1} \models g_{1}</script> であり，帰納法より <script type="math/tex">s_{l-1} \in sat(g_{1} \textbf{U} g_{2})</script> となり，したがって <script type="math/tex">s_{l-1} \in sat(g_{1} \textbf{U} g_{2})</script> となる．
+    <script type="math/tex">(l-j)</script> における帰納法より，最終的 に<script type="math/tex">s_{j} \in sat(g_{1} \textbf{U} g_{2})</script> が得られる．</p>
+<p>逆(<script type="math/tex">\Leftarrow</script>)方向について，<script type="math/tex">s_j \in sat(g_{1} \textbf{U} g_{2})</script> かつ <script type="math/tex">\pi_{j} \nvDash g_{1} \textbf{U} g_{2}</script> と仮定する．
+帰納法の仮定により，補題 6.9 の条件が満たされていることが保証される．
+したがって，すべての <script type="math/tex">k \geq j</script> について <script type="math/tex">s_{k} \in sat(g_{1} \textbf{U} g_{2})</script> かつ <script type="math/tex">\pi_{k} \nvDash g_{1} \textbf{U} g_{2}</script> である．
+これにより <script type="math/tex">\pi_{k} \nvDash g_{2}</script> が導かれ，帰納法の仮定により <script type="math/tex">s_{k} \notin sat(g_{2})</script> となる．
+結果として，すべての <script type="math/tex">k \geq l</script> について，<script type="math/tex">s_{k} \in g_{1} \textbf{U} g_{2}</script> かつ <script type="math/tex">s_{k} \notin sat(g2)</script> である．
+<script type="math/tex">\pi \models \textbf{G}true</script> は <script type="math/tex">s_{k} \in sat(\neg (g_{1} \textbf{U} g_{2}) ∨ g_{2})</script> を満たすような状態 <script type="math/tex">s_{k}</script> が無限に存在することを保証するため，矛盾が導かれる．
+したがって，<script type="math/tex">s_{j} \in sat(g_{1} \textbf{U} g_{2})</script> ならば，<script type="math/tex">\pi_{j} \models g_{1} \textbf{U} g_{2}</script> である．</p>
+</li>
+</ol>
+</div>
+<p>この構造の正しさは，以下の定理によって要約される．</p>
+<h4 id="611">定理 6.11</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 6.11</p>
+<p>
+<script type="math/tex">M,s' \models \textbf{E} f</script> であるとき，かつそのときのみ <script type="math/tex">(s, s') \in sat(f)</script> かつ <script type="math/tex">(s, s')</script> が <script type="math/tex">P</script> の公平なパス の起点となるような <script type="math/tex">T</script> の状態 <script type="math/tex">s</script> が存在する．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>(<script type="math/tex">\Rightarrow</script>) 方向について，<script type="math/tex">M, s_0' \models \textbf{E}f</script> より <script type="math/tex">\pi' \models f</script> となるようなパス <script type="math/tex">\pi'</script> が <script type="math/tex">M</script> に存在する．
+定理 6.3 と補題 6.7 より，<script type="math/tex">label(\pi) = label(\pi')|_{AP_{f}}</script> となるような公平なパスが <script type="math/tex">T</script> に存在するといえる．
+補題 6.8 より，<script type="math/tex">label(\pi'') = label(\pi)</script> となるようなパス <script type="math/tex">\pi''</script> が <script type="math/tex">P</script> に存在する．
+<script type="math/tex">label(\pi) = label(\pi')|_{AP_{f}}</script> かつ <script type="math/tex">\pi' \models f</script> より，<script type="math/tex">\pi \models f</script> であるとわかる．
+また <script type="math/tex">\pi</script> は公平なので，補題 6.10 より <script type="math/tex">s_{0} \in sat(f)</script> である．
+よって，<script type="math/tex">(s_{0},s'_{0}) \in sat(f)</script> である．
+<script type="math/tex">\pi</script> は公平なので，定義より <script type="math/tex">\pi''</script> も公平である．
+したがって，<script type="math/tex">(s_{0},s'_{0})</script> は<script type="math/tex">P</script> の公平なパスの起点である．</p>
+<p>他方 (<script type="math/tex">\Leftarrow</script>) について，<script type="math/tex">(s_{0},s'_{0}) \in sat(f)</script> であり，<script type="math/tex">(s_{0},s'_{0})</script> が <script type="math/tex">P</script> の公平なパス <script type="math/tex">\pi''</script> の起点であると仮定する．
+補題 6.8 より，<script type="math/tex">label=(\pi'') = label(\pi) = label(\pi')|_{AP_{f}}</script> となるようなパス <script type="math/tex">\pi \in T</script> と <script type="math/tex">\pi' \in M</script> が存在する．
+さらに，<script type="math/tex">\pi''</script> は公平なので，<script type="math/tex">\pi</script> も公平である．
+また，<script type="math/tex">(s_{0},s'_{0}) \in sat(f)</script> なので <script type="math/tex">s_{0} \in sat(f)</script> である．
+補題 6.10 より，<script type="math/tex">\pi \models f</script> である．
+<script type="math/tex">label(\pi) = label(\pi')|_{AP_{f}}</script> より，同様に <script type="math/tex">\pi' \models f</script> もいえる．
+したがって，<script type="math/tex">M,s' \models \textbf{E}f</script> である．</p>
+</div>
+<h2 id="64-ctl">6.4 CTL* モデル検査</h2>
+<p>CTL* のモデル検査問題の複雑さは，CTL と LTL の両方のモデル検査問題の複雑さよりも大きくなるはずだと予想するだろう．
+驚いたことに，これは事実ではない．
+文献 <sup id="fnref:124"><a class="footnote-ref" href="#fn:124">1</a></sup><sup id="fnref:209"><a class="footnote-ref" href="#fn:209">2</a></sup> では，CTL* のモデル検査問題は，本質的に LTL のモデル検査問題と同じ複雑さを持つことが示されている．</p>
+<p>基本的な考え方は，CTL モデル検査の状態ラベル付け手法を LTL モデル検査と組み合わせることとなる．
+LTL の元のアルゴリズムは，<script type="math/tex">\textbf{E}f</script> という形式の式を処理できる．
+ここで <script type="math/tex">f</script> は，部分式として含まれる状態式が原子命題のみとなる LTL のパス式である．
+このアルゴリズムは，<script type="math/tex">f</script> が任意の状態部分式を含むように拡張できる．
+<script type="math/tex">f</script> の状態部分式がすでに処理されており，それに応じて状態ラベルが更新されていると仮定しよう．
+それぞれの状態部分式は，モデルと式の両方のラベル付けにおいて，新たな原子命題へと置き換えられる．
+その新たな式を <script type="math/tex">\textbf{E}f'</script> と表記する．
+この式が CTL に含まれる場合は，CTL モデル検査の手続きを適用する．
+そうでない場合，<script type="math/tex">f'</script> は純粋な LTL パス式であるので，LTL モデル検査のアルゴリズムが使用される．
+いずれの場合でも，その式はそれを満たすすべての状態のラベルに追加される．
+<script type="math/tex">\textbf{E}f</script> がより複雑な CTL* 式の部分式である場合，<script type="math/tex">\textbf{E}f</script> を新たな原子命題で置き換えてこの手続きを繰り返す．
+これを式全体が処理されるまで続ける．</p>
+<p>CTL のアルゴリズムと同様に，CTL* のアルゴリズムは <script type="math/tex">i</script> 段階でレベル <script type="math/tex">i</script> の数式が処理される，というように段階的に動作する．
+<script type="math/tex">f</script> を CTL* 式とする．
+レベル <script type="math/tex">i</script> の状態部分式は以下のように帰納的に定義される．</p>
+<ul>
+<li>レベル <script type="math/tex">0</script> はすべての原子命題を含む．</li>
+<li>レベル <script type="math/tex">i + 1</script> は，<script type="math/tex">g</script> のすべての状態部分式がレベル <script type="math/tex">i</script> かそれ以下であり，かつ <script type="math/tex">g</script> 自身がそれ以下のレベルに含まれないようなすべての状態部分式 <script type="math/tex">g</script> を含む．</li>
+</ul>
+<p>CTL* 式のレベルを説明するために，電子レンジの例へ戻ろう．
+以下の CTL* 式は，ある不正な処理列が起こる場合は必ず，オーブンが加熱されないか，あるいは最終的にリセットされることを保証している：</p>
+<p>
+<script type="math/tex; mode=display">\mathbf{AG}((\lnot \mathit{Close} \land \mathit{Start}) \to \mathbf{A}(\mathbf{G} \lnot \mathit{Heat} \lor \mathbf{F} \lnot \mathit{Error}))</script>
+</p>
+<p>この不正な列は <script type="math/tex">(\lnot \mathit{Close} \land \mathit{Start})</script> と表現されており，ドアが閉まる前に，開始ボタンが押されることを意味する．
+また，リセット処理の結果は，<script type="math/tex">\lnot \mathit{Error}</script> で示される．
+この性質は CTL では表現できない．</p>
+<p>モデル検査を単純化するために，ここでは存在パス限定子のみを扱う．
+したがって，まず初めに上記の式を以下のように書き直す．</p>
+<p>
+<script type="math/tex; mode=display">\lnot{\mathbf{EF}}(\lnot \mathit{Close} \land \mathit{Start} \land \mathbf{E}(\mathbf{F} \mathit{Heat} \land \mathbf{G} \mathit{Error})) </script>
+</p>
+<p>この式の部分式のレベルは以下のようになる：</p>
+<ul>
+<li>レベル <script type="math/tex">0</script> の部分式は <script type="math/tex">\mathit{Close}</script>，<script type="math/tex">\mathit{Start}</script>，<script type="math/tex">\mathit{Heat}</script>，<script type="math/tex">\mathit{Error}</script> である．</li>
+<li>レベル <script type="math/tex">1</script> の部分式は <script type="math/tex">\mathbf{E}(\mathbf{F} \mathit{Heat} \land \mathbf{G} \mathit{Error})</script>，<script type="math/tex">\lnot{Close}</script> である．</li>
+<li>レベル <script type="math/tex">2</script> の部分式は <script type="math/tex">\mathbf{EF}(\lnot \mathit{Close} \land \mathit{Start} \land \mathbf{E}(\mathbf{F} \mathit{Heat} \land \mathbf{G} \mathit{Error}))</script> である．</li>
+<li>レベル <script type="math/tex">3</script> は式全体を含む．</li>
+</ul>
+<p>
+<script type="math/tex">g</script> を CTL* 式とする．
+<script type="math/tex">g</script> の部分式 <script type="math/tex">\mathbf{E} h_1</script> が，<script type="math/tex">g</script> のどの厳密な部分式 <script type="math/tex">\mathbf{E} h</script> に対しても厳密な部分式とならないとき，かつそのときのみ，<script type="math/tex">\mathbf{E} h_1</script> は<strong>極大</strong> (maximal) である．
+例として，以下の式を考える．</p>
+<p>
+<script type="math/tex; mode=display">\mathbf{E}(a \lor \mathbf{E}(b \land \mathbf{EF} c))</script>
+</p>
+<p>このとき，<script type="math/tex">\mathbf{EF} c</script> は <script type="math/tex">\mathbf{E}(b \land \mathbf{EF} c)</script> の極大の部分式であるが，<script type="math/tex">\mathbf{E}(a \lor \mathbf{E}(b \land \mathbf{EF} c))</script> の極大な部分式ではない．</p>
+<p>
+<script type="math/tex">M = (S,S_0,R,AP,L)</script> をクリプキ構造とし，<script type="math/tex">f</script> を CTL* 式とし，<script type="math/tex">g</script> をレベル <script type="math/tex">i</script> の <script type="math/tex">f</script> の状態部分式とする．
+<script type="math/tex">M</script> の状態は <script type="math/tex">i</script> より小さなレベルのすべての状態部分式で正しくラベル付けされていると仮定する．
+CTL* のアルゴリズムの <script type="math/tex">i</script> 番目において，<script type="math/tex">g</script> をそれが真となるようなすべての状態に追加する．
+式 <script type="math/tex">g</script> の形に応じて，いくつかの場合が考えられる：</p>
+<ul>
+<li>
+<script type="math/tex">g</script> が原子命題の場合，<script type="math/tex">g</script> が <script type="math/tex">L(s)</script> に含まれるとき，かつそのときのみ <script type="math/tex">g</script> は <script type="math/tex">label(s)</script> に含まれる．</li>
+<li>
+<script type="math/tex">g = \lnot g_1</script> の場合，<script type="math/tex">g_1</script> が <script type="math/tex">label(s)</script> に含まれないとき，かつそのときのみ <script type="math/tex">g</script> は <script type="math/tex">label(s)</script> に追加される．</li>
+<li>
+<script type="math/tex">g = g_1 \lor g_2</script> の場合，<script type="math/tex">g_1</script> と <script type="math/tex">g_2</script> のいずれかが <script type="math/tex">label(s)</script> に含まれるとき，かつそのときのみ <script type="math/tex">g</script> は <script type="math/tex">label(s)</script> に追加される．</li>
+<li>
+<script type="math/tex">g = \mathbf{E} g_1</script> の場合，この式を満たすすべての状態のラベルに <script type="math/tex">g</script> を追加するため，以下に示す手続き <script type="math/tex">CheckE(g)</script> が適用される．
+ここで，<script type="math/tex">\mathbf{E} h_1，\ldots，\mathbf{E} h_k</script> は <script type="math/tex">g</script> の極大な部分式であり，<script type="math/tex">a_1, \ldots，a_k</script> は新たな原子命題である．
+手続き内の式 <script type="math/tex">g'</script> は，それぞれの部分式 <script type="math/tex">\mathbf{E} h_i</script> を原子命題 <script type="math/tex">a_i</script> に置き換えることで得られる．
+結果として得られる式は，<script type="math/tex">g_1'</script> を純粋な LTL パス式として <script type="math/tex">\mathbf{E} g_1'</script> の形をもつことに注意してほしい．
+ここで，LTL モデル検査器が，<script type="math/tex">label(s) := label(s) \cup \{g'\}</script> のときかつそのときのみ，<script type="math/tex">M,s \models g'</script> となるように <script type="math/tex">label(s)</script> を更新すると仮定する．</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">CTL* 式 <script type="math/tex">g=\mathbf{E}g_1</script> を満たす状態の集合を求める手続き <script type="math/tex">\mathit{CheckE}</script> のアルゴリズム</p>
+<p><img src="../img/lec08-fig3.pdf" width="450"></p>
+</div>
+<p>このアルゴリズムの複雑さは，使用される CTL と LTL のモデル検査アルゴリズムの複雑さに依存する．
+第 5 章 (<a href="../lec06/">第6回</a>) で示したように，CTL モデル検査の複雑さは構造 <script type="math/tex">M</script> と式 <script type="math/tex">f</script> の大きさの両方に線形である．
+現在知られている最もよい時間的複雑さは <script type="math/tex">|M| \cdot 2^{O(|f|)}</script> である．</p>
+<h4 id="612">定理 6.12</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 6.12</p>
+<p>
+<script type="math/tex">|M| \cdot 2^{O(|f|)}</script> の複雑さをもつ CTL* モデル検査アルゴリズムが存在する．</p>
+</div>
+<p>実際の実装では，状態部分式を補助的な原子命題で置き換える必要はないことに注意してほしい．
+一旦，状態のラベルが与えられた部分式に関して更新されると，この部分式は原子命題とみなすことができる．</p>
+<p>CTL* モデル検査アルゴリズムを例示するために，再度以下の CTL* 式について考え，図5.3で示した電子レンジのモデルにおいて検査を行う．</p>
+<p>
+<script type="math/tex; mode=display">\lnot{\mathbf{EF}}(\lnot \mathit{Close} \land \mathit{Start} \land \mathbf{E}(\mathbf{F} \mathit{Heat} \land \mathbf{G} \mathit{Error}))</script>
+</p>
+<p>レベル <script type="math/tex">0</script> で，すべての原子命題が処理される．
+レベル <script type="math/tex">1</script> で，式 <script type="math/tex">\neg \mathit{Close}</script> が状態 1 および 2 のラベルに初めて追加される．
+レベル <script type="math/tex">1</script> のもう一つの式 <script type="math/tex">\mathbf{E}(\mathbf{F} \mathit{Heat} \wedge \mathbf{G} \mathit{Error})</script> は
+純粋な LTL 式であるため，LTL モデル検査の手続きによって処理される．
+この式を満たす状態はないため，どの状態ラベルにも追加されない．
+レベル <script type="math/tex">2</script> で，式 <script type="math/tex">\mathbf{E}(\mathbf{F} \mathit{Heat} \wedge \mathbf{G} \mathit{Error})</script> が原子命題 <script type="math/tex">a</script> に初めて置き換えられる．
+その後，LTL モデル検査の手続きが純粋な LTL 式 <script type="math/tex">\mathbf{EF}(\neg \mathit{Close} \wedge \mathit{Start} \wedge a)</script> に適用される．
+この式でラベル付けされる状態はないため，レベル <script type="math/tex">3</script> ではすべての状態が以下の式でラベル付けされる．</p>
+<p>
+<script type="math/tex; mode=display"> \neg \mathbf{EF}(\neg \mathit{Close} \wedge \mathit{Start} \wedge \mathbf{E}(\mathbf{F} \mathit{Heat} \wedge \mathbf{G} \mathit{Error})) </script>
+</p>
+<p>したがって，この性質は電子レンジに対して常に満たされる．</p>
+<h2 id="_1">書誌情報</h2>
+<p>モデル検査において利用される主な 2 つの時相論理は CTL <sup id="fnref:203"><a class="footnote-ref" href="#fn:203">3</a></sup><sup id="fnref2:124"><a class="footnote-ref" href="#fn:124">1</a></sup> と LTL <sup id="fnref:417"><a class="footnote-ref" href="#fn:417">4</a></sup> である．
+この 2 つの論理は，表現力とモデル検査の複雑性において異なっている．
+そのため，これらの論理のどちらかをサポートするか，あるいは両者の要素や特性を継承する論理を提供することによって両者を調和させようとする，多くの研究を生み出してきた．
+CTLは <sup id="fnref2:203"><a class="footnote-ref" href="#fn:203">3</a></sup><sup id="fnref:425"><a class="footnote-ref" href="#fn:425">5</a></sup> において，特性の大きさにおいてモデル検査に効率的であることが示されたが，状態空間全体に対して線形となるシステムのモデルを明示的に使用している．
+LTLは <sup id="fnref:454"><a class="footnote-ref" href="#fn:454">6</a></sup> において，コンパクトな (明示的でない) 状態空間表現と，特性のサイズの両方において PSPACE であることが示された．
+PSPACE という結果はむしろ理論的 (二分探索を使用) なものであり，LTL モデル検査のための実用的なアルゴリズムは，特性のサイズに対して指数的であり，かつ状態空間全体に対して線形である <sup id="fnref:354"><a class="footnote-ref" href="#fn:354">7</a></sup>．
+LTL モデル検査のためのオートマトン理論に基づくアルゴリズム <sup id="fnref:479"><a class="footnote-ref" href="#fn:479">8</a></sup><sup id="fnref:244"><a class="footnote-ref" href="#fn:244">9</a></sup> は第 7 章で紹介されている．</p>
+<p>いくつかの CTL の拡張とそのモデル検査アルゴリズムが <sup id="fnref3:124"><a class="footnote-ref" href="#fn:124">1</a></sup><sup id="fnref2:209"><a class="footnote-ref" href="#fn:209">2</a></sup><sup id="fnref:204"><a class="footnote-ref" href="#fn:204">10</a></sup> で提案されており，これには公平な実行を証明するための機能と，本章で紹介された CTL* の完全なモデル検査アルゴリズムが含まれている．</p>
+<p>CTL* モデル検査は，特性のサイズを固定した場合は式のサイズ，式のサイズを固定した場合は検査されるシステムの表現 (プロセスの集合またはデジタル回路としてのコンパクトな表現に基づく) のサイズの両方において PSPACE 完全である．
+これを達成する (上界を示す) ためのアルゴリズムは <sup id="fnref:327"><a class="footnote-ref" href="#fn:327">11</a></sup> に示されている．
+下界については LTL についての結果 <sup id="fnref:314"><a class="footnote-ref" href="#fn:314">12</a></sup><sup id="fnref2:454"><a class="footnote-ref" href="#fn:454">6</a></sup> と同様に示される．</p>
+<h2 id="_2">演習問題</h2>
+<div class="admonition question">
+<p class="admonition-title">問題 6.1 (ACTL に対するタブロー)</p>
+<p>ACTL に対するタブローの構造を与えよ．そしてその正しさを証明せよ．</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:124">
+<p>E. M. Clarke, E. A. Emerson, and A. P. Sistla. Automatic verification of finite-state concurrent systems using temporal logic specifications. In Principles of Programming Languages, POPL, pages 117–126. ACM, 1983.&#160;<a class="footnote-backref" href="#fnref:124" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:124" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:124" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:209">
+<p>E. A. Emerson and C.-L. Lei. Modalities for model checking:Branching time strikes back. In M. S. V. Deusen, Z. Galil, and B. K. Reid, editors, Twelfth Symposium on Principles of Programming Languages, pages 84–96. ACM Press, 1985.&#160;<a class="footnote-backref" href="#fnref:209" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:209" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:203">
+<p>E. A. Emerson and E. M. Clarke. Characterizing correctness properties of parallel programs using fixpoints. In Automata, Languages and Programming, 7th Colloquium, volume 85 of Lecture Notes in Computer Science, pages 169–181. Springer, 1980.&#160;<a class="footnote-backref" href="#fnref:203" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:203" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:417">
+<p>A. Pnueli. The temporal logic of programs. In Foundations of Computer Science, FOCS, pages 46–57. IEEE Computer Society, 1977.&#160;<a class="footnote-backref" href="#fnref:417" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:425">
+<p>J. P. Quielle and J. Sifakis. Specification and verification of concurrent systems in CESAR. In M. Dezani-Ciancaglini and U. Montanari, editors, International Symposium on Programming, volume 137 of Lecture Notes in Computer Science, pages 337–350, 1982.&#160;<a class="footnote-backref" href="#fnref:425" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:454">
+<p>A. P. Sistla and E. M. Clarke. The complexity of propositional linear temporal logics. J. ACM, 32(3):733–749, 1985.&#160;<a class="footnote-backref" href="#fnref:454" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:454" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:354">
+<p>O. Lichtenstein and A. Pnueli. Checking that finite state concurrent programs satisfy their linear specification. In Principles of Programming Languages, POPL, pages 97–107. ACM, 1985.&#160;<a class="footnote-backref" href="#fnref:354" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:479">
+<p>M. Y. Vardi and P. Wolper. An automata-theoretic approach to automatic program verification. In Logic in Computer Science, LICS, pages 332–344. IEEE Computer Society, 1986.&#160;<a class="footnote-backref" href="#fnref:479" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:244">
+<p>R. Gerth, D. Peled, M. Y. Vardi, and P. Wolper. Simple on-the-fly automatic verification of linear temporal logic. In Protocol Specification Testing and Verification, pages 3–18. Chapman and Hall, 1995.&#160;<a class="footnote-backref" href="#fnref:244" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:204">
+<p>E. A. Emerson and J. Y. Halpern. “Sometimes” and “Not Never” revisited:On branching time versus linear time. J. ACM, 33(1):151–178, 1986.&#160;<a class="footnote-backref" href="#fnref:204" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:327">
+<p>O. Kupferman, M. Y. Vardi, and P. Wolper. An automata-theoretic approach to branching-time model checking. J. ACM, 47(2):312–360, 2000.&#160;<a class="footnote-backref" href="#fnref:327" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:314">
+<p>D. Kozen. Lower bounds for natural proof systems. In Foundations of Computer Science, FOCS, pages 254–266. IEEE, 1977.&#160;<a class="footnote-backref" href="#fnref:314" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec07/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第7回" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第7回
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lec09/" class="md-footer__link md-footer__link--next" aria-label="Next: 第9回" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              第9回
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>

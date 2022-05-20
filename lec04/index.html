@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -18,32 +17,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -254,6 +273,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -268,22 +288,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    時相論理とは
+  <a href="#4" class="md-nav__link">
+    4. 時相論理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ctl" class="md-nav__link">
-    計算木論理 CTL*
+  <a href="#41-ctl" class="md-nav__link">
+    4.1 計算木論理 CTL*
   </a>
   
-    <nav class="md-nav" aria-label="計算木論理 CTL*">
+    <nav class="md-nav" aria-label="4.1 計算木論理 CTL*">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     パス限定子と時相演算子
   </a>
   
@@ -308,31 +328,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ctl_1" class="md-nav__link">
-    CTL* の文法と意味論
+  <a href="#42-ctl" class="md-nav__link">
+    4.2 CTL* の文法と意味論
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の文法と意味論">
+    <nav class="md-nav" aria-label="4.2 CTL* の文法と意味論">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ctl_2" class="md-nav__link">
-    CTL* の文法
+  <a href="#421-ctl" class="md-nav__link">
+    4.2.1 CTL* の文法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctl_3" class="md-nav__link">
-    CTL* の意味論
+  <a href="#422-ctl" class="md-nav__link">
+    4.2.2 CTL* の意味論
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の意味論">
+    <nav class="md-nav" aria-label="4.2.2 CTL* の意味論">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#definition-42" class="md-nav__link">
     Definition 4.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    充足可能性と恒真性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    CTL* の意味論の重要な性質
   </a>
   
 </li>
@@ -343,25 +377,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    充足可能性と恒真性
+  <a href="#423-nnf" class="md-nav__link">
+    4.2.3 否定標準形 (NNF)
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctl_4" class="md-nav__link">
-    CTL* の意味論の重要な性質
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    否定標準形
-  </a>
-  
-    <nav class="md-nav" aria-label="否定標準形">
+    <nav class="md-nav" aria-label="4.2.3 否定標準形 (NNF)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -382,7 +402,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     演習問題
   </a>
   
@@ -441,6 +461,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -453,6 +503,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -467,22 +518,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    時相論理とは
+  <a href="#4" class="md-nav__link">
+    4. 時相論理
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ctl" class="md-nav__link">
-    計算木論理 CTL*
+  <a href="#41-ctl" class="md-nav__link">
+    4.1 計算木論理 CTL*
   </a>
   
-    <nav class="md-nav" aria-label="計算木論理 CTL*">
+    <nav class="md-nav" aria-label="4.1 計算木論理 CTL*">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     パス限定子と時相演算子
   </a>
   
@@ -507,31 +558,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ctl_1" class="md-nav__link">
-    CTL* の文法と意味論
+  <a href="#42-ctl" class="md-nav__link">
+    4.2 CTL* の文法と意味論
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の文法と意味論">
+    <nav class="md-nav" aria-label="4.2 CTL* の文法と意味論">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ctl_2" class="md-nav__link">
-    CTL* の文法
+  <a href="#421-ctl" class="md-nav__link">
+    4.2.1 CTL* の文法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ctl_3" class="md-nav__link">
-    CTL* の意味論
+  <a href="#422-ctl" class="md-nav__link">
+    4.2.2 CTL* の意味論
   </a>
   
-    <nav class="md-nav" aria-label="CTL* の意味論">
+    <nav class="md-nav" aria-label="4.2.2 CTL* の意味論">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#definition-42" class="md-nav__link">
     Definition 4.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    充足可能性と恒真性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctl" class="md-nav__link">
+    CTL* の意味論の重要な性質
   </a>
   
 </li>
@@ -542,25 +607,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    充足可能性と恒真性
+  <a href="#423-nnf" class="md-nav__link">
+    4.2.3 否定標準形 (NNF)
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ctl_4" class="md-nav__link">
-    CTL* の意味論の重要な性質
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    否定標準形
-  </a>
-  
-    <nav class="md-nav" aria-label="否定標準形">
+    <nav class="md-nav" aria-label="4.2.3 否定標準形 (NNF)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -581,7 +632,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     演習問題
   </a>
   
@@ -599,10 +650,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="4-ctl">第4回 時相論理 CTL*</h1>
-<p>この回では，教科書の第4章 "Temporal Logic" の前半部分について説明します．</p>
-<div class="admonition 概要">
+
+
+<h1 id="4-ctl">第4回 時相論理 CTL*</h1>
+<p>この回では，教科書の第4章 "Temporal Logic" の前半 (4.1 〜 4.2) について説明します．</p>
+<div class="admonition summary">
 <p class="admonition-title">概要</p>
 <ul>
 <li>時相論理とは</li>
@@ -611,16 +663,16 @@
 <li>否定標準形</li>
 </ul>
 </div>
-<h2 id="_1">時相論理とは</h2>
+<h2 id="4">4. 時相論理</h2>
 <p>時相論理は，クリプキ構造としてモデル化されたシステムの，動的な振る舞いを指定するための形式化手法である．
 これから考える時相論理における論理式は，ひとつの計算ステップが終わった<strong>次の時点で</strong>ある性質が満たされることや，
 ある指定された状態が<strong>いつか</strong>到達すること，あるいは，異常状態に陥ることが<strong>決してない</strong>ことを表現することができる．</p>
 <p>「<strong>次の時点で</strong>〜」，「<strong>いつか</strong>〜」そして「〜が<strong>決してない</strong>」といった性質は，特定の時相演算子 (temporal operator) で表現できる．
 また時相論理は，クリプキ構造のパスに時間的性質を関連付けるためのパス限定子 (path quantifier) も備えている．
 こうした演算子や限定子はネストすることも，ブール演算子と結合することもできる．</p>
-<p>ここでは，非常に強力な論理である CTL* と，その重要な部分論理である<strong>計算木論理</strong> (CTL)，<strong>全称 CTL*</strong> (ACTL*)，そして，<strong>線形時間論理</strong> (LTL) に注目する．
+<p>ここでは，非常に強力な論理である CTL*<sup id="fnref:123"><a class="footnote-ref" href="#fn:123">1</a></sup><sup id="fnref:125"><a class="footnote-ref" href="#fn:125">2</a></sup><sup id="fnref:204"><a class="footnote-ref" href="#fn:204">3</a></sup>と，その重要な部分論理である<strong>計算木論理</strong> (CTL)<sup id="fnref:47"><a class="footnote-ref" href="#fn:47">4</a></sup><sup id="fnref2:123"><a class="footnote-ref" href="#fn:123">1</a></sup><sup id="fnref:203"><a class="footnote-ref" href="#fn:203">5</a></sup>，<strong>全称 CTL*</strong> (ACTL*)<sup id="fnref:255"><a class="footnote-ref" href="#fn:255">6</a></sup><sup id="fnref:361"><a class="footnote-ref" href="#fn:361">7</a></sup>，そして，<strong>線形時間論理</strong> (LTL)<sup id="fnref:418"><a class="footnote-ref" href="#fn:418">8</a></sup><sup id="fnref:419"><a class="footnote-ref" href="#fn:419">9</a></sup> に注目する．
 これらの論理で記述された性質は，モデル検査アルゴリズムに利用できる．</p>
-<h2 id="ctl">計算木論理 CTL*</h2>
+<h2 id="41-ctl">4.1 計算木論理 CTL*</h2>
 <p>直感的な<strong>計算木論理</strong> (computation tree logic) の意味論は，計算木の概念に基づいている．
 クリプキ構造 <script type="math/tex">M</script> の初期状態 <script type="math/tex">s_0</script> が与えられると，以下の図のようにクリプキ構造を <script type="math/tex">s_0</script> を根として展開することで木構造を得ることができる．</p>
 <p><center>
@@ -630,7 +682,7 @@
 <p>計算木は，初期状態から実行可能な系列の全てを表している．
 <script type="math/tex">M</script> の遷移関係については左全関係 (left-total) であるとしているため，全ての状態が次の状態をもっている．
 したがって，木の全ての枝は無限に続くことになる．</p>
-<h3 id="_2">パス限定子と時相演算子</h3>
+<h3 id="_1">パス限定子と時相演算子</h3>
 <p>時相論理 CTL* は計算木の，ひいてはその根底にあるクリプキ構造の特性を定義する．
 CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong>から構成される．</p>
 <p>CTL* は <script type="math/tex">\textbf{A}</script> と <script type="math/tex">\textbf{E}</script> の二つのパス限定子をもつ．</p>
@@ -689,6 +741,8 @@ CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong
 <img src="../img/lec04-fig2.png" width="350">
 </center></p>
 <h4 id="example-41">Example 4.1</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 4.1</p>
 <p>前述の例をもう一度使って，CTL* の意味論を非形式的に説明する．
 <script type="math/tex">\pi_1</script> と <script type="math/tex">\pi_2</script> をそれぞれ計算木の最も左と右の枝を経由するパスとする．</p>
 <p><center>
@@ -700,12 +754,13 @@ CTL* の式は<strong>パス限定子</strong>と<strong>時相演算子</strong
 一方で，明らかに <script type="math/tex">\pi_2 \nvDash \textbf{G}b</script> である．
 したがって，初期状態 <script type="math/tex">s_0</script> から一つのパスが <script type="math/tex">\textbf{G}b</script> を満たすため，<script type="math/tex">s_0 \models \textbf{EG}b</script> であり，全てのパスが満たすわけではないため <script type="math/tex">s_0 \nvDash \textbf{AG}b</script> である．</p>
 <p>同様に，初期状態から次の次の状態（<script type="math/tex">\textbf{XX}</script>）で <script type="math/tex">a \wedge b</script> を満たすパスが存在（<script type="math/tex">\textbf{E}</script>）するため <script type="math/tex">s_0 \models \textbf{EXX}(a \wedge b)</script> であり，全てのパスの次状態（<script type="math/tex">\textbf{AX}</script>）で<script type="math/tex">a \wedge b</script> を満たす状態に，次で到達するパスが存在（<script type="math/tex">\textbf{EX}</script>）しないので， <script type="math/tex">s_0 \nvDash \textbf{EXAX}(a \wedge b)</script> である．</p>
+</div>
 <p>ここまでの CTL* への非形式的な導入により，パス限定子と時相演算子の重要な違いがわかる．
 つまり，パス限定子は状態の性質（例えば，「ある特定のパスがこの状態から始まるか？」）を記述するものであり，時相演算子はパスの性質（例えば，「このパスである特定の状態へと到達できるか？」）を記述するものである．
 次の節で説明するように，この区別からパス論理式と状態論理式の概念が生まれている．</p>
-<h2 id="ctl_1">CTL* の文法と意味論</h2>
+<h2 id="42-ctl">4.2 CTL* の文法と意味論</h2>
 <p>これから，CTL * の文法と意味論について形式的に定義する．</p>
-<h3 id="ctl_2">CTL* の文法</h3>
+<h3 id="421-ctl">4.2.1 CTL* の文法</h3>
 <p>CTL* の文法は，命題論理を上述の時相演算子とパス限定子を用いて自然に拡張したものである．
 CTL* には 2 つのタイプの論理式があり，状態に対して真と評価される<strong>状態論理式</strong>と，パスに対して真と評価される<strong>パス論理式</strong>である．</p>
 <p>
@@ -723,7 +778,7 @@ CTL* には 2 つのタイプの論理式があり，状態に対して真と評
 </ul>
 <p>CTL* は，上述のルールに従う状態論理式の集合となる．</p>
 <p>したがって，CTL* の論理式は，ブール命題，パス限定子で修飾された時相論理式，そしてそれらのブール結合となる．</p>
-<h3 id="ctl_3">CTL* の意味論</h3>
+<h3 id="422-ctl">4.2.2 CTL* の意味論</h3>
 <p>クリプキ構造の定義を思い出そう．</p>
 <div class="admonition note">
 <p class="admonition-title">クリプキ構造の定義 (<a href="../lec02/">第2回</a>の再掲)</p>
@@ -753,6 +808,8 @@ CTL* には 2 つのタイプの論理式があり，状態に対して真と評
 さらに，式中のすべての原子命題は <script type="math/tex">AP</script> に含まれているものとする．
 これにより，ベースケースのみ定義すれば十分であることが保証される．</p>
 <h4 id="definition-42">Definition 4.2</h4>
+<div class="admonition info">
+<p class="admonition-title">Definition 4.2（CTL* の意味論）</p>
 <p>
 <script type="math/tex">f_1</script> および <script type="math/tex">f_2</script> を状態論理式，<script type="math/tex">g_1</script> および <script type="math/tex">g_2</script> をパス論理式とする．
 <script type="math/tex">\models</script> の概念は式の構造に基づいて帰納的に定義される．</p>
@@ -824,18 +881,19 @@ CTL* には 2 つのタイプの論理式があり，状態に対して真と評
 <script type="math/tex">\Leftrightarrow</script> 全ての <script type="math/tex">j \ge 0</script> に対して，もし全ての <script type="math/tex">i < j</script> に対して <script type="math/tex">M,\pi^i \nvDash g_1</script> であれば <script type="math/tex">M, \pi^j \models g_2</script> である．</li>
 </ol>
 <p>最後に，クリプキ構造に対する関係 <script type="math/tex">\models</script> を以下のように定義する．</p>
-<ol type="1" start="16">
-<li>\(M \models f_1\) \(\Leftrightarrow\) 全ての初期状態 \(s \in S_0\) に対して \(M, s \models f_1\) である．</li>
-</ol>
-
-<h3 id="_3">充足可能性と恒真性</h3>
+<p><ol type="1" start="16">
+<li><script type="math/tex">M \models f_1</script>
+<script type="math/tex">\Leftrightarrow</script> 全ての初期状態 <script type="math/tex">s \in S_0</script> に対して <script type="math/tex">M, s \models f_1</script> である．</li>
+</ol></p>
+</div>
+<h4 id="_2">充足可能性と恒真性</h4>
 <p>CTL* 論理式 <script type="math/tex">f</script> があるクリプキ構造 <script type="math/tex">M</script> に対して <script type="math/tex">M \models f</script> であるとき，<script type="math/tex">f</script> は<strong>充足可能</strong> (satisfiable) であるという．
 式 <script type="math/tex">f</script> が全ての <script type="math/tex">M</script> に対して <script type="math/tex">M \models f</script> であるとき <script type="math/tex">f</script> は<strong>恒真</strong> (valid) であるという．</p>
 <p>論理式の充足可能性と恒真性は古典的な問題で，論理学の分野でしばしば議論されてきた．
 一方で，モデル検査問題は論理式 <script type="math/tex">f</script> と与えられたクリプキ構造 <script type="math/tex">M</script> に対して定義される．
 その目的は，<script type="math/tex">M</script> が <script type="math/tex">f</script> のモデルである，すなわち，<script type="math/tex">M \models f</script> かどうかを判定することである．</p>
 <p>モデル検査の概念は任意のクリプキ構造に対して十分に定義されているが，後にモデル検査アルゴリズムについて議論する際には，有限のクリプキ構造（すなわち状態集合 <script type="math/tex">S</script> が有限）にのみ着目していることには注意が必要である．</p>
-<h3 id="ctl_4">CTL* の意味論の重要な性質</h3>
+<h4 id="ctl">CTL* の意味論の重要な性質</h4>
 <p>CTL* の意味論は，次の興味深くかつ重要な性質をもつ．</p>
 <ul>
 <li>
@@ -865,7 +923,7 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
   初期状態が一つのみであれば，このような状況に陥ることはない．</p>
 </li>
 </ul>
-<h3 id="_4">否定標準形</h3>
+<h3 id="423-nnf">4.2.3 否定標準形 (NNF)</h3>
 <p><strong>否定標準形</strong> (negation normal form, NNF) は論理式の構文形式の一つで，否定演算子（<script type="math/tex">\neg</script>）の適用が原子命題についてのみ認められる．
 後の章で，CTL* における NNF の有用性を示す．</p>
 <p>ここでは，あらゆる CTL* 式が，NNF の式と等価であることを示す．
@@ -884,6 +942,8 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 \end{eqnarray*}</script>
 </p>
 <h4 id="example-43">Example 4.3</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 4.3</p>
 <p>論理式 <script type="math/tex">\neg ((A \textbf{U} B) \vee \textbf{F} C)</script> を考える．
 この式は，以下の等価関係を用いることで NNF へと変換できる．</p>
 <p>
@@ -891,6 +951,7 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 \neg ((A \textbf{U} B) \vee \textbf{F} C) \equiv (\neg (A \textbf{U} B) \wedge \neg \textbf{F} C) \equiv ((\neg A) \textbf{R} (\neg B)) \wedge (\textbf{G} \neg C)
 \end{align*}</script>
 </p>
+</div>
 <p>CTL* 式から NNF への変換に要する時間は式のサイズに対して線形である．
 これは CTL* の多くの部分論理についても同じである．
 しかしながら，CTL* を NNF で表現する際には演算子として <script type="math/tex">\wedge</script>，<script type="math/tex">\vee</script>，<script type="math/tex">\textbf{E}</script>，<script type="math/tex">\textbf{A}</script>，<script type="math/tex">\textbf{X}</script>，<script type="math/tex">\textbf{U}</script>，<script type="math/tex">\textbf{R}</script> を用いる必要があり，前述した <script type="math/tex">\textbf{E}</script>，<script type="math/tex">\textbf{X}</script>，<script type="math/tex">\textbf{U}</script> のみでの表現は不可能である．</p>
@@ -898,8 +959,8 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 <p class="admonition-title">Tip</p>
 <p>CTL* を NNF で表現する際に <script type="math/tex">\textbf{G}</script> と <script type="math/tex">\textbf{F}</script> は不要である．これはなぜだろうか？</p>
 </div>
-<h2 id="_5">演習問題</h2>
-<div class="admonition note">
+<h2 id="_3">演習問題</h2>
+<div class="admonition question">
 <p class="admonition-title">問題 4.3 (Weak Until 時相演算子)</p>
 <p>weak until 時相演算子 <script type="math/tex">\textbf{W}</script> は以下の意味論をもつ．</p>
 <p>
@@ -908,17 +969,44 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
 <p>
 <script type="math/tex">f_1 \textbf{W} f_2</script> は CTL* の表現力に影響を与えないこと，すなわち，他の CTL* 演算子により表現可能であることを示せ．</p>
 </div>
-<div class="admonition note">
+<div class="admonition question">
 <p class="admonition-title">問題 4.6 (複数の初期状態をもつ構造上の意味論)</p>
 <p>
 <script type="math/tex">f</script> を充足可能であるが恒真ではない CTL* 式とする．
 <script type="math/tex">M \nvDash f</script> でありかつ <script type="math/tex">M \nvDash \neg f</script> である構造が存在することを証明せよ．</p>
 </div>
-                
-              
-              
-                
-
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:123">
+<p>E. M. Clarke and E. A. Emerson. Design and synthesis of synchronization skeletons using branching time temporal logic. In D. Kozen, editor, Logic of Programs:Workshop, volume 131 of Lecture Notes in Computer Science, pages 52–71. Springer, 1981.&#160;<a class="footnote-backref" href="#fnref:123" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:123" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:125">
+<p>E. M. Clarke, E. A. Emerson, and A. P. Sistla. Automatic verification of finite-state concurrent systems using temporal logic specifications. ACM Trans. Program. Lang. Syst., 8(2):244–263, 1986.&#160;<a class="footnote-backref" href="#fnref:125" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:204">
+<p>E. A. Emerson and J. Y. Halpern. “Sometimes” and “Not Never” revisited:On branching time versus linear time. J. ACM, 33(1):151–178, 1986.&#160;<a class="footnote-backref" href="#fnref:204" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:47">
+<p>M. Ben-Ari, Z. Manna, and A. Pnueli. The temporal logic of branching time. Acta Inf., 20:207–226, 1983.&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:203">
+<p>E. A. Emerson and E. M. Clarke. Characterizing correctness properties of parallel programs using fixpoints. In Automata, Languages and Programming, 7th Colloquium, volume 85 of Lecture Notes in Computer Science, pages 169–181. Springer, 1980.&#160;<a class="footnote-backref" href="#fnref:203" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:255">
+<p>O. Grumberg and D. E. Long. Model checking and modular verification. ACM Trans. Progr. Lang. Syst., 16:843–872, 1994.&#160;<a class="footnote-backref" href="#fnref:255" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:361">
+<p>D. E. Long. Model Checking, Abstraction, and Compositional Reasoning. PhD thesis, Carnegie Mellon University, 1993.&#160;<a class="footnote-backref" href="#fnref:361" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:418">
+<p>A. Pnueli. The temporal semantics of concurrent programs. In Semantics of Concurrent Computation, volume 70 of Lecture Notes in Computer Science, pages 1–20. Springer, 1979.&#160;<a class="footnote-backref" href="#fnref:418" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:419">
+<p>A. Pnueli. A temporal logic of concurrent programs. Theor. Comput. Sci., 13:45–60, 1981.&#160;<a class="footnote-backref" href="#fnref:419" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -927,12 +1015,12 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lec03/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../lec03/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第3回" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -947,7 +1035,8 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
         </a>
       
       
-        <a href="../lec05/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../lec05/" class="md-footer__link md-footer__link--next" aria-label="Next: 第5回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -965,14 +1054,15 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -982,12 +1072,14 @@ f \textbf{R} g & \equiv & \neg(\neg f \textbf{U} \neg g) \\
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       

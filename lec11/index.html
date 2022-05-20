@@ -8,42 +8,53 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
-        <title>第11回 命題論理の充足可能性判定 - システム検証論 (2021)</title>
+        <title>【第11回】 第９章 命題論理の充足可能性判定 - システム検証論 (2021)</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -65,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#11" class="md-skip">
+        <a href="#11-9" class="md-skip">
           Skip to content
         </a>
       
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -95,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第11回 命題論理の充足可能性判定
+              【第11回】 第９章 命題論理の充足可能性判定
             
           </span>
         </div>
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -287,6 +306,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -299,6 +348,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -313,23 +363,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#conjunctive-normal-form" class="md-nav__link">
-    Conjunctive Normal Form
+  <a href="#91-conjunctive-normal-form" class="md-nav__link">
+    9.1 連言標準形 (Conjunctive Normal Form)
   </a>
   
-    <nav class="md-nav" aria-label="Conjunctive Normal Form">
+    <nav class="md-nav" aria-label="9.1 連言標準形 (Conjunctive Normal Form)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-91" class="md-nav__link">
-    Example 9.1
+  <a href="#91" class="md-nav__link">
+    例 9.1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-92" class="md-nav__link">
-    Example 9.2
+  <a href="#92" class="md-nav__link">
+    例 9.2
   </a>
   
 </li>
@@ -340,30 +390,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#encoding-propositional-logic-into-cnf" class="md-nav__link">
-    Encoding Propositional Logic into CNF
+  <a href="#92-cnf" class="md-nav__link">
+    9.2 命題論理式から CNF 形式への変換
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#propositional-satisfiability-using-binary-search" class="md-nav__link">
-    Propositional Satisfiability using Binary Search
+  <a href="#93" class="md-nav__link">
+    9.3 二分探索を用いた命題論理の充足可能性判定アルゴリズム
   </a>
   
-    <nav class="md-nav" aria-label="Propositional Satisfiability using Binary Search">
+    <nav class="md-nav" aria-label="9.3 二分探索を用いた命題論理の充足可能性判定アルゴリズム">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#binary-search-using-recursion" class="md-nav__link">
-    Binary Search using Recursion
+  <a href="#931" class="md-nav__link">
+    9.3.1 再帰による二分探索アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3.1 再帰による二分探索アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#93_1" class="md-nav__link">
+    例 9.3
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#binary-search-with-a-trail" class="md-nav__link">
-    Binary Search with a Trail
+  <a href="#932" class="md-nav__link">
+    9.3.2 トレイルを用いた二分探索アルゴリズム
   </a>
   
 </li>
@@ -374,37 +437,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#boolean-constraint-propagation-bcp" class="md-nav__link">
-    Boolean Constraint Propagation (BCP)
+  <a href="#94-bcp" class="md-nav__link">
+    9.4 ブール制約伝播 (BCP) による最適化
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conflict-driven-clause-learning" class="md-nav__link">
-    Conflict-Driven Clause Learning
-  </a>
-  
-    <nav class="md-nav" aria-label="Conflict-Driven Clause Learning">
+    <nav class="md-nav" aria-label="9.4 ブール制約伝播 (BCP) による最適化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#implication-graphs" class="md-nav__link">
-    Implication Graphs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clause-learning" class="md-nav__link">
-    Clause Learning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generating-resolution-proofs-with-cdcl" class="md-nav__link">
-    Generating Resolution Proofs with CDCL
+  <a href="#94" class="md-nav__link">
+    例 9.4
   </a>
   
 </li>
@@ -415,15 +457,75 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decision-heuristics" class="md-nav__link">
-    Decision Heuristics
+  <a href="#95-cdcl" class="md-nav__link">
+    9.5 矛盾に基づく節学習 (CDCL) による最適化
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 矛盾に基づく節学習 (CDCL) による最適化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#951" class="md-nav__link">
+    9.5.1 推論グラフ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#952" class="md-nav__link">
+    9.5.2 節学習
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.2 節学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    定理 9.5 (導出規則)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#953-cdcl" class="md-nav__link">
+    9.5.3 CDCL を用いた導出証明の生成
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.3 CDCL を用いた導出証明の生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#96" class="md-nav__link">
+    定義 9.6 (導出証明)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96_1" class="md-nav__link">
+    9.6 変数選択ヒューリスティック
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bibliographic-notes" class="md-nav__link">
-    Bibliographic Notes
+  <a href="#_1" class="md-nav__link">
+    書誌情報
   </a>
   
 </li>
@@ -440,59 +542,60 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="11">第11回 命題論理の充足可能性判定</h1>
-<p>量化記号をもたない（quantifier-free）一階の論理式が与えられたとき，充足可能性（SAT）ソルバは，その式を充足する変数への代入が存在するかどうかを判定する．
+
+
+<h1 id="11-9">【第11回】 第９章 命題論理の充足可能性判定</h1>
+<p>量化記号をもたない (quantifier-free) 一階の論理式が与えられたとき，充足可能性 (SAT) ソルバは，その式を充足する変数への代入が存在するかどうかを判定する．
 最近の充足可能性ソルバは，形式検証やモデル検査などの分野で多くの応用がなされている．
 この章では，命題論理式，すなわち，ブール変数とブール演算子のみを用いた量化記号をもたない論理式に着目する．
 命題論理式は一見単純であるにもかかわらず，非常に広範な問題のモデル化に使用できる．</p>
-<p>命題論理式の充足可能性判定アルゴリズムのスケーラビリティーは，驚異的な進歩を遂げている．
-命題論理の SAT に関する最も優れた実装は，<strong>矛盾に基づく節学習</strong> (Conflict-Driven Clause Learning, CDCL) [365] を用いた Davis-Putnam-Logemann-Loveland（DPLL）アルゴリズム[166] に基づいている．
+<p>命題論理式の充足可能性判定アルゴリズムのスケーラビリティは，驚異的な進歩を遂げている．
+命題論理の SAT に関する最も優れた実装は，<strong>矛盾に基づく節学習</strong> (Conflict-Driven Clause Learning, CDCL) <sup id="fnref:169"><a class="footnote-ref" href="#fn:169">1</a></sup> を用いた Davis-Putnam-Logemann-Loveland (DPLL) アルゴリズム<sup id="fnref:372"><a class="footnote-ref" href="#fn:372">2</a></sup> に基づいている．
 本章では，命題論理の充足可能性問題を定式化し，連言標準形の論理式を生成する方法を説明する．
 その後，DPLL アルゴリズムと CDCL の詳細を説明する．</p>
-<h2 id="conjunctive-normal-form">Conjunctive Normal Form</h2>
+<h2 id="91-conjunctive-normal-form">9.1 連言標準形 (Conjunctive Normal Form)</h2>
 <p>本章では，命題論理式を <script type="math/tex">\phi</script> を用いて表し，<script type="math/tex">\phi</script> はブール変数 <script type="math/tex">x_1, \ldots , x_n</script> 上で定義されるものとする．
 実装を容易にするため，ほとんどのSATソルバは<strong>連言標準形</strong> (conjunctive normal form, CNF) で与えられた式を扱う．
 <strong>非節型</strong> (nonclausal) のSATソルバの概要については，本章の参考文献にて参照する．</p>
 <p>CNF を定義するために，以下の記号と用語を導入する．
-ブール値の真理値の集合を <script type="math/tex">\{true, false\}</script> とし，<script type="math/tex">true</script> と <script type="math/tex">false</script> の略記として 1 と 0を用いる．
+ブール値の真理値の集合を <script type="math/tex">\{true, false\}</script> とし，<script type="math/tex">true</script> と <script type="math/tex">false</script> の略記として <script type="math/tex">1</script> と <script type="math/tex">0</script> を用いる．
 変数 <script type="math/tex">x_1, \ldots , x_n</script> からなる集合を <script type="math/tex">V</script> と書く．</p>
 <p>CNF は以下のように定義される．</p>
 <ul>
 <li><strong>リテラル</strong> (literal) は，変数 <script type="math/tex">x_i \in V</script> の一つか，または <script type="math/tex">\overline{x_i}</script> で表される <script type="math/tex">V</script> 中の変数の否定である．
     リテラルは，それが単なる変数であるとき <strong>正</strong> (positive) と呼ばれる．
     リテラルは，それが変数の否定であるとき <strong>負</strong> (negative) と呼ばれる．</li>
-<li><strong>節</strong> (clause) はリテラルの選言（空でもよい）である．
+<li><strong>節</strong> (clause) はリテラルの選言 (空でもよい) である．
     空の節を <script type="math/tex">\emptyset</script> と書き，これは <script type="math/tex">false</script> と等価である．</li>
 <li>CNF の式は節 <script type="math/tex">c_1, \ldots , c_m</script> の連言である．
     節をひとつも含まない CNF 式は <script type="math/tex">true</script> と等価である．</li>
 </ul>
 <p>多くの場合，CNF の節はリテラルの列として表記する．すなわち，
-<script type="math/tex">
+<script type="math/tex; mode=display">
 x_1x_2\overline{x_3}
 </script>
 という表記は，
-<script type="math/tex">
+<script type="math/tex; mode=display">
 x_1 \vee x_2 \vee \overline{x_3}
 </script>
 と等価である．
 同様に，CNF の論理式の略記として節の集合を用いる．
 例えば，
-<script type="math/tex">
+<script type="math/tex; mode=display">
 \{ x_1x_2\overline{x}_3, \overline{x}_1x_2 \}
 </script>
 という表記は，
-<script type="math/tex">
+<script type="math/tex; mode=display">
 (x_1 \vee x_2 \vee \overline{x}_3) \wedge (\overline{x}_1 \vee x_2)
 </script>
 と等価である．</p>
-<p><strong>真理値割当</strong> (truth assignment) <script type="math/tex">\sigma</script> は変数から真理値への（部分的でもよい）関数であり，すなわち，<script type="math/tex"> \sigma : V \rightarrow \{0, 1\} </script> となる．
+<p><strong>真理値割当</strong> (truth assignment) <script type="math/tex">\sigma</script> は変数から真理値への (部分的でもよい) 関数であり，すなわち，<script type="math/tex"> \sigma : V \rightarrow \{0, 1\} </script> となる．
 真理値割当は通常，変数と真理値の組の集合として表記される．
 例えば，
-<script type="math/tex">
+<script type="math/tex; mode=display">
 \{x_1 \mapsto 1, x_2 \mapsto 1, x_3 \mapsto 0\}
 </script>
-と書くことで，値 1 を <script type="math/tex">x_1</script> と <script type="math/tex">x_2</script>，値 0 を <script type="math/tex">x_3</script> への割当を表すことができる．
+と書くことで，値 <script type="math/tex">1</script> を <script type="math/tex">x_1</script> と <script type="math/tex">x_2</script>，値 <script type="math/tex">0</script> を <script type="math/tex">x_3</script> という割当を表すことができる．
 真理値割当に関して，以下の用語を導入する．</p>
 <ul>
 <li>全ての変数が値をもつとき，その割当は<strong>完全</strong> (complete) という．</li>
@@ -508,47 +611,54 @@ x_1 \vee x_2 \vee \overline{x_3}
     その場合，<script type="math/tex">\sigma \nvDash c</script> と表記する．</li>
 </ul>
 <p>最後に，もし <script type="math/tex">\phi</script> を充足する割当 <script type="math/tex">\sigma</script> が存在する場合， <script type="math/tex">\phi</script> は<strong>充足可能</strong> (satisfiable) という．</p>
-<h4 id="example-91">Example 9.1</h4>
-<p>式 9.4 はすべての節が（部分的な）割当 <script type="math/tex">\{ x_2 \mapsto 1\}</script> によって充足されるため，充足可能である．</p>
-<h4 id="example-92">Example 9.2</h4>
+<h4 id="91">例 9.1</h4>
+<p>前述の式 <script type="math/tex">(x_1 \vee x_2 \vee \overline{x}_3) \wedge (\overline{x}_1 \vee x_2)</script> はすべての節が (部分的な) 割当 <script type="math/tex">\{ x_2 \mapsto 1\}</script> によって充足されるため，充足可能である．</p>
+<h4 id="92">例 9.2</h4>
 <p>以下の式は<strong>充足不能</strong> (unsatisfiable) である．
-<script type="math/tex">
+<script type="math/tex; mode=display">
 \{ x_1, \overline{x}_1x_2, \overline{x}_1 \overline{x}_2 \}
 </script>
 なぜそうなるのか理解するため，1 つ目の節から，充足割当では <script type="math/tex">x_1</script> に 1 を割り当てる必要があるであろうことに気付いて欲しい．
 したがって，2 つ目の節を充足するには，同様に <script type="math/tex">x_2</script> も 1 でなければならない．
 これは，3 つ目の節が充足できないことを意味する．</p>
-<h2 id="encoding-propositional-logic-into-cnf">Encoding Propositional Logic into CNF</h2>
+<h2 id="92-cnf">9.2 命題論理式から CNF 形式への変換</h2>
 <p>連言標準形における論理式は，リテラルの選言からなる連言となる．
 モデル検査における応用では多くの場合，ブール演算子に制約のない命題論理式に対して充足可能性問題を解くことが求められる．
 これらの式は，SAT ソルバに与える前に CNF に変換する必要がある．
 ブール式を等価な CNF に変換することは，常に可能である．
-しかし，等価な CNF 表現がどうしても指数関数的になってしまう命題論理式も存在する（問題 9.1 がその例である）．
+しかし，等価な CNF 表現がどうしても指数関数的になってしまう命題論理式も存在する (問題 9.1 がその例である) ．
 したがって，等価な CNF を生成することは諦めて，その代わりに充足可能性のみを保存する変換を行う．
-この変換を行う方法の一つが Tseitin の手法 [462] である．</p>
+この変換を行う方法の一つが Tseitin の手法 <sup id="fnref:470"><a class="footnote-ref" href="#fn:470">3</a></sup> である．</p>
 <p>ブール演算子を <script type="math/tex">\wedge</script> と <script type="math/tex">\neg</script> に限定した論理式に対する Tseitin の手法について説明する．
 これらの演算子は任意のブール式を表現するのに十分であることはよく知られている．</p>
 <p>Tseitin の手法は，論理式 <script type="math/tex">\phi</script> の構文木を入力とする．
 この木の内部頂点はブール演算子となり，葉はブール変数となる．
 このアルゴリズムは，葉から始まる木の走査を行う．
 各頂点 <script type="math/tex">v</script> にラベル <script type="math/tex">l_v</script> を関連付ける．
-また，節の集合を集める．
-<script type="math/tex; mode=display">\begin{enumerate}
-    \item 頂点 $v$ が葉であるならば，ブール変数 $x_i$ である．
-    $l_v = x_i$ とする．
-    \item $v$ が $\neg$ ならば，一つの子頂点 $a$ をもつ．
-    $l_v = \neg l_a$ とする．
-    \item $v$ が $\wedge$ ならば，二つの子頂点をもつ．
-    $a$ と $b$ を子頂点とし，それぞれ $l_a$ と $l_b$ がラベル付けられているとする．
-    $l_v$ を新たな命題変数とする．
-    以下の 3 つの節を頂点に関連付ける．
-    \begin{gather*}
-    \neg l_a \vee \neg l_b \vee l_v \\
-    l_a \vee \neg l_v \\
-    l_b \vee \neg l_v
-    \end{gather*}
-\end{enumerate}</script>
-ここで，<script type="math/tex">\wedge</script> 頂点に対して生成されるこの 3 つの節の妥当性を簡単に示す．
+また，節の集合を集める．</p>
+<ol>
+<li>頂点 <script type="math/tex">v</script> が葉であるならば，ブール変数 <script type="math/tex">x_i</script> である．<script type="math/tex">l_v = x_i</script> とする．</li>
+<li>
+<script type="math/tex">v</script> が <script type="math/tex">\neg</script> ならば，一つの子頂点 <script type="math/tex">a</script> をもつ．
+    <script type="math/tex">l_v = \neg l_a</script> とする．</li>
+<li>
+<script type="math/tex">v</script> が <script type="math/tex">\wedge</script> ならば，二つの子頂点をもつ．
+    <script type="math/tex">a</script> と <script type="math/tex">b</script> を子頂点とし，それぞれ <script type="math/tex">l_a</script> と <script type="math/tex">l_b</script> がラベル付けられているとする．
+    <script type="math/tex">l_v</script> を新たな命題変数とする．
+    以下の 3 つの節を頂点に関連付ける．<ul>
+<li>
+<script type="math/tex">\neg l_a \vee \neg l_b \vee l_v</script>
+</li>
+<li>
+<script type="math/tex">l_a \vee \neg l_v</script>
+</li>
+<li>
+<script type="math/tex">l_b \vee \neg l_v</script>
+</li>
+</ul>
+</li>
+</ol>
+<p>ここで，<script type="math/tex">\wedge</script> 頂点に対して生成されるこの 3 つの節の妥当性を簡単に示す．
 1 つ目の節は，<script type="math/tex">l_a</script> と <script type="math/tex">l_b</script> がいずれも 1 のとき，<script type="math/tex">l_v</script> が 1 であることを保証する．
 2 つ目の節は，<script type="math/tex">l_a</script> が 0 のときに <script type="math/tex">l_v</script> が 0 であることを保証する．
 3 つ目の節は，<script type="math/tex">l_b</script> が 0 のときに <script type="math/tex">l_v</script> が 0 であることを保証する．
@@ -556,169 +666,131 @@ x_1 \vee x_2 \vee \overline{x_3}
 <script type="math/tex; mode=display"> (\neg l_a \vee \neg l_b \vee l_v) \wedge (l_a \vee \neg l_v) \wedge (l_b \vee \neg l_v) \Leftrightarrow (l_a \wedge l_b \Leftrightarrow l_v) </script>
 </p>
 <p>この手続きによって生成される節の集合を <script type="math/tex">C</script> とする．
-<script type="math/tex">C</script> について，以下の二つのことがわかる．
-<script type="math/tex; mode=display">\begin{enumerate}
-    \item $C$ の変数および節の数は，$\phi$ の大きさに対して線形である．
-    このように，等価な CNF を構築する際に見られるであろう指数関数的な爆発を避けることができる．
-    \item CNF $C$ は，$\phi$ を充足する割当があるとき，かつそのときのみ，それを充足するような割当をもつ．
-    最初の向きの証明については，$C$ を充足する割当からアルゴリズムが導入した追加変数を単純に削除するだけで，$\phi$ を充足する割当を得られることに気付けば良い．
-    もう一方の向きの証明については，問題 9.3 に残しておく．
-\end{enumerate}</script>
-この符号化は，さらなるブール演算子を扱えるよう，簡単に拡張できる．
+<script type="math/tex">C</script> について，以下の二つのことがわかる．</p>
+<ol>
+<li>
+<script type="math/tex">C</script> の変数および節の数は，<script type="math/tex">\phi</script> の大きさに対して線形である．
+このように，等価な CNF を構築する際に見られるであろう指数関数的な爆発を避けることができる．</li>
+<li>CNF <script type="math/tex">C</script> は，<script type="math/tex">\phi</script> を充足する割当があるとき，かつそのときのみ，それを充足するような割当をもつ．
+最初の向きの証明については，<script type="math/tex">C</script> を充足する割当からアルゴリズムが導入した追加変数を単純に削除するだけで，<script type="math/tex">\phi</script> を充足する割当を得られることに気付けば良い．
+もう一方の向きの証明については，問題 9.3 に残しておく．</li>
+</ol>
+<p>この符号化は，さらなるブール演算子を扱えるよう，簡単に拡張できる．
 特に，問題 9.2 は XOR 演算子の制約を考慮するものである．</p>
-<h2 id="propositional-satisfiability-using-binary-search">Propositional Satisfiability using Binary Search</h2>
-<h3 id="binary-search-using-recursion">Binary Search using Recursion</h3>
+<h2 id="93">9.3 二分探索を用いた命題論理の充足可能性判定アルゴリズム</h2>
+<h3 id="931">9.3.1 再帰による二分探索アルゴリズム</h3>
 <p>ここでは，まず，CNF で与えられた命題論理式の充足可能性を判定するための，DPLL アルゴリズムに基づく非常に単純な手続きについて説明する．
-DPLL アルゴリズムの基本的な考え方は，\myTerm{バックトラック探索}{backtracking search} である．
+DPLL アルゴリズムの基本的な考え方は，<strong>バックトラック探索</strong> (backtracking search) である．
 全てのバックトラック探索は空の割当から開始される．
 探索空間は再帰的に探索される部分問題へと分割される．
-部分問題の中の 1 つで検索が失敗した場合，アルゴリズムは\myTerm{\myTermBacktrack}{backtrack} を行い，探索空間の別の部分問題に対して処理を続行する．</p>
+部分問題の中の 1 つで検索が失敗した場合，アルゴリズムは <strong>後戻り</strong> (backtrack) を行い，探索空間の別の部分問題に対して処理を続行する．</p>
 <p>命題論理の SAT という文脈では，探索空間の分割は，変数の 1 つに特定の真理値を割り当てることで実行される．
-各変数に対して 2 通りのとりうる選択肢があるため，このアルゴリズムによる探索のことを\myTerm{二分探索}{binary search} と呼ぶ．</p>
+各変数に対して 2 通りのとりうる選択肢があるため，このアルゴリズムによる探索のことを <strong>二分探索</strong> (binary search) と呼ぶ．</p>
 <p>充足可能性判定のための最初の手続きを説明する前に，変数割当 <script type="math/tex">\sigma</script> の更新に関する表記を導入する．
 <script type="math/tex">x_i</script> に <script type="math/tex">d</script> が割り当てられ，<script type="math/tex">\sigma</script> のそれ以外が変わらないとき，<script type="math/tex">\sigma [ x_i \leftarrow d]</script> と表記する．</p>
-<p>充足割当を求める二分探索の再帰的な実装は，図 9.1 の手続き \myProcedure{Binary-Search} として与えられる．
+<p>以下に，与えられた CNF <script type="math/tex">C</script> に対して二分探索で充足割当を求める手続き (再帰呼び出しによる実装) を示す．</p>
+<p><center>
+<img src="../img/lec11-fig1.pdf" width="800">
+</center></p>
+<p>充足割当を求める二分探索の再帰的な実装は，上記の手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search}</script></span> として与えられる．
 この手続きは，CNF <script type="math/tex">C</script> を引数として呼び出される．
-この手続きは，\myProcedure{Binary-Search-Recursion} で実行される再帰を空の割当によって開始する．
-それぞれの再帰において，手続き \myProcedure{Binary-Search-Recursion} は最初に，割当 <script type="math/tex">\sigma</script> と矛盾する節が存在するかどうかを判定する．
+この手続きは，<span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-Recursion}</script></span> で実行される再帰を空の割当によって開始する．
+それぞれの再帰において，手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-Recursion}</script></span> は最初に，割当 <script type="math/tex">\sigma</script> と矛盾する節が存在するかどうかを判定する．
 もし存在するならば，<script type="math/tex">\sigma</script> からの拡張が <script type="math/tex">C</script> を充足することはないため，手続きから戻る．
 もし存在しないならば，<script type="math/tex">\sigma</script> が完全かどうかを判定する．
 この場合，<script type="math/tex">C</script> を充足する完全な割当があるため，<script type="math/tex">C</script> が充足可能であるという結果を出力する．
 この手続きからは，充足割当 <script type="math/tex">\sigma</script> を得ることもできる．</p>
 <p>
 <script type="math/tex">\sigma</script> が完全でなければ，少なくとも 1 つの変数がまだ割り当てられていないことになる．
-このとき，このアルゴリズムは，サブ手続き \myProcedure{Decision-Heuristic} として実装された\myTerm{\myTermDecisionHeuristic}{decision heuristic} を呼び出す．
-\myTermDecisionHeuristic は，これらの未割当の変数，すなわち <script type="math/tex">\sigma(x_i) = \perp</script> となる <script type="math/tex">x_i</script> から一つを選び，真理値を選択する．
+このとき，このアルゴリズムは，サブ手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Decision-Heuristic}</script></span> として実装された <strong>変数選択ヒューリスティック</strong> (decision heuristic) を呼び出す．
+変数選択ヒューリスティックは，これらの未割当の変数，すなわち <script type="math/tex">\sigma(x_i) = \perp</script> となる <script type="math/tex">x_i</script> から一つを選び，真理値を選択する．
 変数と真理値の選択はこのアルゴリズムの正しさに関しては本質的ではないため，ヒューリスティックな選択でよい．
-最も重要な\myTermDecisionHeuristic については 9.6 節で議論する．</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \begin{algorithmic}
-        \Procedure{Binary-Search}{$C$}
-            \State \Call{Binary-Search-Recursion}{$C$, $\emptyset$};
-            \State \Return <code>UNSAT''
-        \EndProcedure
-        \State
-        \Procedure{Binary-Search-Recursion}{$C$, $\sigma$}
-            \If{$\sigma \nvDash c$ となる $c \in C$ が存在する}
-                \State \Return
-            \ElsIf{$\sigma$ が完全である}
-                \State \textbf{abort}</code>SAT'', $\sigma$
-            \Else
-                \State $(x_i, d) := $ \Call{Decision-Heuristic}{$C$, $\sigma$}
-                \State \Call{Binary-Search-Recursion}{$C$, $\sigma [ x_i \leftarrow d]$}
-                \State \Call{Binary-Search-Recursion}{$C$, $\sigma [ x_i \leftarrow \neg d]$}
-                \State \Return;
-            \EndIf
-        \EndProcedure
-    \end{algorithmic}
-    \caption{与えられた CNF $C$ に対して二分探索で充足割当を求める手続き（再帰呼び出しによる実装）}\label{proc:Binary-Search-Rec}
-\end{figure}</script>
-</p>
-<p>選択が行われたら，それに応じて割当 <script type="math/tex">\sigma</script> を更新し，その新しい割当を用いて \myProcedure{Binary-Search-Recursion} の再帰呼び出しを実行する．
+最も重要な変数選択ヒューリスティックについては 9.6 節で議論する．</p>
+<p>選択が行われたら，それに応じて割当 <script type="math/tex">\sigma</script> を更新し，その新しい割当を用いて <span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-Recursion}</script></span> の再帰呼び出しを実行する．
 この再帰呼び出しは，2 通りの結果のうちの 1 つを得ることになる．
 充足割当をうまく見つけることができた場合，再帰処理は打ち切られる．
 再帰呼び出しから戻ってきた場合，割当 <script type="math/tex">\sigma</script> で与えられた探索空間の一部においては，充足割当を見つけられなかったことになる．
-このとき，この二分探索アルゴリズムは，\myTermDecisionHeuristic によって決められた真理値を反転させ，2 度目の再帰呼び出しを実行することで探索空間の残りの半分を探索する．
-注意すべきは，\myTermDecisionHeuristic は，今回の木の走査とは異なる変数の列を選択するかもしれない，ということである．</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \centering
-    \includegraphics*{./chapter9-fig/fig_9_2.pdf}
-    \caption{式 9.6 の $x_1 \mapsto 0$ および $x_2 \mapsto 1$ の決定を用いた走査による探索木}\label{fig:search-tree}
-\end{figure}</script>
-</p>
-<p>\paragraph{Example 9.3}
-式 9.5 で与えられた 3 つの節を再度用いて，二分探索の手続きによって実行される探索について説明する．
+このとき，この二分探索アルゴリズムは，変数選択ヒューリスティックによって決められた真理値を反転させ，2 度目の再帰呼び出しを実行することで探索空間の残りの半分を探索する．
+注意すべきは，変数選択ヒューリスティックは，今回の木の走査とは異なる変数の列を選択するかもしれない，ということである．</p>
+<h4 id="93_1">例 9.3</h4>
+<p>例 9.2 で与えられた 3 つの節を再度用いて，二分探索の手続きによって実行される探索について説明する．
 <script type="math/tex; mode=display">\begin{align}
 \{ x_1, \overline{x}_1x_2, \overline{x}_1 \overline{x}_2 \}
 \end{align}</script>
-最初に，\myTermDecisionHeuristic が変数 <script type="math/tex">x_1</script> の値として 0 を選ぶとする．
-これは 1 つ目の節と矛盾するため，探索は即座に\myTermBacktrack を行う．
+最初に，変数選択ヒューリスティックが変数 <script type="math/tex">x_1</script> の値として 0 を選ぶとする．
+これは 1 つ目の節と矛盾するため，探索は即座に後戻りを行う．
 そして <script type="math/tex">x_1</script> の値を反転させる．
-次に，\myTermDecisionHeuristic が <script type="math/tex">x_2</script> に 1 を選ぶとする．
-これは 3 つ目の節と矛盾するため，再度\myTermBacktrack を行う．
+次に，変数選択ヒューリスティックが <script type="math/tex">x_2</script> に 1 を選ぶとする．
+これは 3 つ目の節と矛盾するため，再度後戻りを行う．
 <script type="math/tex">x_2</script> の値を反転させる．
 結果して得られる割当は，2 つ目の節と矛盾する．
-\myTermBacktrack すると，探索木は全て網羅されたことになる．
-先ほど説明した探索木と走査結果は図 9.2 に示す通りである．</p>
-<h3 id="binary-search-with-a-trail">Binary Search with a Trail</h3>
-<p>図 9.3 は，バックトラッキングに基づく二分探索アルゴリズムの非再帰的なバージョンを示している．
-手続き \myProcedure{Binary-Search-with-Trail} は，割当 <script type="math/tex">\sigma</script> をパラメータとして渡す代わりに，手続きに局所的な変数として保持する．
+後戻りすると，探索木は全て網羅されたことになる．
+先ほど説明した探索木と走査結果は以下の図に示す通りである．</p>
+<p><center>
+<img src="../img/lec11-fig2.png" width="400">
+</center></p>
+<p>この図は，前述の式に対して <script type="math/tex">x_1 \mapsto 0</script> および <script type="math/tex">x_2 \mapsto 1</script> の決定を用いた走査による探索木である．</p>
+<h3 id="932">9.3.2 トレイルを用いた二分探索アルゴリズム</h3>
+<p>以下に，与えられた CNF <script type="math/tex">C</script> に対して二分探索で充足割当を求める手続き (トレイル を用いた実装) を示す．</p>
+<p><center>
+<img src="../img/lec11-fig3.pdf" width="800">
+</center></p>
+<p>このアルゴリズムは，バックトラッキングに基づく二分探索アルゴリズムの非再帰的なバージョンを示している．
+手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-with-Trail}</script></span> は，割当 <script type="math/tex">\sigma</script> をパラメータとして渡す代わりに，手続きに局所的な変数として保持する．
 この手続きは，<script type="math/tex">\sigma</script> を空の割当として初期化する．
 さらに，この手続きは，二分探索木における探索位置を追跡するため，<script type="math/tex">trail</script> と名付けられた変数を保持する．
 変数 <script type="math/tex">trail</script> は，順序づけされた組 <script type="math/tex">(b, x_i)</script> の列を保持する．
-ここで <script type="math/tex">b \in {\textsf{L}, \textsf{R}}</script> は，現時点で左と右のどちらの分岐にいるかを示しており，<script type="math/tex">x_i</script> は，\myTermDecisionHeuristic によって選択された変数である．</p>
+ここで <script type="math/tex">b \in {\textsf{L}, \textsf{R}}</script> は，現時点で左と右のどちらの分岐にいるかを示しており，<script type="math/tex">x_i</script> は，変数選択ヒューリスティックによって選択された変数である．</p>
 <p>この手続きは，充足割当が見つかるか，探索木が全て網羅されるまで繰り返し行われる．
-ループの本体にある 3 つの場合分けは，\myProcedure{Binary-Search-Recursive} における 3 つの場合分けに対応している．
+ループの本体にある 3 つの場合分けは，<span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-Recursion}</script></span> における 3 つの場合分けに対応している．
 最初の場合では，<script type="math/tex">\sigma</script> が節の中の一つと矛盾する．
 2 番目では，<script type="math/tex">\sigma</script> は矛盾しておらず，かつ完全なので，充足割当を見つけたことになる．
-最後に，どちらも当てはまらない場合は，この手続きは\myTermDecisionHeuristic を呼び出す．</p>
+最後に，どちらも当てはまらない場合は，この手続きは変数選択ヒューリスティックを呼び出す．</p>
 <p>まず，3 番目の場合，つまり <script type="math/tex">\sigma</script> が矛盾しておらず，完全でもない場合について述べる．
-再帰を用いたものと同様に，\myTermDecisionHeuristic を呼び出すことで，変数と真理値の組 <script type="math/tex">(x_i, d)</script> を得る．
-ここで，探索木の左の分岐にいることと，そして変数 <script type="math/tex">x_i</script> の値を決めたことを，<script type="math/tex">trail</script> に <script type="math/tex">(\textsf{L}, x_i)</script> を付け足すことによって \myTermTrail に記録する．
+再帰を用いたものと同様に，変数選択ヒューリスティックを呼び出すことで，変数と真理値の組 <script type="math/tex">(x_i, d)</script> を得る．
+ここで，探索木の左の分岐にいることと，そして変数 <script type="math/tex">x_i</script> の値を決めたことを，<script type="math/tex">trail</script> に <script type="math/tex">(\textsf{L}, x_i)</script> を付け足すことによってトレイルに記録する．
 なお，<script type="math/tex">\beta \cdot \gamma</script> は，列 <script type="math/tex">\beta</script> と <script type="math/tex">\gamma</script> の連結を表している．
 この決定を反映させるため，<script type="math/tex">\sigma</script> における <script type="math/tex">x_i</script> の値を <script type="math/tex">d</script> に更新する．
 その後，ループは再度繰り返され，この新しい決定が矛盾を起こしていないかどうかを確認する．</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \begin{algorithmic}
-        \Procedure{Binary-Search-with-Trail}{$C$}
-            \State $\sigma$ を全ての $x_i \in V$ に対して $\sigma(x_i) = \perp$ となるよう初期化する
-            \State $trail$ を $()$ に初期化する
-            \While{$true$}
-                \If{$\sigma \nvDash c$ となる $c \in C$ が存在する}
-                    \While{$trail$ の最後が $(\textsf{R}, x_i)$ である}
-                        \State $\sigma := \sigma [x_i \leftarrow \perp]$
-                        \State $trail$ の最後の要素を削除する
-                    \EndWhile
-                    \If{$trail$ が $()$ である} \State \Return <code>UNSAT'' \EndIf
-                    \State $(\textsf{L}, x_i)$ を$trail$ の最後の要素とする
-                    \State $trail'$ を $trail$ のプレフィックスとする
-                    \State $trail := trail' \cdot (\textsf{R}, x_i)$
-                    \State $\sigma := \sigma[x_i \leftarrow \neg \sigma(x_i)]$ /* $x_i$ への割当を反転する */
-                \ElsIf{$\sigma$ が完全である}
-                    \State \textbf{abort}</code>SAT'', $\sigma$
-                \Else
-                    \State $(x_i, d) := $ \Call{Decision-Heuristic}{$C$, $\sigma$}
-                    \State $trail := trail \cdot (\textsf{L}, x_i)$
-                    \State $\sigma := \sigma [ x_i \leftarrow d]$
-                \EndIf
-            \EndWhile
-        \EndProcedure
-    \end{algorithmic}
-    \caption{与えられた CNF $C$ に対して二分探索で充足割当を求める手続き（trail を用いた実装）}\label{proc:Binary-Search-Trail}
-\end{figure}</script>
-</p>
-<p>ここで，\myProcedure{Binary-Search-with-Trail} の最初の場合，つまり <script type="math/tex">\sigma</script> と矛盾する節が存在する場合について説明する．
+<p>ここで，<span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-with-Trail}</script></span> の最初の場合，つまり <script type="math/tex">\sigma</script> と矛盾する節が存在する場合について説明する．
 ここでは，探索木のどの分岐にいるのかを考える必要がある．
-この情報は，\myTermTrail の最後を調べることで得ることができる．
-左側の分岐にいる場合（<script type="math/tex">b=\textsf{L}</script>の場合），<script type="math/tex">\sigma(x_i)</script> の値を反転させることで決定を入れ替える必要がある．
-その後，探索木の右側に切り替え，それを\myTermTrail の最後を <script type="math/tex">(R, x_i)</script> に変更することで記録し，探索を続ける．
-すでに検索木の右側にいる場合は，\myTermBacktrack が必要となる．
-これが木の根頂点で起こった場合，\myTermTrail は空であり，探索木が全て網羅されたことがわかる．
+この情報は，トレイルの最後を調べることで得ることができる．
+左側の分岐にいる場合 (<script type="math/tex">b=\textsf{L}</script>の場合) ，<script type="math/tex">\sigma(x_i)</script> の値を反転させることで決定を入れ替える必要がある．
+その後，探索木の右側に切り替え，それをトレイルの最後を <script type="math/tex">(R, x_i)</script> に変更することで記録し，探索を続ける．
+すでに検索木の右側にいる場合は，後戻りが必要となる．
+これが木の根頂点で起こった場合，トレイルは空であり，探索木が全て網羅されたことがわかる．
 したがって，この式は充足不能となる．
-他の頂点であれば，\myTermTrail の最後の要素を削除し，<script type="math/tex">x_i</script> の値が再び未割当（<script type="math/tex">\perp</script>）になったことを記録し，探索を再開する．</p>
-<h2 id="boolean-constraint-propagation-bcp">Boolean Constraint Propagation (BCP)</h2>
+他の頂点であれば，トレイルの最後の要素を削除し，<script type="math/tex">x_i</script> の値が再び未割当 (<script type="math/tex">\perp</script>) になったことを記録し，探索を再開する．</p>
+<div class="admonition note">
+<p class="admonition-title">パスとトレイル</p>
+<p>グラフ上の経路を指す用語として，walk, cycle, path, trail など様々なものがあるので，ここでその使い分けについて簡単に説明する．</p>
+<p>まず，辺に沿って辿ることのできる頂点の列を walk (歩行) という．
+ここで，同じ頂点を２回以上通らない walk を path (道) といい，同じ辺を２回以上通らない walk を trail (小道) という．
+始点と終点が同じで，それ以外では同じ頂点を通らない walk を cycle (閉路) といい，同じ辺を通らない walk を circuit (回路) という．</p>
+</div>
+<h2 id="94-bcp">9.4 ブール制約伝播 (BCP) による最適化</h2>
 <p>ここでは，基本的な二分探索アルゴリズムに対する一連の改良について説明する．
-極めて重要な改良は，\myTerm{\myTermBCP}{Boolean Constraint Propagation, BCP}と呼ばれるものである．
+極めて重要な改良は，<strong>ブール制約伝播</strong> (Boolean Constraint Propagation, BCP) と呼ばれるものである．
 この最適化は，DPLL の手続きの一部として導入された．
-BCP を動機づけるため，\myTerm{単位節}{unit clause}の概念を導入する．
-節 <script type="math/tex">c</script> は，以下の 2 つの条件が満たされる場合，ある割当 <script type="math/tex">\sigma</script> の下で単位節であるという．
-<script type="math/tex; mode=display">\begin{enumerate}
-    \item 節 $c$ が $\sigma$ で充足されない．
-    \item $c$ の \emph{1 つを除いた}すべての変数が $\sigma$ によって値を与えられる．
-    結果として，$c$ において $\sigma(x_i) = \perp$ となる変数 $x_i$ はただ 1 つとなる．
-\end{enumerate}</script>
-重要な観察として，単位節 <script type="math/tex">c</script> を含む任意の式に対して <script type="math/tex">\sigma</script> を充足割当へと拡張するためには，以下の決定を行う必要がある．
-<script type="math/tex; mode=display">\begin{itemize}
-    \item $x_i \in c$ ならば，$x_i$ には 1 を割り当てなければならない．
-    \item $\overline{x}_i \in c$ ならば，$x_i$ には 0 を割り当てなければならない．
-\end{itemize}</script>
-上記を\myTerm{単位規則}{unit rule}と呼び，この <script type="math/tex">x_i</script> への割当を <script type="math/tex">\sigma</script> と <script type="math/tex">c</script> による\myTerm{\myTermImplication}{implication}という．
-仮に単位規則に違反する割当を選択した場合，<script type="math/tex">c</script> は矛盾したものとなり，探索は\myTermBacktrack しなければならず，無駄な努力になる．</p>
-<p>\paragraph{Example 9.4}
-部分的な割当 <script type="math/tex">\{x_2 \mapsto 0\}</script> と以下の式を考える．
+BCP を動機づけるため，<strong>単位節</strong> (unit clause) の概念を導入する．
+節 <script type="math/tex">c</script> は，以下の 2 つの条件が満たされる場合，ある割当 <script type="math/tex">\sigma</script> の下で単位節であるという．</p>
+<ol>
+<li>節 <script type="math/tex">c</script> が <script type="math/tex">\sigma</script> で充足されない．</li>
+<li>
+<script type="math/tex">c</script> の <strong>1 つを除いた</strong>すべての変数が <script type="math/tex">\sigma</script> によって値を与えられる．
+結果として，<script type="math/tex">c</script> において <script type="math/tex">\sigma(x_i) = \perp</script> となる変数 <script type="math/tex">x_i</script> はただ 1 つとなる．</li>
+</ol>
+<p>重要な観察として，単位節 <script type="math/tex">c</script> を含む任意の式に対して <script type="math/tex">\sigma</script> を充足割当へと拡張するためには，以下の決定を行う必要がある．</p>
+<ul>
+<li>
+<script type="math/tex">x_i \in c</script> ならば，<script type="math/tex">x_i</script> には 1 を割り当てなければならない．</li>
+<li>
+<script type="math/tex">\overline{x}_i \in c</script> ならば，<script type="math/tex">x_i</script> には 0 を割り当てなければならない．</li>
+</ul>
+<p>上記を <strong>単位規則</strong> (unit rule) と呼び，この <script type="math/tex">x_i</script> への割当を <script type="math/tex">\sigma</script> と <script type="math/tex">c</script> による <strong>推論</strong> (implication) という．
+仮に単位規則に違反する割当を選択した場合，<script type="math/tex">c</script> は矛盾したものとなり，探索は後戻りしなければならず，無駄な努力になる．</p>
+<h4 id="94">例 9.4</h4>
+<p>部分的な割当 <script type="math/tex">\{x_2 \mapsto 0\}</script> と以下の式を考える．
 <script type="math/tex; mode=display">\begin{align}
 (x_1 \vee x_2 \vee \overline{x}_3) \wedge (\overline{x}_1 \vee x_2)
 \end{align}</script>
@@ -728,171 +800,134 @@ BCP を動機づけるため，\myTerm{単位節}{unit clause}の概念を導入
 <p>ここで，単位規則に従ってなされる割当によって，さらなる節が単位節になりうることに注意して欲しい．
 この例では，<script type="math/tex">x_1</script> に 0 を割り当てることで，１ つ目の節がこの新しい割当の下で単位節となる．
 この場合，再度単位規則を適用する必要が生じるため，<script type="math/tex">x_3</script> に 0 を割り当てる．</p>
-<p>\vspace{1em}</p>
 <p>BCP は，単位規則を繰り返し適用する手続きである．
-可能な実装の一つを図 9.4 に示す．
-節の集合と現在の割当を引数として渡している．
+可能な BCP アルゴリズムの実装の一つを以下に示す．</p>
+<p><center>
+<img src="../img/lec11-fig4.pdf" width="800">
+</center></p>
+<p>節の集合と現在の割当を引数として渡している．
 そして BCP は，単位規則がこれ以上適用できなくなった後に，新しい割当を戻り値として返す．
 問題 9.4 では，単位節の検出に特化したデータ構造について議論を行う．
-二分探索アルゴリズムにおいては，\myTermDecisionHeuristic を用いて決定を行った後に，直接 BCP を呼び出す．
+二分探索アルゴリズムにおいては，変数選択ヒューリスティックを用いて決定を行った後に，直接 BCP を呼び出す．
 さらに，もともとの節の集合に単一のリテラルからなる節が含まれる可能性があるため，探索の最初にも BCP を呼び出す．</p>
-<p>探索アルゴリズムが\myTermBacktrack すると，BCP による割当は元に戻さなければならないことには注意が必要である．
+<p>探索アルゴリズムが後戻りすると，BCP による割当は元に戻さなければならないことには注意が必要である．
 再帰を用いたアルゴリズムでは，再帰呼び出しごとに新しい割当 <script type="math/tex">\sigma</script> を構築するため，これは非常に単純である．
-この割当は，手続きが\myTermBacktrack する際に破棄される．
-しかし，\myProcedure{Binary-Search-with-Trail} として与えられた類型では，さらなる効率化のため 1 つの割当のみを保持している．
+この割当は，手続きが後戻りする際に破棄される．
+しかし，<span style="font-variant: small-caps"><script type="math/tex">\textrm{Binary-Search-with-Trail}</script></span> として与えられた類型では，さらなる効率化のため 1 つの割当のみを保持している．
 そのため，割当に対する変更を明示的に元に戻している．
-\myTermTrail を用いた場合に BCP による割当を元に戻す最も標準的なやり方は，それらをなされた決定と合わせて\myTermTrail に記録することである．</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \begin{algorithmic}
-        \Procedure{Boolean-Constraint-Propagation}{$C$, $\sigma$}
-            \While{$\sigma$ において単位節 $c \in C$ が存在する}
-                \State $x_i$ を $c$ において未割当の変数とする
-                \If{$x_i \in c$}
-                    \State $\sigma := \sigma[x_i \leftarrow 1]$
-                \Else
-                    \State $\sigma := \sigma[x_i \leftarrow 0]$
-                \EndIf
-            \EndWhile
-            \State \Return $\sigma$
-        \EndProcedure
-    \end{algorithmic}
-    \caption{BCP アルゴリズム}\label{proc:BCP}
-\end{figure}</script>
-</p>
-<h2 id="conflict-driven-clause-learning">Conflict-Driven Clause Learning</h2>
-<h3 id="implication-graphs">Implication Graphs</h3>
+トレイルを用いた場合に BCP による割当を元に戻す最も標準的なやり方は，それらをなされた決定と合わせてトレイルに記録することである．</p>
+<h2 id="95-cdcl">9.5 矛盾に基づく節学習 (CDCL) による最適化</h2>
+<h3 id="951">9.5.1 推論グラフ</h3>
 <p>CNF が節の集合 <script type="math/tex">C</script> として与えられており，この集合が，特に，以下の節を含んでいると仮定しよう．
 <script type="math/tex; mode=display">\begin{align}
 \overline{x}_3x_4, \overline{x}_5x_6, \overline{x}_4\overline{x}_5\overline{x}_6
 \end{align}</script>
 これから，二分探索アルゴリズムがこの例においてどのように実行されるかを説明する．
-\myTermDecisionHeuristic が <script type="math/tex">x_1 \mapsto 1</script> を選択し，これによる BCP の呼び出しが発生しないと仮定する．
-そして，\myTermDecisionHeuristic が <script type="math/tex">x_3 \mapsto 1</script> を選択したと仮定する．
+変数選択ヒューリスティックが <script type="math/tex">x_1 \mapsto 1</script> を選択し，これによる BCP の呼び出しが発生しないと仮定する．
+そして，変数選択ヒューリスティックが <script type="math/tex">x_3 \mapsto 1</script> を選択したと仮定する．
 この割当のもとでは <script type="math/tex">\overline{x}_3x_4</script> が単位節となり，BCP は <script type="math/tex">x_4</script> に 1 を割り当てる．
 その後，<script type="math/tex">x_5 \mapsto 1</script> という決定を行ったと仮定する．
 この新たな割当のもとでは，残された 2 つの節も単位節となる．
-最初に節  <script type="math/tex">\overline{x}_5x_6</script> を処理したと仮定すると，これは <script type="math/tex">x6 \mapsto 1</script> という結果をもたらす．
+最初に節  <script type="math/tex">\overline{x}_5x_6</script> を処理したと仮定すると，これは <script type="math/tex">x_6 \mapsto 1</script> という結果をもたらす．
 そのとき，節 <script type="math/tex">\overline{x}_4\overline{x}_5\overline{x}_6</script> が矛盾することから，矛盾という結果が得られる．
 したがって，最後の決定を元に戻し， <script type="math/tex">x_5</script> を 0 に反転させなければならない．
 これにより，<script type="math/tex">C</script> の部分集合に含まれるこの 3 つの節は充足される．</p>
-<p>そして，探索を進めたが，<script type="math/tex">x_1</script> の決定まで\myTermBacktrack しなければならないことがわかったと仮定する．
-すなわち，\myTermBacktrack のあとに <script type="math/tex">x_1</script> に 0 を割り当てることとなる．
+<p>そして，探索を進めたが，<script type="math/tex">x_1</script> の決定まで後戻りしなければならないことがわかったと仮定する．
+すなわち，後戻りのあとに <script type="math/tex">x_1</script> に 0 を割り当てることとなる．
 この時点での部分割当は <script type="math/tex">\{x_1 \mapsto 0\}</script> であり，<script type="math/tex">x_3 \mapsto 1</script> と <script type="math/tex">x_5 \mapsto 1</script> の決定を繰り返すと仮定しよう．
 これまでに概説したすべてのステップをやり直すことになるということに，気づいてほしい．
 この努力は明らかに無駄になる．
 かつて見たものと同じ矛盾に遭遇し，最終的には <script type="math/tex">x_5</script> への割当を反転させることになる．</p>
-<p>\myTerm{\myTermCDCL}{Conflict-Driven Clause Learning, CDCL} の主要な洞察は，矛盾につながるステップを繰り返させないことである [365]．
-そのために CDCL が保持するデータ構造が，\myTerm{\myTermImplicationGraph}{implication graph}である．
-\myTermImplicationGraph は，ラベル付けされた頂点をもつ有向グラフである．
-以下のように構成される．
-<script type="math/tex; mode=display">\begin{enumerate}
-    \item すべての決定に対して，その決定でラベル付けされた新たな頂点を作成する．
-    \item BCP によって検出されたすべての\myTermImplication に対して，その\myTermImplication でラベル付けされた新たな頂点を作成する．
-        BCP によって検出されたすべての\myTermImplication は，単位節によってもたらされる．
+<p><strong>矛盾に基づく節学習</strong> (Conflict-Driven Clause Learning, CDCL) の主要な洞察は，矛盾につながるステップを繰り返させないことである <sup id="fnref2:372"><a class="footnote-ref" href="#fn:372">2</a></sup>．
+そのために CDCL が保持するデータ構造が，<strong>推論グラフ</strong> (implication graph) である．
+推論グラフは，ラベル付けされた頂点をもつ有向グラフである．
+以下のように構成される．</p>
+<ol>
+<li>すべての決定に対して，その決定でラベル付けされた新たな頂点を作成する．</li>
+<li>BCP によって検出されたすべての推論に対して，その推論でラベル付けされた新たな頂点を作成する．
+        BCP によって検出されたすべての推論は，単位節によってもたらされる．
         その単位節のリテラルに対応する頂点から，作成した新たな頂点への辺を作成する．
-        その辺に単位節のラベルを付ける．
-    \item 矛盾が発生した場合には，$\kappa$ でラベル付けされた頂点を追加し，矛盾する節における割当に対応する頂点からの辺を追加する．
+        その辺に単位節のラベルを付ける．</li>
+<li>矛盾が発生した場合には，<script type="math/tex">\kappa</script> でラベル付けされた頂点を追加し，矛盾する節における割当に対応する頂点からの辺を追加する．
         辺には矛盾した節のラベルが付けられる．
-        この頂点を\myTerm{矛盾頂点}{conflicting node}と呼ぶ．
-\end{enumerate}</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \centering
-    \includegraphics*{./chapter9-fig/fig_9_5.pdf}
-    \caption{式 9.8 の節に対する\myTermImplicationGraph}\label{fig:implication-graph}
-\end{figure}</script>
-</p>
-<p>図 9.5 は，例において最初の矛盾に到達したときの\myTermImplicationGraph の状態を示している．
-グラフの根頂点は <script type="math/tex">x_1</script>, <script type="math/tex">x_3</script>, そして <script type="math/tex">x5</script> への決定である．
+        この頂点を <strong>矛盾した頂点</strong> (conflicting node) と呼ぶ．</li>
+</ol>
+<p>以下の図は，例において最初の矛盾に到達したときの推論グラフの状態を示している．</p>
+<p><center>
+<img src="../img/lec11-fig5.png" width="300">
+</center></p>
+<p>グラフの根頂点は <script type="math/tex">x_1</script>, <script type="math/tex">x_3</script>, そして <script type="math/tex">x5</script> への決定である．
 右側の <script type="math/tex">\kappa</script> でラベル付けされた頂点が矛盾を表す頂点である．
-<script type="math/tex">x_4</script> と <script type="math/tex">x_6</script> への値でラベル付けされた 2 つの内部頂点は，BCP によって検出された\myTermImplication に対して作成されたものである．</p>
-<h3 id="clause-learning">Clause Learning</h3>
-<p>CDCLは，\myTermImplicationGraph を走査することで，既存の節の集合から新しい節を生成する．
-この新しい節は既存の節によって\myTermImplication され，これは次の定理で与えられた\myTerm{\myTermResolutionRule}{resolution rule}を用いて証明される．</p>
-<p>\paragraph{Theorem 9.5 (Resolution rule)}
-<script type="math/tex">c_1 = (A \vee x_i)</script> と <script type="math/tex">c_2 = (B \vee \overline{x}_i)</script> を 2 つの節とし，<script type="math/tex">A</script> と <script type="math/tex">B</script> は任意のリテラルによる選言とする．
-このとき，節 <script type="math/tex">A \vee B</script> が <script type="math/tex">c_1 \wedge c_2</script> から\myTermImplication される．</p>
-<p>\vspace{1em}\noindent
-\myTermResolutionRule の証明は，<script type="math/tex">x_i</script> の真理値に対する場合分けによって簡単に行うことができる．
-\myTermResolutionRule を適用する際に使用する標準的な用語と表記をいくつか導入する．
-変数 <script type="math/tex">x_i</script> は\myTerm{\myTermPivot}{pivot}または\myTerm{\myTermResolutionVariable}{resolution variable}と呼ばれる．
-節 <script type="math/tex">A \vee B</script> を\myTerm{\myTermResolvent}{resolvent}と呼び，\myTermPivot <script type="math/tex">x_i</script> を用いた <script type="math/tex">c_1</script> と <script type="math/tex">c_2</script> の\myTermResolve によって得られる節を <script type="math/tex">Res(c_1, c_2, x_i)</script> と書く．</p>
+<script type="math/tex">x_4</script> と <script type="math/tex">x_6</script> への値でラベル付けされた 2 つの内部頂点は，BCP によって検出された推論に対して作成されたものである．</p>
+<h3 id="952">9.5.2 節学習</h3>
+<p>CDCLは，推論グラフを走査することで，既存の節の集合から新しい節を生成する．
+この新しい節は既存の節によって推論され，これは次の定理で与えられた <strong>導出規則</strong> (resolution rule) を用いて証明される．</p>
+<h4 id="95">定理 9.5 (導出規則)</h4>
 <p>
-<script type="math/tex; mode=display">\begin{figure}
-    \begin{algorithmic}
-        \Procedure{Analyze-Conflict}{節 $c$, \myTermImplicationGraph $G$}
-            \While{$\neg$ termination-criterion(c)}
-                \State $x_i$ を最後に $c$ から\myTermImplication された変数とする
-                \State $v$ を $x_i$ に対して生成されたグラフ $G$ の頂点とする
-                \State $c_l$ を $v$ への辺にラベル付けされた節とする
-                \State $c := Res(c, c_l, x_i)$
-            \EndWhile
-            \State \Return $c$
-        \EndProcedure
-    \end{algorithmic}
-    \caption{矛盾節を求めるアルゴリズム}\label{proc:Analyze-Conflict}
-\end{figure}</script>
-</p>
-<p>ここで，\myTermResolutionRule がどのように適用されるかについて説明する．
-矛盾が発生したら，手続き \myProcedure{Analyze-Conflict}（図9.6）を呼び出す．
-この手続きは，矛盾する節と \myTermImplicationGraph を引数とする．
-この手続きにはヒューリスティックに終了する \textbf{while} ループが含まれている．
+<script type="math/tex">c_1 = (A \vee x_i)</script> と <script type="math/tex">c_2 = (B \vee \overline{x}_i)</script> を 2 つの節とし，<script type="math/tex">A</script> と <script type="math/tex">B</script> は任意のリテラルによる選言とする．
+このとき，節 <script type="math/tex">A \vee B</script> が <script type="math/tex">c_1 \wedge c_2</script> から導出される．</p>
+<p>導出規則の証明は，<script type="math/tex">x_i</script> の真理値に対する場合分けによって簡単に行うことができる．
+\myTermResolutionRule を適用する際に使用する標準的な用語と表記をいくつか導入する．
+変数 <script type="math/tex">x_i</script> は<strong>ピボット変数</strong> (pivot) または <strong>導出変数</strong> (resolution variable)と呼ばれる．
+節 <script type="math/tex">A \vee B</script> を導出節 (resolvent) と呼び，ピボット変数 <script type="math/tex">x_i</script> を用いた <script type="math/tex">c_1</script> と <script type="math/tex">c_2</script> の導出によって得られる節を <script type="math/tex">Res(c_1, c_2, x_i)</script> と書く．</p>
+<p>ここで，導出規則がどのように適用されるかについて説明する．
+矛盾が発生したら，以下の手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Analyze-Conflict}</script></span> を呼び出す．</p>
+<p><center>
+<img src="../img/lec11-fig6.pdf" width="800">
+</center></p>
+<p>この手続きは，矛盾する節と推論グラフを引数とする．
+この手続きにはヒューリスティックに終了する <script type="math/tex">\textbf{while}</script> ループが含まれている．
 このループは節 <script type="math/tex">c</script> を処理し，この処理は矛盾する節から開始する．
-繰り返しのたびに，以下の手順を実行する．
-<script type="math/tex; mode=display">\begin{enumerate}
-    \item もっとも最近\myTermImplication された $c$ の変数 $x_i$ を特定する．
-    \item \myTermImplicationGraph 内の $x_i$ でラベル付けされた頂点を探し，そこへ向かう辺上にある節を指定する．
-        その節を $c_l$ とする．
-    \item \myTermPivot $x_i$ を用いた節 $c$ と $c_l$ の\myTermResolve により，新たな節を求める．
-\end{enumerate}</script>
-そして，手続き \myProcedure{Analyze-Conflict} によって得られた節を，節の集合に追加する．
-このようにして作成された節は\myTerm{矛盾節}{conflict clause}と呼ばれる（この用語を，与えられた <script type="math/tex">\sigma</script> に対して「矛盾する節（conflicting clause）」と混同しないように）．
+繰り返しのたびに，以下の手順を実行する．</p>
+<ol>
+<li>もっとも最近推論された <script type="math/tex">c</script> の変数 <script type="math/tex">x_i</script> を特定する．</li>
+<li>推論グラフ内の <script type="math/tex">x_i</script> でラベル付けされた頂点を探し，そこへ向かう辺上にある節を指定する．
+その節を <script type="math/tex">c_l</script> とする．</li>
+<li>ピボット変数 <script type="math/tex">x_i</script> を用いた節 <script type="math/tex">c</script> と <script type="math/tex">c_l</script> の導出により，新たな節を求める．</li>
+</ol>
+<p>そして，手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Analyze-Conflict}</script></span> によって得られた節を，節の集合に追加する．
+このようにして作成された節は <strong>矛盾節</strong> (conflict clause) と呼ばれる (この用語を，与えられた <script type="math/tex">\sigma</script> に対して「矛盾する節 (conflicting clause) 」と混同しないように) ．
 常に少なくとも 1 つ，<script type="math/tex">\sigma</script> の下で <script type="math/tex">false</script> であり，さらに現在の決定レベルから 1 つのリテラルのみ残る節を得られる，ということに言及しておく．</p>
 <p>例題の説明を続ける．
 割当 <script type="math/tex">x_3 \mapsto 1</script> と <script type="math/tex">x_5 \mapsto 1</script> の後に，<script type="math/tex">\overline{x}_4\overline{x}_5\overline{x}_6</script> を矛盾する節として矛盾が発生したことを思い返そう．
 上記の手順に従って，BCP によって値が設定された節からすべての変数を削除するまで，繰り返し処理を行う．
-1度目の繰り返しでは，最後に割り当てられた <script type="math/tex">x_6</script> で\myTermResolve を行い，節 <script type="math/tex">\overline{x}_4\overline{x}_5</script> が得られる．
-2度目の繰り返しでは，<script type="math/tex">x_4</script> で\myTermResolve を行い，矛盾節 <script type="math/tex">\overline{x}_3\overline{x}_5</script> が得られる．
-\myTermBacktrack を行う直前に，この節を式に追加できる．
-これを，この節を\myTerm{学習}{learn}したという．</p>
+1度目の繰り返しでは，最後に割り当てられた <script type="math/tex">x_6</script> で導出を行い，節 <script type="math/tex">\overline{x}_4\overline{x}_5</script> が得られる．
+2度目の繰り返しでは，<script type="math/tex">x_4</script> で導出を行い，矛盾節 <script type="math/tex">\overline{x}_3\overline{x}_5</script> が得られる．
+後戻りを行う直前に，この節を式に追加できる．
+これを，この節を <strong>学習</strong> (learn) したという．</p>
 <p>ここで，2 度目に <script type="math/tex">x_3 \mapsto 1</script> という決定を行うと，学習した節が単位節となり，BCP は <script type="math/tex">x_5</script> が 0 でなければならないと判断することに気づいてほしい．
 このように，矛盾の繰り返しを回避することに成功している．</p>
-<h3 id="generating-resolution-proofs-with-cdcl">Generating Resolution Proofs with CDCL</h3>
+<h3 id="953-cdcl">9.5.3 CDCL を用いた導出証明の生成</h3>
 <p>これまで見てきたように，CDCL は，導出を用いて新しい節を生成する．
-そして，この\myTermResolvent は，さらなる導出を行うために利用される．
-これらの証明段階の間の依存関係は，次に定義される\myTerm{\myTermResolutionProof}{resolution proof}によって捉えられる．</p>
-<p>\paragraph{Definition 9.6 (Resolution proof)}
-\myTermResolutionProof <script type="math/tex">\mathcal{R}</script> は DAG <script type="math/tex"> （V_{\mathcal{R}}, E_{\mathcal{R}}, piv_{\mathcal{R}}, l_{\mathcal{R}})</script> である．
-ここで <script type="math/tex">V_{\mathcal{R}},</script> は頂点の集合，<script type="math/tex">E_{\mathcal{R}}</script> は辺の集合，<script type="math/tex">piv_{\mathcal{R}}</script> は\myTermPivot から頂点へのラベル付け，<script type="math/tex">l_{\mathcal{R}}</script> は節から頂点へのラベル付けである．
-内部頂点 <script type="math/tex">v</script> と辺 <script type="math/tex">(v_1,v), (v_2,v) \in E_{\mathcal{R}}</script>に対して，<script type="math/tex">v</script> は\myTermPivot <script type="math/tex">piv_{\mathcal{R}}(v)</script> による親頂点の\myTermResolvent によってラベル付けされる必要がある．
-すなわち，以下の関係が成り立つ．
+そして，この導出節は，さらなる導出を行うために利用される．
+これらの証明段階の間の依存関係は，次に定義される<strong>導出証明</strong> (resolution proof) によって捉えられる．</p>
+<h4 id="96">定義 9.6 (導出証明)</h4>
+<p>導出証明 <script type="math/tex">\mathcal{R}</script> は DAG <script type="math/tex">(V_{\mathcal{R}}, E_{\mathcal{R}}, piv_{\mathcal{R}}, l_{\mathcal{R}})</script> である．
+ここで <script type="math/tex">V_{\mathcal{R}},</script> は頂点の集合，<script type="math/tex">E_{\mathcal{R}}</script> は辺の集合，<script type="math/tex">piv_{\mathcal{R}}</script> はピボット変数から頂点へのラベル付け，<script type="math/tex">l_{\mathcal{R}}</script> は節から頂点へのラベル付けである．
+内部頂点 <script type="math/tex">v</script> と辺 <script type="math/tex">(v_1,v), (v_2,v) \in E_{\mathcal{R}}</script>に対して，<script type="math/tex">v</script> はピボット変数 <script type="math/tex">piv_{\mathcal{R}}(v)</script> による親頂点の導出節によってラベル付けされる必要がある．
+すなわち，以下の関係が成り立つ．</p>
+<p>
 <script type="math/tex; mode=display"> l_{\mathcal{R}}(v) = Res(l_{\mathcal{R}}(v_1), l_{\mathcal{R}}(v_2), piv_{\mathcal{R}}(v)) </script>
 </p>
-<p>\vspace{1em}\noindent
-入次数 0 の頂点は，元の式の一部となる節に対応する．
+<p>入次数 0 の頂点は，元の式の一部となる節に対応する．
 他のすべての頂点は入次数 ２ をもち，他の節からの導出によって得られた節に対応する．</p>
-<p>\myTermCDCL を実装するソルバは，暗黙のうちに\myTermResolutionProof を生成する．
-\myTermResolutionProof は，ソルバへの入力として与えられる節の集合 <script type="math/tex">C</script> を根としている．
-証明の内部頂点は，手続き \myProcedure{Analyze-Conflict} によって生成された節となる．
-例に対して \myProcedure{Analyze-Conflict} を実行した場合の\myTermResolutionProof を図9.7に示す．</p>
-<p>
-<script type="math/tex; mode=display">\begin{figure}
-    \centering
-    \includegraphics*{./chapter9-fig/fig_9_7.pdf}
-    \caption{図 9.5 の \myTermImplicationGraph から \myProcedure{Analyze-Conflict} が生成した矛盾節 $\overline{x}_3\overline{x}_5$ を示す \myTermResolutionProof}
-\end{figure}</script>
-</p>
+<p>CDCL を実装するソルバは，暗黙のうちに導出証明を生成する．
+導出証明は，ソルバへの入力として与えられる節の集合 <script type="math/tex">C</script> を根としている．
+証明の内部頂点は，手続き <span style="font-variant: small-caps"><script type="math/tex">\textrm{Analyze-Conflict}</script></span> によって生成された節となる．
+例に対して <span style="font-variant: small-caps"><script type="math/tex">\textrm{Analyze-Conflict}</script></span> を実行した場合の導出証明を以下に示す．</p>
+<p><center>
+<img src="../img/lec11-fig7.png" width="300">
+</center></p>
+<p>この図は前述の推論グラフから，<span style="font-variant: small-caps"><script type="math/tex">\textrm{Analyze-Conflict}</script></span> が生成した矛盾節 <script type="math/tex">\overline{x}_3\overline{x}_5</script> を示す導出証明を表している．</p>
 <p>充足不能と判定された式の場合，ソルバは最終的に空の節の証明を生成する．
 つまり，この証明は <script type="math/tex">C</script> から <script type="math/tex">false</script> が導かれることを示している．</p>
-<h2 id="decision-heuristics">Decision Heuristics</h2>
+<h2 id="96_1">9.6 変数選択ヒューリスティック</h2>
 <p>DPLL あるいは CDCL を実装した SAT ソルバは，変数と値になんらかの決定を行う必要があるとき，ヒューリスティックな選択を行う．
-この決定を行うための手続きを \myProcedure{Decision-Heuristic} と呼んでいる．
+この決定を行うための手続きを <span style="font-variant: small-caps"><script type="math/tex">\textrm{Decision-Heuristic}</script></span> と呼んでいる．
 ここでは，こうした決定を行うために一般的に用いられる手法について説明する．</p>
 <p>決定を行うための非常に基本的な方法は，最も多数の節を充足するような決定を選択することである．
-これは貪欲なヒューリスティックで，\myTerm{動的最大個別和}{Dynamic Largest Individual Sum, DLIS} ヒューリスティックと呼ばれている．</p>
-<p>式 9.8 として与えた節の集合を用いて，DLIS の利点を説明する．
+これは貪欲なヒューリスティックで，<strong>動的最大個別和</strong> (Dynamic Largest Individual Sum, DLIS) ヒューリスティックと呼ばれている．</p>
+<p>9.5.1 節で与えた節の集合を用いて，DLIS の利点を説明する．
 <script type="math/tex; mode=display">\begin{align}
 \overline{x}_3x_4, \overline{x}_5x_6, \overline{x}_4\overline{x}_5\overline{x}_6
 \end{align}</script>
@@ -901,61 +936,147 @@ BCP を動機づけるため，\myTerm{単位節}{unit clause}の概念を導入
 その後， 0 を <script type="math/tex">x_3</script> に割り当てるか，あるいは 1 を <script type="math/tex">x_4</script> に割り当てることで，残りの節を満たす．
 この一連の割当は，9.5 節で見たような矛盾を回避している．</p>
 <p>このヒューリスティックはさらに改良されうることが知られている．
-より良い実行時間をもたらす決定を得るための一般的な方法は，最近矛盾に寄与した変数に向けて \myTermDecisionHeuristic を偏らせることである．
-この目的のため，多くのソルバは各変数の\myTerm{アクティビティスコア}{activity score}を保持している．
+より良い実行時間をもたらす決定を得るための一般的な方法は，最近矛盾に寄与した変数に向けて 変数選択ヒューリスティックを偏らせることである．
+この目的のため，多くのソルバは各変数の <strong>アクティビティスコア</strong> (activity score) を保持している．
 このスコアは，変数が矛盾に寄与するたびに増加する．
 定期的にすべての変数のスコアはある定数で除算され，これは最近矛盾に寄与した変数がより大きなスコアを保持することを意味する．
-さらなる \myTermDecisionHeuristic については，Bibliographic Notes において説明する．</p>
-<h2 id="bibliographic-notes">Bibliographic Notes</h2>
-<p>充足可能性の歴史については， [60, 第1章] で紹介されている．
-命題論理の充足可能性問題を解くための最新のアルゴリズムの基礎は，9.5.3 節で説明した\myTermResolve 原理を用いて一階論理の妥当性を判定するための Davis-Putnam の手法[167]に見出すことができる．
-Davis-Putnam-Logemann-Loveland (DPLL) アルゴリズム [166] は命題論理学に特化したもので，Davis-Putnam の手法を，未充足な節において正か負かのいずれかのみで使用されるよう熱心に設定する，純粋なリテラル除去法によって拡張したものである．
+さらなる変数選択ヒューリスティックについては，Bibliographic Notes において説明する．</p>
+<h2 id="_1">書誌情報</h2>
+<p>充足可能性の歴史については，<em>Handbook of Satisfiability</em> <sup id="fnref:61"><a class="footnote-ref" href="#fn:61">4</a></sup> の第 1 章 で紹介されている．
+命題論理の充足可能性問題を解くための最新のアルゴリズムの基礎は，9.5.3 節で説明した導出原理を用いて一階論理の妥当性を判定するための Davis-Putnam の手法 <sup id="fnref:170"><a class="footnote-ref" href="#fn:170">5</a></sup> に見出すことができる．
+Davis-Putnam-Logemann-Loveland (DPLL) アルゴリズム <sup id="fnref2:169"><a class="footnote-ref" href="#fn:169">1</a></sup> は命題論理学に特化したもので，Davis-Putnam の手法を，未充足な節において正か負かのいずれかのみで使用されるよう熱心に設定する，純粋なリテラル除去法によって拡張したものである．
 このルールは，現代のソルバには実装されていない．
-DPLL アルゴリズムは\myTermBCP（BCP）を導入しており，これは最新のソルバでは標準的であり，9.4節で説明されている．
-BCP の性能を大幅に向上させる two-watched literal scheme（問題 9.4）は，Chaff SAT ソルバ[387] で導入された．</p>
-<p>9.5.2節で説明した\myTermCDCL（CDCL）は，命題論理 SAT を対象としたソルバの性能を大幅に向上させる結果となった．
-CDCL は，最初に GRASP SAT ソルバ [365] に実装された．
+DPLL アルゴリズムはブール制約伝播 (BCP) を導入しており，これは最新のソルバでは標準的であり，9.4節で説明されている．
+BCP の性能を大幅に向上させる two-watched literal scheme (問題 9.4) は，Chaff SAT ソルバ <sup id="fnref:394"><a class="footnote-ref" href="#fn:394">6</a></sup> で導入された．</p>
+<p>9.5.2節で説明した矛盾に基づく節学習 (CDCL) は，命題論理 SAT を対象としたソルバの性能を大幅に向上させる結果となった．
+CDCL は，最初に GRASP SAT ソルバ <sup id="fnref3:372"><a class="footnote-ref" href="#fn:372">2</a></sup> に実装された．
 GRASP はまた，学習した節の中で最も最近になされた決定にジャンプして戻ることによる，非時系列的なバックトラッキングを実装している．
-異なる学習戦略の比較は，[492] に記載されている．</p>
-<p>Chaff SAT ソルバは，最初の矛盾駆動型の\myTermDecisionHeuristic [387] である，変数状態独立減衰和（Variable State Independent Decaying Sum, VSIDS）\myTermDecisionHeuristic を導入した．
+異なる学習戦略の比較は，<sup id="fnref:500"><a class="footnote-ref" href="#fn:500">7</a></sup> に記載されている．</p>
+<p>Chaff SAT ソルバは，最初の矛盾駆動型の変数選択ヒューリスティック <sup id="fnref2:394"><a class="footnote-ref" href="#fn:394">6</a></sup> である，変数状態独立減衰和 (Variable State Independent Decaying Sum, VSIDS) 変数選択ヒューリスティックを導入した．
 VSIDS では，学習した節で最近使用された変数ほど高いスコアが与えられ，矛盾に寄与する変数に偏った探索が行われる．
-これと同様に，Berkmin SAT ソルバは，未充足の矛盾節のスタックを保持することで，未\myTermResolve の矛盾に対する絶対的な優先順位を与えている [245]．
-分岐ヒューリスティックの詳細な議論は，文献 [315] の Kullmann の章によって与えられる．
-文献 [267] の Heule と van Maaren による章は，ヒューリスティックの広範なリストを提供している．
-スコア付けのヒューリスティックに関する実験的比較は，文献 [59] で与えられている．</p>
-<p>最新のソルバには，この章では取り上げない多くの最適化が含まれている．
-与えられた\myTermImplicationGraph から，グラフ上の異なる分割を選択することで，様々な節を学習することが可能である．
+これと同様に，Berkmin SAT ソルバは，未充足の矛盾節のスタックを保持することで，未導出の矛盾に対する絶対的な優先順位を与えている <sup id="fnref:250"><a class="footnote-ref" href="#fn:250">8</a></sup>．
+分岐ヒューリスティックの詳細な議論は，<em>Handbook of Satisfiability</em> の Kullmann の章 <sup id="fnref:321"><a class="footnote-ref" href="#fn:321">9</a></sup> によって与えられる．
+<em>Look-ahead based SAT solvers</em> <sup id="fnref:273"><a class="footnote-ref" href="#fn:273">10</a></sup> の Heule と van Maaren による章は，ヒューリスティックの広範なリストを提供している．
+スコア付けのヒューリスティックに関する実験的比較は，Biere と Fröhlich によって与えられている <sup id="fnref:60"><a class="footnote-ref" href="#fn:60">11</a></sup>．</p>
+<p>最近のソルバには，この章では取り上げなかった多くの最適化が含まれている．
+与えられた推論グラフから，グラフ上の異なる分割を選択することで，様々な節を学習することが可能である．
 特に有用な矛盾節を選択するためのヒューリスティックは多数存在する．
 学習された節は，メモリと計算資源を消費する．
-そのため，最近の SAT ソルバ，特に Glucose [32] は，学習した節のほとんどを削除し，ヒューリスティックな基準に基づいて少数の節のみを残している．
+そのため，最近の SAT ソルバ，特に Glucose <sup id="fnref:32"><a class="footnote-ref" href="#fn:32">12</a></sup> は，学習した節のほとんどを削除し，ヒューリスティックな基準に基づいて少数の節のみを残している．
 非時系列的なバックトラッキングには，さらなる改良が加えられている．
-例えば Chaffは，学習された節の中で 2 番目に新しいものへ\myTermBacktrack を行っている．</p>
-<p>さらに，最近の SAT ソルバには\myTerm{プリプロセッサ}{preprocessor} が含まれており，数々の変換の中でも，DPLL が開始される前に変数の除去を行う [34, 188]．
-また，探索空間の異なる部分を探索するための，周期的な\myTerm{再起動}{restart} も実装されている[55]．
-最近の SAT ソルバは，インスタンスを\myTerm{漸進的に}{incrementally} 解く，すなわち，解いた後に SAT インスタンスを変更することができる．
-入力された式からの制約の除去は，現在では一般的に\myTerm{仮定}{assumption}[189] を用いて行われており，MiniSat ソルバ [191] によって普及した．
-CDCL のさらなる詳細は，[60, 第4章] に記載されている．
-詳細な解説は，Knuth によって [307] で与えられている．</p>
+例えば Chaffは，学習された節の中で 2 番目に新しいものへ後戻りを行っている．</p>
+<p>さらに，最近の SAT ソルバには <strong>プリプロセッサ</strong> (preprocessor) が含まれており，数々の変換の中でも，DPLL が開始される前に変数の除去を行う <sup id="fnref:34"><a class="footnote-ref" href="#fn:34">13</a></sup><sup id="fnref:193"><a class="footnote-ref" href="#fn:193">14</a></sup>．
+また，探索空間の異なる部分を探索するための，周期的な <strong>再起動</strong> (restart) も実装されている <sup id="fnref:56"><a class="footnote-ref" href="#fn:56">15</a></sup>．
+最近の SAT ソルバは，インスタンスを <strong>漸進的に</strong> (incrementally) 解く，すなわち，解いた後に SAT インスタンスを変更することができる <sup id="fnref:281"><a class="footnote-ref" href="#fn:281">16</a></sup><sup id="fnref:487"><a class="footnote-ref" href="#fn:487">17</a></sup>．
+入力された式からの制約の除去は，現在では一般的に <strong>仮定</strong> (assumption) <sup id="fnref:194"><a class="footnote-ref" href="#fn:194">18</a></sup> を用いて行われており，MiniSat ソルバ <sup id="fnref:196"><a class="footnote-ref" href="#fn:196">19</a></sup> によって普及した．
+CDCL のさらなる詳細は，<em>Handbook of Satisfiability</em> <sup id="fnref2:61"><a class="footnote-ref" href="#fn:61">4</a></sup> の第 4 章 に記載されている．
+詳細な解説は，Knuth によって与えられている <sup id="fnref:313"><a class="footnote-ref" href="#fn:313">20</a></sup>．</p>
 <p>最良の性能を持つ命題論理 SAT ソルバはすべて 節による CNF 表現上で動作するが，非節型 SAT ソルバも研究されてきた．
 非節型アルゴリズムを支持する議論は，Tseitin 変換が式の構造を破壊するというものである．
-命題論理のための非常に初期の非節型ソルバは，Stålmarck の証明手続き [439] である．
-文献 [285] では，general mating を使用し，学習と非時系列バックトラッキングを実装したソルバが示されている．
-ハードウェア設計における検証の重要性から，回路上で直接動作するSATソルバが提案されている [230]．</p>
+命題論理のための非常に初期の非節型ソルバは，Stålmarck の証明手続き <sup id="fnref:446"><a class="footnote-ref" href="#fn:446">21</a></sup> である．
+Jain らにより，general mating を使用し，学習と非時系列バックトラッキングを実装したソルバが示されている <sup id="fnref:291"><a class="footnote-ref" href="#fn:291">22</a></sup>．
+ハードウェア設計における検証の重要性から，回路上で直接動作するSATソルバが提案されている <sup id="fnref:235"><a class="footnote-ref" href="#fn:235">23</a></sup>．</p>
 <p>SAT 問題には多くのバリエーションがある．
 例えば，充足可能性問題以外にも様々な最適化問題を解くアルゴリズムがある．
-最適化の目標は，例えば，問題変数に対して線形多項式，のように直接与えることができる [15]．
-他の手法は，特に小さい，あるいは極小の充足不可能コアを特定することを目的としている [390]．
-矛盾駆動学習のような技術は，量化記号付きブール演算子（QBF）にも適用されている [493]．</p>
+最適化の目標は，例えば，問題変数に対して線形多項式，のように直接与えることができる <sup id="fnref:15"><a class="footnote-ref" href="#fn:15">24</a></sup>．
+他の手法は，特に小さい，あるいは極小の充足不能コアを特定することを目的としている <sup id="fnref:397"><a class="footnote-ref" href="#fn:397">25</a></sup>．
+矛盾駆動型学習のような技術は，量化記号付きブール演算子 (QBF) にも適用されている <sup id="fnref:501"><a class="footnote-ref" href="#fn:501">26</a></sup>．</p>
 <p>命題論理のための CDCL に基づくソルバの技術は，一階論理の表現力豊かな部分論理へと拡張されている．
-このような部分論理の変換の初期の例は，等価性論理から命題論理への変換を熱心に行ったもの [414] を含んでいる．
-差分論理における制約の論理積のためのソルバと，命題論理の SAT ソルバの統合が文献 [29] で提案されている．
-Z3 [170] のような\myTermSMT（Satisfiability Modulo Theory, SMT）のための最新のソルバは，ビットベクターや配列を含む幅広い理論をサポートしている．</p>
-<p>\end{document}</p>
-                
-              
-              
-                
-
+このような部分論理の変換の初期の例は，等価性論理から命題論理への変換を熱心に行ったもの <sup id="fnref:421"><a class="footnote-ref" href="#fn:421">27</a></sup> を含んでいる．
+差分論理における制約の論理積のためのソルバと，命題論理の SAT ソルバの統合が Armando らによって提案されている <sup id="fnref:29"><a class="footnote-ref" href="#fn:29">28</a></sup>．
+Z3 <sup id="fnref:174"><a class="footnote-ref" href="#fn:174">29</a></sup> のような<strong>背景理論付き SAT</strong> (Satisfiability Modulo Theory, SMT) のための最新のソルバは，ビットベクタや配列を含む幅広い理論をサポートしている．</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:169">
+<p>M. Davis, G. Logemann, and D. W. Loveland. A machine program for theorem-proving. Commun. ACM, 5(7):394–397, 1962.&#160;<a class="footnote-backref" href="#fnref:169" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:169" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:372">
+<p>J. P. Marques Silva and K. A. Sakallah. GRASP—a new search algorithm for satisfiability. In International Conference on Computer-Aided Design, ICCAD, pages 220–227. IEEE Computer Society, 1996.&#160;<a class="footnote-backref" href="#fnref:372" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:372" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:372" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:470">
+<p>G. S. Tseitin. On the complexity of derivation in propositional calculus. In Studies in Constructive Mathematics and Mathematical Logic, Part II, volume 8 of Seminars in Mathematics, pages 234–259. V.A. Steklov Mathematical Institute, 1968. English Translation:Consultants Bureau, New York, 1970, pages 115–125.&#160;<a class="footnote-backref" href="#fnref:470" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:61">
+<p>A. Biere, M. Heule, H. van Maaren, and T. Walsh, editors. Handbook of Satisfiability, volume 185 of Frontiers in Artificial Intelligence and Applications. IOS Press, 2009.&#160;<a class="footnote-backref" href="#fnref:61" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:61" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:170">
+<p>M. Davis and H. Putnam. A computing procedure for quantification theory. J. ACM, 7(3):201–215, 1960.&#160;<a class="footnote-backref" href="#fnref:170" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:394">
+<p>M. W. Moskewicz, C. F. Madigan, Y. Zhao, L. Zhang, and S. Malik. Chaff:Engineering an efficient SAT solver. In Design Automation Conference, DAC, pages 530–535. ACM, 2001.&#160;<a class="footnote-backref" href="#fnref:394" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:394" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:500">
+<p>L. Zhang, C. F. Madigan, M. W. Moskewicz, and S. Malik. Efficient conflict driven learning in Boolean satisfiability solver. In R. Ernst, editor, International Conference on Computer-Aided Design, ICCAD, pages 279–285. IEEE Computer Society, 2001.&#160;<a class="footnote-backref" href="#fnref:500" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:250">
+<p>E. Goldberg and Y. Novikov. BerkMin:A fast and robust Sat-solver. In Design, Automation and Test in Europe Conference and Exposition, DATE, pages 142–149. IEEE Computer Society, 2002.&#160;<a class="footnote-backref" href="#fnref:250" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:321">
+<p>O. Kullmann. Fundaments of branching heuristics. In Handbook of Satisfiability, volume 185 of Frontiers in Artificial Intelligence and Applications, pages 205–244. IOS Press, 2009.&#160;<a class="footnote-backref" href="#fnref:321" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:273">
+<p>M. Heule and H. van Maaren. Look-ahead based SAT solvers. In Handbook of Satisfiability, volume 185 of Frontiers in Artificial Intelligence and Applications, pages 155–184. IOS Press, 2009.&#160;<a class="footnote-backref" href="#fnref:273" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:60">
+<p>A. Biere and A. Fröhlich. Evaluating CDCL variable scoring schemes. In Theory and Applications of Satisfiability Testing, SAT, volume 9340 of Lecture Notes in Computer Science, pages 405–422. Springer, 2015.&#160;<a class="footnote-backref" href="#fnref:60" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p>G. Audemard and L. Simon. Predicting learnt clauses quality in modern SAT solvers. In C. Boutilier, editor, International Joint Conference on Artificial Intelligence, IJCAI, pages 399–404, 2009.&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p>F. Bacchus and J. Winter. Effective preprocessing with hyper-resolution and equality reduction. In E. Giunchiglia and A. Tacchella, editors, Theory and Applications of Satisfiability Testing, SAT, volume 2919 of Lecture Notes in Computer Science, pages 341–355. Springer, 2004.&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:193">
+<p>N. Eén and A. Biere. Effective preprocessing in SAT through variable and clause elimination. In F. Bacchus and T. Walsh, editors, Theory and Applications of Satisfiability Testing, SAT, volume 3569 of Lecture Notes in Computer Science, pages 61–75. Springer, 2005.&#160;<a class="footnote-backref" href="#fnref:193" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:56">
+<p>A. Biere. Adaptive restart strategies for conflict driven SAT solvers. In H. K. Büning and X. Zhao, editors, Theory and Applications of Satisfiability Testing, SAT, volume 4996 of Lecture Notes in Computer Science, pages 28–33. Springer, 2008.&#160;<a class="footnote-backref" href="#fnref:56" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:281">
+<p>J. N. Hooker. Solving the incremental satisfiability problem. J. Logic Progr., 15(1–2):177–186, 1993.&#160;<a class="footnote-backref" href="#fnref:281" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:487">
+<p>J. Whittemore, J. Kim, and K. A. Sakallah. SATIRE: A new incremental satisfiability engine. In Design Automation Conference, DAC, pages 542–545. ACM, 2001.&#160;<a class="footnote-backref" href="#fnref:487" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:194">
+<p>N. Eén, A. Mishchenko, and N. Amla. A single-instance incremental SAT formulation of proof-and counterexample-based abstraction. In R. Bloem and N. Sharygina, editors, Proceedings of 10th International Conference on Formal Methods in Computer-Aided Design, FMCAD, pages 181–188. IEEE, 2010.&#160;<a class="footnote-backref" href="#fnref:194" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:196">
+<p>N. Eén and N. Sörensson. An extensible SAT-solver. In E. Giunchiglia and A. Tacchella, editors, Theory and Applications of Satisfiability Testing, SAT, volume 2919 of Lecture Notes in Computer Science, pages 502–518. Springer, 2004.&#160;<a class="footnote-backref" href="#fnref:196" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:313">
+<p>D. E. Knuth. The Art of Computer Programming: Fascicle 6 Volume 4B: Satisfiability. Addison Wesley, 2015.&#160;<a class="footnote-backref" href="#fnref:313" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:446">
+<p>M. Sheeran and G. Stålmarck. A tutorial on Stålmarck’s proof procedure for propositional logic. Formal Methods Syst. Design, 16(1):23–58, 2000.&#160;<a class="footnote-backref" href="#fnref:446" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:291">
+<p>H. Jain, C. Bartzis, and E. M. Clarke. Satisfiability checking of non-clausal formulas using general matings. In A. Biere and C. P. Gomes, editors, Theory and Applications of Satisfiability Testing, SAT, volume 4121 of Lecture Notes in Computer Science, pages 75–89. Springer, 2006.&#160;<a class="footnote-backref" href="#fnref:291" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:235">
+<p>M. K. Ganai, P. Ashar, A. Gupta, L. Zhang, and S. Malik. Combining strengths of circuit-based and CNF-based algorithms for a high-performance SAT solver. In Design Automation Conference, DAC, pages 747–750. ACM, 2002.&#160;<a class="footnote-backref" href="#fnref:235" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p>F. A. Aloul, A. Ramani, K. A. Sakallah, and I. L. Markov. Solution and optimization of systems of pseudo-Boolean constraints. IEEE Trans. Computers, 56(10):1415–1424, 2007.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:397">
+<p>A. Nadel, V. Ryvchin, and O. Strichman. Efficient MUS extraction with resolution. In Formal Methods in Computer-Aided Design, FMCAD, pages 197–200. IEEE, 2013.&#160;<a class="footnote-backref" href="#fnref:397" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:501">
+<p>L. Zhang and S. Malik. Conflict driven learning in a quantified Boolean satisfiability solver. In L. T. Pileggi and A. Kuehlmann, editors, International Conference on Computer-Aided Design, ICCAD, pages 442–449. ACM / IEEE Computer Society, 2002.&#160;<a class="footnote-backref" href="#fnref:501" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:421">
+<p>A. Pnueli, Y. Rodeh, O. Strichman, and M. Siegel. Deciding equality formulas by small domains instantiations. In N. Halbwachs and D. A. Peled, editors, Computer Aided Verification, CAV, volume 1633 of Lecture Notes in Computer Science, pages 455–469. Springer, 1999.&#160;<a class="footnote-backref" href="#fnref:421" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>A. Armando, C. Castellini, and E. Giunchiglia. SAT-based procedures for temporal reasoning. In S. Biundo and M. Fox, editors, Recent Advances in AI Planning, 5th European Conference on Planning, ECP, volume 1809 of Lecture Notes in Computer Science, pages 97–108. Springer, 2000.&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:174">
+<p>L. M. de Moura and N. Bjørner. Z3:An efficient SMT solver. In C. R. Ramakrishnan and J. Rehof, editors, Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 4963 of Lecture Notes in Computer Science, pages 337–340. Springer, 2008.&#160;<a class="footnote-backref" href="#fnref:174" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -964,19 +1085,19 @@ Z3 [170] のような\myTermSMT（Satisfiability Modulo Theory, SMT）のため�
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -986,12 +1107,14 @@ Z3 [170] のような\myTermSMT（Satisfiability Modulo Theory, SMT）のため�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       

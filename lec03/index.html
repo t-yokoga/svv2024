@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -18,32 +17,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -239,6 +258,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -253,33 +273,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    デジタル回路のモデル化
+  <a href="#35" class="md-nav__link">
+    3.5 デジタル回路のモデル化
   </a>
   
-    <nav class="md-nav" aria-label="デジタル回路のモデル化">
+    <nav class="md-nav" aria-label="3.5 デジタル回路のモデル化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    状態保持要素
+  <a href="#351" class="md-nav__link">
+    3.5.1 状態保持要素
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    同期回路
+  <a href="#352" class="md-nav__link">
+    3.5.2 同期回路
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    非同期回路
+  <a href="#353" class="md-nav__link">
+    3.5.3 非同期回路
   </a>
   
-    <nav class="md-nav" aria-label="非同期回路">
+    <nav class="md-nav" aria-label="3.5.3 非同期回路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -300,66 +320,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    プログラムのモデル化
+  <a href="#36" class="md-nav__link">
+    3.6 プログラムのモデル化
   </a>
   
-    <nav class="md-nav" aria-label="プログラムのモデル化">
+    <nav class="md-nav" aria-label="3.6 プログラムのモデル化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    逐次プロセスのモデル化
+  <a href="#361" class="md-nav__link">
+    3.6.1 逐次プロセス
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="3.6.1 逐次プロセス">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     プログラムへのラベル付け
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     プログラムカウンタ
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     ラベル付きプログラムから論理式への変換手続き
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    並行プロセスのモデル化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    並行プログラムから論理式への変換手続き
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    共有変数
-  </a>
-  
-    <nav class="md-nav" aria-label="共有変数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-34" class="md-nav__link">
-    Example 3.4
   </a>
   
 </li>
@@ -370,16 +362,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    遷移の粒度
+  <a href="#362" class="md-nav__link">
+    3.6.2 並行プロセス
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6.2 並行プロセス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    並行プログラムから論理式への変換手続き
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    公平性
+  <a href="#_5" class="md-nav__link">
+    共有変数
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-34" class="md-nav__link">
+    Example 3.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    遷移の粒度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -389,7 +408,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#37" class="md-nav__link">
+    3.7 公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     演習問題
   </a>
   
@@ -463,6 +496,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -475,6 +538,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -489,33 +553,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    デジタル回路のモデル化
+  <a href="#35" class="md-nav__link">
+    3.5 デジタル回路のモデル化
   </a>
   
-    <nav class="md-nav" aria-label="デジタル回路のモデル化">
+    <nav class="md-nav" aria-label="3.5 デジタル回路のモデル化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    状態保持要素
+  <a href="#351" class="md-nav__link">
+    3.5.1 状態保持要素
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    同期回路
+  <a href="#352" class="md-nav__link">
+    3.5.2 同期回路
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    非同期回路
+  <a href="#353" class="md-nav__link">
+    3.5.3 非同期回路
   </a>
   
-    <nav class="md-nav" aria-label="非同期回路">
+    <nav class="md-nav" aria-label="3.5.3 非同期回路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -536,66 +600,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    プログラムのモデル化
+  <a href="#36" class="md-nav__link">
+    3.6 プログラムのモデル化
   </a>
   
-    <nav class="md-nav" aria-label="プログラムのモデル化">
+    <nav class="md-nav" aria-label="3.6 プログラムのモデル化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    逐次プロセスのモデル化
+  <a href="#361" class="md-nav__link">
+    3.6.1 逐次プロセス
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="3.6.1 逐次プロセス">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     プログラムへのラベル付け
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     プログラムカウンタ
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     ラベル付きプログラムから論理式への変換手続き
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    並行プロセスのモデル化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    並行プログラムから論理式への変換手続き
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    共有変数
-  </a>
-  
-    <nav class="md-nav" aria-label="共有変数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-34" class="md-nav__link">
-    Example 3.4
   </a>
   
 </li>
@@ -606,16 +642,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    遷移の粒度
+  <a href="#362" class="md-nav__link">
+    3.6.2 並行プロセス
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6.2 並行プロセス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    並行プログラムから論理式への変換手続き
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    公平性
+  <a href="#_5" class="md-nav__link">
+    共有変数
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-34" class="md-nav__link">
+    Example 3.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    遷移の粒度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -625,7 +688,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#37" class="md-nav__link">
+    3.7 公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     演習問題
   </a>
   
@@ -643,12 +720,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="3">第3回 ハードウェア・ソフトウェアのモデル化</h1>
-<p>この回では，教科書の第3章 "Modeling Systems" の後半（3.5 Modeling Digital Circuit 〜 3.7 Fairness）について説明します．
+
+
+<h1 id="3">第3回 ハードウェア・ソフトウェアのモデル化</h1>
+<p>この回では，教科書の第3章 "Modeling Systems" の後半（3.5 〜 3.7）について説明します．
 前回の講義で説明した一階論理を用いてのモデル化を，実際のハードウェア・ソフトウェアシステムにどのように適用するかについて，簡単な例題を用いて説明します．
 また，並行システムをモデル化する際に考慮すべき問題である公平性とその扱い方についても紹介します．</p>
-<div class="admonition 概要">
+<div class="admonition summary">
 <p class="admonition-title">概要</p>
 <ul>
 <li>デジタル回路のモデル化</li>
@@ -658,8 +736,8 @@
 <li>公平性</li>
 </ul>
 </div>
-<h2 id="_1">デジタル回路のモデル化</h2>
-<h3 id="_2">状態保持要素</h3>
+<h2 id="35">3.5 デジタル回路のモデル化</h2>
+<h3 id="351">3.5.1 状態保持要素</h3>
 <p>まず，デジタル回路をどのようにして論理式として記述するかについて説明する．
 デジタル回路の振る舞いを考える上では，実際にデータを格納するために使用されるのは回路の特定の要素のみである．
 これを<strong>状態保持要素</strong> (state-holding elements) と呼ぶ．
@@ -673,7 +751,7 @@
 <p>前回の講義で説明したように，論理式はその式を真とする<strong>全ての</strong>付値の集合を表す，という慣例を採用している．
 このように，回路の振る舞いを記述するには一階論理の表現力を全て用いる必要はなく，ブール式で十分である．
 ブール式 <script type="math/tex"> \mathcal{S}_0(V)</script> と <script type="math/tex">\mathcal{R}(V, V')</script> は，それぞれ回路の初期状態の集合と遷移関係を表す．</p>
-<h3 id="_3">同期回路</h3>
+<h3 id="352">3.5.2 同期回路</h3>
 <p>同期回路の動作は，<strong>ステップ</strong>の列として構成される．
 各ステップでは，回路への入力が変化した後，安定状態に到達することが認められる．
 その後にクロックパルスが発生して，状態保持要素のもつ値が変化する．</p>
@@ -713,7 +791,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>そして，遷移関係の論理式もモジュロ 8 カウンタの場合と同様に，これらの制約の論理積として以下のように得ることができる．
 <script type="math/tex; mode=display"> \mathcal{R}(V, V') \equiv \mathcal{R}_0(V, V') \wedge \ldots \wedge \mathcal{R}_{n-1}(V, V'). </script>
 このように，同期回路の遷移関係は，個別の状態保持要素の遷移関係の論理積として表現することができる．</p>
-<h3 id="_4">非同期回路</h3>
+<h3 id="353">3.5.3 非同期回路</h3>
 <p>非同期回路については，時間を考慮しない非常に単純なモデルについてのみ説明する．
 非同期回路の遷移関係は，<strong>論理和</strong>として表現するのが最も自然である．</p>
 <p>遷移関係がどのようにして得られるかの説明を簡単にするため，回路のすべての構成要素はただ 1 つの出力をもち，内部状態変数をもたないと仮定する．
@@ -732,6 +810,8 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 このような動作を認めない，<strong>公平性</strong> (fairness) に関する追加の制約をもつモデルについて議論することが可能である．
 この話題については，4 章でさらに議論を行う．</p>
 <h4 id="example-33">Example 3.3</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 3.3</p>
 <p>同期および非同期のモデルの違いを説明するため，以下の例を考えよう．
 <script type="math/tex">V = \{v_0, v_1\}</script> とし，<script type="math/tex">v_0' = v_0 \oplus v_1</script>，<script type="math/tex">v_1' = v_0 \oplus v_1</script> とする．
 <script type="math/tex">s</script> を <script type="math/tex">v_0 = 1 \wedge v_1 = 1</script> となる状態とする．
@@ -743,10 +823,11 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <li>
 <script type="math/tex">v_0 = 1 \wedge v_1 = 0</script> (<script type="math/tex">v_1</script> への割当を最初に実行した場合)</li>
 </ul>
-<h2 id="_5">プログラムのモデル化</h2>
+</div>
+<h2 id="36">3.6 プログラムのモデル化</h2>
 <p>これから，ソフトウェアのモデル化について説明する．
 まず，逐次プログラムの基本的な場合について議論し，次に，非同期の同時実行セマンティクスをもつ並列プログラムの場合へと拡張を行う．</p>
-<h3 id="_6">逐次プロセスのモデル化</h3>
+<h3 id="361">3.6.1 逐次プロセス</h3>
 <p>我々が使用するアプローチは，Manna と Pnueli によるアプローチと類似したものである．
 ここでは，理想的なプログラミング言語のモデルについて議論する．</p>
 <p>プログラムは，連続した文から構成される．
@@ -759,7 +840,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 異なる位置に同じラベルが 2 度付けられることはない．
 逐次プログラムでは，ある文の終了点は次の文の開始点と同一なので，それぞれの開始点にラベルを付ければ十分である．
 そして最後に，<script type="math/tex">P</script> 自身の開始点と終了点にラベルを付ければ，プログラムのすべての文の開始点と終了点への一意なラベル付けを行ったことになる．</p>
-<h3 id="_7">プログラムへのラベル付け</h3>
+<h4 id="_1">プログラムへのラベル付け</h4>
 <p>ここでは特定のプログラミング言語の詳細を抽象化することを目的としているため，いくつかの共通の形式の文に対するラベル付け変換を定義する．
 この定義を他の形式の文へと拡張することは，難しいことではない．</p>
 <p>文 <script type="math/tex">P</script> が与えられたとき，<strong>ラベル付き文</strong> (labeled statement) <script type="math/tex">P^{\mathcal{L}}</script> は以下のように定義される．</p>
@@ -814,11 +895,11 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 </li>
 </ul>
 <p>以降では，<script type="math/tex">P</script> がラベル付き文であり，<script type="math/tex">P</script> の開始点と終了点がそれぞれ <script type="math/tex">m</script> と <script type="math/tex">m'</script> でラベル付けされていると仮定する．</p>
-<h3 id="_8">プログラムカウンタ</h3>
+<h4 id="_2">プログラムカウンタ</h4>
 <p>ここで，<script type="math/tex">pc</script> を<strong>プログラムカウンタ</strong> (program counter) と呼ばれる，プログラム位置の集合と，プログラムが<strong>中断</strong> (suspend) されていることを示す追加の値 <script type="math/tex">\textbf{susp}</script> を定義域とする特別な変数とする．
 この値 <script type="math/tex">\textbf{susp}</script> は並列プログラムを考慮する場合に必要となる．
 この場合，<script type="math/tex">pc = \textbf{susp}</script> はプログラムが現在アクティブではないことを示す．</p>
-<h3 id="_9">ラベル付きプログラムから論理式への変換手続き</h3>
+<h4 id="_3">ラベル付きプログラムから論理式への変換手続き</h4>
 <p>
 <script type="math/tex">V</script> をプログラム変数の集合とする．
 <script type="math/tex">V'</script> を <script type="math/tex">v \in V</script> それぞれに対するプライム付き変数 <script type="math/tex">v'</script> の集合とし，<script type="math/tex">pc'</script> を <script type="math/tex">pc</script> に対するプライム付き変数とする．
@@ -904,7 +985,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 したがって，<script type="math/tex">P_1</script> が終了すると，while 文の実行が再開される．</p>
 </li>
 </ul>
-<h3 id="_10">並行プロセスのモデル化</h3>
+<h3 id="362">3.6.2 並行プロセス</h3>
 <p>並行システムは，同時に実行するコンポーネントの集合から構成される．
 コンポーネントは互いに通信する手段を持っているのが普通である．
 システムによって実行形式と通信形式は異なる場合がある．
@@ -946,7 +1027,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>並行プログラム <script type="math/tex">P</script> の初期状態を記述する式は以下のようになる．
 <script type="math/tex; mode=display"> \mathcal{S}_0(V, PC) \equiv pre(V) \wedge pc=m \wedge \bigwedge_{i=1}^{n} (pc_i = \textbf{susp}), </script>
 ここで，<script type="math/tex">pc_i = \textbf{susp}</script> は、プロセス <script type="math/tex">P_i</script> がまだ起動しておらず，現在の状態から実行できないことを示している．</p>
-<h3 id="_11">並行プログラムから論理式への変換手続き</h3>
+<h4 id="_4">並行プログラムから論理式への変換手続き</h4>
 <p>変換手続き <script type="math/tex">\mathcal{C}</script> は，以下のように並行プログラムに拡張される．</p>
 <p>
 <script type="math/tex">\mathcal{C}(l, </script>
@@ -975,7 +1056,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>これは，プロセス <script type="math/tex">P_i</script> 内の遷移が <script type="math/tex">V_i</script> 内の変数のみを変更できることを保証している．
 また，ただひとつのプロセスのみが遷移を行うことができることも保証される．
 遷移を行うプロセスは，非決定的に選択される．</p>
-<h3 id="_12">共有変数</h3>
+<h4 id="_5">共有変数</h4>
 <p>
 <script type="math/tex">V_i</script> は，プロセス <script type="math/tex">P_i</script> で変更される可能性のある変数の集合である．
 <script type="math/tex">V_i</script> の集合がオーバーラップする並行プログラムを，<strong>共有変数</strong> (shared variable) プログラムと呼ぶ．
@@ -1017,13 +1098,25 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 </li>
 </ul>
 <h4 id="example-34">Example 3.4</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 3.4</p>
 <p>2 つのプロセス <script type="math/tex">P_0</script> と <script type="math/tex">P_1</script> をもつ簡単な相互排他プログラムを考える．
 <script type="math/tex; mode=display"> P = m: \textbf{cobegin } P_0 \Vert P_1 \textbf{ coend } m' </script>
 </p>
 <p>ここで，<script type="math/tex">P_0</script> および <script type="math/tex">P_1</script> は以下のように与えられる．</p>
-<p><center>
-<img src="../img/lec03-fig1.png" width="350">
-</center></p>
+<p>
+<script type="math/tex; mode=display">\begin{align*}
+P_0 :: l_0 : & \quad \textbf{while } true \textbf{ do}\\
+             & \qquad NC_0 : \ \textbf{wait } (turn = 0);\\
+             & \qquad CR_0 : \ turn := 1\\
+       l_0' \ \ &\\
+& \\
+P_1 :: l_1 : & \quad \textbf{while } true \textbf{ do}\\
+             & \qquad NC_1 : \ \textbf{wait } (turn = 1);\\
+             & \qquad CR_1 : \ turn := 0\\
+       l_1' \ \ &\\
+\end{align*}</script>
+</p>
 <p>プログラム <script type="math/tex">P</script> のプログラムカウンタ <script type="math/tex">pc</script> は，<script type="math/tex">P</script> の開始点のラベル <script type="math/tex">m</script>，<script type="math/tex">P</script> の終了点のラベル <script type="math/tex">m'</script>，そして <script type="math/tex">P_1</script> と <script type="math/tex">P_2</script> がアクティブな時の <script type="math/tex">pc</script> の値である <script type="math/tex">\textbf{susp}</script> の 3 つの値のみをとる．
 各プロセス <script type="math/tex">P_i</script> は，ラベル <script type="math/tex">l_i</script>，<script type="math/tex">l_i'</script>，<script type="math/tex">NC_i</script>，<script type="math/tex">CR_i</script> そして <script type="math/tex">\textbf{susp}</script> の値をとるプログラムカウンタ <script type="math/tex">pc_i</script> をもつ．
 2 つのプロセスは，1 つの変数 <script type="math/tex">turn</script> を共有している．
@@ -1042,7 +1135,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 変換手続き <script type="math/tex">\mathcal{C}</script> を適用すると，<script type="math/tex">P</script> の遷移関係の式 <script type="math/tex">\mathcal{R}(V, PC, V', PC')</script> を以下の 4 つの式の論理和として得ることができる．</p>
 <p>
 <script type="math/tex; mode=display">\begin{align*}
-           & (pc = m \wedge pc_0' = l_0 \wedge pc_1' = l_1 \wedge pc' = \textbf{susp})\\
+        & (pc = m \wedge pc_0' = l_0 \wedge pc_1' = l_1 \wedge pc' = \textbf{susp})\\
 \vee \quad & (pc_0 = l_0' \wedge pc_1 = l_1' \wedge pc' = m' \wedge pc_0' = \textbf{susp} \wedge pc_i' = \textbf{susp})\\
 \vee \quad & (\mathcal{C}(l_0, P_0, l_0') \wedge same(V \setminus V_0) \wedge same(PC \setminus \{pc_0\}))\\
 \vee \quad & (\mathcal{C}(l_1, P_1, l_1') \wedge same(V \setminus V_1) \wedge same(PC \setminus \{pc_1\}))\\
@@ -1051,7 +1144,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>それぞれのプロセス <script type="math/tex">P_i</script> について，<script type="math/tex">\mathcal{C}(l_i, P_i, l_i')</script> は以下の論理和となる．</p>
 <p>
 <script type="math/tex; mode=display">\begin{align*}
-           & (pc_i = l_i \wedge pc_i' = NC_i \wedge true \wedge same(turn))\\
+        & (pc_i = l_i \wedge pc_i' = NC_i \wedge true \wedge same(turn))\\
 \vee \quad & (pc_i = NC_i \wedge pc_i' = CR_i \wedge turn = i \wedge same(turn))\\
 \vee \quad & (pc_i = CR_i \wedge pc_i' = l_i \wedge turn' = (i+2) \text{ mod } 2)\\
 \vee \quad & (pc_i = NC_i \wedge pc_i' = NC_i \wedge turn \neq i \wedge same(turn))\\
@@ -1064,7 +1157,8 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 しかしながら，このプログラムに飢餓が起こらないことは保証できない．
 なぜなら，一方のプロセスは危険領域に入ることができずに，もう一方のプロセスは永遠に危険領域に留まることが認められるからである．
 後に，このような性質を定式化し，モデル化して検証するための方法を示す．</p>
-<h3 id="_13">遷移の粒度</h3>
+</div>
+<h4 id="_6">遷移の粒度</h4>
 <p>並行システムをモデル化する際には，遷移の<strong>粒度</strong> (granularity) をどう決めるかが重要である．
 <strong>原子的</strong> (atomic) な遷移を特定することは重要である．
 ここで遷移が原子的であるというのは，その遷移を部分的に実行しただけでは，システムの観察可能な状態が得られないという意味を指す．</p>
@@ -1101,7 +1195,7 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <p>次に，システムが <script type="math/tex">\alpha_0</script>, <script type="math/tex">\alpha_1</script>, <script type="math/tex">\alpha_2</script>, <script type="math/tex">\beta_0</script>, <script type="math/tex">\beta_1</script>, <script type="math/tex">\beta_2</script> を用いて実装されていたと仮定すると，<script type="math/tex">x=3</script> と <script type="math/tex">y=3</script> を満たす状態は到達可能である．
 ここで，システムを <script type="math/tex">\alpha</script> と <script type="math/tex">\beta</script> でモデル化した場合，システムが正しいという誤った結論になるかもしれない．</p>
 <p>プログラムのテキストや回路図から論理式を抽出することはコンパイル作業とみなすことができるが，このタスクはこのような粒度を考慮する必要がある．</p>
-<h3 id="_14">公平性</h3>
+<h2 id="37">3.7 公平性</h2>
 <p>モデルに欠けている詳細を補うために，どのように非決定性を利用するかについて示してきた．
 例として，並行プロセスのモデルを思い出して，次のような形式の並行プログラム <script type="math/tex">P</script> を考えてみよう．
 <script type="math/tex; mode=display"> \textbf{cobegin } P_1 || P_2 || \ldots || P_n \textbf{ coend} </script>
@@ -1134,8 +1228,16 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <script type="math/tex; mode=display"> \{s \in S | \sigma_1 \in L(s)\}, \ldots , \{s \in S | \sigma_n \in L(s)\} </script>
 </p>
 <p>得られた公平なクリプキ構造では，全てのプロセスが<strong>無限にしばしば</strong> (infinitely often) 実行されるようスケジュールされることが要求される．</p>
-<h2 id="_15">演習問題</h2>
-<div class="admonition note">
+<h2 id="_7">書誌情報</h2>
+<p>3.6 節の一階の論理表現を用いたプログラムの形式化は，Manna と Pnueli の著書 <sup id="fnref:369"><a class="footnote-ref" href="#fn:369">1</a></sup> の表現と同様である．
+システムのモデル化では，さらに多くの側面が考慮されうる．
+時間システムのモデル化の側面に関する議論は19章と20章に譲る．
+並行システムのモデル化は，CSP (Communicating Sequential Processes)，CCS (Calculus of Communicating Systems)，<script type="math/tex">\pi</script>計算 (\pi-calculus)，ペトリネットなど数多くの手法が考案されている．
+本章では，ハイブリッドシステムや確率モデルも扱っていない．
+これらのシステムと，さらに多くの側面は，モデル検査ハンドブック (Handbook of Model Checking) <sup id="fnref:138"><a class="footnote-ref" href="#fn:138">2</a></sup> のモデル化に関する章に記載されている．
+確率モデルについては，Baier と Katoen <sup id="fnref:35"><a class="footnote-ref" href="#fn:35">3</a></sup> で詳しく説明されている．</p>
+<h2 id="_8">演習問題</h2>
+<div class="admonition question">
 <p class="admonition-title">問題 3.2 (Verilog のモデル化)</p>
 <p>この演習問題の目的は，遷移システムのモデル化に自信を持つことである．
 この問題では，Verilog ハードウェア記述言語 (Verilog HDL) で与えられた回路記述のセマンティクスを形式化する．
@@ -1164,11 +1266,20 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
 <script type="math/tex">\textbf{reg}</script> キーワードで定義された信号が，モデルにおいて常に状態変数となるわけではない．理由を説明し，例を示せ．</li>
 </ol>
 </div>
-                
-              
-              
-                
-
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:369">
+<p>Z. Manna and A. Pnueli. The Temporal Logic of Reactive and Concurrent Systems: Specification . Springer, 1992.&#160;<a class="footnote-backref" href="#fnref:369" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:138">
+<p>E. M. Clarke, T. A. Henzinger, H. Veith, and R. Bloem. Handbook of Model Checking . Springer, 2018.&#160;<a class="footnote-backref" href="#fnref:138" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>C. Baier and J. Katoen. Principles of Model Checking . MIT Press, 2008.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -1177,12 +1288,12 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lec02/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../lec02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第2回" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1197,7 +1308,8 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
         </a>
       
       
-        <a href="../lec04/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../lec04/" class="md-footer__link md-footer__link--next" aria-label="Next: 第4回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -1215,14 +1327,15 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1232,12 +1345,14 @@ v_2' & = & (v_0 \wedge v_1) \oplus v_2
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       

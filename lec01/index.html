@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -18,32 +17,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,6 +228,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -223,43 +243,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    モデル検査とは
+  <a href="#21" class="md-nav__link">
+    2.1 形式手法の必要性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    形式手法の必要性
+  <a href="#22" class="md-nav__link">
+    2.2 ハードウェア・ソフトウェアの検証技術
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    ハードウェア・ソフトウェアの検証技術
-  </a>
-  
-    <nav class="md-nav" aria-label="ハードウェア・ソフトウェアの検証技術">
+    <nav class="md-nav" aria-label="2.2 ハードウェア・ソフトウェアの検証技術">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     シミュレーションとテスト
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     演繹的検証
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     モデル検査
   </a>
   
@@ -271,29 +284,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    モデル検査のプロセス
+  <a href="#23" class="md-nav__link">
+    2.3 モデル検査のプロセス
   </a>
   
-    <nav class="md-nav" aria-label="モデル検査のプロセス">
+    <nav class="md-nav" aria-label="2.3 モデル検査のプロセス">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     モデル化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     仕様の記述
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     検証
   </a>
   
@@ -305,29 +318,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    時相論理とモデル検査
+  <a href="#24" class="md-nav__link">
+    2.4 時相論理とモデル検査
   </a>
   
-    <nav class="md-nav" aria-label="時相論理とモデル検査">
+    <nav class="md-nav" aria-label="2.4 時相論理とモデル検査">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     時相論理とは
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     時相論理とプログラム証明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     モデル検査の複雑さ
   </a>
   
@@ -339,7 +352,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     記号的アルゴリズム
   </a>
   
@@ -347,15 +360,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     順序付き二分決定グラフ
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    記号モデル検査アルゴリズム
+  <a href="#25" class="md-nav__link">
+    2.5 記号モデル検査アルゴリズム
   </a>
   
 </li>
@@ -380,7 +393,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     半順序削減法
   </a>
   
@@ -388,21 +401,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     ソフトウェア検証における問題
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    半順序モデルに基づく状態空間の削減
+  <a href="#26" class="md-nav__link">
+    2.6 半順序モデルに基づく状態空間の削減
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     半順序削減法を用いたアルゴリズム
   </a>
   
@@ -414,36 +427,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    状態爆発へのその他のアプローチ
+  <a href="#27" class="md-nav__link">
+    2.7 状態爆発へのその他のアプローチ
   </a>
   
-    <nav class="md-nav" aria-label="状態爆発へのその他のアプローチ">
+    <nav class="md-nav" aria-label="2.7 状態爆発へのその他のアプローチ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     部分検証
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     抽象化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     対称性
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     帰納法
   </a>
   
@@ -552,6 +565,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -564,6 +607,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -578,43 +622,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    モデル検査とは
+  <a href="#21" class="md-nav__link">
+    2.1 形式手法の必要性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    形式手法の必要性
+  <a href="#22" class="md-nav__link">
+    2.2 ハードウェア・ソフトウェアの検証技術
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    ハードウェア・ソフトウェアの検証技術
-  </a>
-  
-    <nav class="md-nav" aria-label="ハードウェア・ソフトウェアの検証技術">
+    <nav class="md-nav" aria-label="2.2 ハードウェア・ソフトウェアの検証技術">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     シミュレーションとテスト
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     演繹的検証
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     モデル検査
   </a>
   
@@ -626,29 +663,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    モデル検査のプロセス
+  <a href="#23" class="md-nav__link">
+    2.3 モデル検査のプロセス
   </a>
   
-    <nav class="md-nav" aria-label="モデル検査のプロセス">
+    <nav class="md-nav" aria-label="2.3 モデル検査のプロセス">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     モデル化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     仕様の記述
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     検証
   </a>
   
@@ -660,29 +697,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    時相論理とモデル検査
+  <a href="#24" class="md-nav__link">
+    2.4 時相論理とモデル検査
   </a>
   
-    <nav class="md-nav" aria-label="時相論理とモデル検査">
+    <nav class="md-nav" aria-label="2.4 時相論理とモデル検査">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     時相論理とは
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     時相論理とプログラム証明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     モデル検査の複雑さ
   </a>
   
@@ -694,7 +731,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     記号的アルゴリズム
   </a>
   
@@ -702,15 +739,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     順序付き二分決定グラフ
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    記号モデル検査アルゴリズム
+  <a href="#25" class="md-nav__link">
+    2.5 記号モデル検査アルゴリズム
   </a>
   
 </li>
@@ -735,7 +772,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     半順序削減法
   </a>
   
@@ -743,21 +780,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     ソフトウェア検証における問題
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    半順序モデルに基づく状態空間の削減
+  <a href="#26" class="md-nav__link">
+    2.6 半順序モデルに基づく状態空間の削減
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     半順序削減法を用いたアルゴリズム
   </a>
   
@@ -769,36 +806,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    状態爆発へのその他のアプローチ
+  <a href="#27" class="md-nav__link">
+    2.7 状態爆発へのその他のアプローチ
   </a>
   
-    <nav class="md-nav" aria-label="状態爆発へのその他のアプローチ">
+    <nav class="md-nav" aria-label="2.7 状態爆発へのその他のアプローチ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     部分検証
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     抽象化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     対称性
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     帰納法
   </a>
   
@@ -821,10 +858,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="1">第1回 モデル検査とは</h1>
+
+
+<h1 id="1">第1回 モデル検査とは</h1>
 <p>この回では，教科書の第2章 "Introduction to 1st Edition" について説明します．</p>
-<div class="admonition 概要">
+<div class="admonition summary">
 <p class="admonition-title">概要</p>
 <ul>
 <li>モデル検査とは</li>
@@ -834,12 +872,11 @@
 <li>状態爆発への対処</li>
 </ul>
 </div>
-<h2 id="_1">モデル検査とは</h2>
 <p>モデル検査 (model checking) は有限状態の並行システムを自動的に検証するための技術で，従来の検証技術（シミュレーション，テスト，演繹的推論）と比較していろいろな利点がある．
 モデル検査は，順序回路の設計や通信プロトコルの検証に実際に使用されており，成功しているといえる．</p>
 <p>一方で，<strong>状態爆発</strong>（state explosion）という大きな問題もある．
 これは，相互作用する多くのコンポーネントをもつシステムや，多くの異なる値を仮定したデータ構造をもつシステムにおいて生じる問題で，グローバル状態の数が要素数に対して<strong>指数的に増加</strong>することに起因する．</p>
-<h2 id="_2">形式手法の必要性</h2>
+<h2 id="21">2.1 形式手法の必要性</h2>
 <p>ハードウェアおよびソフトウェアシステムは，電子商取引，電話交換ネットワーク，高速道路や航空交通の管制システム，医療機器など，障害が許容できないアプリケーションで広く使用されている．
 そのため，システムのエラーが何らかの障害の原因となることも多い．
 有名な事例では，1996 年 6 月 4 日に，打ち上げられて 40 秒も経たないうちに爆発したアリアン 5 ロケットの事故がある．
@@ -849,16 +886,16 @@
 <p>システムの信頼性向上は重要であることは明らかだが，システムが私たちの生活に関わることが多くなればなるほど，その正しさを保証するための負担も大きくなる．
 システムの継続的稼働への依存性が高いため，機能不全のシステムをシャットダウンするのももはや現実的とはいえないし，シャットダウンする際に機器の安全性が低下するケースもある．
 インターネットや，自動車，航空機などでの組込みシステムの普及により，計算機デバイスが正しく機能することへの依存度はどんどん高まっており，システムの正しさを保証する手法の開発は，今後ますます重要となる．</p>
-<h2 id="_3">ハードウェア・ソフトウェアの検証技術</h2>
+<h2 id="22">2.2 ハードウェア・ソフトウェアの検証技術</h2>
 <p>複雑システムを対象とする主要な検証手法は，シミュレーション，テスト，演繹的検証，そしてモデル検査である．
 それぞれの利点・欠点について以下で簡単に説明する．</p>
-<h3 id="_4">シミュレーションとテスト</h3>
-<p>シミュレーションとテストは，いずれもシステムを実地へと展開する前に実験を行うもので，違いとしてはシミュレーションが抽象化されたシステムに対して実行されるのに対し，テストは実際の製品に対して実行される．
+<h3 id="_1">シミュレーションとテスト</h3>
+<p>シミュレーションとテスト<sup id="fnref:396"><a class="footnote-ref" href="#fn:396">1</a></sup> は，いずれもシステムを実地へと展開する前に実験を行うもので，違いとしてはシミュレーションが抽象化されたシステムに対して実行されるのに対し，テストは実際の製品に対して実行される．
 例えばデジタル回路であれば，シミュレーションは回路の設計上で行われるし，テストは完成した回路そのものに対して実施される．
 これらの手法はいずれも，システムに特定の入力を与えた上で，対応する出力を観察することで行われる．
 利点としては，コスト効率よく多くのエラーを発見することができる．
 しかしながら，起こり得る相互作用や潜在する危険をすべてチェックするのはほぼ不可能である.</p>
-<h3 id="_5">演繹的検証</h3>
+<h3 id="_2">演繹的検証</h3>
 <p>演繹的検証（deductive verification）という用語は，通常は公理や推論規則を用いてシステムの正しさを証明することを指す．
 初期の研究では，クリティカルシステムの正しさを保証することに主眼が置かれていたので，開発者や検証の専門家 (数学者や論理学者) がシステムの検証に時間をいくらでも費やせることが前提とされていた．
 当初は証明がすべて人手で行われていたが，公理と推論規則の正しい使用を遵守させるソフトウェアツールを開発可能であることが，研究者に認識された．
@@ -868,13 +905,13 @@
 しかし，演繹的検証は時間のかかるプロセス（ときには，数日から数ヶ月を要することさえある）であり，実施にはかなりの専門知識を要する．
 結果として，演繹的検証が利用されることは非常に稀で，安全に使用できることを保証するために十分なリソースを投資する必要がある，セキュリティ・プロトコルなどの機密性の高いシステムに対して適用される．</p>
 <p>そもそも，ある種の数学的なタスクはアルゴリズム的に実現できないと認識する必要がある．
-計算可能性（computability）の理論は，アルゴリズムで決定可能な問題に関する制約を与えており，特に，プログラムの停止性を判定可能なアルゴリズムが存在しないことを示している．
+計算可能性（computability）<sup id="fnref:282"><a class="footnote-ref" href="#fn:282">2</a></sup> の理論は，アルゴリズムで決定可能な問題に関する制約を与えており，特に，プログラムの停止性を判定可能なアルゴリズムが存在しないことを示している．
 つまり，プログラムが正しく終了することを自動的に検証することは不可能であり，自動検証が可能な問題にも制約があることも示している．
 したがって，ほとんどの証明系は完全に自動化することができない．</p>
 <p>演繹的検証の利点は，無限の状態をもつシステムを証明できることである．
 この処理は限られた範囲で自動化することも可能である．
 しかし，仮に検証すべき性質が成り立っていたとしても，証明を見つけるために必要な時間やメモリの量に制約を設けることは不可能である．</p>
-<h3 id="_6">モデル検査</h3>
+<h3 id="_3">モデル検査</h3>
 <p>モデル検査は，<strong>有限状態</strong>の並行システムを対象とした検証技術となる．
 こうした制限を設ける一つの利点として，検証を自動化することが可能となる．</p>
 <p>モデル検査では，仕様が真かどうかを決定するために，システムの状態空間の網羅的探索 (exhaustive search) を行う．
@@ -887,19 +924,19 @@
 例えば，無制限のメッセージキューをもつプログラムを，キューのサイズを 2 または 3 といった小さい値へと制限することでデバッグすることができる．</p>
 <p>モデル検査は自動化できるため，利用できるのであれば演繹的検証よりも望ましい．
 しかし，完全な検証のために演繹的検証が必要となるような重要なアプリケーションは常に存在する．
-一つの研究として，演繹的検証とモデル検査を統合することで，複雑なシステムの有限状態部分を自動的に検証する試みがなされている．</p>
-<h2 id="_7">モデル検査のプロセス</h2>
+一つの興味深い研究の方向性<sup id="fnref:427"><a class="footnote-ref" href="#fn:427">3</a></sup> として，演繹的検証とモデル検査を統合することで，複雑なシステムの有限状態部分を自動的に検証する試みがなされている．</p>
+<h2 id="23">2.3 モデル検査のプロセス</h2>
 <p>モデル検査を実際の問題へと適用するためのプロセスは，以下の３つのタスクへと分類される．</p>
-<h3 id="_8">モデル化</h3>
+<h3 id="_4">モデル化</h3>
 <p>最初の作業は，設計をモデル検査ツールで扱えるようなある種の形式的な枠組みへと変換することである．
 多くの場合，これは単なるコンパイル作業となる．
 その他の場合，時間とメモリの制約から，関連がない，あるいは重要でない詳細部分を抽象化することが設計のモデル化において求められるかもしれない．</p>
-<h3 id="_9">仕様の記述</h3>
+<h3 id="_5">仕様の記述</h3>
 <p>検証の前に，設計が満たすべき特性（仕様という）を何らかの枠組みに基づいて記述する必要がある．
 モデル検査では，仕様の記述に，システムの動作が時間に伴ってどのように変化するかを記述する論理である，時相論理 (temporal logic) を用いることが一般的である．</p>
 <p>仕様記述における重要な問題は，完全性（completeness）である．
 モデル検査は，設計に対するモデルが与えられた仕様を満たすかどうかを判定することはできても，与えられた仕様がシステムが満たすべきすべての特性を網羅しているかどうかは判断できない．</p>
-<h3 id="_10">検証</h3>
+<h3 id="_6">検証</h3>
 <p>検証作業は完全に自動化されるのが理想であるが，実際には人の手による補助を伴うことが多い．
 その一つが，検証結果の分析である．
 否定的な結果が得られた場合，モデル検査では<strong>反例</strong>（counter-example）と呼ばれる実行系列を得ることができる．
@@ -908,24 +945,24 @@
 <p>システムの誤ったモデル化や誤った仕様に起因して反例が生じること（しばしば false negative と呼ばれる）もあるが，反例解析は，こういった二つの問題を特定して修正することにも有用である．</p>
 <p>最後の可能性として，モデルのサイズが大きすぎたために，検証が正常に終了しないこともある．
 この場合，モデル検査ツールのパラメータを変更するか，モデルの修正（例えば，さらなる抽象化）を施した上で，検証をやり直すことになる．</p>
-<h2 id="_11">時相論理とモデル検査</h2>
-<h3 id="_12">時相論理とは</h3>
-<p>もともと時相論理は哲学の分野において，自然言語における時間の用いられ方を議論するために開発されてきたものである．
+<h2 id="24">2.4 時相論理とモデル検査</h2>
+<h3 id="_7">時相論理とは</h3>
+<p>もともと時相論理は哲学の分野において，自然言語における時間の用いられ方を議論するために開発されてきたものである<sup id="fnref:287"><a class="footnote-ref" href="#fn:287">4</a></sup>．
 時相論理は，時間を明示的に導入することなく時間に伴うイベントの順序を記述できることから，並行システムを特徴付けるのに有用である．
-この教科書では，時相論理式の意味（つまり，式がどういうときに真と評価されるか）は，Kripke 構造と呼ばれるラベル付き状態遷移グラフを基に決定される．
+この教科書では，時相論理式の意味（つまり，式がどういうときに真と評価されるか）は，Kripke 構造<sup id="fnref2:287"><a class="footnote-ref" href="#fn:287">4</a></sup> と呼ばれるラベル付き状態遷移グラフを基に決定される．
 時相論理は，時間の流れが線形（linear）構造をもつと仮定するか，分岐（branch）構造をもつと仮定するかによって分類される．</p>
-<p>時相論理には様々なクラスがあるが，そのほとんどは \(\textbf{G}f\) という形式の演算子をもつ．
-この式は，\(f\) が未来において常に真となる（つまり，\(f\) が大域的に (globally) 真である）場合，現在において真となる．
-例えば，2 つの事象 \(e_1\) と \(e_2\) が同時に発生しないことを表現したい場合，\(\textbf{G}(\neg e_1 \vee \neg e_2)\) と書くことになる．</p>
-<h3 id="_13">時相論理とプログラム証明</h3>
-<p>Burstall，Kroger，Pnueli などの研究者たちはコンピュータプログラムの証明に時相論理を利用することを提案したが，並行性 (concurrency) についての証明に時相論理を用いたのは，Pnueli が最初の人物である．
+<p>時相論理には様々なクラスがあるが，そのほとんどは <script type="math/tex">\textbf{G}f</script> という形式の演算子をもつ．
+この式は，<script type="math/tex">f</script> が未来において常に真となる（つまり，<script type="math/tex">f</script> が大域的に (globally) 真である）場合，現在において真となる．
+例えば，2 つの事象 <script type="math/tex">e_1</script> と <script type="math/tex">e_2</script> が同時に発生しないことを表現したい場合，<script type="math/tex">textbf{G}(\neg e_1 \vee \neg e_2</script> と書くことになる．</p>
+<h3 id="_8">時相論理とプログラム証明</h3>
+<p>Burstall<sup id="fnref:97"><a class="footnote-ref" href="#fn:97">5</a></sup>，Kröger<sup id="fnref:320"><a class="footnote-ref" href="#fn:320">6</a></sup>，Pnueli<sup id="fnref:417"><a class="footnote-ref" href="#fn:417">7</a></sup> などの研究者たちはコンピュータプログラムの証明に時相論理を利用することを提案したが，並行性 (concurrency) についての証明に時相論理を用いたのは，Pnueli<sup id="fnref2:417"><a class="footnote-ref" href="#fn:417">7</a></sup> が最初の人物である．
 Pnueli のアプローチは，プログラムの個々の文の振る舞いを記述した公理の集合を基に，対象となるプログラムの特性を証明するものだった．
-Bochmann や Malachi と Owicki によって，この手法が順序回路へと拡張された．
+Bochmann<sup id="fnref:68"><a class="footnote-ref" href="#fn:68">8</a></sup> や Malachi と Owicki<sup id="fnref:366"><a class="footnote-ref" href="#fn:366">9</a></sup> によって，この手法が順序回路へと拡張された．
 証明は人手によって作成されるため，この手法を実際に使用するのは困難な場合が多かった．</p>
-<p>1980 年代の初頭に Clarke と Emerson によって時相論理のモデル検査アルゴリズムが提案されたことで，証明を自動化できるようになった．
+<p>1980 年代の初頭に Clarke と Emerson<sup id="fnref:123"><a class="footnote-ref" href="#fn:123">10</a></sup><sup id="fnref:201"><a class="footnote-ref" href="#fn:201">11</a></sup> によって時相論理のモデル検査アルゴリズムが提案されたことで，証明を自動化できるようになった．
 あるモデルがある式を満たすか検証することは，すべてのモデルについての式の妥当性を証明するよりはるかに簡単なので，この技術は非常に効率的に実装できた．
 Clarke と Emerson が開発した分岐時間論理 CTL のモデル検査アルゴリズムは，検査対象システムのモデルと時相論理による仕様の両方のサイズに関して多項式（polynomial）時間であった．</p>
-<p>さらに，アルゴリズムの複雑さを変えることなく公平性（fairness）を扱うための手法についても示した．
+<p>さらに，アルゴリズムの複雑さを変えることなく公平性（fairness）<sup id="fnref:234"><a class="footnote-ref" href="#fn:234">12</a></sup> を扱うための手法についても示した．
 多くの並行プログラムの正しさは，ある種の公平性の仮定に依存することから，これは重要な一歩であった．
 例えば，相互排他アルゴリズムにおいて飢餓状態（starvation）が存在しないことは，各プロセスが無限にしばしば（infinitely often）実行されるという仮定に依存する可能性がある．</p>
 <div class="admonition tip">
@@ -935,36 +972,37 @@ Clarke と Emerson が開発した分岐時間論理 CTL のモデル検査ア�
 こういう偏った実行系列を排除するための制約は，公平性制約と呼ばれる．
 公平性制約として与えられた条件式が無限に満たされるような実行系列のみが，検証の対象となる．</p>
 </div>
-<p>ほぼ同時期に Queille と Sifakis も，CTL のサブセットを対象としたモデル検査アルゴリズムを提案している．
-後に Clarke, Emerson, Sistla は，式の長さと状態遷移グラフの大きさの積に対して線形時間となる改良アルゴリズムを考案した．
-初期のモデル検査システムは，\(10^4\) から \(10^5\) 程度の状態をもつ状態遷移グラフを毎秒 100 状態程度の速度で検証するものだった．
+<p>ほぼ同時期に Queille と Sifakis<sup id="fnref:425"><a class="footnote-ref" href="#fn:425">13</a></sup> も，CTL のサブセットを対象としたモデル検査アルゴリズムを提案している．
+後に Clarke, Emerson, Sistla<sup id="fnref:125"><a class="footnote-ref" href="#fn:125">14</a></sup> は，式の長さと状態遷移グラフの大きさの積に対して線形時間となる改良アルゴリズムを考案した．
+このアルゴリズムは EMC モデル検査器に実装されて広く用いられており，数多くのネットワークプロトコルや順序回路の検証に用いられた<sup id="fnref:81"><a class="footnote-ref" href="#fn:81">15</a></sup><sup id="fnref:82"><a class="footnote-ref" href="#fn:82">16</a></sup><sup id="fnref:83"><a class="footnote-ref" href="#fn:83">17</a></sup><sup id="fnref:84"><a class="footnote-ref" href="#fn:84">18</a></sup><sup id="fnref2:125"><a class="footnote-ref" href="#fn:125">14</a></sup><sup id="fnref:187"><a class="footnote-ref" href="#fn:187">19</a></sup><sup id="fnref:392"><a class="footnote-ref" href="#fn:392">20</a></sup>．
+初期のモデル検査システムは，10<sup>4</sup> から 10<sup>5</sup> 程度の状態をもつ状態遷移グラフを毎秒 100 状態程度の速度で検証するものだった．
 このような制限にもかかわらず，モデル検査は，公開された回路設計における未知の誤りを発見することに成功していた．</p>
-<h3 id="_14">モデル検査の複雑さ</h3>
-<p>Sistla と Clarke はさまざまな時相論理のモデル検査問題を分析し，特に線形時間論理 LTL に ついては PSPACE 完全であることを示した．
-Pnueli と Lichtenstein は LTL 式の検証の複雑さに関すしてさらに分析を行い，複雑さは式の長さに対して指数的（exponential）であるが，状態グラフ全体の大きさに対しては線形的であることを発見し，短い論理式に対しては線形時間モデル検査の複雑さも許容できるかもしれないと主張した．
-同じ年に，Fujita は LTL 式を対象と したタブロー（tableau）に基づく検証システムを実装し，ハードウェア検証にどのように利用できるかを示した.</p>
+<h3 id="_9">モデル検査の複雑さ</h3>
+<p>Sistla と Clarke<sup id="fnref:453"><a class="footnote-ref" href="#fn:453">21</a></sup><sup id="fnref:454"><a class="footnote-ref" href="#fn:454">22</a></sup> はさまざまな時相論理のモデル検査問題を分析し，特に線形時間論理 LTL に ついては PSPACE 完全であることを示した．
+Pnueli と Lichtenstein<sup id="fnref:354"><a class="footnote-ref" href="#fn:354">23</a></sup> は LTL 式の検証の複雑さに関してさらに分析を行い，複雑さは式の長さに対して指数的（exponential）であるが，状態グラフ全体の大きさに対しては線形的であることを発見し，短い論理式に対しては線形時間モデル検査の複雑さも許容できるかもしれないと主張した．
+同じ年に，Fujita<sup id="fnref:233"><a class="footnote-ref" href="#fn:233">24</a></sup> は LTL 式を対象としたタブロー（tableau）に基づく検証システムを実装し，ハードウェア検証にどのように利用できるかを示した.</p>
 <p>CTL* は，分岐時間と線形時間の演算子の両方を組み合わせた非常に表現力の高い論理である．
-この論理に対するモデル検査問題は，最初の議論で PSPACE 完全であることが示されており，一般的な複雑さにおいて LTL のモデル検査問題と同じクラスにあることが証明された．
-つまり，CTL* と LTL のモデル検査は，状態グラフの大きさと式の長さの両方に対して同じ複雑さをもっており，モデル検査の複雑さに関しては，線形時間論理のみに限定することに実用上の利点はないということがわかった．</p>
+この論理に対するモデル検査問題は，文献<sup id="fnref:124"><a class="footnote-ref" href="#fn:124">25</a></sup> で初めに議論され，PSPACE 完全であることが示されており，一般的な複雑さにおいて LTL のモデル検査問題と同じクラスにあることが証明された．
+つまり，CTL* と LTL のモデル検査は，状態グラフの大きさと式の長さの両方に対して同じ複雑さをもっており，モデル検査の複雑さに関しては，線形時間論理のみに限定することに実用上の利点はないということがわかった<sup id="fnref:209"><a class="footnote-ref" href="#fn:209">26</a></sup>．</p>
 <p>並行システムの検証を目的としたその他の技術も，多くの研究者によって提案されている．
 これらのアプローチの多くは，実装だけでなく仕様の記述にもオートマトンを用いており，実装の検証は，その振る舞いが 仕様の振る舞いに適合しているかを判定するために行われる．
 実装と仕様の両方に同じ形式のモデルを用いているため，ある段階での実装は，詳細化の次の段階に対する仕様としても利用することができる．
-言語包含性の利用は，暗黙的に Kurshan による業績に含まれていたが，最終的には強力な検証器である COSPAN の開発につながった．
-Vardi と Wolper は，自動検証のために <script type="math/tex">\omega</script> オートマトン（無限長の語に対するオートマトン）を利用することを最初に提案した．
+言語包含性の利用は，暗黙的に Kurshan による業績<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">27</a></sup> に含まれていたが，最終的には強力な検証器である COSPAN<sup id="fnref:265"><a class="footnote-ref" href="#fn:265">28</a></sup><sup id="fnref:330"><a class="footnote-ref" href="#fn:330">29</a></sup><sup id="fnref:263"><a class="footnote-ref" href="#fn:263">30</a></sup> の開発につながった．
+Vardi と Wolper<sup id="fnref:479"><a class="footnote-ref" href="#fn:479">31</a></sup> は，自動検証のために <script type="math/tex">\omega</script> オートマトン（無限長の語に対するオートマトン）を利用することを最初に提案した．
 彼らは，<script type="math/tex">\omega</script> オートマトン間の言語包含性の観点から，線形時間論理に関するモデル検査問題がどのように定式化できるかを示した．
-また，観測等価（observational equivalence）や様々な詳細化（refinement）関係 を含んだ，オートマトン間の適合性に関するその他の概念も検討されている．</p>
-<h2 id="_15">記号的アルゴリズム</h2>
-<h3 id="_16">順序付き二分決定グラフ</h3>
+また，観測等価（observational equivalence）<sup id="fnref:148"><a class="footnote-ref" href="#fn:148">32</a></sup><sup id="fnref:388"><a class="footnote-ref" href="#fn:388">33</a></sup><sup id="fnref:433"><a class="footnote-ref" href="#fn:433">34</a></sup> や様々な詳細化（refinement）関係<sup id="fnref2:148"><a class="footnote-ref" href="#fn:148">32</a></sup><sup id="fnref:387"><a class="footnote-ref" href="#fn:387">35</a></sup><sup id="fnref:432"><a class="footnote-ref" href="#fn:432">36</a></sup> を含んだ，オートマトン間の適合性に関するその他の概念も検討されている．</p>
+<h2 id="_10">記号的アルゴリズム</h2>
+<h3 id="_11">順序付き二分決定グラフ</h3>
 <p>もともとのモデル検査アルゴリズムの実装では，遷移関係は隣接リストを用いて明示的に表現されていた．
 プロセス数の少ない並行システムであれば，このアプローチは十分に実用的であった．
 しかし，多数の並列要素をもつシステムでは，大域的な状態遷移グラフにおける状態数があまりに多いため，扱うことができなかった．</p>
-<p>1987 年秋，当時カーネギーメロン大学の大学院生だった McMillan は，状態遷移グラフに記号的表現（symbolic representation）を使用することで，非常に大規模なシステムを検証できることを発見した．
-この新しい表現は，Bryant の順序付き二分決定グラフ（Ordered Binary Decision Diagram, OBDD）に基づくものだった．
+<p>1987 年秋，当時カーネギーメロン大学の大学院生だった McMillan<sup id="fnref:96"><a class="footnote-ref" href="#fn:96">39</a></sup><sup id="fnref:376"><a class="footnote-ref" href="#fn:376">40</a></sup> は，状態遷移グラフに記号的表現（symbolic representation）を使用することで，非常に大規模なシステムを検証できることを発見した．
+この新しい表現は，Bryant の順序付き二分決定グラフ（Ordered Binary Decision Diagram, OBDD）<sup id="fnref:87"><a class="footnote-ref" href="#fn:87">41</a></sup> に基づくものだった．
 OBDD は多くの場合，和積標準形（conjunctive normal form）や積和標準形（disjunctive normal form）よりも大幅にコンパクトな表現となるブール式の標準形であり，非常に効率的な演算アルゴリズムも開発されてきた．
 OBDD は，回路やプロトコルによって規定される状態空間の規則性の一部をうまく捉えているため，状態数の極めて大きな システムでも効率的な処理が可能となる．
-実際，Clarke と Emerson によるオリジナルの CTL モデル検査アルゴリズムに OBDD 表現を用いることで，\(10^{20}\) を越える状態をもついくつかの例を検証することができた．
-それ以降も OBDD ベースの技術にはさまざまな改良がなされており，扱うことのできる状態数は \(10^{120}\) 以上にまで増加している．</p>
-<h3 id="_17">記号モデル検査アルゴリズム</h3>
+実際，Clarke と Emerson によるオリジナルの CTL モデル検査アルゴリズム<sup id="fnref2:123"><a class="footnote-ref" href="#fn:123">10</a></sup> に OBDD 表現を用いることで，10<sup>20</sup> を越える状態をもついくつかの例を検証することができた<sup id="fnref2:96"><a class="footnote-ref" href="#fn:96">39</a></sup><sup id="fnref2:376"><a class="footnote-ref" href="#fn:376">40</a></sup>．
+それ以降も OBDD ベースの技術にはさまざまな改良がなされており，扱うことのできる状態数は 10<sup>120</sup> 以上にまで増加している<sup id="fnref:94"><a class="footnote-ref" href="#fn:94">42</a></sup><sup id="fnref:95"><a class="footnote-ref" href="#fn:95">43</a></sup>．</p>
+<h3 id="25">2.5 記号モデル検査アルゴリズム</h3>
 <p>この非明示的な表現は，順序回路やプロトコルのモデル化においては非常に自然である．
 それぞれの状態は，回路またはプロトコルに関連付けられた状態変数の集合に対するブール値の割り当てとして符号化される．
 したがって遷移関係は，遷移前と遷移後の状態をそれぞれ符号化する二つの変数集合に対するブール式として表現される．
@@ -974,23 +1012,23 @@ OBDD ベースのモデル検査アルゴリズムは，遷移関係から得ら
 そして実装においては，述語変換系と不動点がいずれも OBDD として表現される．
 これにより，並行システムの状態グラフを明示的に構築することが避けられる.</p>
 <h3 id="smv">SMV</h3>
-<p>McMillan が開発したモデル検査システムが SMV（Symbolic Model Verifier）である．
+<p>McMillan が開発したモデル検査システムが SMV（Symbolic Model Verifier）<sup id="fnref3:376"><a class="footnote-ref" href="#fn:376">40</a></sup> である．
 SMV は有限状態の並行システムを階層的に記述する言語（SMV 言語という）をもつ．
 SMV 言語で記述されたプログラムは，時相論理で表現された仕様を注釈として付けることができる．
 SMVは，SMV 言語によるプログラムから OBDD として表現された遷移系を抽出し，OBDD ベースの探索アルゴリズムを用いて，システムが仕様を満たすかどうかの判定を行う．
 遷移系が仕様を満たさない場合，その仕様が偽である理由を示す実行系列を生成する．</p>
 <p>印象的な例として，IEEE Futurebus+ 規格のキャッシュコヒーレンスプロトコルの検証が挙げられる．
 このプロトコルの開発は 1988 年に開始されたが，それまでの検証の試みはすべて非形式的なものだった．
-1992 年の夏，カーネギーメロン大学の研究者たちが SMV 言語でプロトコルの精密なモデルを構築することで，得られた遷移システムがキャッシュコヒーレンスの形式的仕様を満たしているかの検証を試みた．
+1992 年の夏，カーネギーメロン大学の研究者たち<sup id="fnref:129"><a class="footnote-ref" href="#fn:129">44</a></sup><sup id="fnref:361"><a class="footnote-ref" href="#fn:361">45</a></sup> が SMV 言語でプロトコルの精密なモデルを構築することで，得られた遷移システムがキャッシュコヒーレンスの形式的仕様を満たしているかの検証を試みた．
 その結果として，これまで検出されなかった多くのエラーや潜在的なエラーを発見することに成功した．</p>
 <p>記号的な技術の威力を示す指標の一つは，対象システムの規模が大きくなるにつれて，検証に必要な CPU 時間がどのように増加するかである．
-さまざまな研究を通して，この増加率は回路のコンポーネント数に対して次数の小さな多項式程度であることがわかっている．</p>
+さまざまな研究を通して，この増加率は回路のコンポーネント数に対して次数の小さな多項式程度であることがわかっている<sup id="fnref:44"><a class="footnote-ref" href="#fn:44">46</a></sup><sup id="fnref2:94"><a class="footnote-ref" href="#fn:94">42</a></sup><sup id="fnref2:95"><a class="footnote-ref" href="#fn:95">43</a></sup>．</p>
 <h3 id="obdd">OBDD に基づくその他のアプローチ</h3>
 <p>他の多くの研究者も，OBDD が大規模な状態遷移系の表現に利用できることを独自に発見している．
-Coudert, Berthet, Madre は，二つの決定性有限オートマトン間の等価性を，積オートマトンの状態空間を幅優先探索することにによって示すアルゴリズムを開発しているが，オートマトンの遷移の表現に OBDD を用いている．
-同様のアルゴリズムは Pixley によっても開発されている．
-さらに，Bose と Fisher，Pixley，Coudert らを含むいくつかの研究グループが，OBDD を用いたモデル検査アルゴリズムに対する実験を行っている．</p>
-<p>その他の関連研究として，Bryant，Seger，Beatty は，制限された線形時間論理におけるモデル検査アルゴリズムを開発した．
+Coudert, Berthet, Madre<sup id="fnref:158"><a class="footnote-ref" href="#fn:158">47</a></sup> は，二つの決定性有限オートマトン間の等価性を，積オートマトンの状態空間を幅優先探索することにによって示すアルゴリズムを開発しているが，オートマトンの遷移の表現に OBDD を用いている．
+同様のアルゴリズムは Pixley<sup id="fnref:414"><a class="footnote-ref" href="#fn:414">48</a></sup><sup id="fnref:415"><a class="footnote-ref" href="#fn:415">49</a></sup><sup id="fnref:416"><a class="footnote-ref" href="#fn:416">50</a></sup> によっても開発されている．
+さらに，Bose と Fisher<sup id="fnref:73"><a class="footnote-ref" href="#fn:73">51</a></sup>，Pixley<sup id="fnref2:414"><a class="footnote-ref" href="#fn:414">48</a></sup>，Coudert ら<sup id="fnref:159"><a class="footnote-ref" href="#fn:159">52</a></sup> を含むいくつかの研究グループが，OBDD を用いたモデル検査アルゴリズムに対する実験を行っている．</p>
+<p>その他の関連研究として，Bryant，Seger，Beatty<sup id="fnref2:44"><a class="footnote-ref" href="#fn:44">46</a></sup><sup id="fnref:90"><a class="footnote-ref" href="#fn:90">53</a></sup> は，制限された線形時間論理におけるモデル検査アルゴリズムを開発した．
 仕様は，この論理で記述された事前条件（precondition）と事後条件（postcondition）の組として構成される．
 事前条件は回路への入力と 初期状態を制限するために用いられ，事後条件はユーザーが検査したい特性を与えるために用いられる．
 この論理における式は次のような形に限定されている．
@@ -1000,37 +1038,37 @@ p_0 \wedge \textbf{X} p_1 \wedge \textbf{X}^2 p_2 \wedge \cdots \wedge \textbf{X
 この文法には，他の多くの時相論理に比べて強い制約が設けられている．
 特に，許される唯一の論理演算子は論理積であり，唯一の時相演算子は次の状態（next time）を表す演算子（<script type="math/tex"> \textbf{X} </script>）である．
 このように，扱える式のクラスを制限することで，検証を効率化することが可能となる．</p>
-<h2 id="_18">半順序削減法</h2>
-<h3 id="_19">ソフトウェア検証における問題</h3>
+<h2 id="_12">半順序削減法</h2>
+<h3 id="_13">ソフトウェア検証における問題</h3>
 <p>ソフトウェアの検証では，ハードウェアとは異なりモデル検査を行う際にいろいろな問題が発生する．
 ソフトウェアはハードウェアと比較してあまり構造化されておらず，また，並行ソフトウェアは通常非同期（asynchronous），つまり大域的に同期されたクロックなしで独立に実行される．
 これらの理由から，ソフトウェア検証において状態爆発は特に深刻な問題となる．</p>
-<p>近年，ソフトウェア検証の状態爆発問題については，かなりの進歩が見られるが，この問題に対処する最も成功した技術の一つは，半順序削減法（partial order reduction）に基づくものである．
+<p>近年，ソフトウェア検証の状態爆発問題については，かなりの進歩が見られるが，この問題に対処する最も成功した技術の一つは，半順序削減法（partial order reduction）<sup id="fnref:249"><a class="footnote-ref" href="#fn:249">54</a></sup><sup id="fnref:405"><a class="footnote-ref" href="#fn:405">55</a></sup><sup id="fnref:473"><a class="footnote-ref" href="#fn:473">56</a></sup> に基づくものである．
 この技術は，並列に実行されるイベントの独立性を利用している．
 どの順序で実行されても同じグローバル状態に到達するようなイベントは，互いに独立（independent）であるという．</p>
-<h3 id="_20">半順序モデルに基づく状態空間の削減</h3>
+<h3 id="26">2.6 半順序モデルに基づく状態空間の削減</h3>
 <p>並行ソフトウェアを表現する一般的なモデルは交互実行モデル（interleaving model）で，一つの実行におけるすべてのイベントが交互実行系列（interleaving sequence）と呼ばれる線形順序で配置される．
 ここで独立したイベントは，互いに任意の順序で実行できるが，ほとんどの論理では独立したイベントを異なる順序で実行する交互実行系列どうしは区別される．
 結果として，独立したイベントに対するすべての交互実行が考慮されるため，状態空間も非常に大きくなる．</p>
 <p>ここで仮に，仕様が独立したイベントの順序のみ異なる交互実行系列を区別できないのであれば，そのうちの一つのみ解析すれば十分である．
 プログラム実行の半順序モデル（partial order model of program execution）では，並列に実行されるイベントは順序付けされず，半順序関係をもつ実行を複数の交互実行系列に対応させることができる．
 このモデルではこうした複数の系列を区別しないので，イベントの半順序関係それぞれに対して一つの交互実行系列のみを選択することで，考慮すべき系列の個数を削減することが可能となる．</p>
-<h3 id="_21">半順序削減法を用いたアルゴリズム</h3>
+<h3 id="_14">半順序削減法を用いたアルゴリズム</h3>
 <p>独立に実行される遷移の交互実行から，部分集合のみを選択することで状態空間を削減するアイデアは，多くの研究者によって研究されてきた．
-このような削減手法を提案した最初の研究者の一人は，Overman である．
+このような削減手法を提案した最初の研究者の一人は，Overman<sup id="fnref:399"><a class="footnote-ref" href="#fn:399">58</a></sup> である．
 しかし，彼は，ループと非決定的選択を含まない，制限された並行モデルのみを考慮していた．
-Katz と Peled の証明系は，同様の半順序関係をもつ実行に対応する，交互実行系列の間での同値関係の利用を提案している．
+Katz と Peled<sup id="fnref:306"><a class="footnote-ref" href="#fn:306">59</a></sup> の証明系は，同様の半順序関係をもつ実行に対応する，交互実行系列の間での同値関係の利用を提案している．
 この証明系には，交互実行系列のすべてではなく，選択された一部について証明するための推論規則が含まれている．</p>
 <p>いくつかの論文で，半順序削減法を組み込んだモデル検査アルゴリズムが提案されている．
-Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 集合は，詳細は異なるが，多くの類似したアイデアを含んでいる．
+Valmari の stubborn 集合<sup id="fnref2:473"><a class="footnote-ref" href="#fn:473">56</a></sup>，Godefroid の persistent 集合<sup id="fnref:246"><a class="footnote-ref" href="#fn:246">60</a></sup>，Peled の ample 集合<sup id="fnref2:405"><a class="footnote-ref" href="#fn:405">55</a></sup> は，詳細は異なるが，多くの類似したアイデアを含んでいる．
 この教科書では，ample 集合に基づく手法を説明する．
-実行の半順序モデルと全順序モデルの関係に関する同様の観察に基づくその他の手法は，McMillan の unfolding technique と Godefroid の sleep 集合 である．</p>
-<h2 id="_22">状態爆発へのその他のアプローチ</h2>
+実行の半順序モデルと全順序モデルの関係に関する同様の観察に基づくその他の手法は，McMillan の unfolding technique<sup id="fnref:375"><a class="footnote-ref" href="#fn:375">61</a></sup> と Godefroid の sleep 集合<sup id="fnref2:246"><a class="footnote-ref" href="#fn:246">60</a></sup> である．</p>
+<h2 id="27">2.7 状態爆発へのその他のアプローチ</h2>
 <p>記号的表現と半順序削減法により，検証可能なシステムのサイズは大幅に拡大したが，未だに現実のシステムの多くは大きすぎて扱うことができない．
 そのため，検証可能なシステムのサイズを拡大するために，記号的手法と組み合わせて利用できる技術を見つけることが重要である．
 そのような技術として，部分検証（compositional reasoning），抽象化（abstraction），対称性（symmetry），および帰納法 （induction）の 4 つがある．</p>
-<h3 id="_23">部分検証</h3>
-<p>一つ目の手法は，複雑な回路やプロトコルのモジュール構造（modular structure）を利用するものである．
+<h3 id="_15">部分検証</h3>
+<p>一つ目の手法は，複雑な回路やプロトコルのモジュール構造（modular structure）を利用するものである<sup id="fnref:143"><a class="footnote-ref" href="#fn:143">62</a></sup><sup id="fnref:253"><a class="footnote-ref" href="#fn:253">63</a></sup><sup id="fnref:255"><a class="footnote-ref" href="#fn:255">64</a></sup><sup id="fnref:295"><a class="footnote-ref" href="#fn:295">65</a></sup><sup id="fnref:296"><a class="footnote-ref" href="#fn:296">66</a></sup><sup id="fnref:343"><a class="footnote-ref" href="#fn:343">67</a></sup><sup id="fnref:420"><a class="footnote-ref" href="#fn:420">68</a></sup><sup id="fnref:450"><a class="footnote-ref" href="#fn:450">69</a></sup>．
 多くの有限状態システムは，並列に動作する複数のプロセスから構成される．
 このようなシステムの仕様は，しばしば，システムの小さな一部の動作を記述する特性へと分解可能である．
 露骨な戦略として，それぞれの局所的な特性を，対応するシステムの一部のみを用いて検証することが考えられる．
@@ -1038,18 +1076,18 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
 <p>構成要素間の相互依存によって，この単純な部分検証が実行不可能な場合，より複雑な戦略が求められる．
 このような場合，ある構成要素の特性を検証する際に，他の構成要素の動作について仮定を設ける必要がある．
 この仮定は，他の構成要素の正しさが示された後に解除されなければならない．
-この戦略は，仮定・保証証明（assume-guarantee reasoning）と呼ばれる．</p>
-<h3 id="_24">抽象化</h3>
+この戦略は，仮定・保証証明（assume-guarantee reasoning）<sup id="fnref2:255"><a class="footnote-ref" href="#fn:255">64</a></sup><sup id="fnref2:295"><a class="footnote-ref" href="#fn:295">65</a></sup><sup id="fnref2:296"><a class="footnote-ref" href="#fn:296">66</a></sup><sup id="fnref:393"><a class="footnote-ref" href="#fn:393">71</a></sup><sup id="fnref2:420"><a class="footnote-ref" href="#fn:420">68</a></sup> と呼ばれる．</p>
+<h3 id="_16">抽象化</h3>
 <p>二つ目の手法は，抽象化の利用である．
 記号的手法を用いることで，自明でないデータ操作を伴うシステムも扱うことが可能となるが，検証の複雑さが大きくなることが多い．
 抽象化の利用は，データ要素を含むシステムの仕様は，通常，システムのデータの値に関する極めて単純な関係からなるという観察に基づいている．
 例えば，マイクロプロセッサの加算処理の検証では，あるレジスタの値が最終的に他の二つのレジスタの値の合計と等しくなることが要求される場合がある．
-このような状況では，抽象化を用いてモデル検査の複雑さを軽減することができる．
+このような状況では，抽象化を用いてモデル検査の複雑さを軽減することができる<sup id="fnref:48"><a class="footnote-ref" href="#fn:48">72</a></sup><sup id="fnref:135"><a class="footnote-ref" href="#fn:135">73</a></sup><sup id="fnref:166"><a class="footnote-ref" href="#fn:166">74</a></sup><sup id="fnref:167"><a class="footnote-ref" href="#fn:167">75</a></sup><sup id="fnref:329"><a class="footnote-ref" href="#fn:329">76</a></sup><sup id="fnref:494"><a class="footnote-ref" href="#fn:494">77</a></sup>．
 通常，抽象化は，システムの実際のデータの値から抽象化されたデータ値の小さな集合への対応付けとして考えられる．
 この対応付けを状態と遷移へと拡張することで，対象となるシステムの抽象化を得ることが可能である．
 多くの場合，抽象化されたシステムは実際のシステムよりもはるかに小さいため，結果として，抽象化されたレベルでの検証は通常はるかに単純になる．</p>
-<h3 id="_25">対称性</h3>
-<p>対称性も，状態爆発問題を軽減するために利用できる．
+<h3 id="_17">対称性</h3>
+<p>対称性も，状態爆発問題を軽減するために利用できる<sup id="fnref:127"><a class="footnote-ref" href="#fn:127">79</a></sup><sup id="fnref:216"><a class="footnote-ref" href="#fn:216">80</a></sup><sup id="fnref:285"><a class="footnote-ref" href="#fn:285">81</a></sup><sup id="fnref:289"><a class="footnote-ref" href="#fn:289">82</a></sup>．
 有限状態の並行システムは，複製されたコンポーネントを含むことが多い．
 例えば，多くのプロトコルは，何らかの方法で通信する同一のプロセスからなるネットワーク上で動作する．
 ハードウェアデバイスは，メモリやレジスタファイルなど，多くの複製された要素を持つ部品を含んでいる．
@@ -1057,20 +1095,296 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
 システムが対称性をもつことは，それぞれが状態遷移グラフと対応する自明でない順列の集まりが存在することを意味している．
 このような集まりは，システムの状態空間における等価関係を定義し，状態空間を縮小するために利用できる．
 この縮小されたモデルは，時相論理式で表現された当初のモデルの特性の検証を単純化するために用いられる．</p>
-<h3 id="_26">帰納法</h3>
-<p>帰納法は，有限状態システムの全ての族（family）に対する自動証明を伴う．
+<h3 id="_18">帰納法</h3>
+<p>帰納法は，有限状態システムの全ての族（family）に対する自動証明を伴う<sup id="fnref:86"><a class="footnote-ref" href="#fn:86">84</a></sup><sup id="fnref:130"><a class="footnote-ref" href="#fn:130">85</a></sup><sup id="fnref:309"><a class="footnote-ref" href="#fn:309">86</a></sup><sup id="fnref:334"><a class="footnote-ref" href="#fn:334">87</a></sup><sup id="fnref:371"><a class="footnote-ref" href="#fn:371">88</a></sup><sup id="fnref:448"><a class="footnote-ref" href="#fn:448">89</a></sup><sup id="fnref:496"><a class="footnote-ref" href="#fn:496">90</a></sup>．
 この族は，ハードウェアとソフトウェア双方におけるリアクティブ・システムの設計において頻繁に発生する．
 一般的に，回路やプロトコルの設計はパラメータ化されており，システムの無限の族を定義している．
 例えば，２ つの整数を加算するように設計された回路は，整数 <script type="math/tex">n</script> の幅をパラメータとしてもつことになるし，バスプロトコルは任意の数のプロセッサに対応するように設計され，パラメータ化された個数のプロセスに対して相互排他プロトコルが与えられる．
 ここで，与えられた族のすべてのシステムが何らかの時相論理による特性を満たすことを証明したいとしよう．
-一般的にこの問題は決定不能であるが，多くの興味深いケースにおいて，族の任意のメンバーの振る舞いを不変プロセス（invariant process）の形で表すことが可能である．
+一般的にこの問題は決定不能であるが<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">91</a></sup><sup id="fnref:463"><a class="footnote-ref" href="#fn:463">92</a></sup>，多くの興味深いケースにおいて，族の任意のメンバーの振る舞いを不変プロセス（invariant process）の形で表すことが可能である．
 この不変プロセスを用いて，族のすべてのメンバーの特性を一度に証明することができる．
 帰納法は，この不変プロセスが族の適切な代表であることを証明するために用いられる．</p>
-                
-              
-              
-                
-
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:396">
+<p>G. J. Myers. The Art of Software Testing. Wiley, 2nd edition, 2004.&#160;<a class="footnote-backref" href="#fnref:396" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:282">
+<p>J. E. Hopcroft and J. D. Ullman. Introduction to Automata Theory, Languages, and Computation. Addison-Wesley, 1979.&#160;<a class="footnote-backref" href="#fnref:282" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:427">
+<p>S. Rajan, N. Shankar, and M. K. Srivas. An integration of model checking with automated proof checking. In P. Wolper, editor, Computer Aided Verification, CAV, volume 939 of Lecture Notes in Computer Science, pages 84–97. Springer, 1995.&#160;<a class="footnote-backref" href="#fnref:427" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:287">
+<p>G. E. Hughes and M. J. Creswell. Introduction to Modal Logic. Methuen, 1977.&#160;<a class="footnote-backref" href="#fnref:287" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:287" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:97">
+<p>R. M. Burstall. Program proving as hand simulation with a little induction. In IFIP Congress 74, pages 308–312. North Holland, 1974.&#160;<a class="footnote-backref" href="#fnref:97" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:320">
+<p>F. Kröger. LAR: A logic of algorithmic reasoning. Acta Inf., 8(3):243–266, 1977.&#160;<a class="footnote-backref" href="#fnref:320" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:417">
+<p>A. Pnueli. The temporal logic of programs. In Foundations of Computer Science, FOCS, pages 46–57. IEEE Computer Society, 1977.&#160;<a class="footnote-backref" href="#fnref:417" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:417" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:68">
+<p>G. V. Bochmann. Hardware specification with temporal logic: An example. IEEE Trans. Computers, 31(3):223–231, 1982.&#160;<a class="footnote-backref" href="#fnref:68" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:366">
+<p>Y. Malachi and S. S. Owicki. Temporal specifications of self-timed systems. In H. T. Kung, B. Sproull, and G. Steele, editors, VLSI Systems and Computations, pages 203–212. Springer, 1981.&#160;<a class="footnote-backref" href="#fnref:366" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:123">
+<p>E. M. Clarke and E. A. Emerson. Design and synthesis of synchronization skeletons using branching time temporal logic. In D. Kozen, editor, Logic of Programs: Workshop, volume 131 of Lecture Notes in Computer Science, pages 52–71. Springer, 1981.&#160;<a class="footnote-backref" href="#fnref:123" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:123" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:201">
+<p>E. A. Emerson. Branching Time Temporal Logic and the Design of Correct Concurrent Programs. PhD thesis, Harvard University, 1981.&#160;<a class="footnote-backref" href="#fnref:201" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:234">
+<p>D. Gabbay, A. Pnueli, S. Shelah, and J. Stavi. On the temporal analysis of fairness. In Principles of Programming Languages, POPL, pages 163–173. ACM, 1980.&#160;<a class="footnote-backref" href="#fnref:234" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:425">
+<p>J. P. Quielle and J. Sifakis. Specification and verification of concurrent systems in CESAR. In M. Dezani-Ciancaglini and U. Montanari, editors, International Symposium on Programming, volume 137 of Lecture Notes in Computer Science, pages 337–350, 1982.&#160;<a class="footnote-backref" href="#fnref:425" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:125">
+<p>E. M. Clarke, E. A. Emerson, and A. P. Sistla. Automatic verification of finite-state concurrent systems using temporal logic specifications. ACM Trans. Program. Lang. Syst., 8(2):244–263, 1986.&#160;<a class="footnote-backref" href="#fnref:125" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:125" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:81">
+<p>M. C. Browne and E. M. Clarke. SML: A high level language for the design and verification of finite state machines. In IFIP WG 10.2 Working Conference from HDL Descriptions to Guaranteed Correct Circuit Designs, pages 269–292. International Federation for Information Processing, 1987.&#160;<a class="footnote-backref" href="#fnref:81" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:82">
+<p>M. C. Browne, E. M. Clarke, and D. Dill. Checking the correctness of sequential circuits. In International Conference on Computer Design, pages 545–548. IEEE, 1985.&#160;<a class="footnote-backref" href="#fnref:82" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:83">
+<p>M. C. Browne, E. M. Clarke, and D. L. Dill. Automatic circuit verification using temporal logic: Two new examples. In Formal Aspects of VLSI Design. Elsevier, 1986.&#160;<a class="footnote-backref" href="#fnref:83" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:84">
+<p>M. C. Browne, E. M. Clarke, D. L. Dill, and B. Mishra. Automatic verification of sequential circuits using temporal logic. IEEE Trans. Comput., C-35(12):1035–1044, 1986.&#160;<a class="footnote-backref" href="#fnref:84" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:187">
+<p>D. L. Dill and E. M. Clarke. Automatic verification of asynchronous circuits using temporal logic. IEE Proceedings E, 133(5):276–282, 1986.&#160;<a class="footnote-backref" href="#fnref:187" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:392">
+<p>B. Mishra and E. Clarke. Hierarchical verification of asynchronous circuits using temporal logic. Theor. Comput. Sci., 38:269–291, 1985.&#160;<a class="footnote-backref" href="#fnref:392" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:453">
+<p>A. P. Sistla. Theoretical Issues in the Design and Verification of Distributed Systems. PhD thesis, Harvard University, 1983.&#160;<a class="footnote-backref" href="#fnref:453" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:454">
+<p>A. P. Sistla and E. M. Clarke. The complexity of propositional linear temporal logics. J. ACM, 32(3):733–749, 1985.&#160;<a class="footnote-backref" href="#fnref:454" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:354">
+<p>O. Lichtenstein and A. Pnueli. Checking that finite state concurrent programs satisfy their linear specification. In Principles of Programming Languages, POPL, pages 97–107. ACM, 1985.&#160;<a class="footnote-backref" href="#fnref:354" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:233">
+<p>M. Fujita, H. Tanaka, and T. Moto-oka. Logic design assistance with temporal logic. In Conference on Hardware Description Languages and Their Applications, CHDL, pages 129–137, 1985.&#160;<a class="footnote-backref" href="#fnref:233" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:124">
+<p>E. M. Clarke, E. A. Emerson, and A. P. Sistla. Automatic verification of finite-state concurrent systems using temporal logic specifications. In Principles of Programming Languages, POPL, pages 117–126. ACM, 1983.&#160;<a class="footnote-backref" href="#fnref:124" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:209">
+<p>E. A. Emerson and C.-L. Lei. Modalities for model checking: Branching time strikes back. In M. S. V. Deusen, Z. Galil, and B. K. Reid, editors, Twelfth Symposium on Principles of Programming Languages, pages 84–96. ACM Press, 1985.&#160;<a class="footnote-backref" href="#fnref:209" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p>S. Aggarwal, R. P. Kurshan, and K. Sabnani. A calculus for protocol specification and validation. In H. Rudin and C. H. West, editors, Protocol Specification, Testing and Verification, pages 19–34. North Holland, 1983.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:265">
+<p>Z. Har’El and R. P. Kurshan. Software for analytical development of communications protocols. AT&amp;T Tech. J., 69(1):45–59, 1990.&#160;<a class="footnote-backref" href="#fnref:265" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:330">
+<p>R. P. Kurshan. Computer-Aided Verification of Coordinating Processes: The Automata-Theoretic Approach. Princeton University Press, 1994.&#160;<a class="footnote-backref" href="#fnref:330" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:263">
+<p>R. Hardin, Z. Har’El, and R. P. Kurshan. COSPAN. In R. Alur and T. A. Henzinger, editors, Computer Aided Verification, CAV, volume 1102 of Lecture Notes in Computer Science, pages 423–427. Springer, 1996.&#160;<a class="footnote-backref" href="#fnref:263" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:479">
+<p>M. Y. Vardi and P. Wolper. An automata-theoretic approach to automatic program verification. In Logic in Computer Science, LICS, pages 332–344. IEEE Computer Society, 1986.&#160;<a class="footnote-backref" href="#fnref:479" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:148">
+<p>R. Cleaveland, J. Parrow, and B. Steffen. The concurrency workbench. In Sifakis<sup id="fnref4:452"><a class="footnote-ref" href="#fn:452">37</a></sup>, pages 24–37.&#160;<a class="footnote-backref" href="#fnref:148" title="Jump back to footnote 32 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:148" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:388">
+<p>R. Milner. A Calculus of Communicating Systems, volume 92 of Lecture Notes in Computer Science. Springer, 1980.&#160;<a class="footnote-backref" href="#fnref:388" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:433">
+<p>V. Roy and R. de Simone. Auto/Autograph. In Kurshan and Clarke<sup id="fnref6:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 235–250.&#160;<a class="footnote-backref" href="#fnref:433" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:387">
+<p>R. Milner. An algebraic definition of simulation between programs. In D. C. Cooper, editor, International Joint Conference on Artificial Intelligence, IJCAI, pages 481–489. Kaufmann, 1971.&#160;<a class="footnote-backref" href="#fnref:387" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:432">
+<p>A. W. Roscoe. Model-checking CSP. In A. W. Roscoe, editor, A Classical Mind: Essays in Honour of C. A. R. Hoare, pages 353–378. Prentice-Hall, 1994.&#160;<a class="footnote-backref" href="#fnref:432" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:452">
+<p>J. Sifakis, editor. Automatic Verification Methods for Finite State Systems, volume 407 of Lecture Notes in Computer Science. Springer, 1989.&#160;<a class="footnote-backref" href="#fnref:452" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:452" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:452" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:452" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:332">
+<p>R. P. Kurshan and E. M. Clarke, editors. Computer Aided Verification, CAV, volume 531. Springer, 1990.&#160;<a class="footnote-backref" href="#fnref:332" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:332" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:332" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:332" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:332" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:332" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:96">
+<p>J. R. Burch, E. M. Clarke, K. L. McMillan, D. L. Dill, and L. J. Hwang. Symbolic model checking: 10 20 states and beyond. Inform. and Comput., 98(2):142–170, 1992. Originally presented at the 1990 Symposium on Logic in Computer Science (LICS).&#160;<a class="footnote-backref" href="#fnref:96" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:96" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn:376">
+<p>K. L. McMillan. Symbolic Model Checking: An Approach to the State Explosion Problem. Kluwer, 1993.&#160;<a class="footnote-backref" href="#fnref:376" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:376" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:376" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+<li id="fn:87">
+<p>R. E. Bryant. Graph-based algorithms for Boolean function manipulation. IEEE Trans. Comput., 35(8):677–691, 1986.&#160;<a class="footnote-backref" href="#fnref:87" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn:94">
+<p>J. R. Burch, E. M. Clarke, and D. E. Long. Symbolic model checking with partitioned transition relations. In A. Halaas and P. B. Denyer, editors, Very Large Scale Integration, VLSI, volume A-1 of IFIP Transactions, pages 49–58. North-Holland, 1991.&#160;<a class="footnote-backref" href="#fnref:94" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:94" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn:95">
+<p>J. R. Burch, E. M. Clarke, D. E. Long, K. L. McMillan, and D. L. Dill. Symbolic model checking for sequential circuit verification. IEEE Trans. CAD Integr. Circuits Syst., 13(4):401–424, 1994.&#160;<a class="footnote-backref" href="#fnref:95" title="Jump back to footnote 43 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:95" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn:129">
+<p>E. M. Clarke, O. Grumberg, H. Hiraishi, S. Jha, D. E. Long, K. L. McMillan, and L. A. Ness. Verification of the Futurebus+ cache coherence protocol. In L. Claesen, editor, International Symposium on Computer Hardware Description Languages and Their Applications, pages 15–30. North-Holland, 1993.&#160;<a class="footnote-backref" href="#fnref:129" title="Jump back to footnote 44 in the text">&#8617;</a></p>
+</li>
+<li id="fn:361">
+<p>D. E. Long. Model Checking, Abstraction, and Compositional Reasoning. PhD thesis, Carnegie Mellon University, 1993.&#160;<a class="footnote-backref" href="#fnref:361" title="Jump back to footnote 45 in the text">&#8617;</a></p>
+</li>
+<li id="fn:44">
+<p>D. L. Beatty, R. E. Bryant, and C.-J. Seger. Formal hardware verification by symbolic ternary trajectory evaluation. In Design Automation Conference, DAC, pages 397–402. IEEE Computer Society Press, 1991.&#160;<a class="footnote-backref" href="#fnref:44" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:44" title="Jump back to footnote 46 in the text">&#8617;</a></p>
+</li>
+<li id="fn:158">
+<p>O. Coudert, C. Berthet, and J. C. Madre. Verification of synchronous sequential machines based on symbolic execution. In Sifakis<sup id="fnref3:452"><a class="footnote-ref" href="#fn:452">37</a></sup>, pages 365–373.&#160;<a class="footnote-backref" href="#fnref:158" title="Jump back to footnote 47 in the text">&#8617;</a></p>
+</li>
+<li id="fn:414">
+<p>C. Pixley. Introduction to a computational theory and implementation of sequential hardware equivalence. In Kurshan and Clarke<sup id="fnref5:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 54–64.&#160;<a class="footnote-backref" href="#fnref:414" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:414" title="Jump back to footnote 48 in the text">&#8617;</a></p>
+</li>
+<li id="fn:415">
+<p>C. Pixley, G. Beihl, and E. Pacas-Skewes. Automatic derivation of FSM specification to implementation encoding. In International Conference on Computer Design, ICCD, pages 245–249. IEEE Computer Society, 1991.&#160;<a class="footnote-backref" href="#fnref:415" title="Jump back to footnote 49 in the text">&#8617;</a></p>
+</li>
+<li id="fn:416">
+<p>C. Pixley, S.-W. Jeong, and G. D. Hachtel. Exact calculation of synchronization sequences based on binary decision diagrams. In Design Automation Conference, DAC, pages 620–623. IEEE Computer Society Press, 1992.&#160;<a class="footnote-backref" href="#fnref:416" title="Jump back to footnote 50 in the text">&#8617;</a></p>
+</li>
+<li id="fn:73">
+<p>S. Bose and A. L. Fisher. Automatic verification of synchronous circuits using symbolic logic simulation and temporal logic. In L. Claesen, editor, Proceedings of the IMEC-IFIP International Workshop on Applied Formal Methods for Correct VLSI Design. Organizing Committe of the IMEC-IFIP, 1989.&#160;<a class="footnote-backref" href="#fnref:73" title="Jump back to footnote 51 in the text">&#8617;</a></p>
+</li>
+<li id="fn:159">
+<p>O. Coudert, J. C. Madre, and C. Berthet. Verifying temporal properties of sequential machines without building their state diagrams. In Kurshan and Clarke<sup id="fnref4:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 23–32.&#160;<a class="footnote-backref" href="#fnref:159" title="Jump back to footnote 52 in the text">&#8617;</a></p>
+</li>
+<li id="fn:90">
+<p>R. E. Bryant and C.-J. Seger. Formal verification of digital circuits using symbolic ternary system models. In Kurshan and Clarke<sup id="fnref3:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 33–43.&#160;<a class="footnote-backref" href="#fnref:90" title="Jump back to footnote 53 in the text">&#8617;</a></p>
+</li>
+<li id="fn:249">
+<p>P. Godefroid and D. Pirottin. Refining dependencies improves partial-order verification methods. In Computer Aided Verification, CAV, volume 697 of Lecture Notes in Computer Science, pages 438–449. Springer, 1993.&#160;<a class="footnote-backref" href="#fnref:249" title="Jump back to footnote 54 in the text">&#8617;</a></p>
+</li>
+<li id="fn:405">
+<p>D. Peled. Combining partial order reductions with on-the-fly model-checking. In Dill<sup id="fnref:186"><a class="footnote-ref" href="#fn:186">57</a></sup>, pages 377–390.&#160;<a class="footnote-backref" href="#fnref:405" title="Jump back to footnote 55 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:405" title="Jump back to footnote 55 in the text">&#8617;</a></p>
+</li>
+<li id="fn:473">
+<p>A. Valmari. A stubborn attack on state explosion. In Computer Aided Verification, CAV, volume 531 of Lecture Notes in Computer Science, pages 156–165. Springer, 1990.&#160;<a class="footnote-backref" href="#fnref:473" title="Jump back to footnote 56 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:473" title="Jump back to footnote 56 in the text">&#8617;</a></p>
+</li>
+<li id="fn:186">
+<p>D. L. Dill, editor. Computer Aided Verification, CAV, volume 818 of Lecture Notes in Computer Science. Springer, 1994.&#160;<a class="footnote-backref" href="#fnref:186" title="Jump back to footnote 57 in the text">&#8617;</a></p>
+</li>
+<li id="fn:399">
+<p>W. T. Overman. Verification of Concurrent Systems: Function and Timing. PhD thesis, University of California at Los Angeles, 1981.&#160;<a class="footnote-backref" href="#fnref:399" title="Jump back to footnote 58 in the text">&#8617;</a></p>
+</li>
+<li id="fn:306">
+<p>S. Katz and D. A. Peled. An efficient verification method for parallel and distributed programs. In Workshop on Linear Time, Branching Time and Partial Order in Logics and Models for Concurrency, volume 354 of Lecture Notes in Computer Science, pages 489–507. Springer, 1988.&#160;<a class="footnote-backref" href="#fnref:306" title="Jump back to footnote 59 in the text">&#8617;</a></p>
+</li>
+<li id="fn:246">
+<p>P. Godefroid. Using partial orders to improve automatic verification methods. In Computer Aided Verification, CAV, volume 531 of Lecture Notes in Computer Science, pages 176–185. Springer, 1990.&#160;<a class="footnote-backref" href="#fnref:246" title="Jump back to footnote 60 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:246" title="Jump back to footnote 60 in the text">&#8617;</a></p>
+</li>
+<li id="fn:375">
+<p>K. McMillan. Using unfolding to avoid the state explosion problem in the verification of asynchronous circuits. In Computer Aided Verification, CAV, volume 663 of Lecture Notes in Computer Science, pages 164–174. Springer, 1992.&#160;<a class="footnote-backref" href="#fnref:375" title="Jump back to footnote 61 in the text">&#8617;</a></p>
+</li>
+<li id="fn:143">
+<p>E. M. Clarke, D. E. Long, and K. L. McMillan. A language for compositional specification and verification of finite state hardware controllers. In J. A. Darringer and F. J. Rammig, editors, Computer Hardware Description Languages and Their Applications, pages 281–295. North-Holland, 1989.&#160;<a class="footnote-backref" href="#fnref:143" title="Jump back to footnote 62 in the text">&#8617;</a></p>
+</li>
+<li id="fn:253">
+<p>S. Graf and B. Steffen. Compositional minimization of finite state processes. In Kurshan and Clarke<sup id="fnref2:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 186–196.&#160;<a class="footnote-backref" href="#fnref:253" title="Jump back to footnote 63 in the text">&#8617;</a></p>
+</li>
+<li id="fn:255">
+<p>O. Grumberg and D. E. Long. Model checking and modular verification. ACM Trans. Progr. Lang. Syst., 16:843–872, 1994.&#160;<a class="footnote-backref" href="#fnref:255" title="Jump back to footnote 64 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:255" title="Jump back to footnote 64 in the text">&#8617;</a></p>
+</li>
+<li id="fn:295">
+<p>C. B. Jones. Specification and design of (parallel) programs. In Proceedings of IFIP’83, pages 321–332. North-Holland, 1983.&#160;<a class="footnote-backref" href="#fnref:295" title="Jump back to footnote 65 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:295" title="Jump back to footnote 65 in the text">&#8617;</a></p>
+</li>
+<li id="fn:296">
+<p>B. Josko. Verifying the correctness of AADL-modules using model checking. In de Bakker et al.<sup id="fnref2:173"><a class="footnote-ref" href="#fn:173">70</a></sup>, pages 386–400.&#160;<a class="footnote-backref" href="#fnref:296" title="Jump back to footnote 66 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:296" title="Jump back to footnote 66 in the text">&#8617;</a></p>
+</li>
+<li id="fn:343">
+<p>K. G. Larsen. Modal specifications. In Sifakis<sup id="fnref2:452"><a class="footnote-ref" href="#fn:452">37</a></sup>, pages 232–246.&#160;<a class="footnote-backref" href="#fnref:343" title="Jump back to footnote 67 in the text">&#8617;</a></p>
+</li>
+<li id="fn:420">
+<p>A. Pnueli. In transition for global to modular temporal reasoning about programs. In K. R. Apt, editor, Logics and Models of Concurrent Systems, volume 13 of NATO ASI. Series F, Computer and System Sciences. Springer, 1984.&#160;<a class="footnote-backref" href="#fnref:420" title="Jump back to footnote 68 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:420" title="Jump back to footnote 68 in the text">&#8617;</a></p>
+</li>
+<li id="fn:450">
+<p>G. Shurek and O. Grumberg. The modular framework of computer-aided verification: Motivation, solutions and evaluation criteria. In Kurshan and Clarke<sup id="fnref:332"><a class="footnote-ref" href="#fn:332">38</a></sup>, pages 214–223.&#160;<a class="footnote-backref" href="#fnref:450" title="Jump back to footnote 69 in the text">&#8617;</a></p>
+</li>
+<li id="fn:173">
+<p>J. W. de Bakker, W.-P. de Roever, and G. Rozenberg, editors. Proceedings of the REX Workshop on Stepwise Refinement of Distributed Systems, Models, Formalisms, Correctness, volume 430 of Lecture Notes in Computer Science. Springer, 1989.&#160;<a class="footnote-backref" href="#fnref:173" title="Jump back to footnote 70 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:173" title="Jump back to footnote 70 in the text">&#8617;</a></p>
+</li>
+<li id="fn:393">
+<p>J. Misra and K. M. Chandy. Proofs of networks of processes. IEEE Trans. Software Engineering, 7(4):417–426, 1981.&#160;<a class="footnote-backref" href="#fnref:393" title="Jump back to footnote 71 in the text">&#8617;</a></p>
+</li>
+<li id="fn:48">
+<p>S. Bensalem, A. Bouajjani, C. Loiseaux, and J. Sifakis. Property preserving simulations. In Bochmann and Probst<sup id="fnref:69"><a class="footnote-ref" href="#fn:69">78</a></sup>, pages 260–273.&#160;<a class="footnote-backref" href="#fnref:48" title="Jump back to footnote 72 in the text">&#8617;</a></p>
+</li>
+<li id="fn:135">
+<p>E. M. Clarke, O. Grumberg, and D. E. Long. Model checking and abstraction. ACM Trans. Progr. Lang. Syst., 16(5):1512–1542, 1994.&#160;<a class="footnote-backref" href="#fnref:135" title="Jump back to footnote 73 in the text">&#8617;</a></p>
+</li>
+<li id="fn:166">
+<p>D. Dams, R. Gerth, and O. Grumberg. Generation of reduced models for checking fragments of CTL. In Computer Aided Verification, CAV, volume 697 of Lecture Notes in Computer Science, pages 479–490. Springer, 1993.&#160;<a class="footnote-backref" href="#fnref:166" title="Jump back to footnote 74 in the text">&#8617;</a></p>
+</li>
+<li id="fn:167">
+<p>D. Dams, R. Gerth, and O. Grumberg. Abstract interpretation of reactive systems. ACM Trans. Progr. Lang. Syst., 19(2):253–291, 1997.&#160;<a class="footnote-backref" href="#fnref:167" title="Jump back to footnote 75 in the text">&#8617;</a></p>
+</li>
+<li id="fn:329">
+<p>R. P. Kurshan. Analysis of discrete event coordination. In de Bakker et al.<sup id="fnref:173"><a class="footnote-ref" href="#fn:173">70</a></sup>, pages 414–453.&#160;<a class="footnote-backref" href="#fnref:329" title="Jump back to footnote 76 in the text">&#8617;</a></p>
+</li>
+<li id="fn:494">
+<p>P. Wolper. Expressing interesting properties of programs in propositional temporal logic. In Principles of Programming Languages, POPL, pages 184–193. ACM, 1986.&#160;<a class="footnote-backref" href="#fnref:494" title="Jump back to footnote 77 in the text">&#8617;</a></p>
+</li>
+<li id="fn:69">
+<p>G. V. Bochmann and D. K. Probst, editors. Computer Aided Verification, CAV, volume 663 of Lecture Notes in Computer Science. Springer, 1992.&#160;<a class="footnote-backref" href="#fnref:69" title="Jump back to footnote 78 in the text">&#8617;</a></p>
+</li>
+<li id="fn:127">
+<p>E. M. Clarke, T. Filkorn, and S. Jha. Exploiting symmetry in temporal logic model checking. In Computer Aided Verification, CAV, volume 697 of Lecture Notes in Computer Science, pages 450–462. Springer, 1993.&#160;<a class="footnote-backref" href="#fnref:127" title="Jump back to footnote 79 in the text">&#8617;</a></p>
+</li>
+<li id="fn:216">
+<p>E. A. Emerson and A. P. Sistla. Symmetry and model checking. In Courcoubetis<sup id="fnref:160"><a class="footnote-ref" href="#fn:160">83</a></sup>, pages 463–478.&#160;<a class="footnote-backref" href="#fnref:216" title="Jump back to footnote 80 in the text">&#8617;</a></p>
+</li>
+<li id="fn:285">
+<p>P. Huber, A. M. Jensen, L. O. Jepsen, and K. Jensen. Towards reachability trees for high-level Petri nets. In Advances in Petri Nets 1984, European Workshop on Applications and Theory in Petri Nets, volume 188 of Lecture Notes in Computer Science, pages 215–233. Springer, 1984.&#160;<a class="footnote-backref" href="#fnref:285" title="Jump back to footnote 81 in the text">&#8617;</a></p>
+</li>
+<li id="fn:289">
+<p>C. W. Ip and D. L. Dill. Better verification through symmetry. In L. Claesen, editor, Computer Hardware Description Languages and Their Applications, CHDL, pages 97–111. North-Holland, 1993.&#160;<a class="footnote-backref" href="#fnref:289" title="Jump back to footnote 82 in the text">&#8617;</a></p>
+</li>
+<li id="fn:160">
+<p>C. Courcoubetis, editor. Computer Aided Verification, CAV, volume 697 of Lecture Notes in Computer Science. Springer, 1993.&#160;<a class="footnote-backref" href="#fnref:160" title="Jump back to footnote 83 in the text">&#8617;</a></p>
+</li>
+<li id="fn:86">
+<p>M. C. Browne, E. M. Clarke, and O. Grumberg. Reasoning about networks with many identical finite state processes. Inf. Comput., 81(1):13–31, 1989.&#160;<a class="footnote-backref" href="#fnref:86" title="Jump back to footnote 84 in the text">&#8617;</a></p>
+</li>
+<li id="fn:130">
+<p>E. M. Clarke, O. Grumberg, and S. Jha. Veryfying parameterized networks using abstraction and regular languages. In S. Smolka and I. Lee, editors, Concurrency Theory, CONCUR, volume 962 of Lecture Notes in Computer Science, pages 395–407. Springer, 1995.&#160;<a class="footnote-backref" href="#fnref:130" title="Jump back to footnote 85 in the text">&#8617;</a></p>
+</li>
+<li id="fn:309">
+<p>Y. Kesten, O. Maler, M. Marcus, A. Pnueli, and E. Shahar. Symbolic model checking with rich assertional laguages. In O. Grumberg, editor, Computer Aided Verification, CAV, volume 1254 of Lecture Notes in Computer Science, pages 424–435. Springer, 1997.&#160;<a class="footnote-backref" href="#fnref:309" title="Jump back to footnote 86 in the text">&#8617;</a></p>
+</li>
+<li id="fn:334">
+<p>R. P. Kurshan and K. L. McMillan. A structural induction theorem for processes. In Principles of Distributed Computing, pages 239–247. ACM, 1989.&#160;<a class="footnote-backref" href="#fnref:334" title="Jump back to footnote 87 in the text">&#8617;</a></p>
+</li>
+<li id="fn:371">
+<p>R. Marelly and O. Grumberg. GORMEL—Grammar ORiented ModEL checker. Technical Report 697, Technion, 1991.&#160;<a class="footnote-backref" href="#fnref:371" title="Jump back to footnote 88 in the text">&#8617;</a></p>
+</li>
+<li id="fn:448">
+<p>Z. Shtadler and O. Grumberg. Network grammars, communication behaviors and automatic verification. In Automatic Verification Methods for Finite State Systems, International Workshop, volume 407 of Lecture Notes in Computer Science, pages 151–165. Springer, 1990.&#160;<a class="footnote-backref" href="#fnref:448" title="Jump back to footnote 89 in the text">&#8617;</a></p>
+</li>
+<li id="fn:496">
+<p>P. Wolper and V. Lovinfosse. Verifying properties of large sets of processes with network invariants. In Sifakis<sup id="fnref:452"><a class="footnote-ref" href="#fn:452">37</a></sup>, pages 68–80.&#160;<a class="footnote-backref" href="#fnref:496" title="Jump back to footnote 90 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p>K. Apt and D. Kozen. Limits for automatic verification of finite-state systems. IPL, 15:307–309, 1986.&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 91 in the text">&#8617;</a></p>
+</li>
+<li id="fn:463">
+<p>I. Suzuki. Proving properties of a ring of finite-state machines. IPL, 28:213–214, 1988.&#160;<a class="footnote-backref" href="#fnref:463" title="Jump back to footnote 92 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -1079,12 +1393,12 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1099,7 +1413,8 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
         </a>
       
       
-        <a href="../lec02/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../lec02/" class="md-footer__link md-footer__link--next" aria-label="Next: 第2回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -1117,14 +1432,15 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1134,12 +1450,14 @@ Valmari の stubborn 集合，Godefroid の persistent 集合，Peled の ample 
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       

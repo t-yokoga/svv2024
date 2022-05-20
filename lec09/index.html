@@ -1,0 +1,1040 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
+    
+    
+      
+        <title>第9回 - システム検証論 (2021)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-bdd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            システム検証論 (2021)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第9回
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2021)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01/" class="md-nav__link">
+        第1回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02/" class="md-nav__link">
+        第2回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03/" class="md-nav__link">
+        第3回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04/" class="md-nav__link">
+        第4回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05/" class="md-nav__link">
+        第5回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06/" class="md-nav__link">
+        第6回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec07/" class="md-nav__link">
+        第7回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第9回
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第9回
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 二分決定グラフと記号モデル検査
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1 ブール関数の表現
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 ブール関数の表現">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二分決定木
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdd" class="md-nav__link">
+    二分決定グラフ（BDD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd" class="md-nav__link">
+    順序付き二分決定グラフ（OBDD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    変数順序とグラフの大きさ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_1" class="md-nav__link">
+    OBDD を用いた論理演算の実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    Apply アルゴリズム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_2" class="md-nav__link">
+    OBDD の拡張
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_3" class="md-nav__link">
+    OBDD とオートマトン
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-obdd" class="md-nav__link">
+    8.2 OBDD によるクリプキ構造の表現
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 OBDD によるクリプキ構造の表現">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    特性関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    クリプキ構造の符号化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    演習問題
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8. 二分決定グラフと記号モデル検査
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    8.1 ブール関数の表現
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 ブール関数の表現">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二分決定木
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdd" class="md-nav__link">
+    二分決定グラフ（BDD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd" class="md-nav__link">
+    順序付き二分決定グラフ（OBDD）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    変数順序とグラフの大きさ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_1" class="md-nav__link">
+    OBDD を用いた論理演算の実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    Apply アルゴリズム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_2" class="md-nav__link">
+    OBDD の拡張
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obdd_3" class="md-nav__link">
+    OBDD とオートマトン
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-obdd" class="md-nav__link">
+    8.2 OBDD によるクリプキ構造の表現
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 OBDD によるクリプキ構造の表現">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    特性関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    クリプキ構造の符号化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    演習問題
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="9-bdd">第9回 二分決定グラフ (BDD)</h1>
+<p>この回では，教科書の第8章 "Binary Decision Diagrams and Symbolic Model Checking" の前半 (8.1 〜 8.2) について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
+<ul>
+<li>ブール関数の表現</li>
+<li>二分決定木と二分決定グラフ</li>
+<li>順序付き二分決定グラフ（OBDD）</li>
+<li>変数順序とグラフサイズの関係</li>
+<li>OBDD を用いた論理演算の実装</li>
+<li>OBDD によるクリプキ構造の表現</li>
+</ul>
+</div>
+<h2 id="8">8. 二分決定グラフと記号モデル検査</h2>
+<p>本章では，二分決定グラフ (binary decision diagram, BDD)<sup id="fnref:87"><a class="footnote-ref" href="#fn:87">1</a></sup><sup id="fnref:96"><a class="footnote-ref" href="#fn:96">2</a></sup><sup id="fnref:376"><a class="footnote-ref" href="#fn:376">3</a></sup> を用いて，有限状態のリアクティブシステムを記号的に表現する方法について述べる．
+まず最初に，BDD がブール関数 (Boolean function) の表現にどのように使用されるかについて説明する．
+ブール関数は 0 と 1 上で定義される．ここで，0 は <script type="math/tex">false</script> を，1 は <script type="math/tex">true</script> を表す．
+BDD の大きさは変数の順序に大きく依存することを説明し，良い順序を選択するために使用できるいくつかのヒューリスティックについて簡単に説明する．
+また，この表現を用いることで，様々な論理演算が効率的に実現されることについても説明する．
+次に，クリプキ構造を BDD で表現するための方法についても説明し，同期システムと非同期システムの両方を正確に表現できることについても説明する．
+モデル検査における BDD の有用性が発見されたことで，コンピュータ援用検証は大きく進歩した．
+BDD は記号モデル検査を可能とし，10<sup>20</sup> かそれ以上の状態をもつシステムを扱うことを可能とした．
+この革命はハードウェア業界の注目を集め，モデル検査を学術的なものから産業的に協力な技術へと変化させることになった．
+モデル検査は現在，SAT ベースの手法でほとんど行われているが，BDD ベースのツールが最もよく機能する使用例もまだ多く残っている．</p>
+<h2 id="81">8.1 ブール関数の表現</h2>
+<p>順序付き二分決定グラフ（Ordered binary decision diagrams, OBDD）はブール式の標準形である<sup id="fnref2:87"><a class="footnote-ref" href="#fn:87">1</a></sup>．
+OBDD は積標準形や和標準形のような伝統的な標準形よりも実質的にコンパクトであることが多く，非常に効率的に操作することが可能である．
+そのため，記号シミュレーション，組合せ論理の検証，有限状態システムの検証など，計算機援用設計（CAD）における様々な用途に対して広く用いられるようになった．
+後者については，次節で詳しく説明する．</p>
+<h3 id="_1">二分決定木</h3>
+<p>二分決定グラフに関する議論を動機付けるため，まず<strong>二分決定木</strong>（binary decision tree）について考える．
+二分決定木は根を持つ有向木であり，<strong>終端頂点</strong>と<strong>非終端頂点</strong>の2種類の頂点から構成される．
+それぞれの非終端頂点 <script type="math/tex">v</script> は変数 <script type="math/tex">var(v)</script> でラベル付けされ，変数 <script type="math/tex">v</script> に 0 が代入された場合に対応する <script type="math/tex">low(v)</script> と，<script type="math/tex">v</script> に 1 が代入された場合に対応する <script type="math/tex">high(v)</script> という2つの後継を持つ．
+それぞれの終端頂点 <script type="math/tex">v</script> は <script type="math/tex">value(v)</script> でラベル付けされ，0 または 1 のいずれかの値をもつ．
+論理式 <script type="math/tex">f(a_1, a_2, b_1, b_2) = (a_1 \leftrightarrow b_1) \wedge (a_2 \leftrightarrow b_2)</script> で与えられる2ビット比較の二分決定木は図8.1に示すとおりである．</p>
+<p><center>
+<img src="../img/lec09-fig1.pdf">
+<br><br>
+図8.1：2ビット比較器 <script type="math/tex">f = (a_1 \leftrightarrow b_1) \wedge (a_2 \leftrightarrow b_2)</script> の二分決定木
+<br><br>
+</center></p>
+<p>変数への特定の真理値割り当てによって論理式が真となるかどうかは，木を根から終端頂点まで辿ることで決定できる．
+変数 <script type="math/tex">v</script> に 0 が代入される場合，根から終端頂点までの経路における次の頂点は <script type="math/tex">low(v)</script> となる．
+<script type="math/tex">v</script> に 1 が代入される場合，経路上の次の頂点は <script type="math/tex">high(v)</script> となる．
+終端頂点にラベル付けされた値は，この割り当てに対する関数の値となる．
+例えば <script type="math/tex">\{a_1 \mapsto 1, a_2 \mapsto 0, b_1 \mapsto 1, b_2 \mapsto 1\}</script> という割り当ては 0 でラベルづけた葉の頂点に到達する．
+したがって，この割り当てでの式の値は偽となる．</p>
+<h3 id="bdd">二分決定グラフ（BDD）</h3>
+<p>二分決定木では，ブール関数をあまり簡潔に表現することはできない．
+実際のところ，木の大きさは真理値表と同じである．
+幸いなことに，このような木には通常多くの冗長性がある．
+例えば，図8.1の木は根が <script type="math/tex">b_2</script> でラベル付けされた 8 つの部分木をもつが，そのうち異なるのは 3 つのみである．
+したがって，同型の部分木を結合することで，ブール関数のより簡潔な表現を得ることができる．
+この結果，<strong>二分決定グラフ</strong>と呼ばれる有向無閉路グラフ（directed asyclic graph, DAG）を得ることができる．
+より正確には，二分決定グラフは，終端頂点と非終端頂点の 2 種類の頂点から構成され，根をもつ有向無閉路グラフである．
+二分決定木の場合と同様に，各非終端頂点 <script type="math/tex">v</script> は変数 <script type="math/tex">var(v)</script> でラベル付けされ，<script type="math/tex">low(v)</script> と <script type="math/tex">high(v)</script> という2つの後継をもつ．
+各終端頂点は 0 か 1 のいずれかでラベル付けされる．
+根 <script type="math/tex">v</script> をもつすべての二分決定グラフ <script type="math/tex">B</script> は，以下の方法でブール関数 <script type="math/tex">f_v(x_1, \ldots, x_n)</script> を決定する．</p>
+<ol>
+<li>
+<script type="math/tex">v</script> が終端頂点ならば：<ol>
+<li>
+<script type="math/tex">value(v) = 1</script> の場合，<script type="math/tex">f_v(x_1, \ldots, x_n) = 1</script> とする．</li>
+<li>
+<script type="math/tex">value(v) = 0</script> の場合，<script type="math/tex">f_v(x_1, \ldots, x_n) = 0</script> とする．</li>
+</ol>
+</li>
+<li>
+<script type="math/tex">v</script> が非終端頂点で <script type="math/tex">var(v) = x_i</script> ならば，<script type="math/tex">f_v</script> は以下の関数である．
+    <script type="math/tex; mode=display">
+    f_v(x_1, \ldots, x_n) = (\neg x_i \wedge f_{low(v)}(x_1, \ldots, x_n)) \vee (x_i \wedge f_{high(v)}(x_1, \ldots, x_n))
+    </script>
+</li>
+</ol>
+<h3 id="obdd">順序付き二分決定グラフ（OBDD）</h3>
+<p>実用上では，ブール関数の<strong>標準形</strong>（canonical representation）があることが望まれる．
+このような表現は，2 つのブール関数が同型の表現をもつ場合のみ，かつそのときのみ論理的に等価であるという性質を持たなければならない．
+この性質は，2 つの式の等価性のチェックや，与えられた式が充足可能かどうかの決定といった作業を簡単化する．
+2 つの二分決定グラフは，一方の終端頂点をもう一方の終端頂点に，一方の非終端頂点をもう一方の非終端頂点に写像する全単射の関数 <script type="math/tex">h</script> が存在し，すべての終端頂点 <script type="math/tex">v</script> について <script type="math/tex">value(v) = value(h(v))</script> であり，すべての非終端頂点 <script type="math/tex">v</script> について <script type="math/tex">var(v) = var(h(v))</script>，<script type="math/tex">h(low(v)) = low(h(v))</script>，そして <script type="math/tex">h(high(v) = high(h(v))</script> が成り立つ場合に<strong>同型</strong>（isomorphic）であるとする．</p>
+<p>Bryant<sup id="fnref3:87"><a class="footnote-ref" href="#fn:87">1</a></sup> は，二分決定グラフに二つの制約を設けることによってブール関数の標準形を得る方法を示した．
+第一に，変数は根から終端までのいずれの経路に沿っても同じ順序で現れなければならない．
+第二に，グラフ中には同型の部分木や冗長な頂点が存在してはならない．
+一つめの要件は，二分決定グラフの頂点にラベル付けされた変数に全順序 <script type="math/tex"><</script> を課した上で，グラフ中の任意の頂点 <script type="math/tex">u</script> について <script type="math/tex">u</script> が非終端の後継 <script type="math/tex">v</script> をもつ場合 <script type="math/tex">var(u) < var(v)</script> となるよう要求することで達成される．
+二つめの要件は，グラフで表現される関数を変更しない 以下の 3 つの変換規則を繰り返し適用することで達成される：</p>
+<ol>
+<li><strong>重複する終端頂点の削除:</strong> 与えられたラベルをもつ終端頂点を 1 つを除いてすべて削除し，削除した頂点へのすべての辺を残された頂点に接続し直す．</li>
+<li><strong>重複する非終端頂点の削除:</strong> 2 つの非終端 <script type="math/tex">u</script> と <script type="math/tex">v</script> が <script type="math/tex">var(u) = var(v)</script>, <script type="math/tex">low(u) = low(v)</script>, そして <script type="math/tex">high(u) = high(v)</script> を満たすとき，<script type="math/tex">u</script> あるいは <script type="math/tex">v</script> を削除して，削除した頂点へのすべての入力辺をもう一方の頂点に接続し直す．</li>
+<li><strong>冗長な分岐の削除:</strong> 非終端頂点 <script type="math/tex">v</script> が <script type="math/tex">low(v) = high(v)</script> を満たすとき，<script type="math/tex">v</script> を削除して，<script type="math/tex">v</script> へのすべての入力辺を <script type="math/tex">low(v)</script> に接続し直す．</li>
+</ol>
+<p>順序に関する性質を満たす二分決定グラフから開始し，グラフのサイズがそれ以上削減できなくなるまで変換規則を適用することで，標準形を得ることができる．
+Bryant は，<script type="math/tex">Reduce</script> と呼ばれる手続きによりこの処理をボトムアップ的に行い，元の二分決定グラフのサイズに線形な時間で実現する方法を示している<sup id="fnref4:87"><a class="footnote-ref" href="#fn:87">1</a></sup>．
+このようにして得られたグラフを指して，<strong>順序付き二分決定グラフ</strong>という用語が使われることになる．
+例えば，2ビットの比較器の論理関数に <script type="math/tex">a_1 < b_1 < a_2 < b_2</script> の順序を用いると，図8.2のような OBDD が得られる．</p>
+<p><center>
+<img src="../img/lec09-fig2.pdf">
+<br><br>
+図8.2：順序 <script type="math/tex">a_1 < b_1 < a_2 < b_2</script> における 2 ビット比較器の OBDD
+<br><br>
+</center></p>
+<p>OBDD をブール関数の標準形として用いれば，同値性のチェックは二分決定グラフ間の同型性のチェックに帰着される．
+同様に充足可能性も，0 でラベル付けされたただ 1 つの終端頂点のみからなる自明な OBDD との等価性をチェックすることによって決定することができる．</p>
+<h3 id="_2">変数順序とグラフの大きさ</h3>
+<p>OBDD の大きさは，変数の順序に大きく依存しうる．
+例えば，ビット比較器の論理関数に <script type="math/tex">a_1 < a_2 < b_1 < b_2</script> という変数順序を用いた場合，図 8.3 に示すような OBDD が得られる．
+この OBDD は 11 個の頂点を持つが，図8.2に示した OBDD は 8 個の頂点しか持たないことに注意してほしい．
+<script type="math/tex">n</script> ビットの比較器に対して，<script type="math/tex">a_1 < b_1 < \ldots < a_n < b_n</script> の順序を選ぶと，OBDD の頂点の数は <script type="math/tex">3n + 2</script> となる．
+一方で <script type="math/tex">a_1 < \ldots < a_n < b_1 \ldots < b_n</script> の順序を選ぶと，OBDD の頂点数は <script type="math/tex">3 \cdot 2^n - 1</script> となる．
+一般に，変数の最適な順序を見つけることは計算上困難である．
+実際，特定の順序が最適であることを確認することさえ，NP 完全であることが示されている<sup id="fnref:89"><a class="footnote-ref" href="#fn:89">4</a></sup><sup id="fnref:451"><a class="footnote-ref" href="#fn:451">5</a></sup>．
+さらに，どのような変数順序に対しても指数関数的な大きさの OBDD を持つようなブール関数が存在する．
+その一例は，2 つの <script type="math/tex">n</script> ビット整数を乗算する組合せ回路の中間出力（または <script type="math/tex">n</script> 番目の出力）に対するブール関数である<sup id="fnref:88"><a class="footnote-ref" href="#fn:88">6</a></sup><sup id="fnref2:89"><a class="footnote-ref" href="#fn:89">4</a></sup>．</p>
+<p><center>
+<img src="../img/lec09-fig3.pdf">
+<br><br>
+図8.3：順序 <script type="math/tex">a_1 < a_2 < b_1 < b_2</script> における 2 ビット比較器の OBDD
+<br><br>
+</center></p>
+<p>もし良い変数順序が存在する場合は，それを見つけるためのいくつかのヒューリスティックが開発されている．
+ブール関数が組合せ回路として与えられる場合，回路図の深さ優先探索に基づくヒューリスティックは一般的に良い結果を与える<sup id="fnref:232"><a class="footnote-ref" href="#fn:232">7</a></sup><sup id="fnref:367"><a class="footnote-ref" href="#fn:367">8</a></sup>．
+これらのヒューリスティックは，関連する変数が近い順序にあるとき，OBDD が小さくなる傾向があるという観察から直感的に得られたものである．
+部分回路に現れる変数同士は，部分回路の出力を決定するという点で関連がある．
+したがって，通常これらの変数は，順序内でまとめてグループ化する必要がある．
+これは、回路図を深さ優先で探索したときに遭遇する順序で変数を配置することで達成されるかもしれない．
+変数の順序づけのためのもう一つのアプローチは，FORCE ツール<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">9</a></sup> に実装されたもので，良い順序を見つけるためにブール式の構造を分析するというものである．</p>
+<p><strong>動的並べ替え</strong>（dynamic reordering）<sup id="fnref:434"><a class="footnote-ref" href="#fn:434">10</a></sup> と呼ばれる技術は，明らかな順序付けのヒューリスティックが適用できない場合に有効である．
+この技術が利用されるとき，OBDD パッケージは内部的に使用される頂点の総数を減少させるよう変数の並べ替えを定期的に行う．
+この並べ替え手法は，最適な順序を見つけるというよりも，むしろメモリを節約するために設計されている．</p>
+<h3 id="obdd_1">OBDD を用いた論理演算の実装</h3>
+<p>次に，OBDD を用いて様々な重要な論理演算を実装するための方法について説明する．
+まず，ブール関数 <script type="math/tex">f</script> のある引数 <script type="math/tex">x_i</script> を定数値 <script type="math/tex">b</script> に<strong>制限</strong>（restrict）する関数から始める．
+この関数は <script type="math/tex">f|_{x_i \leftarrow b}</script> で表され，以下の恒等式を満たす．</p>
+<p>
+<script type="math/tex; mode=display">
+f|_{x_i \leftarrow b}(x_1,\ldots,x_n) = f(x_1,\ldots,x_{i-1},b,x_{i+1},\ldots,x_n)
+</script>
+</p>
+<p>この制限された関数は，（<script type="math/tex">x_i</script> を除いた）<script type="math/tex">n - 1</script> 個の変数にのみ依存する．
+<script type="math/tex">f</script> が OBDDとして表現されるなら，制限された関数に対する OBDD は，OBDD の深さ優先探索によって簡単に計算できる．
+<script type="math/tex">var(w) = x_i</script> となる頂点 <script type="math/tex">w</script> へのポインタを持つすべての頂点 <script type="math/tex">v</script> に対して，<script type="math/tex">b</script> が 0 の場合は <script type="math/tex">low(w)</script> ，<script type="math/tex">b</script> が 1 の場合は <script type="math/tex">high(w)</script> でそのポインタを置き換える．
+得られたグラフは必ずしも標準形とは限らないため，<script type="math/tex">Reduce</script> 関数を適用することで <script type="math/tex">f|_{x_i \leftarrow b}</script> のOBDD 表現を得ることができる．
+得られた OBDD は <script type="math/tex">x_i</script> に依存しないことに注意しよう．</p>
+<p>16 種類ある 2 項論理演算はすべて，OBDD として表現されるブール関数上で効率的に実装することができる．
+実際，これらの演算の複雑さは引数となる 2 つの OBDD の大きさの積に対して線形である．
+これらの演算を効率的に実装するためのキーとなる考え方は，<strong>シャノン展開</strong>（Shannon expansion）
+<script type="math/tex; mode=display">
+f = (\neg x \wedge f|_{x \leftarrow 0}) \vee (x \wedge f|_{x \leftarrow 1})
+</script>
+である．</p>
+<h3 id="apply">
+<script type="math/tex">Apply</script> アルゴリズム</h3>
+<p>Bryant<sup id="fnref5:87"><a class="footnote-ref" href="#fn:87">1</a></sup> は，16 種の論理演算のすべてを計算するための統一的なアルゴリズム <script type="math/tex">Apply</script> を与えている．
+以下，<script type="math/tex">Apply</script> がどのように動作するかについて簡単に説明する．
+<script type="math/tex">\star</script> を任意の 2 項論理演算とし，<script type="math/tex">f</script> と <script type="math/tex">f'</script> を2つのブール関数とする．
+アルゴリズムの説明を簡単にするため，以下の表記法を導入する：</p>
+<ul>
+<li>
+<script type="math/tex">v</script> と <script type="math/tex">v</script> を <script type="math/tex">f</script> と <script type="math/tex">f'</script> を表す OBDD の根とする．</li>
+<li>
+<script type="math/tex">x = var(v)</script> とし，<script type="math/tex">x' = var(v')</script> とする．</li>
+</ul>
+<p>
+<script type="math/tex">v</script> と <script type="math/tex">v'</script> の関係によって，いくつかの場合が考えられる：</p>
+<ul>
+<li>
+<script type="math/tex">v</script> と <script type="math/tex">v'</script> がいずれも終端頂点であれば，<script type="math/tex">f \star f' = value(v) \star value(v')</script> となる．</li>
+<li>
+<script type="math/tex">x = x'</script> の場合，シャノン展開
+    <script type="math/tex; mode=display">
+    f \star f' = (\neg x \wedge (f|_{x \leftarrow 0} \star f'|_{x \leftarrow 0})) \vee (x \wedge (f|_{x \leftarrow 1} \star f'|_{x \leftarrow 1}))
+    </script>
+    を用いて，それぞれをより少ない変数に依存する 2 つの部分問題へと分割する．
+    これらの部分問題は再帰的に解決される．
+    結果として得られる OBDD は，<script type="math/tex">var(w) = x</script> であり，<script type="math/tex">low(w)</script> が <script type="math/tex">(f|_{x \leftarrow 0} \star f'|_{x \leftarrow 0})</script> の OBDD となり，<script type="math/tex">high(w)</script> が <script type="math/tex">(x \wedge (f|_{x \leftarrow 1} \star f'|_{x \leftarrow 1})</script> の OBDD となるような新しいノード <script type="math/tex">w</script> を根としたものである．</li>
+<li>
+<script type="math/tex">x < x'</script> の場合，<script type="math/tex">f'</script> は <script type="math/tex">x</script> に依存しないので <script type="math/tex">f'|_{x \leftarrow 0} = f'|_{x \leftarrow 1} = f'</script> である．
+    この場合，シャノン展開は
+    <script type="math/tex; mode=display">
+    f \star f' = (\neg x \wedge (f|_{x \leftarrow 0} \star f')) \vee (x \wedge (f|_{x \leftarrow 1} \star f'))
+    </script>
+    と単純化され，<script type="math/tex">f \star f'</script> に対する OBDD は，2番目（<script type="math/tex">x = x'</script>）の場合と同様に再帰的に計算される．</li>
+<li>
+<script type="math/tex">x' < x</script> の場合，必要な計算は上述の場合（<script type="math/tex">x < x'</script>）と同様である．</li>
+</ul>
+<p>それぞれの部分問題が 2 つの部分問題を生成しうるため，アルゴリズムが指数関数的にならないように注意する必要がある．
+動的計画法を用いることで，アルゴリズムを多項式時間に保つことが可能である．
+それぞれの部分問題は OBDD の組に対応し，それらは <script type="math/tex">f</script> と <script type="math/tex">f'</script> に対する元の OBDD の部分グラフとなる．
+各部分グラフはその根によって一意に決定されるため，<script type="math/tex">f</script> の OBDD における部分グラフの数は，<script type="math/tex">f</script> の OBDD のサイズによって制限される．
+同様の境界は <script type="math/tex">f'</script> についても成り立つ．
+したがって，部分問題の個数は，<script type="math/tex">f</script> と <script type="math/tex">f'</script> の OBDD のサイズの積に制限される．
+<strong>結果キャッシュ</strong>（result cache）と呼ばれるハッシュテーブルは，以前に計算された部分問題を記録するために使用される．
+再帰呼び出しを行う前にキャッシュを確認し，その部分問題が解かれているかどうかが確認される．
+解決済みであればキャッシュから結果を得る．そうでなければ，再帰呼び出しを実行する．
+得られた結果は標準形であることを保証するため，縮小される必要がある．
+その後で，結果キャッシュに格納される．</p>
+<p>論理否定は <script type="math/tex">Apply</script> を用いて実装可能な 16 の 2 項論理演算の一つである．
+すなわち，<script type="math/tex">\neg f \equiv f \rightarrow \mathit{false}</script> である．</p>
+<p>注意すべきは，ブール関数の OBDD は，その関数の決定木を縮小して作られるわけではない，ということである．
+これは，多くの場合，決定木が大きすぎてメモリに保持できないことに起因する．
+OBDD の構築は決定木から始めるのではなく，個々の変数の OBDD から始めてブール演算子を順に適用してゆき，中間経過が冗長性を含んでいた場合は適宜縮小を行う，という手順がとられる．
+また，構築中に並べ替えが適用されることもある．</p>
+<h3 id="obdd_2">OBDD の拡張</h3>
+<p>Bryant によるオリジナルのブール関数の OBDD 表現に対する空間的要求を減らすために，いくつかの拡張が開発されてきた<sup id="fnref:77"><a class="footnote-ref" href="#fn:77">11</a></sup>．
+単一の多根グラフは，部分グラフを共有するブール関数の集合の表現に使用できる．
+集合内のすべての式に対して同じ変数順序が適用される．
+標準的な OBDD の場合と同様に，このグラフは同型の部分グラフや冗長な頂点は含まない．
+この拡張が利用される場合，集合内の 2 つの関数は，それらが同じ根を持つとき，かつそのときのみ同一である．
+その結果，2 つの関数が等しいかどうかの判定は定数時間で実装できる．
+もう一つの有用な拡張は，グラフの編に論理否定を表すラベルを追加することである．
+これにより，ある数式とその否定を表現するために異なる部分グラフを用いなくてもよくなる．
+OBDD パッケージは，数百万の頂点を持つグラフを扱えることが示されている．</p>
+<h3 id="obdd_3">OBDD とオートマトン</h3>
+<p>OBDD は決定性有限オートマトンの一種と見なすこともできる<sup id="fnref:464"><a class="footnote-ref" href="#fn:464">12</a></sup>．
+<script type="math/tex">n</script> 個の引数をもつブール関数は，<script type="math/tex">\{0, 1\}^n</script> の中でその関数で 1 と評価されるような文字列の集合とみなすことができる．
+これは有限言語であり，かつすべての有限言語は正則であるため，この集合を受理する極小の有限オートマトンが存在する．
+このオートマトンは，元のブール関数の標準形を提供する．
+ブール関数に対する論理演算は，有限オートマトンが受理する言語に対する集合演算として実現できる．
+例えば，AND は集合の共通部分に対応する．
+初等オートマトン理論における構成技術を用いることで，これらの言語に対する演算を計算することができる．
+標準的な OBDD の演算は，これらの構成技術の類似とみなすことができる．</p>
+<h2 id="82-obdd">8.2 OBDD によるクリプキ構造の表現</h2>
+<h3 id="_3">特性関数</h3>
+<p>OBDD は有限領域上の関係の簡潔な表現を得るために非常に有用である<sup id="fnref2:96"><a class="footnote-ref" href="#fn:96">2</a></sup><sup id="fnref2:376"><a class="footnote-ref" href="#fn:376">3</a></sup>．
+このような表現を用いてクリプキ構造を記述し，それを解析する方法については後に述べる．
+<script type="math/tex">\mathcal{Q}</script> を <script type="math/tex">\{0, 1\}</script> 上の <script type="math/tex">n</script> 項関係であるとすると，<script type="math/tex">\mathcal{Q}</script> はその<strong>特性関数</strong>（characteristic function）
+<script type="math/tex; mode=display">
+f_\mathcal{Q}(x_1,\ldots,x_n) = 1 \text{ iff } \mathcal{Q}(x_1,\ldots,x_n)
+</script>
+に対する OBDD で表現することができる．</p>
+<p>そうでない場合，<script type="math/tex">\mathcal{Q}</script> を有限領域 <script type="math/tex">D</script> 上の <script type="math/tex">n</script> 項関係であるとする．
+ある <script type="math/tex">m > 1</script> に対して，一般性を失うこと無く <script type="math/tex">D</script> が <script type="math/tex">2^m</script> 個の要素をもつと仮定できる．
+<script type="math/tex">\mathcal{Q}</script> を OBDD として表現するため，<script type="math/tex">D</script> の要素を
+長さ <script type="math/tex">m</script> の二値ベクトルを <script type="math/tex">D</script> の要素へと対応付ける全単射 <script type="math/tex">\phi : \{0, 1\}^m \rightarrow D</script> を用いて符号化する．
+符号化 <script type="math/tex">\phi</script> を用いて，<script type="math/tex">m \times n</script> 項のブール関係 <script type="math/tex">\hat{\mathcal{Q}}</script> を以下のルールに従って構築する：
+<script type="math/tex; mode=display">
+\hat{\mathcal{Q}}(\bar{x}_1,\ldots,\bar{x}_n) = \mathcal{Q}(\phi(\bar{x}_1),\ldots,\phi(\bar{x}_n))
+</script>
+ここで <script type="math/tex">\bar{x}_i</script> は，<script type="math/tex">D</script> の値をもつ変数 <script type="math/tex">x_i</script> を符号化した <script type="math/tex">m</script> 個のブール変数からなるベクトルである．
+すると，関係 <script type="math/tex">\mathcal{Q}</script> は，<script type="math/tex">\hat{\mathcal{Q}}</script> の特性関数 <script type="math/tex">f_{\hat{\mathcal{Q}}}</script> から得られる OBDD として表現できる．
+この手法は，異なる領域 <script type="math/tex">D_1,\ldots,D_n</script> 上の関係にも容易に拡張できる．
+さらに，集合は単項関係とみなすことができるので，同じ手法で集合を OBDD として表現することができる．</p>
+<h3 id="_4">クリプキ構造の符号化</h3>
+<p>ここで，クリプキ構造 <script type="math/tex">M = (S, R, L)</script> を考えよう．
+この構造を表現するために，集合 <script type="math/tex">S</script>，関係 <script type="math/tex">R</script>，そして写像 <script type="math/tex">L</script> を記述しなければならない．
+集合 <script type="math/tex">S</script> に対して，まず状態を符号化する必要がある．
+簡単のため，ちょうど <script type="math/tex">2^m</script> 個の状態があると仮定する．
+前述と同様に，<script type="math/tex">\phi : \{0, 1\}^m \rightarrow S</script> を二値ベクトルを状態に対応づける関数とする．
+それぞれの代入は <script type="math/tex">S</script> 中の状態の符号化であるため，<script type="math/tex">S</script> を表す特性関数は定数 1 に対する OBDD となる．
+遷移関係 <script type="math/tex">R</script> についても，状態に対するものと同じ符号化を用いる．
+第3章と同様に，遷移の起点の状態を表すブール変数と終点の状態を表すブール変数に対応する 2 つの集合が必要である．
+遷移関係 <script type="math/tex">R</script> をブール関係 <script type="math/tex">\bar{x}_i</script> で符号化すると，<script type="math/tex">R</script> は特性関数 <script type="math/tex">\hat{R}(\bar{x}_i,\bar{x}_i'</script> で表現される．
+最後に写像 <script type="math/tex">L</script> を考える．
+<script type="math/tex">L</script> は状態から原子命題の部分集合への写像として定義されるが，原子命題から状態の部分集合への写像と考える方が便利であろう．
+原子命題 <script type="math/tex">p</script> はそれを満たす状態の集合 <script type="math/tex">\{ s \mid p \in L (s) \}</script> へと対応づけられる．
+この状態集合を <script type="math/tex">L_p</script> と呼ぶこととし，<script type="math/tex">L_p</script> は符号化 <script type="math/tex">\phi</script> を用いて表現できる．
+このように，それぞれの原子命題を個別に表現する．</p>
+<p>クリプキ構造を表現するために OBDD がどのように使われるかを説明するために，図8.4のような 2 つの状態をもつ構造を考えてみよう．
+<center>
+<br><br>
+<img src="../img/lec09-fig4.pdf">
+<br><br>
+図8.4：2 つの状態をもつクリプキ構造
+<br><br>
+</center>
+この構造は，<script type="math/tex">a</script> と <script type="math/tex">b</script> という 2 つの状態変数をもつ．
+遷移後の状態を符号化するため，2 つの状態変数 <script type="math/tex">a'</script> と <script type="math/tex">b'</script> を導入する．
+したがって，状態 <script type="math/tex">s_1</script> から状態 <script type="math/tex">s_2</script> への遷移は，以下の論理積で表される．
+<script type="math/tex; mode=display">
+(a \wedge b \wedge a' \wedge \neg b')
+</script>
+遷移関係全体に対するブール関数は以下のように与えられる．
+<script type="math/tex; mode=display">
+(a \wedge b \wedge a' \wedge \neg b') \vee (a \wedge \neg b \wedge a' \wedge \neg b') \vee (a \wedge \neg b \wedge a' \wedge b')
+</script>
+このクリプキ構造は 3 つの遷移をもつため，この式は 3 つの式の論理和となる．
+この式を OBDD へと変換することで，遷移関係の簡潔な表現を得ることができる．</p>
+<p>また，初期状態の集合や，公平なクリプキ構造を記述したい場合もある．
+初期状態の集合は，他の集合と同じように表現される．
+公平性制約 <script type="math/tex">F = \{P_1, \ldots, P_n\}</script> の場合は，単純に各 <script type="math/tex">P_i</script> を個別に表現する．
+これ以降，関係 <script type="math/tex">R</script> に対してそれを符号化したものは <script type="math/tex">\hat{R}</script> というように，一般化して同じ名前を使うことにする．</p>
+<p>多くの場合において，クリプキ構造 <script type="math/tex">M</script> の明示的な表現を構築した上で前述の符号化を行うことは，たとえ最終的に得られる記号表現が簡潔になる場合でも，構造が大きすぎることから現実的ではない．
+したがって，実際には，簡潔なシステムの高位記述から直接 OBDD を構築する．
+第3章で示した変換手続きは，システムを論理式に変換するものである．
+もし領域が前述のように符号化されていれば，この手続きを用いてシステムの高位記述から遷移関係の OBDD を直接構築することができる．</p>
+<h2 id="_5">演習問題</h2>
+<div class="admonition question">
+<p class="admonition-title">問題 8.1（BDD の基礎）</p>
+<p>論理式 <script type="math/tex">x \vee (y \wedge z)</script> に対する BDD を変数順序を <script type="math/tex">x < y < z</script> として描画せよ．
+さらに，変数順序を <script type="math/tex">y < x < z</script> に変更した BDD を作成せよ．</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">問題 8.2（制約）</p>
+<p>
+<script type="math/tex">f</script> を <script type="math/tex">(x_1 \wedge x_2) \vee (x_3 \wedge x_4)</script> とする．
+変数順序 <script type="math/tex">x_1 < x_2 < x_3 < x_4</script> の BDD を描画せよ．
+さらに，同じ変数順序における <script type="math/tex">f|_{x_2 \leftarrow 0}</script> の BDD を描画せよ．</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">問題 8.3（<script type="math/tex">Apply</script>）</p>
+<p>
+<script type="math/tex">f</script> を <script type="math/tex">a \Rightarrow b</script> とし，<script type="math/tex">f'</script> を <script type="math/tex">\neg b</script> とする．
+<script type="math/tex">f</script> と <script type="math/tex">f'</script> に対する BDD を変数順序を <script type="math/tex">a < b</script> として描画せよ．
+そして，手続き <script type="math/tex">Apply</script> が <script type="math/tex">f \leftrightarrow f'</script> に対する BDD をどのように生成するか示せ．</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:87">
+<p>R. E. Bryant. Graph-based algorithms for Boolean function manipulation. IEEE Trans. Comput., 35(8):677–691, 1986.&#160;<a class="footnote-backref" href="#fnref:87" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:87" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:87" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:87" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:87" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:96">
+<p>J. R. Burch, E. M. Clarke, K. L. McMillan, D. L. Dill, and L. J. Hwang. Symbolic model checking: 10 20 states and beyond. Inform. and Comput., 98(2):142–170, 1992. Originally presented at the 1990 Symposium on Logic in Computer Science (LICS).&#160;<a class="footnote-backref" href="#fnref:96" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:96" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:376">
+<p>K. L. McMillan. Symbolic Model Checking: An Approach to the State Explosion Problem. Kluwer, 1993.&#160;<a class="footnote-backref" href="#fnref:376" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:376" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:89">
+<p>R. E. Bryant. Symbolic Boolean manipulation with ordered binary-decision diagrams. ACM Comput. Surv., 24(3):293–318, 1992.&#160;<a class="footnote-backref" href="#fnref:89" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:89" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:451">
+<p>D. Sieling. The nonapproximability of OBDD minimization. Inf. Comput., 172(2):103–138, 2002.&#160;<a class="footnote-backref" href="#fnref:451" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:88">
+<p>R. E. Bryant. On the complexity of VLSI implementations and graph representations of Boolean functions with application to integer multiplication. IEEE Trans. Comput., 40(2):205–213, 1991.&#160;<a class="footnote-backref" href="#fnref:88" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:232">
+<p>M. Fujita, H. Fujisawa, and N. Kawato. Evaluation and improvements of Boolean comparison method based on binary decision diagrams. In International Conference on Computer-Aided Design, ICCAD, pages 2–5. IEEE Computer Society Press, 1988.&#160;<a class="footnote-backref" href="#fnref:232" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:367">
+<p>S. Malik, A. Wang, R. Brayton, and A. Sangiovanni-Vincenteli. Logic verification using binary decision diagrams in a logic synthesis environment. In International Conference on Computer-Aided Design, pages 6–9. IEEE, 1988.&#160;<a class="footnote-backref" href="#fnref:367" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p>F. A. Aloul, I. L. Markov, and K. A. Sakallah. FORCE: a fast and easy-to-implement variable-ordering heuristic. In Great Lakes Symposium on VLSI, pages 116–119, 2003.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:434">
+<p>R. Rudell. Dynamic variable ordering for ordered binary decision diagrams. In International Conference on Computer Aided Design, ICCAD, pages 42–47. IEEE Computer Society / ACM, 1993.&#160;<a class="footnote-backref" href="#fnref:434" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:77">
+<p>K. S. Brace, R. L. Rudell, and R. E. Bryant. Efficient implementation of a BDD package. In Design Automation Conference, DAC, pages 40–45. IEEE Computer Society Press, 1990.&#160;<a class="footnote-backref" href="#fnref:77" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:464">
+<p>N. Suzuki, editor. Symbolic Computation Algorithms on Shared Memory Multiprocessors. MIT Press, 1992.&#160;<a class="footnote-backref" href="#fnref:464" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec08/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第8回" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第8回
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>

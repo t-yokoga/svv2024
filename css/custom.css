@@ -5,8 +5,8 @@ body {
 .md-typeset h1 {
   /*font-size: 24pt;*/
   font-weight: bold;
-  color: #000;
-  border-bottom: solid 2px #f18b21;
+
+  border-bottom: solid 2px #616974;
   padding-bottom: 5px;
 }
 .md-typeset h2 {
@@ -21,3 +21,4 @@ body {
       margin-left: 0;
     }
 }
+

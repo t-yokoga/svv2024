@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
     
     
       
@@ -18,32 +17,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
         
       
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
     
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+    
       <link rel="stylesheet" href="../css/custom.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -54,10 +65,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +84,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
       
@@ -107,19 +120,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,11 +152,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -224,6 +243,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -238,29 +258,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    システムのモデル化
+  <a href="#2_1" class="md-nav__link">
+    2. システムのモデル化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    クリプキ構造
+  <a href="#31" class="md-nav__link">
+    3.1 遷移システムとクリプキ構造
   </a>
   
-    <nav class="md-nav" aria-label="クリプキ構造">
+    <nav class="md-nav" aria-label="3.1 遷移システムとクリプキ構造">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     遷移システムの形式化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     クリプキ構造の定義
   </a>
   
@@ -272,43 +292,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    外部環境と非決定性
+  <a href="#32" class="md-nav__link">
+    3.2 外部環境と非決定性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    一階の論理表現
+  <a href="#33" class="md-nav__link">
+    3.3 一階論理と記号表現
   </a>
   
-    <nav class="md-nav" aria-label="一階の論理表現">
+    <nav class="md-nav" aria-label="3.3 一階論理と記号表現">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     状態集合の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     遷移関係の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     原子命題の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     一階の論理式からのクリプキ構造の導出
   </a>
   
@@ -333,11 +353,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    ブール符号化
+  <a href="#34" class="md-nav__link">
+    3.4 ブール符号化
   </a>
   
-    <nav class="md-nav" aria-label="ブール符号化">
+    <nav class="md-nav" aria-label="3.4 ブール符号化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -353,7 +373,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     演習問題
   </a>
   
@@ -442,6 +462,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -454,6 +504,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -468,29 +519,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    システムのモデル化
+  <a href="#2_1" class="md-nav__link">
+    2. システムのモデル化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    クリプキ構造
+  <a href="#31" class="md-nav__link">
+    3.1 遷移システムとクリプキ構造
   </a>
   
-    <nav class="md-nav" aria-label="クリプキ構造">
+    <nav class="md-nav" aria-label="3.1 遷移システムとクリプキ構造">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     遷移システムの形式化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     クリプキ構造の定義
   </a>
   
@@ -502,43 +553,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    外部環境と非決定性
+  <a href="#32" class="md-nav__link">
+    3.2 外部環境と非決定性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    一階の論理表現
+  <a href="#33" class="md-nav__link">
+    3.3 一階論理と記号表現
   </a>
   
-    <nav class="md-nav" aria-label="一階の論理表現">
+    <nav class="md-nav" aria-label="3.3 一階論理と記号表現">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     状態集合の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     遷移関係の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     原子命題の記号表現
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     一階の論理式からのクリプキ構造の導出
   </a>
   
@@ -563,11 +614,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    ブール符号化
+  <a href="#34" class="md-nav__link">
+    3.4 ブール符号化
   </a>
   
-    <nav class="md-nav" aria-label="ブール符号化">
+    <nav class="md-nav" aria-label="3.4 ブール符号化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -583,7 +634,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     演習問題
   </a>
   
@@ -601,10 +652,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="2">第2回 クリプキ構造と一階の論理表現</h1>
-<p>この回では，教科書の第3章 "Modeling Systems" の前半について説明します．</p>
-<div class="admonition 概要">
+
+
+<h1 id="2">第2回 クリプキ構造と一階の論理表現</h1>
+<p>この回では，教科書の第3章 "Modeling Systems" の前半 (3.1 〜 3.4) について説明します．</p>
+<div class="admonition summary">
 <p class="admonition-title">概要</p>
 <ul>
 <li>システムのモデル化</li>
@@ -614,7 +666,7 @@
 <li>ブール符号化</li>
 </ul>
 </div>
-<h2 id="_1">システムのモデル化</h2>
+<h2 id="2_1">2. システムのモデル化</h2>
 <p>システムの正しさを検証するためには，システムが満たすべき特性を仕様化した上で，その真偽をどの抽象レベルで評価できるかを理解する必要がある．
 これはいわゆる<strong>要求工学</strong> (requirements engineering) に近い手続きになる．
 要件工学は，非形式的 (informal) な仕様やモデルから始まって，アルゴリズム的な検証を可能とするための形式的 (formal) な仕様やモデルへと発展していく．
@@ -627,7 +679,7 @@
 <p>例えば，同期式のデジタル回路を検証する場合，実際の電圧レベルではなくゲートレベルでモデル化したり，ブール代数を用いて証明を行う方が有用であることも多い．
 同様に，通信プロトコルを証明する際には，メッセージの交換に焦点を絞り，メッセージのテキストの内容や特定のオペレーティング・システムやデバイスの実装の詳細は無視したい場合もある．
 ここで注意すべきは，モデル化における「無視」とは，詳細を忘れてしまうことを意味するのではなく，むしろ，検証結果が与えられた実世界のシステムに適用できるよう制約を設けることを意味している．</p>
-<p>多くのデジタル回路やプログラムは，リアクティブシステムである．
+<p>多くのデジタル回路やプログラムは，<strong>リアクティブシステム</strong>である<sup id="fnref:369"><a class="footnote-ref" href="#fn:369">1</a></sup>．
 リアクティブシステムは，外部の環境と頻繁に相互作用を行い，多くの場合は終了することはない．
 そのため，入出力の対応関係よりも，むしろその内部状態に基づいて理解した方が適切にモデル化することができる．
 したがって，捉えるべきリアクティブシステムの最も重要な特徴は，その<strong>状態</strong> (state)である．
@@ -644,8 +696,8 @@
 このようなプログラミング言語の豊富さとシステムの種類の多さ（例えば，同期・非同期回路，共有変数をもつプログラム，メッセージ渡しで通信するプログラムを含む）を考慮すると，システムをモデル化するための統一的な形式化が必要となる．
 この目的のために，一階論理における式を用いる．
 プログラムから一階の論理表現への変換のは単純であり，また，一階の論理式からクリプキ構造を構築するのも同様に単純である．</p>
-<h2 id="_2">クリプキ構造</h2>
-<h3 id="_3">遷移システムの形式化</h3>
+<h2 id="31">3.1 遷移システムとクリプキ構造</h2>
+<h3 id="_1">遷移システムの形式化</h3>
 <p>クリプキ構造の話を始める前に，もう少し一般的な遷移システム (transition system) の形式化について説明する．
 遷移システム <script type="math/tex">T</script> は以下の３組 <script type="math/tex">(S, S_0, R)</script> として定義される．ここで，</p>
 <ul>
@@ -663,7 +715,7 @@
 <p>このように，本書におけるパスの概念は，グラフ理論で用いられている標準的な概念である．
 <script type="math/tex">R</script> が左全関係なので，それぞれの有限パスは無限パスに拡張することができる．
 さらに，それぞれの有限パスはまた，無限パスのプレフィックス（prefix）として得ることもできる．</p>
-<h3 id="_4">クリプキ構造の定義</h3>
+<h3 id="_2">クリプキ構造の定義</h3>
 <p>特定の状態を観察するため，状態ラベルの集合を定義する．
 これらのラベルを<strong>原子命題</strong> (atomic propositions)と呼び，すべての原子命題の集合を <script type="math/tex">AP</script> を用いて表す．
 このような状態ラベルで表現力を増した遷移システムを<strong>クリプキ構造</strong>と呼ぶ．
@@ -692,7 +744,7 @@
 実際のところ，「モデル検査」という呼称はこの論理的な概念から生まれたものである．
 通常，モデルという単語が意図する意味は文脈から明らかであるが，少し注意してほしい．</p>
 </div>
-<h2 id="_5">外部環境と非決定性</h2>
+<h2 id="32">3.2 外部環境と非決定性</h2>
 <p>先ほど説明した遷移システム（およびクリプキ構造）の定義を振り返ってみると，ある状態での遷移が確定していないことを許容している．
 形式的に言うと，与えられた状態に対して 2 つ以上の後続状態が存在することが認められている．
 同様に，初期状態も一意に決まる必要はない．
@@ -710,7 +762,7 @@
 <li>初期状態は非決定的に決まる．つまり，ボタンが押されているか離されているかのいずれかである．これは，初期状態を 2 つ用意することでモデル化する．</li>
 <li>4 つの状態それぞれに 2 つの後続状態が定義されており，非決定的に遷移が実行される．例えばラベル <script type="math/tex">0, r</script> の状態を考えると，ボタンが押された場合をモデル化するラベル <script type="math/tex">1, p</script> の状態への遷移と，押されなかった場合をモデル化する自己遷移の 2 つがある．</li>
 </ol>
-<h2 id="_6">一階の論理表現</h2>
+<h2 id="33">3.3 一階論理と記号表現</h2>
 <p>システムを記述するプログラミング言語やハードウェア記述言語固有の意味論を抽象化するために，一階の論理式を用いて初期状態の集合と遷移関係を表現する．
 本章における論理や意味論の使い方はさほど形式的ではなく，一階理論や公理系よりも固定された数学構造上の一階の論理式の評価に注目している．</p>
 <div class="admonition tip">
@@ -725,7 +777,7 @@
 どちらのモデルもそれ自体は適切といえる．
 無限状態のモデルはアルゴリズムの教科書に載っているような理想化された数学的な観点に対応しており，有限状態のモデルは現実の C プログラムを正確に表現することができる．
 プログラムが 2 つの解釈のどちらかでは正しくても，両方では正しくないような例題は簡単に構築できる．</p>
-<h3 id="_7">状態集合の記号表現</h3>
+<h3 id="_3">状態集合の記号表現</h3>
 <p>状態はシステムの瞬間を表すものなので，状態をシステムの変数に割り当てられた値によって識別するのは自然なことである．
 （後述する，命令型プログラムにおけるプログラムカウンタはこのような変数の特別な例である．）
 この目的のため，<script type="math/tex">V = \{v_1, \ldots ,v_n\}</script> をシステム変数の集合とし，<script type="math/tex">D_v</script> を変数 <script type="math/tex">v</script> のそれぞれの定義域とする．
@@ -762,7 +814,7 @@
 このとき，<script type="math/tex">A \cup B</script>，<script type="math/tex">A \cap B </script>，<script type="math/tex">S \setminus A</script> はそれぞれ，<script type="math/tex">\mathcal{A}(s) \vee \mathcal{B}(s)</script>，<script type="math/tex">\mathcal{A}(s) \wedge \mathcal{B}(s)</script>，<script type="math/tex">\neg \mathcal{A}(s)</script> に対応する．</p>
 <p>同様の対応付けは，集合上の関係演算子についても適用される．
 例えば，<script type="math/tex">A \subseteq B</script> であるか否かは，式 <script type="math/tex">\mathcal{A}(s) \Rightarrow \mathcal{B}(s)</script> が全ての <script type="math/tex">s</script> に対して真と評価されるか否かを調べることで判定できる．</p>
-<h3 id="_8">遷移関係の記号表現</h3>
+<h3 id="_4">遷移関係の記号表現</h3>
 <p>遷移関係も，一階論理を用いることで記号的に表現できる．
 これは，状態の集合に対する記号的表現に対する考え方を拡張し，<strong>順序付き状態対の集合</strong> (set of ordered pairs of states) を論理式として表現することにより実現する．
 状態対は 2 つのシステム変数の付値を指すことから，<script type="math/tex">V</script> の変数だけでは対を表現することができない．
@@ -784,7 +836,7 @@
 </ul>
 <p>ような遷移関係を表すことになる．
 <script type="math/tex">V \cup V'</script> を自由変数とする一階の論理式 <script type="math/tex">\phi</script> が与えられたとき，<script type="math/tex">\phi</script> で表された遷移関係に対 <script type="math/tex">(s,s')</script> が含まれることを表すため，<script type="math/tex">s, s' \models \phi</script> という表記を用いることにする．</p>
-<h3 id="_9">原子命題の記号表現</h3>
+<h3 id="_5">原子命題の記号表現</h3>
 <p>原子命題の集合 <script type="math/tex">AP</script> も，同様の枠組みで定義する．
 <script type="math/tex">AP</script> は，システムの状態に関する情報を含むラベルの固定された有限集合である．
 各ラベル <script type="math/tex">l \in AP</script> に対して，<script type="math/tex">l \in L(s)</script> であることを表すために <script type="math/tex">s \models l</script> と表記し，<script type="math/tex">l \notin L(s)</script> であることを表すために <script type="math/tex">s \nVDash l</script> と表記する．</p>
@@ -798,7 +850,7 @@
 </p>
 <p>なお，<script type="math/tex">v</script> をブール値 <script type="math/tex">\{true, false\}</script> をもつ変数とするとき，<script type="math/tex">AP</script> は必ずしも <script type="math/tex">v = true</script> と <script type="math/tex">v = false</script> の両方を含んでいなくてもよい．
 <script type="math/tex">s(v) = true</script> を表すために <script type="math/tex">s \models v</script> と表記し，<script type="math/tex">s(v) = false</script> を表すために <script type="math/tex">s \models \neg v</script> と表記する．</p>
-<h3 id="_10">一階の論理式からのクリプキ構造の導出</h3>
+<h3 id="_6">一階の論理式からのクリプキ構造の導出</h3>
 <p>それでは，並行システムを表す一階の論理式 <script type="math/tex">\mathcal{S}_0</script> および <script type="math/tex">\mathcal{R}</script> から，クリプキ構造 <script type="math/tex">M=(S, S_0, R, AP, L)</script> をどのように導くかについて説明しよう．</p>
 <ul>
 <li>状態の集合 <script type="math/tex">S</script> は，<script type="math/tex">V</script> に対する全ての付値からなる集合とする．</li>
@@ -810,6 +862,8 @@
 <p>クリプキ構造の遷移関係は全関係であることが求められるため，仮にある状態が後続をもたなければ関係 <script type="math/tex">R</script> を拡張する．
 慣例としては，こうした場合は <script type="math/tex">R</script> を <script type="math/tex">R(s, s)</script> が満たされるように修正する．</p>
 <h4 id="example-31">Example 3.1</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 3.1</p>
 <p>これまでの定義を例示するため，定義域 <script type="math/tex">D = \{0, 1\}</script> をもつ 2 つの変数 <script type="math/tex">x</script> および <script type="math/tex">y</script> からなる簡単なシステムを考える．
 したがって，変数 <script type="math/tex">x</script> および <script type="math/tex">y</script> に対する 1 つの付値が，1 つのペア <script type="math/tex">(d_1, d_2) \in D \times D</script> に対応する．
 ここで，<script type="math/tex">d_1</script> は <script type="math/tex">x</script> の値であり，<script type="math/tex">d_2</script> は <script type="math/tex">y</script> の値である．
@@ -837,12 +891,15 @@
 <p>このクリプキ構造において，初期状態から始まる唯一のパスは，
 <script type="math/tex; mode=display"> (1,1) (0,1) (1,1) (0,1) \ldots </script>
 となる．</p>
-<h2 id="_11">ブール符号化</h2>
+</div>
+<h2 id="34">3.4 ブール符号化</h2>
 <p>命題論理では，論理式は，<script type="math/tex">true</script> もしくは <script type="math/tex">false</script> のいずれかとなる命題変数と，論理積，論理和，そして否定の論理接続子へと限定される．
 多くの場合，<script type="math/tex">true</script> を 1 と表記し，<script type="math/tex">false</script> を 0 と表記する．
 ブール符号化によって，BDD や命題充足可能性 (SAT) といった命題論理に対する証明技術を利用することが可能となり，したがって，<script type="math/tex">\mathcal{S}_0</script> および <script type="math/tex">\mathcal{R}</script> に対する特性関数を命題論理へと変換する方法が求められる．
 状態の集合 <script type="math/tex">S</script> が有限であれば，こうした変換を行うことは必ず可能である．</p>
 <h4 id="example-32">Example 3.2</h4>
+<div class="admonition example">
+<p class="admonition-title">Example 3.2</p>
 <p>以下の 4 つの状態をもつクリプキ構造を用いて，命題符号化について説明しよう．</p>
 <p><img src="../img/lec02-fig3.png" width="250"></p>
 <p>状態には，<script type="math/tex">a</script> あるいは <script type="math/tex">b</script> のラベルが付けられている．
@@ -861,8 +918,9 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
 & & \vee \quad & v_0 \wedge v_1 \wedge v_0' \wedge v_1'.
 \end{alignat*}</script>
 この <script type="math/tex">R</script> の 2 番目の節が， 2 つの遷移を表していることに気付いてほしい．</p>
-<h2 id="_12">演習問題</h2>
-<div class="admonition note">
+</div>
+<h2 id="_7">演習問題</h2>
+<div class="admonition question">
 <p class="admonition-title">問題 3.1 (特性関数)</p>
 <p>特性関数は遷移関係や状態集合を定義するために用いられる．</p>
 <ol>
@@ -876,11 +934,14 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
 <li>関係 <script type="math/tex">T</script> の反射推移閉包 (reflective transitive closure) を求めよ．</li>
 </ol>
 </div>
-                
-              
-              
-                
-
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:369">
+<p>Z. Manna and A. Pnueli. The Temporal Logic of Reactive and Concurrent Systems: Specification . Springer, 1992.&#160;<a class="footnote-backref" href="#fnref:369" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -889,12 +950,12 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../lec01/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../lec01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第1回" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -909,7 +970,8 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
         </a>
       
       
-        <a href="../lec03/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../lec03/" class="md-footer__link md-footer__link--next" aria-label="Next: 第3回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -927,14 +989,15 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -944,12 +1007,14 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
       
         <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
       
