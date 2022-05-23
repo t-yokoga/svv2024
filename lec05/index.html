@@ -13,7 +13,7 @@
     
     
       
-        <title>第5回 - システム検証論 (2021)</title>
+        <title>第5回 CTL* ベースのその他の時相論理 - システム検証論 (2021)</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第5回
+              第5回 CTL* ベースのその他の時相論理
             
           </span>
         </div>
@@ -210,7 +210,7 @@
   
     <li class="md-nav__item">
       <a href="../lec01/" class="md-nav__link">
-        第1回
+        第1回 モデル検査とは
       </a>
     </li>
   
@@ -225,7 +225,7 @@
   
     <li class="md-nav__item">
       <a href="../lec02/" class="md-nav__link">
-        第2回
+        第2回 クリプキ構造と一階の論理表現
       </a>
     </li>
   
@@ -240,7 +240,7 @@
   
     <li class="md-nav__item">
       <a href="../lec03/" class="md-nav__link">
-        第3回
+        第3回 ハードウェア・ソフトウェアのモデル化
       </a>
     </li>
   
@@ -255,7 +255,7 @@
   
     <li class="md-nav__item">
       <a href="../lec04/" class="md-nav__link">
-        第4回
+        第4回 時相論理 CTL*
       </a>
     </li>
   
@@ -279,12 +279,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          第5回
+          第5回 CTL* ベースのその他の時相論理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        第5回
+        第5回 CTL* ベースのその他の時相論理
       </a>
       
         
@@ -402,7 +402,7 @@
   
     <li class="md-nav__item">
       <a href="../lec06/" class="md-nav__link">
-        第6回
+        第6回 CTL モデル検査
       </a>
     </li>
   
@@ -417,7 +417,7 @@
   
     <li class="md-nav__item">
       <a href="../lec07/" class="md-nav__link">
-        第7回
+        第7回 不動点計算によるモデル検査アルゴリズム
       </a>
     </li>
   
@@ -432,7 +432,7 @@
   
     <li class="md-nav__item">
       <a href="../lec08/" class="md-nav__link">
-        第8回
+        第8回 LTL と CTL* のモデル検査
       </a>
     </li>
   
@@ -447,7 +447,7 @@
   
     <li class="md-nav__item">
       <a href="../lec09/" class="md-nav__link">
-        第9回
+        第9回 二分決定グラフ
       </a>
     </li>
   
@@ -462,7 +462,7 @@
   
     <li class="md-nav__item">
       <a href="../lec10/" class="md-nav__link">
-        第10回
+        第10回 記号モデル検査
       </a>
     </li>
   
@@ -787,7 +787,7 @@ LTL パス論理式は以下のように定義される．</p>
 
 <p>例えば，式 <script type="math/tex">\textbf{EX}\{s, t\}</script> は，1 ステップで状態 <script type="math/tex">s</script> または <script type="math/tex">t</script> に到達可能な状態において真となる．</p>
 <h2 id="45">4.5 公平性</h2>
-<p><a href="../lec03#_14">第3回</a>で，システムのモデル化における公平性の重要性について述べた．
+<p><a href="../lec03#37">第3章</a>で，システムのモデル化における公平性の重要性について述べた．
 公平性制約を伴うシステムは，<strong>公平クリプキ構造</strong> (fair Kripke structure) <script type="math/tex">M = (S, S_0, R, L, AP, F)</script>としてモデル化することができる．ここで，<script type="math/tex">S</script>，<script type="math/tex">S_0</script>，<script type="math/tex">R</script>，<script type="math/tex">L</script>，そして<script type="math/tex">AP</script>はこれまでの定義と同様である．
 <strong>公平性制約</strong> (fairness constraint) の集合 <script type="math/tex">F</script> は，状態の部分集合 <script type="math/tex">P_i \subseteq S</script> を用いて <script type="math/tex">F = \{P_1, \ldots, P_k\} \subseteq 2^S</script> と定義される．
 この <script type="math/tex">F</script> と同様の概念はオートマトンにも存在し，一般化 Büchi 受理条件 (generalized Büchi acceptance condition) と呼ばれている．</p>
@@ -798,7 +798,7 @@ LTL パス論理式は以下のように定義される．</p>
 </p>
 <p>パス <script type="math/tex">\pi</script> において「無限に多くの <script type="math/tex">i</script> に対して (for infinitely many <script type="math/tex">i</script>) <script type="math/tex">s=s_i</script>」となる状態 <script type="math/tex">s</script> とは，<script type="math/tex">\pi</script> 上に無限に現れる状態ということになる．よって <script type="math/tex">\text{inf}(\pi)</script> は，<script type="math/tex">\pi</script> に無限に現れるような全ての状態からなる集合となる．
 全ての <script type="math/tex">P \in F</script> に対して <script type="math/tex">\text{inf}(\pi) \cap P \neq \emptyset</script> であるとき，かつそのときのみ <script type="math/tex">\pi</script> は<strong>公平</strong> (fair) であるという．</p>
-<p><a href="#_1">集合原子命題を用いた CTL*</a> においては，パスの公平性を以下の式を用いて直接表現することができる．</p>
+<p>集合原子命題を用いた CTL* (<a href="./#44">4.4節</a>) においては，パスの公平性を以下の式を用いて直接表現することができる．</p>
 <p>
 <script type="math/tex; mode=display"> \text{fpath} :\equiv \bigwedge_{P \in F}\bigvee_{s \in P} \textbf{GF}\{s\} </script>
 </p>
@@ -814,7 +814,7 @@ LTL パス論理式は以下のように定義される．</p>
 一般性のため，CTL* の意味論をもとに公平意味論を定義する．
 <script type="math/tex">M, s \models_{F} f</script> と書くことで，公平クリプキ構造の状態 <script type="math/tex">s</script> において状態論理式 <script type="math/tex">f</script> が真となることを表す．
 同様に，<script type="math/tex">M, \pi \models_{F} g</script> と書くことで，公平クリプキ構造のパス <script type="math/tex">\pi</script> においてパス論理式 <script type="math/tex">f</script> が真となることを表す．
-定義 4.2 の節 5 と 6 のみが以下のように変更される．</p>
+<a href="../lec04/#definition-42">定義 4.2</a> の 5. と 6. のみが以下のように変更される．</p>
 <ol type="1" start="5">
 <li>\(M, s \models_{F} \textbf{E} g_1\) \(\Leftrightarrow\) \(s\) から始まる公平なパス\(\pi\) が存在して， \(M, \pi \models_{F} g_1\) を満たす．</li>
 <li>\(M, s \models_{F} \textbf{A} g_1\) \(\Leftrightarrow\) \(s\) から始まるすべての公平なパス \(\pi\) が，\(M, \pi \models_{F} g_1\) を満たす．</li>
@@ -877,14 +877,14 @@ LTL パス論理式は以下のように定義される．</p>
 安全性とは，有限かつループのない反例，すなわち有限パスによって反証できる特性である．
 対して，有限状態構造を扱うことから，活性は一般的にラッソ（投げ縄）型の反例を要求する．</p>
 <p>安全性と活性の概念は Pnueli<sup id="fnref:418"><a class="footnote-ref" href="#fn:418">17</a></sup> によって初めて導入され，Lamport<sup id="fnref2:340"><a class="footnote-ref" href="#fn:340">10</a></sup> や Alpern と Schneider<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">18</a></sup> により洗練されてきた．
-モデル検査ハンドブック<sup id="fnref2:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による時相論理の章では，これらの概念に関する形式的な定義が与えられている．</p>
+<em>Handbook of Model Checking</em><sup id="fnref2:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による時相論理の章では，これらの概念に関する形式的な定義が与えられている．</p>
 <h2 id="_1">書誌情報</h2>
-<p>コンピュータサイエンスにおける仕様記述言語としての時間論理の利用は，Pnueli<sup id="fnref2:418"><a class="footnote-ref" href="#fn:418">17</a></sup> によって提案された．
+<p>コンピュータサイエンスにおける仕様記述言語としての時相論理の利用は，Pnueli<sup id="fnref2:418"><a class="footnote-ref" href="#fn:418">17</a></sup> によって提案された．
 これが評価され，1996年にチューリング賞が授与された．
 Pnueli は線形時相論理 LTL を提唱した．
 計算木論理 (CTL) は Ben-Ari ら<sup id="fnref:46"><a class="footnote-ref" href="#fn:46">19</a></sup> や Clarke と Emerson<sup id="fnref2:123"><a class="footnote-ref" href="#fn:123">2</a></sup> によって導入され，CTL* は Emerson と Halpern<sup id="fnref3:204"><a class="footnote-ref" href="#fn:204">9</a></sup> によって定義されている．
 時相論理に関する優れたサーベイとして，<sup id="fnref:202"><a class="footnote-ref" href="#fn:202">20</a></sup> の Emerson の章を参照されたい．
-Demri, Goranko そして Lange の書籍<sup id="fnref:183"><a class="footnote-ref" href="#fn:183">21</a></sup>，<em>Handbook of Automated Reasoning</em> の Clarke と Schlingloff による章<sup id="fnref:144"><a class="footnote-ref" href="#fn:144">22</a></sup>, Baier と Katoen の書籍<sup id="fnref:35"><a class="footnote-ref" href="#fn:35">23</a></sup>，モデル検査ハンドブック<sup id="fnref3:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による章も，時相論理に関してさらなる知識を得るための優れた資料である．</p>
+Demri, Goranko そして Lange の書籍<sup id="fnref:183"><a class="footnote-ref" href="#fn:183">21</a></sup>，<em>Handbook of Automated Reasoning</em> の Clarke と Schlingloff による章<sup id="fnref:144"><a class="footnote-ref" href="#fn:144">22</a></sup>, Baier と Katoen の書籍<sup id="fnref:35"><a class="footnote-ref" href="#fn:35">23</a></sup>，<em>Handbook of Model Checking</em><sup id="fnref3:138"><a class="footnote-ref" href="#fn:138">7</a></sup> の Piterman による章も，時相論理に関してさらなる知識を得るための優れた資料である．</p>
 <p>時相論理は様相論理<sup id="fnref:286"><a class="footnote-ref" href="#fn:286">24</a></sup> の一分野であり，形式手法のみならず人工知能<sup id="fnref:261"><a class="footnote-ref" href="#fn:261">25</a></sup> にも複数の応用が見られる．</p>
 <p>時相論理の演算子は，複数の方法で拡張し，一般化することができる．
 まず，過去の演算子<sup id="fnref:355"><a class="footnote-ref" href="#fn:355">26</a></sup><sup id="fnref:304"><a class="footnote-ref" href="#fn:304">27</a></sup><sup id="fnref:323"><a class="footnote-ref" href="#fn:323">28</a></sup> の導入は自然なことである．
@@ -895,7 +895,7 @@ Demri, Goranko そして Lange の書籍<sup id="fnref:183"><a class="footnote-r
 <p>
 <script type="math/tex">\mu</script> 計算 (<script type="math/tex">\mu</script>-calculus) は時相論理のもう一つの一般化であり，第16章で学ぶ．</p>
 <p>時相論理を強力にするもう一つの可能性は，量化である．
-ここでは，命題の量化 — 限定子の対象がクリプキ構造あるいは計算木のラベル付けまで及ぶ<sup id="fnref:492"><a class="footnote-ref" href="#fn:492">37</a></sup> — と，一階の時相論理<sup id="fnref2:369"><a class="footnote-ref" href="#fn:369">15</a></sup> — 状態が論理構造であり，一階の限定子の対象がこれらの構造のドメイン要素まで及ぶ — を区別する．</p>
+ここでは，命題の量化 ― 限定子の対象がクリプキ構造あるいは計算木のラベル付けまで及ぶ<sup id="fnref:492"><a class="footnote-ref" href="#fn:492">37</a></sup> ― と，一階の時相論理<sup id="fnref2:369"><a class="footnote-ref" href="#fn:369">15</a></sup> ― 状態が論理構造であり，一階の限定子の対象がこれらの構造のドメイン要素まで及ぶ ― を区別する．</p>
 <p>時相論理は，一階または二階論理の一断片としても研究することができる．
 LTL については Gabbay らの論文<sup id="fnref:234"><a class="footnote-ref" href="#fn:234">38</a></sup> で，CTL* については Hafer と Thomas の論文<sup id="fnref:259"><a class="footnote-ref" href="#fn:259">39</a></sup> で，これらの関係が研究されている．</p>
 <p>Manna と Pnueli の書籍<sup id="fnref3:369"><a class="footnote-ref" href="#fn:369">15</a></sup><sup id="fnref2:370"><a class="footnote-ref" href="#fn:370">14</a></sup> では，時として時相論理の構文が文字ではなく図記号に基づいて表記される．
@@ -1072,7 +1072,7 @@ LTL については Gabbay らの論文<sup id="fnref:234"><a class="footnote-re
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../lec04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第4回" rel="prev">
+        <a href="../lec04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第4回 時相論理 CTL*" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1081,20 +1081,20 @@ LTL については Gabbay らの論文<sup id="fnref:234"><a class="footnote-re
               <span class="md-footer__direction">
                 Previous
               </span>
-              第4回
+              第4回 時相論理 CTL*
             </div>
           </div>
         </a>
       
       
         
-        <a href="../lec06/" class="md-footer__link md-footer__link--next" aria-label="Next: 第6回" rel="next">
+        <a href="../lec06/" class="md-footer__link md-footer__link--next" aria-label="Next: 第6回 CTL モデル検査" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              第6回
+              第6回 CTL モデル検査
             </div>
           </div>
           <div class="md-footer__button md-icon">

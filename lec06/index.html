@@ -13,7 +13,7 @@
     
     
       
-        <title>第6回 - システム検証論 (2021)</title>
+        <title>第6回 CTL モデル検査 - システム検証論 (2021)</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第6回
+              第6回 CTL モデル検査
             
           </span>
         </div>
@@ -210,7 +210,7 @@
   
     <li class="md-nav__item">
       <a href="../lec01/" class="md-nav__link">
-        第1回
+        第1回 モデル検査とは
       </a>
     </li>
   
@@ -225,7 +225,7 @@
   
     <li class="md-nav__item">
       <a href="../lec02/" class="md-nav__link">
-        第2回
+        第2回 クリプキ構造と一階の論理表現
       </a>
     </li>
   
@@ -240,7 +240,7 @@
   
     <li class="md-nav__item">
       <a href="../lec03/" class="md-nav__link">
-        第3回
+        第3回 ハードウェア・ソフトウェアのモデル化
       </a>
     </li>
   
@@ -255,7 +255,7 @@
   
     <li class="md-nav__item">
       <a href="../lec04/" class="md-nav__link">
-        第4回
+        第4回 時相論理 CTL*
       </a>
     </li>
   
@@ -270,7 +270,7 @@
   
     <li class="md-nav__item">
       <a href="../lec05/" class="md-nav__link">
-        第5回
+        第5回 CTL* ベースのその他の時相論理
       </a>
     </li>
   
@@ -294,12 +294,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          第6回
+          第6回 CTL モデル検査
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        第6回
+        第6回 CTL モデル検査
       </a>
       
         
@@ -395,7 +395,7 @@
   
     <li class="md-nav__item">
       <a href="../lec07/" class="md-nav__link">
-        第7回
+        第7回 不動点計算によるモデル検査アルゴリズム
       </a>
     </li>
   
@@ -410,7 +410,7 @@
   
     <li class="md-nav__item">
       <a href="../lec08/" class="md-nav__link">
-        第8回
+        第8回 LTL と CTL* のモデル検査
       </a>
     </li>
   
@@ -425,7 +425,7 @@
   
     <li class="md-nav__item">
       <a href="../lec09/" class="md-nav__link">
-        第9回
+        第9回 二分決定グラフ
       </a>
     </li>
   
@@ -440,7 +440,7 @@
   
     <li class="md-nav__item">
       <a href="../lec10/" class="md-nav__link">
-        第10回
+        第10回 記号モデル検査
       </a>
     </li>
   
@@ -577,9 +577,9 @@
 このように，初期状態 <script type="math/tex">S_0</script> はモデル検査の最後の段階でのみ必要となる．
 そして原子命題の集合 <script type="math/tex">AP</script> はこの章を通して固定されているため，クリプキ構造の定義から <script type="math/tex">S_0</script> と <script type="math/tex">AP</script> の両方を省略することにする．</p>
 <p>今回の講義では，クリプキ構造の <script type="math/tex">L</script> でラベル付けされた有向グラフ <script type="math/tex">(S, R)</script> としての<strong>明示的</strong> (explicit) 表現を用いた CTL のモデル検査アルゴリズムを紹介する．
-そして，公平性の意味論を考慮した CTL を扱えるように，この明示的アルゴリズムを拡張する．</p>
-<p>次回（第7回）の講義では CTL 演算子に対して，通常ならびに公平性を考慮した意味論に従った不動点の特徴付けを定義し，それをどのようにモデル検査に用いるか示す．
-そして第8回は LTL と CTL* のモデル検査について説明する．</p>
+そして，公平性の意味論を考慮した CTL を扱えるように，この明示的アルゴリズムを拡張する．
+次回 (<a href="../lec07/">第7回</a>) の講義では CTL 演算子に対して，通常ならびに公平性を考慮した意味論に従った不動点の特徴付けを定義し，それをどのようにモデル検査に用いるか示す．
+そして<a href="../lec08/">第8回</a>は LTL と CTL* のモデル検査について説明する．</p>
 <h2 id="51-ctl">5.1 明示的な状態探索に基づく CTL モデル検査アルゴリズム</h2>
 <p>CTL による仕様 <script type="math/tex">f</script> が与えられたとしよう．
 このアルゴリズムは <script type="math/tex">S</script> のどの状態が <script type="math/tex">f</script> を満たすか判定するために，状態 <script type="math/tex">s</script> それぞれに対して，<script type="math/tex">s</script> で真となる <script type="math/tex">f</script> の部分式の集合 <script type="math/tex">label(s)</script> をラベル付けするように動く．
@@ -587,7 +587,7 @@
 その後，このアルゴリズムは一連の「ステージ」を実行する．
 <script type="math/tex">i</script> 番目のステージでは，<script type="math/tex">i-1</script> 個の CTL 演算子の入れ子をもつ部分式が処理されることとなり，処理された部分式はそれが真となる状態へとそれぞれラベル付けされる．
 アルゴリズムが終了すると，「<script type="math/tex">f \in label(s)</script> であるとき，かつそのときのみ <script type="math/tex">M, s \models f</script> となる」という状況が得られる．</p>
-<p>第4回の講義でも述べたように，任意のCTL式は <script type="math/tex">\lnot</script>, <script type="math/tex">\lor</script>, <script type="math/tex">\mathbf{EX}</script>, <script type="math/tex">\mathbf{EU}</script> および <script type="math/tex">\mathbf{EG}</script> で表すことができる．
+<p><a href="../lec05/#431-ctl">4.3.1 節</a>でも述べたように，任意の CTL 式は <script type="math/tex">\lnot</script>, <script type="math/tex">\lor</script>, <script type="math/tex">\mathbf{EX}</script>, <script type="math/tex">\mathbf{EU}</script> および <script type="math/tex">\mathbf{EG}</script> で表すことができる．
 したがって，このアルゴリズムの途中のステージでは，部分式 <script type="math/tex">g</script> として原子命題か，あるいは</p>
 <ul>
 <li>
@@ -848,7 +848,7 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../lec05/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第5回" rel="prev">
+        <a href="../lec05/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第5回 CTL* ベースのその他の時相論理" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -857,20 +857,20 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
               <span class="md-footer__direction">
                 Previous
               </span>
-              第5回
+              第5回 CTL* ベースのその他の時相論理
             </div>
           </div>
         </a>
       
       
         
-        <a href="../lec07/" class="md-footer__link md-footer__link--next" aria-label="Next: 第7回" rel="next">
+        <a href="../lec07/" class="md-footer__link md-footer__link--next" aria-label="Next: 第7回 不動点計算によるモデル検査アルゴリズム" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              第7回
+              第7回 不動点計算によるモデル検査アルゴリズム
             </div>
           </div>
           <div class="md-footer__button md-icon">
