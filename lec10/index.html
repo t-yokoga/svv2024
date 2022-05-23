@@ -9,11 +9,11 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>第10回 記号モデル検査 - システム検証論 (2021)</title>
+        <title>第10回 - システム検証論 (2021)</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第10回 記号モデル検査
+              第10回
             
           </span>
         </div>
@@ -336,18 +336,33 @@
   
 
     
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第10回
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第10回
+      </a>
+      
+        
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -372,7 +387,7 @@
         
           <li class="md-nav__item">
   <a href="#831-quantified-boolean-formulas" class="md-nav__link">
-    8.3.1 量化ブール関数 (Quantified Boolean Formulas)
+    8.3.1 量化されたブール関数 (Quantified Boolean Formulas)
   </a>
   
 </li>
@@ -450,6 +465,142 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#83-ctl" class="md-nav__link">
+    8.3 CTL 記号モデル検査
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 CTL 記号モデル検査">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831-quantified-boolean-formulas" class="md-nav__link">
+    8.3.1 量化されたブール関数 (Quantified Boolean Formulas)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832" class="md-nav__link">
+    8.3.2 記号モデル検査アルゴリズム
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    8.4 記号モデル検査における公平性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    8.5 反例と証拠
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86" class="md-nav__link">
+    8.6 関係積の計算
+  </a>
+  
+    <nav class="md-nav" aria-label="8.6 関係積の計算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#861" class="md-nav__link">
+    8.6.1 遷移関係の分割
+  </a>
+  
+    <nav class="md-nav" aria-label="8.6.1 遷移関係の分割">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8611-disjunctive-partitioning" class="md-nav__link">
+    8.6.1.1 選言分割 (Disjunctive Partitioning)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8612-conjunctive-partitioning" class="md-nav__link">
+    8.6.1.2 連言分割 (Conjunctive Partitioning)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#862" class="md-nav__link">
+    8.6.2 分割の再結合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -466,23 +617,34 @@
 
 <h1 id="10">第10回 記号モデル検査</h1>
 <p>この回では，教科書の第8章 "Binary Decision Diagrams and Symbolic Model Checking" の後半 (8.3 〜 8.6) について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
+<ul>
+<li>CTL を対象とした記号モデル検査アルゴリズム</li>
+<li>量化されたブール関数 (quantified Boolean formula)</li>
+<li>記号モデル検査における公平性</li>
+<li>反例の生成</li>
+<li>関係積の計算</li>
+<li>遷移関係の分割</li>
+</ul>
+</div>
 <h2 id="83-ctl">8.3 CTL 記号モデル検査</h2>
 <p>第5章で紹介した CTL の明示的な状態探索に基づくモデル検査アルゴリズムの計算量は，グラフのサイズと式の長さに対して線形である．
-このアルゴリズムが開発された当時は，実用上十分に高速であることが示されていた [123][125]．
+このアルゴリズムが開発された当時は，実用上十分に高速であることが示されていた <sup id="fnref:123"><a class="footnote-ref" href="#fn:123">1</a></sup><sup id="fnref:125"><a class="footnote-ref" href="#fn:125">2</a></sup>．
 しかし，多数のプロセスやコンポーネントを持つ有限状態の並行システムから状態遷移グラフを抽出する場合は，モデルサイズの爆発的な増大が起こる可能性がある．</p>
 <p>本節では，クリプキ構造の OBDD 表現を用いてモデル検査を行うアルゴリズムについて説明する．
 このモデル検査アルゴリズムは，ブール式の操作に基づいて行われるため，<strong>記号的</strong>（symbolic）と呼ばれる．
 OBDD は状態と遷移の集合を表すので，個々の状態や遷移ではなく，集合全体に対して操作を行う必要がある．
 この目的のために，時相論理演算子の不動点による特徴付けを利用する．
 集合 <script type="math/tex">S' \subseteq S</script> は <script type="math/tex">\tau(S') = S'</script> のとき，関数 <script type="math/tex">\tau : \mathcal{P}(S) \rightarrow \mathcal{P}(S)</script> の不動点であることを思い出してほしい．
-5.3節では，CTL 式を満たす状態の集合が，適切な関数の最小または最大不動点としてどのように特徴付けられるかを示している．
+<a href="../lec07/#53-ctl">5.3節</a>では，CTL 式を満たす状態の集合が，適切な関数の最小または最大不動点としてどのように特徴付けられるかを示している．
 これらの不動点の計算には，集合演算にのみ基づく反復技法が用いられている．</p>
-<p>5.3節で示したCTL式の固定点の特徴付けに基づいて，次に，標準的な OBDD 操作のみを必要とする CTL モデル検査アルゴリズムを示す．
+<p><a href="../lec07/#53-ctl">5.3節</a>で示したCTL式の固定点の特徴付けに基づいて，次に，標準的な OBDD 操作のみを必要とする CTL モデル検査アルゴリズムを示す．
 そして，公平性制約の組み込みと反例の生成について，8.4節と8.5節で示す．
 8.6節では，記号モデル検査におけるいくつかの効率化の問題について述べる。</p>
 <p>記号モデル検査アルゴリズムを説明するためには，ブール関数に対する複雑な演算をより簡潔に表記することが便利である．
-そのため，量化ブール関数（quantified Boolean formula, QBF）[12][237] という論理を用いる．</p>
-<h3 id="831-quantified-boolean-formulas">8.3.1 量化ブール関数 (Quantified Boolean Formulas)</h3>
+そのため，量化されたブール関数（quantified Boolean formula, QBF）<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">3</a></sup><sup id="fnref:237"><a class="footnote-ref" href="#fn:237">4</a></sup> という論理を用いる．</p>
+<h3 id="831-quantified-boolean-formulas">8.3.1 量化されたブール関数 (Quantified Boolean Formulas)</h3>
 <p>命題変数の集合 <script type="math/tex">V = \{v_0, \ldots, v_{n-1}\}</script> が与えられたとき，QBF(<script type="math/tex">V</script>) は次のような数式の最小集合である．</p>
 <ul>
 <li>
@@ -584,14 +746,14 @@ OBDD はブール関数の標準形となるため，連続した近似を比較
 <script type="math/tex">Q_i = Q_{i+1}</script> のとき，関数 <script type="math/tex">Lfp</script> は終了する．
 <script type="math/tex">\mathbf{E}(f\mathbf{U}g)</script> に対応する状態集合は，<script type="math/tex">Q_i</script> の OBDD として表現されることになる．</p>
 <p>手続き <script type="math/tex">bddCheckEG</script> も同様である．
-これは5.3節で示した CTL 演算子 <script type="math/tex">\mathbf{EG}</script> の最大不動点による特徴付けに基づいている．
+これは<a href="../lec07/#53-ctl">5.3節</a>で示した CTL 演算子 <script type="math/tex">\mathbf{EG}</script> の最大不動点による特徴付けに基づいている．
 <script type="math/tex; mode=display">
 \mathbf{EG}f_1 = \nu Z.f_1 \wedge \mathbf{EX}Z
 </script>
 <script type="math/tex">f</script> に対する OBDD があれば，関数 <script type="math/tex">Gfp</script> (図5.5) を用いて，<script type="math/tex">\mathbf{EG}f</script> を満たす状態の集合の OBDD 表現を計算することができる．</p>
 <h2 id="84">8.4 記号モデル検査における公平性</h2>
-<p>公平性制約とその意義については，第4章において説明されている．
-5.2節では，CTL の明示的な状態に基づくモデル検査アルゴリズムに公平性制約を追加した．
+<p>公平性制約とその意義については，<a href="../lec05/#45">第4章</a>において説明されている．
+<a href="../lec06/#52-ctl">5.2節</a>では，CTL の明示的な状態に基づくモデル検査アルゴリズムに公平性制約を追加した．
 本節では，公平性制約を含めるよう，前節で与えられた CTL の記号的モデル検査を拡張する．
 公平性制約は CTL 式の集合 <script type="math/tex">F = \{P_1,\ldots, P_n\}</script> によって与えられると仮定する．
 <script type="math/tex">F</script> に含まれる公平性制約に関して CTL 式を検査するための新しい手続き <script type="math/tex">bddDCheckFair</script> を定義する．
@@ -680,6 +842,14 @@ bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedg
 したがって，この方針を続けるのであれば，強連結成分の DAG を下降して，最終的に閉路 <script type="math/tex">\pi</script> を見つけるか，あるいは <script type="math/tex">f</script> の末端の強連結成分に到達しなければならない．
 後者の場合，末端の強連結成分から出ることはできないため，閉路を見つけることが保証される．
 この場合を図8.6に示す．</p>
+<p><center>
+<img src="../img/lec10-fig1.pdf" width="350"></p>
+<p>図8.5: 証拠が最初の強連結成分に含まれる場合
+</center></p>
+<p><center>
+<img src="../img/lec10-fig2.pdf" width="350"></p>
+<p>図8.5: 証拠が 3 つの強連結成分に含まれる場合
+</center></p>
 <p>もう少し洗練されたアプローチは，事前に <script type="math/tex">\mathbf{E}(f \mathbf{U} \{t\})</script> を計算するものである．
 この集合から初めて出た時点で閉路が完成しないことはわかるため，その状態から再出発する．
 経験的にこれらのアプローチは短い反例を見つける傾向があるため（おそらく強連結成分の数が少ないため），最短の閉路を見つけようとはしない．</p>
@@ -694,25 +864,29 @@ bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedg
 <script type="math/tex; mode=display">
 \exists \bar{v}' [h(\bar{v}') \wedge R(\bar{v}, \bar{v}')]
 </script>
-この演算は，1つの接続詞と一連の存在量化で実装することが可能であるが，実際にはかなり時間がかかると思われる．
-また，<script type="math/tex">h(\bar{v}') \wedge R(\bar{v}, \bar{v}')</script> の OBDD は最終結果の OBDD よりはるかに大きいことが多く，可能ならばそれを構築することは避けたいところである．
+この演算は，1つの論理積と一連の存在量化で実装することが可能であるが，実際にはかなり時間がかかることが予想される．
+また，<script type="math/tex">h(\bar{v}') \wedge R(\bar{v}, \bar{v}')</script> の OBDD は最終的な OBDD よりはるかに大きいことが多く，可能ならばそれを構築することは避けたいところである．
 このような理由から我々は，<script type="math/tex">h</script> と <script type="math/tex">R</script> の OBDD からその関係積の OBDD を1ステップで計算する特別なアルゴリズムを使用する．
-図8.7は，2つの任意の OBDD <script type="math/tex">f</script> と <script type="math/tex">g</script> に対するこのアルゴリズムを示しています．
+図8.7は，2つの任意の OBDD <script type="math/tex">f</script> と <script type="math/tex">g</script> に対するこのアルゴリズムを示している．
 多くの OBDD アルゴリズムと同様に，<script type="math/tex">RelProd</script> は結果キャッシュを使用する．
 この場合，キャッシュ内のエントリは，<script type="math/tex">f</script>，<script type="math/tex">g</script>，<script type="math/tex">r</script> を OBDD，<script type="math/tex">E</script> を量化されている変数の集合として <script type="math/tex">(f, g, E, r)</script> という形式となる．
 このようなエントリがキャッシュ内に存在する場合，過去の <script type="math/tex">RelProd(f, g, E)</script> の呼び出しが結果として <script type="math/tex">r</script> を返したことを意味している．</p>
+<div class="admonition note">
+<p class="admonition-title">関係積計算アルゴリズム (図8.7)</p>
+<p><img src="../img/lec10-fig3.pdf" width="450"></p>
+</div>
 <p>上記のアルゴリズムは実際にはうまく機能するが，最悪の場合は指数的な複雑さをもつ．
 この複雑さが観測される状況のほとんどは，結果に対する OBDD が，引数 <script type="math/tex">f(\bar{v})</script> と <script type="math/tex">g(\bar{v})</script> に対する OBDD よりも指数関数的に大きい場合である．
 このような状況では，どのような関係積の計算方法も，指数的な複雑さを持たざるを得ない．</p>
 <h3 id="861">8.6.1 遷移関係の分割</h3>
 <p>前述した関係積アルゴリズムでは，単一の OBDD からなる<strong>モノリシック</strong>（monolithic）な遷移関係として <script type="math/tex">R(\bar{v}, \bar{v}')</script> を持つことが求められる．
-8.2節で，システムがクリプキ構造として与えられたときにこのような OBDD を構築する方法を示した．
+<a href="../lec09/#82-obdd">8.2節</a>で，システムがクリプキ構造として与えられたときにこのような OBDD を構築する方法を示した．
 残念ながら，多くの実用的な問題においては，この OBDD は非常に大きくなる．
 <strong>分割された遷移関係</strong>（partitioned transition relation）は，より簡潔な表現を提供できるが，図8.7に示す関係積アルゴリズムでは使用することができない．
-第3章では，同期および非同期回路の遷移関係を，いくつかの断片 <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> の論理積または論理和の形で記述している．
+<a href="../lec03/#35">第3章</a>では，同期および非同期回路の遷移関係を，いくつかの断片 <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> の論理積または論理和の形で記述している．
 これらの断片はそれぞれ小さな OBDD で表現することができる．
 <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> の論理積または論理和を形成して <script type="math/tex">R(\bar{v}, \bar{v}')</script> を得る代わりに，暗黙のうちに論理積または論理和として結合されたこれらの OBDD のリストとしてモデルを表現することができる．
-このようなリストを<strong>分割された遷移関係</strong>（partitioned transition relation）と呼ぶ [93][94]．</p>
+このようなリストを<strong>分割された遷移関係</strong>（partitioned transition relation）と呼ぶ <sup id="fnref:93"><a class="footnote-ref" href="#fn:93">5</a></sup><sup id="fnref:94"><a class="footnote-ref" href="#fn:94">6</a></sup>．</p>
 <p>同期回路では，<script type="math/tex">R_i</script> は次のような形となる：
 <script type="math/tex; mode=display">
 R_i(\bar{v}, \bar{v}') = (v_i' \equiv f_i(\bar{v}))
@@ -766,12 +940,12 @@ OBDD が大きくなり過ぎない限りは，適宜，一部の <script type="
 </script>
 論理積を構築することなくこの関係積を計算する際の主な難点は，存在量化 (<script type="math/tex">\exists \bar{v}'</script>) が論理積上に分配されないことである．
 これから説明する方法は，この難点を克服している．</p>
-<p>文献 [<sup>93][</sup>94] の手法は，以下の 2 つの観察に基づいている．
+<p>Burch らの手法 <sup id="fnref2:93"><a class="footnote-ref" href="#fn:93">5</a></sup><sup id="fnref2:94"><a class="footnote-ref" href="#fn:94">6</a></sup> は，以下の 2 つの観察に基づいている．
 第一に，回路は局所性を示すことから，<script type="math/tex">R_i</script> の多くは <script type="math/tex">\bar{v}</script> と <script type="math/tex">\bar{v}'</script> の変数のうち少数の変数にのみ依存する．
 (先の回路からの遷移関係抽出の議論では，それぞれの <script type="math/tex">R_i</script> は 1 つのプライム付き変数しかもたなかったが，8.6.2 節ではそれらをいくつか組み合わせて複数のプライム付き変数へ依存関係を与えることが，時として有利になることを示している．)
 第二に，存在量化は論理積上には分配されないが，量化される変数のいずれにも依存しない部分式であれば，存在量化の範囲から移動させることができる．
 これらの観察を利用して，<script type="math/tex">R_i(\bar{v}, \bar{v}')</script> を 1 つずつ <script type="math/tex">h(\bar{v}')</script> と接続し，それぞれの変数 <script type="math/tex">v_j'</script> を残された <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> のいずれも <script type="math/tex">v_j'</script> に依存しないときに「早期量化 (early quantification)」を用いて削除する．</p>
-<p>3.5.2 節のモジュロ 8 カウンタを再度考える．
+<p><a href="../lec03/#352">3.5.2 節</a>のモジュロ 8 カウンタを再度考える．
 <script type="math/tex; mode=display">\begin{eqnarray*}
 R_0(\bar{v}, v_0') & \equiv & (v_0' \Leftrightarrow \neg v_0)\\
 R_1(\bar{v}, v_1') & \equiv & (v_1' \Leftrightarrow v_0 \oplus v_1)\\
@@ -810,7 +984,7 @@ R_2(\bar{v}, v_2') & \equiv & (v_2' \Leftrightarrow (v_0 \wedge v_1) \oplus v_2)
 したがって，<script type="math/tex">R_0</script> を最初に扱うことで 1 つの新たな変数 <script type="math/tex">v_0</script> のみを導入することとなり，同時に <script type="math/tex">v_0'</script> を除去できる．
 これが計算の最初のステップで <script type="math/tex">h(\bar{v}')</script> と <script type="math/tex">R_0(\bar{v}, v_0')</script> を組み合わせることにした理由である．
 同様に，次に <script type="math/tex">R_1(\bar{v}, v_1')</script> を選んだのは，1 つの新たな変数 <script type="math/tex">v_1</script> のみが導入され，<script type="math/tex">v_1'</script> が除去されるからである．
-文献 [^240] では，モデルの詳細に依存せず，記号モデル検査の前に実行可能な，分割の順序付けのためのヒューリスティックアルゴリズムが記述されている．</p>
+Geist と Beer による論文 <sup id="fnref:240"><a class="footnote-ref" href="#fn:240">7</a></sup> では，モデルの詳細に依存せず，記号モデル検査の前に実行可能な，分割の順序付けのためのヒューリスティックアルゴリズムが記述されている．</p>
 <p>上記の例では，<script type="math/tex">\mathbf{EX}h</script> の関係積を計算していた．
 つまり，状態集合に先行する状態を計算したことになる．
 また，ある状態集合に後続する状態を計算しなければならない場合もある．
@@ -911,8 +1085,120 @@ h_{i+1} = [h_i(\bar{v}, \bar{v}') \wedge R_{\rho(i)}(\bar{v}, \bar{v}')]
 通常の変数順序では，遷移関係を表現するのに必要な OBDD のノード数は，モノリシックと完全に分割された場合の両方で，<script type="math/tex">n</script> に対して線形である．
 ここで，<script type="math/tex">h(\bar{v}')</script> がカウンタの一つの状態を表すものとする．
 完全に分割された表現で関係積を計算するには，<script type="math/tex">n</script> 回の OBDD 演算が必要で，それぞれの演算量は <script type="math/tex">O(n)</script> であり，全体の演算量は <script type="math/tex">O(n^2)</script> となる．
-一方，モノリシックな関係を用いると，複雑さ <script type="math/tex">O(n)</script> の演算を 1 回行うことになり，<script type="math/tex">n</script>分の1に時間が短縮される．
+一方，モノリシックな関係を用いると，複雑さ <script type="math/tex">O(n)</script> の演算を 1 回行うことになり，<script type="math/tex">\frac{1}{n}</script> に時間が短縮される．
 実際には，任意のレジスタのすべての OBDD を組み合わせることで，遷移関係の OBDD ノード数を大幅に増加させることなく高速化を実現できることが多い．</p>
+<h2 id="_1">書誌情報</h2>
+<p>BDD は，Bryantによって，ハードウェア設計の記号的なシミュレーションのために初めて提案されたものである <sup id="fnref:87"><a class="footnote-ref" href="#fn:87">8</a></sup><sup id="fnref:88"><a class="footnote-ref" href="#fn:88">9</a></sup><sup id="fnref:89"><a class="footnote-ref" href="#fn:89">10</a></sup>．
+Bryant は 1986 年の論文 <sup id="fnref2:87"><a class="footnote-ref" href="#fn:87">8</a></sup> において，ブール関数を表現するための新しいデータ構造として順序付き BDD (OBDD) を示している．
+Lee <sup id="fnref:349"><a class="footnote-ref" href="#fn:349">11</a></sup> や Akers <sup id="fnref:13"><a class="footnote-ref" href="#fn:13">12</a></sup> によって導入された表現と同様に，関数は有向無閉路グラフによって表現されるが，グラフ内の決定変数の順序に対するさらなる制約が，標準形であることを保証している．
+また，ブール関数に対する演算を OBDD でどのように効率的に適用できるかを示している．</p>
+<p>その後，McMillan <sup id="fnref:376"><a class="footnote-ref" href="#fn:376">13</a></sup> と Clarke ら <sup id="fnref:96"><a class="footnote-ref" href="#fn:96">14</a></sup> は，記号モデル検査に BDD を利用することを提案した．
+SMV <sup id="fnref2:376"><a class="footnote-ref" href="#fn:376">13</a></sup> は，最初の BDD ベースの記号的モデル検査器である．
+SMV は数百の状態変数を持つ回路を処理することに成功し，ハードウェア産業の注目を集めた．
+SMV は，IBM 社の RuleBase <sup id="fnref:45"><a class="footnote-ref" href="#fn:45">15</a></sup> を含む産業用のモデル検査ツールに強い影響を与えた．
+Intel 社の Forte <sup id="fnref:442"><a class="footnote-ref" href="#fn:442">16</a></sup> は BDD を使用して回路の記号的なシミュレーションを行うツールで，Voss ツール <sup id="fnref:298"><a class="footnote-ref" href="#fn:298">17</a></sup> をベースとしたものである．
+Centaur Technology は，特に BDD エンジン <sup id="fnref:457"><a class="footnote-ref" href="#fn:457">18</a></sup> を含む回路検証のための検証ツールをメンテナンスしている．</p>
+<p>学術界では，SMV を再実装し，さらに他の章で述べるモデル検査技術を用いて拡張を行った NuSMV <sup id="fnref:116"><a class="footnote-ref" href="#fn:116">19</a></sup> と NuSMV2 <sup id="fnref:115"><a class="footnote-ref" href="#fn:115">20</a></sup> が開発されている．
+PRISM <sup id="fnref:336"><a class="footnote-ref" href="#fn:336">21</a></sup> は，確率システムを対象とした BDD ベースのモデル検査器である．
+<script type="math/tex">\mu</script> cke <sup id="fnref:55"><a class="footnote-ref" href="#fn:55">22</a></sup> として，<script type="math/tex">\mu</script> 計算を対象とした BDD ベースのモデル検査が示されている．
+EBMC <sup id="fnref:395"><a class="footnote-ref" href="#fn:395">23</a></sup> は，Verilog ハードウェア記述言語によるハードウェア設計のための最新のモデル検査器であり，BDD を用いたものを含む複数のエンジンが実装されている．
+BDD 演算のマルチコア実装は Sylvan <sup id="fnref:478"><a class="footnote-ref" href="#fn:478">24</a></sup><sup id="fnref:476"><a class="footnote-ref" href="#fn:476">25</a></sup> で開発されている．</p>
+<p>いくつかのツールでは，OBDD 上でよく使われる操作の効率的な実装を含んだ独自の BDD ライブラリを提供している．
+しかし，Colorado University Decision Diagram (CUDD) パッケージ <sup id="fnref:458"><a class="footnote-ref" href="#fn:458">26</a></sup> は，最も広く使われているライブラリである．Sylvan ライブラリは，スケーラブルなマルチスレッド実装を提供している <sup id="fnref:477"><a class="footnote-ref" href="#fn:477">27</a></sup>．</p>
+<p>モデル検査ハンドブック <sup id="fnref:138"><a class="footnote-ref" href="#fn:138">28</a></sup> には，Randy Bryant により執筆された BDD の章がある．
+Minato によるサーベイ <sup id="fnref:389"><a class="footnote-ref" href="#fn:389">29</a></sup> では，BDD に関する歴史と最近の研究活動が紹介されている．</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:123">
+<p>E. M. Clarke and E. A. Emerson. Design and synthesis of synchronization skeletons using branching time temporal logic. In D. Kozen, editor, Logic of Programs:Workshop, volume 131 of Lecture Notes in Computer Science, pages 52–71. Springer, 1981.&#160;<a class="footnote-backref" href="#fnref:123" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:125">
+<p>E. M. Clarke, E. A. Emerson, and A. P. Sistla. Automatic verification of finite-state concurrent systems using temporal logic specifications. ACM Trans. Program. Lang. Syst., 8(2):244–263, 1986.&#160;<a class="footnote-backref" href="#fnref:125" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p>A. V. Aho, J. E. Hopcroft, and J. D. Ullman. The Design and Analysis of Computer Algorithms. Addison-Wesley, 1974.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:237">
+<p>M. R. Garey and D. S. Johnson. Computers and Intractability:A Guide to the Theory of NP-Completeness. Freeman, 1979.&#160;<a class="footnote-backref" href="#fnref:237" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:93">
+<p>J. R. Burch, E. M. Clarke, and D. E. Long. Representing circuits more efficiently in symbolic model checking. In Design Automation Conference, DAC, pages 403–407. ACM, 1991.&#160;<a class="footnote-backref" href="#fnref:93" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:93" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:94">
+<p>J. R. Burch, E. M. Clarke, and D. E. Long. Symbolic model checking with partitioned transition relations. In A. Halaas and P. B. Denyer, editors, Very Large Scale Integration, VLSI, volume A-1 of IFIP Transactions, pages 49–58. North-Holland, 1991.&#160;<a class="footnote-backref" href="#fnref:94" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:94" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:240">
+<p>D. Geist and I. Beer. Efficient model checking by automated ordering of transition relation partitions. In Computer Aided Verification, CAV, volume 818 of Lecture Notes in Computer Science, pages 299–310. Springer, 1994.&#160;<a class="footnote-backref" href="#fnref:240" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:87">
+<p>R. E. Bryant. Graph-based algorithms for Boolean function manipulation. IEEE Trans. Comput., 35(8):677–691, 1986.&#160;<a class="footnote-backref" href="#fnref:87" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:87" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:88">
+<p>R. E. Bryant. On the complexity of VLSI implementations and graph representations of Boolean functions with application to integer multiplication. IEEE Trans. Comput., 40(2):205–213, 1991.&#160;<a class="footnote-backref" href="#fnref:88" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:89">
+<p>R. E. Bryant. Symbolic Boolean manipulation with ordered binary-decision diagrams. ACM Comput. Surv., 24(3):293–318, 1992.&#160;<a class="footnote-backref" href="#fnref:89" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:349">
+<p>C. Y. Lee. Representation of switching circuits by binary-decision programs. Bell System Tech. J., 38:985–999, 1959.&#160;<a class="footnote-backref" href="#fnref:349" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p>S. B. Akers. Binary decision diagrams. IEEE Trans. Computers, C-27(6):509–516, 1978.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:376">
+<p>K. L. McMillan. Symbolic Model Checking:An Approach to the State Explosion Problem. Kluwer, 1993.&#160;<a class="footnote-backref" href="#fnref:376" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:376" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:96">
+<p>J. R. Burch, E. M. Clarke, K. L. McMillan, D. L. Dill, and L. J. Hwang. Symbolic model checking:10<sup>20</sup> states and beyond. Inform. and Comput., 98(2):142–170, 1992. Originally presented at the 1990 Symposium on Logic in Computer Science (LICS).&#160;<a class="footnote-backref" href="#fnref:96" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:45">
+<p>I. Beer, S. Ben-David, C. Eisner, D. Geist, L. Gluhovsky, T. Heyman, A. Landver, P. Paanah, Y. Rodeh, G. Ronin, and Y. Wolfsthal. RuleBase:Model checking at IBM. In Computer Aided Verification, CAV, volume 1254 of Lecture Notes in Computer Science, pages 480–483. Springer, 1997.&#160;<a class="footnote-backref" href="#fnref:45" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:442">
+<p>C. H. Seger, R. B. Jones, J. W. O’Leary, T. F. Melham, M. Aagaard, C. Barrett, and D. Syme. An industrially effective environment for formal hardware verification. IEEE Trans. CAD Integr. Circuits Syst., 24(9):1381–1405, 2005.&#160;<a class="footnote-backref" href="#fnref:442" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:298">
+<p>J. J. Joyce and C. H. Seger. The HOL-Voss system:Model-checking inside a general-purpose theorem-prover. In Higher Order Logic Theorem Proving and its Applications, HUG, volume 780 of Lecture Notes in Computer Science, pages 185–198. Springer, 1994.&#160;<a class="footnote-backref" href="#fnref:298" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:457">
+<p>A. Slobodová, J. Davis, S. Swords, and W. A. J. Hunt. A flexible formal verification framework for industrial scale validation. In S. Singh, B. Jobstmann, M. Kishinevsky, and J. Brandt, editors, Formal Methods and Models for Codesign, MEMOCODE, pages 89–97. IEEE, 2011.&#160;<a class="footnote-backref" href="#fnref:457" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:116">
+<p>A. Cimatti, E. M. Clarke, F. Giunchiglia, and M. Roveri. NuSMV:A new symbolic model checker. STTT, 2(4):410–425, 2000.&#160;<a class="footnote-backref" href="#fnref:116" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:115">
+<p>A. Cimatti, E. M. Clarke, E. Giunchiglia, F. Giunchiglia, M. Pistore, M. Roveri, R. Sebastiani, and A. Tacchella. NuSMV 2:An opensource tool for symbolic model checking. In Computer Aided Verification, CAV, volume 2404 of Lecture Notes in Computer Science, pages 359–364. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:115" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:336">
+<p>M. Z. Kwiatkowska, G. Norman, and D. Parker. PRISM 4.0:Verification of probabilistic real-time systems. In Computer Aided Verification, CAV, volume 6806 of Lecture Notes in Computer Science, pages 585–591. Springer, 2011.&#160;<a class="footnote-backref" href="#fnref:336" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:55">
+<p>A. Biere. <script type="math/tex">\mu</script> cke—efficient μ calculus model checking. In Computer Aided Verification, CAV, volume 1254 of Lecture Notes in Computer Science, pages 468–471. Springer, 1997.&#160;<a class="footnote-backref" href="#fnref:55" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:395">
+<p>R. Mukherjee, D. Kroening, and T. Melham. Hardware verification using software analyzers. In 2015 IEEE Computer Society Annual Symposium on VLSI, ISVLSI, pages 7–12. IEEE Computer Society, 2015.&#160;<a class="footnote-backref" href="#fnref:395" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:478">
+<p>T. van Dijk and J. van de Pol. Sylvan:multi-core framework for decision diagrams. STTT, 19(6):675–696, 2017.&#160;<a class="footnote-backref" href="#fnref:478" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:476">
+<p>T. van Dijk. Sylvan:multi-core decision diagrams. PhD thesis, University of Twente, Enschede, Netherlands, 2016.&#160;<a class="footnote-backref" href="#fnref:476" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:458">
+<p>F. Somenzi. CUDD:Colorado University decision diagram package. Technical report, Colorado University, 1996.&#160;<a class="footnote-backref" href="#fnref:458" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:477">
+<p>T. van Dijk, A. Laarman, and J. van de Pol. Multi-core BDD operations for symbolic reachability. Electr. Notes Theor. Comput. Sci., 296:127–143, 2013.&#160;<a class="footnote-backref" href="#fnref:477" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:138">
+<p>E. M. Clarke, T. A. Henzinger, H. Veith, and R. Bloem. Handbook of Model Checking. Springer, 2018.&#160;<a class="footnote-backref" href="#fnref:138" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:389">
+<p>S. Minato. Techniques of BDD/ZDD:brief history and recent activity. IEICE Transactions, 96-D(7):1419–1429, 2013.&#160;<a class="footnote-backref" href="#fnref:389" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -922,6 +1208,26 @@ h_{i+1} = [h_i(\bar{v}, \bar{v}') \wedge R_{\rho(i)}(\bar{v}, \bar{v}')]
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec09/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第9回" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第9回
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -946,7 +1252,7 @@ h_{i+1} = [h_i(\bar{v}, \bar{v}') \wedge R_{\rho(i)}(\bar{v}, \bar{v}')]
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.5413a266.min.js"></script>
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="../js/extra.js"></script>
       
