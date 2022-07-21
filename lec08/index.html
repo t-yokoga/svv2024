@@ -858,17 +858,17 @@ F_T = \{sat(\lnot(g\mathbf{U}h)\lor h) \mid g\mathbf{U}h \text{ occurs in } f\} 
 </p>
 <p>これにより，タブローの構築は完了となる．</p>
 <p>図6.1の例をもう一度考えてみよう．
-<script type="math/tex">F_T = sat(\lnot((\lnot heat)\mathbf{U}close))\cup sat(close) = \{5,7,8\}\cup\{1,2,4,6\} = S_T \{3\}</script> である．</p>
+<script type="math/tex">F_T = sat(\lnot((\lnot heat)\mathbf{U}close))\cup sat(close) = \{5,7,8\}\cup\{1,2,4,6\} = S_T \setminus \{3\}</script> である．</p>
 <p>
 <script type="math/tex">\lnot g</script> のタブローは，<script type="math/tex">T_{\lnot g}</script> の初期状態が <script type="math/tex">T_g</script> の初期状態の補集合であることを除いて <script type="math/tex">g</script> のタブローと同一である．</p>
 <h2 id="62-ltl">6.2 タブローを用いた LTL モデル検査</h2>
 <p>次に，タブロー <script type="math/tex">T = (S_T,S^0_T,R_T,AP_f,L_T,F_T)</script> と <script type="math/tex">M = (S_M,S^0_M,R_M,AP,L_M)</script> から，以下の積 <script type="math/tex">P = (S,S_0,R,AP_f,L,F)</script> を計算したい．</p>
 <ul>
 <li>
-<script type="math/tex">S = \{(s,s') \mid s\in S_T,s'\in S_M,and L_M(s')|_AP_f = L_T(s)\}</script>
+<script type="math/tex">S = \{(s,s') \mid s\in S_T,s'\in S_M,</script> かつ <script type="math/tex">L_M(s')|_{AP_f} = L_T(s)\}</script>
 </li>
 <li>
-<script type="math/tex">S_0 = \{(s,s') \mid s\in S^0_T,s'\in S~0_M,and (s,s')\}</script>
+<script type="math/tex">S_0 = \{(s,s') \mid s\in S^0_T,s'\in S^0_M,</script> かつ <script type="math/tex">(s,s')\}</script>
 </li>
 <li>
 <script type="math/tex">R_T(s,t)</script> かつ <script type="math/tex">R_M(s',t')</script> であるとき，かつそのときのみ <script type="math/tex">R((s,s'),(t,t'))</script>
