@@ -47,7 +47,9 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap">
     
       <link rel="stylesheet" href="../css/custom.css">
     
@@ -849,12 +851,12 @@
 <li>
 <script type="math/tex">v_3</script> が制約をもたない（すなわち非決定的に変化する）</li>
 </ul>
-<p>ような遷移関係を表すことになる．
+<p>というような遷移関係を表すことになる．
 <script type="math/tex">V \cup V'</script> を自由変数とする一階の論理式 <script type="math/tex">\phi</script> が与えられたとき，<script type="math/tex">\phi</script> で表された遷移関係に対 <script type="math/tex">(s,s')</script> が含まれることを表すため，<script type="math/tex">s, s' \models \phi</script> という表記を用いることにする．</p>
 <h3 id="_5">原子命題の記号表現</h3>
 <p>原子命題の集合 <script type="math/tex">AP</script> も，同様の枠組みで定義する．
 <script type="math/tex">AP</script> は，システムの状態に関する情報を含むラベルの固定された有限集合である．
-各ラベル <script type="math/tex">l \in AP</script> に対して，<script type="math/tex">l \in L(s)</script> であることを表すために <script type="math/tex">s \models l</script> と表記し，<script type="math/tex">l \notin L(s)</script> であることを表すために <script type="math/tex">s \nVDash l</script> と表記する．</p>
+各ラベル <script type="math/tex">l \in AP</script> に対して，<script type="math/tex">l \in L(s)</script> であることを表すために <script type="math/tex">s \models l</script> と表記し，<script type="math/tex">l \notin L(s)</script> であることを表すために <script type="math/tex">s \nvDash l</script> と表記する．</p>
 <p>重要なこととして，<script type="math/tex">AP</script>は，状態（すなわち変数への付値）によってその真偽が一意に決定されるような任意の性質を含むことができる．
 具体的には，<script type="math/tex">v \in V</script> および <script type="math/tex">d \in D_v</script> に対して，<script type="math/tex">v=d</script> という形の式が <script type="math/tex">AP</script> のラベルとなりうる．
 命題 <script type="math/tex">(v=d)</script> は，<script type="math/tex">s(v)=d</script> であるならば，状態 <script type="math/tex">s</script> において真となる．
@@ -1022,7 +1024,7 @@ R(v_0, v_1, v_0', v_1') \quad & = \quad & & \neg v_0 \wedge \neg v_1 \wedge v_0'
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.467223ff.min.js"></script>

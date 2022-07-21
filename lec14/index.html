@@ -1,0 +1,739 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>第14回 モデル検査ツールとその使い方 - システム検証論 (2021)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            システム検証論 (2021)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第14回 モデル検査ツールとその使い方
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2021)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01/" class="md-nav__link">
+        第1回 モデル検査とは
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02/" class="md-nav__link">
+        第2回 クリプキ構造と一階の論理表現
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03/" class="md-nav__link">
+        第3回 ハードウェア・ソフトウェアのモデル化
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04/" class="md-nav__link">
+        第4回 時相論理 CTL*
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05/" class="md-nav__link">
+        第5回 CTL* ベースのその他の時相論理
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06/" class="md-nav__link">
+        第6回 CTL モデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec07/" class="md-nav__link">
+        第7回 不動点計算によるモデル検査アルゴリズム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回 LTL と CTL* のモデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回 二分決定グラフ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec10/" class="md-nav__link">
+        第10回 記号モデル検査
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nusmv" class="md-nav__link">
+    NuSMV のインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nusmv_1" class="md-nav__link">
+    NuSMV の実行
+  </a>
+  
+    <nav class="md-nav" aria-label="NuSMV の実行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    インタラクティブモード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    バッチモード
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smv" class="md-nav__link">
+    SMV 言語
+  </a>
+  
+    <nav class="md-nav" aria-label="SMV 言語">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smv_1" class="md-nav__link">
+    例題 SMV プログラム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    型について
+  </a>
+  
+    <nav class="md-nav" aria-label="型について">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    ブール値
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    整数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    列挙型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    ワード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    配列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    式について
+  </a>
+  
+    <nav class="md-nav" aria-label="式について">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    定数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    式と演算子
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nusmv_2" class="md-nav__link">
+    NuSMV による検証
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="14">第14回 モデル検査ツールとその使い方</h1>
+<p>この回では，モデル検査ツール NuSMV の導入方法と使い方について説明します．</p>
+<h2 id="_1">はじめに</h2>
+<p>NuSMV は，カーネギーメロン大学 (CMU) にて開発された BDD ベースのモデル検査ツール SMV (Symbolic Model Verifier) を再開発し，新たな機能拡張を行った記号モデル検査器である．
+NuSMV2 には，SMV や NuSMV1 で実装されていた BDD 記号モデル検査機能に加えて，命題充足可能性判定器 (SAT ソルバ) を用いた有界モデル検査技術が統合されている．
+また，NuSMV2 は OpenSource ライセンスによって配布されており，利用者の目的を問わず，利用，修正，再頒布が認められている．</p>
+<p>NuSMV2 の主な機能は以下の通りである．</p>
+<ul>
+<li>同期および非同期の有限状態システムを表現し，計算木論理（CTL）および線形時間論理（LTL）で表現された仕様を，BDDベースおよびSATベースのモデル検査技術で解析することができる．</li>
+<li>効率化や，部分的に状態爆発を抑制するためのヒューリスティックが利用可能である．</li>
+<li>バッチモードに加えて，テキストインターフェースを用いた対話的処理も可能である．</li>
+</ul>
+<p>なお，NuSMV の後継ツールで，同期式の有限および無限状態システムを対象とした解析が可能なツール <a href="https://nuxmv.fbk.eu/">nuXmv</a> も公開されている．</p>
+<h2 id="nusmv">NuSMV のインストール</h2>
+<p>NuSMV のソースコードや実行可能バイナリ，マニュアル等は<a href="https://nusmv.fbk.eu/">公式サイト</a>から入手可能である．</p>
+<ol>
+<li><a href="https://nusmv.fbk.eu/NuSMV/download/getting-v2.html">Getting NuSMV</a> からバイナリを入手する．</li>
+<li>ダウンロードしたファイル (Windows なら <code>NuSMV-2.6.0-win64.tar.gz</code>) を展開し，<code>/bin/NuSMV</code> あるいは <code>/bin/NuSMV.exe</code> を適当なフォルダへと移動する．</li>
+</ol>
+<p>Mac OS (または Linux) の場合，<a href="https://brew.sh/index_ja">Homebrew</a> でもインストールできる．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$ brew install nu-smv
+</code></pre></div>
+<h2 id="nusmv_1">NuSMV の実行</h2>
+<p>NuSMV の実行形式は，</p>
+<ul>
+<li>インタラクティブモード</li>
+<li>バッチモード</li>
+</ul>
+<p>の２通りがある．</p>
+<h3 id="_2">インタラクティブモード</h3>
+<p><code>-int</code> オプションをつけて NuSMV を起動するとインタラクティブモードで実行できる．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV -int
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #717171">NuSMV &gt;</span>
+</code></pre></div>
+<p>インタラクティブモードは対話型シェルを用いた実行形式で，「読み込み〜評価〜出力」を繰り返す．
+このモードでは，ユーザは NuSMV でモデル検査を行う際の「モデルの読み込み」「BDD の構築」「特性の検証」といったステップを，システムコマンドとして個別に実行する．</p>
+<p>インタラクティブモードでモデル <code>sample.smv</code> を検証する場合のコマンド実行系列の例を以下に示す．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV -int
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span style="color: #717171">NuSMV &gt; read_model -i sample.smv</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span style="color: #717171">NuSMV &gt; flatten_hierarchy</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span style="color: #717171">NuSMV &gt; encode_variables</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span style="color: #717171">NuSMV &gt; build_model</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span style="color: #717171">NuSMV &gt; check_ctlspec</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span style="color: #717171">-- specification （検査対象となる CTL 式）  is true</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span style="color: #717171">NuSMV &gt;</span>
+</code></pre></div>
+<p>それぞれ，</p>
+<ul>
+<li><code>read_model</code> ： モデルの読み込み</li>
+<li><code>flatten_hierarchy</code> ： モジュールやプロセスの展開</li>
+<li><code>encode_variables</code> ： 変数の２値エンコード</li>
+<li><code>build_model</code> ： BDD モデルの構築</li>
+<li><code>check_ctlspec</code> ： CTL 式の検証</li>
+</ul>
+<p>を行うシステムコマンドである．</p>
+<h3 id="_3">バッチモード</h3>
+<p><code>-int</code> オプションをつけずに NuSMV を起動するとバッチモードで実行できる．
+バッチモードでは，インタラクティブモードでユーザが個別に指定して実行していたシステムコマンドの列を自動的に実行する．</p>
+<p>バッチモードでモデル <code>sample.smv</code> を検証する場合の実行結果を以下に示す．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV sample.smv
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span style="color: #717171">-- specification （検査対象となる CTL 式）  is true</span>
+</code></pre></div>
+<h2 id="smv">SMV 言語</h2>
+<p>NuSMV のモデルを記述するための専用言語を SMV 言語と呼ぶ．
+SMV 言語は，完全同期システムから非同期システムまで，また詳細モデルから抽象モデルまでを記述できるよう設計されている．
+さらに，モジュール化による階層的な記述も可能である．
+なお，検査対象は有限状態システムに限られるため，データ型は有限である必要がある．
+SMV 言語で書かれたモデルを SMV プログラムという．</p>
+<h3 id="smv_1">例題 SMV プログラム</h3>
+<p>SMV プログラムの例を以下に示す．</p>
+<div class="highlight" style="background: #f8f8f8"><span class="filename">sample.smv</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>MODULE main
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>VAR
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    request: boolean;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    state: {ready, busy};
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>ASSIGN
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    init(state) := ready;
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    next(state) := case
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        state=ready &amp; request: busy;
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        TRUE: {ready, busy};
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        esac;
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>CTLSPEC AG(request -&gt; AF (state = busy))
+</code></pre></div>
+<p>SMV プログラムは，変数の定義，遷移関係の記述，そして検査式から構成される．
+上述の例では，<code>VAR</code> で指定されたブロックで変数を定義している．</p>
+<div class="highlight" style="background: #f8f8f8"><span class="filename">変数定義部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>VAR
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    request: boolean;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    state: {ready, busy};
+</code></pre></div>
+<p>この例では，ブール型の変数 <code>request</code> と <code>{ready, busy}</code> のいずれかの値をとる記号型変数 <code>state</code> が定義されている．</p>
+<p>遷移関係は <code>ASSIGN</code> で指定されたブロックで記述されている．</p>
+<div class="highlight" style="background: #f8f8f8"><span class="filename">遷移記述部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ASSIGN
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    init(state) := ready;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    next(state) := case
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        state=ready &amp; request: busy;
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        TRUE: {ready, busy};
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        esac;
+</code></pre></div>
+<p><code>ASSIGN</code> を用いた遷移関係の記述では，それぞれの変数について，初期状態での値と，次状態での値の変化を指定する．
+変数の初期状態での値は <code>init</code> を用いて表し，次状態での値は <code>next</code> を用いて表す．
+また条件分岐に基づく値の代入には <code>case</code> 式を用いる．</p>
+<p>この例では，変数 <code>state</code> の初期状態での値が <code>ready</code> であり，現在の <code>state</code> の値が <code>ready</code> でかつ <code>request</code> が真ならば次の状態での値が <code>busy</code>となり，そうでなければ非決定的に <code>{ready, busy}</code> のいずれかへと変化するよう指定されている．
+また，ここでは変数 <code>request</code> の値の変化については指定されていない．
+このような場合，<code>request</code> の初期状態や次の状態での値は非決定的に選択される．</p>
+<p>CTL 式による検査特性は <code>CTLSPEC</code> で与えられる．</p>
+<div class="highlight" style="background: #f8f8f8"><span class="filename">検査式記述部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CTLSPEC AG(request -&gt; AF (state = busy))
+</code></pre></div>
+<p>ここでは，CTL 式 <script type="math/tex">\mathbf{AG}(request \rightarrow \mathbf{AF} (state = busy))</script> が検査式として与えられている．</p>
+<h3 id="_4">型について</h3>
+<p>NuSMV で利用できる型は，ブール値，整数，列挙型，ワード，そして配列である．
+それぞれについて簡単に説明する．</p>
+<h4 id="_5">ブール値</h4>
+<p>ブール (boolean) 型は記号値 FALSE と TRUE から構成される．</p>
+<h4 id="_6">整数</h4>
+<p>整数 (integer) 型は正と負の整数値から構成される．
+現在の実装では，整数型の定義域は -2<sup>31</sup> + 1 〜 2<sup>31</sup> - 1 となっている．</p>
+<h4 id="_7">列挙型</h4>
+<p>列挙 (enumeration) 型は，値の列挙として構成される．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{stopped, running, waiting, finished}
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{2, 4, -2, 0}
+</code></pre></div>
+<p>要素の順序に意味は無いが，要素の重複は許されない．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{stopped, running, waiting}
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{running, stopped, waiting} # 上と同じ型
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>{stopped, stopped, running, waiting} # これはNG
+</code></pre></div>
+<p>また，列挙型は記号定数と整数値が入り交じって定義されていてもよいが，ブール値が含まれることは許されない．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{FAIL, 1, 3, 7, OK}   # これはOK
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{FAIL, 1, 3, 7, TURE} # これはNG
+</code></pre></div>
+<p>記号定数のみからなるものを symbolic enum 型，記号と整数からなるものを integer-and-symbolic enum 型とそれぞれいう．
+なお，整数のみからなる列挙型は integer 型と等価である．</p>
+<h4 id="_8">ワード</h4>
+<p>符号なしワード (unsigined word) あるいは符号付きワード (signed word) は，ビット値のベクトルを表す型である．
+符号付きワードの表す値は 2 の補数に基づく．
+いずれのワード型もビット幅が定められており，unsigned word[N] 型は 0 〜 2<sup>N</sup>-1 の値を，signed word[N] 型は -2<sup>N-1</sup> 〜 2<sup>N-1</sup> - 1 の値を表すことができる．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>unsigned word[3] # 3 ビットベクトル
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>signed word[7]   # 7 ビットベクトル
+</code></pre></div>
+<h4 id="_9">配列</h4>
+<p>配列は，インデックスの下限と上限，そして要素の型によって定義される．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>array 0..3 of boolean
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>array 10..20 of {OK, y, z}
+</code></pre></div>
+<p>多次元配列も定義できる．</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>array 1..8 of array -1..2 of unsigned word[5]
+</code></pre></div>
+<h3 id="_10">式について</h3>
+<h4 id="_11">定数</h4>
+<p>NuSMV では定数として，ブール値，整数値，シンボル，ワード値，範囲指定が利用できる．</p>
+<p>ブール定数は boolean 型で，FALSE か TRUE のいずれかとなる．
+整数定数は integer 型で，ある整数値となる．
+記号定数は symbolic enum 型で，SMV 言語における識別子 (identifier) として記述される．</p>
+<h4 id="_12">式と演算子</h4>
+<p>シンタックス</p>
+<h2 id="nusmv_2">NuSMV による検証</h2>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>

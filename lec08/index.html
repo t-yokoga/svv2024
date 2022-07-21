@@ -47,7 +47,9 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap">
     
       <link rel="stylesheet" href="../css/custom.css">
     
@@ -821,18 +823,18 @@ Lichtenstein と Pnueli のアルゴリズムとは異なり，このアルゴ�
 よって，<script type="math/tex">R_T</script> を次のように定義する．</p>
 <p>
 <script type="math/tex; mode=display">
-R_T(s,s') = \bigwedge^{n}_{\mathbf{X}_g\in el(f)} s\in sat(\mathbf{X}_g)\Leftrightarrow s'\in sat(g)
+R_T(s,s') = \bigwedge_{\mathbf{X}g\in el(f)} s\in sat(\mathbf{X}g)\Leftrightarrow s'\in sat(g)
 </script>
 </p>
+<p>
+<script type="math/tex">g = (\lnot heat) \mathbf{U} close</script> を第 6 回で示した電子レンジの例に対する仕様とする．
+式 <script type="math/tex">\lnot g</script> のタブローに対する遷移関係 <script type="math/tex">R_T</script> は図6.1のように与えられる．</p>
 <p><center>
 <img src="../img/lec08-fig1.pdf" width="450">
 <br><br>
 図6.1： <script type="math/tex">g = (\lnot heat) \mathbf{U} close</script> に対するタブロー
 </center></p>
-<p>
-<script type="math/tex">g = (\lnot heat) \mathbf{U} close</script> を第 6 回で示した電子レンジの例に対する仕様とする．
-式 <script type="math/tex">\lnot g</script> のタブローに対する遷移関係 <script type="math/tex">R_T</script> は図6.1のように与えられる．
-図を見やすくするため，<script type="math/tex">s</script> から <script type="math/tex">s'</script> と <script type="math/tex">s'</script> から <script type="math/tex">s</script> の両方に辺がある場合は <script type="math/tex">s</script> と <script type="math/tex">s'</script> の2つの状態を双方向の矢印で繋いでいる．
+<p>図を見やすくするため，<script type="math/tex">s</script> から <script type="math/tex">s'</script> と <script type="math/tex">s'</script> から <script type="math/tex">s</script> の両方に辺がある場合は <script type="math/tex">s</script> と <script type="math/tex">s'</script> の2つの状態を双方向の矢印で繋いでいる．
 <script type="math/tex">el(g)</script> の部分集合は，それぞれが <script type="math/tex">T</script> の状態となる．
 図 6.1 では状態にラベル付けを行う際に，<script type="math/tex">heat</script> を <script type="math/tex">h</script>, <script type="math/tex">close</script> を <script type="math/tex">c</script> と略している．
 また，わかりやすさのため, ラベルには原子命題の否定も含めている（本来は否定がラベル付けされるのではなく，ラベル付け自体がされない）．
@@ -889,7 +891,7 @@ F_T = \{sat(\lnot(g\mathbf{U}h)\lor h) \mid g\mathbf{U}h \text{ occurs in } f\} 
 <script type="math/tex">V</script>から，<script type="math/tex">\textbf{A} \lnot f</script> を満たす <script type="math/tex">M</script> の状態の集合を抽出することができる（4.4節の定義参照）．</p>
 <p>
 <script type="math/tex; mode=display">
-[\![\textbf{A}\lnot f ]\!]_M = S_M \setminus \{s' \mid (s,s') \in V となる s \in S_T が存在する \}．
+[\![\textbf{A}\lnot f ]\!]_M = S_M \setminus \{s' \mid \text{there exists } s \in S_T : (s,s') \in V \}．
 </script>
 </p>
 <p>ここでの目的は，<script type="math/tex">\textbf{A}g</script> 形式のLTL式を検査することであり，そのために <script type="math/tex">\textbf{E}\lnot g</script> を検査するためのアルゴリズムを適用したことを思い出してほしい．</p>
@@ -901,9 +903,9 @@ CTL モデル検査アルゴリズムが <script type="math/tex">P</script> に�
 <h4 id="61_1">定理 6.1</h4>
 <div class="admonition abstract">
 <p class="admonition-title">定理 6.1</p>
-</div>
 <p>
 <script type="math/tex">(s,s') \in sat(f)</script> で，かつ <script type="math/tex">(s,s')</script> が公平なパスの起点となるような状態 <script type="math/tex">s</script> が <script type="math/tex">T</script> に存在するとき，かつその時のみ <script type="math/tex">M, s' \models \mathbf{E} f</script> である．</p>
+</div>
 <h4 id="62">例 6.2</h4>
 <div class="admonition example">
 <p class="admonition-title">例 6.2</p>
@@ -1418,7 +1420,7 @@ LTL モデル検査のためのオートマトン理論に基づくアルゴリ�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.467223ff.min.js"></script>

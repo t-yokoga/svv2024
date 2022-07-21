@@ -47,7 +47,9 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap">
     
       <link rel="stylesheet" href="../css/custom.css">
     
@@ -792,7 +794,7 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
 <script type="math/tex">M,s \models_F\mathbf{E}_\textsf{f}\mathbf{X}f_1</script> であるかどうかを判定するために，<script type="math/tex">M,s \models\mathbf{EX}(f_1\wedge\textit{fair})</script> を検査する．
 <script type="math/tex">M,s \models_F\mathbf{E}_\textsf{f}f_1 \mathbf{U} f_2</script> であるかどうかを判定するために，手続き <script type="math/tex">CheckEU(f_1，f_2\wedge fair)</script> を用いて，<script type="math/tex">M,s \models\mathbf{E}(f_1 \mathbf{U} (f_2\wedge fair))</script> を検査する．</p>
 <p>複雑さの解析は，公平でないケースと類似している．
-各段階では，それぞれ <script type="math/tex">O((|S|+|R| \cdot |F|)</script> が必要となる．
+各段階では，それぞれ <script type="math/tex">O((|S|+|R|) \cdot |F|)</script> が必要となる．
 最大でも <script type="math/tex">|f|</script> 段階の処理が必要であるため，総合した時間計算量は <script type="math/tex">O(|f| \cdot (|S|+|R|) \cdot |F|)</script> となる．</p>
 <h4 id="54">定理 5.4</h4>
 <div class="admonition abstract">
@@ -900,7 +902,7 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
