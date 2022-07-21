@@ -839,7 +839,7 @@ R_T(s,s') = \bigwedge_{\mathbf{X}g\in el(f)} s\in sat(\mathbf{X}g)\Leftrightarro
 図 6.1 では状態にラベル付けを行う際に，<script type="math/tex">heat</script> を <script type="math/tex">h</script>, <script type="math/tex">close</script> を <script type="math/tex">c</script> と略している．
 また，わかりやすさのため, ラベルには原子命題の否定も含めている（本来は否定がラベル付けされるのではなく，ラベル付け自体がされない）．
 状態 <script type="math/tex">1, 2, 3, 5</script> はそれぞれ式 <script type="math/tex">\mathbf{X}g</script> を含むので，<script type="math/tex">sat(\mathbf{X}g) = \{1,2,3,5\}</script>となる．
-状態 <script type="math/tex">1, 2, 3, 4, 6</script> はそれぞれ <script type="math/tex">close</script> か <script type="math/tex">\neg heat</script> および <script type="math/tex">\mathbf{X}g</script> を含むので，<script type="math/tex">sat(\mathbf{X}g) = \{1,2,3,6\}</script> を得る．
+状態 <script type="math/tex">1, 2, 3, 4, 6</script> はそれぞれ <script type="math/tex">close</script> か，あるいは <script type="math/tex">\neg heat</script> および <script type="math/tex">\mathbf{X}g</script> の両方を含むので，<script type="math/tex">sat(g) = \{1, 2, 3, 4, 6\}</script> を得る．
 したがって，初期状態を <script type="math/tex">S^0_T = \{1,2,3,4,6\}</script> と定義できる．</p>
 <p>さらに，<script type="math/tex">sat(g)</script> の補集合として <script type="math/tex">sat(\lnot g) = \{5,7,8\}</script> を得る．
 <script type="math/tex">sat(\mathbf{X}g)</script> の各状態から <script type="math/tex">sat(g)</script> の各状態への遷移が存在し，<script type="math/tex">sat(\mathbf{X}g)</script> の補集合の各状態から <script type="math/tex">sat(g)</script> の補集合の各状態への遷移が存在する．
