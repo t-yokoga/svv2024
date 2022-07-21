@@ -790,7 +790,7 @@ Lichtenstein と Pnueli のアルゴリズムとは異なり，このアルゴ�
 <script type="math/tex"> el(\mathbf{X}g) = \{\mathbf{X}g\} \cup el(g) </script>
 </li>
 <li>
-<script type="math/tex"> el(g \mathbf{U} h) = \{\mathbf{X}(g \mathbf{U} h) \cup el(g) \cup el(h)\}</script>
+<script type="math/tex"> el(g \mathbf{U} h) = \{\mathbf{X}(g \mathbf{U} h)\} \cup el(g) \cup el(h)</script>
 </li>
 </ul>
 <p>集合 <script type="math/tex">el(f)</script> は，原子命題と <script type="math/tex">\mathbf{X}g</script> の形の式のみを含んでいる．ここで，<script type="math/tex">g</script> は <script type="math/tex">f</script> の部分論理式である．
@@ -860,7 +860,7 @@ F_T = \{sat(\lnot(g\mathbf{U}h)\lor h) \mid g\mathbf{U}h \text{ occurs in } f\} 
 <p>図6.1の例をもう一度考えてみよう．
 <script type="math/tex">F_T = sat(\lnot((\lnot heat)\mathbf{U}close))\cup sat(close) = \{5,7,8\}\cup\{1,2,4,6\} = S_T \{3\}</script> である．</p>
 <p>
-<script type="math/tex">\lnot g</script> のタブローは，<script type="math/tex">T_\lnot g</script> の初期状態が <script type="math/tex">T_g</script> の初期状態の補集合であることを除いて <script type="math/tex">g</script> と同一である．</p>
+<script type="math/tex">\lnot g</script> のタブローは，<script type="math/tex">T_{\lnot g}</script> の初期状態が <script type="math/tex">T_g</script> の初期状態の補集合であることを除いて <script type="math/tex">g</script> のタブローと同一である．</p>
 <h2 id="62-ltl">6.2 タブローを用いた LTL モデル検査</h2>
 <p>次に，タブロー <script type="math/tex">T = (S_T,S^0_T,R_T,AP_f,L_T,F_T)</script> と <script type="math/tex">M = (S_M,S^0_M,R_M,AP,L_M)</script> から，以下の積 <script type="math/tex">P = (S,S_0,R,AP_f,L,F)</script> を計算したい．</p>
 <ul>
