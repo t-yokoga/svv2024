@@ -13,7 +13,7 @@
     
     
       
-        <title>第9回 二分決定グラフ - システム検証論 (2021)</title>
+        <title>第9回 二分決定グラフ - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -388,14 +388,14 @@
         
           <li class="md-nav__item">
   <a href="#bdd" class="md-nav__link">
-    二分決定グラフ（BDD）
+    二分決定グラフ (BDD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd" class="md-nav__link">
-    順序付き二分決定グラフ（OBDD）
+    順序付き二分決定グラフ (OBDD)
   </a>
   
 </li>
@@ -497,6 +497,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -547,14 +562,14 @@
         
           <li class="md-nav__item">
   <a href="#bdd" class="md-nav__link">
-    二分決定グラフ（BDD）
+    二分決定グラフ (BDD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd" class="md-nav__link">
-    順序付き二分決定グラフ（OBDD）
+    順序付き二分決定グラフ (OBDD)
   </a>
   
 </li>
@@ -654,7 +669,7 @@
 <ul>
 <li>ブール関数の表現</li>
 <li>二分決定木と二分決定グラフ</li>
-<li>順序付き二分決定グラフ（OBDD）</li>
+<li>順序付き二分決定グラフ (OBDD) </li>
 <li>変数順序とグラフサイズの関係</li>
 <li>OBDD を用いた論理演算の実装</li>
 <li>OBDD によるクリプキ構造の表現</li>
@@ -672,12 +687,12 @@ BDD は記号モデル検査を可能とし，10<sup>20</sup> かそれ以上の
 この革命はハードウェア業界の注目を集め，モデル検査を学術的なものから産業的に協力な技術へと変化させることになった．
 モデル検査は現在，SAT ベースの手法でほとんど行われているが，BDD ベースのツールが最もよく機能する使用例もまだ多く残っている．</p>
 <h2 id="81">8.1 ブール関数の表現</h2>
-<p>順序付き二分決定グラフ（Ordered binary decision diagrams, OBDD）はブール式の標準形である<sup id="fnref2:87"><a class="footnote-ref" href="#fn:87">1</a></sup>．
+<p>順序付き二分決定グラフ (Ordered binary decision diagrams, OBDD) はブール式の標準形である<sup id="fnref2:87"><a class="footnote-ref" href="#fn:87">1</a></sup>．
 OBDD は積標準形や和標準形のような伝統的な標準形よりも実質的にコンパクトであることが多く，非常に効率的に操作することが可能である．
-そのため，記号シミュレーション，組合せ論理の検証，有限状態システムの検証など，計算機援用設計（CAD）における様々な用途に対して広く用いられるようになった．
+そのため，記号シミュレーション，組合せ論理の検証，有限状態システムの検証など，計算機援用設計 (CAD) における様々な用途に対して広く用いられるようになった．
 後者については，次節で詳しく説明する．</p>
 <h3 id="_1">二分決定木</h3>
-<p>二分決定グラフに関する議論を動機付けるため，まず<strong>二分決定木</strong>（binary decision tree）について考える．
+<p>二分決定グラフに関する議論を動機付けるため，まず<strong>二分決定木</strong> (binary decision tree) について考える．
 二分決定木は根を持つ有向木であり，<strong>終端頂点</strong>と<strong>非終端頂点</strong>の2種類の頂点から構成される．
 それぞれの非終端頂点 <script type="math/tex">v</script> は変数 <script type="math/tex">var(v)</script> でラベル付けされ，変数 <script type="math/tex">v</script> に 0 が代入された場合に対応する <script type="math/tex">low(v)</script> と，<script type="math/tex">v</script> に 1 が代入された場合に対応する <script type="math/tex">high(v)</script> という2つの後継を持つ．
 それぞれの終端頂点 <script type="math/tex">v</script> は <script type="math/tex">value(v)</script> でラベル付けされ，0 または 1 のいずれかの値をもつ．
@@ -694,13 +709,13 @@ OBDD は積標準形や和標準形のような伝統的な標準形よりも実
 終端頂点にラベル付けされた値は，この割り当てに対する関数の値となる．
 例えば <script type="math/tex">\{a_1 \mapsto 1, a_2 \mapsto 0, b_1 \mapsto 1, b_2 \mapsto 1\}</script> という割り当ては 0 でラベルづけた葉の頂点に到達する．
 したがって，この割り当てでの式の値は偽となる．</p>
-<h3 id="bdd">二分決定グラフ（BDD）</h3>
+<h3 id="bdd">二分決定グラフ (BDD)</h3>
 <p>二分決定木では，ブール関数をあまり簡潔に表現することはできない．
 実際のところ，木の大きさは真理値表と同じである．
 幸いなことに，このような木には通常多くの冗長性がある．
 例えば，図8.1の木は根が <script type="math/tex">b_2</script> でラベル付けされた 8 つの部分木をもつが，そのうち異なるのは 3 つのみである．
 したがって，同型の部分木を結合することで，ブール関数のより簡潔な表現を得ることができる．
-この結果，<strong>二分決定グラフ</strong>と呼ばれる有向無閉路グラフ（directed asyclic graph, DAG）を得ることができる．
+この結果，<strong>二分決定グラフ</strong>と呼ばれる有向無閉路グラフ (directed asyclic graph, DAG) を得ることができる．
 より正確には，二分決定グラフは，終端頂点と非終端頂点の 2 種類の頂点から構成され，根をもつ有向無閉路グラフである．
 二分決定木の場合と同様に，各非終端頂点 <script type="math/tex">v</script> は変数 <script type="math/tex">var(v)</script> でラベル付けされ，<script type="math/tex">low(v)</script> と <script type="math/tex">high(v)</script> という2つの後継をもつ．
 各終端頂点は 0 か 1 のいずれかでラベル付けされる．
@@ -721,11 +736,11 @@ OBDD は積標準形や和標準形のような伝統的な標準形よりも実
     </script>
 </li>
 </ol>
-<h3 id="obdd">順序付き二分決定グラフ（OBDD）</h3>
-<p>実用上では，ブール関数の<strong>標準形</strong>（canonical representation）があることが望まれる．
+<h3 id="obdd">順序付き二分決定グラフ (OBDD)</h3>
+<p>実用上では，ブール関数の<strong>標準形</strong> (canonical representation) があることが望まれる．
 このような表現は，2 つのブール関数が同型の表現をもつ場合のみ，かつそのときのみ論理的に等価であるという性質を持たなければならない．
 この性質は，2 つの式の等価性のチェックや，与えられた式が充足可能かどうかの決定といった作業を簡単化する．
-2 つの二分決定グラフは，一方の終端頂点をもう一方の終端頂点に，一方の非終端頂点をもう一方の非終端頂点に写像する全単射の関数 <script type="math/tex">h</script> が存在し，すべての終端頂点 <script type="math/tex">v</script> について <script type="math/tex">value(v) = value(h(v))</script> であり，すべての非終端頂点 <script type="math/tex">v</script> について <script type="math/tex">var(v) = var(h(v))</script>，<script type="math/tex">h(low(v)) = low(h(v))</script>，そして <script type="math/tex">h(high(v) = high(h(v))</script> が成り立つ場合に<strong>同型</strong>（isomorphic）であるとする．</p>
+2 つの二分決定グラフは，一方の終端頂点をもう一方の終端頂点に，一方の非終端頂点をもう一方の非終端頂点に写像する全単射の関数 <script type="math/tex">h</script> が存在し，すべての終端頂点 <script type="math/tex">v</script> について <script type="math/tex">value(v) = value(h(v))</script> であり，すべての非終端頂点 <script type="math/tex">v</script> について <script type="math/tex">var(v) = var(h(v))</script>，<script type="math/tex">h(low(v)) = low(h(v))</script>，そして <script type="math/tex">h(high(v)) = high(h(v))</script> が成り立つ場合に<strong>同型</strong> (isomorphic) であるとする．</p>
 <p>Bryant<sup id="fnref3:87"><a class="footnote-ref" href="#fn:87">1</a></sup> は，二分決定グラフに二つの制約を設けることによってブール関数の標準形を得る方法を示した．
 第一に，変数は根から終端までのいずれの経路に沿っても同じ順序で現れなければならない．
 第二に，グラフ中には同型の部分木や冗長な頂点が存在してはならない．
@@ -757,7 +772,7 @@ Bryant は，<script type="math/tex">Reduce</script> と呼ばれる手続きに
 一般に，変数の最適な順序を見つけることは計算上困難である．
 実際，特定の順序が最適であることを確認することさえ，NP 完全であることが示されている<sup id="fnref:89"><a class="footnote-ref" href="#fn:89">4</a></sup><sup id="fnref:451"><a class="footnote-ref" href="#fn:451">5</a></sup>．
 さらに，どのような変数順序に対しても指数関数的な大きさの OBDD を持つようなブール関数が存在する．
-その一例は，2 つの <script type="math/tex">n</script> ビット整数を乗算する組合せ回路の中間出力（または <script type="math/tex">n</script> 番目の出力）に対するブール関数である<sup id="fnref:88"><a class="footnote-ref" href="#fn:88">6</a></sup><sup id="fnref2:89"><a class="footnote-ref" href="#fn:89">4</a></sup>．</p>
+その一例は，2 つの <script type="math/tex">n</script> ビット整数を乗算する組合せ回路の中間出力 (または <script type="math/tex">n</script> 番目の出力) に対するブール関数である<sup id="fnref:88"><a class="footnote-ref" href="#fn:88">6</a></sup><sup id="fnref2:89"><a class="footnote-ref" href="#fn:89">4</a></sup>．</p>
 <p><center>
 <img src="../img/lec09-fig3.pdf">
 <br><br>
@@ -771,26 +786,26 @@ Bryant は，<script type="math/tex">Reduce</script> と呼ばれる手続きに
 したがって，通常これらの変数は，順序内でまとめてグループ化する必要がある．
 これは、回路図を深さ優先で探索したときに遭遇する順序で変数を配置することで達成されるかもしれない．
 変数の順序づけのためのもう一つのアプローチは，FORCE ツール<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">9</a></sup> に実装されたもので，良い順序を見つけるためにブール式の構造を分析するというものである．</p>
-<p><strong>動的並べ替え</strong>（dynamic reordering）<sup id="fnref:434"><a class="footnote-ref" href="#fn:434">10</a></sup> と呼ばれる技術は，明らかな順序付けのヒューリスティックが適用できない場合に有効である．
+<p><strong>動的並べ替え</strong> (dynamic reordering) <sup id="fnref:434"><a class="footnote-ref" href="#fn:434">10</a></sup> と呼ばれる技術は，明らかな順序付けのヒューリスティックが適用できない場合に有効である．
 この技術が利用されるとき，OBDD パッケージは内部的に使用される頂点の総数を減少させるよう変数の並べ替えを定期的に行う．
 この並べ替え手法は，最適な順序を見つけるというよりも，むしろメモリを節約するために設計されている．</p>
 <h3 id="obdd_1">OBDD を用いた論理演算の実装</h3>
 <p>次に，OBDD を用いて様々な重要な論理演算を実装するための方法について説明する．
-まず，ブール関数 <script type="math/tex">f</script> のある引数 <script type="math/tex">x_i</script> を定数値 <script type="math/tex">b</script> に<strong>制限</strong>（restrict）する関数から始める．
+まず，ブール関数 <script type="math/tex">f</script> のある引数 <script type="math/tex">x_i</script> を定数値 <script type="math/tex">b</script> に<strong>制限</strong> (restrict) する関数から始める．
 この関数は <script type="math/tex">f|_{x_i \leftarrow b}</script> で表され，以下の恒等式を満たす．</p>
 <p>
 <script type="math/tex; mode=display">
 f|_{x_i \leftarrow b}(x_1,\ldots,x_n) = f(x_1,\ldots,x_{i-1},b,x_{i+1},\ldots,x_n)
 </script>
 </p>
-<p>この制限された関数は，（<script type="math/tex">x_i</script> を除いた）<script type="math/tex">n - 1</script> 個の変数にのみ依存する．
+<p>この制限された関数は， (<script type="math/tex">x_i</script> を除いた) <script type="math/tex">n - 1</script> 個の変数にのみ依存する．
 <script type="math/tex">f</script> が OBDDとして表現されるなら，制限された関数に対する OBDD は，OBDD の深さ優先探索によって簡単に計算できる．
 <script type="math/tex">var(w) = x_i</script> となる頂点 <script type="math/tex">w</script> へのポインタを持つすべての頂点 <script type="math/tex">v</script> に対して，<script type="math/tex">b</script> が 0 の場合は <script type="math/tex">low(w)</script> ，<script type="math/tex">b</script> が 1 の場合は <script type="math/tex">high(w)</script> でそのポインタを置き換える．
 得られたグラフは必ずしも標準形とは限らないため，<script type="math/tex">Reduce</script> 関数を適用することで <script type="math/tex">f|_{x_i \leftarrow b}</script> のOBDD 表現を得ることができる．
 得られた OBDD は <script type="math/tex">x_i</script> に依存しないことに注意しよう．</p>
 <p>16 種類ある 2 項論理演算はすべて，OBDD として表現されるブール関数上で効率的に実装することができる．
 実際，これらの演算の複雑さは引数となる 2 つの OBDD の大きさの積に対して線形である．
-これらの演算を効率的に実装するためのキーとなる考え方は，<strong>シャノン展開</strong>（Shannon expansion）
+これらの演算を効率的に実装するためのキーとなる考え方は，<strong>シャノン展開</strong> (Shannon expansion) 
 <script type="math/tex; mode=display">
 f = (\neg x \wedge f|_{x \leftarrow 0}) \vee (x \wedge f|_{x \leftarrow 1})
 </script>
@@ -826,9 +841,9 @@ f = (\neg x \wedge f|_{x \leftarrow 0}) \vee (x \wedge f|_{x \leftarrow 1})
     <script type="math/tex; mode=display">
     f \star f' = (\neg x \wedge (f|_{x \leftarrow 0} \star f')) \vee (x \wedge (f|_{x \leftarrow 1} \star f'))
     </script>
-    と単純化され，<script type="math/tex">f \star f'</script> に対する OBDD は，2番目（<script type="math/tex">x = x'</script>）の場合と同様に再帰的に計算される．</li>
+    と単純化され，<script type="math/tex">f \star f'</script> に対する OBDD は，2番目 (<script type="math/tex">x = x'</script>) の場合と同様に再帰的に計算される．</li>
 <li>
-<script type="math/tex">x' < x</script> の場合，必要な計算は上述の場合（<script type="math/tex">x < x'</script>）と同様である．</li>
+<script type="math/tex">x' < x</script> の場合，必要な計算は上述の場合 (<script type="math/tex">x < x'</script>) と同様である．</li>
 </ul>
 <p>それぞれの部分問題が 2 つの部分問題を生成しうるため，アルゴリズムが指数関数的にならないように注意する必要がある．
 動的計画法を用いることで，アルゴリズムを多項式時間に保つことが可能である．
@@ -836,7 +851,7 @@ f = (\neg x \wedge f|_{x \leftarrow 0}) \vee (x \wedge f|_{x \leftarrow 1})
 各部分グラフはその根によって一意に決定されるため，<script type="math/tex">f</script> の OBDD における部分グラフの数は，<script type="math/tex">f</script> の OBDD のサイズによって制限される．
 同様の境界は <script type="math/tex">f'</script> についても成り立つ．
 したがって，部分問題の個数は，<script type="math/tex">f</script> と <script type="math/tex">f'</script> の OBDD のサイズの積に制限される．
-<strong>結果キャッシュ</strong>（result cache）と呼ばれるハッシュテーブルは，以前に計算された部分問題を記録するために使用される．
+<strong>結果キャッシュ</strong> (result cache) と呼ばれるハッシュテーブルは，以前に計算された部分問題を記録するために使用される．
 再帰呼び出しを行う前にキャッシュを確認し，その部分問題が解かれているかどうかが確認される．
 解決済みであればキャッシュから結果を得る．そうでなければ，再帰呼び出しを実行する．
 得られた結果は標準形であることを保証するため，縮小される必要がある．
@@ -870,7 +885,7 @@ OBDD パッケージは，数百万の頂点を持つグラフを扱えること
 <h3 id="_3">特性関数</h3>
 <p>OBDD は有限領域上の関係の簡潔な表現を得るために非常に有用である<sup id="fnref2:96"><a class="footnote-ref" href="#fn:96">2</a></sup><sup id="fnref2:376"><a class="footnote-ref" href="#fn:376">3</a></sup>．
 このような表現を用いてクリプキ構造を記述し，それを解析する方法については後に述べる．
-<script type="math/tex">\mathcal{Q}</script> を <script type="math/tex">\{0, 1\}</script> 上の <script type="math/tex">n</script> 項関係であるとすると，<script type="math/tex">\mathcal{Q}</script> はその<strong>特性関数</strong>（characteristic function）
+<script type="math/tex">\mathcal{Q}</script> を <script type="math/tex">\{0, 1\}</script> 上の <script type="math/tex">n</script> 項関係であるとすると，<script type="math/tex">\mathcal{Q}</script> はその<strong>特性関数</strong> (characteristic function) 
 <script type="math/tex; mode=display">
 f_\mathcal{Q}(x_1,\ldots,x_n) = 1 \text{ iff } \mathcal{Q}(x_1,\ldots,x_n)
 </script>
@@ -932,19 +947,19 @@ f_\mathcal{Q}(x_1,\ldots,x_n) = 1 \text{ iff } \mathcal{Q}(x_1,\ldots,x_n)
 もし領域が前述のように符号化されていれば，この手続きを用いてシステムの高位記述から遷移関係の OBDD を直接構築することができる．</p>
 <h2 id="_5">演習問題</h2>
 <div class="admonition question">
-<p class="admonition-title">問題 8.1（BDD の基礎）</p>
+<p class="admonition-title">問題 8.1 (BDD の基礎) </p>
 <p>論理式 <script type="math/tex">x \vee (y \wedge z)</script> に対する BDD を変数順序を <script type="math/tex">x < y < z</script> として描画せよ．
 さらに，変数順序を <script type="math/tex">y < x < z</script> に変更した BDD を作成せよ．</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title">問題 8.2（制約）</p>
+<p class="admonition-title">問題 8.2 (制約) </p>
 <p>
 <script type="math/tex">f</script> を <script type="math/tex">(x_1 \wedge x_2) \vee (x_3 \wedge x_4)</script> とする．
 変数順序 <script type="math/tex">x_1 < x_2 < x_3 < x_4</script> の BDD を描画せよ．
 さらに，同じ変数順序における <script type="math/tex">f|_{x_2 \leftarrow 0}</script> の BDD を描画せよ．</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title">問題 8.3（<script type="math/tex">Apply</script>）</p>
+<p class="admonition-title">問題 8.3 (<script type="math/tex">Apply</script>) </p>
 <p>
 <script type="math/tex">f</script> を <script type="math/tex">a \Rightarrow b</script> とし，<script type="math/tex">f'</script> を <script type="math/tex">\neg b</script> とする．
 <script type="math/tex">f</script> と <script type="math/tex">f'</script> に対する BDD を変数順序を <script type="math/tex">a < b</script> として描画せよ．

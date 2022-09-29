@@ -13,7 +13,7 @@
     
     
       
-        <title>第8回 LTL と CTL* のモデル検査 - システム検証論 (2021)</title>
+        <title>第8回 LTL と CTL* のモデル検査 - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -531,6 +531,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -727,7 +742,7 @@
 </ul>
 </div>
 <p>この章と第7章では LTL のモデル検査アルゴリズムを紹介する．
-4.3.4 節(<a href="../lec05/#434-ctl">第5回の講義</a>) でも説明したように，CTL と LTL はどちらも非常に高い表現力をもつ CTL* の部分論理である．
+<a href="../lec05/#434-ctl">4.3.4 節</a>でも説明したように，CTL と LTL はどちらも非常に高い表現力をもつ CTL* の部分論理である．
 したがって，LTL は CTL では表現できない特性を表現することができる．
 さらに，いくつかの特性は，LTL を用いることでより簡単に表現できる．
 このように，LTL を対象としたモデル検査アルゴリズムを開発することには意味がある．</p>
@@ -759,7 +774,7 @@ LTL式 <script type="math/tex">\varphi</script> が与えられると，LTL モ�
 次節では，タブロー構造に基づいた，より単純な LTL モデル検査のアルゴリズムを紹介する．
 そして，このアルゴリズムが CTL モデル検査を利用して実装されていることを示す．</p>
 <h2 id="61">6.1 タブローの構築</h2>
-<p>この節では、タブローの構築とそのモデル検査への利用について説明する．
+<p>この節では，タブローの構築とそのモデル検査への利用について説明する．
 そして，この手法の正しさを形式的に証明する．
 この定理や補題の中には，非常にテクニカルなものもいくつかあるので，この節を初めて読む場合は，それらの証明は省略しても構わない．</p>
 <p>まず，このモデル検査アルゴリズムの非形式的な説明から始める．
@@ -956,7 +971,7 @@ CTL モデル検査アルゴリズムが <script type="math/tex">P</script> に�
 <script type="math/tex">\pi' = 1, (2, 5)^{\omega}</script> を <script type="math/tex">\pi' \models ((\lnot \mathit{heat}) \mathbf{U} \mathit{close})</script> であるような <script type="math/tex">M</script> の無限のパスとする．
 <script type="math/tex">T</script> のパス <script type="math/tex">\pi = 3,(3, 1)^{\omega}</script> は，定理6.3の要件を満たす．
 <script type="math/tex">label(\pi')|_{AP_{f}} = label(\pi)</script> であり，状態 <script type="math/tex">3</script> は <script type="math/tex">sat(g)</script> にある．
-さらに、状態 <script type="math/tex">1</script> は <script type="math/tex">sat(heat)</script> 内にあり，したがって <script type="math/tex">F_{t}</script> 内にあるため，<script type="math/tex">\pi</script> は公平である．</p>
+さらに，状態 <script type="math/tex">1</script> は <script type="math/tex">sat(heat)</script> 内にあり，したがって <script type="math/tex">F_{t}</script> 内にあるため，<script type="math/tex">\pi</script> は公平である．</p>
 </div>
 <p>ここで，<script type="math/tex">AP_{f} \subseteq AP</script> であることを暗黙のうちに仮定していることに留意してほしい．
 ある式が構造上で検査されるのは，その式の原子命題が構造の原子命題に含まれている場合のみなので，これは必然的に満たされる．</p>

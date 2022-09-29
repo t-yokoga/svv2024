@@ -13,7 +13,7 @@
     
     
       
-        <title>第10回 記号モデル検査 - システム検証論 (2021)</title>
+        <title>第10回 記号モデル検査 - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -482,6 +482,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -635,7 +650,7 @@
 このアルゴリズムが開発された当時は，実用上十分に高速であることが示されていた <sup id="fnref:123"><a class="footnote-ref" href="#fn:123">1</a></sup><sup id="fnref:125"><a class="footnote-ref" href="#fn:125">2</a></sup>．
 しかし，多数のプロセスやコンポーネントを持つ有限状態の並行システムから状態遷移グラフを抽出する場合は，モデルサイズの爆発的な増大が起こる可能性がある．</p>
 <p>本節では，クリプキ構造の OBDD 表現を用いてモデル検査を行うアルゴリズムについて説明する．
-このモデル検査アルゴリズムは，ブール式の操作に基づいて行われるため，<strong>記号的</strong>（symbolic）と呼ばれる．
+このモデル検査アルゴリズムは，ブール式の操作に基づいて行われるため，<strong>記号的</strong> (symbolic) と呼ばれる．
 OBDD は状態と遷移の集合を表すので，個々の状態や遷移ではなく，集合全体に対して操作を行う必要がある．
 この目的のために，時相論理演算子の不動点による特徴付けを利用する．
 集合 <script type="math/tex">S' \subseteq S</script> は <script type="math/tex">\tau(S') = S'</script> のとき，関数 <script type="math/tex">\tau : \mathcal{P}(S) \rightarrow \mathcal{P}(S)</script> の不動点であることを思い出してほしい．
@@ -645,9 +660,9 @@ OBDD は状態と遷移の集合を表すので，個々の状態や遷移では
 そして，公平性制約の組み込みと反例の生成について，8.4節と8.5節で示す．
 8.6節では，記号モデル検査におけるいくつかの効率化の問題について述べる。</p>
 <p>記号モデル検査アルゴリズムを説明するためには，ブール関数に対する複雑な演算をより簡潔に表記することが便利である．
-そのため，量化されたブール関数（quantified Boolean formula, QBF）<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">3</a></sup><sup id="fnref:237"><a class="footnote-ref" href="#fn:237">4</a></sup> という論理を用いる．</p>
+そのため，量化されたブール関数 (quantified Boolean formula, QBF) <sup id="fnref:12"><a class="footnote-ref" href="#fn:12">3</a></sup><sup id="fnref:237"><a class="footnote-ref" href="#fn:237">4</a></sup> という論理を用いる．</p>
 <h3 id="831-quantified-boolean-formulas">8.3.1 量化されたブール関数 (Quantified Boolean Formulas)</h3>
-<p>命題変数の集合 <script type="math/tex">V = \{v_0, \ldots, v_{n-1}\}</script> が与えられたとき，QBF(<script type="math/tex">V</script>) は次のような数式の最小集合である．</p>
+<p>命題変数の集合 <script type="math/tex">V = \{v_0, \ldots, v_{n-1}\}</script> が与えられたとき，<script type="math/tex">\textrm{QBF}(V)</script> は次のような数式の最小集合である．</p>
 <ul>
 <li>
 <script type="math/tex">V</script> のすべての変数は，式である．</li>
@@ -656,7 +671,8 @@ OBDD は状態と遷移の集合を表すので，個々の状態や遷移では
 <li>
 <script type="math/tex">f</script> が式でありかつ <script type="math/tex">v \in V</script> ならば，<script type="math/tex">\exists v.f</script> と <script type="math/tex">\forall v.f</script> は式である．</li>
 </ul>
-<p>QBF(<script type="math/tex">V</script>) の<strong>真理値割り当て</strong>（truth assignment）は，関数 <script type="math/tex">\sigma : V \rightarrow \{0, 1\}</script> である．
+<p>
+<script type="math/tex">\textrm{QBF}(V)</script> の<strong>真理値割り当て</strong> (truth assignment) は，関数 <script type="math/tex">\sigma : V \rightarrow \{0, 1\}</script> である．
 <script type="math/tex">a \in \{0, 1\}</script> のとき，以下のように定義される真理値割り当ての表記 <script type="math/tex">\sigma [v \leftarrow a]</script> を用いることにする．</p>
 <p>
 <script type="math/tex; mode=display">\begin{equation}
@@ -668,7 +684,7 @@ OBDD は状態と遷移の集合を表すので，個々の状態や遷移では
 \end{equation}</script>
 </p>
 <p>
-<script type="math/tex">f</script> が QBF(<script type="math/tex">V</script>) の式で，<script type="math/tex">\sigma</script> が真理値割り当てである場合，割り当て <script type="math/tex">\sigma</script> のもとで <script type="math/tex">f</script> が真であることを <script type="math/tex">\sigma \models f</script> と書くことにする．
+<script type="math/tex">f</script> が <script type="math/tex">\textrm{QBF}(V)</script> の式で，<script type="math/tex">\sigma</script> が真理値割り当てである場合，割り当て <script type="math/tex">\sigma</script> のもとで <script type="math/tex">f</script> が真であることを <script type="math/tex">\sigma \models f</script> と書くことにする．
 関係 <script type="math/tex">\models</script> は，明白な方法で帰納的に定義される：</p>
 <ul>
 <li>
@@ -704,7 +720,7 @@ QBF の量化演算子は，先に述べた restrict と apply 演算の組み�
 <script type="math/tex">\forall x.f = f|_{x \leftarrow 0} \wedge f|_{x \leftarrow 1}</script>
 </li>
 </ul>
-<p>量化演算子は，以下の<strong>関係積</strong>（relational product）の演算で最も頻繁に使われることになる．
+<p>量化演算子は，以下の<strong>関係積</strong> (relational product) の演算で最も頻繁に使われることになる．
 <script type="math/tex; mode=display">
 \exists \bar{v}[f(\bar{v}, \bar{w}) \wedge g(\bar{v}, \bar{x})]
 </script>
@@ -770,7 +786,7 @@ OBDD はブール関数の標準形となるため，連続した近似を比較
 \nu Z(\bar{v}).f(\bar{v}) \wedge \bigwedge_{k=1}^{n}bddDCheckEX(bddCheckEU(f(\bar{v}),Z(\bar{v}) \wedge Check(P_k)))
 </script>
 不動点は，これまでと同様の方法で評価できる．
-主な違いは，上記の式が評価されるたびに，いくつかのネストされた不動点計算が（<script type="math/tex">bddCheckEU</script> の内部で）実行されることである．</p>
+主な違いは，上記の式が評価されるたびに，いくつかのネストされた不動点計算が (<script type="math/tex">bddCheckEU</script> の内部で) 実行されることである．</p>
 <p>公平性制約の下での <script type="math/tex">\mathbf{EX}f</script> と <script type="math/tex">\mathbf{E}(f\mathbf{U}g)</script> の検証は，明示的な状態の場合と同様となる．
 ある公平な計算の開始点となるような全ての状態の集合は，
 <script type="math/tex; mode=display">
@@ -779,20 +795,20 @@ fair(\bar{v}) = bddDCheckFair(\mathbf{EG}true)
 である．</p>
 <p>ある状態 <script type="math/tex">s</script> において，式 <script type="math/tex">\mathbf{EX}f</script> が公平性制約の下で真となるのは，
 ある後続状態 <script type="math/tex">s'</script> が存在して <script type="math/tex">s'</script> が <script type="math/tex">f</script> を満たし，かつ <script type="math/tex">s'</script> が公平な計算パスの始点となるような場合，かつその場合のみである．
-このことから，（公平性制約の下での）式 <script type="math/tex">\mathbf{EX}f</script> は（公平性制約のない）式 <script type="math/tex">\mathbf{EX}(f \wedge fair)</script> と等価であることがわかる．
+このことから， (公平性制約の下での) 式 <script type="math/tex">\mathbf{EX}f</script> は (公平性制約のない) 式 <script type="math/tex">\mathbf{EX}(f \wedge fair)</script> と等価であることがわかる．
 したがって，
 <script type="math/tex; mode=display">
 bddCheckFairEX(f(\bar{v})) = bddCheckEX(f(\bar{v}) \wedge fair(\bar{v}))
 </script>
 と定義できる．
-同様に，（公平性制約の下での）式 <script type="math/tex">\mathbf{E}(f\mathbf{U}g)</script> は（公平性制約のない）式 <script type="math/tex">\mathbf{E}(f\mathbf{U} (g \wedge fair))</script> と等価である．
+同様に， (公平性制約の下での) 式 <script type="math/tex">\mathbf{E}(f\mathbf{U}g)</script> は (公平性制約のない) 式 <script type="math/tex">\mathbf{E}(f\mathbf{U} (g \wedge fair))</script> と等価である．
 したがって，
 <script type="math/tex; mode=display">
 bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedge fair(\bar{v}))
 </script>
 と定義できる．</p>
 <h2 id="85">8.5 反例と証拠</h2>
-<p>CTL モデル検査アルゴリズムの最も重要な機能の1つは，<strong>反例</strong>（counterexample）と<strong>証拠</strong>（witness）を見つける能力である．
+<p>CTL モデル検査アルゴリズムの最も重要な機能の1つは，<strong>反例</strong> (counterexample) と<strong>証拠</strong> (witness) を見つける能力である．
 この機能が有効でかつ，モデル検査器が全称パス限定子を持つ式が偽であると判定した場合，その式の否定が真であることを示す計算パスを見つけることができる．
 同様に，モデル検査器が存在パス限定子を持つ式が真であると判定した場合，その式が真であることを示す計算パスを発見する．
 例えば，モデル検査器が式 <script type="math/tex">\mathbf{AG}f</script> が偽であることを示した場合，<script type="math/tex">\neg f</script> が成立する状態へのパスを生成する．
@@ -822,7 +838,7 @@ bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedg
 ここで <script type="math/tex">Q_i^P</script> は，<script type="math/tex">Z \wedge P</script> 内の状態に <script type="math/tex">f</script> を満たしつつ <script type="math/tex">i</script> 回以下のステップで到達できるような状態の集合である．
 <script type="math/tex">Z = \mathbf{EG}f</script> のときの外向きの不動点計算の最後の繰り返しにおいて，<script type="math/tex">F</script> のそれぞれの <script type="math/tex">P</script> に対する近似 <script type="math/tex">Q_i^P</script> の列を保存する．</p>
 <p>ここで <script type="math/tex">\mathbf{EG}f</script> を満たす初期状態 <script type="math/tex">s</script> が与えられていると仮定する．
-このとき <script type="math/tex">s</script> は式（8.2）で計算される状態集合に属するため，各 <script type="math/tex">P \in F</script> に対して <script type="math/tex">\mathbf{E}(f \mathbf{U} (\mathbf{EG}f \wedge P))</script> 内に後継状態をもたなければならない．
+このとき <script type="math/tex">s</script> は式 (8.2) で計算される状態集合に属するため，各 <script type="math/tex">P \in F</script> に対して <script type="math/tex">\mathbf{E}(f \mathbf{U} (\mathbf{EG}f \wedge P))</script> 内に後継状態をもたなければならない．
 証拠のパスの長さを最小化するためには，<script type="math/tex">s</script> から到達可能な公平性制約を初めに選ぶ．
 これは，すべての <script type="math/tex">P \in F</script> に対して保存された集合 <script type="math/tex">Q_0^P</script> から <script type="math/tex">s</script> の後続状態 <script type="math/tex">t</script> を見つけ出すことによって達成される．
 そのような <script type="math/tex">t</script> が見つからない場合，すべての <script type="math/tex">P \in F</script> について集合 <script type="math/tex">Q_1^P</script> を探す．
@@ -854,10 +870,10 @@ bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedg
 </center></p>
 <p>もう少し洗練されたアプローチは，事前に <script type="math/tex">\mathbf{E}(f \mathbf{U} \{t\})</script> を計算するものである．
 この集合から初めて出た時点で閉路が完成しないことはわかるため，その状態から再出発する．
-経験的にこれらのアプローチは短い反例を見つける傾向があるため（おそらく強連結成分の数が少ないため），最短の閉路を見つけようとはしない．</p>
+経験的にこれらのアプローチは短い反例を見つける傾向があるため (おそらく強連結成分の数が少ないため) ，最短の閉路を見つけようとはしない．</p>
 <p>最後に，公平性制約がある場合の <script type="math/tex">\mathbf{E}(f \mathbf{U} g)</script> と <script type="math/tex">\mathbf{EX} f</script> の証拠の見つけ方について説明する．
 <script type="math/tex">fair</script> は，公平性制約 <script type="math/tex">F</script> のもとで <script type="math/tex">\mathbf{EG} true</script> を満たす状態の集合であることを思い出してほしい．
-標準的な（公平性制約を考えない）CTL モデル検査アルゴリズムを用いて <script type="math/tex">\mathbf{E}(f \mathbf{U} (g \wedge fair))</script> を計算することで，<script type="math/tex">F</script> の下で <script type="math/tex">\mathbf{E}(f \mathbf{U} g)</script> を計算することが可能である．
+標準的な (公平性制約を考えない) CTL モデル検査アルゴリズムを用いて <script type="math/tex">\mathbf{E}(f \mathbf{U} (g \wedge fair))</script> を計算することで，<script type="math/tex">F</script> の下で <script type="math/tex">\mathbf{E}(f \mathbf{U} g)</script> を計算することが可能である．
 同様に，標準的な CTL モデル検査アルゴリズムを用いて <script type="math/tex">\mathbf{EX} (f \wedge fair)</script> を計算することで <script type="math/tex">\mathbf{EX} f</script> を計算することができる．
 <script type="math/tex">\mathbf{E}(f \mathbf{U} g)</script> と <script type="math/tex">\mathbf{EX} f</script> に対する証拠を無限の公平パスへ拡張するために，公平性制約 <script type="math/tex">F</script> の下での <script type="math/tex">\mathbf{EG} true</script> に対する証拠を求める手続きを利用することができる．</p>
 <h2 id="86">8.6 関係積の計算</h2>
@@ -881,28 +897,28 @@ bddCheckFairEU(f(\bar{v}), g(\bar{v})) = bddCheckEU(f(\bar{v}), g(\bar{v}) \wedg
 この複雑さが観測される状況のほとんどは，結果に対する OBDD が，引数 <script type="math/tex">f(\bar{v})</script> と <script type="math/tex">g(\bar{v})</script> に対する OBDD よりも指数関数的に大きい場合である．
 このような状況では，どのような関係積の計算方法も，指数的な複雑さを持たざるを得ない．</p>
 <h3 id="861">8.6.1 遷移関係の分割</h3>
-<p>前述した関係積アルゴリズムでは，単一の OBDD からなる<strong>モノリシック</strong>（monolithic）な遷移関係として <script type="math/tex">R(\bar{v}, \bar{v}')</script> を持つことが求められる．
+<p>前述した関係積アルゴリズムでは，単一の OBDD からなる<strong>モノリシック</strong> (monolithic) な遷移関係として <script type="math/tex">R(\bar{v}, \bar{v}')</script> を持つことが求められる．
 <a href="../lec09/#82-obdd">8.2節</a>で，システムがクリプキ構造として与えられたときにこのような OBDD を構築する方法を示した．
 残念ながら，多くの実用的な問題においては，この OBDD は非常に大きくなる．
-<strong>分割された遷移関係</strong>（partitioned transition relation）は，より簡潔な表現を提供できるが，図8.7に示す関係積アルゴリズムでは使用することができない．
+<strong>分割された遷移関係</strong> (partitioned transition relation) は，より簡潔な表現を提供できるが，図8.7に示す関係積アルゴリズムでは使用することができない．
 <a href="../lec03/#35">第3章</a>では，同期および非同期回路の遷移関係を，いくつかの断片 <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> の論理積または論理和の形で記述している．
 これらの断片はそれぞれ小さな OBDD で表現することができる．
 <script type="math/tex">R_i(\bar{v}, \bar{v}')</script> の論理積または論理和を形成して <script type="math/tex">R(\bar{v}, \bar{v}')</script> を得る代わりに，暗黙のうちに論理積または論理和として結合されたこれらの OBDD のリストとしてモデルを表現することができる．
-このようなリストを<strong>分割された遷移関係</strong>（partitioned transition relation）と呼ぶ <sup id="fnref:93"><a class="footnote-ref" href="#fn:93">5</a></sup><sup id="fnref:94"><a class="footnote-ref" href="#fn:94">6</a></sup>．</p>
+このようなリストを<strong>分割された遷移関係</strong> (partitioned transition relation) と呼ぶ <sup id="fnref:93"><a class="footnote-ref" href="#fn:93">5</a></sup><sup id="fnref:94"><a class="footnote-ref" href="#fn:94">6</a></sup>．</p>
 <p>同期回路では，<script type="math/tex">R_i</script> は次のような形となる：
 <script type="math/tex; mode=display">
 R_i(\bar{v}, \bar{v}') = (v_i' \equiv f_i(\bar{v}))
 </script>
 ここで <script type="math/tex">f_i</script> は，変数 <script type="math/tex">v_i</script> の値を決定するための組合せ論理によって計算される関数である．
 <script type="math/tex">R</script> は <script type="math/tex">R_i</script> の論理積となる．
-遷移関係が暗黙の論理積となる <script type="math/tex">R_i</script> のリストで表現されるとき，これを<strong>連言分割された遷移関係</strong>（conjunctive partitioned transition relation）と呼ぶ．</p>
+遷移関係が暗黙の論理積となる <script type="math/tex">R_i</script> のリストで表現されるとき，これを<strong>連言分割された遷移関係</strong> (conjunctive partitioned transition relation) と呼ぶ．</p>
 <p>非同期回路では，<script type="math/tex">R_i</script> は次のような形となる：
 <script type="math/tex; mode=display">
 R_i(\bar{v}, \bar{v}') = (v_i' \equiv f_i(\bar{v})) \wedge \bigwedge_{j \neq i}(v_j' \equiv v_j)
 </script>
 <script type="math/tex">R</script> の OBDD は，<script type="math/tex">R_i</script> の論理和となる．
-この暗黙の論理和となる <script type="math/tex">R_i</script> のリストを<strong>選言分割された遷移関係</strong>（disjunctive partitioned transition relation）と呼ぶ．
-この場合，<script type="math/tex">R_i</script> の OBDD は <script type="math/tex">f_i</script> の OBDD よりもはるかに大きくなる可能性がある（最大で，回路の状態を符号化するために使用される変数の数を <script type="math/tex">n</script> 個として，<script type="math/tex">n</script> 倍大きくなる）．
+この暗黙の論理和となる <script type="math/tex">R_i</script> のリストを<strong>選言分割された遷移関係</strong> (disjunctive partitioned transition relation) と呼ぶ．
+この場合，<script type="math/tex">R_i</script> の OBDD は <script type="math/tex">f_i</script> の OBDD よりもはるかに大きくなる可能性がある (最大で，回路の状態を符号化するために使用される変数の数を <script type="math/tex">n</script> 個として，<script type="math/tex">n</script> 倍大きくなる) ．
 しかし，この形式の関係を効率的に表現するためのさらなる方法がある．
 それは，
 <script type="math/tex; mode=display">
@@ -1228,6 +1244,21 @@ Minato によるサーベイ <sup id="fnref:389"><a class="footnote-ref" href="#
           </div>
         </a>
       
+      
+        
+        <a href="../lec11/" class="md-footer__link md-footer__link--next" aria-label="Next: 第11回 命題論理の充足可能性判定" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              第11回 命題論理の充足可能性判定
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

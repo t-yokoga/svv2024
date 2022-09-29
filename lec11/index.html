@@ -13,7 +13,7 @@
     
     
       
-        <title>第11回 命題論理の充足可能性判定 - システム検証論 (2021)</title>
+        <title>第11回 命題論理の充足可能性判定 - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -349,6 +349,223 @@
       <a href="../lec10/" class="md-nav__link">
         第10回 記号モデル検査
       </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第11回 命題論理の充足可能性判定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第11回 命題論理の充足可能性判定
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-conjunctive-normal-form" class="md-nav__link">
+    9.1 連言標準形 (Conjunctive Normal Form)
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 連言標準形 (Conjunctive Normal Form)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    例 9.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    例 9.2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-cnf" class="md-nav__link">
+    9.2 命題論理式から CNF 形式への変換
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    9.3 二分探索を用いた命題論理の充足可能性判定アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 二分探索を用いた命題論理の充足可能性判定アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931" class="md-nav__link">
+    9.3.1 再帰による二分探索アルゴリズム
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3.1 再帰による二分探索アルゴリズム">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#93_1" class="md-nav__link">
+    例 9.3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932" class="md-nav__link">
+    9.3.2 トレイルを用いた二分探索アルゴリズム
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-bcp" class="md-nav__link">
+    9.4 ブール制約伝播 (BCP) による最適化
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 ブール制約伝播 (BCP) による最適化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    例 9.4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-cdcl" class="md-nav__link">
+    9.5 矛盾に基づく節学習 (CDCL) による最適化
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 矛盾に基づく節学習 (CDCL) による最適化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#951" class="md-nav__link">
+    9.5.1 推論グラフ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#952" class="md-nav__link">
+    9.5.2 節学習
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.2 節学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    定理 9.5 (導出規則)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#953-cdcl" class="md-nav__link">
+    9.5.3 CDCL を用いた導出証明の生成
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.3 CDCL を用いた導出証明の生成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#96" class="md-nav__link">
+    定義 9.6 (導出証明)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96_1" class="md-nav__link">
+    9.6 変数選択ヒューリスティック
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1103,6 +1320,26 @@ Z3 <sup id="fnref:174"><a class="footnote-ref" href="#fn:174">29</a></sup> の�
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec10/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第10回 記号モデル検査" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第10回 記号モデル検査
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -13,7 +13,7 @@
     
     
       
-        <title>第6回 CTL モデル検査 - システム検証論 (2021)</title>
+        <title>第6回 CTL モデル検査 - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -448,6 +448,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -636,7 +651,7 @@
 強連結成分 <script type="math/tex">C</script> は，<script type="math/tex">C \subset C'</script> となる他の強連結成分 <script type="math/tex">C'</script> が存在しないとき，<strong>極大</strong> (maximal) であるという (極大な強連結成分のことを MSCC と表記する)．
 強連結成分 <script type="math/tex">C</script> は，複数のノードをもつかまたは自己ループをもつノードを 1 つ含むとき，かつそのときのみ <strong>自明でない</strong> (nontrivial) という．</p>
 <p>クリプキ構造 <script type="math/tex">M = (S, R, L)</script> に対して，<script type="math/tex">f_1</script> が成り立たない状態すべてを <script type="math/tex">S</script> から削除し，それに応じて <script type="math/tex">R</script> と <script type="math/tex">L</script> を制限することで得られるものを <script type="math/tex">M' = (S', R', L')</script> とする．
-したがって，<script type="math/tex">S' = \{s \in S | M, s \models f_1\}</script>，<script type="math/tex">R' = R|_{S' \times S'}</script>，<script type="math/tex">L'=L|_{S'}</script> となる．
+したがって，<script type="math/tex">S' = \{s \in S \mid M, s \models f_1\}</script>，<script type="math/tex">R' = R|_{S' \times S'}</script>，<script type="math/tex">L'=L|_{S'}</script> となる．
 この場合，<script type="math/tex">R'</script> は左全関係ではないかもしれない．
 遷移先をもたないような状態は削除されるかもしれないが，これはアルゴリズムの正しさにとっては重要ではない．
 このアルゴリズムは以下の事実に基づいている．</p>
@@ -710,7 +725,9 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
 <script type="math/tex">\mathbf {A(U)}</script> の場合を除き，すべての変形は元の式の大きさに線形である．
 したがってこの定理は，<script type="math/tex">\mathbf{A}(\mathbf{U})</script> を含まない仕様については即座に満たされる．
 <script type="math/tex">\mathbf{A}(\mathbf{U})</script> についてもこの定理が同様に満たされることを示すために，<script type="math/tex">\mathbf{A}(f\mathbf{U}g)</script> が
-<script type="math/tex; mode=display"> \lnot \mathbf E (\lnot g \mathbf U(\lnot f \land \lnot g))\land \lnot \mathbf {EG} \lnot g </script>
+<script type="math/tex; mode=display">
+\lnot \mathbf E (\lnot g \mathbf U(\lnot f \land \lnot g))\land \lnot \mathbf {EG} \lnot g
+</script>
 と等価であることを思い出してほしい．
 この式に含まれる部分式は，<script type="math/tex">f</script>，<script type="math/tex">g</script>，<script type="math/tex">\lnot f</script>，<script type="math/tex">\lnot g</script>，<script type="math/tex">\mathbf{E}(\lnot g \mathbf{U}(\lnot f \land \lnot g))</script>，<script type="math/tex">\mathbf{EG}\lnot g</script>，最後の2つの式の論理積，そしてこの式自身の 8 つである．
 部分式の中には複数の <script type="math/tex">g</script> が現れるが，アルゴリズムが <script type="math/tex">g</script> のラベル付けを行うのは一度だけである．
@@ -729,8 +746,12 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
 適切なデータ構造を用いれば，全ての <script type="math/tex">p \in AP</script> について <script type="math/tex">O(|S|+|R|)</script> の時間で <script type="math/tex">[\![p]\!]</script> を計算できる．
 原子命題 <script type="math/tex">Start</script> と <script type="math/tex">Heat</script> について，<script type="math/tex">[\![Start]\!]</script> および <script type="math/tex">[\![Heat]\!]</script> は以下のように求められる．</p>
 <p>
-<script type="math/tex; mode=display"> [\![Start]\!]=\{2,5,6,7\} </script>
-<script type="math/tex; mode=display"> [\![\neg Heat]\!]=\{1,2,3,5,6\} </script>
+<script type="math/tex; mode=display">
+[\![Start]\!]=\{2,5,6,7\}
+</script>
+<script type="math/tex; mode=display">
+[\![\neg Heat]\!]=\{1,2,3,5,6\}
+</script>
 </p>
 <p>
 <script type="math/tex">[\![\textbf{EG}\lnot Heat]\!]</script> を求めるために，まず <script type="math/tex">S'=[\![\lnot Heat]\!]</script> における自明でない強連結成分の集合を求める．
@@ -739,24 +760,34 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
 <script type="math/tex">S'</script> 内の他の状態は，<script type="math/tex">S'</script> 内のパスに沿って <script type="math/tex">T</script> の状態に到達することはできない．
 したがって，この処理は以下の段階で完了する．</p>
 <p>
-<script type="math/tex; mode=display"> [\![\textbf{EG}\lnot Heat]\!] = \{1,2,3,5\} </script>
+<script type="math/tex; mode=display">
+[\![\textbf{EG}\lnot Heat]\!] = \{1,2,3,5\}
+</script>
 </p>
 <p>次に，以下を計算する．</p>
 <p>
-<script type="math/tex; mode=display"> [\![Start\wedge \textbf{EG}\lnot Heat]\!] = \{2,5\} </script>
+<script type="math/tex; mode=display">
+[\![Start\wedge \textbf{EG}\lnot Heat]\!] = \{2,5\}
+</script>
 </p>
 <p>
 <script type="math/tex">[\![\textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!]</script> を計算する場合は，以下の <script type="math/tex">T</script> から処理を始める．</p>
 <p>
-<script type="math/tex; mode=display"> T = [\![Start\wedge \textbf{EG}\lnot Heat]\!] </script>
+<script type="math/tex; mode=display">
+T = [\![Start\wedge \textbf{EG}\lnot Heat]\!]
+</script>
 </p>
 <p>次に，遷移関係を逆を用いることで，この式が満たされるすべての状態にラベルを付ける．
 これにより，以下が得られる．</p>
 <p>
-<script type="math/tex; mode=display"> [\![\textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!] = \{1,2,3,4,5,6,7\} </script>
+<script type="math/tex; mode=display">
+[\![\textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!] = \{1,2,3,4,5,6,7\}
+</script>
 </p>
 <p>最後に，次が得られる．
-<script type="math/tex; mode=display"> [\![\lnot \textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!]＝ \emptyset </script>
+<script type="math/tex; mode=display">
+[\![\lnot \textbf{EF}(Start\wedge \textbf{EG}\lnot Heat)]\!]＝ \emptyset
+</script>
 </p>
 <p>得られた集合は空集合 <script type="math/tex">\emptyset</script> となり，初期状態 <script type="math/tex">1</script> が含まれないことから，このクリプキ構造で記述されたシステムは与えられた仕様を満たさないと結論づけられる．</p>
 <h2 id="52-ctl">5.2 公平性制約をもつ CTL に対するモデル検査</h2>
@@ -802,24 +833,34 @@ Tarjan のアルゴリズム (The Design and Analysis of Computer Algorithms<sup
 <p>CTL 式 <script type="math/tex">f</script> が構造 <script type="math/tex">M＝(S，R，L，F)</script> の状態 <script type="math/tex">s</script> において公平な意味論のもとに真であるかどうかを判定する，時間 <script type="math/tex">O(|f| \cdot (|S|+|R|) \cdot |F|)</script> で実行可能なアルゴリズムが存在する．</p>
 </div>
 <p>公平性制約の扱いを例示するため，以前の検証で用いたものと同様の式である
-<script type="math/tex; mode=display"> \mathbf{A}_\textsf{f}\mathbf{G}(Start\rightarrow\mathbf{A}_\textsf{f}\mathbf{F}Heat) </script>
+<script type="math/tex; mode=display">
+\mathbf{A}_\textsf{f}\mathbf{G}(Start\rightarrow\mathbf{A}_\textsf{f}\mathbf{F}Heat)
+</script>
 を検証する．
 同様に，この論理式は
-<script type="math/tex; mode=display"> \lnot \mathbf{E}_\textsf{f} \mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat) </script>
+<script type="math/tex; mode=display">
+\lnot \mathbf{E}_\textsf{f} \mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat)
+</script>
 と等価である．
 与えられたモデルに対して，この式を検証する．
 ただし今回は，ユーザーが電子レンジを無限にしばしば正しく操作するような経路のみを考慮するものとする．
 これは，<script type="math/tex">Start \wedge Close \wedge \lnot Error</script> が無限にしばしば満たされるべきであることを意味する．
-したがって，公平性制約 <script type="math/tex">F=\{P\}</script> は，<script type="math/tex">P=\{s|s\models{Start\wedge Close\wedge \lnot Error}\}</script> となる．
+したがって，公平性制約 <script type="math/tex">F=\{P\}</script> は，<script type="math/tex">P=\{s \mid s\models{Start\wedge Close\wedge \lnot Error}\}</script> となる．
 集合 <script type="math/tex">[\![Start]\!]</script> と <script type="math/tex">[\![\lnot Heat]\!]</script> は以前と同様である．
-<script type="math/tex">S'=[\![\lnot Heat]\!]</script> 上の強連結成分を計算すると，<script type="math/tex">\{1，2，3，5\}</script>は <script type="math/tex">Start\wedge Close\wedge \lnot Error</script> を満たす状態を含んでいないため，公平ではないことがわかる．
+<script type="math/tex">S'=[\![\lnot Heat]\!]</script> 上の強連結成分を計算すると，<script type="math/tex">\{1, 2, 3, 5\}</script>は <script type="math/tex">Start\wedge Close\wedge \lnot Error</script> を満たす状態を含んでいないため，公平ではないことがわかる．
 したがって，
-<script type="math/tex; mode=display"> [\![\mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat]\!]=\emptyset </script>
+<script type="math/tex; mode=display">
+[\![\mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat]\!]=\emptyset
+</script>
 となる．</p>
 <p>結果として，
-<script type="math/tex; mode=display"> [\![\mathbf{E}_\textsf{f}\mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat)]\!]=\emptyset </script>
+<script type="math/tex; mode=display">
+[\![\mathbf{E}_\textsf{f}\mathbf{F}(Start \wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat)]\!]=\emptyset
+</script>
 となり，これは，
-<script type="math/tex; mode=display"> [\![\neg(\mathbf{E}_\textsf{f}\mathbf{F}(Start\wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat))]\!]=\{1, 2, 3, 4 ,5, 6, 7\} </script>
+<script type="math/tex; mode=display">
+[\![\neg(\mathbf{E}_\textsf{f}\mathbf{F}(Start\wedge \mathbf{E}_\textsf{f}\mathbf{G}\lnot Heat))]\!]=\{1, 2, 3, 4 ,5, 6, 7\}
+</script>
 を意味している．
 以上から，与えられた公平性制約の下では，プログラムのすべての状態がこの式を満たすということがわかる．</p>
 <div class="admonition question">

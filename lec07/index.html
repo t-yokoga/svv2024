@@ -13,7 +13,7 @@
     
     
       
-        <title>第7回 不動点計算によるモデル検査アルゴリズム - システム検証論 (2021)</title>
+        <title>第7回 不動点計算によるモデル検査アルゴリズム - システム検証論 (2022)</title>
       
     
     
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="システム検証論 (2021)" class="md-header__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-header__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            システム検証論 (2021)
+            システム検証論 (2022)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -177,13 +177,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="システム検証論 (2021)" class="md-nav__button md-logo" aria-label="システム検証論 (2021)" data-md-component="logo">
+    <a href=".." title="システム検証論 (2022)" class="md-nav__button md-logo" aria-label="システム検証論 (2022)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    システム検証論 (2021)
+    システム検証論 (2022)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -544,6 +544,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -770,10 +785,10 @@
 集合演算のみに基づく反復技法が，これらの不動点を計算するために使用される．
 次節では，公平性制約を不動点の特徴付けに組み込む方法について示す．</p>
 <p>
-<script type="math/tex">M=(S，R，L)</script> を有限クリプキ構造とする．
+<script type="math/tex">M=(S, R, L)</script> を有限クリプキ構造とする．
 集合 <script type="math/tex">S</script> のすべての部分集合からなる冪集合 <script type="math/tex">\mathcal{P}(S)</script>は，集合包含順序の下で束 (lattice) を形成する．
 この節では，<script type="math/tex">\mathcal{P}(S)</script> を用いて束を表す．
-束の各要素 <script type="math/tex">S'</script> は，<script type="math/tex">S</script> 上の<strong>述語</strong>と考えることもでき，この述語はまさに <script type="math/tex">S'</script> の状態に対してのみ<strong>真</strong>となると見なされる．
+束の各要素 <script type="math/tex">S'</script> は，<script type="math/tex">S</script> 上の<strong>述語</strong> (predicate) と考えることもでき，この述語はまさに <script type="math/tex">S'</script> の状態に対してのみ<strong>真</strong>となると見なされる．
 束の最小要素は空集合であり，<strong>偽</strong>とも見なされる．
 また，束の最大要素は集合 <script type="math/tex">S</script> そのものであり，<strong>真</strong>とも表記される．
 <script type="math/tex">\mathcal{P}(S)</script> を <script type="math/tex">\mathcal{P}(S)</script> に対応づける関数を <strong>述語変換系</strong> (predicate transformer) と呼ぶ．
@@ -901,7 +916,7 @@
 \textit{false}\subseteq\tau(\textit{false})\subseteq\tau^2(\textit{false})\subseteq\dots．
 </script>
 </p>
-<p>結果として，while ループが終了するまでの最大反復回数は，集合 <script type="math/tex">S</script> の要素数によって制限される．
+<p>結果として，<script type="math/tex">\textbf{while}</script> ループが終了するまでの最大反復回数は，集合 <script type="math/tex">S</script> の要素数によって制限される．
 ループが終了すると，<script type="math/tex">Q=\tau(Q)</script> となり，また <script type="math/tex">Q\subseteq\mu{Z}.\tau(Z)</script> となる．
 <script type="math/tex">Q</script> は不動点でもあるため，<script type="math/tex">\mu{Z}.\tau(Z)\subseteq{Q}</script> となり，したがって <script type="math/tex">Q＝\mu{Z}.\tau(Z)</script> となる．
 したがって，この手続きによって返される値は要求された最小不動点である．
@@ -959,7 +974,7 @@ CTL モデル検査は <script type="math/tex">[\![\textbf{AG}p]\!]</script> を
 <script type="math/tex">f</script> を，状態集合の代入箇所 (つまり，文法上では命題変数となる) <script type="math/tex">Z</script> を含む CTL 式とする．
 このとき，<script type="math/tex">f</script> は次の述語変換系 <script type="math/tex">f：\mathcal{P}(S)\rightarrow\mathcal{P}(S)</script> を定義する．
 <script type="math/tex; mode=display">
-    f(Q)=[\![f[Z/Q]]\!]_{M}=\{s\mid M,s\models f[Z/Q] \} ,
+    f(Q)=[\![f[Z/Q]]\!]_{M}=\{s\mid M,s\models f[Z/Q] \}
 </script>
 ここで <script type="math/tex">f[Z/Q]</script> は，<script type="math/tex">Z</script> を集合 <script type="math/tex">Q</script> に置き換えることで <script type="math/tex">f</script> から得られる式である．
 例えば <script type="math/tex">\textbf{EX}Z</script> は，状態の集合 <script type="math/tex">Q</script> に対して，<script type="math/tex">Q</script> の前状態の集合を返す対応付けとなる．</p>
