@@ -1066,6 +1066,19 @@
 
 
 <h1 id="12-sat">第12回 SAT に基づくモデル検査</h1>
+<p>この回では，教科書の第10章 "SAT-based Model Checking" について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
+<ul>
+<li>有界モデル検査の概略</li>
+<li>有界モデル検査を用いた到達可能性，活性，LTL 式の検証</li>
+<li>
+<script type="math/tex">k</script>-帰納法による検証</li>
+<li>帰納不変式を用いた検証</li>
+<li>Craig 補間を用いた非有界モデル検査</li>
+<li>Property-Directed Reachability による到達可能性検査</li>
+</ul>
+</div>
 <p>命題論理の充足可能性 (SAT) および背景理論付き SAT (SMT) の性能とスケーラビリティは飛躍的に向上している．
 ここでは，こうした改良を利用したモデル検査の技術をいくつか説明する．
 最初の技術は，<strong>有界モデル検査</strong> (bounded model checking, BMC) <sup id="fnref:59"><a class="footnote-ref" href="#fn:59">1</a></sup><sup id="fnref:58"><a class="footnote-ref" href="#fn:58">2</a></sup> と呼ばれる手法で，与えられた深さの限度 <script type="math/tex">k</script> に対する モデル <script type="math/tex">M</script> と特性 <script type="math/tex">\phi</script> の展開 (unwinding) に対応する式を生成するものである．
@@ -1087,11 +1100,11 @@ LTL のパス論理式は否定の下で閉じているため，その反例は�
 したがって，与えられた LTL 特性に対する反例は，潜在的に無限長となる状態の列 <script type="math/tex">s_0, s_1, \ldots</script> である．
 BMC の重要な考え方は，反例の探索を，ある <script type="math/tex">k \in \mathbb{N}</script> に対して 最大でも <script type="math/tex">k</script> 個の遷移をもつパスに限定することである．
 <script type="math/tex">k</script> を<strong>境界</strong> (bound) と呼ぶ．</p>
-<p>一般的に BMC は，以下のような方法で適用される（図 10.1）．</p>
+<p>一般的に BMC は，図 10.1 に示す流れで実施される．</p>
 <p><center>
-<img src="../img/lec12-fig_10_1.pdf" width="350">
+<img src="../img/lec12-fig10_1.pdf" width="480">
 <br>
-図10.1：有界モデル検査 (BMC) の適用
+図10.1: 有界モデル検査 (BMC) の適用の流れ
 </center></p>
 <p>この処理は小さな境界 から始まる．
 次に，モデルと <script type="math/tex">\phi</script> の否定は，この境界へと展開され，命題論理式を用いて符号化され，ソルバへと渡される．
@@ -1108,7 +1121,7 @@ BMC の重要な考え方は，反例の探索を，ある <script type="math/te
 LTL 特性 <script type="math/tex">\textbf{AG} p</script> の反例は <script type="math/tex">\textbf{EF} \neg p</script> の証拠であり，したがって，<script type="math/tex">p</script> を満たさない状態を含むような <script type="math/tex">M</script> のパスである．
 以下のパスにおいて，状態 <script type="math/tex">s_{k-1}</script> は <script type="math/tex">\neg p</script> でラベル付けされている．
 したがって，このパスは <script type="math/tex">\textbf{EF} \neg p</script> の証拠となる：</p>
-<p><img src="../img/lec12-inlinefig_10_1.pdf" width="350"></p>
+<p><img src="../img/lec12-inline1.pdf" width="350"></p>
 <p>BMC は記号モデル検査の技術であるため，3.3 節で紹介したクリプキ構造 <script type="math/tex">M</script> の記号的表現に依存する．
 <script type="math/tex">M = (S, S_0, R, AP, L)</script>とする．
 <script type="math/tex">S_0</script>, <script type="math/tex">R</script>, そして任意の <script type="math/tex">p \in AP</script> についての<strong>特性関数</strong>となる一階の述語を得られることを思い出してほしい．
@@ -1159,14 +1172,14 @@ path_k(s_0, \ldots, s_k) \wedge \bigvee_{i=0}^{k} \neg p(s_i) \tag{10.2}
 <div class="admonition example">
 <p class="admonition-title">例 10.2</p>
 <p>3.4 節で用いたクリプキ構造を思い返してみよう．
-これは，<script type="math/tex">a</script> または <script type="math/tex">b</script> でラベル付けされた 4 つの状態をもつ：
-<img src="../img/lec12-inlinefig_10_2.pdf" width="180"></p>
-<p>また，モデルの 4 つの状態を，2 つのブール変数で符号化し，<script type="math/tex">v_0</script> と <script type="math/tex">v_1</script> と記述したことも思い返そう．
+これは，<script type="math/tex">a</script> または <script type="math/tex">b</script> でラベル付けされた 4 つの状態をもつ：</p>
+<p><img src="../img/lec12-inline2.pdf" width="240"></p>
+<p>また，モデルの 4 つの状態を 2 つのブール変数で符号化し，<script type="math/tex">v_0</script> と <script type="math/tex">v_1</script> と記述したことも思い返そう．
 上記の図では，符号化された <script type="math/tex">v_0</script> と <script type="math/tex">v_1</script> への付値を状態の上部に記載している．
 集合を表現するために論理式を用いることを思い出してほしい．
 この論理式は，充足割当に対応する要素を含むような集合を表している．
 初期状態の集合を表す，<script type="math/tex">v_0</script> および <script type="math/tex">v_1</script> についての以下の論理式が得られる：
-<script type="math/tex; mode=display">^ S_0(v_0, v_1) = \neg v_0 \wedge \neg v_1 </script>
+<script type="math/tex; mode=display"> S_0(v_0, v_1) = \neg v_0 \wedge \neg v_1 </script>
 <script type="math/tex">\{v_0 \mapsto 0, v_1 \mapsto 0\}</script> が，この例における 1 つの初期状態にまさしく対応していることに注意してほしい．
 遷移関係は以下で表される．
 <script type="math/tex; mode=display">\begin{alignat*}{2}
@@ -1219,7 +1232,7 @@ path_2(s_0, s_1, s_2) \quad & = \quad S_0(s_0) \wedge R(s_0, s_1) \wedge R(s_1,s
 このような性質は，<script type="math/tex">M</script> のすべてのパスが <script type="math/tex">p</script> が真となる状態を含む場合に成立する．
 <script type="math/tex">\textbf{AF}p</script> に対する反例は，その中のすべての状態が <script type="math/tex">\neg p</script> を満たすような無限のパス，すなわち，<script type="math/tex">\textbf{G}\neg p</script> を満たすパスである．
 4.6 節において，仮に <script type="math/tex">\textbf{AF} p</script> という性質が偽であるならば，以下のような<strong>ラッソ</strong> (lasso) 型の有限表現をもつ無限パスが存在することを主張している：</p>
-<p><img src="../img/lec12-inlinefig_10_3.pdf" width="350"></p>
+<p><img src="../img/lec12-inline3.pdf" width="480"></p>
 <p>上記の図の，<script type="math/tex">\pi_0</script> の部分を<strong>ステム</strong> (stem) といい，<script type="math/tex">\pi_1</script> の部分を<strong>ループ</strong> (loop) という．</p>
 <p>
 <script type="math/tex">k \ge 1</script> について，<script type="math/tex">s_0, \ldots, s_k</script> は，仮に <script type="math/tex">s_k</script> が前の状態のいずれかと等しいならば，ラッソ 型の長さ <script type="math/tex">k</script> のパスということがわかる．
@@ -1234,7 +1247,7 @@ lasso_k(s_0, \ldots, s_k) \wedge \bigwedge_{i=0}^{k-1} \neg p(s_i) \tag{10.4}
 \end{align}</script>
 <script type="math/tex">s_k</script> は，すでに <script type="math/tex">\neg p</script> を満たすことが要求されている <script type="math/tex">s_i</script> のいずれかと等しいため，<script type="math/tex">s_k</script> への制約は必要ないことに気付いてほしい．
 上記の制約を満たすパスは以下のように図示できる:</p>
-<p><img src="../img/lec12-inlinefig_10_4.pdf" width="480"></p>
+<p><img src="../img/lec12-inline4.pdf" width="520"></p>
 <p>式 10.4 は，<script type="math/tex">k</script> 以下の遷移をもつラッソが存在する場合，かつそのときのみ充足可能である．
 <script type="math/tex">k</script> より少ない遷移のラッソ でこの式が満たされる理由を理解するため，より長いラッソ を得るために，ラッソ のループを展開できることに気付いてほしい．</p>
 <p>式 10.4 の充足可能性は，上述のように 命題 SAT ソルバを用いて判定できる．
@@ -1259,7 +1272,7 @@ lasso_k(s_0, \ldots, s_k) \wedge \bigwedge_{i=0}^{k-1} \neg p(s_i) \tag{10.4}
 <li>
 <script type="math/tex">L</script> は状態からその状態において真となる原子命題の集合へのラベル付け関数であり，</li>
 <li>
-<script type="math/tex">F = \{P_1, \ldots, P_n\}</script> （ここで <script type="math/tex">P_j \subseteq S</script>）は公平性制約の集合である．</li>
+<script type="math/tex">F = \{P_1, \ldots, P_n\}</script>  (ここで <script type="math/tex">P_j \subseteq S</script>) は公平性制約の集合である．</li>
 </ul>
 <p>クリプキ構造のパスは，パスが集合 <script type="math/tex">P_i</script> のそれぞれを無限の回数だけ訪れるとき，かつそのときのみ<strong>公平</strong>である．</p>
 <p>公平性を考慮したクリプキ構造を用いての BMC 変換の考え方は，第 6 章で導入したモデル検査アルゴリズムに従っている．
@@ -1278,7 +1291,7 @@ S_0^{\Psi}(s_0) \wedge \bigwedge_{i=0}^{k-1} R^{\Psi}(s_i, s_{i+1}) \wedge \bigv
 2 つめは，2 つの隣接した状態 <script type="math/tex">s_i</script> および <script type="math/tex">s_{i+1}</script> が遷移で接続されていることを保証する．
 最後の連言肢は，パスがラッソであり，かつラッソのループにおける状態が全ての公平性制約 <script type="math/tex">P \in F</script> を満たすことを保証する．
 状態 <script type="math/tex">s_i</script> から開始するループならびにいずれかの <script type="math/tex">P \in F^{\Psi}</script> に対する公平性条件 <script type="math/tex">Fair_i^P</script> は以下のように定義される．
-<script type="math/tex; mode=display">^ Fair_i^P \Leftrightarrow \bigvee_{j=i}^{k-1} P(s_j) </script>
+<script type="math/tex; mode=display"> Fair_i^P \Leftrightarrow \bigvee_{j=i}^{k-1} P(s_j) </script>
 <script type="math/tex">s_k</script> は <script type="math/tex">s_i</script> と等しいため，状態 <script type="math/tex">s_k</script> を判定する必要はないことに注意してほしい．
 共通の部分論理式を再利用する場合，得られる論理式の大きさは境界 <script type="math/tex">k</script> について線形となる．</p>
 <p>これまでと同様に，式 10.5 が充足不能であるならば，長さ <script type="math/tex">k</script> 以下の反例は存在しない．
@@ -1291,7 +1304,7 @@ S_0^{\Psi}(s_0) \wedge \bigwedge_{i=0}^{k-1} R^{\Psi}(s_i, s_{i+1}) \wedge \bigv
 <p>
 <script type="math/tex">\phi</script> に違反するような <script type="math/tex">M</script> における長さ <script type="math/tex">k</script> の計算 (computation) が存在しないとき，<script type="math/tex">M \models_k \phi</script> と書く．
 完全性閾値は以下を保証するような自然数 <script type="math/tex">\mathcal{CT}</script> である．
-<script type="math/tex; mode=display">^ M \models_{\mathcal{CT}} \phi \Longrightarrow M \models \phi </script>
+<script type="math/tex; mode=display"> M \models_{\mathcal{CT}} \phi \Longrightarrow M \models \phi </script>
 完全性閾値<script type="math/tex">\mathcal{CT}</script> から得られる恩恵は，<script type="math/tex">k \ge \mathcal{CT}</script> となる BMC インスタンスのどれかが充足不能であると判定した時点で，BMC 手続きを終了できることである．</p>
 <p>厳密な (可能な限り最小の) 完全性閾値を決定することが，モデル検査問題自体と同程度の難しさをもつということは容易に理解できる．
 仮に <script type="math/tex">M \models \phi</script> であれば，上記の含意は自明に満たされるため，可能な限り最小の完全性閾値は 0 となる．
@@ -1312,7 +1325,7 @@ S_0^{\Psi}(s_0) \wedge \bigwedge_{i=0}^{k-1} R^{\Psi}(s_i, s_{i+1}) \wedge \bigv
 これは，少なくとも 1 つの状態が <script type="math/tex">\pi</script> において 2 回現れなければならない，すなわち，<script type="math/tex">\pi</script> がループを含むことを意味する．
 このとき，このループを取り除くことで，新たなパス <script type="math/tex">\pi'</script> を作ることができ，これも同様に <script type="math/tex">\textbf{AG}p</script> の反例となる．
 これは <script type="math/tex">\pi</script> がもっとも短い反例ということに矛盾する．
-（証明終）</p>
+(証明終)</p>
 </div>
 <p>上述の通り与えられた完全性閾値は正しいが，あまり有用ではない．
 通常，状態数はあまりに大きく，この値を境界として用いて構築された充足可能性判定問題は，あまりにも複雑である．</p>
@@ -1329,9 +1342,9 @@ S_0^{\Psi}(s_0) \wedge \bigwedge_{i=0}^{k-1} R^{\Psi}(s_i, s_{i+1}) \wedge \bigv
 このグラフの直径は (遷移を数えると) 2 であるが，<script type="math/tex">\textbf{AF}p</script> に対するもっとも短い反例は 5 つの遷移を必要とすることが，容易に理解できる．
 <script type="math/tex">\textbf{AF}p</script> という形式の特性に対する完全性閾値は，問題 10.3 の一部として考える．</p>
 <p><center>
-<img src="../img/lec12-fig_10_2.pdf" width="240">
+<img src="../img/lec12-fig10_2.pdf" width="360">
 <br>
-図10.2：直径 2 のモデル
+図10.2: 直径 2 のモデル
 </center></p>
 <h2 id="102-k-">10.2 <script type="math/tex">k</script>-帰納法による到達可能性検査</h2>
 <h3 id="1021-sat">10.2.1 SAT を用いた帰納法</h3>
@@ -1343,9 +1356,9 @@ S_0^{\Psi}(s_0) \wedge \bigwedge_{i=0}^{k-1} R^{\Psi}(s_i, s_{i+1}) \wedge \bigv
 状態 1, 2, 3 には <script type="math/tex">p</script> と <script type="math/tex">q</script> を，状態 4 には <script type="math/tex">\neg p</script> と <script type="math/tex">q</script> をラベル付けする．
 状態 5 には <script type="math/tex">\neg p</script> と <script type="math/tex">\neg q</script> をラベル付けする．</p>
 <p><center>
-<img src="../img/lec12-fig_10_3.pdf" width="350">
+<img src="../img/lec12-fig10_3.pdf" width="350">
 <br>
-図10.3：<script type="math/tex">k</script>-帰納法を例示するためのモデル
+図10.3: <script type="math/tex">k</script>-帰納法の原則を例示するためのモデル
 </center></p>
 <p>上記のクリプキ構造は <script type="math/tex">\textbf{AG}p</script> と <script type="math/tex">\textbf{AG}q</script> の両方を満たしていることがわかる．
 これは，状態 4 と 5 は到達不可能であるからである．
@@ -1444,7 +1457,7 @@ p(s) \wedge R(s, s') \wedge \neg p(s') \tag{10.7}
 まず，<script type="math/tex">k</script> 帰納法の基礎ケース は，境界<script type="math/tex">k-1</script> をもつ <script type="math/tex">\textbf{AG}p</script> の BMC 問題にまさしく対応することに気づいてほしい．
 <script type="math/tex">k</script> 帰納法の帰納ステップ は，非常に似た方法で立証することができる．
 まず，帰納ステップ の反例は次のような形になることに気づいてほしい：</p>
-<p><img src="../img/lec12-inlinefig_10_5.pdf" width="350"></p>
+<p><img src="../img/lec12-inline5.pdf" width="350"></p>
 <p>以下の式はこのようなパスが存在するとき，かつそのときのみ充足可能である．
 <script type="math/tex; mode=display">\begin{align}
 \bigwedge_{i=0}^{k-1}R(s_i, s_{i+1}) \wedge \bigwedge_{i=0}^{k-1}p(s_i) \wedge \neg p(s_k) \tag{10.8}
@@ -1461,7 +1474,7 @@ p(s) \wedge R(s, s') \wedge \neg p(s') \tag{10.7}
 <script type="math/tex">k</script>-帰納法の原理は，上述のように適用された場合，不完全である．
 つまり，その技術では証明できない性質が存在する．
 例を理解するため，図 10.3 のモデルに，以下の状態 6 と 7 を与えられた遷移とラベルとともに追加する：</p>
-<p><img src="../img/lec12-inlinefig_10_6.pdf" width="180"></p>
+<p><img src="../img/lec12-inline6.pdf" width="120"></p>
 <p>この 2 つの状態はどちらも初期状態ではなく，初期状態から到達可能でもない．
 したがって，特性 <script type="math/tex">\textbf{AG}q</script> は依然として満たされる．
 しかしながら，このとき <script type="math/tex">k</script>-帰納法の帰納ステップ は <script type="math/tex">k</script> の値と関係なく失敗する．
@@ -1555,7 +1568,7 @@ CNF の式は節の連言であり，節の集合として表現することも�
 となる．
 この変数 <script type="math/tex">x</script> をピボット変数という．
 節 <script type="math/tex">A \vee x</script> および <script type="math/tex">B \vee \overline{x}</script> のピボット変数 <script type="math/tex">x</script> による導出節を <script type="math/tex">Res(A, B, x)</script> と書く．</p>
-<p>ここで，第9章（定義9.6）の導出証明の定義を思い返そう．
+<p>ここで，第9章 (定義 9.6) の導出証明の定義を思い返そう．
 導出証明<script type="math/tex">\mathcal{R}</script> は DAG <script type="math/tex">(V_{\mathcal{R}}, E_{\mathcal{R}}, piv_{\mathcal{R}}, l_{\mathcal{R}}) </script> であり，<script type="math/tex">V_{\mathcal{R}}</script> は頂点の集合，<script type="math/tex">E_{\mathcal{R}}</script> は辺の集合，<script type="math/tex">piv_{\mathcal{R}}</script> は頂点へのピボット変数によるラベル付け，<script type="math/tex">l_{\mathcal{R}}</script> は頂点への節のラベル付けである．
 初期ノードは入次数 <script type="math/tex">0</script> をもち，式の一部である節に対応する．
 他のすべての頂点は内部ノードであり，入次数 <script type="math/tex">2</script> をもつ．
@@ -1581,7 +1594,7 @@ l_{\mathcal{R}}(v) = Res(l_{\mathcal{R}}(v_1), l_{\mathcal{R}}(v_2), piv_{\mathc
 <p><center>
 <img src="../img/lec12-fig_10_4.pdf" width="350">
 <br>
-図10.4：式 10.10 に対する導出証明
+図 10.4: 式 10.10 に対する導出証明
 </center></p>
 </div>
 <p>ここで，節の集合を集合 <script type="math/tex">A</script> と <script type="math/tex">B</script> に分割することを考える．
@@ -1622,7 +1635,7 @@ McMillan の補間系で生成された部分補間を図 10.5 に示す．
 <p><center>
 <img src="../img/lec12-fig_10_5.pdf" width="350">
 <br>
-図10.5：McMillan の補間系の適用例
+図10.5: McMillan の補間系の適用例
 </center></p>
 </div>
 <p>その他の補間系については，この章の参考文献に記載されている．
@@ -1674,9 +1687,9 @@ S_0(s_0) \wedge \bigwedge_{i=0}^{k-1}R(s_i, s_{i+1}) \wedge \bigvee_{i=0}^{k} \n
 まず，<script type="math/tex">\neg p</script> がラベル付けされた初期状態があるかについて検証しなければならないことを思い出してほしい．
 仮にそうであれば，この特性が偽であることがわかり，手続きは終了する．</p>
 <div class="admonition note">
-<p class="admonition-title">図10.6: Craig 補間による上方近似像計算を用いた到達性検査の手続き</p>
+<p class="admonition-title">図 10.6: Craig 補間による像の上方近似計算を用いた到達性検査の手続き</p>
 <p><center>
-<img src="../img/lec12-fig_10_6.pdf" width="400">
+<img src="../img/lec12-fig10_6.pdf" width="800">
 </center></p>
 </div>
 <p>そうでなければ，この手続きは小さな <script type="math/tex">k</script> の値から開始される．
@@ -1727,7 +1740,7 @@ S_0(s_0) \wedge \bigwedge_{i=0}^{k-1}R(s_i, s_{i+1}) \wedge \bigvee_{i=0}^{k} \n
 その結果，メモリ消費量が膨大になりうる．
 ここでは，遷移関係のコピーを作成することなく SAT に基づく到達可能性検査を行う技術である<strong>特性指向到達可能性</strong> (property-directed reachability, PDR) について示す．
 したがって，通常，PDR はよりメモリ効率がよい．
-<sup id="fnref2:78"><a class="footnote-ref" href="#fn:78">5</a></sup> では PDR は IC3 と呼ばれている．</p>
+Bradley の論文 <sup id="fnref2:78"><a class="footnote-ref" href="#fn:78">5</a></sup> では PDR は IC3 と呼ばれている．</p>
 <p>Craig 補間による到達可能性検査と同様に，PDR は初期状態集合の像の上方近似を計算する．
 したがって，これは上方近似到達可能性検査のインスタンスであり，定義 10.5 の条件を満たす帰納不変式 <script type="math/tex">I</script> を計算することを目的としている．</p>
 <p>Craig 補間による到達可能性検査では，このような候補不変式がただ一つのみ用いられる．
@@ -1768,7 +1781,7 @@ PDR は，初期状態から <script type="math/tex">\neg p</script> の状態�
 <div class="admonition note">
 <p class="admonition-title">図10.8: PDR のメインループ</p>
 <p><center>
-<img src="../img/lec12-fig_10_8.pdf" width="400">
+<img src="../img/lec12-fig10_8.pdf" width="800">
 </center></p>
 </div>
 <p>次に，<script type="math/tex">k</script> を <script type="math/tex">0</script> に設定し，フレーム <script type="math/tex">F_0</script> を構築する．
@@ -1779,7 +1792,7 @@ PDR は，初期状態から <script type="math/tex">\neg p</script> の状態�
 <li>
 <script type="math/tex">extendFrontier</script> (図10.9) を呼び出して，新しいフレーム <script type="math/tex">F_{k+1}</script> を設定する．</li>
 <li>
-<script type="math/tex">propagateClauses</script>（図10.11）を呼び出して，節を前方伝搬させる．</li>
+<script type="math/tex">propagateClauses</script> (図10.11) を呼び出して，節を前方伝搬させる．</li>
 <li>
 <script type="math/tex">\mathbf{AG}p</script> を証明する帰納不変式が得られたかどうかを確認し，その場合は終了する．</li>
 <li>そうでなければ，<script type="math/tex">k</script> を 1 つ増やして最初のステップに進む．</li>
@@ -1787,19 +1800,19 @@ PDR は，初期状態から <script type="math/tex">\neg p</script> の状態�
 <div class="admonition note">
 <p class="admonition-title">図10.9: PDR において新たなフレームを追加する手続き</p>
 <p><center>
-<img src="../img/lec12-fig_10_9.pdf" width="400">
+<img src="../img/lec12-fig10_9.pdf" width="800">
 </center></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">図10.10: PDR において帰納法に対する反例を削除する手続き</p>
 <p><center>
-<img src="../img/lec12-fig_10_10.pdf" width="400">
+<img src="../img/lec12-fig10_10.pdf" width="800">
 </center></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">図10.11: 他のフレームへ節を伝播する手続き</p>
 <p><center>
-<img src="../img/lec12-fig_10_11.pdf" width="400">
+<img src="../img/lec12-fig10_11.pdf" width="800">
 </center></p>
 </div>
 <p>以下，それぞれのサブ手続きについて順番に説明する．</p>
@@ -1840,7 +1853,7 @@ PDR は，初期状態から <script type="math/tex">\neg p</script> の状態�
 <p>PDRが "<script type="math/tex">M \vDash \mathbf{AG}p</script>'" を返す場合の正しさについては 10.5.1 節で既に述べた通りである．
 PDR が <script type="math/tex">removeCTI</script> において "<script type="math/tex">M \nvDash \mathbf{AG}p</script>" を返した場合を考える．
 <script type="math/tex">removeCTI</script> のパラメータ <script type="math/tex">s</script> が <script type="math/tex">\neg p</script> でラベル付けされた状態に到達可能な状態であることは容易にわかる．
-したがって，<script type="math/tex">\neg p</script> とラベル付けされた状態に到達できる初期状態が存在するため．<script type="math/tex">M</script> は <script type="math/tex">\mathbf{AG}p</script> を満たさない．</p>
+したがって，<script type="math/tex">\neg p</script> とラベル付けされた状態に到達できる初期状態が存在するため <script type="math/tex">M</script> は <script type="math/tex">\mathbf{AG}p</script> を満たさない．</p>
 <h4 id="_2">停止性</h4>
 <p>まず，<script type="math/tex">removeCTI</script> の停止性について述べる．
 状態 <script type="math/tex">s</script> は有限個の前状態をもち，各反復はソルバが見つけた前状態を削除するため，この <script type="math/tex">\mathbf{while}</script> ループは最終的に停止する．
