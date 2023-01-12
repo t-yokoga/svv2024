@@ -2,6 +2,14 @@ body {
   font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif !important;
 }
 
+p, li {
+  word-break: normal;
+  line-break: strict;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
 .md-typeset h1 {
   /*font-size: 24pt;*/
   font-weight: bold;
