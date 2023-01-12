@@ -750,6 +750,11 @@
 <script type="math/tex">M</script> の破線は，<script type="math/tex">M</script> の状態がどのように抽象的な状態にクラスタリングされるかを示している．
 具象状態と抽象状態は <script type="math/tex">AP = \widehat{AP} = \{p, q\}</script> でラベル付けされている．</p>
 </div>
+<p><center>
+<img src="../img/lec13-fig13_1.pdf" width="360">
+<br>
+図13.1
+</center></p>
 <p>図 13.1 に具象モデル <script type="math/tex">M</script> とその抽象化モデル <script type="math/tex">\widehat{M}</script> を示す．
 <script type="math/tex">M</script> の破線は，<script type="math/tex">S</script> を抽象状態に分割したことを表している．
 実際はこれに加えて，抽象モデルにおける遷移と初期状態の集合を定義しなければならない．
@@ -917,7 +922,7 @@
 \alpha((d_{1}, \ldots, d_{n})) = (\alpha_{v_{1}}(d_{1}), \ldots, \alpha_{v_{n}}(d_{n}))
 </script>
 </p>
-<p>Data Abstraction は，変数が別々に抽象化されるため，完全な具象状態上に定義される抽象化よりも計算が簡単な場合が多い．</p>
+<p>データ抽象化は，変数が別々に抽象化されるため，完全な具象状態上に定義される抽象化よりも計算が簡単な場合が多い．</p>
 <h4 id="135">例 13.5</h4>
 <div class="admonition example">
 <p class="admonition-title">例 13.5</p>
@@ -931,10 +936,10 @@
 および
 <script type="math/tex; mode=display">
 \alpha_{x}(d) = \left\{ \begin{array}{lcr}
-a_{+} & \text{ if } d > 0 \\
-a_{0} & \text{ if } d = 0 \\
-a_{-} & \text{ if } d < 0 
-\end{array} \right
+a_{+} & \text{ if } & d > 0 \\
+a_{0} & \text{ if } & d = 0 \\
+a_{-} & \text{ if } & d < 0 
+\end{array} \right .
 </script>
 であり，
 <script type="math/tex; mode=display">
@@ -943,8 +948,8 @@ a_{-} & \text{ if } d < 0
 および
 <script type="math/tex; mode=display">
 \alpha_{x}(d) = \left\{ \begin{array}{lcr}
-a_{even} & \text{ if } even(|d|) \\
-a_{odd}  & \text{ if } odd(|d|) 
+a_{even} & \text{ if } & even(|d|) \\
+a_{odd}  & \text{ if } & odd(|d|) 
 \end{array} \right .
 </script>
 <br />
@@ -954,6 +959,11 @@ a_{odd}  & \text{ if } odd(|d|)
 具象状態と抽象状態を図 13.2 に示す．
 結果として得られる <script type="math/tex">\alpha</script> は <script type="math/tex">\widehat{AP} </script> に対して適切であることに注意してほしい．</p>
 </div>
+<p><center>
+<img src="../img/lec13-fig13_2.pdf" width="360">
+<br>
+図13.2
+</center></p>
 <p>各変数を単独で抽象化した場合，データ抽象化の適切性要件を満たすことは必ずしも容易ではない． 
 もし，<script type="math/tex">\widehat{AP}</script> の各原子命題が 1 つの変数だけを参照していれば，その変数に対してしかるべき抽象化領域を定義することは常に可能である．
 抽象領域 <script type="math/tex">\widehat{D_{v}}</script> は，<script type="math/tex">v</script> を参照する原子命題によって引き起こされる分割を用いて定義できる．
