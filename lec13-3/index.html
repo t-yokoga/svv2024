@@ -582,24 +582,25 @@
 
 <h2 id="133-counterexample-guided-abstraction-refinement-cegar">13.3 Counterexample-Guided Abstraction Refinement (CEGAR)</h2>
 <h3 id="1331-spurious-counterexamples">13.3.1 Spurious Counterexamples</h3>
-<p>どのような抽象化を行ったとしても，抽象モデル <script type="math/tex"> \widehat{M} </script> は具象モデル <script type="math/tex"> M </script> よりも情報量が少ないことは容易に理解できる．
-従って，<script type="math/tex"> \widehat{M} </script> をモデル検査すると，誤った結果が得られる可能性がある．
-定理 13.3 は，<script type="math/tex"> \widehat{M} </script> において <script type="math/tex"> ACTL' </script> 仕様が真であれば，<script type="math/tex"> M </script> においても真であることを保証する．
-一方，以下の例は，抽象モデルが <script type="math/tex"> ACTL' </script> 仕様を無効にしても，実際のモデルが仕様を満たす可能性があることを示す．</p>
+<p>抽象化の種類に関係なく，抽象モデル <script type="math/tex"> \widehat{M} </script> は具体モデル <script type="math/tex"> M </script> よりも情報量が少ないことは容易に理解できる．
+したがって，<script type="math/tex"> \widehat{M} </script> のモデル検査は誤った結果を生む可能性がある．
+定理 13.3 によれば，もし <script type="math/tex"> ACTL \*</script> の仕様が <script type="math/tex"> \widehat{M} </script> で真であれば，それは<script type="math/tex"> M </script> においても真であると保証される．
+一方で，以下の例は，抽象モデルが <script type="math/tex"> ACTL \*</script> 仕様を反証したとしても，実際のモデルはその仕様を満たす可能性があることを示している．</p>
 <h4 id="1311">例 13.11</h4>
 <div class="admonition example">
 <p class="admonition-title">例 13.11</p>
-<p>図 13.4 に示す米国の信号機制御装置は，状態 <script type="math/tex">S=\{red, green, yellow\}</script> と原子命題の集合 <script type="math/tex">AP=\{state = red\}</script> に対して定義されており， <script type="math/tex">state = red</script> は赤で真，緑と黄で偽となる．
-<script type="math/tex"> \varphi = \textbf{AGAF}(state =red) </script> という式を証明したい．
-そのために，<script type="math/tex"> \widehat{AP} = AP </script> と <script type="math/tex"> \widehat{S} = \{\widehat{red}, \widehat{go}\} </script> を選択する．
-抽象化マッピングの <script type="math/tex"> \alpha(red) = \widehat{red} \; and \; \alpha(green) = \alpha(yellow) = \widehat{go} </script> を使用する．
-抽象モデルにおける遷移は，実存的抽象化 ( 定義 13.2 ) により定義される．
+<p>図 13.4 に示す米国の信号機制御装置は，状態の集合 <script type="math/tex">S=\{red, green, yellow\}</script> と原子命題の集合 <script type="math/tex">AP=\{state = red\}</script> に対して定義されている．
+ここで， <script type="math/tex">state = red</script> は状態が赤の場合は真であり，状態が緑や黄の場合は偽となる．
+<script type="math/tex"> \psi = \textbf{AGAF}(state =red) </script> という式を証明したい．
+そのために，<script type="math/tex"> \widehat{AP} = AP </script> および <script type="math/tex"> \widehat{S} = \{\widehat{red}, \widehat{go}\} </script> を選択する．
+抽象化関数でのマッピングとしては， <script type="math/tex"> \alpha(red) = \widehat{red} </script> および <script type="math/tex"> \alpha(green) = \alpha(yellow) = \widehat{go} </script> を使用する．
+抽象モデル内の遷移は，存在量化による抽象化 ( 定義 13.2 ) により定義される．
 例えば，赤から緑への遷移があるので <script type="math/tex"> \widehat{red} </script> から <script type="math/tex"> \widehat{go} </script> への遷移があり，緑から黄色への遷移があるので <script type="math/tex"> \widehat{go} </script> から <script type="math/tex"> \widehat{go} </script> への遷移がある．</p>
-</div>
 <p>
 <script type="math/tex"> \widehat{M} \lnot \models \psi </script> であるのに対し，<script type="math/tex"> M \models \psi </script> であることは容易に理解できる．
-仕様を無効にする無限抽象トレース <script type="math/tex"> \langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle </script> が存在する．
-しかし，それに対応する具体的なトレースは存在しない．</p>
+仕様を反証する無限抽象トレース <script type="math/tex"> \langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle </script> が存在する．
+しかし，それに対応する具体トレースは存在しない．</p>
+</div>
 <p>抽象的な反例が具体的な反例に対応しない場合，それを spurious と呼ぶ．
 たとえば，上の例の <script type="math/tex"> \langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle </script> は偽反例 (spurious counterexamples) である．</p>
 <p>図 13.5 のような状況を考えてみよう．
@@ -639,13 +640,13 @@ CEGAR フレームワークの主要なステップは以下の通りである�
 ここでは，有限パスである安全性特性の反例に注目する．
 また，本節の最後に，有限パスの後にループが続く活性特性の反例を簡単に説明する．</p>
 <p>反例 <script type="math/tex"> \widehat{T} </script> をパス <script type="math/tex"> \langle\widehat{S_{1}},\ldots,\widehat{S_{n}}\rangle </script> と仮定する．
-抽象状態 <script type="math/tex"> \widehat{s} </script> が与えられたとき，<script type="math/tex">\alpha(s) = \widehat{s} </script> となる具象状態<script type="math/tex"> s </script> の集合を<script type="math/tex"> \alpha^{-1} (\widehat{s}) </script> と表記する．
+抽象状態 <script type="math/tex"> \widehat{s} </script> が与えられたとき，<script type="math/tex">\alpha(s) = \widehat{s} </script> となる具体状態<script type="math/tex"> s </script> の集合を<script type="math/tex"> \alpha^{-1} (\widehat{s}) </script> と表記する．
 つまり，
 <script type="math/tex; mode=display">
 \alpha^{-1} (\widehat{s}) = \{s \mid \alpha(s) = \widehat{s} \}．
 </script>
 <script type="math/tex"> \alpha^{-1} </script> を配列に拡張すると次のようになる．
-<script type="math/tex"> \alpha^{-1} (\widehat{T}) </script> は以下の式で定義される具象パスの集合である．
+<script type="math/tex"> \alpha^{-1} (\widehat{T}) </script> は以下の式で定義される具体パスの集合である．
 <script type="math/tex; mode=display">
 \alpha^{-1} (\widehat{T}) = \{<s_{1},\ldots,s_{n}> \mid \underset{i = 1}{\overset{n}{\wedge}} \alpha(s_{i}) = \widehat{s_{i}} \wedge S_{0}(s_{1}) \wedge \underset{i = 1}{\overset{n-1}{\wedge}} R(s_{i}, s_{i+1})\}．
 </script>
@@ -667,7 +668,7 @@ CEGAR フレームワークの主要なステップは以下の通りである�
 <p class="admonition-title">補題 13.12</p>
 <p>以下は等価となる．</p>
 <ol>
-<li>具象パスの集合 <script type="math/tex"> \alpha^{-1} (\widehat{T}) </script> は空でない．</li>
+<li>具体パスの集合 <script type="math/tex"> \alpha^{-1} (\widehat{T}) </script> は空でない．</li>
 <li>すべての <script type="math/tex"> 1 < i \leq n </script> に対して，<script type="math/tex"> T_{i} = \varnothing </script> である．</li>
 </ol>
 </div>
@@ -704,8 +705,8 @@ CEGAR フレームワークの主要なステップは以下の通りである�
 <p>領域 <script type="math/tex"> D = \{1, \ldots, 12\} </script> を持つ変数が 1 つしかないプログラムを考えると，具体的な状態は <script type="math/tex"> S = \{1, \ldots, 12\} </script> のみである．
 <script type="math/tex"> S_{0} = {1, 2, 3} </script> とする．
 抽象領域は <script type="math/tex"> D' = \{\widehat{1}, \widehat{2}, \widehat{3}, \widehat{4}\} </script> であり，抽象化関数 <script type="math/tex"> \alpha </script> は <script type="math/tex"> d \in D </script> を <script type="math/tex"> \lfloor(d-1)/3 \rfloor + 1 </script> へ写すとする．
-具象状態 <script type="math/tex"> \{1, 2, 3\}, \{4, 5, 6\}, \{7, 8, 9\}, \{10, 11, 12\} </script> の 4 つの集合を表す <script type="math/tex"> \widehat{1}, \widehat{2}, \widehat{3}, \widehat{4} </script> の 4 つの抽象状態が存在する．
-図 13.6 に示すように，具象モデルにおける状態間の遷移は矢印で示されており，小さな点は到達不可能な状態を示している．</p>
+具体状態 <script type="math/tex"> \{1, 2, 3\}, \{4, 5, 6\}, \{7, 8, 9\}, \{10, 11, 12\} </script> の 4 つの集合を表す <script type="math/tex"> \widehat{1}, \widehat{2}, \widehat{3}, \widehat{4} </script> の 4 つの抽象状態が存在する．
+図 13.6 に示すように，具体モデルにおける状態間の遷移は矢印で示されており，小さな点は到達不可能な状態を示している．</p>
 <p>抽象的な反例 <script type="math/tex"> \widehat{T} = \langle\widehat{1}, \widehat{2}, \widehat{3}, \widehat{4}\rangle </script> を得たとする．
 <script type="math/tex"> \widehat{T} </script> が偽であることは容易にわかる．
 補題 13.12 の用語を用いると，<script type="math/tex"> T_{1} = \{1, 2, 3\}, T_{2} = \{4, 5, 6\}, T_{3} = \{9\}, T_{4} = \emptyset </script> となる．
@@ -721,7 +722,7 @@ CEGAR フレームワークの主要なステップは以下の通りである�
 <p>行き止まり状態の検出後，次節で説明するように，絞り込みのステップに進む．</p>
 <h3 id="1334-refining-abstract-models">13.3.4 Refining Abstract Models</h3>
 <p>この節では，偽の反例を排除するために，抽象化されたモデルを改良する方法を説明する. 説明を簡単にするために，まず，抽象モデルが <script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> に対して最も正確なものであると仮定する. (定義 13.2 以降の議論を参照)
-次に，必ずしも最も正確でない抽象モデルの扱い方を説明し，具象モデルが有限である場合，絞り込みの手順の数はせいぜい有限であることを証明する．</p>
+次に，必ずしも最も正確でない抽象モデルの扱い方を説明し，具体モデルが有限である場合，絞り込みの手順の数はせいぜい有限であることを証明する．</p>
 <p>偽の反例を <script type="math/tex"> \widehat{T} </script> とし，<script type="math/tex"> \widehat{T} </script> 上の不具合の状態を <script type="math/tex"> \widehat{s_{i}} </script> とする．
 <script type="math/tex"> \alpha^{-1}(\widehat{s_{i}}) </script> の部分集合を3つ定義する．</p>
 <ul>
@@ -753,7 +754,7 @@ S_{B} = PreImage(\alpha^{-1}(\widehat{s_{j+1}}) \cap \alpha^{-1}(\widehat{s_{j}}
 この場合，反例 <script type="math/tex"> \widehat{T} = \langle\widehat{s_{1}}, \ldots, \widehat{s_{n}}\rangle </script> が偽である理由が2つ追加される．</p>
 <ul>
 <li>
-<script type="math/tex"> \widehat{T} </script> の初期状態 <script type="math/tex"> \widehat{s_{1}} </script> は初期具象状態を表現していない．
+<script type="math/tex"> \widehat{T} </script> の初期状態 <script type="math/tex"> \widehat{s_{1}} </script> は初期具体状態を表現していない．
 したがって，<script type="math/tex"> T_{1} = \alpha^{-1}(\widehat{s_{1}}) \cap S_{0} </script> は空である．
 <script type="math/tex"> \widehat{s_{1}} </script> を疑似初期状態と呼ぶことにする．
 この場合，絞り込みにより，抽象初期状態 <script type="math/tex"> \widehat{S_{0}} </script> の集合から <script type="math/tex"> \widehat{s_{1}} </script> を排除する．</li>
@@ -828,9 +829,9 @@ P_{\alpha} = \{ \alpha^{-1}(\widehat{s}) \mid \widehat{s} \in \widehat{S} \; and
 絞り込みは，失敗状態と，場合によっては追加の抽象状態を分割する．
 したがって，<script type="math/tex"> P_{\alpha_{j+1}} </script> におけるすべてのパーティションは <script type="math/tex"> P_{\alpha_{j}} </script> におけるあるパーティションの部分集合であり，<script type="math/tex"> P_{\alpha_{j+1}} </script> における少なくとも 1 つのパーティションは <script type="math/tex"> P_{\alpha_{j+1}} </script> におけるパーティションの適切な部分集合である．
 その結果，<script type="math/tex"> \alpha_{j+1} < \alpha_{j} </script> となる．</p>
-<p>その結果，<script type="math/tex"> \widehat{s_{i}} </script> の上にモデル <script type="math/tex"> \widehat{M_{i}} </script> が定義され，すべての抽象状態が 1 つの具象状態を表すようになるまでに，有限回のステップ 4c を適用することができる．
+<p>その結果，<script type="math/tex"> \widehat{s_{i}} </script> の上にモデル <script type="math/tex"> \widehat{M_{i}} </script> が定義され，すべての抽象状態が 1 つの具体状態を表すようになるまでに，有限回のステップ 4c を適用することができる．
 さらに，<script type="math/tex"> \widehat{M_{i}} </script> を最も正確にするために必要なステップ 4a および 4b は有限個だけである．
-この段階で，抽象モデルは具象モデルに同型となり，定理が成立する．</p>
+この段階で，抽象モデルは具体モデルに同型となり，定理が成立する．</p>
 </div>
 <h2 id="_1">書誌情報</h2>
 <p>抽象化に関する調査が [138] の Dams と Grumberg による章にある．</p>
@@ -857,7 +858,7 @@ P_{\alpha} = \{ \alpha^{-1}(\widehat{s}) \mid \widehat{s} \in \widehat{S} \; and
 <h3 id="three-valued-model-checking">Three-valued model checking</h3>
 <p>この章では，他の多くの抽象化のアプローチをカバーしない．
 それらは通常，より精緻な抽象的なモデルに基づいている．
-このようなモデルは，例えば，抽象状態が具象状態の非分離集合を表現することを可能にする．
+このようなモデルは，例えば，抽象状態が具体状態の非分離集合を表現することを可能にする．
 また，具体的な遷移関係を過不足なく近似し，完全分岐時間論理の真理を保持する 2 種類の遷移を許容するものもある．
 また，3 値意味論で数式を解釈し，完全分岐時間論理の真偽を保持することができる.これらのアプローチについては，Dams and Grum berg による [138] の章に記載がある．</p>
 

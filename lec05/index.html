@@ -871,7 +871,7 @@ LTL パス論理式は以下のように定義される．</p>
 <p>節 6 により，仮に状態 <script type="math/tex">s</script> から始まる公平なパスが存在しなければ，あらゆる式 <script type="math/tex">\varphi</script> に対して（意味は無いが） <script type="math/tex">M, s \models \textbf{A}_{\text{f }} \varphi</script> となる．
 また，公平性を考慮しない意味論では <script type="math/tex">p \in AP</script> に対して 3 つの式 <script type="math/tex">p</script>，<script type="math/tex">\textbf{E}p</script> および <script type="math/tex">\textbf{A}p</script> が全て等価であることとは対照的に，<script type="math/tex">p</script> は <script type="math/tex">\textbf{E}_{\text{f }}p</script> と <script type="math/tex">\textbf{A}_{\text{f }}p</script> のいずれとも等価とはならない．
 特に，<script type="math/tex">p \in L(s)</script> であるが <script type="math/tex">s</script> から始まる公平なパスが存在しなければ <script type="math/tex">M, s \models p \wedge \neg \textbf{E}_{\text{f }}p</script> となるし，<script type="math/tex">p \notin L(s)</script> であり <script type="math/tex">s</script> から始まる公平なパスが存在しなければ <script type="math/tex">M, s \models \neg p \wedge \textbf{A}_{\text{f }}p</script> となる．
-これは，<script type="math/tex">p \wedge \textbf{E}p</script> および <script type="math/tex">\neg p \wedge \textbf{A} p</script> が本質的に偽となる従来の意味論とは対照的である．</p>
+これは，<script type="math/tex">p \wedge \neg \textbf{E}p</script> および <script type="math/tex">\neg p \wedge \textbf{A} p</script> が本質的に偽となる従来の意味論とは対照的である．</p>
 <p>第3回の講義では，システムのモデル化における公平性の有用性を示す例を紹介した．
 以降では，モデル検査アルゴリズムにどのように公平性を取り入れるかについて示す．</p>
 <p>公平性制約をもたない構造を公平性制約をもつ構造として表すことが便利な場合もある．

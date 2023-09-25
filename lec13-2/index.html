@@ -424,18 +424,18 @@
       
         <li class="md-nav__item">
   <a href="#132-computation-of-abstract-models" class="md-nav__link">
-    13.2 Computation of Abstract Models
+    13.2 抽象モデルの計算 (Computation of Abstract Models)
   </a>
   
-    <nav class="md-nav" aria-label="13.2 Computation of Abstract Models">
+    <nav class="md-nav" aria-label="13.2 抽象モデルの計算 (Computation of Abstract Models)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1321-abstracting-software-programs" class="md-nav__link">
-    13.2.1 Abstracting Software Programs
+    13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)
   </a>
   
-    <nav class="md-nav" aria-label="13.2.1 Abstracting Software Programs">
+    <nav class="md-nav" aria-label="13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -466,10 +466,10 @@
         
           <li class="md-nav__item">
   <a href="#1322-abstracting-synchronous-circuit-with-localization-reduction" class="md-nav__link">
-    13.2.2 Abstracting Synchronous Circuit with Localization Reduction
+    13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)
   </a>
   
-    <nav class="md-nav" aria-label="13.2.2 Abstracting Synchronous Circuit with Localization Reduction">
+    <nav class="md-nav" aria-label="13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -505,24 +505,25 @@
 
   <h1>Lec13 2</h1>
 
-<h2 id="132-computation-of-abstract-models">13.2 Computation of Abstract Models</h2>
-<p>第 3 章では，システムの高位な記述から具体的なモデルを導出する方法を示した．
-本章では，プログラムや回路記述のような高レベルのシステム記述から，抽象モデルを直接導出する方法を説明する．
-具体的なモデルを構築することなく，抽象的なモデルを構築する．
-第 3 章と同様に，特定のプログラミング言語やハードウェア記述言語の詳細を避けるため，システムは一次式によって記述されると仮定する．
-念のため，3章で使用した例の一部を繰り返す．</p>
-<h3 id="1321-abstracting-software-programs">13.2.1 Abstracting Software Programs</h3>
-<p>プログラムを <script type="math/tex"> \mathcal{P} </script> とし，現在と次の状態を表すプログラム状態を <script type="math/tex">s, s'</script> とする．
-プログラムの具体的なモデルは，初期状態の集合と遷移の集合をそれぞれ記述する二つの一階論理式 <script type="math/tex"> \mathcal{S}(s), \mathcal{R}(s, s') </script> で与えられると仮定する．
-さらに，遷移関係は第 3 章で説明したように構築されるため，<script type="math/tex"> \mathcal{R} </script> の構成的な構築を可能にするプログラムカウンタ <script type="math/tex"> pc </script> を使用すると仮定する．</p>
-<p>以下は，具体的なモデルを表す一次式の組み立てを説明するいくつかの簡単な例である．
-プログラム中の各ステートメントは，プログラム中の対応する場所を一意に定義するラベルで始まり，終了する．
-変数 <script type="math/tex"> pc </script> はプログラムカウンタを表し，プログラムラベルの集合を網羅する．</p>
+<h2 id="132-computation-of-abstract-models">13.2 抽象モデルの計算 (Computation of Abstract Models)</h2>
+<p>第 3 章では，システムの高レベル記述から具体モデルを導出する方法を示した．
+本節では，プログラムや回路記述のような高レベルのシステム記述から，抽象モデルを直接導出する方法を説明する．
+具体モデルを構築することなく，抽象モデルを構築する．
+第 3 章と同様に，特定のプログラミング言語やハードウェア記述言語の詳細を避けるため，システムは一階の論理式によって記述されていると仮定する．
+プレゼンテーションの完全性の確保のため，3章で使用した例の一部を繰り返す．</p>
+<h3 id="1321-abstracting-software-programs">13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)</h3>
+<p>
+<script type="math/tex"> \mathcal{P} </script> をプログラムとし，<script type="math/tex">s</script> と <script type="math/tex">s'</script> を現在と次のプログラム状態とする．
+このときプログラムの具体モデルは，初期状態の集合と遷移の集合をそれぞれ記述する二つの一階の論理式， <script type="math/tex"> \mathcal{S}(s)</script> と <script type="math/tex">\mathcal{R}(s, s') </script> によって与えられると仮定する．
+さらに，遷移関係は第 3 章で説明したように構築され，プログラムカウンタ <script type="math/tex"> pc </script> を使用して <script type="math/tex"> \mathcal{R} </script> の構造的な構築を可能にすると仮定する．</p>
+<p>以下は，具体モデルを表す一階の論理式の構築を示すいくつかの簡単な例である．
+プログラム中の各文は，プログラム内の対応する場所を一意に定義するラベルで始まり，終了する．
+変数 <script type="math/tex"> pc </script> はプログラムカウンタを表し，プログラムラベルの集合を定義域としてもつ．</p>
 <h4 id="137">例 13.7</h4>
 <div class="admonition example">
 <p class="admonition-title">例 13.7</p>
 <p>
-<script type="math/tex"> \mathcal{P} </script> を <script type="math/tex">x</script> が偶数である任意の状態のラベル <script type="math/tex"> l_{0} </script> から始まる一つの変数 <script type="math/tex">x</script> を持つプログラムとする．
+<script type="math/tex"> \mathcal{P} </script> を一つの変数 <script type="math/tex">x</script> を持つプログラムとし，<script type="math/tex">x</script> が偶数である状態でラベル <script type="math/tex"> l_{0} </script> から開始するとする．
 このとき，その初期状態の集合は次式で記述される．
 <script type="math/tex; mode=display">
 \mathcal{S}_{0}(pc, x) \equiv pc = l_{0} \wedge even(x)
@@ -530,192 +531,200 @@
 </p>
 <p>
 <script type="math/tex"> l: x := e l' </script> を <script type="math/tex"> \mathcal{P} </script> のある代入文とする．
-この代入文に関連する遷移関係は次の式で表される．
+この代入文に関連する遷移関係は次式で表される：
 <script type="math/tex; mode=display">
 \mathcal{R}(pc, x, pc', x') \equiv pc = l \wedge x' = e \wedge pc' = l'
 </script>
-という記述があることから，
+以下の文が与えられたとき，
 <script type="math/tex; mode=display">
-l_{0} : \textbf{if}  x = 0 \textbf{then} l_{1} : x := 1 \textbf{else} l_{2} : x := x + 1 \textbf{end if} l_{3}
+l_{0} : \textbf{ if }  x = 0 \textbf{ then } l_{1} : x := 1 \textbf{ else } l_{2} : x := x + 1 \textbf{ end if } l_{3}
 </script>
-という式で表され，それに関連する遷移関係は
+この文に関連する遷移関係は次式で表される：
 <script type="math/tex; mode=display">\begin{eqnarray}
 \mathcal{R}(pc, x, pc', x') & \equiv & (pc = l_{0} \wedge x = 0 \wedge x' = x \wedge pc' = l_{1}) \nonumber \\
 & \vee & (pc = l_{0} \wedge x \neq 0 \wedge x' = x \wedge pc' = l_{2})  \nonumber \\
-& \vee & (pc = l_{1} \wedge x' = 1 \wedge pc' l_{3}) \nonumber \\
+& \vee & (pc = l_{1} \wedge x' = 1 \wedge pc' = l_{3}) \nonumber \\
 & \vee & (pc = l_{2} \wedge x' = x + 1 \wedge pc' = l_{3}) \nonumber
 \end{eqnarray}</script>
 </p>
-<p>上の式は，\textbf{if} 文の条件チェックに 1 回遷移し，その間にプログラム変数の値がチェックされるが変更されないモデルを記述している．
-また，この式はそれぞれ <script type="math/tex"> l_{1}, l_{2} </script> と書かれた 2 つの代入文もモデル化している．</p>
+<p>上の式は，<script type="math/tex">\textbf{if}</script> 文の条件をチェックするために 1 回の遷移を行い，その遷移の過程でプログラム変数の値はチェックされるものの変更されない，というモデルを記述している．
+この式はまた， <script type="math/tex"> l_{1} </script> と <script type="math/tex"> l_{2} </script> でラベル付けされた 2 つの代入文もモデル化している．</p>
 </div>
-<p>具象モデル <script type="math/tex"> M </script> を記述する式を <script type="math/tex"> \mathcal{S}_0 </script> と <script type="math/tex"> \mathcal{R} </script> とする．
-<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> の定義 13.2 に従って定義された抽象モデル <script type="math/tex"> \widehat{M} </script> についても，同様の記述を行いたい．
-現在と次の具象状態に対する存在量化によって，<script type="math/tex"> S_{0} </script> と <script type="math/tex"> \widehat{M} </script>を表す式 <script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R}_{0} </script> を得ることができる：
+<p>
+<script type="math/tex"> \mathcal{S}_0 </script> と <script type="math/tex"> \mathcal{R} </script> を，具体モデル <script type="math/tex"> M </script> を記述する式とする．
+<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> に対して定義 13.2 に従って定義された抽象モデル <script type="math/tex"> \widehat{M} </script> についても，同様の記述を行いたい．
+現在と次の具体状態に対する存在量化によって，<script type="math/tex"> S_{0} </script> と <script type="math/tex"> \widehat{M} </script>を表す式 <script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R}_{0} </script> を得ることができる：
 <script type="math/tex; mode=display">
 \widehat{\mathcal{S}_{0}}(\widehat{s}) = \exists s. (\alpha(s) = \widehat{s} \wedge \mathcal{S}_{0}(s)), \text{ and }
 </script>
 <script type="math/tex; mode=display">
-\widehat{\mathcal{R}}(\widehat{s}, \widehat{s'}) = \exists s \exists s'. (\mathcal{R}(s, s') \wedge \alpha(s) = s' \wedge \alpha(s') = \widehat{s'})
+\widehat{\mathcal{R}}(\widehat{s}, \widehat{s}') = \exists s \exists s'. (\mathcal{R}(s, s') \wedge \alpha(s) = s' \wedge \alpha(s') = \widehat{s}')
 </script>
 </p>
-<p>以下の補題は，これらの式で表されるモデルが，<script type="math/tex"> \alpha </script> に関して最も正確な実存的抽象化であることを主張するものである．</p>
+<p>以下の補題は，これらの式によって表されるモデルが，<script type="math/tex"> \alpha </script> に関して最も精密な実存的抽象化であることを主張するものである．</p>
 <h4 id="138">補題 13.8</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 13.8</p>
-<p>モデル <script type="math/tex"> M </script> を記述する数式を<script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R} </script> とする．
-このとき，式 <script type="math/tex"> \widehat{S_{0}} </script> と <script type="math/tex"> \hat{\mathcal{R}} </script> は，<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> の最も精密な抽象モデルである <script type="math/tex"> \widehat{M}_{p} </script> を記述する．</p>
-</div>
-<p>前述したように，抽象モデルの計算にはコストがかかる場合がある．
-特に，プログラム全体の遷移関係を記述する式に実存的数量化を適用して計算を行う．
-この式は，使用する一階論理の断片によっては，計算が非常に困難であったり，非常に大規模であったりする．</p>
-<p>本論文では，ソフトウェアプログラムの抽象モデルの計算を簡略化する方法を紹介する．
-この抽象モデルの重要な特性は，具体的プログラムの制御フロー骨格を複製することである．
-すなわち，ラベル，分岐，ループ構造のセットを同じように使用する．
-具体的プログラムのプログラムカウンタと同じラベルの集合にまたがる抽象的モデルのプログラムカウンタを導入する．
-さらに，<script type="math/tex"> s(pc) = l </script> となる状態 <script type="math/tex"> s </script> は，<script type="math/tex"> s'(pc) = l </script> となる抽象的な状態に抽象化される．</p>
 <p>
-<script type="math/tex"> \widehat{\mathcal{R}} </script> の作り方を説明する前に，<script type="math/tex"> \mathcal{R} </script>の形状を観察しておきます．
-この点を説明するために，先程の例の続きをする．
-まず，ド・モルガンの法則を用いて<script type="math/tex"> pc = l </script> の項を因数分解することで， \textbf{if} 文のエンコードを書き換えることができることに注意する．</p>
+<script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R} </script> をモデル <script type="math/tex"> M </script> を記述する論理式とする．
+このとき，式 <script type="math/tex"> \widehat{S_{0}} </script> と <script type="math/tex"> \widehat{\mathcal{R}} </script> は，<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> に対する最も精密な抽象モデルである <script type="math/tex"> \widehat{M_p} </script> を記述する．</p>
+</div>
+<p>前述の通り，抽象モデルの計算は時に高コストになる場合がある．
+特に，その計算には，プログラム全体の遷移関係を記述する式に対して存在量化を適用する工程が含まれる．
+使用される一階論理の特定の断片によっては，この式は非常に計算が困難となるか，あるいは非常に大きくなる可能性がある．</p>
+<p>ここでは，ソフトウェアプログラムの抽象モデルの計算を簡略化する方法を紹介する．
+この抽象モデルの重要な特性は，具体プログラムの制御フローの骨格を複製することである．
+すなわち，ラベル，分岐，およびループ構造の同じ集合を使用する．
+具体モデルのプログラムカウンタと同じラベルの集合にを定義域とする抽象モデルのプログラムカウンタを導入する．
+さらに，<script type="math/tex"> s(pc) = l </script> となるすべての状態 <script type="math/tex"> s </script> は，<script type="math/tex"> \widehat{s}(pc) = l </script> となる抽象状態へと抽象化される．</p>
+<p>
+<script type="math/tex"> \widehat{\mathcal{R}} </script> の構築する方法を示す前に，<script type="math/tex"> \mathcal{R} </script>の形状を観察する．
+この点を説明するために，上述の例を続ける．
+まず，ド・モルガンの法則を用いて<script type="math/tex"> pc = l </script> の項をくくり出すことで，<script type="math/tex">\textbf{if}</script> 文の論理式記述を書き換えることができることに注意する．</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}
 & \mathcal{R}(pc, x, pc', x') \equiv \nonumber \\ 
-& (pc = l_{0} \wedge ((x = 0 \wedge x' = x \wedge pc' = l_{1}) \vee (x \neq 0 \wedge x' = x \wedge pc' = l_{2}))) \vee \nonumber \\ 
-& (pc = l_{1} \wedge x' = 1 \wedge pc' = l_{3}) \vee \nonumber \\
-& (pc = l_{2} \wedge x' = x + 1 \wedge pc' = l_{3}) \nonumber
+& \quad (pc = l_{0} \wedge ((x = 0 \wedge x' = x \wedge pc' = l_{1}) \vee (x \neq 0 \wedge x' = x \wedge pc' = l_{2}))) \vee \nonumber \\ 
+& \quad (pc = l_{1} \wedge x' = 1 \wedge pc' = l_{3}) \vee \nonumber \\
+& \quad (pc = l_{2} \wedge x' = x + 1 \wedge pc' = l_{3}) \nonumber
 \end{align}</script>
 </p>
 <p>文のラベルは一意であることを想起してほしい．
 その結果，<script type="math/tex"> \mathcal{R}(s, s') </script> は次のような形になる．
 <script type="math/tex; mode=display">
-R(s, s') \Leftrightarrow \underset{l}{\bigvee}(s(pc) = l \wedge conjunct_{l}(s, s') \eqno(13.1)
+R(s, s') \Leftrightarrow \underset{l}{\bigvee}(s(pc) = l \wedge conjunct_{l}(s, s') \tag{13.1}
 </script>
-ここで，論理和の <script type="math/tex"> l </script> は全てのプログラム位置の範囲であり，<script type="math/tex"> conjunct_{l} </script> は位置 <script type="math/tex"> l </script> の命令のみに依存する任意の選言肢 (conjunct) を表す．
-上記の例では，次のようになる．</p>
+ここで，<script type="math/tex"> l </script> は全てのプログラム位置を範囲としてもち，<script type="math/tex"> conjunct_{l} </script> は位置 <script type="math/tex"> l </script> での命令にのみ依存する任意の連言肢 (conjunct) を表す．
+上記の例では，次の式を得る：</p>
 <p>
 <script type="math/tex; mode=display">\begin{eqnarray}
 conjunct_{l_{0}}(pc, x, pc', x') & \equiv & (x = 0 \wedge x' = x \wedge pc' = l_{1}) \vee \nonumber \\
-& ( & x \neq 0 \wedge x' = x \wedge pc' = l_{2}) \nonumber \\
+& & (x \neq 0 \wedge x' = x \wedge pc' = l_{2}) \nonumber \\
 conjunct_{l_{1}}(pc, x, pc', x') & \equiv & \ x' = 1 \wedge pc' = l_{3} \nonumber \\
 conjunct_{l_{2}}(pc, x, pc', x') & \equiv & \ x' = x + 1 \wedge pc' = l_{3} \nonumber 
 \end{eqnarray}</script>
-<br />
-これは <script type="math/tex"> \mathcal{R} </script> の同値性保存変換 (equivalence-preserving transformation) であることを指摘する．
-さらに，存在量化を論理和に押し込むと，同値性が保存されることを思い出してほしい．
+</p>
+<p>これは <script type="math/tex"> \mathcal{R} </script> の等価性を保存する変換 (equivalence-preserving transformation) であることを指摘しておく．
+さらに，存在量化を論理和に押し込むことは，等価性を保存することを思い出してほしい．
 これは次の補題で利用される重要な性質である．</p>
 <h4 id="139">補題 13.9</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 13.9</p>
 <p>
-<script type="math/tex"> \mathcal{R}(s,s') </script>を次のような形の遷移関係とする．
+<script type="math/tex"> \mathcal{R}(s,s') </script> を以下の形の遷移関係とする．
 <script type="math/tex; mode=display">
 \underset{l}{\bigvee}(s(pc)) = l \wedge conjunct_{l} (s, s{\prime}) ．
 </script>
-このとき，<script type="math/tex"> s </script> と <script type="math/tex"> s' </script> に対する存在量化を論理和に押し込むと，最も正確な existential abstraction が得られる．
+このとき，<script type="math/tex"> s </script> と <script type="math/tex"> s' </script> に対する存在量化を論理和に押し込むと，最も精密な存在量化による抽象化が得られる．
 <script type="math/tex; mode=display">
-\widehat{R}(\widehat{s}, \widehat{s'}) \equiv \underset{l}{\vee} (\widehat{s}(pc) = l \wedge \exists s \exists s'. (conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s'})) \eqno(13.2)
+\widehat{R}(\widehat{s}, \widehat{s}') \equiv \underset{l}{\bigvee} (\widehat{s}(pc) = l \wedge \exists s \exists s'. (conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}')) \tag{13.2}
 </script>
 </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<p>存在量化を論理和に押し込むことで， 
+<p>存在量化を論理和に押し込むことで以下の式を得る．
 <script type="math/tex; mode=display">
-    \widehat{R}(\widehat{s}, \widehat{s'}) \equiv \underset{l}{\vee} \exists s \exists s'. (\widehat{s}(pc) = l \wedge conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s'}) \eqno(13.3)
+    \widehat{R}(\widehat{s}, \widehat{s}') \equiv \underset{l}{\bigvee} \exists s \exists s'. (\widehat{s}(pc) = l \wedge conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}') \tag{13.3}
 </script>
-を得る．
-13.3 式をさらに単純化して 13.2 式を得るには，<script type="math/tex"> conjunct_l </script> がプログラムカウンタに依存しないため，13.3 式の 2 つの接続詞が不連続な変数集合を使うことを観察すればよい．
-これにより，数量化を接続詞に押し込むことができる．
-さらに，<script type="math/tex"> \alpha(s) = \widehat{S} </script> である任意の <script type="math/tex"> s </script> と <script type="math/tex">\widehat{S} </script> の組に対して <script type="math/tex">\widehat{S}(pc) = (pc) </script> であることを思い出してほしい．</p>
+さらに式 13.3 を簡略化して式 13.2 を得ることができる．
+これは，式 13.3 の 2 つの連言肢が，<script type="math/tex"> conjunct_l </script> がプログラムカウンタに依存していないため，変数の互いに排他的な集合を使用しているという観察に基づいている．
+これにより，量化を論理積へと押し込むことができる．
+さらに，<script type="math/tex"> \alpha(s) = \widehat{s} </script> である任意の <script type="math/tex"> s </script> と <script type="math/tex">\widehat{s} </script> の組に対して，<script type="math/tex">\widehat{s}(pc) = s(pc) </script> であることを思い出してほしい．</p>
 </div>
 <p>この補題の利点は何だろうか？
-存在量化は遷移関係の個々の部分に対して行われ，その部分の大きさはプログラムの大きさに依存しないことに注意してほしい．
-そうすると，<script type="math/tex"> \widehat{R} </script> の計算は，ラベルの数で測定される <script type="math/tex"> \mathcal{P} </script> のサイズに対して線形になる．</p>
-<p>続けて，実行例を交えて説明する．
-プログラムの最初の文では，次のような量化を行う必要がある．
+遷移関係の個々の部分に対して存在量化が行われるようになったことに注目してほしい．
+ここで，各部分の大きさはプログラムの大きさに依存していない．
+そのため，<script type="math/tex"> \widehat{R} </script> の計算は，<script type="math/tex"> \mathcal{P} </script> のサイズに対して線形になる．
+これはラベルの数によって測定される．</p>
+<p>先程の例で続けると，プログラムの最初の文に対して，次のような量化を行う必要がある：
 <script type="math/tex; mode=display">\begin{eqnarray}
-\exists s \exists \widehat{s}. \alpha(s) = \widehat{s} \wedge \alpha(\widehat{s}) = \widehat{s'} \wedge ((s(x) = 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{1}) \vee (s(x) \neq 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{2})) \nonumber
+\exists s \exists \widehat{s}. \alpha(s) = \widehat{s} \wedge \alpha(\widehat{s}) = \widehat{s}' \wedge ((s(x) = 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{1}) \vee\\
+ (s(x) \neq 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{2})) \nonumber
 \end{eqnarray}</script>
 <br />
-特定の抽象化関数 <script type="math/tex"> \alpha </script> に対するこの実数の計算は，演習として残しておく．</p>
-<h3 id="1322-abstracting-synchronous-circuit-with-localization-reduction">13.2.2 Abstracting Synchronous Circuit with Localization Reduction</h3>
-<p>ソフトウェアの場合と同様に，初期状態の集合と遷移関係の計算のための existential quantification を避けるために，回路の高位記述から直接抽象モデルを導出することを目指す．</p>
-<p>まず，第 3 章に示した回路の高レベルな説明を思い出してほしい．
-回路はレジスタと一次入力である変数 <script type="math/tex"> V = \{v_{1},\ldots,v_{n}\} </script> の集合を持つ．
-また，モデルの遷移関係 <script type="math/tex"> M </script> の特性関数である命題式 <script type="math/tex"> \mathcal{P}(V, V') </script> が与えられている．
-我々は <script type="math/tex"> \mathcal{P} </script> を以下のように接続詞を用いて定義した．
+特定の抽象化関数 <script type="math/tex"> \alpha </script> に対するこの存在量化の計算は，演習として残しておく．</p>
+<h3 id="1322-abstracting-synchronous-circuit-with-localization-reduction">13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)</h3>
+<p>ソフトウェアの場合と同様に，回路の高レベル記述から直接抽象モデルを導出することを目指す．
+これにより，初期状態の集合と遷移関係の計算における存在量化を避けることができる．</p>
+<p>まず，第 3 章で与えられた回路の高レベルな記述を思い返そう．
+回路は，レジスタと一次入力となる変数の集合 <script type="math/tex"> V = \{v_{1},\ldots,v_{n}\} </script> をもつ．
+モデルの遷移関係 <script type="math/tex"> M </script> の特性関数となる命題論理式 <script type="math/tex"> \mathcal{R}(V, V') </script> が与えられている．
+<script type="math/tex"> \mathcal{R} </script> は以下のように論理積を用いて定義される：
 <script type="math/tex; mode=display">
 R(V, V') \equiv \underset{i = 1}{\overset{n}{\bigwedge}} R_{i}(V, V')
 </script>
-<script type="math/tex"> \mathcal{P}_{i} </script> の定義は，<script type="math/tex"> v_{i} </script> がレジスタか一次入力かによって異なる．
-<script type="math/tex"> v_{i} </script> がレジスタの場合，ブール式 <script type="math/tex"> f_{i} </script> が与えられ，<script type="math/tex"> v_{i} </script> の次の状態を変数の現在値の関数として計算する．
-そして <script type="math/tex"> \mathcal{P}_{i} </script> は次のように定義される．
+<script type="math/tex"> \mathcal{R}_{i} </script> の定義は，<script type="math/tex"> v_{i} </script> がレジスタであるか一次入力であるかに依存する．
+<script type="math/tex"> v_{i} </script> がレジスタの場合，変数の現在の値の関数として <script type="math/tex"> v_{i} </script> の次の状態を計算するブール式 <script type="math/tex"> f_{i} </script> が与えられる．
+<script type="math/tex"> \mathcal{R}_{i} </script> は次のように定義される：
 <script type="math/tex; mode=display">
 R_{i}(V, V') \equiv (v_{i}' \Leftrightarrow f_{i}(V))
 </script>
-<script type="math/tex"> v_{i} </script> が一次入力の場合，<script type="math/tex"> \widehat{V'} </script> を無制約にする．
-つまり，<script type="math/tex"> \mathcal{P}_{i} </script> を真と定義すると
+<script type="math/tex"> v_{i} </script> が一次入力の場合は，<script type="math/tex"> v_{i}' </script> は制約なく残される．
+つまり，<script type="math/tex"> \mathcal{R}_{i} </script> を真と定義する：
 <script type="math/tex; mode=display">
 R_{i}(V, V') \equiv true
 </script>
-ここで，<script type="math/tex"> R </script> が満たすべき条件を思い出すと
+最後に，<script type="math/tex"> \widehat{R} </script> が満たすべき条件を振り返る：
 <script type="math/tex; mode=display">
-(\widehat{s}, \widehat{s'}) \in \widehat{R} \equiv \exists s, s'. (\alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s'} \wedge (s, s') \in R)
+(\widehat{s}, \widehat{s}') \in \widehat{R} \equiv \exists s, s'. (\alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}' \wedge (s, s') \in R)
 </script>
 </p>
-<p>Localization Reduction では，変数の集合を可視変数の集合と不可視変数の集合に分割する．
-可視変数の集合を <script type="math/tex"> \mathcal{V} \subseteq V </script> とする．
-<script type="math/tex"> \mathcal{V} </script> に含まれない変数は不可視である．
-不可視変数の集合を <script type="math/tex"> \mathcal{U} </script> と表記する．
-具体的状態 <script type="math/tex"> s </script> は，このように可視変数 <script type="math/tex"> \mathcal{V} </script> と <script type="math/tex"> \mathcal{U} </script> の評価であるのに対し，抽象的状態 <script type="math/tex"> \hat{s} </script> は，変数 <script type="math/tex"> \mathcal{V} </script> のみの評価である．
-したがって，抽象化関数 <script type="math/tex"> \alpha </script> は，可視変数と不可視変数を用いて，以下のように記述される．
+<p>局所化削減 (Localization Reduction) では，変数の集合は可視変数の集合と不可視変数の集合に分割される．
+可視変数の集合を <script type="math/tex"> \mathcal{V} \subseteq V </script> を用いて表す．
+<script type="math/tex"> \mathcal{V} </script> に含まれない変数は不可視となる．
+不可視変数の集合を <script type="math/tex"> \mathcal{U} </script> で表す．
+したがって，具体状態 <script type="math/tex"> s </script> は，可視変数 <script type="math/tex"> \mathcal{V} </script> と <script type="math/tex"> \mathcal{U} </script> への付値であるのに対し，抽象状態 <script type="math/tex"> \hat{s} </script> は，変数 <script type="math/tex"> \mathcal{V} </script> への付値のみである．
+抽象化関数 <script type="math/tex"> \alpha </script> は，可視変数と不可視変数の観点から以下のように記述される．
 <script type="math/tex; mode=display">
 \alpha(\mathcal{V}, \mathcal{U}) = \mathcal{V}
 </script>
 </p>
-<p>ここで，変数 <script type="math/tex"> \mathcal{V} </script> とその次の状態のバージョン<script type="math/tex">\mathcal{V'}</script>の間の関係として，抽象的な遷移関係 <script type="math/tex"> \widehat{\mathcal{R}} </script> を定義する．
+<p>次に，変数 <script type="math/tex"> \mathcal{V} </script> とその次状態のバージョン <script type="math/tex">\mathcal{V'}</script> の間の関係として，抽象遷移関係 <script type="math/tex"> \widehat{\mathcal{R}} </script> を定義する．
 <script type="math/tex; mode=display">\begin{eqnarray}
 \widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{V}, \mathcal{U}, \mathcal{V'}, \mathcal{U'} .& ( & \;\; \alpha(\mathcal{V}, \mathcal{U}) = \widehat{V'} \nonumber \\
-& \wedge & \alpha(\mathcal{V'}, \mathcal{U'}) = \widehat{\mathcal{V'}}) \nonumber \\
+& \wedge & \alpha(\mathcal{V'}, \mathcal{U'}) = \widehat{\mathcal{V'}} \nonumber \\
 & \wedge & \mathcal{R}(\mathcal{V}, \mathcal{U}, \mathcal{V'}, \mathcal{U'})) \nonumber
 \end{eqnarray}</script>
 </p>
-<p>定義では，見えない変数の値を実存的に定量化しており，あたかもそれらが一次入力であるかのように振る舞うことを意味している．
+<p>この定義では，不可視変数の値に対して存在量化を行う．
+これは，それらが一次入力であるかのように振る舞うことを意味している．
 <script type="math/tex"> \alpha </script> の定義を用いると，上記は以下のように単純化される．
 <script type="math/tex; mode=display">
-\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \mathcal{R}(\hat{\mathcal{V}}, \mathcal{U}, \hat{\mathcal{V'}}, \mathcal{U'})
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \mathcal{R}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}, \mathcal{U'})
 </script>
 <script type="math/tex"> \mathcal{R} </script> の定義を用いると，次のようになる．
 <script type="math/tex; mode=display">
 \widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \underset{i = 1}{\overset{n}{\bigwedge}} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}, \mathcal{U'})
 </script>
-可視変数と不可視変数のケースを区別するために，接続詞を分割した．
+可視変数と不可視変数を区別するために，論理積を分割する．
 <script type="math/tex; mode=display">
 \widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \underset{v_{i} \in \mathcal{V}}{\bigwedge} \mathcal{R}_{i} (\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) \wedge \underset{v_{i} \in \mathcal{U}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{U'}}) ．
 </script>
-この式の中で <script type="math/tex"> \widehat{\mathcal{U'}} </script> が使われているのは右の接続詞の部分だけである．
-したがって，この式は次の式と等価である．
+この式の中で， <script type="math/tex"> \widehat{\mathcal{U'}} </script> は右側の論理積でのみ使用されている．
+したがって，この式は以下の式と等価である．
 <script type="math/tex; mode=display">
 \widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U} . \underset{v_{i} \in \mathcal{V}}{\wedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) \bigwedge \exists \mathcal{U}' . \underset{v_{i} \in \mathcal{U}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{U'}}) ．
 </script>
-<script type="math/tex"> v_{i} </script> の値は <script type="math/tex">f_{i}(\widehat{\mathcal{V}}, \mathcal{U}) </script> で与えられるので，次の状態での不可視変数の評価は常に存在する．
-したがって，この式を簡略化すると，
+ここで，次状態での不可視変数への付値は常に存在する．
+これは，<script type="math/tex"> v_{i} </script> の値は <script type="math/tex">f_{i}(\widehat{\mathcal{V}}, \mathcal{U}) </script> で与えられるからである．
+これにより，この式は以下のようにさらに簡略化される．
 <script type="math/tex; mode=display">
 \widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U} . \underset{v_{i} \in \mathcal{V}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) ．
 </script>
 </p>
-<p>したがって，<script type="math/tex"> \widehat{R} </script> には可視レジスタの次状態関数を残しておけばよく，不可視レジスタの接続詞は削除すればよい．
-同値性保存の変換のみを使用したことに注意すると，この抽象化は最も正確な実存的抽象化である．</p>
+<p>このように，<script type="math/tex"> \widehat{R} </script> には可視レジスタの次状態関数のみを残しておけばよく，不可視レジスタの連言肢は単純に削除できる．
+等価性を保存する変換のみを使用しているため，この抽象化は最も精密な存在量化による抽象化である．</p>
 <h4 id="1310">例 13.10</h4>
 <div class="admonition example">
 <p class="admonition-title">例 13.10</p>
-<p>例として，ネットリストで示された順序回路を考えてみよう ( 図 13.3 )．
+<p>例として，ネットリストとして与えられた順序回路を考えてみよう ( 図 13.3 )．
 ネットリストは，ブール関数を計算するゲートをノードとし，ブール変数をエッジとする有向グラフである．
-ネットリストには x と y という名前の2つのレジスタがあり，入力には <script type="math/tex"> i_{1} </script> と <script type="math/tex"> i_{2} </script> という記号が付けられている．
-破線はグラフの切れ目を表し，可視変数と不可視変数を分離している．
-図 13.3 は，右側の抽象的なネットリストを示しており，カットによって取り除かれた変数が入力となり，それらを駆動するネットリストの部分が削除されている．
-抽象的なモデルは，抽象的なネットリストから直接導かれる．</p>
+このネットリストには <script type="math/tex">x</script> と <script type="math/tex">y</script> と名付けられた 2 つのレジスタが含まれている．
+ネットリスト内の入力は <script type="math/tex"> i_{1} </script> と <script type="math/tex"> i_{2} </script> でマークされている．
+破線は，可視変数と不可視変数とを分けるグラフの分割を定義している．
+図 13.3 の右側は抽象ネットリストを示しており，ここでは分割によって削除された変数が入力へと変わり，それらを駆動するネットリストの一部は削除されている．
+抽象モデルは，この抽象ネットリストから直接導出される．</p>
 </div>
 
               

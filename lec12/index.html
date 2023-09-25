@@ -1879,8 +1879,9 @@ PDR は，初期状態から <script type="math/tex">\neg p</script> の状態�
 <h3 id="1054">10.5.4 完全性についての議論</h3>
 <p>まず，<strong>健全性</strong> (soundness) を示し，次に<strong>停止性</strong> (termination) を示す．</p>
 <h4 id="_1">健全性</h4>
-<p>PDRが "<script type="math/tex">M \vDash \mathbf{AG}p</script>'" を返す場合の正しさについては 10.5.1 節で既に述べた通りである．
-PDR が <script type="math/tex">removeCTI</script> において "<script type="math/tex">M \nvDash \mathbf{AG}p</script>" を返した場合を考える．
+<p>
+<script type="math/tex">\mathit{PDR}</script> が "<script type="math/tex">M \vDash \mathbf{AG}p</script>" を返す場合の正しさについては 10.5.1 節で既に述べた通りである．
+<script type="math/tex">\mathit{PDR}</script> が <script type="math/tex">removeCTI</script> において "<script type="math/tex">M \nvDash \mathbf{AG}p</script>" を返した場合を考える．
 <script type="math/tex">removeCTI</script> のパラメータ <script type="math/tex">s</script> が <script type="math/tex">\neg p</script> でラベル付けされた状態に到達可能な状態であることは容易にわかる．
 したがって，<script type="math/tex">\neg p</script> とラベル付けされた状態に到達できる初期状態が存在するため <script type="math/tex">M</script> は <script type="math/tex">\mathbf{AG}p</script> を満たさない．</p>
 <h4 id="_2">停止性</h4>
@@ -1889,7 +1890,7 @@ PDR が <script type="math/tex">removeCTI</script> において "<script type="m
 また，再帰呼び出しのたびに <script type="math/tex">i</script> は減少するため，再帰はいつか停止する．
 <script type="math/tex">\neg p</script> となる後状態をもつ状態は有限であり，<script type="math/tex">removeCTI</script> は <script type="math/tex">F_k</script> から <script type="math/tex">s</script> を削除するため，<script type="math/tex">extendFrontier</script> のループはいつか終了する．</p>
 <p>
-<script type="math/tex">PDR</script> の停止性に関する重要な論点は，<script type="math/tex">PDR</script> のループの反復ごとに <script type="math/tex">k</script> が増加することである．
+<script type="math/tex">\mathit{PDR}</script> の停止性に関する重要な論点は，<script type="math/tex">\mathit{PDR}</script> のループの反復ごとに <script type="math/tex">k</script> が増加することである．
 <script type="math/tex">F_i</script> は有限集合から得られた列であり，厳密に増加することを思い出してほしい．
 したがって，<script type="math/tex">k</script> が十分大きければ，ある <script type="math/tex">i</script> について <script type="math/tex">F_i = F_{i+1}</script> となり，手続きは停止する．</p>
 <h2 id="_3">書誌情報</h2>
