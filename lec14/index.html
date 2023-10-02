@@ -13,7 +13,7 @@
     
     
       
-        <title>第14回 モデル検査ツールとその使い方 - システム検証論 (2023)</title>
+        <title>第14回 抽象化による検査コストの削減 - システム検証論 (2023)</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第14回 モデル検査ツールとその使い方
+              第14回 抽象化による検査コストの削減
             
           </span>
         </div>
@@ -377,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../lec12/" class="md-nav__link">
-        第12回 SAT に基づくモデル検査
+        第12回 SATに基づくモデル検査
       </a>
     </li>
   
@@ -392,7 +392,239 @@
   
     <li class="md-nav__item">
       <a href="../lec13/" class="md-nav__link">
-        第13回 抽象化
+        第13回 非有界モデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第14回 抽象化による検査コストの削減
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第14回 抽象化による検査コストの削減
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-existential-abstraction" class="md-nav__link">
+    13.1 存在量化による抽象化 (Existential Abstraction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1 存在量化による抽象化 (Existential Abstraction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    定義 13.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    定理 13.3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1331" class="md-nav__link">
+    系 13.3.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    定理 13.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1311-localization-reduction" class="md-nav__link">
+    13.1.1 局所化削減 (Localization Reduction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1.1 局所化削減 (Localization Reduction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cone-of-influence-reduction" class="md-nav__link">
+    Cone of Influence Reduction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-data-abstraction" class="md-nav__link">
+    13.1.2 データ抽象化 (Data Abstraction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1.2 データ抽象化 (Data Abstraction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    例 13.5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-predicate-abstraction" class="md-nav__link">
+    13.1.3 述語抽象化 (Predicate Abstraction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1.3 述語抽象化 (Predicate Abstraction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#136" class="md-nav__link">
+    例 13.6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-computation-of-abstract-models" class="md-nav__link">
+    13.2 抽象モデルの計算 (Computation of Abstract Models)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2 抽象モデルの計算 (Computation of Abstract Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321-abstracting-software-programs" class="md-nav__link">
+    13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    例 13.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138" class="md-nav__link">
+    補題 13.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#139" class="md-nav__link">
+    補題 13.9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322-abstracting-synchronous-circuit-with-localization-reduction" class="md-nav__link">
+    13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1310" class="md-nav__link">
+    例 13.10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec15/" class="md-nav__link">
+        第15回 反例主導型抽象詳細化 (CEGAR)
       </a>
     </li>
   
@@ -425,100 +657,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    はじめに
+  <a href="#131-existential-abstraction" class="md-nav__link">
+    13.1 存在量化による抽象化 (Existential Abstraction)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nusmv" class="md-nav__link">
-    NuSMV のインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nusmv_1" class="md-nav__link">
-    NuSMV の実行
-  </a>
-  
-    <nav class="md-nav" aria-label="NuSMV の実行">
+    <nav class="md-nav" aria-label="13.1 存在量化による抽象化 (Existential Abstraction)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    インタラクティブモード
+  <a href="#131" class="md-nav__link">
+    定義 13.1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    バッチモード
+  <a href="#133" class="md-nav__link">
+    定理 13.3
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#smv" class="md-nav__link">
-    SMV 言語
+          <li class="md-nav__item">
+  <a href="#1331" class="md-nav__link">
+    系 13.3.1
   </a>
   
-    <nav class="md-nav" aria-label="SMV 言語">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    定理 13.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1311-localization-reduction" class="md-nav__link">
+    13.1.1 局所化削減 (Localization Reduction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1.1 局所化削減 (Localization Reduction)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#smv_1" class="md-nav__link">
-    例題 SMV プログラム
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    型について
-  </a>
-  
-    <nav class="md-nav" aria-label="型について">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    ブール値
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    整数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    列挙型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    ワード
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    配列
+  <a href="#cone-of-influence-reduction" class="md-nav__link">
+    Cone of Influence Reduction
   </a>
   
 </li>
@@ -529,23 +713,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    式について
+  <a href="#1312-data-abstraction" class="md-nav__link">
+    13.1.2 データ抽象化 (Data Abstraction)
   </a>
   
-    <nav class="md-nav" aria-label="式について">
+    <nav class="md-nav" aria-label="13.1.2 データ抽象化 (Data Abstraction)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    定数
+  <a href="#135" class="md-nav__link">
+    例 13.5
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    式と演算子
+  <a href="#1313-predicate-abstraction" class="md-nav__link">
+    13.1.3 述語抽象化 (Predicate Abstraction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1.3 述語抽象化 (Predicate Abstraction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#136" class="md-nav__link">
+    例 13.6
   </a>
   
 </li>
@@ -561,9 +758,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nusmv_2" class="md-nav__link">
-    NuSMV による検証
+  <a href="#132-computation-of-abstract-models" class="md-nav__link">
+    13.2 抽象モデルの計算 (Computation of Abstract Models)
   </a>
+  
+    <nav class="md-nav" aria-label="13.2 抽象モデルの計算 (Computation of Abstract Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321-abstracting-software-programs" class="md-nav__link">
+    13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    例 13.7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#138" class="md-nav__link">
+    補題 13.8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#139" class="md-nav__link">
+    補題 13.9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322-abstracting-synchronous-circuit-with-localization-reduction" class="md-nav__link">
+    13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1310" class="md-nav__link">
+    例 13.10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -581,163 +838,579 @@
                 
 
 
-<h1 id="14">第14回 モデル検査ツールとその使い方</h1>
-<p>この回では，モデル検査ツール NuSMV の導入方法と使い方について説明します．</p>
-<h2 id="_1">はじめに</h2>
-<p>NuSMV は，カーネギーメロン大学 (CMU) にて開発された BDD ベースのモデル検査ツール SMV (Symbolic Model Verifier) を再開発し，新たな機能拡張を行った記号モデル検査器である．
-NuSMV2 には，SMV や NuSMV1 で実装されていた BDD 記号モデル検査機能に加えて，命題充足可能性判定器 (SAT ソルバ) を用いた有界モデル検査技術が統合されている．
-また，NuSMV2 は OpenSource ライセンスによって配布されており，利用者の目的を問わず，利用，修正，再頒布が認められている．</p>
-<p>NuSMV2 の主な機能は以下の通りである．</p>
+<h1 id="14">第14回 抽象化による検査コストの削減</h1>
+<p>この回では，教科書の第13章 "Abstraction" の前半 (13 〜 13.2) について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
 <ul>
-<li>同期および非同期の有限状態システムを表現し，計算木論理（CTL）および線形時間論理（LTL）で表現された仕様を，BDDベースおよびSATベースのモデル検査技術で解析することができる．</li>
-<li>効率化や，部分的に状態爆発を抑制するためのヒューリスティックが利用可能である．</li>
-<li>バッチモードに加えて，テキストインターフェースを用いた対話的処理も可能である．</li>
+<li>存在量化による抽象化</li>
+<li>局所化削減</li>
+<li>データ抽象化</li>
+<li>述語抽象化</li>
+<li>抽象モデルの計算</li>
+<li>ソフトウェアの抽象化</li>
+<li>ハードウェアの抽象化</li>
 </ul>
-<p>なお，NuSMV の後継ツールで，同期式の有限および無限状態システムを対象とした解析が可能なツール <a href="https://nuxmv.fbk.eu/">nuXmv</a> も公開されている．</p>
-<h2 id="nusmv">NuSMV のインストール</h2>
-<p>NuSMV のソースコードや実行可能バイナリ，マニュアル等は<a href="https://nusmv.fbk.eu/">公式サイト</a>から入手可能である．</p>
+</div>
+<p>抽象化は，状態爆発問題を軽減するための最も重要な技術の一つである． 
+抽象モデルは，関心のある性質に関係のないと思われるシステムのいくつかの詳細を隠すことによって得られ，通常，完全なモデルよりもはるかに小さくなる．
+モデルのサイズが小さくなるため，元のモデルよりも抽象モデルの方が検証しやすくなることが多い．  </p>
+<p>抽象化される前のシステムのモデルを具体 (concrete) モデルと呼ぶ． 
+抽象化は通常，目的の性質に対して保守的であるように選択される．
+つまり，抽象 (abstract) モデル上でその性質が成り立つときはいつでも，具体モデル上でも成り立つ．
+ここでは，モデル検査を適用できるように，有限状態モデルを生成する抽象化のみを考える．
+本章では上方近似 (over approximation) の抽象化に注目する．
+このような抽象化には，具体モデルの各動作の代表が含まれる．
+また，具体モデルには対応する動作がないような動作が追加されることもある．
+しかし，通常，状態や遷移の数はより少なくなる．
+その結果，このような抽象化されたモデルは，モデル検査が容易となる．
+さらに，LTL や ACTL の性質，つまり普遍的な経路限定を持つ性質に対しては保守的であることが保証されている．</p>
+<p>上方近似の抽象化を構築する最も自然な方法は，具体モデルの状態から抽象モデルの状態への写像を定義し，この写像を遷移に拡張することである．
+このようにして，元のシステムをシミュレートし，通常よりはるかに小さい抽象モデルを得ることができる．
+この抽象化手法は存在量化による抽象化 (existential abstraction) と呼ばれる．</p>
+<p>次のセクションでは，存在量化による抽象化に基づく手法のうち，広く利用され，実際に実現可能な3つの実装を調査する．
+局所化削減 (Localization reduction) [330] は，特にハードウェアモデルに適している．
+これは，性質に無関係な変数を特定し，モデルから削除することにより，回路を抽象化する．
+データ抽象化 (Data abstractions) [134][361] では，個々の状態変数のドメインが抽象化される．
+述語抽象化 (Predicate abstraction) [252] では，述語の集合を特定し，その述語の評価で一致する具体状態を合体させる．
+述語抽象化とデータ抽象化は，ソフトウェアモデルに最も適している．</p>
+<p>上方近似による抽象化は，その性質が抽象モデルにおいて真である場合にのみ結論が得られる．
+しかし，その性質が満たされなかった場合，具体モデルにおいてそれが偽であると推論することはできない．
+これは，上方近似された抽象モデルにおけるその性質の反例が，具体モデルにおいて対応するものをもたない可能性があるからである．
+このような反例を<strong>偽反例</strong> (spurious counterexample) または "偽陰性 (false negatives)" と呼ぶ．
+したがって，抽象モデルの反例に対応する具体的な (その性質が具体モデルでも本当に反証されることを示すような) 反例があるかどうかを確認しなければならない．
+もし，その抽象的な反例が偽りのものだとわかったら，その抽象化の欠点を識別し，<strong>詳細化</strong> (refine) しなければならない．
+この方法は，<strong>Counterexample-Guided Abstraction Refinement</strong> (CEGAR) と呼ばれる [132]．</p>
+<h2 id="131-existential-abstraction">13.1 存在量化による抽象化 (Existential Abstraction)</h2>
+<p>まず，明示的に与えられた具体モデルに依存する存在量化による抽象化の正式な定義から始める．
+この定義は，抽象化が保守的であることを証明するために使われる．
+しかし実際には，完全な具体モデルが大きすぎてメモリに収まらないような状況で，抽象化が必要となる．
+そこで，システムの何らかの高水準な記述から直接，抽象モデルを構築することにする．
+これについては13.2節で説明する．</p>
+<p>具体モデルとしてクリプキ構造を <script type="math/tex"> M = (S, S_{0}, R, AP, L) </script> と書くことを想起してほしい．
+その抽象モデルはクリプキ構造 <script type="math/tex"> M = (\widehat{S}, \widehat{S_{0}}, \widehat{R}, \widehat{AP}, \widehat{L}) </script> として定義される．
+<script type="math/tex"> \widehat{AP} </script> は <script type="math/tex"> AP </script> と同一となるように選択する．
+これまでと同様に，<script type="math/tex">AP</script> (したがって <script type="math/tex">\widehat{AP}</script> も) は，検査された性質 <script type="math/tex"> \varphi </script> に現れるすべての原子命題を含む．</p>
+<p>
+<script type="math/tex"> \widehat{M} </script> を定義するためには，抽象的な状態の集合 <script type="math/tex"> \widehat{S} </script> を用意する必要がある．
+<script type="math/tex"> \widehat{S} </script> の抽象状態のそれぞれは，<script type="math/tex"> S </script> の具体状態の集合を表す．
+ここでは，すべての具体状態は一意な抽象状態によって表現されると仮定する．
+したがって，2つの異なる抽象状態が表現する状態の集合は互いに素であり，具体状態をその抽象的な代表者へと対応づける<strong>抽象化関数</strong> (抽象化関係ではなく) を以下のように定義することができる：
+<script type="math/tex; mode=display">
+\alpha : S \rightarrow \widehat{S}
+</script>
+それぞれの具体状態がいずれかの抽象状態によって表現されることを要求しているため，関数 <script type="math/tex">\alpha</script> は全域写像 (total function) となる．
+さらに，抽象化では <script type="math/tex">\widehat{AP}</script> の命題への評価が一致する場合のみ，状態をグループ化するように要求する．
+この要件は，<script type="math/tex">\alpha</script> の<strong>適切性</strong> (appropriateness) と呼ばれ，形式的には以下のように定義される．</p>
+<h4 id="131">定義 13.1</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定義 13.1</p>
+<p>抽象化関数 <script type="math/tex">\alpha</script> は，<script type="math/tex">\alpha(s) = \alpha(s')</script> となるすべての具体状態の組 <script type="math/tex">s</script> および <script type="math/tex">s'</script> に対して <script type="math/tex">L(s) = L(s')</script> が成り立つとき，かつそのときのみ <script type="math/tex">\widehat{AP}</script> に適切である．</p>
+</div>
+<p>
+<script type="math/tex">\widehat{AP} </script> に対する <script type="math/tex">\alpha</script> の適切性によって，抽象状態のラベル付けを簡単に定義することができる．
+つまり，抽象状態 <script type="math/tex">\widehat{S}</script> が <script type="math/tex">\widehat{AP}</script> の原子命題でラベル付けされるのは，それが表す具体状態がその命題でラベル付けされているときである．</p>
+<div class="admonition note">
+<p class="admonition-title">図13.1：存在量化による抽象化</p>
+<p>
+<script type="math/tex">M</script> は元のクリプキ構造であり，<script type="math/tex">\widehat{M}</script> は抽象化されたものである．
+<script type="math/tex">M</script> の破線は，<script type="math/tex">M</script> の状態がどのように抽象的な状態にクラスタリングされるかを示している．
+具体状態と抽象状態は <script type="math/tex">AP = \widehat{AP} = \{p, q\}</script> でラベル付けされている．</p>
+</div>
+<p><center>
+<img src="../img/lec13-fig13_1.pdf" width="360">
+<br>
+図13.1
+</center></p>
+<p>図 13.1 に具体モデル <script type="math/tex">M</script> とその抽象モデル <script type="math/tex">\widehat{M}</script> を示す．
+<script type="math/tex">M</script> の破線は，<script type="math/tex">S</script> を抽象状態に分割したことを表している．
+実際はこれに加えて，抽象モデルにおける遷移と初期状態の集合を定義しなければならない．
+上方近似であるため，具体モデルのすべての遷移と初期状態に対応したものが，抽象モデルに存在することが保証される．
+存在量化による抽象化では，抽象状態が具体モデルにおける初期状態を表していた場合，それが抽象モデルの初期状態になるよう定義する．
+同様に，抽象状態 <script type="math/tex">\widehat{s}</script> から抽象状態 <script type="math/tex">\widehat{s'}</script> への遷移は，具体モデルにおいて <script type="math/tex">\widehat{s}</script> が表す状態から <script type="math/tex">\widehat{s'}</script> が表す状態への遷移がある場合，抽象モデルに存在することになる．
+これは形式的には次のように定義される． </p>
+<div class="admonition abstract">
+<p class="admonition-title">定義 13.2</p>
+<p>
+<script type="math/tex">M = (S, S_{0}, R, AP, L)</script> を (具体的な) クリプキ構造とし，<script type="math/tex">\widehat{S}</script> を抽象状態の集合，<script type="math/tex">AP = \widehat{AP}</script> を (抽象的な) 原子命題の集合とする．
+さらに，<script type="math/tex">\alpha : S \rightarrow \widehat{S}</script> を <script type="math/tex">\widehat{AP}</script> に適切な抽象化関数とする．
+以下が成り立つとき，クリプキ構造 <script type="math/tex">\widehat{M} = (\widehat{S}, \widehat{S_{0}}, \widehat{R}, \widehat{AP}, \widehat{L})</script> は <script type="math/tex">\alpha</script> に関する <script type="math/tex">M</script> の <strong>(存在量化による) 抽象化</strong>である．</p>
 <ol>
-<li><a href="https://nusmv.fbk.eu/NuSMV/download/getting-v2.html">Getting NuSMV</a> からバイナリを入手する．</li>
-<li>ダウンロードしたファイル (Windows なら <code>NuSMV-2.6.0-win64.tar.gz</code>) を展開し，<code>/bin/NuSMV</code> あるいは <code>/bin/NuSMV.exe</code> を適当なフォルダへと移動する．</li>
+<li>
+<script type="math/tex">\exists s (\alpha (s) = \widehat{s} \wedge s \in S_{0})</script> であるとき，<script type="math/tex">\widehat{s} \in S_{0}</script> である；</li>
+<li>
+<script type="math/tex">\exists s_{1},s_{2} (\alpha (s_{1}) = \widehat{s_{1}} \wedge \alpha (s_{2}) = \widehat{s_{2}} \wedge (s_{1},s_{2}) \in R)</script> であるとき，<script type="math/tex"> (\widehat{s_{1}},\widehat{s_{2}}) \in \widehat{R}</script> である；</li>
+<li>
+<script type="math/tex">\alpha (s) = \widehat{S}</script> となる <script type="math/tex">s</script> に対して <script type="math/tex"> \widehat{L}(\widehat{s}) = L(s)</script> である．</li>
 </ol>
-<p>Mac OS (または Linux) の場合，<a href="https://brew.sh/index_ja">Homebrew</a> でもインストールできる．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$ brew install nu-smv
-</code></pre></div>
-<h2 id="nusmv_1">NuSMV の実行</h2>
-<p>NuSMV の実行形式は，</p>
-<ul>
-<li>インタラクティブモード</li>
-<li>バッチモード</li>
-</ul>
-<p>の２通りがある．</p>
-<h3 id="_2">インタラクティブモード</h3>
-<p><code>-int</code> オプションをつけて NuSMV を起動するとインタラクティブモードで実行できる．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV -int
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #717171">NuSMV &gt;</span>
-</code></pre></div>
-<p>インタラクティブモードは対話型シェルを用いた実行形式で，「読み込み〜評価〜出力」を繰り返す．
-このモードでは，ユーザは NuSMV でモデル検査を行う際の「モデルの読み込み」「BDD の構築」「特性の検証」といったステップを，システムコマンドとして個別に実行する．</p>
-<p>インタラクティブモードでモデル <code>sample.smv</code> を検証する場合のコマンド実行系列の例を以下に示す．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV -int
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span style="color: #717171">NuSMV &gt; read_model -i sample.smv</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span style="color: #717171">NuSMV &gt; flatten_hierarchy</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span style="color: #717171">NuSMV &gt; encode_variables</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span style="color: #717171">NuSMV &gt; build_model</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span style="color: #717171">NuSMV &gt; check_ctlspec</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span style="color: #717171">-- specification （検査対象となる CTL 式）  is true</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span style="color: #717171">NuSMV &gt;</span>
-</code></pre></div>
-<p>それぞれ，</p>
-<ul>
-<li><code>read_model</code> ： モデルの読み込み</li>
-<li><code>flatten_hierarchy</code> ： モジュールやプロセスの展開</li>
-<li><code>encode_variables</code> ： 変数の２値エンコード</li>
-<li><code>build_model</code> ： BDD モデルの構築</li>
-<li><code>check_ctlspec</code> ： CTL 式の検証</li>
-</ul>
-<p>を行うシステムコマンドである．</p>
-<h3 id="_3">バッチモード</h3>
-<p><code>-int</code> オプションをつけずに NuSMV を起動するとバッチモードで実行できる．
-バッチモードでは，インタラクティブモードでユーザが個別に指定して実行していたシステムコマンドの列を自動的に実行する．</p>
-<p>バッチモードでモデル <code>sample.smv</code> を検証する場合の実行結果を以下に示す．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #000080; font-weight: bold">$ </span>NuSMV sample.smv
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span style="color: #717171">-- specification （検査対象となる CTL 式）  is true</span>
-</code></pre></div>
-<h2 id="smv">SMV 言語</h2>
-<p>NuSMV のモデルを記述するための専用言語を SMV 言語と呼ぶ．
-SMV 言語は，完全同期システムから非同期システムまで，また詳細モデルから抽象モデルまでを記述できるよう設計されている．
-さらに，モジュール化による階層的な記述も可能である．
-なお，検査対象は有限状態システムに限られるため，データ型は有限である必要がある．
-SMV 言語で書かれたモデルを SMV プログラムという．</p>
-<h3 id="smv_1">例題 SMV プログラム</h3>
-<p>SMV プログラムの例を以下に示す．</p>
-<div class="highlight" style="background: #f8f8f8"><span class="filename">sample.smv</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>MODULE main
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>VAR
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    request: boolean;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    state: {ready, busy};
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>ASSIGN
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    init(state) := ready;
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    next(state) := case
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        state=ready &amp; request: busy;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        TRUE: {ready, busy};
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        esac;
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>CTLSPEC AG(request -&gt; AF (state = busy))
-</code></pre></div>
-<p>SMV プログラムは，変数の定義，遷移関係の記述，そして検査式から構成される．
-上述の例では，<code>VAR</code> で指定されたブロックで変数を定義している．</p>
-<div class="highlight" style="background: #f8f8f8"><span class="filename">変数定義部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>VAR
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    request: boolean;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    state: {ready, busy};
-</code></pre></div>
-<p>この例では，ブール型の変数 <code>request</code> と <code>{ready, busy}</code> のいずれかの値をとる記号型変数 <code>state</code> が定義されている．</p>
-<p>遷移関係は <code>ASSIGN</code> で指定されたブロックで記述されている．</p>
-<div class="highlight" style="background: #f8f8f8"><span class="filename">遷移記述部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ASSIGN
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    init(state) := ready;
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    next(state) := case
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        state=ready &amp; request: busy;
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        TRUE: {ready, busy};
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        esac;
-</code></pre></div>
-<p><code>ASSIGN</code> を用いた遷移関係の記述では，それぞれの変数について，初期状態での値と，次状態での値の変化を指定する．
-変数の初期状態での値は <code>init</code> を用いて表し，次状態での値は <code>next</code> を用いて表す．
-また条件分岐に基づく値の代入には <code>case</code> 式を用いる．</p>
-<p>この例では，変数 <code>state</code> の初期状態での値が <code>ready</code> であり，現在の <code>state</code> の値が <code>ready</code> でかつ <code>request</code> が真ならば次の状態での値が <code>busy</code>となり，そうでなければ非決定的に <code>{ready, busy}</code> のいずれかへと変化するよう指定されている．
-また，ここでは変数 <code>request</code> の値の変化については指定されていない．
-このような場合，<code>request</code> の初期状態や次の状態での値は非決定的に選択される．</p>
-<p>CTL 式による検査特性は <code>CTLSPEC</code> で与えられる．</p>
-<div class="highlight" style="background: #f8f8f8"><span class="filename">検査式記述部</span><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>CTLSPEC AG(request -&gt; AF (state = busy))
-</code></pre></div>
-<p>ここでは，CTL 式 <script type="math/tex">\mathbf{AG}(request \rightarrow \mathbf{AF} (state = busy))</script> が検査式として与えられている．</p>
-<h3 id="_4">型について</h3>
-<p>NuSMV で利用できる型は，ブール値，整数，列挙型，ワード，そして配列である．
-それぞれについて簡単に説明する．</p>
-<h4 id="_5">ブール値</h4>
-<p>ブール (boolean) 型は記号値 FALSE と TRUE から構成される．</p>
-<h4 id="_6">整数</h4>
-<p>整数 (integer) 型は正と負の整数値から構成される．
-現在の実装では，整数型の定義域は -2<sup>31</sup> + 1 〜 2<sup>31</sup> - 1 となっている．</p>
-<h4 id="_7">列挙型</h4>
-<p>列挙 (enumeration) 型は，値の列挙として構成される．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{stopped, running, waiting, finished}
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{2, 4, -2, 0}
-</code></pre></div>
-<p>要素の順序に意味は無いが，要素の重複は許されない．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{stopped, running, waiting}
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{running, stopped, waiting} # 上と同じ型
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>{stopped, stopped, running, waiting} # これはNG
-</code></pre></div>
-<p>また，列挙型は記号定数と整数値が入り交じって定義されていてもよいが，ブール値が含まれることは許されない．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{FAIL, 1, 3, 7, OK}   # これはOK
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{FAIL, 1, 3, 7, TURE} # これはNG
-</code></pre></div>
-<p>記号定数のみからなるものを symbolic enum 型，記号と整数からなるものを integer-and-symbolic enum 型とそれぞれいう．
-なお，整数のみからなる列挙型は integer 型と等価である．</p>
-<h4 id="_8">ワード</h4>
-<p>符号なしワード (unsigined word) あるいは符号付きワード (signed word) は，ビット値のベクトルを表す型である．
-符号付きワードの表す値は 2 の補数に基づく．
-いずれのワード型もビット幅が定められており，unsigned word[N] 型は 0 〜 2<sup>N</sup>-1 の値を，signed word[N] 型は -2<sup>N-1</sup> 〜 2<sup>N-1</sup> - 1 の値を表すことができる．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>unsigned word[3] # 3 ビットベクトル
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>signed word[7]   # 7 ビットベクトル
-</code></pre></div>
-<h4 id="_9">配列</h4>
-<p>配列は，インデックスの下限と上限，そして要素の型によって定義される．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>array 0..3 of boolean
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>array 10..20 of {OK, y, z}
-</code></pre></div>
-<p>多次元配列も定義できる．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>array 1..8 of array -1..2 of unsigned word[5]
-</code></pre></div>
-<h3 id="_10">式について</h3>
-<h4 id="_11">定数</h4>
-<p>NuSMV では定数として，ブール値，整数値，シンボル，ワード値，範囲指定が利用できる．</p>
-<p>ブール定数は boolean 型で，FALSE か TRUE のいずれかとなる．
-整数定数は integer 型で，ある整数値となる．
-記号定数は symbolic enum 型で，SMV 言語における識別子 (identifier) として記述される．</p>
-<h4 id="_12">式と演算子</h4>
-<p>シンタックス</p>
-<h2 id="nusmv_2">NuSMV による検証</h2>
+</div>
+<p>非形式的には，抽象化 <script type="math/tex">\widehat{M}</script> は <script type="math/tex">M</script> よりも多くの振る舞いをもつ．
+これは，模倣前順序関係 (simulation preorder relation) において <script type="math/tex">\widehat{M}</script> が <script type="math/tex">M</script> より大きいことを示す次の定理によって形式化される．</p>
+<div class="admonition tip">
+<p class="admonition-title">全順序 (total prder)，半順序 (partial order)，前順序 (preorder)</p>
+<p>以下の 1 <script type="math/tex">\sim</script> 4 を満たす順序関係を全順序 (total order) といい，
+1 <script type="math/tex">\sim</script> 3 を満たす順序関係を半順序 (partial order) といい，
+1 <script type="math/tex">\sim</script> 2 を満たす順序関係を前順序 (preorder) という．</p>
+<ol>
+<li>
+<script type="math/tex">a \le a</script> が成り立つ．(反射律)</li>
+<li>
+<script type="math/tex">a \le b</script> かつ <script type="math/tex">b \le c</script> ならば <script type="math/tex">a \le c</script> である．(推移律)</li>
+<li>
+<script type="math/tex">a \le b</script> かつ <script type="math/tex">b \le a</script> ならば <script type="math/tex">a = b</script> である．(反対称律)</li>
+<li>
+<p>
+<script type="math/tex">a \le b</script> または <script type="math/tex">b \le a</script> のいずれか必ず成り立つ．(完全律)</p>
+</li>
+<li>
+<p>自然数 <script type="math/tex">a, b \in \mathbb{N}</script> に対して，大小関係 <script type="math/tex">a \le b</script> は前順序である．</p>
+</li>
+<li>
+<script type="math/tex">S</script> の冪集合の要素 <script type="math/tex">a, b \in 2^{S}</script> に対して，包含関係 <script type="math/tex">a \subseteq b</script> は半順序である．(包含関係が成り立たない元がある)</li>
+<li>
+<script type="math/tex">S</script> の冪集合の要素 <script type="math/tex">a, b \in 2^{S}</script> に対して，要素数の大小関係 <script type="math/tex">a \preceq b \Leftrightarrow |a| \le |b|</script> は前順序である．</li>
+</ol>
+</div>
+<p>定理 11.9 から，<script type="math/tex">\widehat{M}</script> について成り立つすべての ACTL* 式は，<script type="math/tex">M</script> についても同様に成り立つ．</p>
+<div class="admonition tip">
+<p class="admonition-title">定理 11.9</p>
+<p>
+<script type="math/tex">M \preceq M'</script> と仮定する．
+このとき，すべての ACTL* 式 <script type="math/tex">f</script> (<script type="math/tex">AP'</script> 内の原子命題による) に対して，<script type="math/tex">M' \models f \Rightarrow M \models f</script> である．</p>
+</div>
+<h4 id="133">定理 13.3</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 13.3</p>
+<p>
+<script type="math/tex">M</script> をクリプキ構造とし，<script type="math/tex">\widehat{M}</script> を <script type="math/tex">M</script> の抽象化とする．
+このとき <script type="math/tex">M \preceq \widehat{M}</script> となる．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>
+<script type="math/tex">\widehat{M}</script> を構成するのに使用した抽象化関数を <script type="math/tex">\alpha</script> とする．
+<script type="math/tex">M</script> と <script type="math/tex">\widehat{M}</script> の間の関係 <script type="math/tex">H</script> を与え，それが模倣関係 (simulation relation) であることを示す．
+すべての <script type="math/tex">s \in S</script> および <script type="math/tex">\widehat{s} \in \widehat{S}</script> に対して以下のように定義する．
+<script type="math/tex; mode=display">
+(s, \widehat{s}) \in H \text{ iff } \alpha(S) = \widehat{s}
+</script>
+まず，すべての <script type="math/tex">s_{0} \in S_{0}</script> に対して，<script type="math/tex">(s_{0}, \widehat{s_{0}}) \in H</script> となるような <script type="math/tex">\widehat{s_{0}} \in \widehat{S_{0}}</script> が存在することを示す．
+存在量化による抽象化の定義により，任意の初期状態 <script type="math/tex">s_{0}</script> に対して <script type="math/tex">\alpha(s_{0})</script> は <script type="math/tex">\widehat{M}</script> の初期状態である．
+<script type="math/tex">H</script> の定義により，<script type="math/tex">(s_{0}, \alpha(s_{0})) \in H</script> となる．</p>
+<p>
+<script type="math/tex">(s, \widehat{s}) \in H </script>と仮定する．
+まず，この 2 つの状態は，<script type="math/tex">\widehat{AP}</script> のラベル付けについて一致していることに注目してほしい．
+したがって <script type="math/tex">L(s) \cap \widehat{AP} = \widehat{L}(\widehat{s})</script> となる．</p>
+<p>
+<script type="math/tex">(s, t) \in R</script> とする．
+<script type="math/tex">(\alpha(s), \alpha(t)) \in \widehat{R}</script> であると示さなければならないが，これは存在量化による抽象化の定義から直ちに導かれる．</p>
+</div>
+<p>次の系は定理 13.3 と定理 11.9 の直接の帰結であり，ここでの抽象化における重要な特性である．</p>
+<h4 id="1331">系 13.3.1</h4>
+<div class="admonition abstract">
+<p class="admonition-title">系 13.3.1</p>
+<p>
+<script type="math/tex">AP</script> 上のすべての ACTL* 式 <script type="math/tex">\varphi</script> に対して，<script type="math/tex">\widehat{M} \models \varphi</script> であれば <script type="math/tex">M \models \varphi</script> となる．</p>
+</div>
+<p>系 13.3.1 は，<script type="math/tex">\widehat{M} \models \varphi</script> の場合，つまり抽象モデル上で性質 <script type="math/tex"> \varphi </script> が真となる場合にのみ，<script type="math/tex">M</script> に関する情報を提供する．
+<script type="math/tex">\widehat{M} \lnot \models \varphi</script> となるとき，<script type="math/tex">M</script> に関する情報は推論できない．
+(この結論は，検証された特性が ACTL* にあることを仮定しているので，<script type="math/tex">\widehat{M} \models \lnot \varphi</script> としてこの系を導くことは不可能である．)
+このように，<script type="math/tex">M</script> は <script type="math/tex">\widehat{M}</script> よりも多くの ACTL* 特性を証明することができ，抽象化によって特性 <script type="math/tex">\varphi</script> を検証できるかどうかは抽象化関数 <script type="math/tex">\alpha</script> の選択に依存する．
+抽象化が粗すぎる場合，つまりモデルの詳細を抽象化しすぎた場合，モデル検査器は (非常に迅速に) <script type="math/tex">\widehat{M} \models \varphi</script> と答えるかもしれない．
+一方，抽象度が高すぎると (極端な話，<script type="math/tex">\alpha</script> は単なる恒等関数であってもよい)，抽象モデルが大きくなりすぎて検証ができなくなる．
+13.3.2 節では，抽象化の中に徐々に詳細を追加していくことができる CEGAR のアプローチを示す．</p>
+<p>もう一度定義 13.2 を見返して，1. および 2. の項目で <strong>であるとき (if)</strong> を使ったことに注意してほしい．
+その結果，抽象モデル <script type="math/tex"> \widehat{M} </script> は一意に決まらない．
+なぜなら，抽象モデルに対して，具体モデルに対応関係をもたない初期状態や遷移をもつことを許容しているからである．
+上述の定義で <strong>であるとき (if)</strong> を <strong>であるときかつそのときのみ (if and only if)</strong> に置き換えると，<script type="math/tex">\alpha</script> に関して，<script type="math/tex">M</script> の<strong>最も精密な (most precise)</strong> 抽象モデルを得ることができる．
+この抽象モデルを <script type="math/tex">\widehat{M_{p}}</script> と表記する．
+任意の抽象モデル <script type="math/tex">\widehat{M}</script> は，最も精密な抽象モデル <script type="math/tex">\widehat{M_{p}}</script> を模倣 (simulate) する．
+したがって，次の定理が成り立つ．</p>
+<h4 id="134">定理 13.4</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 13.4</p>
+<p>モデル <script type="math/tex">M</script> と抽象化関数 <script type="math/tex">\alpha</script> が与えられたとき，<script type="math/tex">\widehat{M}</script> を <script type="math/tex">M</script> の抽象化，<script type="math/tex">\widehat{M_{p}}</script> をその最も精密な抽象化とする (いずれも <script type="math/tex"> \alpha </script> に関して)．このとき，<script type="math/tex">M \preceq \widehat{M_{p}} \preceq \widehat{M}</script> となる．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>明らかに，<script type="math/tex">M \preceq \widehat{M_{p}}</script> は定理 13.3 の特別な場合として成立する．
+<script type="math/tex">\widehat{M_{p}} \preceq \widehat{M}</script> を示すため，<script type="math/tex">\widehat{S}</script> 上の恒等関数を <script type="math/tex">H</script> とする．
+定義より，<script type="math/tex">\widehat{M}</script> と <script type="math/tex">\widehat{M_{p}}</script> は同じ抽象状態の集合に対して定義される．
+さらに，<script type="math/tex">\widehat{M}</script> は <script type="math/tex">\widehat{M_{p}}</script> より多くの初期状態と遷移をもつ．
+したがって，<script type="math/tex">H</script> は <script type="math/tex">\widehat{M_{p}}</script> と <script type="math/tex">\widehat{M}</script> の間の模倣関係である．</p>
+</div>
+<p>最も正確な抽象化は，一般に，具体モデルについてより多くの特性を証明することを可能にするが，計算コストも高くなる．</p>
+<p>次節では，いくつかの一般的な抽象化の定義方法について説明する．
+これらはすべて存在量化による抽象化の実例である．
+これらは，抽象状態 <script type="math/tex">\widehat{S}</script> の選択，原子命題の集合 <script type="math/tex">\widehat{AP} = AP</script>，および抽象化関数 <script type="math/tex">\alpha</script> の定義が互いに異なる．
+定義 13.2 が <script type="math/tex">\widehat{S_{0}}</script>, <script type="math/tex">\widehat{R}</script>, <script type="math/tex">\widehat{L}</script> を提供していることから，これで十分である．</p>
+<h3 id="1311-localization-reduction">13.1.1 局所化削減 (Localization Reduction)</h3>
+<p>具体的なモデルの記述には，第 3 章で定義されたシステムの記号表現を用いる．
+<script type="math/tex">\varphi</script> を変数の集合 <script type="math/tex">V = \{v_{1},\ldots,v_{n}\}</script> 上のシステムとし，<script type="math/tex">D_{v}</script> を <script type="math/tex">v \in V</script> の領域とする．
+<script type="math/tex">S = D_{v_1} \times \ldots \times D_{v_n}</script> とする <script type="math/tex">\varphi</script> の具体モデルを <script type="math/tex">M</script> とする．
+局所化削減 (localization reduction) [330] は，変数を<strong>可視 (visible) </strong>変数と <strong>不可視 (invisible) </strong>変数に分割することに基づく抽象化技法である．
+これはハードウェアのモデル検査に広く用いられている．</p>
+<p>可視変数 (<script type="math/tex">\mathcal{V}</script> と記す) は，検査された特性 <script type="math/tex">\varphi</script> にとって重要であると考えられるため，抽象モデルに保持される．
+それ以外の<strong>不可視 (invisible) </strong>と呼ばれる変数は，<script type="math/tex">\varphi</script> の検査に無関係であると考えられる．
+理想的には，変数の小さな部分集合のみが可視となる．
+可視変数の集合は常に原子命題 <script type="math/tex">\widehat{AP}</script> に現れる変数を含む．</p>
+<p>具体状態とは，<script type="math/tex">V</script> の全変数への付値であることを思い出して欲しい．
+ここで，抽象状態 <script type="math/tex">\widehat{s} \in \widehat{S}</script> を可視変数への付値であると定義する．
+<script type="math/tex"> \mathcal{V} = \{u_{1},\ldots,u_{q}\} \subseteq V</script> を可視変数の集合とする．
+そうすると，抽象状態の集合は <script type="math/tex">\widehat{S} = D_{u_1} \times \ldots \times D_{u_q}</script> となる．</p>
+<p>具体状態 <script type="math/tex">s</script> が与えられたとき，対応する抽象状態 <script type="math/tex">\alpha (s)</script> は，以下のように <script type="math/tex">s</script> を <script type="math/tex">\mathcal{V} </script> の変数に射影したものである：
+<script type="math/tex; mode=display">
+\alpha (s) = (s(u_{1}),s(u_{2}),\ldots,s(u_{q})) 
+</script>
+抽象状態は，可視変数の値に関して矛盾しないようなすべての具体状態を表す．</p>
+<p>
+<script type="math/tex">\mathcal{V}</script> は <script type="math/tex">\widehat{AP}</script> に現れるすべての変数を含むため，同じ抽象状態に対応付けされるすべての具体状態において，<script type="math/tex">\widehat{AP}</script> の付値は同じとなる．
+したがって，<script type="math/tex">\alpha</script> は <script type="math/tex">\widehat{AP}</script> に適切である．
+<script type="math/tex">\alpha</script> が定義されると，<script type="math/tex">\widehat{M}</script> の残りの構成要素は定義 13.2 から導かれる．</p>
+<h4 id="cone-of-influence-reduction">Cone of Influence Reduction</h4>
+<p>次に，保守的 (conservative) な可視変数の集合の選択方法を紹介する．
+ここで，第 3 章 3.3 節で示したハードウェアのモデル化に関するいくつかの定義を再掲する．
+各変数 <script type="math/tex">v \in V</script> は，次状態関数 <script type="math/tex">f_{v}(V)</script> によって関連付けられると仮定する．
+一般に，<script type="math/tex">f_{v}</script> は <script type="math/tex">V</script> の部分集合にのみ依存する．
+式 <script type="math/tex">\varphi</script> の Cone of Influence (COI) [136] は，以下のように帰納的に定義される．
+まず，<script type="math/tex">\varphi</script> のすべての変数を含む．
+さらに，<script type="math/tex">v</script> が COI に含まれる場合，<script type="math/tex">f_{v}</script> が依存するすべての変数も同様に COI に含まれる．</p>
+<p>
+<script type="math/tex">\varphi</script> の COI を可視変数の集合とすることで，<script type="math/tex">\varphi</script> に関して具体モデルと<strong>等価 (equivalent)</strong> な抽象モデルが得られる．
+つまり，具体モデルが <script type="math/tex">\varphi</script> を満たす場合のみ，かつそのときのみ抽象モデルも <script type="math/tex">\varphi</script> を満たすことになる．
+その結果，抽象モデルにおける <script type="math/tex">\varphi</script> への反駁は，具体モデルにおける反駁に帰着する．
+しかしながら，多くの場合 COI が非常に大きくなってしまい，このような選択は現実的でない．</p>
+<p>13.2.2 節の例 13.10 は，Localization Reduction がハードウェアに最も適している理由を示している．
+ブール変数だけを考える場合，一部の変数の挙動は完全に不定 (いわば，外部からの入力のように振る舞う) とし，他の変数の挙動は完全に指定することがしばしば有用である． 
+ソフトウェアの場合，変数のドメインが非常に大きいか，あるいは無限大になると，変数の振る舞いを完全にモデルに含めることが現実的ではないかもしれない．</p>
+<p>原理的に，Localization Reduction は無限領域のすべての変数を不可視にすることで，無限状態モデルを有限状態抽象モデルに抽象化するために用いられる．
+しかし，結果として得られる抽象化では，これらの変数に関するいかなる性質も証明することはできない．
+次節では，無限領域を有限領域に写像することで，無限領域の変数を証明できる抽象化手法を示す．</p>
+<h3 id="1312-data-abstraction">13.1.2 データ抽象化 (Data Abstraction)</h3>
+<p>具体モデルは前節と同様に与えられると仮定する．
+ここでは，抽象領域がシステムの各変数に対して個別に選択されるような，特別な種類のデータ抽象化 [134][361] について説明する．
+通常，抽象領域は有限であり，変数の元の領域よりかなり小さい．
+各変数 <script type="math/tex">v</script> に対して，<script type="math/tex">v</script> の具体領域を <script type="math/tex">v</script> の抽象領域へと対応づける一つの抽象化関数 <script type="math/tex">\alpha_{v}</script> を定義する．
+具体状態に対する抽象化関数は，個々の変数に対する抽象化関数から構成される．</p>
+<p>
+<script type="math/tex">D_{v}</script> は変数 <script type="math/tex">v</script> の具体領域を表すことを思い出してほしい．
+<script type="math/tex">v</script> の抽象領域を <script type="math/tex">\widehat{D_{v}}</script>，<script type="math/tex">v</script> の抽象化関数を <script type="math/tex">\alpha_{v} : D_{v} \rightarrow \widehat{D_{v}}</script> とする．
+このとき，抽象状態空間は以下によって定義される．
+<script type="math/tex; mode=display">
+\widehat{S} = \widehat{D_{v_{1}}} \times \ldots \times \widehat{D_{v_{n}}}
+</script>
+具体状態 <script type="math/tex">s = (d_{1},\ldots,d_{n})</script> に対して，抽象化関数 <script type="math/tex">\alpha</script> は次のように定義される．
+<script type="math/tex; mode=display">
+\alpha((d_{1}, \ldots, d_{n})) = (\alpha_{v_{1}}(d_{1}), \ldots, \alpha_{v_{n}}(d_{n}))
+</script>
+</p>
+<p>データ抽象化は，変数が別々に抽象化されるため，完全な具体状態上に定義される抽象化よりも計算が簡単な場合が多い．</p>
+<h4 id="135">例 13.5</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.5</p>
+<p>
+<script type="math/tex">\mathcal{P}</script> を整数上の変数 <script type="math/tex">x</script> と <script type="math/tex">y</script> をもつプログラムとする．
+<script type="math/tex">AP = \widehat{AP} = \{x < 0, x = 0, even(y)\}</script> とする．
+このとき，
+<script type="math/tex; mode=display">
+\widehat{D_{x}} = \{a_{-}, a_{0}, a_{+}\}
+</script>
+および
+<script type="math/tex; mode=display">
+\alpha_{x}(d) = \left\{ \begin{array}{lcr}
+a_{+} & \text{ if } & d > 0 \\
+a_{0} & \text{ if } & d = 0 \\
+a_{-} & \text{ if } & d < 0 
+\end{array} \right .
+</script>
+であり，
+<script type="math/tex; mode=display">
+\widehat{D_{y}} = \{a_{even}, a_{odd}\}
+</script>
+および
+<script type="math/tex; mode=display">
+\alpha_{y}(d) = \left\{ \begin{array}{lcr}
+a_{even} & \text{ if } & even(|d|) \\
+a_{odd}  & \text{ if } & odd(|d|) 
+\end{array} \right .
+</script>
+<br />
+であるように選ぶことができる．
+<script type="math/tex">s</script> および <script type="math/tex">s'</script> を，<script type="math/tex">s(x) = s(y) = 2</script>，<script type="math/tex">s'(x) = -7</script> および <script type="math/tex">s'(y) = 5</script> となる 2 つのプログラム状態とする．
+このとき，<script type="math/tex">\alpha(s) = (a_{+}, a_{even})</script> かつ <script type="math/tex">\alpha(s') = (a_{-}, a_{odd}) </script> となる．
+具体状態と抽象状態を図 13.2 に示す．
+結果として得られる <script type="math/tex">\alpha</script> は <script type="math/tex">\widehat{AP} </script> に対して適切であることに注意してほしい．</p>
+</div>
+<p><center>
+<img src="../img/lec13-fig13_2.pdf" width="360">
+<br>
+図13.2
+</center></p>
+<p>各変数を単独で抽象化した場合，データ抽象化の適切性要件を満たすことは必ずしも容易ではない． 
+もし，<script type="math/tex">\widehat{AP}</script> の各原子命題が 1 つの変数だけを参照していれば，その変数に対してしかるべき抽象化領域を定義することは常に可能である．
+抽象領域 <script type="math/tex">\widehat{D_{v}}</script> は，<script type="math/tex">v</script> を参照する原子命題によって引き起こされる分割を用いて定義できる．
+この結果，例 13.6 に示すような適切な抽象化関数 <script type="math/tex">\alpha</script> が得られる．</p>
+<p>一方，<script type="math/tex">AP</script> に 2 つ以上の変数を参照する原子命題がある場合，適切な抽象化関数をもたらす個々の変数の抽象領域を見つけることはできないかもしれない．
+これには，複数の変数をまとめて抽象化したものを利用することで対応できる．
+このような抽象化は <strong>relational abstraction (関係的抽象化)</strong> [390][132] と呼ばれる．
+pata abstraction のような抽象化を <strong>non-relational (非関係的)</strong> という．
+よく知られた関係性抽象化の例は <strong>octagon abstract domain (八角形抽象領域)</strong> [391] であり，<script type="math/tex">x</script> と <script type="math/tex">y</script> を変数とし，<script type="math/tex">c</script> を定数とする <script type="math/tex">\pm{x} \pm{y} \leq c</script> という形の制約を表現することができる．
+もう一つの広く使われている関係的抽象化は，次で述べる predicate abstraction (述語抽象化) である．</p>
+<h3 id="1313-predicate-abstraction">13.1.3 述語抽象化 (Predicate Abstraction)</h3>
+<p>述語抽象化 [252] は述語 <script type="math/tex">{P_{1}, \ldots, P_{k}}</script> の集合に基づく．ここで，各 <script type="math/tex">P_{i}</script> は具体状態の部分集合である．
+通常，述語はシステムの変数上の原子的な一階論理式によって与えられる．
+ここでは，論理式とそれを満たす状態の集合を等価に考える．</p>
+<p>各述語 <script type="math/tex">P_{j}</script> はブール型状態変数 <script type="math/tex"> B_{j} </script> と関連付けられている．
+これらのブール変数は抽象状態空間を定義する．
+すなわち，抽象状態 <script type="math/tex">\widehat{s} \in \{0,1\}^{k}</script> は <script type="math/tex">{B_{1}, \ldots, B_{k}}</script> への付値である．</p>
+<p>述語は，具体状態空間を抽象状態空間に対応づける抽象化関数 <script type="math/tex"> \alpha </script> を定義する．
+具体状態 <script type="math/tex">s</script> は，状態 <script type="math/tex">s</script> で評価されたときに <script type="math/tex">B_{i}</script> の値が述語 <script type="math/tex">P_{i}</script> の値と一致する抽象状態へ対応づけられる：
+<script type="math/tex; mode=display">
+\alpha(s) = (P_{1}(s), \ldots, P_{k}(s))
+</script>
+抽象状態 <script type="math/tex">\widehat{s}</script> における <script type="math/tex">B_{i}</script> の真理値を <script type="math/tex">\widehat{s}(B_{i}) </script> と記す．</p>
+<p>適切性の要件を満たすため，<script type="math/tex">\widehat{AP}</script> のすべての原子命題 (したがって，特性 <script type="math/tex">\varphi</script> 内のすべての原子命題) は，述語の集合に含まれる必要がある．
+このとき，抽象状態 <script type="math/tex">\widehat{s}</script> は <script type="math/tex">\widehat{s}(B_{i})</script> である場合，かつそのときのみ <script type="math/tex">P_{i} \in \widehat{AP}</script> でラベル付けされることを見てほしい．</p>
+<p>述語抽象化はプログラムに対してよく適用される．
+この場合の最適化については，第 14 章で詳しく説明する．</p>
+<h4 id="136">例 13.6</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.6</p>
+<p>これまでに定義された概念のいくつかを，簡単な例で説明する．
+自然数上の変数 <script type="math/tex">x</script> と <script type="math/tex">y</script> と，単一の遷移 <script type="math/tex">x:= x + 1</script> をもつプログラム <script type="math/tex">\mathcal{P}</script> を考えよう．
+<script type="math/tex">AP = \widehat{AP} = \{P_{1}, P_{2}, P_{3}\}</script> とし，<script type="math/tex">P_{1} \Leftrightarrow (x \leq 1)</script>，<script type="math/tex">P_{2} \Leftrightarrow (x > y)</script> および <script type="math/tex">P_{3} \Leftrightarrow (y = 2)</script> とする．</p>
+<p>
+<script type="math/tex">s(x) = s(y) = 0</script>，<script type="math/tex">t(x) = 1</script> および <script type="math/tex">t(y) = 2</script> となる 2 つの具体状態 <script type="math/tex">s</script> および <script type="math/tex">t</script> を考える．
+このとき，<script type="math/tex">L(s) = \{P_{1}\}</script> および <script type="math/tex">L(t) = \{P_{1}, P_{3}\}</script> となる．</p>
+<p>抽象状態は，ブール変数 <script type="math/tex">B_{1}, B_{2}, B_{3} </script> への付値で定義される．
+したがって，<script type="math/tex">\widehat{S} = \{0,1\}^{3}</script> となる．
+抽象化関数 <script type="math/tex">\alpha</script> は，<script type="math/tex">s</script> と <script type="math/tex">t</script> を以下の抽象状態へと対応づける：
+<script type="math/tex; mode=display">
+\alpha(s) = (1,0,0) \text{ and } \alpha(t) = (1,0,1)
+</script>
+なお，<script type="math/tex">\widehat{L}((1,0,0)) = L(s) = \{P_{1}\}</script> であり，<script type="math/tex">\widehat{L}((1,0,1)) = L(t) = \{P_{1}, P_{3}\}</script> である．</p>
+</div>
+<h2 id="132-computation-of-abstract-models">13.2 抽象モデルの計算 (Computation of Abstract Models)</h2>
+<p>第 3 章では，システムの高レベル記述から具体モデルを導出する方法を示した．
+本節では，プログラムや回路記述のような高レベルのシステム記述から，抽象モデルを直接導出する方法を説明する．
+具体モデルを構築することなく，抽象モデルを構築する．
+第 3 章と同様に，特定のプログラミング言語やハードウェア記述言語の詳細を避けるため，システムは一階の論理式によって記述されていると仮定する．
+プレゼンテーションの完全性の確保のため，3章で使用した例の一部を繰り返す．</p>
+<h3 id="1321-abstracting-software-programs">13.2.1 ソフトウェアプログラムの抽象化 (Abstracting Software Programs)</h3>
+<p>
+<script type="math/tex"> \mathcal{P} </script> をプログラムとし，<script type="math/tex">s</script> と <script type="math/tex">s'</script> を現在と次のプログラム状態とする．
+このときプログラムの具体モデルは，初期状態の集合と遷移の集合をそれぞれ記述する二つの一階の論理式， <script type="math/tex"> \mathcal{S}(s)</script> と <script type="math/tex">\mathcal{R}(s, s') </script> によって与えられると仮定する．
+さらに，遷移関係は第 3 章で説明したように構築され，プログラムカウンタ <script type="math/tex"> pc </script> を使用して <script type="math/tex"> \mathcal{R} </script> の構造的な構築を可能にすると仮定する．</p>
+<p>以下は，具体モデルを表す一階の論理式の構築を示すいくつかの簡単な例である．
+プログラム中の各文は，プログラム内の対応する場所を一意に定義するラベルで始まり，終了する．
+変数 <script type="math/tex"> pc </script> はプログラムカウンタを表し，プログラムラベルの集合を定義域としてもつ．</p>
+<h4 id="137">例 13.7</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.7</p>
+<p>
+<script type="math/tex"> \mathcal{P} </script> を一つの変数 <script type="math/tex">x</script> を持つプログラムとし，<script type="math/tex">x</script> が偶数である状態でラベル <script type="math/tex"> l_{0} </script> から開始するとする．
+このとき，その初期状態の集合は次式で記述される．
+<script type="math/tex; mode=display">
+\mathcal{S}_{0}(pc, x) \equiv pc = l_{0} \wedge even(x)
+</script>
+</p>
+<p>
+<script type="math/tex"> l: x := e l' </script> を <script type="math/tex"> \mathcal{P} </script> のある代入文とする．
+この代入文に関連する遷移関係は次式で表される：
+<script type="math/tex; mode=display">
+\mathcal{R}(pc, x, pc', x') \equiv pc = l \wedge x' = e \wedge pc' = l'
+</script>
+以下の文が与えられたとき，
+<script type="math/tex; mode=display">
+l_{0} : \textbf{ if }  x = 0 \textbf{ then } l_{1} : x := 1 \textbf{ else } l_{2} : x := x + 1 \textbf{ end if } l_{3}
+</script>
+この文に関連する遷移関係は次式で表される：
+<script type="math/tex; mode=display">\begin{eqnarray}
+\mathcal{R}(pc, x, pc', x') & \equiv & (pc = l_{0} \wedge x = 0 \wedge x' = x \wedge pc' = l_{1}) \nonumber \\
+& \vee & (pc = l_{0} \wedge x \neq 0 \wedge x' = x \wedge pc' = l_{2})  \nonumber \\
+& \vee & (pc = l_{1} \wedge x' = 1 \wedge pc' = l_{3}) \nonumber \\
+& \vee & (pc = l_{2} \wedge x' = x + 1 \wedge pc' = l_{3}) \nonumber
+\end{eqnarray}</script>
+</p>
+<p>上の式は，<script type="math/tex">\textbf{if}</script> 文の条件をチェックするために 1 回の遷移を行い，その遷移の過程でプログラム変数の値はチェックされるものの変更されない，というモデルを記述している．
+この式はまた， <script type="math/tex"> l_{1} </script> と <script type="math/tex"> l_{2} </script> でラベル付けされた 2 つの代入文もモデル化している．</p>
+</div>
+<p>
+<script type="math/tex"> \mathcal{S}_0 </script> と <script type="math/tex"> \mathcal{R} </script> を，具体モデル <script type="math/tex"> M </script> を記述する式とする．
+<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> に対して定義 13.2 に従って定義された抽象モデル <script type="math/tex"> \widehat{M} </script> についても，同様の記述を行いたい．
+現在と次の具体状態に対する存在量化によって，<script type="math/tex"> S_{0} </script> と <script type="math/tex"> \widehat{M} </script>を表す式 <script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R}_{0} </script> を得ることができる：
+<script type="math/tex; mode=display">
+\widehat{\mathcal{S}_{0}}(\widehat{s}) = \exists s. (\alpha(s) = \widehat{s} \wedge \mathcal{S}_{0}(s)), \text{ and }
+</script>
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{s}, \widehat{s}') = \exists s \exists s'. (\mathcal{R}(s, s') \wedge \alpha(s) = s' \wedge \alpha(s') = \widehat{s}')
+</script>
+</p>
+<p>以下の補題は，これらの式によって表されるモデルが，<script type="math/tex"> \alpha </script> に関して最も精密な実存的抽象化であることを主張するものである．</p>
+<h4 id="138">補題 13.8</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 13.8</p>
+<p>
+<script type="math/tex"> \mathcal{S}_{0} </script> と <script type="math/tex"> \mathcal{R} </script> をモデル <script type="math/tex"> M </script> を記述する論理式とする．
+このとき，式 <script type="math/tex"> \widehat{S_{0}} </script> と <script type="math/tex"> \widehat{\mathcal{R}} </script> は，<script type="math/tex"> M </script> と <script type="math/tex"> \alpha </script> に対する最も精密な抽象モデルである <script type="math/tex"> \widehat{M_p} </script> を記述する．</p>
+</div>
+<p>前述の通り，抽象モデルの計算は時に高コストになる場合がある．
+特に，その計算には，プログラム全体の遷移関係を記述する式に対して存在量化を適用する工程が含まれる．
+使用される一階論理の特定の断片によっては，この式は非常に計算が困難となるか，あるいは非常に大きくなる可能性がある．</p>
+<p>ここでは，ソフトウェアプログラムの抽象モデルの計算を簡略化する方法を紹介する．
+この抽象モデルの重要な特性は，具体プログラムの制御フローの骨格を複製することである．
+すなわち，ラベル，分岐，およびループ構造の同じ集合を使用する．
+具体モデルのプログラムカウンタと同じラベルの集合にを定義域とする抽象モデルのプログラムカウンタを導入する．
+さらに，<script type="math/tex"> s(pc) = l </script> となるすべての状態 <script type="math/tex"> s </script> は，<script type="math/tex"> \widehat{s}(pc) = l </script> となる抽象状態へと抽象化される．</p>
+<p>
+<script type="math/tex"> \widehat{\mathcal{R}} </script> の構築する方法を示す前に，<script type="math/tex"> \mathcal{R} </script>の形状を観察する．
+この点を説明するために，上述の例を続ける．
+まず，ド・モルガンの法則を用いて<script type="math/tex"> pc = l </script> の項をくくり出すことで，<script type="math/tex">\textbf{if}</script> 文の論理式記述を書き換えることができることに注意する．</p>
+<p>
+<script type="math/tex; mode=display">\begin{align}
+& \mathcal{R}(pc, x, pc', x') \equiv \nonumber \\ 
+& \quad (pc = l_{0} \wedge ((x = 0 \wedge x' = x \wedge pc' = l_{1}) \vee (x \neq 0 \wedge x' = x \wedge pc' = l_{2}))) \vee \nonumber \\ 
+& \quad (pc = l_{1} \wedge x' = 1 \wedge pc' = l_{3}) \vee \nonumber \\
+& \quad (pc = l_{2} \wedge x' = x + 1 \wedge pc' = l_{3}) \nonumber
+\end{align}</script>
+</p>
+<p>文のラベルは一意であることを想起してほしい．
+その結果，<script type="math/tex"> \mathcal{R}(s, s') </script> は次のような形になる．
+<script type="math/tex; mode=display">
+R(s, s') \Leftrightarrow \underset{l}{\bigvee}(s(pc) = l \wedge conjunct_{l}(s, s') \tag{13.1}
+</script>
+ここで，<script type="math/tex"> l </script> は全てのプログラム位置を範囲としてもち，<script type="math/tex"> conjunct_{l} </script> は位置 <script type="math/tex"> l </script> での命令にのみ依存する任意の連言肢 (conjunct) を表す．
+上記の例では，次の式を得る：</p>
+<p>
+<script type="math/tex; mode=display">\begin{eqnarray}
+conjunct_{l_{0}}(pc, x, pc', x') & \equiv & (x = 0 \wedge x' = x \wedge pc' = l_{1}) \vee \nonumber \\
+& & (x \neq 0 \wedge x' = x \wedge pc' = l_{2}) \nonumber \\
+conjunct_{l_{1}}(pc, x, pc', x') & \equiv & \ x' = 1 \wedge pc' = l_{3} \nonumber \\
+conjunct_{l_{2}}(pc, x, pc', x') & \equiv & \ x' = x + 1 \wedge pc' = l_{3} \nonumber 
+\end{eqnarray}</script>
+</p>
+<p>これは <script type="math/tex"> \mathcal{R} </script> の等価性を保存する変換 (equivalence-preserving transformation) であることを指摘しておく．
+さらに，存在量化を論理和に押し込むことは，等価性を保存することを思い出してほしい．
+これは次の補題で利用される重要な性質である．</p>
+<h4 id="139">補題 13.9</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 13.9</p>
+<p>
+<script type="math/tex"> \mathcal{R}(s,s') </script> を以下の形の遷移関係とする．
+<script type="math/tex; mode=display">
+\underset{l}{\bigvee}(s(pc)) = l \wedge conjunct_{l} (s, s{\prime}) ．
+</script>
+このとき，<script type="math/tex"> s </script> と <script type="math/tex"> s' </script> に対する存在量化を論理和に押し込むと，最も精密な存在量化による抽象化が得られる．
+<script type="math/tex; mode=display">
+\widehat{R}(\widehat{s}, \widehat{s}') \equiv \underset{l}{\bigvee} (\widehat{s}(pc) = l \wedge \exists s \exists s'. (conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}')) \tag{13.2}
+</script>
+</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>存在量化を論理和に押し込むことで以下の式を得る．
+<script type="math/tex; mode=display">
+    \widehat{R}(\widehat{s}, \widehat{s}') \equiv \underset{l}{\bigvee} \exists s \exists s'. (\widehat{s}(pc) = l \wedge conjunct_{l}(s, s') \wedge \alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}') \tag{13.3}
+</script>
+さらに式 13.3 を簡略化して式 13.2 を得ることができる．
+これは，式 13.3 の 2 つの連言肢が，<script type="math/tex"> conjunct_l </script> がプログラムカウンタに依存していないため，変数の互いに排他的な集合を使用しているという観察に基づいている．
+これにより，量化を論理積へと押し込むことができる．
+さらに，<script type="math/tex"> \alpha(s) = \widehat{s} </script> である任意の <script type="math/tex"> s </script> と <script type="math/tex">\widehat{s} </script> の組に対して，<script type="math/tex">\widehat{s}(pc) = s(pc) </script> であることを思い出してほしい．</p>
+</div>
+<p>この補題の利点は何だろうか？
+遷移関係の個々の部分に対して存在量化が行われるようになったことに注目してほしい．
+ここで，各部分の大きさはプログラムの大きさに依存していない．
+そのため，<script type="math/tex"> \widehat{R} </script> の計算は，<script type="math/tex"> \mathcal{P} </script> のサイズに対して線形になる．
+これはラベルの数によって測定される．</p>
+<p>先程の例で続けると，プログラムの最初の文に対して，次のような量化を行う必要がある：
+<script type="math/tex; mode=display">\begin{eqnarray}
+\exists s \exists \widehat{s}. \alpha(s) = \widehat{s} \wedge \alpha(\widehat{s}) = \widehat{s}' \wedge ((s(x) = 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{1}) \vee\\
+ (s(x) \neq 0 \wedge \widehat{s}(x) = s(x) \wedge \widehat{s}(pc) = l_{2})) \nonumber
+\end{eqnarray}</script>
+<br />
+特定の抽象化関数 <script type="math/tex"> \alpha </script> に対するこの存在量化の計算は，演習として残しておく．</p>
+<h3 id="1322-abstracting-synchronous-circuit-with-localization-reduction">13.2.2 局所化削減を用いた同期回路の抽象化 (Abstracting Synchronous Circuit with Localization Reduction)</h3>
+<p>ソフトウェアの場合と同様に，回路の高レベル記述から直接抽象モデルを導出することを目指す．
+これにより，初期状態の集合と遷移関係の計算における存在量化を避けることができる．</p>
+<p>まず，第 3 章で与えられた回路の高レベルな記述を思い返そう．
+回路は，レジスタと一次入力となる変数の集合 <script type="math/tex"> V = \{v_{1},\ldots,v_{n}\} </script> をもつ．
+モデルの遷移関係 <script type="math/tex"> M </script> の特性関数となる命題論理式 <script type="math/tex"> \mathcal{R}(V, V') </script> が与えられている．
+<script type="math/tex"> \mathcal{R} </script> は以下のように論理積を用いて定義される：
+<script type="math/tex; mode=display">
+R(V, V') \equiv \underset{i = 1}{\overset{n}{\bigwedge}} R_{i}(V, V')
+</script>
+<script type="math/tex"> \mathcal{R}_{i} </script> の定義は，<script type="math/tex"> v_{i} </script> がレジスタであるか一次入力であるかに依存する．
+<script type="math/tex"> v_{i} </script> がレジスタの場合，変数の現在の値の関数として <script type="math/tex"> v_{i} </script> の次の状態を計算するブール式 <script type="math/tex"> f_{i} </script> が与えられる．
+<script type="math/tex"> \mathcal{R}_{i} </script> は次のように定義される：
+<script type="math/tex; mode=display">
+R_{i}(V, V') \equiv (v_{i}' \Leftrightarrow f_{i}(V))
+</script>
+<script type="math/tex"> v_{i} </script> が一次入力の場合は，<script type="math/tex"> v_{i}' </script> は制約なく残される．
+つまり，<script type="math/tex"> \mathcal{R}_{i} </script> を真と定義する：
+<script type="math/tex; mode=display">
+R_{i}(V, V') \equiv true
+</script>
+最後に，<script type="math/tex"> \widehat{R} </script> が満たすべき条件を振り返る：
+<script type="math/tex; mode=display">
+(\widehat{s}, \widehat{s}') \in \widehat{R} \equiv \exists s, s'. (\alpha(s) = \widehat{s} \wedge \alpha(s') = \widehat{s}' \wedge (s, s') \in R)
+</script>
+</p>
+<p>局所化削減 (Localization Reduction) では，変数の集合は可視変数の集合と不可視変数の集合に分割される．
+可視変数の集合を <script type="math/tex"> \mathcal{V} \subseteq V </script> を用いて表す．
+<script type="math/tex"> \mathcal{V} </script> に含まれない変数は不可視となる．
+不可視変数の集合を <script type="math/tex"> \mathcal{U} </script> で表す．
+したがって，具体状態 <script type="math/tex"> s </script> は，可視変数 <script type="math/tex"> \mathcal{V} </script> と <script type="math/tex"> \mathcal{U} </script> への付値であるのに対し，抽象状態 <script type="math/tex"> \hat{s} </script> は，変数 <script type="math/tex"> \mathcal{V} </script> への付値のみである．
+抽象化関数 <script type="math/tex"> \alpha </script> は，可視変数と不可視変数の観点から以下のように記述される．
+<script type="math/tex; mode=display">
+\alpha(\mathcal{V}, \mathcal{U}) = \mathcal{V}
+</script>
+</p>
+<p>次に，変数 <script type="math/tex"> \mathcal{V} </script> とその次状態のバージョン <script type="math/tex">\mathcal{V'}</script> の間の関係として，抽象遷移関係 <script type="math/tex"> \widehat{\mathcal{R}} </script> を定義する．
+<script type="math/tex; mode=display">\begin{eqnarray}
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{V}, \mathcal{U}, \mathcal{V'}, \mathcal{U'} .& ( & \;\; \alpha(\mathcal{V}, \mathcal{U}) = \widehat{V'} \nonumber \\
+& \wedge & \alpha(\mathcal{V'}, \mathcal{U'}) = \widehat{\mathcal{V'}} \nonumber \\
+& \wedge & \mathcal{R}(\mathcal{V}, \mathcal{U}, \mathcal{V'}, \mathcal{U'})) \nonumber
+\end{eqnarray}</script>
+</p>
+<p>この定義では，不可視変数の値に対して存在量化を行う．
+これは，それらが一次入力であるかのように振る舞うことを意味している．
+<script type="math/tex"> \alpha </script> の定義を用いると，上記は以下のように単純化される．
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \mathcal{R}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}, \mathcal{U'})
+</script>
+<script type="math/tex"> \mathcal{R} </script> の定義を用いると，次のようになる．
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \underset{i = 1}{\overset{n}{\bigwedge}} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}, \mathcal{U'})
+</script>
+可視変数と不可視変数を区別するために，論理積を分割する．
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U}, \mathcal{U'} . \underset{v_{i} \in \mathcal{V}}{\bigwedge} \mathcal{R}_{i} (\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) \wedge \underset{v_{i} \in \mathcal{U}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{U'}}) ．
+</script>
+この式の中で， <script type="math/tex"> \widehat{\mathcal{U'}} </script> は右側の論理積でのみ使用されている．
+したがって，この式は以下の式と等価である．
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U} . \underset{v_{i} \in \mathcal{V}}{\wedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) \bigwedge \exists \mathcal{U}' . \underset{v_{i} \in \mathcal{U}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{U'}}) ．
+</script>
+ここで，次状態での不可視変数への付値は常に存在する．
+これは，<script type="math/tex"> v_{i} </script> の値は <script type="math/tex">f_{i}(\widehat{\mathcal{V}}, \mathcal{U}) </script> で与えられるからである．
+これにより，この式は以下のようにさらに簡略化される．
+<script type="math/tex; mode=display">
+\widehat{\mathcal{R}}(\widehat{\mathcal{V}}, \widehat{\mathcal{V'}}) \equiv \exists \mathcal{U} . \underset{v_{i} \in \mathcal{V}}{\bigwedge} \mathcal{R}_{i}(\widehat{\mathcal{V}}, \mathcal{U}, \widehat{\mathcal{V'}}) ．
+</script>
+</p>
+<p>このように，<script type="math/tex"> \widehat{R} </script> には可視レジスタの次状態関数のみを残しておけばよく，不可視レジスタの連言肢は単純に削除できる．
+等価性を保存する変換のみを使用しているため，この抽象化は最も精密な存在量化による抽象化である．</p>
+<h4 id="1310">例 13.10</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.10</p>
+<p>例として，ネットリストとして与えられた順序回路を考えてみよう ( 図 13.3 )．
+ネットリストは，ブール関数を計算するゲートをノードとし，ブール変数をエッジとする有向グラフである．
+このネットリストには <script type="math/tex">x</script> と <script type="math/tex">y</script> と名付けられた 2 つのレジスタが含まれている．
+ネットリスト内の入力は <script type="math/tex"> i_{1} </script> と <script type="math/tex"> i_{2} </script> でマークされている．
+破線は，可視変数と不可視変数とを分けるグラフの分割を定義している．
+図 13.3 の右側は抽象ネットリストを示しており，ここでは分割によって削除された変数が入力へと変わり，それらを駆動するネットリストの一部は削除されている．
+抽象モデルは，この抽象ネットリストから直接導出される．</p>
+</div>
 
               
             </article>
@@ -747,6 +1420,41 @@ SMV 言語で書かれたモデルを SMV プログラムという．</p>
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec13/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第13回 非有界モデル検査" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第13回 非有界モデル検査
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lec15/" class="md-footer__link md-footer__link--next" aria-label="Next: 第15回 反例主導型抽象詳細化 (CEGAR)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              第15回 反例主導型抽象詳細化 (CEGAR)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -1,0 +1,1169 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>第15回 反例主導型抽象詳細化 (CEGAR) - システム検証論 (2023)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Murecho&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15-cegar" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="システム検証論 (2023)" class="md-header__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            システム検証論 (2023)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第15回 反例主導型抽象詳細化 (CEGAR)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="システム検証論 (2023)" class="md-nav__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    システム検証論 (2023)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01/" class="md-nav__link">
+        第1回 モデル検査とは
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02/" class="md-nav__link">
+        第2回 クリプキ構造と一階の論理表現
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03/" class="md-nav__link">
+        第3回 ハードウェア・ソフトウェアのモデル化
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04/" class="md-nav__link">
+        第4回 時相論理 CTL*
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05/" class="md-nav__link">
+        第5回 CTL* ベースのその他の時相論理
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06/" class="md-nav__link">
+        第6回 CTL モデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec07/" class="md-nav__link">
+        第7回 不動点計算によるモデル検査アルゴリズム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08/" class="md-nav__link">
+        第8回 LTL と CTL* のモデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09/" class="md-nav__link">
+        第9回 二分決定グラフ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec10/" class="md-nav__link">
+        第10回 記号モデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11/" class="md-nav__link">
+        第11回 命題論理の充足可能性判定
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec12/" class="md-nav__link">
+        第12回 SATに基づくモデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec13/" class="md-nav__link">
+        第13回 非有界モデル検査
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec14/" class="md-nav__link">
+        第14回 抽象化による検査コストの削減
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          第15回 反例主導型抽象詳細化 (CEGAR)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        第15回 反例主導型抽象詳細化 (CEGAR)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#133-counterexample-guided-abstraction-refinement-cegar" class="md-nav__link">
+    13.3 Counterexample-Guided Abstraction Refinement (CEGAR)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3 Counterexample-Guided Abstraction Refinement (CEGAR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1331-spurious-counterexamples" class="md-nav__link">
+    13.3.1 偽反例 (Spurious Counterexamples)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.1 偽反例 (Spurious Counterexamples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311" class="md-nav__link">
+    例 13.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1332-actl-the-abstraction-refinement-framework-for-actl" class="md-nav__link">
+    13.3.2 ACTL* の抽象化-詳細化フレームワーク (The Abstraction-Refinement Framework for ACTL*)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1333-identifying-spurious-counterexamples" class="md-nav__link">
+    13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1312" class="md-nav__link">
+    補題 13.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313" class="md-nav__link">
+    例 13.13
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1334-refining-abstract-models" class="md-nav__link">
+    13.3.4 抽象モデルの詳細化 (Refining Abstract Models)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.4 抽象モデルの詳細化 (Refining Abstract Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1314" class="md-nav__link">
+    例 13.14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315" class="md-nav__link">
+    定義 13.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316" class="md-nav__link">
+    定理 13.16
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+    <nav class="md-nav" aria-label="書誌情報">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bisimulation-and-simulation" class="md-nav__link">
+    双模倣と模倣 (Bisimulation and simulation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicate-abstraction" class="md-nav__link">
+    述語抽象化 (Predicate abstraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cegar" class="md-nav__link">
+    CEGAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-valued-model-checking" class="md-nav__link">
+    三値モデル検査 (Three-valued model checking)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ツール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#133-counterexample-guided-abstraction-refinement-cegar" class="md-nav__link">
+    13.3 Counterexample-Guided Abstraction Refinement (CEGAR)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3 Counterexample-Guided Abstraction Refinement (CEGAR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1331-spurious-counterexamples" class="md-nav__link">
+    13.3.1 偽反例 (Spurious Counterexamples)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.1 偽反例 (Spurious Counterexamples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311" class="md-nav__link">
+    例 13.11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1332-actl-the-abstraction-refinement-framework-for-actl" class="md-nav__link">
+    13.3.2 ACTL* の抽象化-詳細化フレームワーク (The Abstraction-Refinement Framework for ACTL*)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1333-identifying-spurious-counterexamples" class="md-nav__link">
+    13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1312" class="md-nav__link">
+    補題 13.12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313" class="md-nav__link">
+    例 13.13
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1334-refining-abstract-models" class="md-nav__link">
+    13.3.4 抽象モデルの詳細化 (Refining Abstract Models)
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3.4 抽象モデルの詳細化 (Refining Abstract Models)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1314" class="md-nav__link">
+    例 13.14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315" class="md-nav__link">
+    定義 13.15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316" class="md-nav__link">
+    定理 13.16
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    書誌情報
+  </a>
+  
+    <nav class="md-nav" aria-label="書誌情報">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bisimulation-and-simulation" class="md-nav__link">
+    双模倣と模倣 (Bisimulation and simulation)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicate-abstraction" class="md-nav__link">
+    述語抽象化 (Predicate abstraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cegar" class="md-nav__link">
+    CEGAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-valued-model-checking" class="md-nav__link">
+    三値モデル検査 (Three-valued model checking)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ツール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="15-cegar">第15回 反例支援型抽象詳細化 (CEGAR)</h1>
+<p>この回では，教科書の第13章 "Abstraction" の後半 (13.3) について説明します．</p>
+<div class="admonition summary">
+<p class="admonition-title">概要</p>
+<ul>
+<li>CEGAR の概要</li>
+<li>偽反例</li>
+<li>ACTL* の抽象-詳細化フレームワーク</li>
+<li>モデルの詳細化</li>
+</ul>
+</div>
+<h2 id="133-counterexample-guided-abstraction-refinement-cegar">13.3 Counterexample-Guided Abstraction Refinement (CEGAR)</h2>
+<h3 id="1331-spurious-counterexamples">13.3.1 偽反例 (Spurious Counterexamples)</h3>
+<p>抽象化の種類に関係なく，抽象モデル<script type="math/tex">\widehat{M}</script>は具体モデル<script type="math/tex">M</script>よりも情報量が少ないことは容易に理解できる．
+したがって，<script type="math/tex">\widehat{M}</script>のモデル検査は誤った結果を生む可能性がある．
+定理 13.3 によれば，もし ACTL* の仕様が<script type="math/tex">\widehat{M}</script>で真であれば，それは<script type="math/tex">M</script>においても真であると保証される．
+一方で，以下の例は，抽象モデルが ACTL* 仕様を反証したとしても，実際のモデルはその仕様を満たす可能性があることを示している．</p>
+<h4 id="1311">例 13.11</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.11</p>
+<p>図 13.4 に示す米国の信号機制御装置は，状態の集合<script type="math/tex">S=\{red, green, yellow\}</script>と原子命題の集合<script type="math/tex">AP=\{state = red\}</script>に対して定義されている．
+ここで，<script type="math/tex">state = red</script>は状態が赤の場合は真であり，状態が緑や黄の場合は偽となる．
+<script type="math/tex">\psi = \textbf{AGAF}(state =red)</script>という式を証明したい．
+そのために，<script type="math/tex">\widehat{AP} = AP</script>および<script type="math/tex">\widehat{S} = \{\widehat{red}, \widehat{go}\}</script>を選択する．
+抽象化関数でのマッピングとしては，<script type="math/tex">\alpha(red) = \widehat{red}</script>および<script type="math/tex">\alpha(green) = \alpha(yellow) = \widehat{go}</script>を使用する．
+抽象モデル内の遷移は，存在量化による抽象化 ( 定義 13.2 ) により定義される．
+例えば，赤から緑への遷移があるので<script type="math/tex">\widehat{red}</script>から<script type="math/tex">\widehat{go}</script>への遷移があり，緑から黄色への遷移があるので<script type="math/tex">\widehat{go}</script>から<script type="math/tex">\widehat{go}</script>への遷移がある．</p>
+<p>
+<script type="math/tex">\widehat{M} \lnot \models \psi</script>であるのに対し，<script type="math/tex">M \models \psi</script>であることは容易に理解できる．
+仕様を反証する無限抽象トレース<script type="math/tex">\langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle</script>が存在する．
+しかし，それに対応する具体トレースは存在しない．</p>
+</div>
+<p>抽象的な反例が具体的な反例に対応しない場合，それを<strong>偽反例</strong> (spurious counterexamples) と呼ぶ．
+例えば，上の例の<script type="math/tex">\langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle</script>は偽反例である．</p>
+<p>図 13.5 に示された状況を考えてみよう．
+抽象パス<script type="math/tex">\langle\widehat{a_{1}}, \widehat{a_{2}}, \widehat{a_{3}}\rangle</script>は対応する具体パスをもっていない． 
+初期状態からの具体パスはすべて状態<script type="math/tex">D</script>で終わり，そこからこれ以上進むことはできない. 
+したがって，<script type="math/tex">D</script>は<strong>行き止まり状態</strong> (dead-end state) と呼ばれる．
+一方で，<script type="math/tex">B</script>は出発する遷移があると思わせてしまったので，<strong>悪い状態</strong> (bad state) である．
+最後に，状態<script type="math/tex">I</script>は行き止まりでもなければ悪い状態でもないので，<strong>関係のない状態</strong> (irrrelevant state) とされる．
+例えば，偽のパスを排除するため，図 13.5 の太線で示されているように行き止まりの状態と悪い状態を分離することで，抽象化を詳細化することができる．</p>
+<h3 id="1332-actl-the-abstraction-refinement-framework-for-actl">13.3.2 ACTL* の抽象化-詳細化フレームワーク (The Abstraction-Refinement Framework for ACTL*)</h3>
+<p>本節では，論理ACTL*と存在量化による抽象化に関する CounterExample-Guided Abstraction-Refinement (CEGAR) [132] のフレームワークを紹介する. 
+CEGAR フレームワークの主なステップは以下の通りである．</p>
+<ol>
+<li>初期抽象を生成する：モデル<script type="math/tex">M</script>と ACTL* 式<script type="math/tex">\varphi</script>が与えられたら，前節で説明したように，初期抽象モデル<script type="math/tex">\widehat{M}</script>を生成する．</li>
+<li>抽象構造をモデル検査する：<script type="math/tex">\widehat{M}</script>を<script type="math/tex">\varphi</script>に関してモデル検査を行う．
+既存のモデル検査ツールの多くは ACTL または LTL を扱うことができる (いずれもACTL*の部分集合である．)
+もし<script type="math/tex">\varphi</script>が真であれば，具体モデルが式を満たしていると結論づけ，停止する．</li>
+<li>偽反例を識別する：反例<script type="math/tex">\widehat{T}</script>が見つかった場合，それが具体モデルにおける反例と一致するかどうかを確認する．
+この部分については，13.3.3 節で説明する．
+もし対応していれば，具体モデルは式を満たさないと結論づけて停止する．
+そうでなければ，反例は偽であり，詳細化が必要であるため，次のステップ 4 へ進む．</li>
+<li>抽象を詳細化する：抽象モデルを詳細化し，<script type="math/tex">\widehat{T}</script>が新たに詳細化された抽象モデルに含まれないようにする．
+詳細化は通常，<script type="math/tex">\widehat{T}</script>に沿って抽象状態を分割し，それに応じて<script type="math/tex">\alpha</script>を更新することで得られる．
+この部分については，13.3.4 節で説明する．
+新たに詳細化された抽象モデルを構築し，ステップ 2 に戻る．</li>
+</ol>
+<p>初期抽象と詳細化を手作業で提案するには，多大な創意工夫と検証されるシステムに関するかなりの知識が必要となる．
+プログラムテキストから自動的に (初期) 抽象モデルを構築する方法については既に述べたとおりである．
+以下では，偽反例を用いて詳細化を自動的に決定する方法を [132] に従って示す．</p>
+<h3 id="1333-identifying-spurious-counterexamples">13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)</h3>
+<p>モデル検査を用いて，<script type="math/tex">\widehat{M}</script> が仕様 <script type="math/tex">\varphi</script> を満たすかどうかを判定する．
+仮定として，<script type="math/tex">\widehat{M}</script> が <script type="math/tex">\varphi</script> を満たさず，モデル検査器が反例 <script type="math/tex">\widehat{T}</script> を生成した場合を考える．
+ここでは，<strong>有限パス</strong>である安全性特性に対する反例に注目する．
+本節の最後で，有限パスの後にループが続く活性特性の反例についても簡単に説明する．</p>
+<p>反例 <script type="math/tex">\widehat{T}</script> がパス <script type="math/tex">\langle\widehat{s_{1}},\ldots,\widehat{s_{n}}\rangle</script> であると仮定する．
+抽象状態 <script type="math/tex">\widehat{s}</script> が与えられたとき，<script type="math/tex">\alpha(s) = \widehat{s}</script> となる具体状態 <script type="math/tex">s</script> の集合を <script type="math/tex">\alpha^{-1} (\widehat{s})</script> で表す．
+つまり，
+<script type="math/tex; mode=display">
+\alpha^{-1} (\widehat{s}) = \{s \mid \alpha(s) = \widehat{s} \}．
+</script>
+<script type="math/tex">\alpha^{-1}</script>を列に対して以下のように拡張する：
+<script type="math/tex">\alpha^{-1} (\widehat{T})</script> は以下の式で定義される具体パスの集合である．
+<script type="math/tex; mode=display">
+\alpha^{-1} (\widehat{T}) = \{\langle s_{1},\ldots,s_{n}\rangle \mid \underset{i = 1}{\overset{n}{\bigwedge}} \alpha(s_{i}) = \widehat{s_{i}} \wedge S_{0}(s_{1}) \wedge \underset{i = 1}{\overset{n-1}{\bigwedge}} R(s_{i}, s_{i+1})\}．
+</script>
+<script type="math/tex">\widehat{T}</script> が偽反例となるのは <script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空の場合のみ，かつそのときである．
+次に，<script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空であるかを判断するために使用できる具体状態の集合の列  <script type="math/tex">\langle T_{1},\ldots,T_{n} \rangle</script> を定義する：</p>
+<ul>
+<li>
+<script type="math/tex">T_{1} = \alpha^{-1}(\widehat{s_{1}}) \cap S_{0}</script>
+</li>
+<li>
+<script type="math/tex">T_{i} = Image(T_{i-1}) \cap \alpha^{-1}(\widehat{s_{i}})</script>
+<script type="math/tex">(1 < i \leq n)</script>
+</li>
+</ul>
+<p>
+<script type="math/tex">Image(T_{i-1})</script> は <script type="math/tex">T_{i-1}</script> に含まれる状態のすべての後続状態の集合であることを思い出して欲しい．
+次の補題は，<script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空であるかどうかを判断するために使用される．</p>
+<h4 id="1312">補題 13.12</h4>
+<div class="admonition abstract">
+<p class="admonition-title">補題 13.12</p>
+<p>以下の二つは等価である．</p>
+<ol>
+<li>具体パスの集合 <script type="math/tex">\alpha^{-1} (\widehat{T})</script> は空でない．</li>
+<li>すべての <script type="math/tex">1 < i \leq n</script> に対して，<script type="math/tex">T_{i} = \emptyset</script> である．</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>(1 <script type="math/tex">\rightarrow</script> 2) </p>
+<p>
+<script type="math/tex">\alpha^{-1}(\widehat{T})</script> が空でないと仮定する．
+すると，<script type="math/tex">\alpha(s_{i}) = \widehat{S_{i}}</script> および <script type="math/tex">s_{1} \in S_{0}</script> となるパス <script type="math/tex">\langle s_{1},\ldots,s_{n}\rangle</script> が存在する．
+したがって，<script type="math/tex">s_{1} \in T_{1}</script> である．
+ここで，<script type="math/tex">s_{i} \in T_{i}</script> と仮定しよう．
+<script type="math/tex">\alpha^{-1}(\widehat{T})</script> の定義により，<script type="math/tex">s_{i+1} \in Image(s_{i})</script> および <script type="math/tex">s_{i+1} \in \alpha^{-1}(\widehat{S_{i+1}})</script> である．
+したがって，<script type="math/tex">s_{i+1} \in Image(T_{i}) \cap \alpha^{-1}(\widehat{S_{i+1}}) = T_{i+1}</script> となる．
+帰納法により，<script type="math/tex">i \leq n</script> について <script type="math/tex">T_{i} \neq \emptyset</script> となる．</p>
+<p>(2 <script type="math/tex">\leftarrow</script> 1) </p>
+<p>
+<script type="math/tex">i \leq n</script> に対して <script type="math/tex">T_{i} \neq \emptyset</script> と仮定する．
+<script type="math/tex">s_{n} \in T_{n}</script> となる状態を選び，帰納的に逆向きにトレースを構築する．
+<script type="math/tex">s_{i} \in T_{i}</script> と仮定する．
+<script type="math/tex">T_{i}</script> の定義から，<script type="math/tex">s_{i} \in Image(T_{i-1}) \cap \alpha^{-1}(\widehat{s_{i}})</script> であり，<script type="math/tex">T_{i-1}</script> は空でないことがわかる．
+<script type="math/tex">R(s_{i-1}, s_{i})</script> となるような <script type="math/tex">s_{i-1}</script> を <script type="math/tex">T_{i-1}</script> から選択する．
+<script type="math/tex">T_{i-1}</script> の定義から，<script type="math/tex">T_{i-1} \subseteq \alpha^{-1}(\widehat{s_{i-1}})</script> である． 
+したがって，<script type="math/tex">s_{i-1} \in \alpha^{-1}(\widehat{s_{i-1}})</script>となる．
+帰納法により，<script type="math/tex">s_{1} \in T_{1} = \alpha^{-1}(\widehat{s_{1}}) \cap S_{0}</script> となる．
+したがって，構築したトレース <script type="math/tex">\langle s_{1},\ldots,s_{n} \rangle</script> は <script type="math/tex">\alpha^{-1}(\widehat{T})</script> の定義を満たす．
+よって，<script type="math/tex">\alpha^{-1}(\widehat{T})</script> は空ではない．(証明終)</p>
+</div>
+<p>補題 13.13 の条件 2 が成立する場合，その補題の証明は具体的な反例を構築するためのアルゴリズムを提供する．</p>
+<p>条件 2 が満たされないと仮定して，<script type="math/tex">T_{j} \neq \emptyset</script> となる最大のインデックスを <script type="math/tex">j</script> とする．
+このとき，<script type="math/tex">\widehat{s_{j}}</script> は偽反例 <script type="math/tex">\widehat{T}</script> の<strong>失敗状態</strong> (failure state) と呼ばれる．
+補題 13.12 から，<script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空 (すなわち，反例 <script type="math/tex">\widehat{T}</script> が偽) ならば，<script type="math/tex">T_{j} = \emptyset</script> となる最小の<script type="math/tex">i</script> (<script type="math/tex">1 \leq i \leq n</script>) が存在する．</p>
+<p>次の例では，図 13.6 に示すように，抽象モデルでの反例が具体モデル上でどう対応するかを調査する．
+ここで用いている抽象化はデータ抽象化である．</p>
+<h4 id="1313">例 13.13</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.13</p>
+<p>ただ一つの変数をもち，その領域が <script type="math/tex">D = \{1, \ldots, 12\}</script> となるプログラムを考える．
+したがって，具体状態は単に <script type="math/tex">S = \{1, \ldots, 12\}</script> となる．
+<script type="math/tex">S_{0} = {1, 2, 3}</script> と仮定する．
+抽象領域が <script type="math/tex">D' = \{\widehat{1}, \widehat{2}, \widehat{3}, \widehat{4}\}</script> であり，抽象化関数<script type="math/tex">\alpha</script> が <script type="math/tex">d \in D</script> を <script type="math/tex">\lfloor(d-1)/3 \rfloor + 1</script> へマッピングすると仮定する．
+4 つの抽象状態 <script type="math/tex">\widehat{1}, \widehat{2}, \widehat{3}, \widehat{4}</script> は，それぞれ 4 つの具体状態の集合 <script type="math/tex">\{1, 2, 3\}, \{4, 5, 6\}, \{7, 8, 9\}, \{10, 11, 12\}</script> を表している．
+具体モデルにおける状態間の遷移は，図 13.6 の矢印で示されている．
+小さな点は到達不可能な状態を示している．</p>
+<p>抽象的な反例 <script type="math/tex">\widehat{T} = \langle\widehat{1}, \widehat{2}, \widehat{3}, \widehat{4}\rangle</script> を得られたと仮定する．
+<script type="math/tex">\widehat{T}</script> が偽反例であることは容易にわかる．
+補題 13.12 の記号を用いると，<script type="math/tex">T_{1} = \{1, 2, 3\}, T_{2} = \{4, 5, 6\}, T_{3} = \{9\}, T_{4} = \emptyset</script> となる．
+<script type="math/tex">T_{4}</script> が空なので，抽象状態 <script type="math/tex">\widehat{3}</script> は失敗状態である．</p>
+</div>
+<p>補題 13.12 に基づき，図 13.7 に示された <script type="math/tex">\mathit{SplitPATH}</script> アルゴリズムは，抽象的な反例 <script type="math/tex">\widehat{T}</script> が偽であるかどうかを判定する．
+与えられた <script type="math/tex">\widehat{T} = \langle\widehat{S_{1}},\ldots,\widehat{S_{n}}\rangle</script> に対して，<script type="math/tex">\mathit{SplitPATH}</script> は失敗状態のインデックス <script type="math/tex">j-1</script> と状態集合 <script type="math/tex">T_{j-1}</script> を計算する．
+<script type="math/tex">T_{j-1}</script> の状態は<strong>行き止まり状態</strong>である．
+<script type="math/tex">T_{i}</script> が空でなければ，<script type="math/tex">\mathit{SplitPATH}</script> は「実際の」反例を報告し，そこで停止する．</p>
+<p>モデル検査で返される反例が，その後にループが続く有限のパスで構成されている場合にも，同様の分析が可能である．
+この場合，分析は補題 13.12 を適用するために必要なループの展開回数に上限を提供する．
+図 13.7 で示された <script type="math/tex">\mathit{SplitPATH}</script> アルゴリズムは，展開された反例を用いてそれが偽かどうかを判断するために使用できる．
+詳細は [132] に記載されている．</p>
+<p>行き止まり状態の検出後，次節で説明するように，詳細化のステップに進む．</p>
+<h3 id="1334-refining-abstract-models">13.3.4 抽象モデルの詳細化 (Refining Abstract Models)</h3>
+<p>この節では，偽反例を排除するために，抽象モデルをどのように詳細化するかについて説明する．
+説明を簡単にするために，まず，抽象モデルが <script type="math/tex">M</script> と <script type="math/tex">\alpha</script> に対して最も精密なものであると仮定する (定義 13.2 以降の議論を参照)．
+次に，必ずしも最も精密でない抽象モデルを扱う方法を説明し，具体モデルが有限であれば，詳細化のステップはせいぜい有限回数であることを証明する．</p>
+<p>
+<script type="math/tex">\widehat{T}</script> を偽反例とし，<script type="math/tex">\widehat{s_{i}}</script> を <script type="math/tex">\widehat{T}</script> の失敗状態とする．
+<script type="math/tex">\alpha^{-1}(\widehat{s_{i}})</script> の 3 つの部分集合を定義する：</p>
+<ul>
+<li>行き止まり状態の集合 <script type="math/tex">S_{D}</script> は，<script type="math/tex">\alpha^{-1}(\widehat{T})</script> のパスに沿って到達可能であるが，<script type="math/tex">\alpha^{-1}(\widehat{s_{i}+1})</script> への遷移をもたないような <script type="math/tex">\alpha^{-1}(\widehat{s_{i}})</script> 内のすべての状態からなる集合である．</li>
+<li>悪い状態の集合 <script type="math/tex">S_{B}</script> は，<script type="math/tex">\alpha^{-1}(\widehat{T})</script> のパスに沿って到達不可能だが，<script type="math/tex">\alpha^{-1}(\widehat{s_{i}+1})</script> への遷移をもつような <script type="math/tex">\alpha^{-1}(\widehat{s_{i}})</script> 内のすべての状態からなる集合である．</li>
+<li>関係のない状態の集合 <script type="math/tex">S_{I}</script> は，<script type="math/tex">S_{D} \cup S_{B}</script>に含まれないような <script type="math/tex">\alpha^{-1}(\widehat{s_{i}})</script> 内のすべての状態からなる集合である．</li>
+</ul>
+<p>詳細化では，行き止まり状態の集合 <script type="math/tex">S_{D}</script> を悪い状態の集合 <script type="math/tex">S_{B}</script> から分離するように，失敗状態を分割することを提案する．</p>
+<p>行き止まり状態の集合 <script type="math/tex">S_{D}</script> はすでにあり，これは <script type="math/tex">\mathit{SplitPATH}</script> アルゴリズムによって返された集合 <script type="math/tex">T_{j-1}</script> である．
+アルゴリズムはまた，失敗状態が発生した反例内のインデックス <script type="math/tex">j - 1</script> も返す．
+与えられた状態の集合から，前状態の集合を返す <script type="math/tex">PreImage</script> 演算子を使用する．
+これで，以下のように悪い状態を計算することができる：</p>
+<p>
+<script type="math/tex; mode=display">
+S_{B} = PreImage(\alpha^{-1}(\widehat{s_{j+1}}) \cap \alpha^{-1}(\widehat{s_{j}}))
+</script>
+</p>
+<p>状態 <script type="math/tex">\widehat{s_{j}}</script> は，<script type="math/tex">S_{D}</script> を <script type="math/tex">S_{B}</script> から分離するよう分割する必要がある．
+実際は <script type="math/tex">\alpha^{-1}(\widehat{s_{j}})</script> に対して分割は適用されるが，少々の記号の濫用として，<script type="math/tex">\widehat{s_{j}}</script> の分割と呼ぶことにする．
+分割は様々な方法で行うことができる．
+例えば，新しい抽象状態 <script type="math/tex">\widehat{s_{j}'}</script> を <script type="math/tex">\widehat{S}</script> に追加し，<script type="math/tex">S_{D}</script> 内の状態が新しい状態 <script type="math/tex">\widehat{s_{j}'}</script> に対応付けられるように <script type="math/tex">\alpha</script> を更新することが可能である．
+あるいは失敗状態を分割する<strong>基準</strong> (criterion) を，例えば新しい述語という形で得て，この基準をすべての抽象状態へと適用することも選択できる．
+これにより，詳細化プロセスの収束が加速される．
+このように，詳細化処理の反復回数と抽象モデルの大きさとの間にはトレードオフがある．
+抽象状態を分割する詳細化を<strong>分割詳細化</strong> (spliting-refinement) と呼ぶ．
+新しい <script type="math/tex">\widehat{S}</script> と <script type="math/tex">\alpha</script> が決定されたなら，<script type="math/tex">\widehat{R}</script>, <script type="math/tex">\widehat{S_{0}}</script>, そして <script type="math/tex">\widehat{L}</script> は更新されるべきである．</p>
+<p>次に，この議論を <script type="math/tex">M</script> の抽象モデルが最も精密でない可能性がある場合へと拡張する．
+この場合，反例 <script type="math/tex">\widehat{T} = \langle\widehat{s_{1}}, \ldots, \widehat{s_{n}}\rangle</script> が偽である理由が 2 つ追加される：</p>
+<ul>
+<li>
+<script type="math/tex">\widehat{T}</script> の初期状態 <script type="math/tex">\widehat{s_{1}}</script> が具体モデルの初期状態を表していない．
+したがって，<script type="math/tex">T_{1} = \alpha^{-1}(\widehat{s_{1}}) \cap S_{0}</script> は空である．
+<script type="math/tex">\widehat{s_{1}}</script> を<strong>偽の初期状態</strong> (spurious initial state) と呼ぶことにする．
+この場合，詳細化は <script type="math/tex">\widehat{s_{1}}</script> を抽象初期状態の集合 <script type="math/tex">\widehat{S_{0}}</script> から削除する．</li>
+<li>
+<script type="math/tex">\widehat{s_{i}}</script> から <script type="math/tex">\widehat{s_{i+1}}</script> への抽象遷移が，具体モデル内で対応する遷移をもたない．
+すなわち，<script type="math/tex">\alpha^{-1}(\widehat{s_{i}})</script> 内の状態から <script type="math/tex">\alpha^{-1}(\widehat{s_{i+1}})</script> 内の状態への遷移が存在しない．
+このような遷移を<strong>偽の遷移</strong> (spurious transition) と呼ぶ．
+この場合，詳細化は <script type="math/tex">(\widehat{s_{i}}, \widehat{s_{i+1}})</script> のペアを <script type="math/tex">\widehat{R}</script> から削除する．</li>
+</ul>
+<h4 id="1314">例 13.14</h4>
+<div class="admonition example">
+<p class="admonition-title">例 13.14</p>
+<p>図 13.6 の抽象モデル上の反例と，例 13.13 で説明したものとは多少異なる具体モデルを再び考えてみよう．</p>
+<ul>
+<li>状態 <script type="math/tex">1</script>，<script type="math/tex">2</script>，<script type="math/tex">3</script> が具体モデルの初期状態でない場合，<script type="math/tex">\widehat{1}</script> は偽の初期状態であり，<script type="math/tex">\widehat{S_{0}}</script> から削除されることになる．</li>
+<li>状態 <script type="math/tex">7</script> から状態 <script type="math/tex">12</script> への具体遷移がない場合，抽象遷移 <script type="math/tex">(\widehat{3}, \widehat{4})</script> は偽の遷移であり，<script type="math/tex">\widehat{R}</script> から削除されることになる．</li>
+</ul>
+</div>
+<p>モデル <script type="math/tex">M</script> と式 <script type="math/tex">\varphi</script> が与えられたとき，CEGAR アルゴリズムの詳細化ステップ (ステップ 4 ; 13.3.2 節を参照) は，以下のように詳しく記述できる：</p>
+<ul style="list-style-type: none;">
+<li style="text-indent: -1.5em;">4a. \(\mathit{SplitPATH}\) が「偽の初期状態」を返した場合，\(\widehat{s_{1}}\) を \(\widehat{S_{0}}\) から削除してステップ 2 へ進む．</li>
+<li style="text-indent: -1.5em;">4b. 失敗状態を \(\widehat{s_{i}}\) とする．
+    悪い状態の集合 \(S_{B}\) が空であれば，遷移 \((\widehat{s_{i}}, \widehat{s_{i+1}})\) は偽である．
+    \(\widehat{R}\) からそれを削除し，ステップ 2 へ進む．</li>
+<li style="text-indent: -1.5em;">4c. それ以外の場合，分割詳細化を適用する．
+    得られた抽象化関数を \(\alpha\) とする．
+    \(M\) と \(\alpha\) についての抽象モデルを構築する (必ずしも最も精密なものではない)．
+    ステップ 2 へ進む．</li>
+</ul>
+
+<p>最初の 2 つのケースでは，<script type="math/tex">\alpha</script> は変更されないが，ステップ 4c ではこのステップが <script type="math/tex">S_{D}</script> と <script type="math/tex">S_{B}</script> が空でない場合にのみ適用されるため，<script type="math/tex">\alpha</script> は必ず変更される．</p>
+<p>一般に，具体モデルが無限状態である場合，CEGAR の終了は保証されない．
+以下の定義は，<script type="math/tex">M</script> が有限状態であれば，CEGAR が有限回数の詳細化ステップしか含まないことを証明するために使用される．
+まず，抽象化関数 <script type="math/tex">\alpha : S \rightarrow \widehat{S}</script> が具体状態の集合 <script type="math/tex">S</script> に対して<strong>分割</strong> (partition) <script type="math/tex">P_{\alpha}</script> を誘導することに注目する：</p>
+<p>
+<script type="math/tex; mode=display">
+P_{\alpha} = \{ \alpha^{-1}(\widehat{s}) \mid \widehat{s} \in \widehat{S} \; and \; \alpha^{-1}(\widehat{s}) \neq \emptyset \}．
+</script>
+</p>
+<p>これらの集合は分割を形成する：それらは互いに素である．
+さらに，<script type="math/tex">\alpha</script> が全域であるため，すべての具体状態は何らかの集合に属している．
+ここで，誘導された分割に基づいて，抽象化関数上に順序を定義する．</p>
+<h4 id="1315">定義 13.15</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定義 13.15</p>
+<p>
+<script type="math/tex">\alpha_{1} : S \rightarrow \widehat{S_{1}}</script> と <script type="math/tex">\alpha_{2} : S \rightarrow \widehat{S_{2}}</script> を <script type="math/tex">M</script> 上の 2 つの抽象化関数とする．
+以下が成り立つとき，抽象化関数 <script type="math/tex">\alpha_{2}</script> は <script type="math/tex">\alpha_{1}</script>より小さく，<script type="math/tex">\alpha_{1} < \alpha_{2}</script>と表記する．
+- すべての <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> に対して，<script type="math/tex">S_{2} \subseteq S_{1}</script> を満たすような <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．
+- <script type="math/tex">S_{2} \subset S_{1}</script> となるような <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> と <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．</p>
+</div>
+<p>我々の設定では，<script type="math/tex">\alpha_{2}</script> が <script type="math/tex">P_{\alpha_{1}}</script> を分割する詳細化ステップによって得られた場合，順序 <script type="math/tex">\alpha_{2} < \alpha_{1}</script> を使用することになる．</p>
+<p>以下の定理は，CEGAR の終了が保証されるための条件を述べている．</p>
+<h4 id="1316">定理 13.16</h4>
+<div class="admonition abstract">
+<p class="admonition-title">定理 13.16</p>
+<p>有限状態モデル <script type="math/tex">M</script> と，反例がパスまたはループである <script type="math/tex">ACTL</script> または <script type="math/tex">LTL</script> 仕様 <script type="math/tex">\varphi</script> が与えられたとき，CEGAR は <script type="math/tex">\widehat{M} \models \varphi \Leftrightarrow M \models \varphi</script> となるようなモデル <script type="math/tex">\widehat{M}</script> を発見する．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">証明</p>
+<p>CEGAR による一連の詳細化ステップを経て得られた <script type="math/tex">M</script> の抽象モデルの列を <script type="math/tex">\widehat{M_{1}}, \widehat{M_{2}},\ldots</script> とする．
+ある <script type="math/tex">\widehat{M_{i}}</script> について仕様 <script type="math/tex">\varphi</script> が成り立つか，あるいは反例が偽でないことが分かれば，アルゴリズムは停止し，証明は終了する．</p>
+<p>それ以外の場合，有限回数の詳細化ステップで <script type="math/tex">M</script> と同型の抽象モデルを得ることを示す．したがって，定理は成立する．</p>
+<p>まず，任意の <script type="math/tex">\widehat{M_{i}}</script> は有限であり，したがって偽の初期状態と偽の遷移は有限個しか含まれない．
+したがって，ある <script type="math/tex">\alpha_{j}</script> に対し最も精密なモデル <script type="math/tex">\widehat{M_{j}}</script> を得るまでに適用できるタイプ 4a および 4b の詳細化ステップは有限回数である．</p>
+<p>
+<script type="math/tex">\widehat{M_{j}}</script> が最も精密な場合，詳細化ステップは必ず <script type="math/tex">\alpha_{j+1} < \alpha_{j}</script> を導くことを示す．</p>
+<p>
+<script type="math/tex">\widehat{M_{j}}</script> は最も精密であるため，<script type="math/tex">\alpha^{-1}(\widehat{s}) = \emptyset</script> となる抽象状態 <script type="math/tex">\widehat{s}</script> は <script type="math/tex">\widehat{M_{j}}</script> で到達不能であるため，反例の一部ではない．
+したがって，<script type="math/tex">\mathit{SplitPATH}</script> アルゴリズムは空でない失敗状態を返し，ステップ 4c で詳細化される．
+詳細化は，失敗状態と，可能ならば追加の抽象状態を分割する．
+したがって，<script type="math/tex">P_{\alpha_{j+1}}</script> 内のすべての分割は <script type="math/tex">P_{\alpha_{j}}</script> 内の何らかの分割の部分集合であり，<script type="math/tex">P_{\alpha_{j+1}}</script> 内の少なくとも 1 つの分割は <script type="math/tex">P_{\alpha_{j+1}}</script> 内の分割の真部分集合である．
+結果として，<script type="math/tex">\alpha_{j+1} < \alpha_{j}</script> となる．</p>
+<p>すべての抽象状態が単一の具体状態を表すように，得られたモデル <script type="math/tex">\widehat{M_{i}}</script> が <script type="math/tex">\widehat{S_{i}}</script> 上に定義されるまでにステップ 4c が適用される回数は，明らかに有限である．
+さらに，<script type="math/tex">\widehat{M_{i}}</script> を最も精密にするために必要なステップ 4a および 4b も有限である．
+この段階で，抽象モデルは具体モデルと同型であり，定理が成立する．(証明終)</p>
+</div>
+<h2 id="_1">書誌情報</h2>
+<p>文献 [138] の Dams と Grumberg による章には，抽象化に関する調査が掲載されている．</p>
+<p>抽象化の構築に関するトピックはこの章では扱っていないが，抽象解釈の理論 [163][162][167][360] におけるコアトピックの一つである．</p>
+<p>最も広く使用されている二つの抽象化は，ハードウェアに主に使用される局所化削減 [330] と [43]，ソフトウェアに適した述語抽象化 [252] である．
+述語抽象化のソフトウェア検証における拡張，改良，応用は広く研究されている[42][40][141][52][142][53][119]．
+また，ハードウェア検証 [293]，並列 [491] および逐次 [383, 368] の Linux デバイスドライバの検証にも適用されている．
+ハードウェア検証における様々な種類の抽象化を対象とした初期段階での分類は [385] で与えられている．</p>
+<h3 id="bisimulation-and-simulation">双模倣と模倣 (Bisimulation and simulation)</h3>
+<p>モデル上の同値関係とそれに関連する論理保存の多くの概念が定義されている．
+例えば，[268, 175, 176, 460]を参照してほしい．
+模倣関係と <script type="math/tex">\mu</script> 計算 の保存性との関係は [360] で確立されている．</p>
+<p>双模倣に関して商構造を計算するためのアルゴリズムが [350] で示されている．
+それとは別に，双模倣の最小化のための記号的アルゴリズムが [75][76] で提案されている．
+模倣等価とそれと関連する商構造の概念は [98] で導入されている．
+模倣に関する商構造を計算するための効率的なアルゴリズムが [269] で提示されている．</p>
+<h3 id="predicate-abstraction">述語抽象化 (Predicate abstraction)</h3>
+<p>必要な述語をどのように計算するかという重要な問題がある．
+これは，例えば，定理証明器 (theorem prover) [437][436]，記号的決定手続き (symbolic decision procedure) [337]，補間 (interpolation) [294]，補間列 (interpolation sequence) [270][482] を用いて行うことができる．</p>
+<p>いくつかの研究では，詳細化によって生じる抽象モデルのサイズの増大を避けようとしている．
+例えば，遅延抽象化 (lazy abstraction) は，必要なときに必要な場所にだけ新しい述語をモデルに追加する[271][270][383][319][483][485]．</p>
+<h3 id="cegar">CEGAR</h3>
+<p>
+<script type="math/tex">\alpha</script> の種類と <script type="math/tex">M</script> のサイズに応じて，初期の抽象モデル (すなわち，抽象初期状態と抽象遷移)は，BDD，SAT ソルバ，または定理照明器を用いて構築できる．
+同様に，詳細化で行われる抽象状態の分割は，BDD (例えば [132] や [41] のように)，SAT ソルバ (例えば [107][353][292] のように)，線形計画法や機械学習 (例えば [137] のように) などを用いて行うことができる．</p>
+<p>ここでは，有限パスに関する反例に注目する．
+[139] および [447] では，それぞれ ACTL と CTL の全てに対する反例が扱われている．</p>
+<p>ハードウェアを対象とした，反例によらない反復的な抽象化ベースの検証手法が [384] で紹介されている．</p>
+<h3 id="three-valued-model-checking">三値モデル検査 (Three-valued model checking)</h3>
+<p>この章では，抽象化に関する多くの他のアプローチは取り上げられていない．
+それらは通常，より精密な抽象モデルに基づいている．
+このようなモデルは，例えば，抽象状態が具体状態の互いに素でない集合を表現することを可能にする．
+他にも，具体的な遷移関係を上方あるいは下方近似し，それゆえに完全分岐時間論理の真理値を保持する 2 種類の遷移を許容するものもある．
+また，三値意味論で式を解釈し，完全分岐時間論理の真偽を保持することができるものもある．
+これらのアプローチに関する調査は，[138] の Dams と Grumberg による 章に記載がある．</p>
+<h3 id="_2">ツール</h3>
+<p>CEGAR ループと述語抽象化を実装するツールをいくつか挙げる：SLAM [42]，BLAST [52]，SATABS [142]，KRATOS [118]，Wolverine [319]．</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lec14/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第14回 抽象化による検査コストの削減" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              第14回 抽象化による検査コストの削減
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/config.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
+    
+  </body>
+</html>
