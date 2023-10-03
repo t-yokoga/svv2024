@@ -846,11 +846,15 @@
 一方で，<script type="math/tex">B</script>は出発する遷移があると思わせてしまったので，<strong>悪い状態</strong> (bad state) である．
 最後に，状態<script type="math/tex">I</script>は行き止まりでもなければ悪い状態でもないので，<strong>関係のない状態</strong> (irrrelevant state) とされる．
 例えば，偽のパスを排除するため，図 13.5 の太線で示されているように行き止まりの状態と悪い状態を分離することで，抽象化を詳細化することができる．</p>
+<div class="admonition note">
+<p class="admonition-title">図13.5：抽象モデルの詳細化</p>
 <p><center>
 <img src="../img/lec15-fig13_5.pdf" width="360">
 <br>
-図13.5: <script type="math/tex">\widehat{M}</script>中の抽象パス (図中の太線矢印) は偽である．<br>偽のパスを削除するには <script type="math/tex">M</script> の太線で表すように抽象モデルの詳細化が必要である．
-</center></p>
+</center>
+<script type="math/tex">\widehat{M}</script>中の抽象パス (図中の太線矢印) は偽である．
+偽のパスを削除するには <script type="math/tex">M</script> の太線で表すように抽象モデルの詳細化が必要である．</p>
+</div>
 <h3 id="1332-actl-the-abstraction-refinement-framework-for-actl">13.3.2 ACTL* の抽象化-詳細化フレームワーク (The Abstraction-Refinement Framework for ACTL*)</h3>
 <p>本節では，論理ACTL*と存在量化による抽象化に関する CounterExample-Guided Abstraction-Refinement (CEGAR) <sup id="fnref:132"><a class="footnote-ref" href="#fn:132">1</a></sup> のフレームワークを紹介する. 
 CEGAR フレームワークの主なステップは以下の通りである．</p>
