@@ -869,10 +869,10 @@
 このようにして，元のシステムをシミュレートし，通常よりはるかに小さい抽象モデルを得ることができる．
 この抽象化手法は存在量化による抽象化 (existential abstraction) と呼ばれる．</p>
 <p>次のセクションでは，存在量化による抽象化に基づく手法のうち，広く利用され，実際に実現可能な3つの実装を調査する．
-局所化削減 (Localization reduction) [330] は，特にハードウェアモデルに適している．
+局所化削減 (Localization reduction) <sup id="fnref:330"><a class="footnote-ref" href="#fn:330">1</a></sup> は，特にハードウェアモデルに適している．
 これは，性質に無関係な変数を特定し，モデルから削除することにより，回路を抽象化する．
-データ抽象化 (Data abstractions) [134][361] では，個々の状態変数のドメインが抽象化される．
-述語抽象化 (Predicate abstraction) [252] では，述語の集合を特定し，その述語の評価で一致する具体状態を合体させる．
+データ抽象化 (Data abstractions) <sup id="fnref:134"><a class="footnote-ref" href="#fn:134">2</a></sup><sup id="fnref:361"><a class="footnote-ref" href="#fn:361">3</a></sup> では，個々の状態変数のドメインが抽象化される．
+述語抽象化 (Predicate abstraction) <sup id="fnref:252"><a class="footnote-ref" href="#fn:252">4</a></sup> では，述語の集合を特定し，その述語の評価で一致する具体状態を合体させる．
 述語抽象化とデータ抽象化は，ソフトウェアモデルに最も適している．</p>
 <p>上方近似による抽象化は，その性質が抽象モデルにおいて真である場合にのみ結論が得られる．
 しかし，その性質が満たされなかった場合，具体モデルにおいてそれが偽であると推論することはできない．
@@ -880,7 +880,7 @@
 このような反例を<strong>偽反例</strong> (spurious counterexample) または "偽陰性 (false negatives)" と呼ぶ．
 したがって，抽象モデルの反例に対応する具体的な (その性質が具体モデルでも本当に反証されることを示すような) 反例があるかどうかを確認しなければならない．
 もし，その抽象的な反例が偽りのものだとわかったら，その抽象化の欠点を識別し，<strong>詳細化</strong> (refine) しなければならない．
-この方法は，<strong>Counterexample-Guided Abstraction Refinement</strong> (CEGAR) と呼ばれる [132]．</p>
+この方法は，<strong>反例主導型抽象詳細化</strong> (Counterexample-Guided Abstraction Refinement, CEGAR) と呼ばれる <sup id="fnref:132"><a class="footnote-ref" href="#fn:132">5</a></sup>．</p>
 <h2 id="131-existential-abstraction">13.1 存在量化による抽象化 (Existential Abstraction)</h2>
 <p>まず，明示的に与えられた具体モデルに依存する存在量化による抽象化の正式な定義から始める．
 この定義は，抽象化が保守的であることを証明するために使われる．
@@ -918,7 +918,7 @@
 具体状態と抽象状態は <script type="math/tex">AP = \widehat{AP} = \{p, q\}</script> でラベル付けされている．</p>
 </div>
 <p><center>
-<img src="../img/lec13-fig13_1.pdf" width="360">
+<img src="../img/lec14-fig13_1.pdf" width="360">
 <br>
 図13.1
 </center></p>
@@ -1048,7 +1048,7 @@
 <p>具体的なモデルの記述には，第 3 章で定義されたシステムの記号表現を用いる．
 <script type="math/tex">\varphi</script> を変数の集合 <script type="math/tex">V = \{v_{1},\ldots,v_{n}\}</script> 上のシステムとし，<script type="math/tex">D_{v}</script> を <script type="math/tex">v \in V</script> の領域とする．
 <script type="math/tex">S = D_{v_1} \times \ldots \times D_{v_n}</script> とする <script type="math/tex">\varphi</script> の具体モデルを <script type="math/tex">M</script> とする．
-局所化削減 (localization reduction) [330] は，変数を<strong>可視 (visible) </strong>変数と <strong>不可視 (invisible) </strong>変数に分割することに基づく抽象化技法である．
+局所化削減 (localization reduction) <sup id="fnref2:330"><a class="footnote-ref" href="#fn:330">1</a></sup> は，変数を<strong>可視 (visible) </strong>変数と <strong>不可視 (invisible) </strong>変数に分割することに基づく抽象化技法である．
 これはハードウェアのモデル検査に広く用いられている．</p>
 <p>可視変数 (<script type="math/tex">\mathcal{V}</script> と記す) は，検査された特性 <script type="math/tex">\varphi</script> にとって重要であると考えられるため，抽象モデルに保持される．
 それ以外の<strong>不可視 (invisible) </strong>と呼ばれる変数は，<script type="math/tex">\varphi</script> の検査に無関係であると考えられる．
@@ -1072,7 +1072,7 @@
 ここで，第 3 章 3.3 節で示したハードウェアのモデル化に関するいくつかの定義を再掲する．
 各変数 <script type="math/tex">v \in V</script> は，次状態関数 <script type="math/tex">f_{v}(V)</script> によって関連付けられると仮定する．
 一般に，<script type="math/tex">f_{v}</script> は <script type="math/tex">V</script> の部分集合にのみ依存する．
-式 <script type="math/tex">\varphi</script> の Cone of Influence (COI) [136] は，以下のように帰納的に定義される．
+式 <script type="math/tex">\varphi</script> の Cone of Influence (COI) [^136] は，以下のように帰納的に定義される．
 まず，<script type="math/tex">\varphi</script> のすべての変数を含む．
 さらに，<script type="math/tex">v</script> が COI に含まれる場合，<script type="math/tex">f_{v}</script> が依存するすべての変数も同様に COI に含まれる．</p>
 <p>
@@ -1088,7 +1088,7 @@
 次節では，無限領域を有限領域に写像することで，無限領域の変数を証明できる抽象化手法を示す．</p>
 <h3 id="1312-data-abstraction">13.1.2 データ抽象化 (Data Abstraction)</h3>
 <p>具体モデルは前節と同様に与えられると仮定する．
-ここでは，抽象領域がシステムの各変数に対して個別に選択されるような，特別な種類のデータ抽象化 [134][361] について説明する．
+ここでは，抽象領域がシステムの各変数に対して個別に選択されるような，特別な種類のデータ抽象化 <sup id="fnref2:134"><a class="footnote-ref" href="#fn:134">2</a></sup><sup id="fnref2:361"><a class="footnote-ref" href="#fn:361">3</a></sup> について説明する．
 通常，抽象領域は有限であり，変数の元の領域よりかなり小さい．
 各変数 <script type="math/tex">v</script> に対して，<script type="math/tex">v</script> の具体領域を <script type="math/tex">v</script> の抽象領域へと対応づける一つの抽象化関数 <script type="math/tex">\alpha_{v}</script> を定義する．
 具体状態に対する抽象化関数は，個々の変数に対する抽象化関数から構成される．</p>
@@ -1142,7 +1142,7 @@ a_{odd}  & \text{ if } & odd(|d|)
 結果として得られる <script type="math/tex">\alpha</script> は <script type="math/tex">\widehat{AP} </script> に対して適切であることに注意してほしい．</p>
 </div>
 <p><center>
-<img src="../img/lec13-fig13_2.pdf" width="360">
+<img src="../img/lec14-fig13_2.pdf" width="360">
 <br>
 図13.2
 </center></p>
@@ -1152,12 +1152,12 @@ a_{odd}  & \text{ if } & odd(|d|)
 この結果，例 13.6 に示すような適切な抽象化関数 <script type="math/tex">\alpha</script> が得られる．</p>
 <p>一方，<script type="math/tex">AP</script> に 2 つ以上の変数を参照する原子命題がある場合，適切な抽象化関数をもたらす個々の変数の抽象領域を見つけることはできないかもしれない．
 これには，複数の変数をまとめて抽象化したものを利用することで対応できる．
-このような抽象化は <strong>relational abstraction (関係的抽象化)</strong> [390][132] と呼ばれる．
-pata abstraction のような抽象化を <strong>non-relational (非関係的)</strong> という．
-よく知られた関係性抽象化の例は <strong>octagon abstract domain (八角形抽象領域)</strong> [391] であり，<script type="math/tex">x</script> と <script type="math/tex">y</script> を変数とし，<script type="math/tex">c</script> を定数とする <script type="math/tex">\pm{x} \pm{y} \leq c</script> という形の制約を表現することができる．
+このような抽象化は <strong>relational abstraction (関係的抽象化)</strong> <sup id="fnref:390"><a class="footnote-ref" href="#fn:390">6</a></sup><sup id="fnref2:132"><a class="footnote-ref" href="#fn:132">5</a></sup> と呼ばれる．
+データ抽象化のような抽象化を <strong>non-relational (非関係的)</strong> という．
+よく知られた関係的抽象化の例は <strong>octagon abstract domain (八角形抽象領域)</strong> <sup id="fnref:391"><a class="footnote-ref" href="#fn:391">7</a></sup> であり，<script type="math/tex">x</script> と <script type="math/tex">y</script> を変数とし，<script type="math/tex">c</script> を定数とする <script type="math/tex">\pm{x} \pm{y} \leq c</script> という形の制約を表現することができる．
 もう一つの広く使われている関係的抽象化は，次で述べる predicate abstraction (述語抽象化) である．</p>
 <h3 id="1313-predicate-abstraction">13.1.3 述語抽象化 (Predicate Abstraction)</h3>
-<p>述語抽象化 [252] は述語 <script type="math/tex">{P_{1}, \ldots, P_{k}}</script> の集合に基づく．ここで，各 <script type="math/tex">P_{i}</script> は具体状態の部分集合である．
+<p>述語抽象化 <sup id="fnref2:252"><a class="footnote-ref" href="#fn:252">4</a></sup> は述語 <script type="math/tex">{P_{1}, \ldots, P_{k}}</script> の集合に基づく．ここで，各 <script type="math/tex">P_{i}</script> は具体状態の部分集合である．
 通常，述語はシステムの変数上の原子的な一階論理式によって与えられる．
 ここでは，論理式とそれを満たす状態の集合を等価に考える．</p>
 <p>各述語 <script type="math/tex">P_{j}</script> はブール型状態変数 <script type="math/tex"> B_{j} </script> と関連付けられている．
@@ -1410,6 +1410,32 @@ R_{i}(V, V') \equiv true
 破線は，可視変数と不可視変数とを分けるグラフの分割を定義している．
 図 13.3 の右側は抽象ネットリストを示しており，ここでは分割によって削除された変数が入力へと変わり，それらを駆動するネットリストの一部は削除されている．
 抽象モデルは，この抽象ネットリストから直接導出される．</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:330">
+<p>R. P. Kurshan. Computer-Aided Verification of Coordinating Processes:The Automata-Theoretic Approach. Princeton University Press, 1994.&#160;<a class="footnote-backref" href="#fnref:330" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:330" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:134">
+<p>E. M. Clarke, O. Grumberg, and D. E. Long. Model checking and abstraction. In Principles of Programming Languages, POPL, pages 342–354. ACM, 1992.&#160;<a class="footnote-backref" href="#fnref:134" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:134" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:361">
+<p>D. E. Long. Model Checking, Abstraction, and Compositional Reasoning. PhD thesis, Carnegie Mellon University, 1993.&#160;<a class="footnote-backref" href="#fnref:361" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:361" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:252">
+<p>S. Graf and H. Saïdi. Construction of abstract state graphs with PVS. In O. Grumberg, editor, Computer Aided Verification, CAV, volume 1254 of Lecture Notes in Computer Science, pages 72–83. Springer, 1997.&#160;<a class="footnote-backref" href="#fnref:252" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:252" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:132">
+<p>E. M. Clarke, O. Grumberg, S. Jha, Y. Lu, and H. Veith. Counterexample-guided abstraction refinement for symbolic model checking. J. ACM, 50(5):752–794, 2003.&#160;<a class="footnote-backref" href="#fnref:132" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:132" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:390">
+<p>A. Miné. A few graph-based relational numerical abstract domains. In M. V. Hermenegildo and G. Puebla, editors, Static Analysis, SAS, volume 2477 of Lecture Notes in Computer Science, pages 117–132. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:390" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:391">
+<p>A. Miné. The octagon abstract domain. Higher-Order Symbolic Comput., 19(1):31–100, 2006.&#160;<a class="footnote-backref" href="#fnref:391" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
 
               

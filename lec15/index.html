@@ -831,6 +831,11 @@
 <script type="math/tex">\widehat{M} \lnot \models \psi</script>であるのに対し，<script type="math/tex">M \models \psi</script>であることは容易に理解できる．
 仕様を反証する無限抽象トレース<script type="math/tex">\langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle</script>が存在する．
 しかし，それに対応する具体トレースは存在しない．</p>
+<p><center>
+<img src="../img/lec15-fig13_4.pdf" width="360">
+<br>
+図13.4
+</center></p>
 </div>
 <p>抽象的な反例が具体的な反例に対応しない場合，それを<strong>偽反例</strong> (spurious counterexamples) と呼ぶ．
 例えば，上の例の<script type="math/tex">\langle\widehat{red}, \widehat{go}, \widehat{go},\ldots\rangle</script>は偽反例である．</p>
@@ -841,8 +846,13 @@
 一方で，<script type="math/tex">B</script>は出発する遷移があると思わせてしまったので，<strong>悪い状態</strong> (bad state) である．
 最後に，状態<script type="math/tex">I</script>は行き止まりでもなければ悪い状態でもないので，<strong>関係のない状態</strong> (irrrelevant state) とされる．
 例えば，偽のパスを排除するため，図 13.5 の太線で示されているように行き止まりの状態と悪い状態を分離することで，抽象化を詳細化することができる．</p>
+<p><center>
+<img src="../img/lec15-fig13_5.pdf" width="360">
+<br>
+図13.5: <script type="math/tex">\widehat{M}</script>中の抽象パス (図中の太線矢印) は偽である．<br>偽のパスを削除するには <script type="math/tex">M</script> の太線で表すように抽象モデルの詳細化が必要である．
+</center></p>
 <h3 id="1332-actl-the-abstraction-refinement-framework-for-actl">13.3.2 ACTL* の抽象化-詳細化フレームワーク (The Abstraction-Refinement Framework for ACTL*)</h3>
-<p>本節では，論理ACTL*と存在量化による抽象化に関する CounterExample-Guided Abstraction-Refinement (CEGAR) [132] のフレームワークを紹介する. 
+<p>本節では，論理ACTL*と存在量化による抽象化に関する CounterExample-Guided Abstraction-Refinement (CEGAR) <sup id="fnref:132"><a class="footnote-ref" href="#fn:132">1</a></sup> のフレームワークを紹介する. 
 CEGAR フレームワークの主なステップは以下の通りである．</p>
 <ol>
 <li>初期抽象を生成する：モデル<script type="math/tex">M</script>と ACTL* 式<script type="math/tex">\varphi</script>が与えられたら，前節で説明したように，初期抽象モデル<script type="math/tex">\widehat{M}</script>を生成する．</li>
@@ -860,7 +870,7 @@ CEGAR フレームワークの主なステップは以下の通りである．</
 </ol>
 <p>初期抽象と詳細化を手作業で提案するには，多大な創意工夫と検証されるシステムに関するかなりの知識が必要となる．
 プログラムテキストから自動的に (初期) 抽象モデルを構築する方法については既に述べたとおりである．
-以下では，偽反例を用いて詳細化を自動的に決定する方法を [132] に従って示す．</p>
+以下では，偽反例を用いて詳細化を自動的に決定する方法を上述の論文 <sup id="fnref2:132"><a class="footnote-ref" href="#fn:132">1</a></sup> に従って示す．</p>
 <h3 id="1333-identifying-spurious-counterexamples">13.3.3 偽反例の特定 (Identifying Spurious Counterexamples)</h3>
 <p>モデル検査を用いて，<script type="math/tex">\widehat{M}</script> が仕様 <script type="math/tex">\varphi</script> を満たすかどうかを判定する．
 仮定として，<script type="math/tex">\widehat{M}</script> が <script type="math/tex">\varphi</script> を満たさず，モデル検査器が反例 <script type="math/tex">\widehat{T}</script> を生成した場合を考える．
@@ -908,8 +918,8 @@ CEGAR フレームワークの主なステップは以下の通りである．</
 すると，<script type="math/tex">\alpha(s_{i}) = \widehat{S_{i}}</script> および <script type="math/tex">s_{1} \in S_{0}</script> となるパス <script type="math/tex">\langle s_{1},\ldots,s_{n}\rangle</script> が存在する．
 したがって，<script type="math/tex">s_{1} \in T_{1}</script> である．
 ここで，<script type="math/tex">s_{i} \in T_{i}</script> と仮定しよう．
-<script type="math/tex">\alpha^{-1}(\widehat{T})</script> の定義により，<script type="math/tex">s_{i+1} \in Image(s_{i})</script> および <script type="math/tex">s_{i+1} \in \alpha^{-1}(\widehat{S_{i+1}})</script> である．
-したがって，<script type="math/tex">s_{i+1} \in Image(T_{i}) \cap \alpha^{-1}(\widehat{S_{i+1}}) = T_{i+1}</script> となる．
+<script type="math/tex">\alpha^{-1}(\widehat{T})</script> の定義により，<script type="math/tex">s_{i+1} \in Image(s_{i})</script> および <script type="math/tex">s_{i+1} \in \alpha^{-1}(\widehat{s_{i+1}})</script> である．
+したがって，<script type="math/tex">s_{i+1} \in Image(T_{i}) \cap \alpha^{-1}(\widehat{s_{i+1}}) = T_{i+1}</script> となる．
 帰納法により，<script type="math/tex">i \leq n</script> について <script type="math/tex">T_{i} \neq \emptyset</script> となる．</p>
 <p>(2 <script type="math/tex">\leftarrow</script> 1) </p>
 <p>
@@ -927,9 +937,14 @@ CEGAR フレームワークの主なステップは以下の通りである．</
 <p>補題 13.13 の条件 2 が成立する場合，その補題の証明は具体的な反例を構築するためのアルゴリズムを提供する．</p>
 <p>条件 2 が満たされないと仮定して，<script type="math/tex">T_{j} \neq \emptyset</script> となる最大のインデックスを <script type="math/tex">j</script> とする．
 このとき，<script type="math/tex">\widehat{s_{j}}</script> は偽反例 <script type="math/tex">\widehat{T}</script> の<strong>失敗状態</strong> (failure state) と呼ばれる．
-補題 13.12 から，<script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空 (すなわち，反例 <script type="math/tex">\widehat{T}</script> が偽) ならば，<script type="math/tex">T_{j} = \emptyset</script> となる最小の<script type="math/tex">i</script> (<script type="math/tex">1 \leq i \leq n</script>) が存在する．</p>
+補題 13.12 から，<script type="math/tex">\alpha^{-1} (\widehat{T})</script> が空 (すなわち，反例 <script type="math/tex">\widehat{T}</script> が偽) ならば，<script type="math/tex">T_{i} = \emptyset</script> となる極小の<script type="math/tex">i</script> (<script type="math/tex">1 \leq i \leq n</script>) が存在する．</p>
 <p>次の例では，図 13.6 に示すように，抽象モデルでの反例が具体モデル上でどう対応するかを調査する．
 ここで用いている抽象化はデータ抽象化である．</p>
+<p><center>
+<img src="../img/lec15-fig13_6.pdf" width="360">
+<br>
+図13.6: 抽象モデルにおける反例
+</center></p>
 <h4 id="1313">例 13.13</h4>
 <div class="admonition example">
 <p class="admonition-title">例 13.13</p>
@@ -952,7 +967,11 @@ CEGAR フレームワークの主なステップは以下の通りである．</
 <p>モデル検査で返される反例が，その後にループが続く有限のパスで構成されている場合にも，同様の分析が可能である．
 この場合，分析は補題 13.12 を適用するために必要なループの展開回数に上限を提供する．
 図 13.7 で示された <script type="math/tex">\mathit{SplitPATH}</script> アルゴリズムは，展開された反例を用いてそれが偽かどうかを判断するために使用できる．
-詳細は [132] に記載されている．</p>
+詳細は上述の論文 <sup id="fnref3:132"><a class="footnote-ref" href="#fn:132">1</a></sup> に記載されている．</p>
+<div class="admonition note">
+<p class="admonition-title">図13.7: 抽象パスが偽であるかどうか判定する <script type="math/tex">SprlitPATH</script> アルゴリズム</p>
+<p><img src="../img/lec15-fig13_7.pdf" width="400"></p>
+</div>
 <p>行き止まり状態の検出後，次節で説明するように，詳細化のステップに進む．</p>
 <h3 id="1334-refining-abstract-models">13.3.4 抽象モデルの詳細化 (Refining Abstract Models)</h3>
 <p>この節では，偽反例を排除するために，抽象モデルをどのように詳細化するかについて説明する．
@@ -1037,12 +1056,15 @@ P_{\alpha} = \{ \alpha^{-1}(\widehat{s}) \mid \widehat{s} \in \widehat{S} \; and
 <p class="admonition-title">定義 13.15</p>
 <p>
 <script type="math/tex">\alpha_{1} : S \rightarrow \widehat{S_{1}}</script> と <script type="math/tex">\alpha_{2} : S \rightarrow \widehat{S_{2}}</script> を <script type="math/tex">M</script> 上の 2 つの抽象化関数とする．
-以下が成り立つとき，抽象化関数 <script type="math/tex">\alpha_{2}</script> は <script type="math/tex">\alpha_{1}</script>より小さく，<script type="math/tex">\alpha_{1} < \alpha_{2}</script>と表記する．
-- すべての <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> に対して，<script type="math/tex">S_{2} \subseteq S_{1}</script> を満たすような <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．
-- <script type="math/tex">S_{2} \subset S_{1}</script> となるような <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> と <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．</p>
+以下が成り立つとき，抽象化関数 <script type="math/tex">\alpha_{2}</script> は <script type="math/tex">\alpha_{1}</script>より小さく，<script type="math/tex">\alpha_{1} < \alpha_{2}</script>と表記する．</p>
+<ul>
+<li>すべての <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> に対して，<script type="math/tex">S_{2} \subseteq S_{1}</script> を満たすような <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．</li>
+<li>
+<script type="math/tex">S_{2} \subset S_{1}</script> となるような <script type="math/tex">S_{2} \in P_{\alpha_{2}}</script> と <script type="math/tex">S_{1} \in P_{\alpha_{1}}</script> が存在する．</li>
+</ul>
 </div>
 <p>我々の設定では，<script type="math/tex">\alpha_{2}</script> が <script type="math/tex">P_{\alpha_{1}}</script> を分割する詳細化ステップによって得られた場合，順序 <script type="math/tex">\alpha_{2} < \alpha_{1}</script> を使用することになる．</p>
-<p>以下の定理は，CEGAR の終了が保証されるための条件を述べている．</p>
+<p>以下の定理は，CEGAR の終了を保証する条件を述べている．</p>
 <h4 id="1316">定理 13.16</h4>
 <div class="admonition abstract">
 <p class="admonition-title">定理 13.16</p>
@@ -1068,41 +1090,183 @@ P_{\alpha} = \{ \alpha^{-1}(\widehat{s}) \mid \widehat{s} \in \widehat{S} \; and
 この段階で，抽象モデルは具体モデルと同型であり，定理が成立する．(証明終)</p>
 </div>
 <h2 id="_1">書誌情報</h2>
-<p>文献 [138] の Dams と Grumberg による章には，抽象化に関する調査が掲載されている．</p>
-<p>抽象化の構築に関するトピックはこの章では扱っていないが，抽象解釈の理論 [163][162][167][360] におけるコアトピックの一つである．</p>
-<p>最も広く使用されている二つの抽象化は，ハードウェアに主に使用される局所化削減 [330] と [43]，ソフトウェアに適した述語抽象化 [252] である．
-述語抽象化のソフトウェア検証における拡張，改良，応用は広く研究されている[42][40][141][52][142][53][119]．
-また，ハードウェア検証 [293]，並列 [491] および逐次 [383, 368] の Linux デバイスドライバの検証にも適用されている．
-ハードウェア検証における様々な種類の抽象化を対象とした初期段階での分類は [385] で与えられている．</p>
+<p><em>Handbook of Model Checking</em> <sup id="fnref:138"><a class="footnote-ref" href="#fn:138">2</a></sup> の Dams と Grumberg による章には，抽象化に関する調査が掲載されている．</p>
+<p>抽象化の構築に関するトピックはこの章では扱っていないが，<strong>抽象解釈</strong> (abstract interpretation) の理論 <sup id="fnref:163"><a class="footnote-ref" href="#fn:163">3</a></sup><sup id="fnref:162"><a class="footnote-ref" href="#fn:162">4</a></sup><sup id="fnref:167"><a class="footnote-ref" href="#fn:167">5</a></sup><sup id="fnref:360"><a class="footnote-ref" href="#fn:360">6</a></sup> におけるコアトピックの一つである．</p>
+<p>最も広く使用されている二つの抽象化は，ハードウェアに主に使用される <sup id="fnref:43"><a class="footnote-ref" href="#fn:43">7</a></sup> 局所化削減 <sup id="fnref:330"><a class="footnote-ref" href="#fn:330">8</a></sup> と，ソフトウェアに適した述語抽象化 <sup id="fnref:252"><a class="footnote-ref" href="#fn:252">9</a></sup> である．
+述語抽象化のソフトウェア検証における拡張，改良，応用は広く研究されている<sup id="fnref:42"><a class="footnote-ref" href="#fn:42">10</a></sup><sup id="fnref:40"><a class="footnote-ref" href="#fn:40">11</a></sup><sup id="fnref:141"><a class="footnote-ref" href="#fn:141">12</a></sup><sup id="fnref:52"><a class="footnote-ref" href="#fn:52">13</a></sup><sup id="fnref:142"><a class="footnote-ref" href="#fn:142">14</a></sup><sup id="fnref:53"><a class="footnote-ref" href="#fn:53">15</a></sup><sup id="fnref:119"><a class="footnote-ref" href="#fn:119">16</a></sup>．
+また，ハードウェア検証 <sup id="fnref:293"><a class="footnote-ref" href="#fn:293">17</a></sup>，並列 <sup id="fnref:491"><a class="footnote-ref" href="#fn:491">18</a></sup> および逐次 <sup id="fnref:383"><a class="footnote-ref" href="#fn:383">19</a></sup><sup id="fnref:368"><a class="footnote-ref" href="#fn:368">20</a></sup> の Linux デバイスドライバの検証にも適用されている．
+ハードウェア検証における様々な種類の抽象化を対象とした初期段階での分類は <sup id="fnref:385"><a class="footnote-ref" href="#fn:385">21</a></sup> で与えられている．</p>
 <h3 id="bisimulation-and-simulation">双模倣と模倣 (Bisimulation and simulation)</h3>
 <p>モデル上の同値関係とそれに関連する論理保存の多くの概念が定義されている．
 例えば，[268, 175, 176, 460]を参照してほしい．
-模倣関係と <script type="math/tex">\mu</script> 計算 の保存性との関係は [360] で確立されている．</p>
-<p>双模倣に関して商構造を計算するためのアルゴリズムが [350] で示されている．
-それとは別に，双模倣の最小化のための記号的アルゴリズムが [75][76] で提案されている．
-模倣等価とそれと関連する商構造の概念は [98] で導入されている．
-模倣に関する商構造を計算するための効率的なアルゴリズムが [269] で提示されている．</p>
+模倣関係と <script type="math/tex">\mu</script> 計算 の保存性との関係は Loiseaux らにより <sup id="fnref2:360"><a class="footnote-ref" href="#fn:360">6</a></sup> 確立されている．</p>
+<p>双模倣に関して商構造を計算するためのアルゴリズムが <sup id="fnref:350"><a class="footnote-ref" href="#fn:350">22</a></sup> で示されている．
+それとは別に，双模倣の最小化のための記号的アルゴリズムが <sup id="fnref:75"><a class="footnote-ref" href="#fn:75">23</a></sup><sup id="fnref:76"><a class="footnote-ref" href="#fn:76">24</a></sup> で提案されている．
+<strong>模倣等価</strong> (simulation equivalence) とそれと関連する商構造の概念は <sup id="fnref:98"><a class="footnote-ref" href="#fn:98">25</a></sup> で導入されている．
+模倣に関する商構造を計算するための効率的なアルゴリズムが <sup id="fnref:269"><a class="footnote-ref" href="#fn:269">26</a></sup> で提示されている．</p>
 <h3 id="predicate-abstraction">述語抽象化 (Predicate abstraction)</h3>
 <p>必要な述語をどのように計算するかという重要な問題がある．
-これは，例えば，定理証明器 (theorem prover) [437][436]，記号的決定手続き (symbolic decision procedure) [337]，補間 (interpolation) [294]，補間列 (interpolation sequence) [270][482] を用いて行うことができる．</p>
-<p>いくつかの研究では，詳細化によって生じる抽象モデルのサイズの増大を避けようとしている．
-例えば，遅延抽象化 (lazy abstraction) は，必要なときに必要な場所にだけ新しい述語をモデルに追加する[271][270][383][319][483][485]．</p>
+これは，例えば，定理証明器 (theorem prover) <sup id="fnref:437"><a class="footnote-ref" href="#fn:437">27</a></sup><sup id="fnref:436"><a class="footnote-ref" href="#fn:436">28</a></sup>，記号的決定手続き (symbolic decision procedure) <sup id="fnref:337"><a class="footnote-ref" href="#fn:337">29</a></sup>，補間 (interpolation) <sup id="fnref:294"><a class="footnote-ref" href="#fn:294">30</a></sup>，補間列 (interpolation sequence) <sup id="fnref:270"><a class="footnote-ref" href="#fn:270">31</a></sup><sup id="fnref:482"><a class="footnote-ref" href="#fn:482">32</a></sup> を用いて行うことができる．</p>
+<p>いくつかの研究では，詳細化によって生じる抽象モデルのサイズの増大を避けることを目的としている．
+例えば，遅延抽象化 (lazy abstraction) <sup id="fnref:271"><a class="footnote-ref" href="#fn:271">33</a></sup><sup id="fnref2:270"><a class="footnote-ref" href="#fn:270">31</a></sup><sup id="fnref2:383"><a class="footnote-ref" href="#fn:383">19</a></sup><sup id="fnref:319"><a class="footnote-ref" href="#fn:319">34</a></sup><sup id="fnref:483"><a class="footnote-ref" href="#fn:483">36</a></sup><sup id="fnref:485"><a class="footnote-ref" href="#fn:485">37</a></sup> は，必要なときに必要な場所にだけ新しい述語をモデルに追加する．</p>
 <h3 id="cegar">CEGAR</h3>
 <p>
-<script type="math/tex">\alpha</script> の種類と <script type="math/tex">M</script> のサイズに応じて，初期の抽象モデル (すなわち，抽象初期状態と抽象遷移)は，BDD，SAT ソルバ，または定理照明器を用いて構築できる．
-同様に，詳細化で行われる抽象状態の分割は，BDD (例えば [132] や [41] のように)，SAT ソルバ (例えば [107][353][292] のように)，線形計画法や機械学習 (例えば [137] のように) などを用いて行うことができる．</p>
-<p>ここでは，有限パスに関する反例に注目する．
-[139] および [447] では，それぞれ ACTL と CTL の全てに対する反例が扱われている．</p>
-<p>ハードウェアを対象とした，反例によらない反復的な抽象化ベースの検証手法が [384] で紹介されている．</p>
+<script type="math/tex">\alpha</script> の種類と <script type="math/tex">M</script> のサイズに応じて，初期の抽象モデル (すなわち，抽象初期状態と抽象遷移) は，BDD，SAT ソルバ，または定理証明器を用いて構築できる．
+同様に，詳細化で行われる抽象状態の分割は，BDD <sup id="fnref4:132"><a class="footnote-ref" href="#fn:132">1</a></sup><sup id="fnref:41"><a class="footnote-ref" href="#fn:41">38</a></sup>，SAT ソルバ <sup id="fnref:107"><a class="footnote-ref" href="#fn:107">39</a></sup><sup id="fnref:353"><a class="footnote-ref" href="#fn:353">40</a></sup><sup id="fnref:292"><a class="footnote-ref" href="#fn:292">41</a></sup>，線形計画法や機械学習 <sup id="fnref:137"><a class="footnote-ref" href="#fn:137">42</a></sup> などを用いて行うことができる．</p>
+<p><strong>有限パス</strong>に関する反例に注目すると，ACTL <sup id="fnref:139"><a class="footnote-ref" href="#fn:139">43</a></sup> と CTL <sup id="fnref:447"><a class="footnote-ref" href="#fn:447">44</a></sup> については，その論理の全てについての反例が扱われている．</p>
+<p>ハードウェアを対象とした，反例によらない反復的な抽象化ベースの検証手法 <sup id="fnref:384"><a class="footnote-ref" href="#fn:384">45</a></sup> も紹介されている．</p>
 <h3 id="three-valued-model-checking">三値モデル検査 (Three-valued model checking)</h3>
 <p>この章では，抽象化に関する多くの他のアプローチは取り上げられていない．
 それらは通常，より精密な抽象モデルに基づいている．
 このようなモデルは，例えば，抽象状態が具体状態の互いに素でない集合を表現することを可能にする．
 他にも，具体的な遷移関係を上方あるいは下方近似し，それゆえに完全分岐時間論理の真理値を保持する 2 種類の遷移を許容するものもある．
 また，三値意味論で式を解釈し，完全分岐時間論理の真偽を保持することができるものもある．
-これらのアプローチに関する調査は，[138] の Dams と Grumberg による 章に記載がある．</p>
+これらのアプローチに関する調査は，<em>Handbook of Model Checking</em> <sup id="fnref2:138"><a class="footnote-ref" href="#fn:138">2</a></sup> の Dams と Grumberg による章に記載がある．</p>
 <h3 id="_2">ツール</h3>
-<p>CEGAR ループと述語抽象化を実装するツールをいくつか挙げる：SLAM [42]，BLAST [52]，SATABS [142]，KRATOS [118]，Wolverine [319]．</p>
+<p>CEGAR ループと述語抽象化を実装するツールをいくつか挙げておく：SLAM <sup id="fnref2:42"><a class="footnote-ref" href="#fn:42">10</a></sup>，BLAST <sup id="fnref2:52"><a class="footnote-ref" href="#fn:52">13</a></sup>，SATABS <sup id="fnref2:142"><a class="footnote-ref" href="#fn:142">14</a></sup>，KRATOS <sup id="fnref:118"><a class="footnote-ref" href="#fn:118">46</a></sup>，Wolverine <sup id="fnref2:319"><a class="footnote-ref" href="#fn:319">34</a></sup>．</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:132">
+<p>E. M. Clarke, O. Grumberg, S. Jha, Y. Lu, and H. Veith. Counterexample-guided abstraction refinement for symbolic model checking. J. ACM, 50(5):752–794, 2003.&#160;<a class="footnote-backref" href="#fnref:132" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:132" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:132" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:132" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:138">
+<p>E. M. Clarke, T. A. Henzinger, H. Veith, and R. Bloem. Handbook of Model Checking. Springer, 2018.&#160;<a class="footnote-backref" href="#fnref:138" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:138" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:163">
+<p>P. Cousot and R. Cousot. Abstract interpretation:A unified lattice model for static analysis of programs by construction or approximation of fixpoints. In Principles of Programming Languages, POPL, pages 238–252. ACM, 1977.&#160;<a class="footnote-backref" href="#fnref:163" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:162">
+<p>P. Cousot. Abstract interpretation. ACM Comput. Surv., 28:324–328, 1996.&#160;<a class="footnote-backref" href="#fnref:162" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:167">
+<p>D. Dams, R. Gerth, and O. Grumberg. Abstract interpretation of reactive systems. ACM Trans. Progr. Lang. Syst., 19(2):253–291, 1997.&#160;<a class="footnote-backref" href="#fnref:167" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:360">
+<p>C. Loiseaux, S. Graf, J. Sifakis, A. Bouajjani, and S. Bensalem. Property preserving abstractions for the verification of concurrent systems. Formal Methods Syst. Design, 6:11–45, 1995.&#160;<a class="footnote-backref" href="#fnref:360" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:360" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:43">
+<p>S. Barner, D. Geist, and A. Gringauze. Symbolic localization reduction with reconstruction layering and backtracking. In Computer Aided Verification, CAV, volume 2404 of Lecture Notes in Computer Science, pages 65–77. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:43" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:330">
+<p>R. P. Kurshan. Computer-Aided Verification of Coordinating Processes:The Automata-Theoretic Approach. Princeton University Press, 1994.&#160;<a class="footnote-backref" href="#fnref:330" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:252">
+<p>S. Graf and H. Saïdi. Construction of abstract state graphs with PVS. In O. Grumberg, editor, Computer Aided Verification, CAV, volume 1254 of Lecture Notes in Computer Science, pages 72–83. Springer, 1997.&#160;<a class="footnote-backref" href="#fnref:252" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:42">
+<p>T. Ball and S. K. Rajamani. The SLAM toolkit. In Computer Aided Verification, CAV, volume 2102 of Lecture Notes in Computer Science, pages 260–264. Springer, 2001.&#160;<a class="footnote-backref" href="#fnref:42" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:42" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:40">
+<p>T. Ball, A. Podelski, and S. K. Rajamani. Boolean and Cartesian abstraction for model checking C programs. In T. Margaria and W. Yi, editors, Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 2031 of Lecture Notes in Computer Science, pages 268–283. Springer, 2001.&#160;<a class="footnote-backref" href="#fnref:40" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:141">
+<p>E. M. Clarke, D. Kroening, N. Sharygina, and K. Yorav. Predicate abstraction of ANSI-C programs using SAT. Formal Methods Syst. Design, 25(2-3):105–127, 2004.&#160;<a class="footnote-backref" href="#fnref:141" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:52">
+<p>D. Beyer, A. Chlipala, T. A. Henzinger, R. Jhala, and R. Majumdar. The BLAST query language for software verification. In R. Giacobazzi, editor, SAS, volume 3148 of Lecture Notes in Computer Science, pages 2–18. Springer, 2004.&#160;<a class="footnote-backref" href="#fnref:52" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:52" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:142">
+<p>E. M. Clarke, D. Kroening, N. Sharygina, and K. Yorav. SATABS:SAT-based predicate abstraction for ANSI-C. In N. Halbwachs and L. D. Zuck, editors, Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 3440 of Lecture Notes in Computer Science, pages 570–574. Springer, 2005.&#160;<a class="footnote-backref" href="#fnref:142" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:142" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:53">
+<p>D. Beyer, T. A. Henzinger, and G. Théoduloz. Configurable software verification:Concretizing the convergence of model checking and program analysis. In W. Damm and H. Hermanns, editors, Computer Aided Verification, CAV, volume 4590 of Lecture Notes in Computer Science, pages 504–518. Springer, 2007.&#160;<a class="footnote-backref" href="#fnref:53" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:119">
+<p>A. Cimatti, I. Narasamdya, and M. Roveri. Software model checking SystemC. IEEE Trans. CAD Integr. Circuits Syst., 32(5):774–787, 2013.&#160;<a class="footnote-backref" href="#fnref:119" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:293">
+<p>H. Jain, D. Kroening, N. Sharygina, and E. M. Clarke. Word-level predicate-abstraction and refinement techniques for verifying RTL Verilog. IEEE Trans. CAD Integr. Circuits Syst., 27(2):366–379, 2008.&#160;<a class="footnote-backref" href="#fnref:293" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:491">
+<p>T. Witkowski, N. Blanc, D. Kroening, and G. Weissenbacher. Model checking concurrent Linux device drivers. In R. E. K. Stirewalt, A. Egyed, and B. Fischer, editors, Automated Software Engineering, ASE, pages 501–504. ACM, 2007.&#160;<a class="footnote-backref" href="#fnref:491" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:383">
+<p>K. L. McMillan. Lazy abstraction with interpolants. In Ball and Jones [^39], pages 123–136.&#160;<a class="footnote-backref" href="#fnref:383" title="Jump back to footnote 19 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:383" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:368">
+<p>M. Mandrykin, V. Mutilin, E. Novikov, A. V. Khoroshilov, and P. Shved. Using Linux device drivers for static verification tools benchmarking. Prog. Comput. Softw., 38(5):245–256, 2012.&#160;<a class="footnote-backref" href="#fnref:368" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:385">
+<p>T. F. Melham. Abstraction mechanisms for hardware verification. In G. Birtwistle and P. A. Subrahmanyam, editors, VLSI Specification, Verification and Synthesis, volume SECS35, pages 267–291. Kluwer, 1988.&#160;<a class="footnote-backref" href="#fnref:385" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:350">
+<p>D. Lee and M. Yannakakis. Online minimization of transition systems (extended abstract). In S. R. Kosaraju, M. Fellows, A. Wigderson, and J. A. Ellis, editors, Annual ACM Symposium on Theory of Computing, pages 264–274. ACM, 1992.&#160;<a class="footnote-backref" href="#fnref:350" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:75">
+<p>A. Bouajjani, J. Fernandez, and N. Halbwachs. Minimal model generation. In E. M. Clarke and R. P. Kurshan, editors, Computer Aided Verification, CAV, volume 531 of Lecture Notes in Computer Science, pages 197–203. Springer, 1990.&#160;<a class="footnote-backref" href="#fnref:75" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:76">
+<p>A. Bouali and R. de Simone. Symbolic bisimulation minimisation. In G. von Bochmann and D. K. Probst, editors, Computer Aided Verification, CAV, volume 663 of Lecture Notes in Computer Science, pages 96–108. Springer, 1993.&#160;<a class="footnote-backref" href="#fnref:76" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:98">
+<p>D. Bustan and O. Grumberg. Simulation-based minimization. ACM Trans. Comput. Logic, 4(2):181–206, 2003.&#160;<a class="footnote-backref" href="#fnref:98" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:269">
+<p>M. Henzinger, T. A. Henzinger, and P. Kopke. Computing simulations on finite and infinite graphs. In Foundations of Computer Science, FOCS, pages 453–462. IEEE Computer Society Press, 1995.&#160;<a class="footnote-backref" href="#fnref:269" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:437">
+<p>H. Saïdi and N. Shankar. Abstract and model check while you prove. In Computer Aided Verification, CAV, volume 1633 of Lecture Notes in Computer Science, pages 443–454. Springer, 1999.&#160;<a class="footnote-backref" href="#fnref:437" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:436">
+<p>H. Saïdi. Model checking guided abstraction and analysis. In Static Analysis, SAS, volume 1824 of Lecture Notes in Computer Science, pages 377–396. Springer, 2000.&#160;<a class="footnote-backref" href="#fnref:436" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:337">
+<p>S. K. Lahiri, T. Ball, and B. Cook. Predicate abstraction via symbolic decision procedures. Logical Methods Comput. Sci., 3(2), 2007.&#160;<a class="footnote-backref" href="#fnref:337" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:294">
+<p>R. Jhala and K. L. McMillan. Array abstractions from proofs. In Computer Aided Verification, CAV, volume 4590 of Lecture Notes in Computer Science, pages 193–206. Springer, 2007.&#160;<a class="footnote-backref" href="#fnref:294" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:270">
+<p>T. A. Henzinger, R. Jhala, R. Majumdar, and K. L. McMillan. Abstractions from proofs. In N. D. Jones and X. Leroy, editors, Principles of Programming Languages, POPL, pages 232–244. ACM, 2004.&#160;<a class="footnote-backref" href="#fnref:270" title="Jump back to footnote 31 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:270" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:482">
+<p>Y. Vizel and O. Grumberg. Interpolation-sequence based model checking. In Formal Methods in Computer-Aided Design, FMCAD, pages 1–8. IEEE, 2009.&#160;<a class="footnote-backref" href="#fnref:482" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:271">
+<p>T. A. Henzinger, R. Jhala, R. Majumdar, and G. Sutre. Lazy abstraction. In Principles of Programming Languages, POPL, pages 58–70. ACM Press, 2002.&#160;<a class="footnote-backref" href="#fnref:271" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:319">
+<p>D. Kroening and G. Weissenbacher. Interpolation-based software verification with Wolverine. In Gopalakrishnan and Qadeer <sup id="fnref2:251"><a class="footnote-ref" href="#fn:251">35</a></sup>, pages 573–578.&#160;<a class="footnote-backref" href="#fnref:319" title="Jump back to footnote 34 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:319" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:251">
+<p>G. Gopalakrishnan and S. Qadeer, editors. Computer Aided Verification, CAV, volume 6806 of Lecture Notes in Computer Science. Springer, 2011.&#160;<a class="footnote-backref" href="#fnref:251" title="Jump back to footnote 35 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:251" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:483">
+<p>Y. Vizel, O. Grumberg, and S. Shoham. Lazy abstraction and SAT-based reachability in hardware model checking. In Formal Methods in Computer-Aided Design, FMCAD, pages 173–181. IEEE, 2012.&#160;<a class="footnote-backref" href="#fnref:483" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:485">
+<p>B. Wachter, D. Kroening, and J. Ouaknine. Verifying multi-threaded software with Impact. In Formal Methods in Computer-Aided Design, FMCAD, pages 210–217. IEEE, 2013.&#160;<a class="footnote-backref" href="#fnref:485" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:41">
+<p>T. Ball and S. Rajamani. Boolean programs:A model and process for software analysis. Technical Report 2000-14, Microsoft Research, 2000.&#160;<a class="footnote-backref" href="#fnref:41" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:107">
+<p>P. Chauhan, E. Clarke, J. Kukula, S. Sapra, H. Veith, and D.Wang. Automated abstraction refinement for model checking large state spaces using SAT based conflict analysis. In Formal Methods in Computer Aided Design, FMCAD, volume 2517 of Lecture Notes in Computer Science, pages 33–51. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:107" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn:353">
+<p>B. Li, C. Wang, and F. Somenzi. Abstraction refinement in symbolic model checking using satisfiability as the only decision procedure. STTT, 7(2):143–155, 2005.&#160;<a class="footnote-backref" href="#fnref:353" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+<li id="fn:292">
+<p>H. Jain, F. Ivancic, A. Gupta, I. Shlyakhter, and C. Wang. Using statically computed invariants inside the predicate abstraction and refinement loop. In T. Ball and R. B. Jones, editors, Computer Aided Verification, CAV, volume 4144 of Lecture Notes in Computer Science, pages 137–151. Springer, 2006.&#160;<a class="footnote-backref" href="#fnref:292" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn:137">
+<p>E. M. Clarke, A. Gupta, J. Kukula, and O. Strichman. SAT based abstraction-refinement using ILP and machine learning techniques. In Computer-Aided Verification, CAV, volume 2404 of Lecture Notes in Computer Science, pages 265–279. Springer, 2002.&#160;<a class="footnote-backref" href="#fnref:137" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn:139">
+<p>E. M. Clarke, S. Jha, Y. Lu, and H. Veith. Tree-like counterexamples in model checking. In Logic in Computer Science, LICS, pages 19–29. IEEE Computer Society, 2002.&#160;<a class="footnote-backref" href="#fnref:139" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn:447">
+<p>S. Shoham and O. Grumberg. A game-based framework for CTL counterexamples and 3-valued abstraction-refinement. ACM Trans. Computer Logic (TOCL), 9(1), 2007.&#160;<a class="footnote-backref" href="#fnref:447" title="Jump back to footnote 44 in the text">&#8617;</a></p>
+</li>
+<li id="fn:384">
+<p>K. L. McMillan and N. Amla. Automatic abstraction without counterexamples. In H. Garavel and J. Hatcliff, editors, Tools and Algorithms for the Construction and Analysis of Systems, TACAS, volume 2619 of Lecture Notes in Computer Science, pages 2–17. Springer, 2003.&#160;<a class="footnote-backref" href="#fnref:384" title="Jump back to footnote 45 in the text">&#8617;</a></p>
+</li>
+<li id="fn:118">
+<p>A. Cimatti, A. Griggio, A. Micheli, I. Narasamdya, and M. Roveri. Kratos—a software model checker for SystemC. In Gopalakrishnan and Qadeer <sup id="fnref:251"><a class="footnote-ref" href="#fn:251">35</a></sup>, pages 310–316.&#160;<a class="footnote-backref" href="#fnref:118" title="Jump back to footnote 46 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>

@@ -539,11 +539,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#105-property-directed-reachability" class="md-nav__link">
-    10.5 Property-Directed Reachability
+  <a href="#105-pdr" class="md-nav__link">
+    10.5 特性指向到達可能性検査 (PDR)
   </a>
   
-    <nav class="md-nav" aria-label="10.5 Property-Directed Reachability">
+    <nav class="md-nav" aria-label="10.5 特性指向到達可能性検査 (PDR)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -785,11 +785,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#105-property-directed-reachability" class="md-nav__link">
-    10.5 Property-Directed Reachability
+  <a href="#105-pdr" class="md-nav__link">
+    10.5 特性指向到達可能性検査 (PDR)
   </a>
   
-    <nav class="md-nav" aria-label="10.5 Property-Directed Reachability">
+    <nav class="md-nav" aria-label="10.5 特性指向到達可能性検査 (PDR)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -884,7 +884,9 @@
 ここで，モデル <script type="math/tex">M</script> が与えられる．
 状態の集合 <script type="math/tex">Q</script> の <strong>像</strong> (post image) は，<script type="math/tex">Q</script> から 1 回の遷移で到達可能な状態の集合であることを思い出してほしい．
 この集合について，以下のように <script type="math/tex">post\text{-}image(Q)</script> と表記する．
-<script type="math/tex; mode=display">^ post\text{-}image(Q) = \{s' | \exists s \in Q.R(s, s')\} </script>
+<script type="math/tex; mode=display">
+post\text{-}image(Q) = \{s' \mid \exists s \in Q.R(s, s')\}
+</script>
 </p>
 <p>5.3.2節では，像演算子を反復的に適用して，到達可能な状態の集合を計算できることを示している．
 この手法は到達可能性解析と呼ばれる．
@@ -1010,7 +1012,7 @@ l_{\mathcal{R}}(v) = Res(l_{\mathcal{R}}(v_1), l_{\mathcal{R}}(v_2), piv_{\mathc
     とする．</li>
 </ol>
 </div>
-<p>論理式 <script type="math/tex">Itp(v)</script> は，<script type="math/tex">v</script> に対する**部分補間 (partial interpolant) と呼ばれる．
+<p>論理式 <script type="math/tex">Itp(v)</script> は，<script type="math/tex">v</script> に対する<strong>部分補間</strong> (partial interpolant) と呼ばれる．
 補間系によって生成される補間は，底頂点に対する部分補間である．</p>
 <h4 id="109">例 10.9</h4>
 <div class="admonition example">
@@ -1120,7 +1122,7 @@ S_0(s_0) \wedge \bigwedge_{i=0}^{k-1}R(s_i, s_{i+1}) \wedge \bigvee_{i=0}^{k} \n
 いつか <script type="math/tex">k</script> は <script type="math/tex">M</script> の直径に到達する．
 このとき，補間はまさに <script type="math/tex">\neg p</script> の状態に到達しないような到達可能状態の集合となる．
 この集合は像の中で閉じており，この手続きは終了する．</p>
-<h2 id="105-property-directed-reachability">10.5 Property-Directed Reachability</h2>
+<h2 id="105-pdr">10.5 特性指向到達可能性検査 (PDR)</h2>
 <h3 id="1051">10.5.1 概要</h3>
 <p>この章でこれまで述べてきたアプローチは，遷移関係の展開に依存したものであった．
 つまり，ソルバへと渡される式は論理関係の複数のコピーから構成されている．
@@ -1262,7 +1264,7 @@ ACTL* の符号化は <sup id="fnref:412"><a class="footnote-ref" href="#fn:412"
 LTL モデル検査は，特性の大きさに対して PSPACE 完全であること <sup id="fnref:454"><a class="footnote-ref" href="#fn:454">8</a></sup> が知られているため，この論文では，モデルの大きさに対して多項式である LTL 特性の完全性閾値は存在しないことも推測されている．
 この推測は，文献 <sup id="fnref:317"><a class="footnote-ref" href="#fn:317">9</a></sup> において，指数関数的な境界を必要とする LTL 特性の単純な例を用いて示されている．</p>
 <p>BMCは当初，デジタル回路のモデルに適用された．
-Verilog HDL で与えられた回路のための BMC の実装は，EBMC <sup id="fnref:395"><a class="footnote-ref" href="#fn:395">10</a></sup> ツールにある．
+Verilog HDL で与えられた回路のための BMC の実装が，EBMC <sup id="fnref:395"><a class="footnote-ref" href="#fn:395">10</a></sup> ツールである．
 ソフトウェアプログラムを対象とした BMC の類型が <sup id="fnref:165"><a class="footnote-ref" href="#fn:165">11</a></sup><sup id="fnref:140"><a class="footnote-ref" href="#fn:140">12</a></sup> で発表されており，それについては第 14 章で議論されている．</p>
 <p>SAT ソルバを用いた <script type="math/tex">k</script>-帰納法は，Sheeran ら <sup id="fnref:445"><a class="footnote-ref" href="#fn:445">13</a></sup> や，Bjesse と Claessen <sup id="fnref:65"><a class="footnote-ref" href="#fn:65">14</a></sup> によって独自に提案された．
 帰納の深さを削減するための特性強化 <sup id="fnref:81"><a class="footnote-ref" href="#fn:81">15</a></sup>，インクリメンタル SAT 解法による性能向上 <sup id="fnref:195"><a class="footnote-ref" href="#fn:195">16</a></sup>，時相論理特性の検証 <sup id="fnref:31"><a class="footnote-ref" href="#fn:31">17</a></sup> など，いくつかの最適化ならびに手法の拡張が提案されてきた．
@@ -1270,7 +1272,7 @@ Verilog HDL で与えられた回路のための BMC の実装は，EBMC <sup id
 その後，ソフトウェアプログラムへの応用が始まった <sup id="fnref:191"><a class="footnote-ref" href="#fn:191">19</a></sup><sup id="fnref:189"><a class="footnote-ref" href="#fn:189">20</a></sup>．</p>
 <p>2002 年に，McMillan によって all-SAT に基づくモデル検査技術が発表された <sup id="fnref:380"><a class="footnote-ref" href="#fn:380">21</a></sup>．
 2003 年には，McMillan は命題論理 SAT と Craig 補間を用いた非有界の到達可能性検査を導入した <sup id="fnref:381"><a class="footnote-ref" href="#fn:381">22</a></sup>．
-導出証明から Craig補間を計算する方法は，この論文よりも前から存在していた．
+導出証明から Craig 補間を計算する方法は，この論文よりも前から存在していた．
 最初のシステムは，Huang <sup id="fnref:284"><a class="footnote-ref" href="#fn:284">23</a></sup>，Krajicek <sup id="fnref:316"><a class="footnote-ref" href="#fn:316">24</a></sup>，Pudlak <sup id="fnref:424"><a class="footnote-ref" href="#fn:424">25</a></sup> によって提案された．
 McMillan は，より強い補間を生成する別のシステムを提案している <sup id="fnref2:381"><a class="footnote-ref" href="#fn:381">22</a></sup>．
 より強い補間はより正確な近似をもたらすが，収束が遅くなる可能性がある．
