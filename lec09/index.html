@@ -8,8 +8,15 @@
       
       
       
+      
+        <link rel="prev" href="../lec08/">
+      
+      
+        <link rel="next" href="../lec10/">
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -17,17 +24,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#546d78">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -53,10 +60,11 @@
     
       <link rel="stylesheet" href="../css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -67,9 +75,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -89,16 +96,19 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2023)" class="md-header__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -117,10 +127,14 @@
       </div>
     </div>
     
+      
+    
+    
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -128,13 +142,16 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -145,7 +162,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -175,12 +192,13 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="システム検証論 (2023)" class="md-nav__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     システム検証論 (2023)
@@ -190,14 +208,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -205,14 +228,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec01/" class="md-nav__link">
-        第1回 モデル検査とは
+        
+  
+  <span class="md-ellipsis">
+    第1回 モデル検査とは
+  </span>
+  
+
       </a>
     </li>
   
@@ -220,14 +248,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec02/" class="md-nav__link">
-        第2回 クリプキ構造と一階の論理表現
+        
+  
+  <span class="md-ellipsis">
+    第2回 クリプキ構造と一階の論理表現
+  </span>
+  
+
       </a>
     </li>
   
@@ -235,14 +268,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec03/" class="md-nav__link">
-        第3回 ハードウェア・ソフトウェアのモデル化
+        
+  
+  <span class="md-ellipsis">
+    第3回 ハードウェア・ソフトウェアのモデル化
+  </span>
+  
+
       </a>
     </li>
   
@@ -250,14 +288,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec04/" class="md-nav__link">
-        第4回 時相論理 CTL*
+        
+  
+  <span class="md-ellipsis">
+    第4回 時相論理 CTL*
+  </span>
+  
+
       </a>
     </li>
   
@@ -265,14 +308,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec05/" class="md-nav__link">
-        第5回 CTL* ベースのその他の時相論理
+        
+  
+  <span class="md-ellipsis">
+    第5回 CTL* ベースのその他の時相論理
+  </span>
+  
+
       </a>
     </li>
   
@@ -280,14 +328,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec06/" class="md-nav__link">
-        第6回 CTL モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第6回 CTL モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -295,14 +348,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec07/" class="md-nav__link">
-        第7回 不動点計算によるモデル検査アルゴリズム
+        
+  
+  <span class="md-ellipsis">
+    第7回 不動点計算によるモデル検査アルゴリズム
+  </span>
+  
+
       </a>
     </li>
   
@@ -310,14 +368,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec08/" class="md-nav__link">
-        第8回 LTL と CTL* のモデル検査
+        
+  
+  <span class="md-ellipsis">
+    第8回 LTL と CTL* のモデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -325,28 +388,39 @@
     
       
       
-      
-
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          第9回 二分決定グラフ
+          
+  
+  <span class="md-ellipsis">
+    第9回 二分決定グラフ
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        第9回 二分決定グラフ
+        
+  
+  <span class="md-ellipsis">
+    第9回 二分決定グラフ
+  </span>
+  
+
       </a>
       
         
@@ -366,14 +440,18 @@
       
         <li class="md-nav__item">
   <a href="#8" class="md-nav__link">
-    8. 二分決定グラフと記号モデル検査
+    <span class="md-ellipsis">
+      8. 二分決定グラフと記号モデル検査
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#81" class="md-nav__link">
-    8.1 ブール関数の表現
+    <span class="md-ellipsis">
+      8.1 ブール関数の表現
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="8.1 ブール関数の表現">
@@ -381,56 +459,72 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    二分決定木
+    <span class="md-ellipsis">
+      二分決定木
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#bdd" class="md-nav__link">
-    二分決定グラフ (BDD)
+    <span class="md-ellipsis">
+      二分決定グラフ (BDD)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd" class="md-nav__link">
-    順序付き二分決定グラフ (OBDD)
+    <span class="md-ellipsis">
+      順序付き二分決定グラフ (OBDD)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    変数順序とグラフの大きさ
+    <span class="md-ellipsis">
+      変数順序とグラフの大きさ
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_1" class="md-nav__link">
-    OBDD を用いた論理演算の実装
+    <span class="md-ellipsis">
+      OBDD を用いた論理演算の実装
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#apply" class="md-nav__link">
-    Apply アルゴリズム
+    <span class="md-ellipsis">
+      Apply アルゴリズム
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_2" class="md-nav__link">
-    OBDD の拡張
+    <span class="md-ellipsis">
+      OBDD の拡張
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_3" class="md-nav__link">
-    OBDD とオートマトン
+    <span class="md-ellipsis">
+      OBDD とオートマトン
+    </span>
   </a>
   
 </li>
@@ -442,7 +536,9 @@
       
         <li class="md-nav__item">
   <a href="#82-obdd" class="md-nav__link">
-    8.2 OBDD によるクリプキ構造の表現
+    <span class="md-ellipsis">
+      8.2 OBDD によるクリプキ構造の表現
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="8.2 OBDD によるクリプキ構造の表現">
@@ -450,14 +546,18 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    特性関数
+    <span class="md-ellipsis">
+      特性関数
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    クリプキ構造の符号化
+    <span class="md-ellipsis">
+      クリプキ構造の符号化
+    </span>
   </a>
   
 </li>
@@ -469,7 +569,9 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    演習問題
+    <span class="md-ellipsis">
+      演習問題
+    </span>
   </a>
   
 </li>
@@ -484,14 +586,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec10/" class="md-nav__link">
-        第10回 記号モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第10回 記号モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -499,14 +606,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec11/" class="md-nav__link">
-        第11回 命題論理の充足可能性判定
+        
+  
+  <span class="md-ellipsis">
+    第11回 命題論理の充足可能性判定
+  </span>
+  
+
       </a>
     </li>
   
@@ -514,14 +626,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec12/" class="md-nav__link">
-        第12回 SATに基づくモデル検査
+        
+  
+  <span class="md-ellipsis">
+    第12回 SATに基づくモデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -529,14 +646,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec13/" class="md-nav__link">
-        第13回 非有界モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第13回 非有界モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -544,14 +666,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec14/" class="md-nav__link">
-        第14回 抽象化による検査コストの削減
+        
+  
+  <span class="md-ellipsis">
+    第14回 抽象化による検査コストの削減
+  </span>
+  
+
       </a>
     </li>
   
@@ -559,14 +686,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec15/" class="md-nav__link">
-        第15回 反例主導型抽象詳細化 (CEGAR)
+        
+  
+  <span class="md-ellipsis">
+    第15回 反例主導型抽象詳細化 (CEGAR)
+  </span>
+  
+
       </a>
     </li>
   
@@ -600,14 +732,18 @@
       
         <li class="md-nav__item">
   <a href="#8" class="md-nav__link">
-    8. 二分決定グラフと記号モデル検査
+    <span class="md-ellipsis">
+      8. 二分決定グラフと記号モデル検査
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#81" class="md-nav__link">
-    8.1 ブール関数の表現
+    <span class="md-ellipsis">
+      8.1 ブール関数の表現
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="8.1 ブール関数の表現">
@@ -615,56 +751,72 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    二分決定木
+    <span class="md-ellipsis">
+      二分決定木
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#bdd" class="md-nav__link">
-    二分決定グラフ (BDD)
+    <span class="md-ellipsis">
+      二分決定グラフ (BDD)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd" class="md-nav__link">
-    順序付き二分決定グラフ (OBDD)
+    <span class="md-ellipsis">
+      順序付き二分決定グラフ (OBDD)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    変数順序とグラフの大きさ
+    <span class="md-ellipsis">
+      変数順序とグラフの大きさ
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_1" class="md-nav__link">
-    OBDD を用いた論理演算の実装
+    <span class="md-ellipsis">
+      OBDD を用いた論理演算の実装
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#apply" class="md-nav__link">
-    Apply アルゴリズム
+    <span class="md-ellipsis">
+      Apply アルゴリズム
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_2" class="md-nav__link">
-    OBDD の拡張
+    <span class="md-ellipsis">
+      OBDD の拡張
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#obdd_3" class="md-nav__link">
-    OBDD とオートマトン
+    <span class="md-ellipsis">
+      OBDD とオートマトン
+    </span>
   </a>
   
 </li>
@@ -676,7 +828,9 @@
       
         <li class="md-nav__item">
   <a href="#82-obdd" class="md-nav__link">
-    8.2 OBDD によるクリプキ構造の表現
+    <span class="md-ellipsis">
+      8.2 OBDD によるクリプキ構造の表現
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="8.2 OBDD によるクリプキ構造の表現">
@@ -684,14 +838,18 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    特性関数
+    <span class="md-ellipsis">
+      特性関数
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    クリプキ構造の符号化
+    <span class="md-ellipsis">
+      クリプキ構造の符号化
+    </span>
   </a>
   
 </li>
@@ -703,7 +861,9 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    演習問題
+    <span class="md-ellipsis">
+      演習問題
+    </span>
   </a>
   
 </li>
@@ -716,10 +876,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="9-bdd">第9回 二分決定グラフ (BDD)</h1>
@@ -808,7 +969,7 @@ OBDD は積標準形や和標準形のような伝統的な標準形よりも実
 二つめの要件は，グラフで表現される関数を変更しない 以下の 3 つの変換規則を繰り返し適用することで達成される：</p>
 <ol>
 <li><strong>重複する終端頂点の削除:</strong> 与えられたラベルをもつ終端頂点を 1 つを除いてすべて削除し，削除した頂点へのすべての辺を残された頂点に接続し直す．</li>
-<li><strong>重複する非終端頂点の削除:</strong> 2 つの非終端 <script type="math/tex">u</script> と <script type="math/tex">v</script> が <script type="math/tex">var(u) = var(v)</script>, <script type="math/tex">low(u) = low(v)</script>, そして <script type="math/tex">high(u) = high(v)</script> を満たすとき，<script type="math/tex">u</script> あるいは <script type="math/tex">v</script> を削除して，削除した頂点へのすべての入力辺をもう一方の頂点に接続し直す．</li>
+<li><strong>重複する非終端頂点の削除:</strong> 2 つの非終端頂点 <script type="math/tex">u</script> と <script type="math/tex">v</script> が <script type="math/tex">var(u) = var(v)</script>, <script type="math/tex">low(u) = low(v)</script>, そして <script type="math/tex">high(u) = high(v)</script> を満たすとき，<script type="math/tex">u</script> あるいは <script type="math/tex">v</script> を削除して，削除した頂点へのすべての入力辺をもう一方の頂点に接続し直す．</li>
 <li><strong>冗長な分岐の削除:</strong> 非終端頂点 <script type="math/tex">v</script> が <script type="math/tex">low(v) = high(v)</script> を満たすとき，<script type="math/tex">v</script> を削除して，<script type="math/tex">v</script> へのすべての入力辺を <script type="math/tex">low(v)</script> に接続し直す．</li>
 </ol>
 <p>順序に関する性質を満たす二分決定グラフから開始し，グラフのサイズがそれ以上削減できなくなるまで変換規則を適用することで，標準形を得ることができる．
@@ -844,7 +1005,7 @@ Bryant は，<script type="math/tex">Reduce</script> と呼ばれる手続きに
 これらのヒューリスティックは，関連する変数が近い順序にあるとき，OBDD が小さくなる傾向があるという観察から直感的に得られたものである．
 部分回路に現れる変数同士は，部分回路の出力を決定するという点で関連がある．
 したがって，通常これらの変数は，順序内でまとめてグループ化する必要がある．
-これは、回路図を深さ優先で探索したときに遭遇する順序で変数を配置することで達成されるかもしれない．
+これは，回路図を深さ優先で探索したときに遭遇する順序で変数を配置することで達成されるかもしれない．
 変数の順序づけのためのもう一つのアプローチは，FORCE ツール<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">9</a></sup> に実装されたもので，良い順序を見つけるためにブール式の構造を分析するというものである．</p>
 <p><strong>動的並べ替え</strong> (dynamic reordering) <sup id="fnref:434"><a class="footnote-ref" href="#fn:434">10</a></sup> と呼ばれる技術は，明らかな順序付けのヒューリスティックが適用できない場合に有効である．
 この技術が利用されるとき，OBDD パッケージは内部的に使用される頂点の総数を減少させるよう変数の並べ替えを定期的に行う．
@@ -878,7 +1039,7 @@ f = (\neg x \wedge f|_{x \leftarrow 0}) \vee (x \wedge f|_{x \leftarrow 1})
 アルゴリズムの説明を簡単にするため，以下の表記法を導入する：</p>
 <ul>
 <li>
-<script type="math/tex">v</script> と <script type="math/tex">v</script> を <script type="math/tex">f</script> と <script type="math/tex">f'</script> を表す OBDD の根とする．</li>
+<script type="math/tex">v</script> と <script type="math/tex">v'</script> を <script type="math/tex">f</script> と <script type="math/tex">f'</script> を表す OBDD の根とする．</li>
 <li>
 <script type="math/tex">x = var(v)</script> とし，<script type="math/tex">x' = var(v')</script> とする．</li>
 </ul>
@@ -1067,49 +1228,28 @@ f_\mathcal{Q}(x_1,\ldots,x_n) = 1 \text{ iff } \mathcal{Q}(x_1,\ldots,x_n)
 </ol>
 </div>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../lec08/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第8回 LTL と CTL* のモデル検査" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              第8回 LTL と CTL* のモデル検査
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../lec10/" class="md-footer__link md-footer__link--next" aria-label="Next: 第10回 記号モデル検査" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              第10回 記号モデル検査
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1131,10 +1271,12 @@ f_\mathcal{Q}(x_1,\ldots,x_n) = 1 \text{ iff } \mathcal{Q}(x_1,\ldots,x_n)
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
         <script src="../js/extra.js"></script>
       

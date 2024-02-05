@@ -8,8 +8,15 @@
       
       
       
+      
+        <link rel="prev" href="../lec11/">
+      
+      
+        <link rel="next" href="../lec13/">
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -17,17 +24,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#546d78">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
+      
+
+
     
+    
+      
     
     
       
@@ -53,10 +60,11 @@
     
       <link rel="stylesheet" href="../css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -67,9 +75,8 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -89,16 +96,19 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="システム検証論 (2023)" class="md-header__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -117,10 +127,14 @@
       </div>
     </div>
     
+      
+    
+    
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -128,13 +142,16 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -145,7 +162,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -175,12 +192,13 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="システム検証論 (2023)" class="md-nav__button md-logo" aria-label="システム検証論 (2023)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     システム検証論 (2023)
@@ -190,14 +208,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -205,14 +228,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec01/" class="md-nav__link">
-        第1回 モデル検査とは
+        
+  
+  <span class="md-ellipsis">
+    第1回 モデル検査とは
+  </span>
+  
+
       </a>
     </li>
   
@@ -220,14 +248,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec02/" class="md-nav__link">
-        第2回 クリプキ構造と一階の論理表現
+        
+  
+  <span class="md-ellipsis">
+    第2回 クリプキ構造と一階の論理表現
+  </span>
+  
+
       </a>
     </li>
   
@@ -235,14 +268,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec03/" class="md-nav__link">
-        第3回 ハードウェア・ソフトウェアのモデル化
+        
+  
+  <span class="md-ellipsis">
+    第3回 ハードウェア・ソフトウェアのモデル化
+  </span>
+  
+
       </a>
     </li>
   
@@ -250,14 +288,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec04/" class="md-nav__link">
-        第4回 時相論理 CTL*
+        
+  
+  <span class="md-ellipsis">
+    第4回 時相論理 CTL*
+  </span>
+  
+
       </a>
     </li>
   
@@ -265,14 +308,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec05/" class="md-nav__link">
-        第5回 CTL* ベースのその他の時相論理
+        
+  
+  <span class="md-ellipsis">
+    第5回 CTL* ベースのその他の時相論理
+  </span>
+  
+
       </a>
     </li>
   
@@ -280,14 +328,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec06/" class="md-nav__link">
-        第6回 CTL モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第6回 CTL モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -295,14 +348,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec07/" class="md-nav__link">
-        第7回 不動点計算によるモデル検査アルゴリズム
+        
+  
+  <span class="md-ellipsis">
+    第7回 不動点計算によるモデル検査アルゴリズム
+  </span>
+  
+
       </a>
     </li>
   
@@ -310,14 +368,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec08/" class="md-nav__link">
-        第8回 LTL と CTL* のモデル検査
+        
+  
+  <span class="md-ellipsis">
+    第8回 LTL と CTL* のモデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -325,14 +388,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec09/" class="md-nav__link">
-        第9回 二分決定グラフ
+        
+  
+  <span class="md-ellipsis">
+    第9回 二分決定グラフ
+  </span>
+  
+
       </a>
     </li>
   
@@ -340,14 +408,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec10/" class="md-nav__link">
-        第10回 記号モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第10回 記号モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -355,14 +428,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec11/" class="md-nav__link">
-        第11回 命題論理の充足可能性判定
+        
+  
+  <span class="md-ellipsis">
+    第11回 命題論理の充足可能性判定
+  </span>
+  
+
       </a>
     </li>
   
@@ -370,28 +448,39 @@
     
       
       
-      
-
   
   
     
   
   
+  
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          第12回 SATに基づくモデル検査
+          
+  
+  <span class="md-ellipsis">
+    第12回 SATに基づくモデル検査
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        第12回 SATに基づくモデル検査
+        
+  
+  <span class="md-ellipsis">
+    第12回 SATに基づくモデル検査
+  </span>
+  
+
       </a>
       
         
@@ -411,7 +500,9 @@
       
         <li class="md-nav__item">
   <a href="#101" class="md-nav__link">
-    10.1 有界モデル検査
+    <span class="md-ellipsis">
+      10.1 有界モデル検査
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1 有界モデル検査">
@@ -419,14 +510,18 @@
         
           <li class="md-nav__item">
   <a href="#1011" class="md-nav__link">
-    10.1.1 有界モデル検査の概要
+    <span class="md-ellipsis">
+      10.1.1 有界モデル検査の概要
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1012-reachability-property" class="md-nav__link">
-    10.1.2 到達可能性 (Reachability Property)
+    <span class="md-ellipsis">
+      10.1.2 到達可能性 (Reachability Property)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1.2 到達可能性 (Reachability Property)">
@@ -434,14 +529,18 @@
         
           <li class="md-nav__item">
   <a href="#101_1" class="md-nav__link">
-    定理 10.1
+    <span class="md-ellipsis">
+      定理 10.1
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#102" class="md-nav__link">
-    例 10.2
+    <span class="md-ellipsis">
+      例 10.2
+    </span>
   </a>
   
 </li>
@@ -453,21 +552,27 @@
         
           <li class="md-nav__item">
   <a href="#1013-eventually-property" class="md-nav__link">
-    10.1.3 活性 (Eventually Property)
+    <span class="md-ellipsis">
+      10.1.3 活性 (Eventually Property)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1014-ltl" class="md-nav__link">
-    10.1.4 LTL に対する有界モデル検査
+    <span class="md-ellipsis">
+      10.1.4 LTL に対する有界モデル検査
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1015-completeness-thresholds" class="md-nav__link">
-    10.1.5 完全性閾値 (Completeness Thresholds)
+    <span class="md-ellipsis">
+      10.1.5 完全性閾値 (Completeness Thresholds)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1.5 完全性閾値 (Completeness Thresholds)">
@@ -475,14 +580,18 @@
         
           <li class="md-nav__item">
   <a href="#103" class="md-nav__link">
-    補題 10.3
+    <span class="md-ellipsis">
+      補題 10.3
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#104" class="md-nav__link">
-    補題 10.4
+    <span class="md-ellipsis">
+      補題 10.4
+    </span>
   </a>
   
 </li>
@@ -499,7 +608,9 @@
       
         <li class="md-nav__item">
   <a href="#102-k-" class="md-nav__link">
-    10.2 k-帰納法による到達可能性検査
+    <span class="md-ellipsis">
+      10.2 k-帰納法による到達可能性検査
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.2 k-帰納法による到達可能性検査">
@@ -507,21 +618,27 @@
         
           <li class="md-nav__item">
   <a href="#1021-sat" class="md-nav__link">
-    10.2.1 SAT を用いた帰納法
+    <span class="md-ellipsis">
+      10.2.1 SAT を用いた帰納法
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1022-k-" class="md-nav__link">
-    10.2.2 k-帰納法への一般化
+    <span class="md-ellipsis">
+      10.2.2 k-帰納法への一般化
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1023" class="md-nav__link">
-    10.2.3 完全性についての議論
+    <span class="md-ellipsis">
+      10.2.3 完全性についての議論
+    </span>
   </a>
   
 </li>
@@ -533,7 +650,9 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    演習問題
+    <span class="md-ellipsis">
+      演習問題
+    </span>
   </a>
   
 </li>
@@ -548,14 +667,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec13/" class="md-nav__link">
-        第13回 非有界モデル検査
+        
+  
+  <span class="md-ellipsis">
+    第13回 非有界モデル検査
+  </span>
+  
+
       </a>
     </li>
   
@@ -563,14 +687,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec14/" class="md-nav__link">
-        第14回 抽象化による検査コストの削減
+        
+  
+  <span class="md-ellipsis">
+    第14回 抽象化による検査コストの削減
+  </span>
+  
+
       </a>
     </li>
   
@@ -578,14 +707,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../lec15/" class="md-nav__link">
-        第15回 反例主導型抽象詳細化 (CEGAR)
+        
+  
+  <span class="md-ellipsis">
+    第15回 反例主導型抽象詳細化 (CEGAR)
+  </span>
+  
+
       </a>
     </li>
   
@@ -619,7 +753,9 @@
       
         <li class="md-nav__item">
   <a href="#101" class="md-nav__link">
-    10.1 有界モデル検査
+    <span class="md-ellipsis">
+      10.1 有界モデル検査
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1 有界モデル検査">
@@ -627,14 +763,18 @@
         
           <li class="md-nav__item">
   <a href="#1011" class="md-nav__link">
-    10.1.1 有界モデル検査の概要
+    <span class="md-ellipsis">
+      10.1.1 有界モデル検査の概要
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1012-reachability-property" class="md-nav__link">
-    10.1.2 到達可能性 (Reachability Property)
+    <span class="md-ellipsis">
+      10.1.2 到達可能性 (Reachability Property)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1.2 到達可能性 (Reachability Property)">
@@ -642,14 +782,18 @@
         
           <li class="md-nav__item">
   <a href="#101_1" class="md-nav__link">
-    定理 10.1
+    <span class="md-ellipsis">
+      定理 10.1
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#102" class="md-nav__link">
-    例 10.2
+    <span class="md-ellipsis">
+      例 10.2
+    </span>
   </a>
   
 </li>
@@ -661,21 +805,27 @@
         
           <li class="md-nav__item">
   <a href="#1013-eventually-property" class="md-nav__link">
-    10.1.3 活性 (Eventually Property)
+    <span class="md-ellipsis">
+      10.1.3 活性 (Eventually Property)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1014-ltl" class="md-nav__link">
-    10.1.4 LTL に対する有界モデル検査
+    <span class="md-ellipsis">
+      10.1.4 LTL に対する有界モデル検査
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1015-completeness-thresholds" class="md-nav__link">
-    10.1.5 完全性閾値 (Completeness Thresholds)
+    <span class="md-ellipsis">
+      10.1.5 完全性閾値 (Completeness Thresholds)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.1.5 完全性閾値 (Completeness Thresholds)">
@@ -683,14 +833,18 @@
         
           <li class="md-nav__item">
   <a href="#103" class="md-nav__link">
-    補題 10.3
+    <span class="md-ellipsis">
+      補題 10.3
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#104" class="md-nav__link">
-    補題 10.4
+    <span class="md-ellipsis">
+      補題 10.4
+    </span>
   </a>
   
 </li>
@@ -707,7 +861,9 @@
       
         <li class="md-nav__item">
   <a href="#102-k-" class="md-nav__link">
-    10.2 k-帰納法による到達可能性検査
+    <span class="md-ellipsis">
+      10.2 k-帰納法による到達可能性検査
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="10.2 k-帰納法による到達可能性検査">
@@ -715,21 +871,27 @@
         
           <li class="md-nav__item">
   <a href="#1021-sat" class="md-nav__link">
-    10.2.1 SAT を用いた帰納法
+    <span class="md-ellipsis">
+      10.2.1 SAT を用いた帰納法
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1022-k-" class="md-nav__link">
-    10.2.2 k-帰納法への一般化
+    <span class="md-ellipsis">
+      10.2.2 k-帰納法への一般化
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#1023" class="md-nav__link">
-    10.2.3 完全性についての議論
+    <span class="md-ellipsis">
+      10.2.3 完全性についての議論
+    </span>
   </a>
   
 </li>
@@ -741,7 +903,9 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    演習問題
+    <span class="md-ellipsis">
+      演習問題
+    </span>
   </a>
   
 </li>
@@ -754,10 +918,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
 <h1 id="12-sat">第12回 SAT に基づくモデル検査</h1>
@@ -1216,49 +1381,28 @@ recurrence diameter が，<script type="math/tex">\mathbf{AF}p</script> とい�
 </ol>
 </div>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../lec11/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第11回 命題論理の充足可能性判定" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              第11回 命題論理の充足可能性判定
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../lec13/" class="md-footer__link md-footer__link--next" aria-label="Next: 第13回 非有界モデル検査" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              第13回 非有界モデル検査
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1280,10 +1424,12 @@ recurrence diameter が，<script type="math/tex">\mathbf{AF}p</script> とい�
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
         <script src="../js/extra.js"></script>
       
