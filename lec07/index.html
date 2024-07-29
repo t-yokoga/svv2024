@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -157,7 +157,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -1159,7 +1159,7 @@
 </p>
 <p>結果として，<script type="math/tex">\textbf{while}</script> ループが終了するまでの最大反復回数は，集合 <script type="math/tex">S</script> の要素数によって制限される．
 ループが終了すると，<script type="math/tex">Q=\tau(Q)</script> となり，また <script type="math/tex">Q\subseteq\mu{Z}.\tau(Z)</script> となる．
-<script type="math/tex">Q</script> は不動点でもあるため，<script type="math/tex">\mu{Z}.\tau(Z)\subseteq{Q}</script> となり，したがって <script type="math/tex">Q＝\mu{Z}.\tau(Z)</script> となる．
+<script type="math/tex">Q</script> は不動点でもあるため，<script type="math/tex">\mu{Z}.\tau(Z)\subseteq{Q}</script> となり，したがって <script type="math/tex">Q=\mu{Z}.\tau(Z)</script> となる．
 したがって，この手続きによって返される値は要求された最小不動点である．
 <script type="math/tex">\tau</script> の最大不動点も同様に，以下のアルゴリズムによって計算できる．
 手続きが終了することとそれが返す値が <script type="math/tex">\mu{Z}.\tau(Z)</script> であることは，本質的に同じ議論を用いて示すことができる．</p>
@@ -1298,81 +1298,79 @@ CTL モデル検査は <script type="math/tex">[\![\textbf{AG}p]\!]</script> を
 <h4 id="511">補題 5.11</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 5.11</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\tau(Z)=f_{1} \wedge \textbf{EX}Z$ は単調である．
-</code></pre></div>
+<p>
+<script type="math/tex">\tau(Z)=f_{1} \wedge \textbf{EX}Z</script> は単調である．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$P_{1} \subseteq P_{2}$ とする．
-$\tau(P_{1}) \subseteq \tau(P_{2})$ を示すために，ある状態 $s \in \tau(P_{1})$ について考える．
-このとき，$s \models f_{1} $ であり，$(s,s&#39;) \in R$ かつ $s&#39; \in P_{1}$ を満たす $s&#39;$ が存在する．
-$P_{1} \subseteq P_{2}$ なので，同様に $s&#39; \in P_{2}$ である．
-したがって，$s \in \tau(P_{2})$ である．
-(証明終)
-</code></pre></div>
+<p>
+<script type="math/tex">P_{1} \subseteq P_{2}</script> とする．
+<script type="math/tex">\tau(P_{1}) \subseteq \tau(P_{2})</script> を示すために，ある状態 <script type="math/tex">s \in \tau(P_{1})</script> について考える．
+このとき，<script type="math/tex">s \models f_{1} </script> であり，<script type="math/tex">(s,s') \in R</script> かつ <script type="math/tex">s' \in P_{1}</script> を満たす <script type="math/tex">s'</script> が存在する．
+<script type="math/tex">P_{1} \subseteq P_{2}</script> なので，同様に <script type="math/tex">s' \in P_{2}</script> である．
+したがって，<script type="math/tex">s \in \tau(P_{2})</script> である．
+(証明終)</p>
 </div>
 <h4 id="512">補題 5.12</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 5.12</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\tau(Z)=f_{1} \wedge \textbf{EX}Z$ とし，$\tau^{i_{0}}(true)$ を列 $true \supseteq \tau(true) \supseteq \ldots$ の下限とする．
-このときすべての $s \in S$ について，$s \in \tau^{i_{0}}(true)$ ならば，$s \models f_{1}$ であり，$(s,s&#39;) \in R$ かつ $s&#39; \in \tau^{i_{0}}(true)$ を満たす $s&#39;$ が存在する．
-</code></pre></div>
+<p>
+<script type="math/tex">\tau(Z)=f_{1} \wedge \textbf{EX}Z</script> とし，<script type="math/tex">\tau^{i_{0}}(true)</script> を列 <script type="math/tex">true \supseteq \tau(true) \supseteq \ldots</script> の下限とする．
+このときすべての <script type="math/tex">s \in S</script> について，<script type="math/tex">s \in \tau^{i_{0}}(true)</script> ならば，<script type="math/tex">s \models f_{1}</script> であり，<script type="math/tex">(s,s') \in R</script> かつ <script type="math/tex">s' \in \tau^{i_{0}}(true)</script> を満たす <script type="math/tex">s'</script> が存在する．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$s \in \tau^{i_0} (true)$ とする．
-このとき，$\tau^{i_0} (true)$ は $\tau$ の不動点であるため，$\tau^{i_0} (true) = \tau(\tau^{i_0} (true))$ である．
-したがって，$s \in \tau(\tau^{i_0} (true))$ である．
-$\tau$ の定義より，$s \models f_1$ であり，$(s, s&#39;) \in R$ かつ $s&#39; \in \tau{i_0} (true)$ であるような状態 $s&#39;$ が存在する．
-(証明終)
-</code></pre></div>
+<p>
+<script type="math/tex">s \in \tau^{i_0} (true)</script> とする．
+このとき，<script type="math/tex">\tau^{i_0} (true)</script> は <script type="math/tex">\tau</script> の不動点であるため，<script type="math/tex">\tau^{i_0} (true) = \tau(\tau^{i_0} (true))</script> である．
+したがって，<script type="math/tex">s \in \tau(\tau^{i_0} (true))</script> である．
+<script type="math/tex">\tau</script> の定義より，<script type="math/tex">s \models f_1</script> であり，<script type="math/tex">(s, s') \in R</script> かつ <script type="math/tex">s' \in \tau{i_0} (true)</script> であるような状態 <script type="math/tex">s'</script> が存在する．
+(証明終)</p>
 </div>
 <h4 id="513">補題 5.13</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 5.13</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\mathbf{EG}f_1$ は関数 $\tau(Z) = f_1 \wedge \mathbf{EX}Z$ の不動点である．
-</code></pre></div>
+<p>
+<script type="math/tex">\mathbf{EG}f_1</script> は関数 <script type="math/tex">\tau(Z) = f_1 \wedge \mathbf{EX}Z</script> の不動点である．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$s_0 \models \mathbf{EG}f_1$ とする．
-このとき，$\models$ の定義により，すべての $k$ に対して，$s_k \models f_1$ であるようなパス $s_0, s_1, \cdots $ が $M$ に存在する．
-これは $s_0 \models f_1$ かつ$s_1 \models \mathbf{EG} f_1$ であることを意味する．
-言い換えると，$s_0 \models f_1 $ かつ $s_0 \models  \mathbf{EXEG} f_1$ である．
-したがって，$\mathbf{EG} f_1 \subseteq f_1 \wedge \mathbf{EXEG} f_1$ である．
-同様に，$s_0 \models f_1 \wedge \mathbf{EXEG} f_1$ ならば$s_0 \models \mathbf{EG} f_1$ である．
-結果，$\mathbf{EG} f_1 = f_1 \wedge \mathbf{EXEG} f_1$ である．
-(証明終)
-</code></pre></div>
+<p>
+<script type="math/tex">s_0 \models \mathbf{EG}f_1</script> とする．
+このとき，<script type="math/tex">\models</script> の定義により，すべての <script type="math/tex">k</script> に対して，<script type="math/tex">s_k \models f_1</script> であるようなパス <script type="math/tex">s_0, s_1, \cdots </script> が <script type="math/tex">M</script> に存在する．
+これは <script type="math/tex">s_0 \models f_1</script> かつ<script type="math/tex">s_1 \models \mathbf{EG} f_1</script> であることを意味する．
+言い換えると，<script type="math/tex">s_0 \models f_1 </script> かつ <script type="math/tex">s_0 \models  \mathbf{EXEG} f_1</script> である．
+したがって，<script type="math/tex">\mathbf{EG} f_1 \subseteq f_1 \wedge \mathbf{EXEG} f_1</script> である．
+同様に，<script type="math/tex">s_0 \models f_1 \wedge \mathbf{EXEG} f_1</script> ならば<script type="math/tex">s_0 \models \mathbf{EG} f_1</script> である．
+結果，<script type="math/tex">\mathbf{EG} f_1 = f_1 \wedge \mathbf{EXEG} f_1</script> である．
+(証明終)</p>
 </div>
 <h4 id="514">補題 5.14</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 5.14</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\mathbf{EG}f_1$ は関数 $\tau(Z) = f_1 \wedge \mathbf{EX}Z$ の最大不動点である．
-</code></pre></div>
+<p>
+<script type="math/tex">\mathbf{EG}f_1</script> は関数 <script type="math/tex">\tau(Z) = f_1 \wedge \mathbf{EX}Z</script> の最大不動点である．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\tau$ は単調なので，補題 5.6 より $\cap$ 連続でもある．
-したがって，$\mathbf{EG} f_1$ は $\tau$ の最大不動点であることを示すためには，$\mathbf{EG} f_1 = \cap_i \tau^i (true)$ を証明することで十分である．
-
-初めに，$\mathbf{EG} f_1 \subseteq \cap_i \tau^i (true)$ を示す．
-すべての $i$ に対して $\mathbf{EG} f_1 \subseteq \tau^i (true)$ であることを示すために $i$ に関する帰納法を適用することで，この主張を立証する．
-明らかに，$\mathbf{EG} f_1 \subseteq true$ である．
-$\mathbf{EG} f_1 \subseteq \tau^n (true)$ とする．
-$\tau$ は単調なので，$\tau(\mathbf{EG} f_1) \subseteq \tau^{n+1} (true)$ である．
-補題 5.13 より，$\tau(\mathbf{EG} f_1) = \mathbf{EG} f_1$ である．
-したがって，$\mathbf{EG} f_1 \subseteq \tau^{n+1} (true)$ である．
-
-そして，$\cap_i \tau^i (true)$ が $\mathbf{EG} f_1$ の部分集合であることを示す．
-ある状態 $s \in \cap_i \tau^i (true)$ を考える．
-この状態は各 $\tau^i (true)$ に含まれる．
-したがって，この状態 $s$ もまた不動点 $\tau^{i_0} (true)$ に含まれる．
-補題 5.12 より，$s$ は状態の無限列の始点であり，その列における各状態は関係 $R$ によって直前の状態と関連付けられる．
-さらに，この列の各状態は $f_1$ を満たす．
-したがって，$s \models \mathbf{EG} f_1$ である．
-(証明終)
-</code></pre></div>
+<p>
+<script type="math/tex">\tau</script> は単調なので，補題 5.6 より <script type="math/tex">\cap</script> 連続でもある．
+したがって，<script type="math/tex">\mathbf{EG} f_1</script> は <script type="math/tex">\tau</script> の最大不動点であることを示すためには，<script type="math/tex">\mathbf{EG} f_1 = \cap_i \tau^i (true)</script> を証明することで十分である．</p>
+<p>初めに，<script type="math/tex">\mathbf{EG} f_1 \subseteq \cap_i \tau^i (true)</script> を示す．
+すべての <script type="math/tex">i</script> に対して <script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^i (true)</script> であることを示すために <script type="math/tex">i</script> に関する帰納法を適用することで，この主張を立証する．
+明らかに，<script type="math/tex">\mathbf{EG} f_1 \subseteq true</script> である．
+<script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^n (true)</script> とする．
+<script type="math/tex">\tau</script> は単調なので，<script type="math/tex">\tau(\mathbf{EG} f_1) \subseteq \tau^{n+1} (true)</script> である．
+補題 5.13 より，<script type="math/tex">\tau(\mathbf{EG} f_1) = \mathbf{EG} f_1</script> である．
+したがって，<script type="math/tex">\mathbf{EG} f_1 \subseteq \tau^{n+1} (true)</script> である．</p>
+<p>そして，<script type="math/tex">\cap_i \tau^i (true)</script> が <script type="math/tex">\mathbf{EG} f_1</script> の部分集合であることを示す．
+ある状態 <script type="math/tex">s \in \cap_i \tau^i (true)</script> を考える．
+この状態は各 <script type="math/tex">\tau^i (true)</script> に含まれる．
+したがって，この状態 <script type="math/tex">s</script> もまた不動点 <script type="math/tex">\tau^{i_0} (true)</script> に含まれる．
+補題 5.12 より，<script type="math/tex">s</script> は状態の無限列の始点であり，その列における各状態は関係 <script type="math/tex">R</script> によって直前の状態と関連付けられる．
+さらに，この列の各状態は <script type="math/tex">f_1</script> を満たす．
+したがって，<script type="math/tex">s \models \mathbf{EG} f_1</script> である．
+(証明終)</p>
 </div>
 <h3 id="534">5.3.4 不動点による公平性の特徴付け</h3>
 <p>公平性制約とそれらの意義は 4 章 (<a href="../lec04/">第4回</a> 〜 <a href="../lec05/">第5回</a>) で議論した．
@@ -1412,35 +1410,35 @@ Z = f \wedge \bigwedge^{n}_{k=1} \mathbf{EXE} (f \mathbf{U} (Z \wedge P_k)) \tag
 <h4 id="515">補題 5.15</h4>
 <div class="admonition abstract">
 <p class="admonition-title">補題 5.15</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$\mathbf{E_f} \mathbf{G}f$ は式 5.2 の不動点である．
-</code></pre></div>
+<p>
+<script type="math/tex">\mathbf{E_f} \mathbf{G}f</script> は式 5.2 の不動点である．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$s \in \mathbf{E_f G} f$ とする．
-$s$ は公平なパスの始まりであり，そのパス上のすべての状態では $f$ を満たす．
-$s_i$ を，このパスで $s_i \in P_i$ かつ $s_i \neq s$ となるような最初の状態とする．
-状態 $s_i$ もまた，すべての状態が $f$ を満たしている公平なパスの始まりの状態である．
-したがって，$s_i \in \mathbf{E_f G} f$ である．
-すべての $i$ に対して，
-$$
+<p>
+<script type="math/tex">s \in \mathbf{E_f G} f</script> とする．
+<script type="math/tex">s</script> は公平なパスの始まりであり，そのパス上のすべての状態では <script type="math/tex">f</script> を満たす．
+<script type="math/tex">s_i</script> を，このパスで <script type="math/tex">s_i \in P_i</script> かつ <script type="math/tex">s_i \neq s</script> となるような最初の状態とする．
+状態 <script type="math/tex">s_i</script> もまた，すべての状態が <script type="math/tex">f</script> を満たしている公平なパスの始まりの状態である．
+したがって，<script type="math/tex">s_i \in \mathbf{E_f G} f</script> である．
+すべての <script type="math/tex">i</script> に対して，
+<script type="math/tex; mode=display">
     s \models f \wedge \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_i))
-$$
+</script>
 であり，したがって，
-$$
+<script type="math/tex; mode=display">
     s \models f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))
-$$
+</script>
 ということになる．
-よって，$\mathbf{E_f G} f \subseteq f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))$ が結論付けられる．
+よって，<script type="math/tex">\mathbf{E_f G} f \subseteq f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))</script> が結論付けられる．
 そして，式
-$$
+<script type="math/tex; mode=display">
     f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k)) \subseteq \mathbf{E_f G} f
-$$
-を示すため，もし $s \models f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))$ ならば，$s$ から始まり，$s&#39; \models (\mathbf{E_f G} f \wedge P_k)$ であるような $s&#39;$ への有限のパスが存在するという点に留意する．
-さらに，$s$ から $s&#39;$ へのパス上のすべての状態で $f$ を満たす．
-したがって，要求通り，$s \models \mathbf{E_f G} f$ である．
-これにより，$\mathbf{E_f G} f$ は不動点である．
-</code></pre></div>
+</script>
+を示すため，もし <script type="math/tex">s \models f \wedge \bigwedge^n_{k=1} \mathbf{EXE} (f \mathbf{U} (\mathbf{E_f G} f \wedge P_k))</script> ならば，<script type="math/tex">s</script> から始まり，<script type="math/tex">s' \models (\mathbf{E_f G} f \wedge P_k)</script> であるような <script type="math/tex">s'</script> への有限のパスが存在するという点に留意する．
+さらに，<script type="math/tex">s</script> から <script type="math/tex">s'</script> へのパス上のすべての状態で <script type="math/tex">f</script> を満たす．
+したがって，要求通り，<script type="math/tex">s \models \mathbf{E_f G} f</script> である．
+これにより，<script type="math/tex">\mathbf{E_f G} f</script> は不動点である．</p>
 </div>
 <h4 id="516">補題 5.16</h4>
 <div class="admonition abstract">
@@ -1449,20 +1447,19 @@ $$
 </div>
 <div class="admonition note">
 <p class="admonition-title">証明</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>$Z$ を式 5.2 の任意の不動点とする．
-ここでは $Z$ が $\mathbf{E_f G} f$ に含まれることを示す．
-$s \in Z$ と仮定する．
-このとき，$s$ は $f$ を満たす．
-さらに $s$ は，すべての状態で $f$ を満たし，かつ $Z \wedge P_1$ を満たす状態 $s_1$ へ到達するようなパスの起点となる後続状態 $s&#39;$ をもつ．
-$s_1 \in Z$ であるため，同様の議論によって，$s_1$ から $P_2$ の状態 $s_2$ へのパスが存在するという結論を得ることができる．
-この議論を $n$ 回繰り返すことで，$s$ は，すべての状態で $f$ を満たし，かつ $P_1, \cdots P_n$ を通るパスの起点であると結論付けられる．
-さらに，このパスの最後の状態は $Z$ に含まれる．
-したがって，この状態から $P_1$ のある状態へ戻るパスが存在し，こうしたパスの構成を繰り返すことができる．
-
-帰納法を用いることで，$s$ を起点として，すべての状態で $f$ が満たされ，かつ各公平性制約が無限にしばしば満たされるパスの存在を形式的に示すことができる．
-したがって，$s$ は $\mathbf{E_f G} f$ に含まれる．
-$Z$ は任意の不動点なので，最大不動点は $\mathbf{E_f G} f$ に含まれる．
-</code></pre></div>
+<p>
+<script type="math/tex">Z</script> を式 5.2 の任意の不動点とする．
+ここでは <script type="math/tex">Z</script> が <script type="math/tex">\mathbf{E_f G} f</script> に含まれることを示す．
+<script type="math/tex">s \in Z</script> と仮定する．
+このとき，<script type="math/tex">s</script> は <script type="math/tex">f</script> を満たす．
+さらに <script type="math/tex">s</script> は，すべての状態で <script type="math/tex">f</script> を満たし，かつ <script type="math/tex">Z \wedge P_1</script> を満たす状態 <script type="math/tex">s_1</script> へ到達するようなパスの起点となる後続状態 <script type="math/tex">s'</script> をもつ．
+<script type="math/tex">s_1 \in Z</script> であるため，同様の議論によって，<script type="math/tex">s_1</script> から <script type="math/tex">P_2</script> の状態 <script type="math/tex">s_2</script> へのパスが存在するという結論を得ることができる．
+この議論を <script type="math/tex">n</script> 回繰り返すことで，<script type="math/tex">s</script> は，すべての状態で <script type="math/tex">f</script> を満たし，かつ <script type="math/tex">P_1, \cdots P_n</script> を通るパスの起点であると結論付けられる．
+さらに，このパスの最後の状態は <script type="math/tex">Z</script> に含まれる．
+したがって，この状態から <script type="math/tex">P_1</script> のある状態へ戻るパスが存在し，こうしたパスの構成を繰り返すことができる．</p>
+<p>帰納法を用いることで，<script type="math/tex">s</script> を起点として，すべての状態で <script type="math/tex">f</script> が満たされ，かつ各公平性制約が無限にしばしば満たされるパスの存在を形式的に示すことができる．
+したがって，<script type="math/tex">s</script> は <script type="math/tex">\mathbf{E_f G} f</script> に含まれる．
+<script type="math/tex">Z</script> は任意の不動点なので，最大不動点は <script type="math/tex">\mathbf{E_f G} f</script> に含まれる．</p>
 </div>
 <p>5.2 節のように，<script type="math/tex">\textit{fair}</script> で，公平な意味論に従って <script type="math/tex">\mathbf{E_f} \mathbf{G} true</script> を満たすすべての状態の集合を表すものとする．
 このとき，公平な意味論に従った式 <script type="math/tex">\mathbf{E_f} \mathbf{X}f_1</script> と <script type="math/tex">\mathbf{E}(f_1 \mathbf{U} f_2)</script> は，式<script type="math/tex">\mathbf{EX}(f_1 \wedge fair)</script> と <script type="math/tex">\mathbf{E}(f_1 \mathbf{U} (f_2 \wedge fair))</script> によってそれぞれ表現可能である．
@@ -1573,10 +1570,10 @@ Schuppan と Biere <sup id="fnref:441"><a class="footnote-ref" href="#fn:441">4<
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="../js/extra.js"></script>
       
