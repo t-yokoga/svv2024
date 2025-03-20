@@ -1033,7 +1033,7 @@
 抽象モデルは，関心のある性質に関係のないと思われるシステムのいくつかの詳細を隠すことによって得られ，通常，完全なモデルよりもはるかに小さくなる．
 モデルのサイズが小さくなるため，元のモデルよりも抽象モデルの方が検証しやすくなることが多い．  </p>
 <p>抽象化される前のシステムのモデルを具体 (concrete) モデルと呼ぶ． 
-抽象化は通常，目的の性質に対して保守的であるように選択される．
+抽象化は通常，目的の性質に対して保守的 (conservative) であるように選択される．
 つまり，抽象 (abstract) モデル上でその性質が成り立つときはいつでも，具体モデル上でも成り立つ．
 ここでは，モデル検査を適用できるように，有限状態モデルを生成する抽象化のみを考える．
 本章では上方近似 (over approximation) の抽象化に注目する．
@@ -1041,7 +1041,7 @@
 また，具体モデルには対応する動作がないような動作が追加されることもある．
 しかし，通常，状態や遷移の数はより少なくなる．
 その結果，このような抽象化されたモデルは，モデル検査が容易となる．
-さらに，LTL や ACTL の性質，つまり普遍的な経路限定を持つ性質に対しては保守的であることが保証されている．</p>
+さらに，LTL や ACTL の性質，つまり全称パス限定子を持つ性質に対しては保守的であることが保証されている．</p>
 <p>上方近似の抽象化を構築する最も自然な方法は，具体モデルの状態から抽象モデルの状態への写像を定義し，この写像を遷移に拡張することである．
 このようにして，元のシステムをシミュレートし，通常よりはるかに小さい抽象モデルを得ることができる．
 この抽象化手法は存在量化による抽象化 (existential abstraction) と呼ばれる．</p>
@@ -1134,17 +1134,16 @@
 <li>
 <script type="math/tex">a \le b</script> かつ <script type="math/tex">b \le a</script> ならば <script type="math/tex">a = b</script> である．(反対称律)</li>
 <li>
-<p>
-<script type="math/tex">a \le b</script> または <script type="math/tex">b \le a</script> のいずれか必ず成り立つ．(完全律)</p>
-</li>
-<li>
-<p>自然数 <script type="math/tex">a, b \in \mathbb{N}</script> に対して，大小関係 <script type="math/tex">a \le b</script> は全順序である．</p>
-</li>
+<script type="math/tex">a \le b</script> または <script type="math/tex">b \le a</script> のいずれか必ず成り立つ．(完全律)</li>
+</ol>
+<p>例：</p>
+<ul>
+<li>自然数 <script type="math/tex">a, b \in \mathbb{N}</script> に対して，大小関係 <script type="math/tex">a \le b</script> は全順序である．</li>
 <li>
 <script type="math/tex">S</script> の冪集合の要素 <script type="math/tex">a, b \in 2^{S}</script> に対して，包含関係 <script type="math/tex">a \subseteq b</script> は半順序である．(包含関係が成り立たない元がある)</li>
 <li>
 <script type="math/tex">S</script> の冪集合の要素 <script type="math/tex">a, b \in 2^{S}</script> に対して，要素数の大小関係 <script type="math/tex">a \preceq b \Leftrightarrow |a| \le |b|</script> は前順序である．</li>
-</ol>
+</ul>
 </div>
 <p>定理 11.9 から，<script type="math/tex">\widehat{M}</script> について成り立つすべての ACTL* 式は，<script type="math/tex">M</script> についても同様に成り立つ．</p>
 <div class="admonition tip">
