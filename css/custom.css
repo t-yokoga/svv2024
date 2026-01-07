@@ -1,11 +1,17 @@
 body {
-  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif !important;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Noto Sans JP",
+    Meiryo,
+    sans-serif !important;
 }
 
 p, li {
   word-break: normal;
-  line-break: strict;
-  word-wrap: break-word;
+  line-break: normal;
+  word-wrap: break-word; 
   overflow-wrap: break-word;
   text-align: justify;
 }
